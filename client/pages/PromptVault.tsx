@@ -229,26 +229,26 @@ export default function PromptVault() {
 
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-6 py-6 space-y-6">
-        {/* Top Row: Step 1 (Left) and Step 2 (Right) */}
-        <div className="grid lg:grid-cols-2 gap-6">
+        {/* Top Row: Step 1 (Left) and Step 2 (Right) - 50% Smaller */}
+        <div className="grid lg:grid-cols-2 gap-4 max-w-4xl mx-auto">
           {/* Step 1 - Top Left */}
           <Card className="bg-black border border-gray-900 shadow-xl">
-            <CardHeader>
+            <CardHeader className="pb-3">
               <CardTitle
-                className="text-brand-red text-sm font-black tracking-wide border-b border-brand-red pb-2"
+                className="text-brand-red text-xs font-black tracking-wide border-b border-brand-red pb-1"
                 style={{ fontWeight: 900 }}
               >
                 STEP 1: CREATIVE VISION
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="pt-3">
               <div>
-                <Label htmlFor="instructions" className="text-white">
+                <Label htmlFor="instructions" className="text-white text-xs">
                   Describe your subject, scene, or concept
                 </Label>
                 <Textarea
                   id="instructions"
-                  placeholder="e.g., Professional portrait of a confident businesswoman in modern office setting..."
+                  placeholder="e.g., Professional portrait of a confident businesswoman..."
                   value={customInstructions}
                   onChange={(e) => {
                     setCustomInstructions(e.target.value);
@@ -259,8 +259,8 @@ export default function PromptVault() {
                     score += Math.min(50, selectedKeywords.length * 5);
                     setQualityScore(Math.min(100, score));
                   }}
-                  className="bg-gray-900 border-gray-700 text-white mt-2 focus:border-brand-red focus:ring-brand-red"
-                  rows={4}
+                  className="bg-gray-900 border-gray-700 text-white mt-1 focus:border-brand-red focus:ring-brand-red text-xs"
+                  rows={3}
                 />
               </div>
             </CardContent>
@@ -268,30 +268,30 @@ export default function PromptVault() {
 
           {/* Step 2 - Top Right */}
           <Card className="bg-black border border-gray-900 shadow-xl">
-            <CardHeader>
+            <CardHeader className="pb-3">
               <CardTitle
-                className="text-brand-red text-sm font-black tracking-wide border-b border-brand-red pb-2"
+                className="text-brand-red text-xs font-black tracking-wide border-b border-brand-red pb-1"
                 style={{ fontWeight: 900 }}
               >
-                STEP 2: REFERENCE IMAGE (OPTIONAL)
+                STEP 2: REFERENCE IMAGE
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="border-2 border-dashed border-gray-700 rounded-lg p-8 text-center">
-                <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
-                <p className="text-gray-400 mb-2">
-                  Upload reference image for visual context
+            <CardContent className="pt-3">
+              <div className="border-2 border-dashed border-gray-700 rounded-lg p-4 text-center">
+                <Upload className="w-6 h-6 text-gray-400 mx-auto mb-1" />
+                <p className="text-gray-400 mb-2 text-xs">
+                  Upload reference image
                 </p>
                 {uploadedFile ? (
-                  <div className="mb-4">
-                    <p className="text-brand-red font-black text-sm">
+                  <div className="mb-2">
+                    <p className="text-brand-red font-black text-xs">
                       ✓ {uploadedFile.name}
                     </p>
                     <Button
                       variant="outline"
                       size="sm"
                       onClick={() => setUploadedFile(null)}
-                      className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-black mt-2"
+                      className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-black mt-1 text-xs h-6"
                       style={{ fontWeight: 900 }}
                     >
                       REMOVE
@@ -308,7 +308,7 @@ export default function PromptVault() {
                   />
                   <Button
                     variant="outline"
-                    className="bg-brand-red text-black hover:bg-brand-red-hover font-black border-0"
+                    className="bg-brand-red text-black hover:bg-brand-red-hover font-black border-0 text-xs h-6"
                     style={{ fontWeight: 900 }}
                     asChild
                   >
@@ -322,7 +322,7 @@ export default function PromptVault() {
           </Card>
         </div>
 
-        {/* Step 3 - Full Width */}
+        {/* Step 3 - Full Width Keywords */}
         <Card className="bg-black border border-gray-900 shadow-xl">
           <CardHeader>
             <CardTitle
@@ -366,138 +366,131 @@ export default function PromptVault() {
           </CardContent>
         </Card>
 
-        {/* Quality Meter and Output - Full Width */}
-        <div className="grid lg:grid-cols-2 gap-6">
-          {/* Quality Meter */}
-          <Card className="bg-black border border-gray-900 shadow-xl">
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <CardTitle
-                  className="text-brand-red text-sm font-black tracking-wide"
-                  style={{ fontWeight: 900 }}
-                >
-                  PROMPT QUALITY
-                </CardTitle>
-                <Badge
-                  className={`${
-                    qualityScore >= 80
-                      ? "bg-green-500"
-                      : qualityScore >= 50
-                        ? "bg-yellow-500"
-                        : "bg-brand-red"
-                  } text-white font-bold`}
-                >
-                  {qualityScore}% QUALITY
-                </Badge>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="w-full bg-gray-900 rounded-full h-3 mb-4 border border-gray-800">
-                <div
-                  className={`h-3 rounded-full transition-all duration-300 ${
-                    qualityScore >= 80
-                      ? "bg-green-500"
-                      : qualityScore >= 50
-                        ? "bg-yellow-500"
-                        : "bg-brand-red"
-                  }`}
-                  style={{ width: `${qualityScore}%` }}
-                ></div>
-              </div>
-              <div className="space-y-2 text-sm">
-                <div className="flex items-center justify-between text-white">
-                  <span>Instructions</span>
-                  <span
-                    className={
-                      customInstructions ? "text-green-500" : "text-gray-500"
-                    }
-                  >
-                    {customInstructions ? "✓" : "○"}
-                  </span>
-                </div>
-                <div className="flex items-center justify-between text-white">
-                  <span>Reference Image</span>
-                  <span
-                    className={
-                      uploadedFile ? "text-green-500" : "text-gray-500"
-                    }
-                  >
-                    {uploadedFile ? "✓" : "○"}
-                  </span>
-                </div>
-                <div className="flex items-center justify-between text-white">
-                  <span>Keywords Selected</span>
-                  <span className="text-brand-red font-black">
-                    {selectedKeywords.length}
-                  </span>
-                </div>
-                <div className="flex items-center justify-between text-white">
-                  <span>Categories Covered</span>
-                  <span className="text-brand-red font-black">
-                    {
-                      new Set(
-                        selectedKeywords.map(
-                          (keyword) =>
-                            Object.entries(keywordCategories).find(
-                              ([_, words]) => words.includes(keyword),
-                            )?.[0],
-                        ),
-                      ).size
-                    }
-                    /6
-                  </span>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Generated Prompt */}
-          <Card className="bg-black border border-gray-900 shadow-xl">
-            <CardHeader>
-              <CardTitle
-                className="text-brand-red text-sm font-black tracking-wide border-b border-brand-red pb-2"
+        {/* Generated Prompt - Full Width Single Column */}
+        <Card className="bg-black border border-gray-900 shadow-xl">
+          <CardHeader>
+            <CardTitle
+              className="text-brand-red text-sm font-black tracking-wide border-b border-brand-red pb-2"
+              style={{ fontWeight: 900 }}
+            >
+              GENERATED SORA PROMPT
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="bg-gray-900 border border-gray-700 rounded p-4 min-h-[120px]">
+              <p className="text-white text-sm">
+                {generatePrompt() ||
+                  "Start by adding your creative vision and selecting keywords..."}
+              </p>
+            </div>
+            <div className="flex space-x-2">
+              <Button
+                onClick={copyPrompt}
+                disabled={!customInstructions && selectedKeywords.length === 0}
+                className="bg-brand-red hover:bg-brand-red-hover text-black font-black flex-1"
+                style={{ fontWeight: 900 }}
+                data-copy-button
+              >
+                <Copy className="w-4 h-4 mr-2" />
+                COPY FOR SORA
+              </Button>
+              <Button
+                variant="outline"
+                onClick={() => {
+                  const prompt = generatePrompt();
+                  if (prompt) {
+                    alert("Prompt saved to favorites! ⭐");
+                  }
+                }}
+                className="border-brand-red text-brand-red hover:bg-brand-red hover:text-black font-black"
                 style={{ fontWeight: 900 }}
               >
-                GENERATED SORA PROMPT
+                <Star className="w-4 h-4" />
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Quality Meter - Full Width */}
+        <Card className="bg-black border border-gray-900 shadow-xl">
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <CardTitle
+                className="text-brand-red text-sm font-black tracking-wide"
+                style={{ fontWeight: 900 }}
+              >
+                PROMPT QUALITY
               </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="bg-gray-900 border border-gray-700 rounded p-4 min-h-[120px]">
-                <p className="text-white text-sm">
-                  {generatePrompt() ||
-                    "Start by adding your creative vision and selecting keywords..."}
-                </p>
-              </div>
-              <div className="flex space-x-2">
-                <Button
-                  onClick={copyPrompt}
-                  disabled={
-                    !customInstructions && selectedKeywords.length === 0
+              <Badge
+                className={`${
+                  qualityScore >= 80
+                    ? "bg-green-500"
+                    : qualityScore >= 50
+                      ? "bg-yellow-500"
+                      : "bg-brand-red"
+                } text-white font-bold`}
+              >
+                {qualityScore}% QUALITY
+              </Badge>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="w-full bg-gray-900 rounded-full h-3 mb-4 border border-gray-800">
+              <div
+                className={`h-3 rounded-full transition-all duration-300 ${
+                  qualityScore >= 80
+                    ? "bg-green-500"
+                    : qualityScore >= 50
+                      ? "bg-yellow-500"
+                      : "bg-brand-red"
+                }`}
+                style={{ width: `${qualityScore}%` }}
+              ></div>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+              <div className="flex items-center justify-between text-white">
+                <span>Instructions</span>
+                <span
+                  className={
+                    customInstructions ? "text-green-500" : "text-gray-500"
                   }
-                  className="bg-brand-red hover:bg-brand-red-hover text-black font-black flex-1"
-                  style={{ fontWeight: 900 }}
-                  data-copy-button
                 >
-                  <Copy className="w-4 h-4 mr-2" />
-                  COPY FOR SORA
-                </Button>
-                <Button
-                  variant="outline"
-                  onClick={() => {
-                    const prompt = generatePrompt();
-                    if (prompt) {
-                      alert("Prompt saved to favorites! ⭐");
-                    }
-                  }}
-                  className="border-brand-red text-brand-red hover:bg-brand-red hover:text-black font-black"
-                  style={{ fontWeight: 900 }}
-                >
-                  <Star className="w-4 h-4" />
-                </Button>
+                  {customInstructions ? "✓" : "○"}
+                </span>
               </div>
-            </CardContent>
-          </Card>
-        </div>
+              <div className="flex items-center justify-between text-white">
+                <span>Reference Image</span>
+                <span
+                  className={uploadedFile ? "text-green-500" : "text-gray-500"}
+                >
+                  {uploadedFile ? "✓" : "○"}
+                </span>
+              </div>
+              <div className="flex items-center justify-between text-white">
+                <span>Keywords Selected</span>
+                <span className="text-brand-red font-black">
+                  {selectedKeywords.length}
+                </span>
+              </div>
+              <div className="flex items-center justify-between text-white">
+                <span>Categories Covered</span>
+                <span className="text-brand-red font-black">
+                  {
+                    new Set(
+                      selectedKeywords.map(
+                        (keyword) =>
+                          Object.entries(keywordCategories).find(([_, words]) =>
+                            words.includes(keyword),
+                          )?.[0],
+                      ),
+                    ).size
+                  }
+                  /6
+                </span>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       </div>
 
       {/* Pro Tips Footer */}

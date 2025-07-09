@@ -389,7 +389,7 @@ export default function AIToolkit() {
   return (
     <div className="min-h-screen bg-brand-red text-black">
       {/* Header */}
-      <div className="bg-black px-6 py-12 text-center">
+      <div className="bg-black px-6 py-8 text-center">
         <div className="flex items-center justify-center space-x-3 mb-4">
           <Zap className="w-8 h-8 text-brand-red" />
           <h1 className="text-4xl md:text-6xl font-bold text-white">
@@ -404,7 +404,7 @@ export default function AIToolkit() {
       </div>
 
       {/* Tools Grid */}
-      <div className="max-w-6xl mx-auto px-6 py-8 space-y-6">
+      <div className="max-w-6xl mx-auto px-6 pt-6 pb-8 space-y-6">
         {toolCategories.map((category) => (
           <div key={category.title} className="space-y-4">
             {/* Category Header */}

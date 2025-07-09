@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import OvernightSuccessSignup from "@/components/OvernightSuccessSignup";
 import {
   Card,
   CardContent,
@@ -27,8 +29,10 @@ import {
 } from "lucide-react";
 
 export default function Index() {
+  const navigate = useNavigate();
   const [selectedStudio, setSelectedStudio] = useState<string>("product");
   const [showBriefcase, setShowBriefcase] = useState(false);
+  const [showSignup, setShowSignup] = useState(false);
 
   const studios = [
     {
@@ -114,6 +118,8 @@ export default function Index() {
                   onClick={() => {
                     if (item.name === "UPDATES") {
                       setShowBriefcase(true);
+                    } else if (item.name === "THE PLAYBOOK") {
+                      navigate("/playbook");
                     }
                   }}
                 >
@@ -411,6 +417,12 @@ export default function Index() {
           </Card>
         </div>
       )}
+
+      {/* Overnight Success Signup Modal */}
+      <OvernightSuccessSignup
+        isOpen={showSignup}
+        onClose={() => setShowSignup(false)}
+      />
     </div>
   );
 }

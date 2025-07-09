@@ -36,7 +36,7 @@ export default function Templates() {
   const templates = [
     {
       id: 1,
-      title: "Professional Product Shot",
+      title: "Product Shot",
       category: "product",
       description: "Clean, minimalist product photography with studio lighting",
       prompt:
@@ -60,7 +60,7 @@ export default function Templates() {
     },
     {
       id: 3,
-      title: "Modern Logo Design",
+      title: "Modern Logo",
       category: "graphics",
       description: "Clean, minimalist logo with modern typography",
       prompt:
@@ -127,14 +127,14 @@ export default function Templates() {
   return (
     <div className="min-h-screen bg-brand-red text-black">
       {/* Header */}
-      <div className="bg-black px-6 py-12 text-center">
+      <div className="bg-black px-6 py-8 text-center">
         <div className="flex items-center justify-center space-x-3 mb-4">
           <LayoutTemplate className="w-8 h-8 text-brand-red" />
           <h1 className="text-4xl md:text-6xl font-bold text-white">
             TEMPLATES
           </h1>
         </div>
-        <p className="text-gray-400 max-w-2xl mx-auto">
+        <p className="text-gray-400 max-w-2xl mx-auto text-xs">
           Pre-built prompt templates for every creative need. Copy, customize,
           and create professional content instantly.
         </p>
@@ -147,12 +147,6 @@ export default function Templates() {
             {/* Search */}
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-black/60" />
-              <Input
-                placeholder="Search templates..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 bg-white border-black/20 text-black"
-              />
             </div>
 
             {/* Category Filter */}
@@ -182,27 +176,6 @@ export default function Templates() {
 
       {/* Templates Grid */}
       <div className="max-w-6xl mx-auto px-6 py-8">
-        <div className="mb-6 flex items-center justify-between">
-          <div>
-            <h2 className="text-2xl font-bold text-black">
-              {selectedCategory === "all"
-                ? "All Templates"
-                : categories.find((c) => c.id === selectedCategory)?.name}
-            </h2>
-            <p className="text-black/80 mt-1">
-              {filteredTemplates.length} template
-              {filteredTemplates.length !== 1 ? "s" : ""} available
-            </p>
-          </div>
-          <Button
-            variant="outline"
-            className="border-black text-black hover:bg-black hover:text-brand-red"
-          >
-            <Filter className="w-4 h-4 mr-2" />
-            Filter
-          </Button>
-        </div>
-
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredTemplates.map((template) => (
             <Card
@@ -222,9 +195,6 @@ export default function Templates() {
                         </Badge>
                       )}
                     </div>
-                    <p className="text-gray-400 text-sm">
-                      {template.description}
-                    </p>
                   </div>
                   <Button
                     variant="ghost"

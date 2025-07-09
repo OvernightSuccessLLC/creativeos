@@ -92,7 +92,7 @@ export default function Index() {
     { name: "UPDATES", icon: Bell, active: false },
     { name: "THE PLAYBOOK", icon: BookOpen, active: false },
     { name: "PROMPT VAULT", icon: Database, active: false },
-    { name: "TEMPLATES", icon: Template, active: false },
+    { name: "TEMPLATES", icon: FileTemplate, active: false },
     { name: "AI TOOLKIT", icon: Zap, active: false },
     { name: "UPGRADE", icon: Crown, active: false, highlight: true },
   ];

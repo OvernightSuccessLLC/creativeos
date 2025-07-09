@@ -430,22 +430,27 @@ export default function AIToolkit() {
                   >
                     <div className="flex-1 flex flex-col justify-center text-center">
                       <h3
-                        className="text-black font-black text-lg leading-tight mb-2"
-                        style={{ fontWeight: 900 }}
+                        className="text-black font-black text-xl leading-tight mb-1"
+                        style={{
+                          fontWeight: 900,
+                          textShadow: "1px 1px 2px rgba(0,0,0,0.3)",
+                        }}
                       >
                         {tool.name.toUpperCase()}
                       </h3>
-                      <p className="text-black text-xs leading-tight line-clamp-1 mb-3">
+                      <p className="text-black text-xs leading-tight line-clamp-1 mb-3 opacity-80">
                         {getToolDescription(tool.name)}
                       </p>
                     </div>
-                    <button
-                      className="bg-black text-brand-red hover:bg-brand-red hover:text-black font-black text-xs py-2 px-3 rounded-full transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
-                      style={{ fontWeight: 900 }}
-                      onClick={() => window.open(tool.link, "_blank")}
-                    >
-                      CLICK HERE
-                    </button>
+                    <div className="flex justify-center">
+                      <button
+                        className="bg-black text-brand-red hover:bg-brand-red hover:text-black font-black text-xs py-1.5 px-4 rounded-full transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+                        style={{ fontWeight: 900 }}
+                        onClick={() => window.open(tool.link, "_blank")}
+                      >
+                        CLICK HERE
+                      </button>
+                    </div>
                   </div>
                 ))}
               </div>

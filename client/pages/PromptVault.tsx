@@ -39,6 +39,16 @@ export default function PromptVault() {
       "Studio lighting",
       "Natural light",
       "Cinematic",
+      "Backlit",
+      "Side lighting",
+      "Rim lighting",
+      "Hard shadows",
+      "Moody",
+      "Bright",
+      "Overcast",
+      "Sunset",
+      "Blue hour",
+      "Fluorescent",
     ],
     Framing: [
       "Close-up",
@@ -49,6 +59,16 @@ export default function PromptVault() {
       "Eye level",
       "Dutch angle",
       "Over shoulder",
+      "Extreme close-up",
+      "Full body",
+      "Three-quarter",
+      "Profile",
+      "Aerial view",
+      "Worm's eye",
+      "Tilted",
+      "Centered",
+      "Rule of thirds",
+      "Symmetrical",
     ],
     Locations: [
       "Studio",
@@ -59,6 +79,16 @@ export default function PromptVault() {
       "Industrial",
       "Vintage",
       "Modern",
+      "Rooftop",
+      "Beach",
+      "Forest",
+      "Desert",
+      "Office",
+      "Street",
+      "Warehouse",
+      "Gallery",
+      "Outdoor",
+      "Cityscape",
     ],
     "Creative Direction": [
       "Professional",
@@ -69,6 +99,16 @@ export default function PromptVault() {
       "Fashion",
       "Product",
       "Portrait",
+      "Documentary",
+      "Conceptual",
+      "Abstract",
+      "Minimalist",
+      "Bold",
+      "Elegant",
+      "Gritty",
+      "Clean",
+      "Dramatic",
+      "Casual",
     ],
     Quality: [
       "4K",
@@ -79,6 +119,107 @@ export default function PromptVault() {
       "Magazine quality",
       "Commercial grade",
       "Studio quality",
+      "8K",
+      "RAW",
+      "Crisp",
+      "Detailed",
+      "Premium",
+      "Masterpiece",
+      "High-end",
+      "Polished",
+      "Flawless",
+      "Perfect",
+    ],
+  };
+
+  const enhancedKeywordCategories = {
+    Enhancers: [
+      "Hyperrealistic",
+      "Photorealistic",
+      "Ultra-detailed",
+      "Stunning",
+      "Breathtaking",
+      "Masterful",
+      "Exquisite",
+      "Flawless",
+      "Perfect",
+      "Incredible",
+      "Amazing",
+      "Beautiful",
+      "Gorgeous",
+      "Spectacular",
+      "Outstanding",
+      "Exceptional",
+      "Remarkable",
+      "Extraordinary",
+      "Magnificent",
+      "Superb",
+    ],
+    Loaded: [
+      "Rich colors",
+      "Deep contrast",
+      "Vibrant",
+      "Saturated",
+      "Intense",
+      "Bold",
+      "Dynamic",
+      "Powerful",
+      "Strong",
+      "Vivid",
+      "Brilliant",
+      "Luminous",
+      "Radiant",
+      "Glowing",
+      "Striking",
+      "Eye-catching",
+      "Captivating",
+      "Mesmerizing",
+      "Dazzling",
+      "Electrifying",
+    ],
+    Overview: [
+      "Wide angle",
+      "Panoramic",
+      "Establishing shot",
+      "Environmental",
+      "Contextual",
+      "Comprehensive",
+      "Full scene",
+      "Complete view",
+      "Total perspective",
+      "Broad scope",
+      "All-encompassing",
+      "Holistic",
+      "Global view",
+      "Big picture",
+      "Expansive",
+      "Sweeping",
+      "Vast",
+      "Immersive",
+      "Encompassing",
+      "Grand scale",
+    ],
+    Type: [
+      "Photography",
+      "Digital art",
+      "Illustration",
+      "Render",
+      "CGI",
+      "3D model",
+      "Artwork",
+      "Drawing",
+      "Painting",
+      "Sketch",
+      "Vector",
+      "Animation",
+      "Graphic design",
+      "Visual art",
+      "Digital image",
+      "Computer graphics",
+      "Photo manipulation",
+      "Composite",
+      "Mixed media",
+      "Creative visual",
     ],
   };
 
@@ -109,10 +250,18 @@ export default function PromptVault() {
       locations: [] as string[],
       creative: [] as string[],
       quality: [] as string[],
+      enhancers: [] as string[],
+      loaded: [] as string[],
+      overview: [] as string[],
+      type: [] as string[],
     };
 
     selectedKeywords.forEach((keyword) => {
-      const category = Object.entries(keywordCategories)
+      const allCategories = {
+        ...keywordCategories,
+        ...enhancedKeywordCategories,
+      };
+      const category = Object.entries(allCategories)
         .find(([_, words]) => words.includes(keyword))?.[0]
         ?.toLowerCase();
 
@@ -131,6 +280,18 @@ export default function PromptVault() {
           break;
         case "quality":
           organizedKeywords.quality.push(keyword.toLowerCase());
+          break;
+        case "enhancers":
+          organizedKeywords.enhancers.push(keyword.toLowerCase());
+          break;
+        case "loaded":
+          organizedKeywords.loaded.push(keyword.toLowerCase());
+          break;
+        case "overview":
+          organizedKeywords.overview.push(keyword.toLowerCase());
+          break;
+        case "type":
+          organizedKeywords.type.push(keyword.toLowerCase());
           break;
       }
     });
@@ -156,6 +317,26 @@ export default function PromptVault() {
     // Add creative direction
     if (organizedKeywords.creative.length > 0) {
       prompt += `, ${organizedKeywords.creative.join(", ")}`;
+    }
+
+    // Add enhancers
+    if (organizedKeywords.enhancers.length > 0) {
+      prompt += `, ${organizedKeywords.enhancers.join(", ")}`;
+    }
+
+    // Add loaded elements
+    if (organizedKeywords.loaded.length > 0) {
+      prompt += `, ${organizedKeywords.loaded.join(", ")}`;
+    }
+
+    // Add overview elements
+    if (organizedKeywords.overview.length > 0) {
+      prompt += `, ${organizedKeywords.overview.join(", ")}`;
+    }
+
+    // Add type specification
+    if (organizedKeywords.type.length > 0) {
+      prompt += `, ${organizedKeywords.type.join(", ")}`;
     }
 
     // Add quality parameters last
@@ -458,15 +639,18 @@ export default function PromptVault() {
                 <span className="text-brand-red font-black">
                   {
                     new Set(
-                      selectedKeywords.map(
-                        (keyword) =>
-                          Object.entries(keywordCategories).find(([_, words]) =>
-                            words.includes(keyword),
-                          )?.[0],
-                      ),
+                      selectedKeywords.map((keyword) => {
+                        const allCategories = {
+                          ...keywordCategories,
+                          ...enhancedKeywordCategories,
+                        };
+                        return Object.entries(allCategories).find(
+                          ([_, words]) => words.includes(keyword),
+                        )?.[0];
+                      }),
                     ).size
                   }
-                  /5
+                  /9
                 </span>
               </div>
             </div>

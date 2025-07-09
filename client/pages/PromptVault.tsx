@@ -381,22 +381,19 @@ export default function PromptVault() {
               STEP 3: SELECT KEYWORDS
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3">
+          <CardContent className="space-y-4">
             {/* Lighting Section */}
-            <div
-              style={{ backgroundColor: "#000000" }}
-              className="border border-gray-600 rounded-lg p-4"
-            >
-              <h3 className="text-white text-base font-bold mb-3">Lighting</h3>
+            <div className="bg-black border border-white/10 rounded-lg p-4">
+              <h3 className="text-white text-base font-bold mb-4">Lighting</h3>
               <div className="flex flex-wrap gap-2">
                 {keywordCategories.Lighting.map((keyword) => (
                   <button
                     key={keyword}
                     onClick={() => toggleKeyword(keyword)}
-                    className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                       selectedKeywords.includes(keyword)
-                        ? "bg-brand-red text-white border-brand-red"
-                        : "bg-gray-700 text-white border-gray-600 hover:bg-gray-600"
+                        ? "bg-brand-red text-white"
+                        : "bg-gray-600 text-white hover:bg-gray-500"
                     }`}
                   >
                     {keyword}
@@ -406,20 +403,17 @@ export default function PromptVault() {
             </div>
 
             {/* Framing Section */}
-            <div
-              style={{ backgroundColor: "#000000" }}
-              className="border border-gray-600 rounded-lg p-4"
-            >
-              <h3 className="text-white text-base font-bold mb-3">Framing</h3>
+            <div className="bg-black border border-white/10 rounded-lg p-4">
+              <h3 className="text-white text-base font-bold mb-4">Framing</h3>
               <div className="flex flex-wrap gap-2">
                 {keywordCategories.Framing.map((keyword) => (
                   <button
                     key={keyword}
                     onClick={() => toggleKeyword(keyword)}
-                    className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                       selectedKeywords.includes(keyword)
-                        ? "bg-brand-red text-white border-brand-red"
-                        : "bg-gray-700 text-white border-gray-600 hover:bg-gray-600"
+                        ? "bg-brand-red text-white"
+                        : "bg-gray-600 text-white hover:bg-gray-500"
                     }`}
                   >
                     {keyword}
@@ -429,20 +423,17 @@ export default function PromptVault() {
             </div>
 
             {/* Locations Section */}
-            <div
-              style={{ backgroundColor: "#000000" }}
-              className="border border-gray-600 rounded-lg p-4"
-            >
-              <h3 className="text-white text-base font-bold mb-3">Locations</h3>
+            <div className="bg-black border border-white/10 rounded-lg p-4">
+              <h3 className="text-white text-base font-bold mb-4">Locations</h3>
               <div className="flex flex-wrap gap-2">
                 {keywordCategories.Locations.map((keyword) => (
                   <button
                     key={keyword}
                     onClick={() => toggleKeyword(keyword)}
-                    className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                       selectedKeywords.includes(keyword)
-                        ? "bg-brand-red text-white border-brand-red"
-                        : "bg-gray-700 text-white border-gray-600 hover:bg-gray-600"
+                        ? "bg-brand-red text-white"
+                        : "bg-gray-600 text-white hover:bg-gray-500"
                     }`}
                   >
                     {keyword}
@@ -452,20 +443,17 @@ export default function PromptVault() {
             </div>
 
             {/* Style Section */}
-            <div
-              style={{ backgroundColor: "#000000" }}
-              className="border border-gray-600 rounded-lg p-4"
-            >
-              <h3 className="text-white text-base font-bold mb-3">Style</h3>
+            <div className="bg-black border border-white/10 rounded-lg p-4">
+              <h3 className="text-white text-base font-bold mb-4">Style</h3>
               <div className="flex flex-wrap gap-2">
                 {enhancedKeywordCategories.Style.map((keyword) => (
                   <button
                     key={keyword}
                     onClick={() => toggleKeyword(keyword)}
-                    className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                       selectedKeywords.includes(keyword)
-                        ? "bg-brand-red text-white border-brand-red"
-                        : "bg-gray-700 text-white border-gray-600 hover:bg-gray-600"
+                        ? "bg-brand-red text-white"
+                        : "bg-gray-600 text-white hover:bg-gray-500"
                     }`}
                   >
                     {keyword}
@@ -475,11 +463,8 @@ export default function PromptVault() {
             </div>
 
             {/* Creative Direction Section */}
-            <div
-              style={{ backgroundColor: "#000000" }}
-              className="border border-gray-600 rounded-lg p-4"
-            >
-              <h3 className="text-white text-base font-bold mb-3">
+            <div className="bg-black border border-white/10 rounded-lg p-4">
+              <h3 className="text-white text-base font-bold mb-4">
                 Creative Direction
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -488,10 +473,10 @@ export default function PromptVault() {
                     <button
                       key={keyword}
                       onClick={() => toggleKeyword(keyword)}
-                      className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
+                      className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                         selectedKeywords.includes(keyword)
-                          ? "bg-brand-red text-white border-brand-red"
-                          : "bg-gray-700 text-white border-gray-600 hover:bg-gray-600"
+                          ? "bg-brand-red text-white"
+                          : "bg-gray-600 text-white hover:bg-gray-500"
                       }`}
                     >
                       {keyword}
@@ -502,20 +487,17 @@ export default function PromptVault() {
             </div>
 
             {/* Modifiers Section */}
-            <div
-              style={{ backgroundColor: "#000000" }}
-              className="border border-gray-600 rounded-lg p-4"
-            >
-              <h3 className="text-white text-base font-bold mb-3">Modifiers</h3>
+            <div className="bg-black border border-white/10 rounded-lg p-4">
+              <h3 className="text-white text-base font-bold mb-4">Modifiers</h3>
               <div className="flex flex-wrap gap-2">
                 {enhancedKeywordCategories.Modifiers.map((keyword) => (
                   <button
                     key={keyword}
                     onClick={() => toggleKeyword(keyword)}
-                    className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                       selectedKeywords.includes(keyword)
-                        ? "bg-brand-red text-white border-brand-red"
-                        : "bg-gray-700 text-white border-gray-600 hover:bg-gray-600"
+                        ? "bg-brand-red text-white"
+                        : "bg-gray-600 text-white hover:bg-gray-500"
                     }`}
                   >
                     {keyword}

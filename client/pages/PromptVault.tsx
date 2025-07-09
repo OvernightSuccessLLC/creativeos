@@ -84,23 +84,6 @@ export default function PromptVault() {
   };
 
   const enhancedKeywordCategories = {
-    "Creative Direction": [
-      "Wes Anderson meets Balenciaga",
-      "Apple ad directed by Kubrick",
-      "Old Money vibes",
-      "Virgil Abloh x Eames visual tension",
-      "Yeezy drop in a NASA lab",
-      "Warhol meets Warhol",
-      "Quiet luxury meets pitchfork",
-      "High fashion in a war zone",
-      "Edward Hopper moodboard",
-      "Gucci in a cyber slum",
-      "Tarantino aesthetic violence",
-      "Hitchcock suspense tension",
-      "Lynch surreal dreamscape",
-      "Scorsese gritty realism",
-      "Nolan temporal complexity",
-    ],
     Modifiers: [
       "4K resolution",
       "cinematic quality",

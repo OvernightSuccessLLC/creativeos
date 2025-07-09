@@ -350,16 +350,36 @@ export default function AIToolkit() {
   const getToolDescription = (toolName: string) => {
     const descriptions: { [key: string]: string } = {
       SORA: "Advanced AI video generation with text-to-video capabilities",
-      Midjourney: "High-quality AI art and image generation",
-      "DALL-E 3": "Advanced AI image generation from OpenAI",
-      "Stable Diffusion": "Open-source AI image generation model",
       RunwayML: "Creative AI video tools for filmmakers and content creators",
       "Pika Labs": "AI video creation platform with text and image inputs",
-      ElevenLabs: "Ultra-realistic voice synthesis and cloning technology",
-      "GPT-4": "Advanced AI language model for text generation",
+      "Stable Video Diffusion":
+        "Open source video generation model by Stability AI",
+      Synthesia: "AI video generation with virtual avatars and voiceovers",
+      "InVideo AI": "AI-powered video creation and editing platform",
+      "DALL-E 3": "Advanced AI image generation from OpenAI",
+      Midjourney: "High-quality AI art and image generation",
+      "Stable Diffusion": "Open-source AI image generation",
+      "Leonardo AI": "Professional AI image generation platform",
+      Ideogram: "AI image generation with text rendering",
+      "Adobe Firefly": "Creative AI tools from Adobe",
+      ChatGPT: "Advanced AI language model for text generation",
       Claude: "AI assistant for analysis and creative work",
+      Gemini: "Google's advanced AI language model",
+      Copilot: "Microsoft's AI assistant and creative companion",
+      Perplexity: "AI-powered research and answer engine",
+      Writesonic: "AI writing and content creation platform",
+      ElevenLabs: "Ultra-realistic voice synthesis and cloning technology",
+      Mubert: "AI-generated music and soundtracks",
+      Speechify: "AI voice generation and text-to-speech",
+      "Resemble AI": "AI voice cloning and synthesis platform",
+      Descript: "AI-powered audio and video editing",
+      AIVA: "AI composer for original music creation",
       "Canva AI": "AI-powered design assistance for graphics and layouts",
+      "Figma AI": "AI plugins and features for design workflows",
+      "Adobe Sensei": "AI tools integrated across Adobe Creative Suite",
+      Looka: "AI logo and brand design platform",
       Upscayl: "AI image upscaling for higher resolution and quality",
+      "Remove.bg": "AI-powered background removal for images",
     };
     return (
       descriptions[toolName] || "AI-powered creative tool for professionals"
@@ -388,11 +408,11 @@ export default function AIToolkit() {
         {toolCategories.map((category) => (
           <div key={category.title} className="space-y-4">
             {/* Category Header */}
-            <div className="bg-brand-red rounded-lg px-6 py-4 border-4 border-black">
+            <div className="bg-black rounded-lg px-6 py-4 border-2 border-gray-800">
               <div className="flex items-center space-x-3">
-                <category.icon className="w-6 h-6 text-black" />
+                <category.icon className="w-5 h-5 text-brand-red" />
                 <h2
-                  className="text-2xl font-black text-black"
+                  className="text-xl font-black text-brand-red"
                   style={{ fontWeight: 900 }}
                 >
                   {category.title}
@@ -401,30 +421,22 @@ export default function AIToolkit() {
             </div>
 
             {/* Tools Container */}
-            <div className="bg-black rounded-lg p-6 border-4 border-black">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="bg-black rounded-lg p-4 border-2 border-gray-800">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                 {category.tools.map((tool) => (
                   <div
                     key={tool.name}
-                    className="bg-brand-red rounded-lg p-4 border-2 border-black hover:border-gray-700 transition-colors cursor-pointer"
+                    className="bg-brand-red rounded border border-black p-3 hover:bg-brand-red-hover transition-colors cursor-pointer"
                     onClick={() => window.open(tool.link, "_blank")}
                   >
-                    <div className="space-y-2">
-                      <div className="flex items-start justify-between">
-                        <h3
-                          className="text-black font-black text-sm leading-tight"
-                          style={{ fontWeight: 900 }}
-                        >
-                          {tool.name}
-                        </h3>
-                        <Badge
-                          className={`${getStatusColor(tool.status)} text-white text-xs font-black ml-2 flex-shrink-0`}
-                          style={{ fontWeight: 900 }}
-                        >
-                          {tool.status.charAt(0).toUpperCase()}
-                        </Badge>
-                      </div>
-                      <p className="text-black text-xs opacity-80 leading-tight">
+                    <div className="space-y-1">
+                      <h3
+                        className="text-black font-black text-sm leading-tight"
+                        style={{ fontWeight: 900 }}
+                      >
+                        {tool.name}
+                      </h3>
+                      <p className="text-black text-xs leading-tight">
                         {getToolDescription(tool.name)}
                       </p>
                     </div>

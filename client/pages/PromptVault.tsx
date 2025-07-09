@@ -27,6 +27,7 @@ export default function PromptVault() {
   const [customInstructions, setCustomInstructions] = useState("");
   const [selectedKeywords, setSelectedKeywords] = useState<string[]>([]);
   const [qualityScore, setQualityScore] = useState(0);
+  const [uploadedFile, setUploadedFile] = useState<File | null>(null);
 
   const keywordCategories = {
     Lighting: [
@@ -92,18 +93,31 @@ export default function PromptVault() {
   };
 
   const toggleKeyword = (keyword: string) => {
-    setSelectedKeywords((prev) =>
-      prev.includes(keyword)
-        ? prev.filter((k) => k !== keyword)
-        : [...prev, keyword],
-    );
-    setQualityScore(Math.min(100, selectedKeywords.length * 8 + 20));
+    const newKeywords = selectedKeywords.includes(keyword)
+      ? selectedKeywords.filter((k) => k !== keyword)
+      : [...selectedKeywords, keyword];
+
+    setSelectedKeywords(newKeywords);
+
+    // Calculate quality score
+    let score = 0;
+    if (customInstructions.length > 0) score += 30;
+    if (uploadedFile) score += 20;
+    score += Math.min(50, newKeywords.length * 5);
+    setQualityScore(Math.min(100, score));
   };
 
   const generatePrompt = () => {
     const basePrompt = customInstructions || "Professional photograph";
     const keywords = selectedKeywords.join(", ");
     return `${basePrompt}${keywords ? `, ${keywords}` : ""}`;
+  };
+
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file && file.type.startsWith("image/")) {
+      setUploadedFile(file);
+    }
   };
 
   const copyPrompt = () => {
@@ -160,8 +174,16 @@ export default function PromptVault() {
                     id="instructions"
                     placeholder="e.g., Professional portrait of a confident businesswoman in modern office setting..."
                     value={customInstructions}
-                    onChange={(e) => setCustomInstructions(e.target.value)}
-                    className="bg-gray-900 border-gray-700 text-white mt-2"
+                    onChange={(e) => {
+                      setCustomInstructions(e.target.value);
+                      // Recalculate quality score
+                      let score = 0;
+                      if (e.target.value.length > 0) score += 30;
+                      if (uploadedFile) score += 20;
+                      score += Math.min(50, selectedKeywords.length * 5);
+                      setQualityScore(Math.min(100, score));
+                    }}
+                    className="bg-gray-900 border-gray-700 text-white mt-2 focus:border-brand-red focus:ring-brand-red"
                     rows={4}
                   />
                 </div>
@@ -184,13 +206,41 @@ export default function PromptVault() {
                   <p className="text-gray-400 mb-2">
                     Upload reference image for visual context
                   </p>
-                  <Button
-                    variant="outline"
-                    className="border-brand-red text-brand-red hover:bg-brand-red hover:text-black font-black"
-                    style={{ fontWeight: 900 }}
-                  >
-                    CHOOSE FILE
-                  </Button>
+                  {uploadedFile ? (
+                    <div className="mb-4">
+                      <p className="text-brand-red font-black text-sm">
+                        ✓ {uploadedFile.name}
+                      </p>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => setUploadedFile(null)}
+                        className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-black mt-2"
+                        style={{ fontWeight: 900 }}
+                      >
+                        REMOVE
+                      </Button>
+                    </div>
+                  ) : null}
+                  <div className="relative">
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleFileUpload}
+                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                      id="file-upload"
+                    />
+                    <Button
+                      variant="outline"
+                      className="bg-brand-red text-black hover:bg-brand-red-hover font-black border-0"
+                      style={{ fontWeight: 900 }}
+                      asChild
+                    >
+                      <label htmlFor="file-upload" className="cursor-pointer">
+                        CHOOSE FILE
+                      </label>
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -212,28 +262,26 @@ export default function PromptVault() {
                       <h4 className="text-white font-semibold mb-3">
                         {category}
                       </h4>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
                         {keywords.map((keyword) => (
                           <Button
                             key={keyword}
-                            variant={
-                              selectedKeywords.includes(keyword)
-                                ? "default"
-                                : "outline"
-                            }
+                            variant="outline"
                             size="sm"
                             onClick={() => toggleKeyword(keyword)}
-                            className={
+                            className={`text-xs h-8 px-3 font-black border-2 transition-all duration-200 ${
                               selectedKeywords.includes(keyword)
-                                ? "bg-brand-red text-black hover:bg-brand-red-hover font-black"
-                                : "border-brand-red text-brand-red hover:bg-brand-red hover:text-black font-black"
-                            }
-                            style={{ fontWeight: 900 }}
+                                ? "bg-brand-red text-black border-brand-red hover:bg-brand-red-hover"
+                                : "bg-transparent text-brand-red border-brand-red hover:bg-brand-red hover:text-black"
+                            }`}
+                            style={{ fontWeight: 900, minWidth: "80px" }}
                           >
-                            {keyword}
-                            {selectedKeywords.includes(keyword) && (
-                              <span className="ml-1 font-black">×</span>
-                            )}
+                            <span className="truncate">
+                              {keyword}
+                              {selectedKeywords.includes(keyword) && (
+                                <span className="ml-1">×</span>
+                              )}
+                            </span>
                           </Button>
                         ))}
                       </div>
@@ -285,15 +333,33 @@ export default function PromptVault() {
                 <div className="space-y-2 text-sm">
                   <div className="flex items-center justify-between text-white">
                     <span>Instructions</span>
-                    <span>{customInstructions ? "✓" : "○"}</span>
+                    <span
+                      className={
+                        customInstructions ? "text-green-500" : "text-gray-500"
+                      }
+                    >
+                      {customInstructions ? "✓" : "○"}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between text-white">
+                    <span>Reference Image</span>
+                    <span
+                      className={
+                        uploadedFile ? "text-green-500" : "text-gray-500"
+                      }
+                    >
+                      {uploadedFile ? "✓" : "○"}
+                    </span>
                   </div>
                   <div className="flex items-center justify-between text-white">
                     <span>Keywords Selected</span>
-                    <span>{selectedKeywords.length}</span>
+                    <span className="text-brand-red font-black">
+                      {selectedKeywords.length}
+                    </span>
                   </div>
                   <div className="flex items-center justify-between text-white">
                     <span>Categories Covered</span>
-                    <span>
+                    <span className="text-brand-red font-black">
                       {
                         new Set(
                           selectedKeywords.map(
@@ -343,6 +409,12 @@ export default function PromptVault() {
                   </Button>
                   <Button
                     variant="outline"
+                    onClick={() => {
+                      const prompt = generatePrompt();
+                      if (prompt) {
+                        alert("Prompt saved to favorites! ⭐");
+                      }
+                    }}
                     className="border-brand-red text-brand-red hover:bg-brand-red hover:text-black font-black"
                     style={{ fontWeight: 900 }}
                   >

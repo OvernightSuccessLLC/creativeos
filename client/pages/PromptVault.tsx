@@ -494,37 +494,80 @@ export default function PromptVault() {
               STEP 3: SELECT KEYWORDS
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
-            {Object.entries(keywordCategories).map(([category, keywords]) => (
-              <div key={category}>
-                <h4 className="text-white font-black mb-2 text-sm uppercase">
-                  {category}
-                </h4>
-                <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 xl:grid-cols-14 gap-1">
-                  {keywords.map((keyword) => (
-                    <Button
-                      key={keyword}
-                      variant="outline"
-                      size="sm"
-                      onClick={() => toggleKeyword(keyword)}
-                      className={`text-xs h-6 px-2 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
-                        selectedKeywords.includes(keyword)
-                          ? "bg-brand-red text-black border-brand-red hover:bg-brand-red hover:shadow-brand-red/50"
-                          : "bg-transparent text-brand-red border-brand-red hover:bg-brand-red hover:text-black hover:shadow-brand-red/50"
-                      }`}
-                      style={{ fontWeight: 900, minWidth: "60px" }}
-                    >
-                      <span className="truncate text-[10px]">
-                        {keyword}
-                        {selectedKeywords.includes(keyword) && (
-                          <span className="ml-1">×</span>
-                        )}
-                      </span>
-                    </Button>
-                  ))}
-                </div>
+          <CardContent className="space-y-3">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Left Column - Original Categories */}
+              <div className="space-y-3">
+                {Object.entries(keywordCategories).map(
+                  ([category, keywords]) => (
+                    <div key={category}>
+                      <h4 className="text-white font-black mb-2 text-sm uppercase">
+                        {category}
+                      </h4>
+                      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-1">
+                        {keywords.map((keyword) => (
+                          <Button
+                            key={keyword}
+                            variant="outline"
+                            size="sm"
+                            onClick={() => toggleKeyword(keyword)}
+                            className={`text-xs h-6 px-2 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
+                              selectedKeywords.includes(keyword)
+                                ? "bg-brand-red text-black border-brand-red hover:bg-brand-red hover:shadow-brand-red/50"
+                                : "bg-transparent text-brand-red border-brand-red hover:bg-brand-red hover:text-black hover:shadow-brand-red/50"
+                            }`}
+                            style={{ fontWeight: 900, minWidth: "60px" }}
+                          >
+                            <span className="truncate text-[10px]">
+                              {keyword}
+                              {selectedKeywords.includes(keyword) && (
+                                <span className="ml-1">×</span>
+                              )}
+                            </span>
+                          </Button>
+                        ))}
+                      </div>
+                    </div>
+                  ),
+                )}
               </div>
-            ))}
+
+              {/* Right Column - Enhanced Categories */}
+              <div className="space-y-3">
+                {Object.entries(enhancedKeywordCategories).map(
+                  ([category, keywords]) => (
+                    <div key={category}>
+                      <h4 className="text-white font-black mb-2 text-sm uppercase">
+                        {category}
+                      </h4>
+                      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-1">
+                        {keywords.map((keyword) => (
+                          <Button
+                            key={keyword}
+                            variant="outline"
+                            size="sm"
+                            onClick={() => toggleKeyword(keyword)}
+                            className={`text-xs h-6 px-2 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
+                              selectedKeywords.includes(keyword)
+                                ? "bg-brand-red text-black border-brand-red hover:bg-brand-red hover:shadow-brand-red/50"
+                                : "bg-transparent text-brand-red border-brand-red hover:bg-brand-red hover:text-black hover:shadow-brand-red/50"
+                            }`}
+                            style={{ fontWeight: 900, minWidth: "60px" }}
+                          >
+                            <span className="truncate text-[10px]">
+                              {keyword}
+                              {selectedKeywords.includes(keyword) && (
+                                <span className="ml-1">×</span>
+                              )}
+                            </span>
+                          </Button>
+                        ))}
+                      </div>
+                    </div>
+                  ),
+                )}
+              </div>
+            </div>
           </CardContent>
         </Card>
 

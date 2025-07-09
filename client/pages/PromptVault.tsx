@@ -277,7 +277,7 @@ export default function PromptVault() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-3 sm:px-4 py-4 space-y-4">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 py-3 space-y-3">
         {/* Top Row: Step 1 (Left) and Step 2 (Right) - Same width as Step 3 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {/* Step 1 - Top Left */}
@@ -381,29 +381,29 @@ export default function PromptVault() {
               STEP 3: SELECT KEYWORDS
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-3">
             {/* Two Column Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               {/* Left Column - Original Categories */}
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {Object.entries(keywordCategories).map(
                   ([category, keywords]) => (
                     <div
                       key={category}
-                      style={{ backgroundColor: "#000000", minHeight: "200px" }}
-                      className="rounded-lg p-4 border border-gray-700 flex flex-col"
+                      style={{ backgroundColor: "#000000", minHeight: "180px" }}
+                      className="rounded-lg p-3 border border-gray-700 flex flex-col"
                     >
-                      <h4 className="text-white font-black mb-3 text-base uppercase tracking-wide">
+                      <h4 className="text-white font-black mb-2 text-base uppercase tracking-wide">
                         {category}
                       </h4>
-                      <div className="grid grid-cols-8 gap-1 flex-1">
-                        {keywords.slice(0, 32).map((keyword) => (
+                      <div className="grid grid-cols-6 gap-1 flex-1">
+                        {keywords.slice(0, 24).map((keyword) => (
                           <Button
                             key={keyword}
                             variant="outline"
                             size="sm"
                             onClick={() => toggleKeyword(keyword)}
-                            className={`text-xs h-7 px-1 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
+                            className={`text-xs h-6 px-1 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
                               selectedKeywords.includes(keyword)
                                 ? "text-white border-brand-red hover:shadow-brand-red/50"
                                 : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
@@ -432,25 +432,25 @@ export default function PromptVault() {
               </div>
 
               {/* Right Column - Enhanced Categories */}
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {Object.entries(enhancedKeywordCategories).map(
                   ([category, keywords]) => (
                     <div
                       key={category}
-                      style={{ backgroundColor: "#000000", minHeight: "200px" }}
-                      className="rounded-lg p-4 border border-gray-700 flex flex-col"
+                      style={{ backgroundColor: "#000000", minHeight: "180px" }}
+                      className="rounded-lg p-3 border border-gray-700 flex flex-col"
                     >
-                      <h4 className="text-white font-black mb-3 text-base uppercase tracking-wide">
+                      <h4 className="text-white font-black mb-2 text-base uppercase tracking-wide">
                         {category}
                       </h4>
-                      <div className="grid grid-cols-8 gap-1 flex-1">
-                        {keywords.slice(0, 32).map((keyword) => (
+                      <div className="grid grid-cols-6 gap-1 flex-1">
+                        {keywords.slice(0, 24).map((keyword) => (
                           <Button
                             key={keyword}
                             variant="outline"
                             size="sm"
                             onClick={() => toggleKeyword(keyword)}
-                            className={`text-xs h-7 px-1 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
+                            className={`text-xs h-6 px-1 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
                               selectedKeywords.includes(keyword)
                                 ? "text-white border-brand-red hover:shadow-brand-red/50"
                                 : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"

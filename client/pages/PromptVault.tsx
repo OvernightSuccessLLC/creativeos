@@ -60,16 +60,6 @@ export default function PromptVault() {
       "Vintage",
       "Modern",
     ],
-    Texture: [
-      "Smooth",
-      "Rough",
-      "Metallic",
-      "Wooden",
-      "Glass",
-      "Fabric",
-      "Stone",
-      "Plastic",
-    ],
     "Creative Direction": [
       "Professional",
       "Artistic",
@@ -117,7 +107,6 @@ export default function PromptVault() {
       lighting: [] as string[],
       framing: [] as string[],
       locations: [] as string[],
-      texture: [] as string[],
       creative: [] as string[],
       quality: [] as string[],
     };
@@ -136,9 +125,6 @@ export default function PromptVault() {
           break;
         case "locations":
           organizedKeywords.locations.push(keyword.toLowerCase());
-          break;
-        case "texture":
-          organizedKeywords.texture.push(keyword.toLowerCase());
           break;
         case "creative direction":
           organizedKeywords.creative.push(keyword.toLowerCase());
@@ -165,11 +151,6 @@ export default function PromptVault() {
     // Add lighting information
     if (organizedKeywords.lighting.length > 0) {
       prompt += `, ${organizedKeywords.lighting.join(", ")}`;
-    }
-
-    // Add texture details
-    if (organizedKeywords.texture.length > 0) {
-      prompt += `, ${organizedKeywords.texture.join(", ")}`;
     }
 
     // Add creative direction
@@ -228,9 +209,9 @@ export default function PromptVault() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-6 py-6 space-y-6">
+      <div className="max-w-6xl mx-auto px-4 py-4 space-y-4">
         {/* Top Row: Step 1 (Left) and Step 2 (Right) - Same width as Step 3 */}
-        <div className="grid lg:grid-cols-2 gap-4">
+        <div className="grid lg:grid-cols-2 gap-3">
           {/* Step 1 - Top Left */}
           <Card className="bg-black border border-gray-900 shadow-xl">
             <CardHeader className="pb-2">
@@ -377,7 +358,7 @@ export default function PromptVault() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="bg-gray-900 border border-gray-700 rounded p-4 min-h-[120px]">
+            <div className="bg-gray-900 border border-gray-700 rounded p-3 min-h-[80px]">
               <p className="text-white text-sm">
                 {generatePrompt() ||
                   "Start by adding your creative vision and selecting keywords..."}
@@ -447,7 +428,7 @@ export default function PromptVault() {
                 style={{ width: `${qualityScore}%` }}
               ></div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
               <div className="flex items-center justify-between text-white">
                 <span>Instructions</span>
                 <span
@@ -485,7 +466,7 @@ export default function PromptVault() {
                       ),
                     ).size
                   }
-                  /6
+                  /5
                 </span>
               </div>
             </div>

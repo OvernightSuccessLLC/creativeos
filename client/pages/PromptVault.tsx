@@ -107,7 +107,17 @@ export default function PromptVault() {
   };
 
   const copyPrompt = () => {
-    navigator.clipboard.writeText(generatePrompt());
+    const prompt = generatePrompt();
+    navigator.clipboard.writeText(prompt);
+    // Show visual feedback that copy was successful
+    const button = document.querySelector("[data-copy-button]");
+    if (button) {
+      const originalText = button.textContent;
+      button.textContent = "COPIED!";
+      setTimeout(() => {
+        button.textContent = originalText;
+      }, 2000);
+    }
   };
 
   return (
@@ -132,9 +142,12 @@ export default function PromptVault() {
           {/* Left Column - Input */}
           <div className="space-y-6">
             {/* Step 1 */}
-            <Card className="bg-black border border-gray-800">
+            <Card className="bg-black border border-gray-900 shadow-xl">
               <CardHeader>
-                <CardTitle className="text-brand-red text-sm font-bold tracking-wide border-b border-brand-red pb-2">
+                <CardTitle
+                  className="text-brand-red text-sm font-black tracking-wide border-b border-brand-red pb-2"
+                  style={{ fontWeight: 900 }}
+                >
                   STEP 1: CREATIVE VISION
                 </CardTitle>
               </CardHeader>
@@ -156,9 +169,12 @@ export default function PromptVault() {
             </Card>
 
             {/* Step 2 */}
-            <Card className="bg-black border border-gray-800">
+            <Card className="bg-black border border-gray-900 shadow-xl">
               <CardHeader>
-                <CardTitle className="text-brand-red text-sm font-bold tracking-wide border-b border-brand-red pb-2">
+                <CardTitle
+                  className="text-brand-red text-sm font-black tracking-wide border-b border-brand-red pb-2"
+                  style={{ fontWeight: 900 }}
+                >
                   STEP 2: REFERENCE IMAGE (OPTIONAL)
                 </CardTitle>
               </CardHeader>
@@ -170,18 +186,22 @@ export default function PromptVault() {
                   </p>
                   <Button
                     variant="outline"
-                    className="border-gray-700 text-white hover:bg-gray-800"
+                    className="border-brand-red text-brand-red hover:bg-brand-red hover:text-black font-black"
+                    style={{ fontWeight: 900 }}
                   >
-                    Choose File
+                    CHOOSE FILE
                   </Button>
                 </div>
               </CardContent>
             </Card>
 
             {/* Step 3 */}
-            <Card className="bg-black border border-gray-800">
+            <Card className="bg-black border border-gray-900 shadow-xl">
               <CardHeader>
-                <CardTitle className="text-brand-red text-sm font-bold tracking-wide border-b border-brand-red pb-2">
+                <CardTitle
+                  className="text-brand-red text-sm font-black tracking-wide border-b border-brand-red pb-2"
+                  style={{ fontWeight: 900 }}
+                >
                   STEP 3: SELECT KEYWORDS
                 </CardTitle>
               </CardHeader>
@@ -205,13 +225,14 @@ export default function PromptVault() {
                             onClick={() => toggleKeyword(keyword)}
                             className={
                               selectedKeywords.includes(keyword)
-                                ? "bg-brand-red text-black hover:bg-brand-red-hover"
-                                : "border-gray-700 text-white hover:bg-gray-800"
+                                ? "bg-brand-red text-black hover:bg-brand-red-hover font-black"
+                                : "border-brand-red text-brand-red hover:bg-brand-red hover:text-black font-black"
                             }
+                            style={{ fontWeight: 900 }}
                           >
                             {keyword}
                             {selectedKeywords.includes(keyword) && (
-                              <span className="ml-1">×</span>
+                              <span className="ml-1 font-black">×</span>
                             )}
                           </Button>
                         ))}
@@ -226,10 +247,13 @@ export default function PromptVault() {
           {/* Right Column - Output */}
           <div className="space-y-6">
             {/* Quality Meter */}
-            <Card className="bg-gray-900 border border-gray-700">
+            <Card className="bg-black border border-gray-900 shadow-xl">
               <CardHeader>
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-brand-red text-sm font-bold tracking-wide">
+                  <CardTitle
+                    className="text-brand-red text-sm font-black tracking-wide"
+                    style={{ fontWeight: 900 }}
+                  >
                     PROMPT QUALITY
                   </CardTitle>
                   <Badge
@@ -246,7 +270,7 @@ export default function PromptVault() {
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="w-full bg-gray-800 rounded-full h-3 mb-4">
+                <div className="w-full bg-gray-900 rounded-full h-3 mb-4 border border-gray-800">
                   <div
                     className={`h-3 rounded-full transition-all duration-300 ${
                       qualityScore >= 80
@@ -288,9 +312,12 @@ export default function PromptVault() {
             </Card>
 
             {/* Generated Prompt */}
-            <Card className="bg-black border border-gray-800">
+            <Card className="bg-black border border-gray-900 shadow-xl">
               <CardHeader>
-                <CardTitle className="text-brand-red text-sm font-bold tracking-wide border-b border-brand-red pb-2">
+                <CardTitle
+                  className="text-brand-red text-sm font-black tracking-wide border-b border-brand-red pb-2"
+                  style={{ fontWeight: 900 }}
+                >
                   GENERATED SORA PROMPT
                 </CardTitle>
               </CardHeader>
@@ -307,14 +334,17 @@ export default function PromptVault() {
                     disabled={
                       !customInstructions && selectedKeywords.length === 0
                     }
-                    className="bg-brand-red hover:bg-brand-red-hover text-black font-bold flex-1"
+                    className="bg-brand-red hover:bg-brand-red-hover text-black font-black flex-1"
+                    style={{ fontWeight: 900 }}
+                    data-copy-button
                   >
                     <Copy className="w-4 h-4 mr-2" />
                     COPY FOR SORA
                   </Button>
                   <Button
                     variant="outline"
-                    className="border-gray-700 text-white hover:bg-gray-800"
+                    className="border-brand-red text-brand-red hover:bg-brand-red hover:text-black font-black"
+                    style={{ fontWeight: 900 }}
                   >
                     <Star className="w-4 h-4" />
                   </Button>
@@ -323,9 +353,12 @@ export default function PromptVault() {
             </Card>
 
             {/* Pro Tips */}
-            <Card className="bg-gray-900 border border-gray-700">
+            <Card className="bg-black border border-gray-900 shadow-xl">
               <CardHeader>
-                <CardTitle className="text-brand-red text-sm font-bold tracking-wide">
+                <CardTitle
+                  className="text-brand-red text-sm font-black tracking-wide"
+                  style={{ fontWeight: 900 }}
+                >
                   PRO TIPS
                 </CardTitle>
               </CardHeader>

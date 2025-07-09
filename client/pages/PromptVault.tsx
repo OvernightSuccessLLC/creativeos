@@ -355,9 +355,9 @@ export default function PromptVault() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-4 space-y-4">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 py-4 space-y-4">
         {/* Top Row: Step 1 (Left) and Step 2 (Right) - Same width as Step 3 */}
-        <div className="grid lg:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {/* Step 1 - Top Left */}
           <Card className="bg-black border border-gray-900 shadow-xl">
             <CardHeader className="pb-2">
@@ -460,7 +460,7 @@ export default function PromptVault() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Left Column - Original Categories */}
               <div className="space-y-3">
                 {Object.entries(keywordCategories).map(

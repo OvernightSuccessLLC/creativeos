@@ -517,7 +517,7 @@ export default function PromptVault() {
                                 ? "bg-brand-red text-black border-brand-red hover:bg-brand-red hover:shadow-brand-red/50"
                                 : "bg-transparent text-brand-red border-brand-red hover:bg-brand-red hover:text-black hover:shadow-brand-red/50"
                             }`}
-                            style={{ fontWeight: 900, minWidth: "60px" }}
+                            style={{ fontWeight: 900, minWidth: "70px" }}
                           >
                             <span className="truncate text-[10px]">
                               {keyword}

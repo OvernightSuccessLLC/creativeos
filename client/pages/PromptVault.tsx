@@ -382,100 +382,200 @@ export default function PromptVault() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            {/* Two Column Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-              {/* Left Column - Original Categories */}
-              <div className="space-y-3">
-                {Object.entries(keywordCategories).map(
-                  ([category, keywords]) => (
-                    <div
-                      key={category}
-                      style={{ backgroundColor: "#000000", minHeight: "180px" }}
-                      className="rounded-lg p-3 border border-gray-700 flex flex-col"
-                    >
-                      <h4 className="text-white font-black mb-2 text-base uppercase tracking-wide">
-                        {category}
-                      </h4>
-                      <div className="grid grid-cols-6 gap-1 flex-1">
-                        {keywords.slice(0, 24).map((keyword) => (
-                          <Button
-                            key={keyword}
-                            variant="outline"
-                            size="sm"
-                            onClick={() => toggleKeyword(keyword)}
-                            className={`text-xs h-6 px-1 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
-                              selectedKeywords.includes(keyword)
-                                ? "text-white border-brand-red hover:shadow-brand-red/50"
-                                : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
-                            }`}
-                            style={{
-                              fontWeight: 900,
-                              backgroundColor: selectedKeywords.includes(
-                                keyword,
-                              )
-                                ? "#FF4E33"
-                                : "#000000",
-                            }}
-                          >
-                            <span className="text-[8px] truncate">
-                              {keyword}
-                              {selectedKeywords.includes(keyword) && (
-                                <span className="ml-1">×</span>
-                              )}
-                            </span>
-                          </Button>
-                        ))}
-                      </div>
-                    </div>
-                  ),
-                )}
+            {/* 2x2 Grid for first 4 categories */}
+            <div className="grid grid-cols-2 gap-3">
+              {/* Top Left - Style (Theme) */}
+              <div
+                style={{ backgroundColor: "#000000", minHeight: "160px" }}
+                className="rounded-lg p-3 border border-gray-700 flex flex-col"
+              >
+                <h4 className="text-white font-black mb-2 text-sm uppercase tracking-wide">
+                  STYLE
+                </h4>
+                <div className="grid grid-cols-6 gap-1 flex-1">
+                  {enhancedKeywordCategories.Style.slice(0, 24).map(
+                    (keyword) => (
+                      <Button
+                        key={keyword}
+                        variant="outline"
+                        size="sm"
+                        onClick={() => toggleKeyword(keyword)}
+                        className={`text-xs h-6 px-1 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
+                          selectedKeywords.includes(keyword)
+                            ? "text-white border-brand-red hover:shadow-brand-red/50"
+                            : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
+                        }`}
+                        style={{
+                          fontWeight: 900,
+                          backgroundColor: selectedKeywords.includes(keyword)
+                            ? "#FF4E33"
+                            : "#000000",
+                        }}
+                      >
+                        <span className="text-[7px] truncate uppercase font-black">
+                          {keyword.toUpperCase()}
+                          {selectedKeywords.includes(keyword) && (
+                            <span className="ml-1">×</span>
+                          )}
+                        </span>
+                      </Button>
+                    ),
+                  )}
+                </div>
               </div>
 
-              {/* Right Column - Enhanced Categories */}
-              <div className="space-y-3">
-                {Object.entries(enhancedKeywordCategories).map(
-                  ([category, keywords]) => (
-                    <div
-                      key={category}
-                      style={{ backgroundColor: "#000000", minHeight: "180px" }}
-                      className="rounded-lg p-3 border border-gray-700 flex flex-col"
+              {/* Top Right - Framing */}
+              <div
+                style={{ backgroundColor: "#000000", minHeight: "160px" }}
+                className="rounded-lg p-3 border border-gray-700 flex flex-col"
+              >
+                <h4 className="text-white font-black mb-2 text-sm uppercase tracking-wide">
+                  FRAMING
+                </h4>
+                <div className="grid grid-cols-6 gap-1 flex-1">
+                  {keywordCategories.Framing.slice(0, 24).map((keyword) => (
+                    <Button
+                      key={keyword}
+                      variant="outline"
+                      size="sm"
+                      onClick={() => toggleKeyword(keyword)}
+                      className={`text-xs h-6 px-1 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
+                        selectedKeywords.includes(keyword)
+                          ? "text-white border-brand-red hover:shadow-brand-red/50"
+                          : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
+                      }`}
+                      style={{
+                        fontWeight: 900,
+                        backgroundColor: selectedKeywords.includes(keyword)
+                          ? "#FF4E33"
+                          : "#000000",
+                      }}
                     >
-                      <h4 className="text-white font-black mb-2 text-base uppercase tracking-wide">
-                        {category}
-                      </h4>
-                      <div className="grid grid-cols-6 gap-1 flex-1">
-                        {keywords.slice(0, 24).map((keyword) => (
-                          <Button
-                            key={keyword}
-                            variant="outline"
-                            size="sm"
-                            onClick={() => toggleKeyword(keyword)}
-                            className={`text-xs h-6 px-1 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
-                              selectedKeywords.includes(keyword)
-                                ? "text-white border-brand-red hover:shadow-brand-red/50"
-                                : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
-                            }`}
-                            style={{
-                              fontWeight: 900,
-                              backgroundColor: selectedKeywords.includes(
-                                keyword,
-                              )
-                                ? "#FF4E33"
-                                : "#000000",
-                            }}
-                          >
-                            <span className="text-[8px] truncate">
-                              {keyword}
-                              {selectedKeywords.includes(keyword) && (
-                                <span className="ml-1">×</span>
-                              )}
-                            </span>
-                          </Button>
-                        ))}
-                      </div>
-                    </div>
-                  ),
-                )}
+                      <span className="text-[7px] truncate uppercase font-black">
+                        {keyword.toUpperCase()}
+                        {selectedKeywords.includes(keyword) && (
+                          <span className="ml-1">×</span>
+                        )}
+                      </span>
+                    </Button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Middle Left - Lighting */}
+              <div
+                style={{ backgroundColor: "#000000", minHeight: "160px" }}
+                className="rounded-lg p-3 border border-gray-700 flex flex-col"
+              >
+                <h4 className="text-white font-black mb-2 text-sm uppercase tracking-wide">
+                  LIGHTING
+                </h4>
+                <div className="grid grid-cols-6 gap-1 flex-1">
+                  {keywordCategories.Lighting.slice(0, 24).map((keyword) => (
+                    <Button
+                      key={keyword}
+                      variant="outline"
+                      size="sm"
+                      onClick={() => toggleKeyword(keyword)}
+                      className={`text-xs h-6 px-1 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
+                        selectedKeywords.includes(keyword)
+                          ? "text-white border-brand-red hover:shadow-brand-red/50"
+                          : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
+                      }`}
+                      style={{
+                        fontWeight: 900,
+                        backgroundColor: selectedKeywords.includes(keyword)
+                          ? "#FF4E33"
+                          : "#000000",
+                      }}
+                    >
+                      <span className="text-[7px] truncate uppercase font-black">
+                        {keyword.toUpperCase()}
+                        {selectedKeywords.includes(keyword) && (
+                          <span className="ml-1">×</span>
+                        )}
+                      </span>
+                    </Button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Middle Right - Locations */}
+              <div
+                style={{ backgroundColor: "#000000", minHeight: "160px" }}
+                className="rounded-lg p-3 border border-gray-700 flex flex-col"
+              >
+                <h4 className="text-white font-black mb-2 text-sm uppercase tracking-wide">
+                  LOCATIONS
+                </h4>
+                <div className="grid grid-cols-6 gap-1 flex-1">
+                  {keywordCategories.Locations.slice(0, 24).map((keyword) => (
+                    <Button
+                      key={keyword}
+                      variant="outline"
+                      size="sm"
+                      onClick={() => toggleKeyword(keyword)}
+                      className={`text-xs h-6 px-1 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
+                        selectedKeywords.includes(keyword)
+                          ? "text-white border-brand-red hover:shadow-brand-red/50"
+                          : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
+                      }`}
+                      style={{
+                        fontWeight: 900,
+                        backgroundColor: selectedKeywords.includes(keyword)
+                          ? "#FF4E33"
+                          : "#000000",
+                      }}
+                    >
+                      <span className="text-[7px] truncate uppercase font-black">
+                        {keyword.toUpperCase()}
+                        {selectedKeywords.includes(keyword) && (
+                          <span className="ml-1">×</span>
+                        )}
+                      </span>
+                    </Button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Creative Direction - Full Width Container */}
+            <div
+              style={{ backgroundColor: "#000000", minHeight: "160px" }}
+              className="rounded-lg p-3 border border-gray-700 flex flex-col"
+            >
+              <h4 className="text-white font-black mb-2 text-sm uppercase tracking-wide text-center">
+                CREATIVE DIRECTION
+              </h4>
+              <div className="grid grid-cols-8 gap-1 flex-1">
+                {enhancedKeywordCategories["Creative Direction"]
+                  .slice(0, 32)
+                  .map((keyword) => (
+                    <Button
+                      key={keyword}
+                      variant="outline"
+                      size="sm"
+                      onClick={() => toggleKeyword(keyword)}
+                      className={`text-xs h-6 px-1 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
+                        selectedKeywords.includes(keyword)
+                          ? "text-white border-brand-red hover:shadow-brand-red/50"
+                          : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
+                      }`}
+                      style={{
+                        fontWeight: 900,
+                        backgroundColor: selectedKeywords.includes(keyword)
+                          ? "#FF4E33"
+                          : "#000000",
+                      }}
+                    >
+                      <span className="text-[7px] truncate uppercase font-black">
+                        {keyword.toUpperCase()}
+                        {selectedKeywords.includes(keyword) && (
+                          <span className="ml-1">×</span>
+                        )}
+                      </span>
+                    </Button>
+                  ))}
               </div>
             </div>
           </CardContent>

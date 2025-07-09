@@ -277,7 +277,7 @@ export default function PromptVault() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-3 sm:px-4 py-3 space-y-3">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 space-y-4">
         {/* Top Row: Step 1 (Left) and Step 2 (Right) - Same width as Step 3 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {/* Step 1 - Top Left */}
@@ -383,7 +383,7 @@ export default function PromptVault() {
           </CardHeader>
           <CardContent className="space-y-3">
             {/* 2x2 Grid for first 4 categories */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-4">
               {/* Top Left - Style (Theme) */}
               <div
                 style={{ backgroundColor: "#000000", minHeight: "160px" }}

@@ -120,20 +120,20 @@ export default function PromptVault() {
     ],
     "Creative Direction": [
       "Wes Anderson meets Balenciaga",
-      "Apple ad directed by Kubrick",
-      "Old Money vibes",
-      "Virgil Abloh x Eames visual tension",
-      "Yeezy drop in a NASA lab",
-      "Warhol meets Warhol",
-      "Quiet luxury meets pitchfork",
-      "High fashion in a war zone",
       "Edward Hopper moodboard",
       "Gucci in a cyber slum",
+      "Apple ad directed by Kubrick",
       "Tarantino aesthetic violence",
+      "Old Money vibes",
+      "Virgil Abloh x Eames visual tension",
       "Hitchcock suspense tension",
       "Lynch surreal dreamscape",
+      "Yeezy drop in a NASA lab",
       "Scorsese gritty realism",
+      "Warhol meets Warhol",
       "Nolan temporal complexity",
+      "Quiet luxury meets pitchfork",
+      "High fashion in a war zone",
     ],
   };
 
@@ -263,7 +263,7 @@ export default function PromptVault() {
   return (
     <div className="min-h-screen bg-brand-red text-black">
       {/* Header */}
-      <div className="bg-black px-6 py-12 text-center">
+      <div className="bg-black px-6 py-6 text-center">
         <div className="flex items-center justify-center space-x-3 mb-4">
           <Database className="w-8 h-8 text-brand-red" />
           <h1 className="text-4xl md:text-6xl font-bold text-white">
@@ -373,7 +373,7 @@ export default function PromptVault() {
 
         {/* Step 3 - Full Width Keywords */}
         <Card className="bg-black border border-gray-900 shadow-xl">
-          <CardHeader>
+          <CardHeader className="py-3">
             <CardTitle
               className="text-brand-red text-sm font-black tracking-wide border-b border-brand-red pb-2"
               style={{ fontWeight: 900 }}
@@ -547,7 +547,7 @@ export default function PromptVault() {
               <h4 className="text-white font-black mb-2 text-sm uppercase tracking-wide text-center">
                 CREATIVE DIRECTION
               </h4>
-              <div className="grid grid-cols-8 gap-1 flex-1">
+              <div className="flex flex-row flex-wrap justify-start items-start gap-1 flex-1 w-full">
                 {enhancedKeywordCategories["Creative Direction"]
                   .slice(0, 32)
                   .map((keyword) => (

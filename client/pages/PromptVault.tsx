@@ -386,13 +386,13 @@ export default function PromptVault() {
             <div className="grid grid-cols-2 gap-4">
               {/* Top Left - Style (Theme) */}
               <div
-                style={{ backgroundColor: "#000000", minHeight: "160px" }}
-                className="rounded-lg p-3 border border-gray-700 flex flex-col"
+                style={{ backgroundColor: "#000000", minHeight: "180px" }}
+                className="rounded-lg p-4 border border-gray-700 flex flex-col"
               >
-                <h4 className="text-white font-black mb-2 text-sm uppercase tracking-wide">
+                <h4 className="text-white font-black mb-3 text-sm uppercase tracking-wide">
                   STYLE
                 </h4>
-                <div className="grid grid-cols-6 gap-1 flex-1">
+                <div className="grid grid-cols-6 gap-2 flex-1">
                   {enhancedKeywordCategories.Style.slice(0, 24).map(
                     (keyword) => (
                       <Button
@@ -400,7 +400,7 @@ export default function PromptVault() {
                         variant="outline"
                         size="sm"
                         onClick={() => toggleKeyword(keyword)}
-                        className={`text-xs h-6 px-1 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
+                        className={`text-xs h-8 px-3 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
                           selectedKeywords.includes(keyword)
                             ? "text-white border-brand-red hover:shadow-brand-red/50"
                             : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
@@ -412,7 +412,7 @@ export default function PromptVault() {
                             : "#000000",
                         }}
                       >
-                        <span className="text-[7px] truncate uppercase font-black">
+                        <span className="text-[11px] whitespace-nowrap uppercase font-black">
                           {keyword.toUpperCase()}
                           {selectedKeywords.includes(keyword) && (
                             <span className="ml-1">×</span>
@@ -426,20 +426,20 @@ export default function PromptVault() {
 
               {/* Top Right - Framing */}
               <div
-                style={{ backgroundColor: "#000000", minHeight: "160px" }}
-                className="rounded-lg p-3 border border-gray-700 flex flex-col"
+                style={{ backgroundColor: "#000000", minHeight: "180px" }}
+                className="rounded-lg p-4 border border-gray-700 flex flex-col"
               >
-                <h4 className="text-white font-black mb-2 text-sm uppercase tracking-wide">
+                <h4 className="text-white font-black mb-3 text-sm uppercase tracking-wide">
                   FRAMING
                 </h4>
-                <div className="grid grid-cols-6 gap-1 flex-1">
+                <div className="grid grid-cols-6 gap-2 flex-1">
                   {keywordCategories.Framing.slice(0, 24).map((keyword) => (
                     <Button
                       key={keyword}
                       variant="outline"
                       size="sm"
                       onClick={() => toggleKeyword(keyword)}
-                      className={`text-xs h-6 px-1 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
+                      className={`text-xs h-8 px-3 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
                         selectedKeywords.includes(keyword)
                           ? "text-white border-brand-red hover:shadow-brand-red/50"
                           : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
@@ -451,7 +451,7 @@ export default function PromptVault() {
                           : "#000000",
                       }}
                     >
-                      <span className="text-[7px] truncate uppercase font-black">
+                      <span className="text-[11px] whitespace-nowrap uppercase font-black">
                         {keyword.toUpperCase()}
                         {selectedKeywords.includes(keyword) && (
                           <span className="ml-1">×</span>
@@ -464,20 +464,20 @@ export default function PromptVault() {
 
               {/* Middle Left - Lighting */}
               <div
-                style={{ backgroundColor: "#000000", minHeight: "160px" }}
-                className="rounded-lg p-3 border border-gray-700 flex flex-col"
+                style={{ backgroundColor: "#000000", minHeight: "180px" }}
+                className="rounded-lg p-4 border border-gray-700 flex flex-col"
               >
-                <h4 className="text-white font-black mb-2 text-sm uppercase tracking-wide">
+                <h4 className="text-white font-black mb-3 text-sm uppercase tracking-wide">
                   LIGHTING
                 </h4>
-                <div className="grid grid-cols-6 gap-1 flex-1">
+                <div className="grid grid-cols-6 gap-2 flex-1">
                   {keywordCategories.Lighting.slice(0, 24).map((keyword) => (
                     <Button
                       key={keyword}
                       variant="outline"
                       size="sm"
                       onClick={() => toggleKeyword(keyword)}
-                      className={`text-xs h-6 px-1 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
+                      className={`text-xs h-8 px-3 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
                         selectedKeywords.includes(keyword)
                           ? "text-white border-brand-red hover:shadow-brand-red/50"
                           : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
@@ -489,7 +489,7 @@ export default function PromptVault() {
                           : "#000000",
                       }}
                     >
-                      <span className="text-[7px] truncate uppercase font-black">
+                      <span className="text-[11px] whitespace-nowrap uppercase font-black">
                         {keyword.toUpperCase()}
                         {selectedKeywords.includes(keyword) && (
                           <span className="ml-1">×</span>
@@ -502,20 +502,20 @@ export default function PromptVault() {
 
               {/* Middle Right - Locations */}
               <div
-                style={{ backgroundColor: "#000000", minHeight: "160px" }}
-                className="rounded-lg p-3 border border-gray-700 flex flex-col"
+                style={{ backgroundColor: "#000000", minHeight: "180px" }}
+                className="rounded-lg p-4 border border-gray-700 flex flex-col"
               >
-                <h4 className="text-white font-black mb-2 text-sm uppercase tracking-wide">
+                <h4 className="text-white font-black mb-3 text-sm uppercase tracking-wide">
                   LOCATIONS
                 </h4>
-                <div className="grid grid-cols-6 gap-1 flex-1">
+                <div className="grid grid-cols-6 gap-2 flex-1">
                   {keywordCategories.Locations.slice(0, 24).map((keyword) => (
                     <Button
                       key={keyword}
                       variant="outline"
                       size="sm"
                       onClick={() => toggleKeyword(keyword)}
-                      className={`text-xs h-6 px-1 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
+                      className={`text-xs h-8 px-3 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
                         selectedKeywords.includes(keyword)
                           ? "text-white border-brand-red hover:shadow-brand-red/50"
                           : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
@@ -527,7 +527,7 @@ export default function PromptVault() {
                           : "#000000",
                       }}
                     >
-                      <span className="text-[7px] truncate uppercase font-black">
+                      <span className="text-[11px] whitespace-nowrap uppercase font-black">
                         {keyword.toUpperCase()}
                         {selectedKeywords.includes(keyword) && (
                           <span className="ml-1">×</span>
@@ -541,13 +541,13 @@ export default function PromptVault() {
 
             {/* Creative Direction - Full Width Container */}
             <div
-              style={{ backgroundColor: "#000000", minHeight: "160px" }}
-              className="rounded-lg p-3 border border-gray-700 flex flex-col"
+              style={{ backgroundColor: "#000000", minHeight: "180px" }}
+              className="rounded-lg p-4 border border-gray-700 flex flex-col"
             >
-              <h4 className="text-white font-black mb-2 text-sm uppercase tracking-wide text-center">
+              <h4 className="text-white font-black mb-3 text-sm uppercase tracking-wide text-center">
                 CREATIVE DIRECTION
               </h4>
-              <div className="flex flex-row flex-wrap justify-start items-start gap-1 flex-1 w-full">
+              <div className="flex flex-row flex-wrap justify-start items-start gap-2 flex-1 w-full">
                 {enhancedKeywordCategories["Creative Direction"]
                   .slice(0, 32)
                   .map((keyword) => (
@@ -556,7 +556,7 @@ export default function PromptVault() {
                       variant="outline"
                       size="sm"
                       onClick={() => toggleKeyword(keyword)}
-                      className={`text-xs h-6 px-1 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
+                      className={`text-xs h-8 px-3 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
                         selectedKeywords.includes(keyword)
                           ? "text-white border-brand-red hover:shadow-brand-red/50"
                           : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
@@ -568,7 +568,7 @@ export default function PromptVault() {
                           : "#000000",
                       }}
                     >
-                      <span className="text-[7px] truncate uppercase font-black">
+                      <span className="text-[11px] whitespace-nowrap uppercase font-black">
                         {keyword.toUpperCase()}
                         {selectedKeywords.includes(keyword) && (
                           <span className="ml-1">×</span>

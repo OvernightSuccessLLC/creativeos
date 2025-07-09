@@ -381,201 +381,128 @@ export default function PromptVault() {
               STEP 3: SELECT KEYWORDS
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3">
-            {/* 2x2 Grid for first 4 categories */}
-            <div className="grid grid-cols-2 gap-4">
-              {/* Top Left - Style (Theme) */}
-              <div
-                style={{ backgroundColor: "#000000", minHeight: "180px" }}
-                className="rounded-lg p-4 border border-gray-700 flex flex-col"
-              >
-                <h4 className="text-white font-black mb-3 text-sm uppercase tracking-wide">
-                  STYLE
-                </h4>
-                <div className="grid grid-cols-6 gap-2 flex-1">
-                  {enhancedKeywordCategories.Style.slice(0, 24).map(
-                    (keyword) => (
-                      <Button
-                        key={keyword}
-                        variant="outline"
-                        size="sm"
-                        onClick={() => toggleKeyword(keyword)}
-                        className={`text-xs h-8 px-3 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
-                          selectedKeywords.includes(keyword)
-                            ? "text-white border-brand-red hover:shadow-brand-red/50"
-                            : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
-                        }`}
-                        style={{
-                          fontWeight: 900,
-                          backgroundColor: selectedKeywords.includes(keyword)
-                            ? "#FF4E33"
-                            : "#000000",
-                        }}
-                      >
-                        <span className="text-[11px] whitespace-nowrap uppercase font-black">
-                          {keyword.toUpperCase()}
-                          {selectedKeywords.includes(keyword) && (
-                            <span className="ml-1">×</span>
-                          )}
-                        </span>
-                      </Button>
-                    ),
-                  )}
-                </div>
-              </div>
-
-              {/* Top Right - Framing */}
-              <div
-                style={{ backgroundColor: "#000000", minHeight: "180px" }}
-                className="rounded-lg p-4 border border-gray-700 flex flex-col"
-              >
-                <h4 className="text-white font-black mb-3 text-sm uppercase tracking-wide">
-                  FRAMING
-                </h4>
-                <div className="grid grid-cols-6 gap-2 flex-1">
-                  {keywordCategories.Framing.slice(0, 24).map((keyword) => (
-                    <Button
-                      key={keyword}
-                      variant="outline"
-                      size="sm"
-                      onClick={() => toggleKeyword(keyword)}
-                      className={`text-xs h-8 px-3 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
-                        selectedKeywords.includes(keyword)
-                          ? "text-white border-brand-red hover:shadow-brand-red/50"
-                          : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
-                      }`}
-                      style={{
-                        fontWeight: 900,
-                        backgroundColor: selectedKeywords.includes(keyword)
-                          ? "#FF4E33"
-                          : "#000000",
-                      }}
-                    >
-                      <span className="text-[11px] whitespace-nowrap uppercase font-black">
-                        {keyword.toUpperCase()}
-                        {selectedKeywords.includes(keyword) && (
-                          <span className="ml-1">×</span>
-                        )}
-                      </span>
-                    </Button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Middle Left - Lighting */}
-              <div
-                style={{ backgroundColor: "#000000", minHeight: "180px" }}
-                className="rounded-lg p-4 border border-gray-700 flex flex-col"
-              >
-                <h4 className="text-white font-black mb-3 text-sm uppercase tracking-wide">
-                  LIGHTING
-                </h4>
-                <div className="grid grid-cols-6 gap-2 flex-1">
-                  {keywordCategories.Lighting.slice(0, 24).map((keyword) => (
-                    <Button
-                      key={keyword}
-                      variant="outline"
-                      size="sm"
-                      onClick={() => toggleKeyword(keyword)}
-                      className={`text-xs h-8 px-3 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
-                        selectedKeywords.includes(keyword)
-                          ? "text-white border-brand-red hover:shadow-brand-red/50"
-                          : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
-                      }`}
-                      style={{
-                        fontWeight: 900,
-                        backgroundColor: selectedKeywords.includes(keyword)
-                          ? "#FF4E33"
-                          : "#000000",
-                      }}
-                    >
-                      <span className="text-[11px] whitespace-nowrap uppercase font-black">
-                        {keyword.toUpperCase()}
-                        {selectedKeywords.includes(keyword) && (
-                          <span className="ml-1">×</span>
-                        )}
-                      </span>
-                    </Button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Middle Right - Locations */}
-              <div
-                style={{ backgroundColor: "#000000", minHeight: "180px" }}
-                className="rounded-lg p-4 border border-gray-700 flex flex-col"
-              >
-                <h4 className="text-white font-black mb-3 text-sm uppercase tracking-wide">
-                  LOCATIONS
-                </h4>
-                <div className="grid grid-cols-6 gap-2 flex-1">
-                  {keywordCategories.Locations.slice(0, 24).map((keyword) => (
-                    <Button
-                      key={keyword}
-                      variant="outline"
-                      size="sm"
-                      onClick={() => toggleKeyword(keyword)}
-                      className={`text-xs h-8 px-3 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
-                        selectedKeywords.includes(keyword)
-                          ? "text-white border-brand-red hover:shadow-brand-red/50"
-                          : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
-                      }`}
-                      style={{
-                        fontWeight: 900,
-                        backgroundColor: selectedKeywords.includes(keyword)
-                          ? "#FF4E33"
-                          : "#000000",
-                      }}
-                    >
-                      <span className="text-[11px] whitespace-nowrap uppercase font-black">
-                        {keyword.toUpperCase()}
-                        {selectedKeywords.includes(keyword) && (
-                          <span className="ml-1">×</span>
-                        )}
-                      </span>
-                    </Button>
-                  ))}
-                </div>
+          <CardContent className="space-y-4">
+            {/* Lighting Section */}
+            <div className="bg-black border border-white/20 rounded-lg p-4">
+              <h3 className="text-white text-lg font-bold mb-3">Lighting</h3>
+              <div className="flex flex-wrap gap-2">
+                {keywordCategories.Lighting.map((keyword) => (
+                  <button
+                    key={keyword}
+                    onClick={() => toggleKeyword(keyword)}
+                    className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
+                      selectedKeywords.includes(keyword)
+                        ? "bg-brand-red text-white"
+                        : "bg-gray-800 text-white hover:bg-gray-700"
+                    }`}
+                  >
+                    {keyword}
+                  </button>
+                ))}
               </div>
             </div>
 
-            {/* Creative Direction - Full Width Container */}
-            <div
-              style={{ backgroundColor: "#000000", minHeight: "180px" }}
-              className="rounded-lg p-4 border border-gray-700 flex flex-col"
-            >
-              <h4 className="text-white font-black mb-3 text-sm uppercase tracking-wide text-center">
-                CREATIVE DIRECTION
-              </h4>
-              <div className="flex flex-row flex-wrap justify-start items-start gap-2 flex-1 w-full">
-                {enhancedKeywordCategories["Creative Direction"]
-                  .slice(0, 32)
-                  .map((keyword) => (
-                    <Button
+            {/* Framing Section */}
+            <div className="bg-black border border-white/20 rounded-lg p-4">
+              <h3 className="text-white text-lg font-bold mb-3">Framing</h3>
+              <div className="flex flex-wrap gap-2">
+                {keywordCategories.Framing.map((keyword) => (
+                  <button
+                    key={keyword}
+                    onClick={() => toggleKeyword(keyword)}
+                    className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
+                      selectedKeywords.includes(keyword)
+                        ? "bg-brand-red text-white"
+                        : "bg-gray-800 text-white hover:bg-gray-700"
+                    }`}
+                  >
+                    {keyword}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Locations Section */}
+            <div className="bg-black border border-white/20 rounded-lg p-4">
+              <h3 className="text-white text-lg font-bold mb-3">Locations</h3>
+              <div className="flex flex-wrap gap-2">
+                {keywordCategories.Locations.map((keyword) => (
+                  <button
+                    key={keyword}
+                    onClick={() => toggleKeyword(keyword)}
+                    className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
+                      selectedKeywords.includes(keyword)
+                        ? "bg-brand-red text-white"
+                        : "bg-gray-800 text-white hover:bg-gray-700"
+                    }`}
+                  >
+                    {keyword}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Style Section */}
+            <div className="bg-black border border-white/20 rounded-lg p-4">
+              <h3 className="text-white text-lg font-bold mb-3">Style</h3>
+              <div className="flex flex-wrap gap-2">
+                {enhancedKeywordCategories.Style.map((keyword) => (
+                  <button
+                    key={keyword}
+                    onClick={() => toggleKeyword(keyword)}
+                    className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
+                      selectedKeywords.includes(keyword)
+                        ? "bg-brand-red text-white"
+                        : "bg-gray-800 text-white hover:bg-gray-700"
+                    }`}
+                  >
+                    {keyword}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Creative Direction Section */}
+            <div className="bg-black border border-white/20 rounded-lg p-4">
+              <h3 className="text-white text-lg font-bold mb-3">
+                Creative Direction
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {enhancedKeywordCategories["Creative Direction"].map(
+                  (keyword) => (
+                    <button
                       key={keyword}
-                      variant="outline"
-                      size="sm"
                       onClick={() => toggleKeyword(keyword)}
-                      className={`text-xs h-8 px-3 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
+                      className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
                         selectedKeywords.includes(keyword)
-                          ? "text-white border-brand-red hover:shadow-brand-red/50"
-                          : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
+                          ? "bg-brand-red text-white"
+                          : "bg-gray-800 text-white hover:bg-gray-700"
                       }`}
-                      style={{
-                        fontWeight: 900,
-                        backgroundColor: selectedKeywords.includes(keyword)
-                          ? "#FF4E33"
-                          : "#000000",
-                      }}
                     >
-                      <span className="text-[11px] whitespace-nowrap uppercase font-black">
-                        {keyword.toUpperCase()}
-                        {selectedKeywords.includes(keyword) && (
-                          <span className="ml-1">×</span>
-                        )}
-                      </span>
-                    </Button>
-                  ))}
+                      {keyword}
+                    </button>
+                  ),
+                )}
+              </div>
+            </div>
+
+            {/* Modifiers Section */}
+            <div className="bg-black border border-white/20 rounded-lg p-4">
+              <h3 className="text-white text-lg font-bold mb-3">Modifiers</h3>
+              <div className="flex flex-wrap gap-2">
+                {enhancedKeywordCategories.Modifiers.map((keyword) => (
+                  <button
+                    key={keyword}
+                    onClick={() => toggleKeyword(keyword)}
+                    className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
+                      selectedKeywords.includes(keyword)
+                        ? "bg-brand-red text-white"
+                        : "bg-gray-800 text-white hover:bg-gray-700"
+                    }`}
+                  >
+                    {keyword}
+                  </button>
+                ))}
               </div>
             </div>
           </CardContent>

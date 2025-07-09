@@ -118,6 +118,23 @@ export default function PromptVault() {
       "soft focus",
       "90s VHS grain",
     ],
+    "Creative Direction": [
+      "Wes Anderson meets Balenciaga",
+      "Apple ad directed by Kubrick",
+      "Old Money vibes",
+      "Virgil Abloh x Eames visual tension",
+      "Yeezy drop in a NASA lab",
+      "Warhol meets Warhol",
+      "Quiet luxury meets pitchfork",
+      "High fashion in a war zone",
+      "Edward Hopper moodboard",
+      "Gucci in a cyber slum",
+      "Tarantino aesthetic violence",
+      "Hitchcock suspense tension",
+      "Lynch surreal dreamscape",
+      "Scorsese gritty realism",
+      "Nolan temporal complexity",
+    ],
   };
 
   const toggleKeyword = (keyword: string) => {
@@ -147,6 +164,7 @@ export default function PromptVault() {
       locations: [] as string[],
       modifiers: [] as string[],
       style: [] as string[],
+      creativeDirection: [] as string[],
     };
 
     selectedKeywords.forEach((keyword) => {
@@ -174,6 +192,9 @@ export default function PromptVault() {
         case "style":
           organizedKeywords.style.push(keyword.toLowerCase());
           break;
+        case "creative direction":
+          organizedKeywords.creativeDirection.push(keyword.toLowerCase());
+          break;
       }
     });
 
@@ -198,6 +219,11 @@ export default function PromptVault() {
     // Add style elements
     if (organizedKeywords.style.length > 0) {
       prompt += `, ${organizedKeywords.style.join(", ")}`;
+    }
+
+    // Add creative direction elements
+    if (organizedKeywords.creativeDirection.length > 0) {
+      prompt += `, ${organizedKeywords.creativeDirection.join(", ")}`;
     }
 
     // Add modifier elements
@@ -364,23 +390,23 @@ export default function PromptVault() {
                   ([category, keywords]) => (
                     <div
                       key={category}
-                      style={{ backgroundColor: "#000000" }}
-                      className="rounded-lg p-4 border border-gray-700"
+                      style={{ backgroundColor: "#000000", minHeight: "200px" }}
+                      className="rounded-lg p-4 border border-gray-700 flex flex-col"
                     >
                       <h4 className="text-white font-black mb-3 text-base uppercase tracking-wide">
                         {category}
                       </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {keywords.map((keyword) => (
+                      <div className="grid grid-cols-4 gap-2 flex-1">
+                        {keywords.slice(0, 32).map((keyword, index) => (
                           <Button
                             key={keyword}
                             variant="outline"
                             size="sm"
                             onClick={() => toggleKeyword(keyword)}
-                            className={`text-xs h-7 px-3 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
+                            className={`text-xs h-7 px-2 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
                               selectedKeywords.includes(keyword)
                                 ? "text-white border-brand-red hover:shadow-brand-red/50"
-                                : "text-white border-brand-red hover:bg-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
+                                : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
                             }`}
                             style={{
                               fontWeight: 900,
@@ -389,9 +415,11 @@ export default function PromptVault() {
                               )
                                 ? "#FF4E33"
                                 : "#000000",
+                              gridRow: Math.floor(index / 8) + 1,
+                              gridColumn: (index % 8) + 1,
                             }}
                           >
-                            <span className="text-[10px] whitespace-nowrap">
+                            <span className="text-[9px] truncate">
                               {keyword}
                               {selectedKeywords.includes(keyword) && (
                                 <span className="ml-1">×</span>
@@ -411,23 +439,23 @@ export default function PromptVault() {
                   ([category, keywords]) => (
                     <div
                       key={category}
-                      style={{ backgroundColor: "#000000" }}
-                      className="rounded-lg p-4 border border-gray-700"
+                      style={{ backgroundColor: "#000000", minHeight: "200px" }}
+                      className="rounded-lg p-4 border border-gray-700 flex flex-col"
                     >
                       <h4 className="text-white font-black mb-3 text-base uppercase tracking-wide">
                         {category}
                       </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {keywords.map((keyword) => (
+                      <div className="grid grid-cols-4 gap-2 flex-1">
+                        {keywords.slice(0, 32).map((keyword, index) => (
                           <Button
                             key={keyword}
                             variant="outline"
                             size="sm"
                             onClick={() => toggleKeyword(keyword)}
-                            className={`text-xs h-7 px-3 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
+                            className={`text-xs h-7 px-2 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
                               selectedKeywords.includes(keyword)
                                 ? "text-white border-brand-red hover:shadow-brand-red/50"
-                                : "text-white border-brand-red hover:bg-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
+                                : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
                             }`}
                             style={{
                               fontWeight: 900,
@@ -436,9 +464,11 @@ export default function PromptVault() {
                               )
                                 ? "#FF4E33"
                                 : "#000000",
+                              gridRow: Math.floor(index / 8) + 1,
+                              gridColumn: (index % 8) + 1,
                             }}
                           >
-                            <span className="text-[10px] whitespace-nowrap">
+                            <span className="text-[9px] truncate">
                               {keyword}
                               {selectedKeywords.includes(keyword) && (
                                 <span className="ml-1">×</span>
@@ -577,7 +607,7 @@ export default function PromptVault() {
                       }),
                     ).size
                   }
-                  /5
+                  /6
                 </span>
               </div>
             </div>

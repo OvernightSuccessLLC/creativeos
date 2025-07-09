@@ -118,73 +118,56 @@ export default function PromptVault() {
   };
 
   const enhancedKeywordCategories = {
-    Enhancers: [
-      "Hyperrealistic",
-      "Photorealistic",
-      "Ultra-detailed",
-      "Stunning",
-      "Breathtaking",
-      "Masterful",
-      "Exquisite",
-      "Perfect",
-      "Incredible",
-      "Amazing",
-      "Beautiful",
-      "Gorgeous",
-      "Spectacular",
-      "Outstanding",
-      "Exceptional",
+    "Creative Direction": [
+      "Wes Anderson meets Balenciaga",
+      "Apple ad directed by Kubrick",
+      "Old Money vibes",
+      "Virgil Abloh x Eames visual tension",
+      "Yeezy drop in a NASA lab",
+      "Warhol meets Warhol",
+      "Quiet luxury meets pitchfork",
+      "High fashion in a war zone",
+      "Edward Hopper moodboard",
+      "Gucci in a cyber slum",
+      "Tarantino aesthetic violence",
+      "Hitchcock suspense tension",
+      "Lynch surreal dreamscape",
+      "Scorsese gritty realism",
+      "Nolan temporal complexity",
     ],
-    Loaded: [
-      "Rich colors",
-      "Deep contrast",
-      "Vibrant",
+    Modifiers: [
+      "4K resolution",
+      "cinematic quality",
+      "professional grade",
+      "award-winning",
+      "ultra-high resolution",
+      "masterpiece",
+      "commercial ready",
+      "studio quality",
+      "optimized for SORA AI",
+      "magazine cover quality",
+      "social media optimized",
+      "HDR color grading",
+      "commercial advertisement grade",
+      "floating dust particles",
+      "lens flare streak",
+    ],
+    Style: [
+      "Natural",
+      "Clean",
+      "Cinematic",
       "Saturated",
-      "Intense",
-      "Bold",
-      "Dynamic",
-      "Powerful",
-      "Strong",
-      "Vivid",
-      "Brilliant",
-      "Luminous",
-      "Radiant",
-      "Striking",
-      "Captivating",
-    ],
-    Overview: [
-      "Wide angle",
-      "Panoramic",
-      "Establishing",
-      "Environmental",
-      "Contextual",
-      "Full scene",
-      "Complete view",
-      "Broad scope",
-      "Holistic",
-      "Global view",
-      "Big picture",
-      "Expansive",
-      "Sweeping",
-      "Vast",
-      "Immersive",
-    ],
-    Type: [
-      "Photography",
-      "Digital art",
-      "Illustration",
-      "Render",
-      "CGI",
-      "3D model",
-      "Artwork",
-      "Drawing",
-      "Painting",
-      "Sketch",
-      "Vector",
-      "Animation",
-      "Graphic design",
-      "Visual art",
-      "Composite",
+      "Minimal",
+      "Hyperrealistic",
+      "Replica",
+      "editorial sharp",
+      "dreamy glow",
+      "high-polish",
+      "raw & real",
+      "tech aesthetic",
+      "commercial polished",
+      "soft focus",
+      "90s VHS grain",
     ],
   };
 
@@ -215,10 +198,9 @@ export default function PromptVault() {
       locations: [] as string[],
       creative: [] as string[],
       quality: [] as string[],
-      enhancers: [] as string[],
-      loaded: [] as string[],
-      overview: [] as string[],
-      type: [] as string[],
+      creativeDirection: [] as string[],
+      modifiers: [] as string[],
+      style: [] as string[],
     };
 
     selectedKeywords.forEach((keyword) => {
@@ -246,17 +228,14 @@ export default function PromptVault() {
         case "quality":
           organizedKeywords.quality.push(keyword.toLowerCase());
           break;
-        case "enhancers":
-          organizedKeywords.enhancers.push(keyword.toLowerCase());
+        case "creative direction":
+          organizedKeywords.creativeDirection.push(keyword.toLowerCase());
           break;
-        case "loaded":
-          organizedKeywords.loaded.push(keyword.toLowerCase());
+        case "modifiers":
+          organizedKeywords.modifiers.push(keyword.toLowerCase());
           break;
-        case "overview":
-          organizedKeywords.overview.push(keyword.toLowerCase());
-          break;
-        case "type":
-          organizedKeywords.type.push(keyword.toLowerCase());
+        case "style":
+          organizedKeywords.style.push(keyword.toLowerCase());
           break;
       }
     });
@@ -284,24 +263,19 @@ export default function PromptVault() {
       prompt += `, ${organizedKeywords.creative.join(", ")}`;
     }
 
-    // Add enhancers
-    if (organizedKeywords.enhancers.length > 0) {
-      prompt += `, ${organizedKeywords.enhancers.join(", ")}`;
+    // Add creative direction elements
+    if (organizedKeywords.creativeDirection.length > 0) {
+      prompt += `, ${organizedKeywords.creativeDirection.join(", ")}`;
     }
 
-    // Add loaded elements
-    if (organizedKeywords.loaded.length > 0) {
-      prompt += `, ${organizedKeywords.loaded.join(", ")}`;
+    // Add style elements
+    if (organizedKeywords.style.length > 0) {
+      prompt += `, ${organizedKeywords.style.join(", ")}`;
     }
 
-    // Add overview elements
-    if (organizedKeywords.overview.length > 0) {
-      prompt += `, ${organizedKeywords.overview.join(", ")}`;
-    }
-
-    // Add type specification
-    if (organizedKeywords.type.length > 0) {
-      prompt += `, ${organizedKeywords.type.join(", ")}`;
+    // Add modifier elements
+    if (organizedKeywords.modifiers.length > 0) {
+      prompt += `, ${organizedKeywords.modifiers.join(", ")}`;
     }
 
     // Add quality parameters last
@@ -658,7 +632,7 @@ export default function PromptVault() {
                       }),
                     ).size
                   }
-                  /9
+                  /8
                 </span>
               </div>
             </div>

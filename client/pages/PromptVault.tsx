@@ -229,11 +229,11 @@ export default function PromptVault() {
 
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-6 py-6 space-y-6">
-        {/* Top Row: Step 1 (Left) and Step 2 (Right) - 50% Smaller */}
-        <div className="grid lg:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        {/* Top Row: Step 1 (Left) and Step 2 (Right) - Same width as Step 3 */}
+        <div className="grid lg:grid-cols-2 gap-4">
           {/* Step 1 - Top Left */}
           <Card className="bg-black border border-gray-900 shadow-xl">
-            <CardHeader className="pb-3">
+            <CardHeader className="pb-2">
               <CardTitle
                 className="text-brand-red text-xs font-black tracking-wide border-b border-brand-red pb-1"
                 style={{ fontWeight: 900 }}
@@ -241,7 +241,7 @@ export default function PromptVault() {
                 STEP 1: CREATIVE VISION
               </CardTitle>
             </CardHeader>
-            <CardContent className="pt-3">
+            <CardContent className="pt-2 pb-3">
               <div>
                 <Label htmlFor="instructions" className="text-white text-xs">
                   Describe your subject, scene, or concept
@@ -260,7 +260,7 @@ export default function PromptVault() {
                     setQualityScore(Math.min(100, score));
                   }}
                   className="bg-gray-900 border-gray-700 text-white mt-1 focus:border-brand-red focus:ring-brand-red text-xs"
-                  rows={3}
+                  rows={2}
                 />
               </div>
             </CardContent>
@@ -268,7 +268,7 @@ export default function PromptVault() {
 
           {/* Step 2 - Top Right */}
           <Card className="bg-black border border-gray-900 shadow-xl">
-            <CardHeader className="pb-3">
+            <CardHeader className="pb-2">
               <CardTitle
                 className="text-brand-red text-xs font-black tracking-wide border-b border-brand-red pb-1"
                 style={{ fontWeight: 900 }}
@@ -276,9 +276,9 @@ export default function PromptVault() {
                 STEP 2: REFERENCE IMAGE
               </CardTitle>
             </CardHeader>
-            <CardContent className="pt-3">
-              <div className="border-2 border-dashed border-gray-700 rounded-lg p-4 text-center">
-                <Upload className="w-6 h-6 text-gray-400 mx-auto mb-1" />
+            <CardContent className="pt-2 pb-3">
+              <div className="border-2 border-dashed border-gray-700 rounded-lg p-3 text-center">
+                <Upload className="w-5 h-5 text-gray-400 mx-auto mb-1" />
                 <p className="text-gray-400 mb-2 text-xs">
                   Upload reference image
                 </p>
@@ -291,7 +291,7 @@ export default function PromptVault() {
                       variant="outline"
                       size="sm"
                       onClick={() => setUploadedFile(null)}
-                      className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-black mt-1 text-xs h-6"
+                      className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-black mt-1 text-xs h-5"
                       style={{ fontWeight: 900 }}
                     >
                       REMOVE
@@ -308,7 +308,7 @@ export default function PromptVault() {
                   />
                   <Button
                     variant="outline"
-                    className="bg-brand-red text-black hover:bg-brand-red-hover font-black border-0 text-xs h-6"
+                    className="bg-brand-red text-black hover:bg-brand-red-hover font-black border-0 text-xs h-5"
                     style={{ fontWeight: 900 }}
                     asChild
                   >
@@ -338,7 +338,7 @@ export default function PromptVault() {
                 <h4 className="text-white font-black mb-2 text-sm uppercase">
                   {category}
                 </h4>
-                <div className="grid grid-cols-5 sm:grid-cols-8 md:grid-cols-10 gap-1">
+                <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 xl:grid-cols-14 gap-1">
                   {keywords.map((keyword) => (
                     <Button
                       key={keyword}

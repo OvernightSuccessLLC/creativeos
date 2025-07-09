@@ -98,12 +98,12 @@ export default function Index() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-brand-red text-black">
       {/* Navigation Header */}
-      <nav className="border-b border-gray-800 px-6 py-4">
+      <nav className="border-b border-black/20 px-6 py-4">
         <div className="flex items-center justify-between max-w-7xl mx-auto">
           <div className="flex items-center space-x-8">
-            <div className="text-xl font-bold text-brand-red">
+            <div className="text-xl font-bold text-black">
               Creative Director OS
             </div>
             <div className="hidden md:flex items-center space-x-6">
@@ -112,8 +112,8 @@ export default function Index() {
                   key={item.name}
                   className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                     item.highlight
-                      ? "bg-brand-red text-white"
-                      : "text-gray-300 hover:text-white hover:bg-gray-800"
+                      ? "bg-black text-brand-red"
+                      : "text-black/80 hover:text-black hover:bg-black/10"
                   }`}
                   onClick={() => {
                     if (item.name === "UPDATES") {
@@ -131,7 +131,7 @@ export default function Index() {
           </div>
           <Button
             variant="outline"
-            className="border-gray-700 text-white hover:bg-gray-800"
+            className="border-black text-black hover:bg-black hover:text-brand-red"
             onClick={() => setShowBriefcase(true)}
           >
             <Bell className="w-4 h-4 mr-2" />
@@ -145,28 +145,36 @@ export default function Index() {
         {/* Studio Selection */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-6">
-            <h1 className="text-3xl font-bold">Creative Studios</h1>
+            <h1 className="text-3xl font-bold text-black">PRODUCT STUDIO</h1>
             <div className="flex items-center space-x-2">
-              <Users className="w-5 h-5 text-gray-400" />
-              <span className="text-gray-400">1.2k</span>
-              <BarChart3 className="w-5 h-5 text-gray-400 ml-4" />
-              <Button variant="outline" size="sm" className="border-gray-700">
+              <Users className="w-5 h-5 text-black/60" />
+              <span className="text-black/60">1.2k</span>
+              <BarChart3 className="w-5 h-5 text-black/60 ml-4" />
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-black text-black hover:bg-black hover:text-brand-red"
+              >
                 RESET
               </Button>
             </div>
           </div>
+
+          <p className="text-black/80 mb-6">
+            Create stunning product visuals and e-commerce content
+          </p>
 
           <Tabs
             value={selectedStudio}
             onValueChange={setSelectedStudio}
             className="w-full"
           >
-            <TabsList className="grid w-full grid-cols-3 bg-gray-900 border border-gray-800">
+            <TabsList className="grid w-full grid-cols-3 bg-black border border-black">
               {studios.map((studio) => (
                 <TabsTrigger
                   key={studio.id}
                   value={studio.id}
-                  className="flex items-center space-x-2 data-[state=active]:bg-brand-red data-[state=active]:text-white"
+                  className="flex items-center space-x-2 data-[state=active]:bg-brand-red data-[state=active]:text-black text-white"
                 >
                   <studio.icon className="w-4 h-4" />
                   <span className="hidden sm:inline">{studio.name}</span>
@@ -176,153 +184,146 @@ export default function Index() {
 
             {studios.map((studio) => (
               <TabsContent key={studio.id} value={studio.id} className="mt-6">
-                <Card className="bg-gray-900 border-gray-800">
+                {/* HOW IT WORKS Section */}
+                <Card className="bg-black border border-black mb-6">
                   <CardHeader>
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <CardTitle className="text-2xl text-white flex items-center space-x-3">
-                          <studio.icon className="w-8 h-8 text-brand-red" />
-                          <span>{studio.name}</span>
-                        </CardTitle>
-                        <CardDescription className="text-gray-400 mt-2">
-                          {studio.description}
-                        </CardDescription>
-                      </div>
-                      <Badge
-                        variant="secondary"
-                        className="bg-brand-red text-white"
-                      >
-                        Active
-                      </Badge>
-                    </div>
+                    <CardTitle className="text-brand-red text-sm font-bold tracking-wide border-b border-brand-red pb-2">
+                      HOW IT WORKS
+                    </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                      {/* HOW IT WORKS Section */}
-                      <Card className="bg-black border border-gray-800">
-                        <CardHeader>
-                          <CardTitle className="text-brand-red text-sm font-bold tracking-wide">
-                            HOW IT WORKS
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-4">
-                          <div className="grid grid-cols-4 gap-4 text-xs">
-                            <div className="text-center">
-                              <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white mb-2 mx-auto">
-                                1
-                              </div>
-                              <p className="text-gray-400">
-                                Add Custom Instructions
-                              </p>
-                            </div>
-                            <div className="text-center">
-                              <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white mb-2 mx-auto">
-                                2
-                              </div>
-                              <p className="text-gray-400">Select Categories</p>
-                            </div>
-                            <div className="text-center">
-                              <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white mb-2 mx-auto">
-                                3
-                              </div>
-                              <p className="text-gray-400">
-                                Upload Reference Files
-                              </p>
-                            </div>
-                            <div className="text-center">
-                              <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white mb-2 mx-auto">
-                                4
-                              </div>
-                              <p className="text-gray-400">Copy for SORA</p>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-
-                      {/* AI PROMPT FORMULA Section */}
-                      <Card className="bg-gray-900 border border-gray-700">
-                        <CardHeader>
-                          <div className="flex items-center justify-between">
-                            <CardTitle className="text-brand-red text-sm font-bold tracking-wide">
-                              AI PROMPT FORMULA
-                            </CardTitle>
-                            <Badge className="bg-brand-red text-white text-xs">
-                              0% QUALITY
-                            </Badge>
-                          </div>
-                        </CardHeader>
-                        <CardContent className="space-y-4">
-                          <div className="bg-black border border-gray-800 rounded p-4 text-sm text-gray-400">
-                            Add custom instructions and select from categorized
-                            keywords to build your SORA AI formula...
-                          </div>
-                          <div className="space-y-3">
-                            <div className="text-white font-medium text-sm">
-                              AI RECOMMENDATIONS
-                            </div>
-                            <ul className="space-y-1 text-sm text-gray-400">
-                              <li>
-                                • Add more selections for richer SORA output
-                              </li>
-                              <li>
-                                • Custom instructions help SORA understand your
-                                vision
-                              </li>
-                              <li>
-                                • Logo files help SORA incorporate brand
-                                elements
-                              </li>
-                            </ul>
-                          </div>
-                          <div className="flex space-x-2">
-                            <Button
-                              size="sm"
-                              className="bg-brand-red hover:bg-brand-red-hover"
-                            >
-                              COPY
-                            </Button>
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              className="border-gray-700"
-                            >
-                              FAVORITE
-                            </Button>
-                          </div>
-                        </CardContent>
-                      </Card>
+                  <CardContent className="space-y-4">
+                    <div className="grid grid-cols-4 gap-4 text-xs">
+                      <div className="text-center">
+                        <div className="w-8 h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-white mb-2 mx-auto font-bold">
+                          1
+                        </div>
+                        <p className="text-white text-xs">
+                          Add Custom Instructions
+                        </p>
+                        <p className="text-gray-400 text-xs">
+                          Start with your specific requirements
+                        </p>
+                      </div>
+                      <div className="text-center">
+                        <div className="w-8 h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-white mb-2 mx-auto font-bold">
+                          2
+                        </div>
+                        <p className="text-white text-xs">Select Categories</p>
+                        <p className="text-gray-400 text-xs">
+                          Choose options from each category
+                        </p>
+                      </div>
+                      <div className="text-center">
+                        <div className="w-8 h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-white mb-2 mx-auto font-bold">
+                          3
+                        </div>
+                        <p className="text-white text-xs">
+                          Upload Reference Files
+                        </p>
+                        <p className="text-gray-400 text-xs">
+                          Add images (optional)
+                        </p>
+                      </div>
+                      <div className="text-center">
+                        <div className="w-8 h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-white mb-2 mx-auto font-bold">
+                          4
+                        </div>
+                        <p className="text-white text-xs">Review Quality</p>
+                        <p className="text-gray-400 text-xs">
+                          Check AI analysis and suggestions
+                        </p>
+                      </div>
                     </div>
-
-                    {/* Action Steps */}
-                    <div className="mt-6 space-y-3">
-                      {[
-                        "Custom Instructions",
-                        "Product Style",
-                        "Background Setting",
-                        "Lighting Setup",
-                        "Camera Angle",
-                        "Visual Elements",
-                      ].map((step, index) => (
-                        <Card
-                          key={step}
-                          className="bg-black border border-gray-800 hover:border-brand-red transition-colors cursor-pointer"
-                        >
-                          <CardContent className="p-4">
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center space-x-3">
-                                <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
-                                  {index + 1}
-                                </div>
-                                <span className="font-medium">{step}</span>
-                              </div>
-                              <ChevronRight className="w-5 h-5 text-gray-400" />
-                            </div>
-                          </CardContent>
-                        </Card>
-                      ))}
+                    <div className="text-right">
+                      <span className="text-brand-red text-xs font-bold">
+                        STEP 1/5
+                      </span>
                     </div>
                   </CardContent>
                 </Card>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  {/* Left Column - Action Steps */}
+                  <div className="space-y-3">
+                    {[
+                      { step: "Custom Instructions", icon: "1" },
+                      { step: "Product Style", icon: "2" },
+                      { step: "Background Setting", icon: "3" },
+                      { step: "Lighting Setup", icon: "4" },
+                      { step: "Camera Angle", icon: "5" },
+                      { step: "Visual Elements", icon: "6" },
+                    ].map((item, index) => (
+                      <Card
+                        key={item.step}
+                        className="bg-black border border-gray-800 hover:border-brand-red transition-colors cursor-pointer"
+                      >
+                        <CardContent className="p-4">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center space-x-3">
+                              <div className="w-8 h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-sm font-bold">
+                                {item.icon}
+                              </div>
+                              <span className="font-medium text-white">
+                                {item.step}
+                              </span>
+                            </div>
+                            <ChevronRight className="w-5 h-5 text-gray-400" />
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+
+                  {/* Right Column - AI PROMPT FORMULA Section */}
+                  <Card className="bg-gray-900 border border-gray-700">
+                    <CardHeader>
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-brand-red text-sm font-bold tracking-wide">
+                          AI PROMPT FORMULA
+                        </CardTitle>
+                        <Badge className="bg-brand-red text-black text-xs font-bold">
+                          0% QUALITY
+                        </Badge>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <div className="bg-black border border-gray-800 rounded p-4 text-sm text-gray-400">
+                        Add custom instructions and select from categorized
+                        keywords to build your SORA AI formula...
+                      </div>
+                      <div className="space-y-3">
+                        <div className="text-white font-medium text-sm">
+                          AI RECOMMENDATIONS
+                        </div>
+                        <ul className="space-y-1 text-sm text-gray-400">
+                          <li>• Add more selections for richer SORA output</li>
+                          <li>
+                            • Custom instructions help SORA understand your
+                            vision
+                          </li>
+                          <li>
+                            • Logo files help SORA incorporate brand elements
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="flex space-x-2">
+                        <Button
+                          size="sm"
+                          className="bg-brand-red hover:bg-brand-red-hover text-black font-bold"
+                        >
+                          COPY
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="border-gray-700 text-white hover:bg-gray-800"
+                        >
+                          FAVORITE
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </TabsContent>
             ))}
           </Tabs>
@@ -332,7 +333,7 @@ export default function Index() {
         <div className="text-center py-8 space-y-4">
           <Button
             size="lg"
-            className="bg-brand-red hover:bg-brand-red-hover text-white font-bold px-8 py-4"
+            className="bg-black text-brand-red hover:bg-gray-900 font-bold px-8 py-4"
             onClick={() => setShowSignup(true)}
           >
             <Crown className="w-5 h-5 mr-2" />
@@ -342,7 +343,7 @@ export default function Index() {
             <Button
               variant="outline"
               size="lg"
-              className="border-gray-700 text-white hover:bg-gray-800 px-8 py-4"
+              className="border-black text-black hover:bg-black hover:text-brand-red px-8 py-4"
               onClick={() => navigate("/playbook")}
             >
               <BookOpen className="w-5 h-5 mr-2" />
@@ -360,7 +361,7 @@ export default function Index() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
                   <div className="w-8 h-8 bg-brand-red rounded flex items-center justify-center">
-                    <Package className="w-4 h-4 text-white" />
+                    <Package className="w-4 h-4 text-black" />
                   </div>
                   <CardTitle className="text-xl text-white">
                     THE BRIEFCASE

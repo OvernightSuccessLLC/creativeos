@@ -4,8 +4,9 @@
 
 @layer base {
   /**
-   * Creative Director OS Color Scheme
-   * Brand colors: Bright red primary with black/dark backgrounds
+   * Creative Director OS Color Scheme - Exact match to screenshots
+   * Primary: Bright red/orange #FF4433 
+   * Secondary: Black with white text
    */
   :root {
     --background: 0 0% 100%;
@@ -38,9 +39,9 @@
 
     --radius: 0.5rem;
 
-    /* Brand Colors */
-    --brand-red: 5 100% 60%;
-    --brand-red-hover: 5 100% 55%;
+    /* Brand Colors - Exact match to screenshots */
+    --brand-red: 8 100% 60%;
+    --brand-red-hover: 8 100% 55%;
     --brand-dark: 0 0% 0%;
     --brand-dark-lighter: 0 0% 10%;
 
@@ -55,8 +56,8 @@
   }
 
   .dark {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
+    --background: 8 100% 60%;
+    --foreground: 0 0% 0%;
 
     --card: 0 0% 0%;
     --card-foreground: 0 0% 100%;
@@ -64,7 +65,7 @@
     --popover: 0 0% 0%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 5 100% 60%;
+    --primary: 8 100% 60%;
     --primary-foreground: 0 0% 0%;
 
     --secondary: 0 0% 10%;
@@ -85,7 +86,7 @@
 
     --sidebar-background: 0 0% 10%;
     --sidebar-foreground: 0 0% 96%;
-    --sidebar-primary: 5 100% 60%;
+    --sidebar-primary: 8 100% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 16%;
     --sidebar-accent-foreground: 0 0% 96%;
@@ -107,6 +108,7 @@
       BlinkMacSystemFont,
       "Segoe UI",
       sans-serif;
+    font-weight: 400;
   }
 
   /* Force dark mode for the Creative Director OS theme */
@@ -129,7 +131,7 @@
   }
 
   .brand-button-primary {
-    @apply bg-brand-red hover:bg-brand-red-hover text-white font-semibold px-6 py-3 rounded-lg transition-colors;
+    @apply bg-brand-red hover:bg-brand-red-hover text-black font-semibold px-6 py-3 rounded-lg transition-colors;
   }
 
   .brand-button-secondary {

@@ -18,7 +18,7 @@ import {
   Bell,
   BookOpen,
   Database,
-  Template,
+  FileTemplate,
   Zap,
   Crown,
   X,

@@ -230,7 +230,7 @@ export default function PromptVault() {
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-6 py-6 space-y-6">
         {/* Top Row: Step 1 (Left) and Step 2 (Right) */}
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-6">
           {/* Step 1 - Top Left */}
           <Card className="bg-black border border-gray-900 shadow-xl">
             <CardHeader>
@@ -367,7 +367,7 @@ export default function PromptVault() {
         </Card>
 
         {/* Quality Meter and Output - Full Width */}
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-6">
           {/* Quality Meter */}
           <Card className="bg-black border border-gray-900 shadow-xl">
             <CardHeader>

@@ -103,18 +103,22 @@ export default function Index() {
       <nav className="border-b border-black/20 px-6 py-4">
         <div className="flex items-center justify-between max-w-7xl mx-auto">
           <div className="flex items-center space-x-8">
-            <div className="text-xl font-bold text-black">
-              Creative Director OS
+            <div
+              className="text-xl font-black text-black"
+              style={{ fontWeight: 900 }}
+            >
+              CREATIVE DIRECTOR OS
             </div>
             <div className="hidden md:flex items-center space-x-6">
               {navigationItems.map((item) => (
                 <button
                   key={item.name}
-                  className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-black transition-colors ${
                     item.highlight
                       ? "bg-black text-brand-red"
-                      : "text-black/80 hover:text-black hover:bg-black/10"
+                      : "text-black hover:text-black hover:bg-black/10"
                   }`}
+                  style={{ fontWeight: 900 }}
                   onClick={() => {
                     if (item.name === "UPDATES") {
                       setShowBriefcase(true);
@@ -137,7 +141,8 @@ export default function Index() {
           </div>
           <Button
             variant="outline"
-            className="border-black text-black hover:bg-black hover:text-brand-red"
+            className="border-black text-black hover:bg-black hover:text-brand-red font-black"
+            style={{ fontWeight: 900 }}
             onClick={() => setShowBriefcase(true)}
           >
             <Bell className="w-4 h-4 mr-2" />
@@ -151,7 +156,12 @@ export default function Index() {
         {/* Studio Selection */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-6">
-            <h1 className="text-3xl font-bold text-black">PRODUCT STUDIO</h1>
+            <h1
+              className="text-3xl font-black text-black"
+              style={{ fontWeight: 900 }}
+            >
+              PRODUCT STUDIO
+            </h1>
             <div className="flex items-center space-x-2">
               <Users className="w-5 h-5 text-black/60" />
               <span className="text-black/60">1.2k</span>
@@ -159,7 +169,8 @@ export default function Index() {
               <Button
                 variant="outline"
                 size="sm"
-                className="border-black text-black hover:bg-black hover:text-brand-red"
+                className="border-black text-black hover:bg-black hover:text-brand-red font-black"
+                style={{ fontWeight: 900 }}
               >
                 RESET
               </Button>
@@ -180,7 +191,8 @@ export default function Index() {
                 <TabsTrigger
                   key={studio.id}
                   value={studio.id}
-                  className="flex items-center space-x-2 data-[state=active]:bg-brand-red data-[state=active]:text-black text-white"
+                  className="flex items-center space-x-2 data-[state=active]:bg-brand-red data-[state=active]:text-black text-white font-black"
+                  style={{ fontWeight: 900 }}
                 >
                   <studio.icon className="w-4 h-4" />
                   <span className="hidden sm:inline">{studio.name}</span>
@@ -339,7 +351,8 @@ export default function Index() {
         <div className="text-center py-8 space-y-4">
           <Button
             size="lg"
-            className="bg-black text-brand-red hover:bg-gray-900 font-bold px-8 py-4"
+            className="bg-black text-brand-red hover:bg-gray-900 font-black px-8 py-4"
+            style={{ fontWeight: 900 }}
             onClick={() => setShowSignup(true)}
           >
             <Crown className="w-5 h-5 mr-2" />
@@ -349,7 +362,8 @@ export default function Index() {
             <Button
               variant="outline"
               size="lg"
-              className="border-black text-black hover:bg-black hover:text-brand-red px-8 py-4"
+              className="border-black text-black hover:bg-black hover:text-brand-red font-black px-8 py-4"
+              style={{ fontWeight: 900 }}
               onClick={() => navigate("/playbook")}
             >
               <BookOpen className="w-5 h-5 mr-2" />

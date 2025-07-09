@@ -357,7 +357,7 @@ export default function PromptVault() {
               GENERATED SORA PROMPT
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-3">
             <div className="bg-gray-900 border border-gray-700 rounded p-3 min-h-[80px]">
               <p className="text-white text-sm">
                 {generatePrompt() ||

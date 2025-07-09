@@ -81,40 +81,6 @@ export default function PromptVault() {
       "Street",
       "Gallery",
     ],
-    "Creative Direction": [
-      "Professional",
-      "Artistic",
-      "Commercial",
-      "Editorial",
-      "Lifestyle",
-      "Fashion",
-      "Product",
-      "Portrait",
-      "Documentary",
-      "Conceptual",
-      "Abstract",
-      "Bold",
-      "Elegant",
-      "Clean",
-      "Dramatic",
-    ],
-    Quality: [
-      "4K",
-      "Ultra-sharp",
-      "High resolution",
-      "Professional",
-      "Award-winning",
-      "Magazine quality",
-      "Commercial grade",
-      "Studio quality",
-      "8K",
-      "RAW",
-      "Crisp",
-      "Detailed",
-      "Premium",
-      "High-end",
-      "Perfect",
-    ],
   };
 
   const enhancedKeywordCategories = {
@@ -196,9 +162,6 @@ export default function PromptVault() {
       lighting: [] as string[],
       framing: [] as string[],
       locations: [] as string[],
-      creative: [] as string[],
-      quality: [] as string[],
-      creativeDirection: [] as string[],
       modifiers: [] as string[],
       style: [] as string[],
     };
@@ -221,15 +184,6 @@ export default function PromptVault() {
           break;
         case "locations":
           organizedKeywords.locations.push(keyword.toLowerCase());
-          break;
-        case "creative direction":
-          organizedKeywords.creative.push(keyword.toLowerCase());
-          break;
-        case "quality":
-          organizedKeywords.quality.push(keyword.toLowerCase());
-          break;
-        case "creative direction":
-          organizedKeywords.creativeDirection.push(keyword.toLowerCase());
           break;
         case "modifiers":
           organizedKeywords.modifiers.push(keyword.toLowerCase());
@@ -258,16 +212,6 @@ export default function PromptVault() {
       prompt += `, ${organizedKeywords.lighting.join(", ")}`;
     }
 
-    // Add creative direction
-    if (organizedKeywords.creative.length > 0) {
-      prompt += `, ${organizedKeywords.creative.join(", ")}`;
-    }
-
-    // Add creative direction elements
-    if (organizedKeywords.creativeDirection.length > 0) {
-      prompt += `, ${organizedKeywords.creativeDirection.join(", ")}`;
-    }
-
     // Add style elements
     if (organizedKeywords.style.length > 0) {
       prompt += `, ${organizedKeywords.style.join(", ")}`;
@@ -276,11 +220,6 @@ export default function PromptVault() {
     // Add modifier elements
     if (organizedKeywords.modifiers.length > 0) {
       prompt += `, ${organizedKeywords.modifiers.join(", ")}`;
-    }
-
-    // Add quality parameters last
-    if (organizedKeywords.quality.length > 0) {
-      prompt += `, ${organizedKeywords.quality.join(", ")}`;
     }
 
     // Add reference image notation if file uploaded
@@ -455,8 +394,8 @@ export default function PromptVault() {
                       onClick={() => toggleKeyword(keyword)}
                       className={`text-xs h-7 px-3 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
                         selectedKeywords.includes(keyword)
-                          ? "bg-brand-red text-black border-brand-red hover:bg-brand-red hover:shadow-brand-red/50"
-                          : "bg-black text-white border-gray-600 hover:bg-brand-red hover:text-black hover:border-brand-red hover:shadow-brand-red/50"
+                          ? "bg-brand-red text-white border-brand-red hover:bg-brand-red hover:shadow-brand-red/50"
+                          : "bg-black text-white border-brand-red hover:bg-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
                       }`}
                       style={{ fontWeight: 900 }}
                     >
@@ -596,7 +535,7 @@ export default function PromptVault() {
                       }),
                     ).size
                   }
-                  /8
+                  /5
                 </span>
               </div>
             </div>

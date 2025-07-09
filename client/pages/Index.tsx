@@ -18,7 +18,7 @@ import {
   Bell,
   BookOpen,
   Database,
-  FileTemplate,
+  LayoutTemplate,
   Zap,
   Crown,
   X,
@@ -92,7 +92,7 @@ export default function Index() {
     { name: "UPDATES", icon: Bell, active: false },
     { name: "THE PLAYBOOK", icon: BookOpen, active: false },
     { name: "PROMPT VAULT", icon: Database, active: false },
-    { name: "TEMPLATES", icon: FileTemplate, active: false },
+    { name: "TEMPLATES", icon: LayoutTemplate, active: false },
     { name: "AI TOOLKIT", icon: Zap, active: false },
     { name: "UPGRADE", icon: Crown, active: false, highlight: true },
   ];

@@ -108,9 +108,86 @@ export default function PromptVault() {
   };
 
   const generatePrompt = () => {
-    const basePrompt = customInstructions || "Professional photograph";
-    const keywords = selectedKeywords.join(", ");
-    return `${basePrompt}${keywords ? `, ${keywords}` : ""}`;
+    if (!customInstructions && selectedKeywords.length === 0) {
+      return "";
+    }
+
+    // Organize keywords by category for optimal SORA structure
+    const organizedKeywords = {
+      lighting: [] as string[],
+      framing: [] as string[],
+      locations: [] as string[],
+      texture: [] as string[],
+      creative: [] as string[],
+      quality: [] as string[],
+    };
+
+    selectedKeywords.forEach((keyword) => {
+      const category = Object.entries(keywordCategories)
+        .find(([_, words]) => words.includes(keyword))?.[0]
+        ?.toLowerCase();
+
+      switch (category) {
+        case "lighting":
+          organizedKeywords.lighting.push(keyword.toLowerCase());
+          break;
+        case "framing":
+          organizedKeywords.framing.push(keyword.toLowerCase());
+          break;
+        case "locations":
+          organizedKeywords.locations.push(keyword.toLowerCase());
+          break;
+        case "texture":
+          organizedKeywords.texture.push(keyword.toLowerCase());
+          break;
+        case "creative direction":
+          organizedKeywords.creative.push(keyword.toLowerCase());
+          break;
+        case "quality":
+          organizedKeywords.quality.push(keyword.toLowerCase());
+          break;
+      }
+    });
+
+    // Build structured prompt for SORA
+    let prompt = customInstructions || "";
+
+    // Add location/setting context
+    if (organizedKeywords.locations.length > 0) {
+      prompt += `, ${organizedKeywords.locations.join(", ")}`;
+    }
+
+    // Add framing/camera details
+    if (organizedKeywords.framing.length > 0) {
+      prompt += `, ${organizedKeywords.framing.join(", ")}`;
+    }
+
+    // Add lighting information
+    if (organizedKeywords.lighting.length > 0) {
+      prompt += `, ${organizedKeywords.lighting.join(", ")}`;
+    }
+
+    // Add texture details
+    if (organizedKeywords.texture.length > 0) {
+      prompt += `, ${organizedKeywords.texture.join(", ")}`;
+    }
+
+    // Add creative direction
+    if (organizedKeywords.creative.length > 0) {
+      prompt += `, ${organizedKeywords.creative.join(", ")}`;
+    }
+
+    // Add quality parameters last
+    if (organizedKeywords.quality.length > 0) {
+      prompt += `, ${organizedKeywords.quality.join(", ")}`;
+    }
+
+    // Add reference image notation if file uploaded
+    if (uploadedFile) {
+      prompt += ` --reference ${uploadedFile.name}`;
+    }
+
+    return prompt;
   };
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {

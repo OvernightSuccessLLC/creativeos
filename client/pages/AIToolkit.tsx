@@ -422,21 +422,21 @@ export default function AIToolkit() {
 
             {/* Tools Container */}
             <div className="bg-black rounded-lg p-4 border-2 border-gray-800">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {category.tools.map((tool) => (
                   <div
                     key={tool.name}
-                    className="bg-brand-red rounded border border-black p-3 hover:bg-brand-red-hover transition-colors cursor-pointer"
+                    className="bg-brand-red rounded border-2 border-transparent hover:border-brand-red hover:bg-brand-red hover:shadow-lg transition-all duration-200 cursor-pointer p-4 h-24 flex flex-col justify-between"
                     onClick={() => window.open(tool.link, "_blank")}
                   >
-                    <div className="space-y-1">
+                    <div className="flex-1 flex flex-col justify-center">
                       <h3
-                        className="text-black font-black text-sm leading-tight"
+                        className="text-black font-black text-sm leading-tight text-center mb-1"
                         style={{ fontWeight: 900 }}
                       >
-                        {tool.name}
+                        {tool.name.toUpperCase()}
                       </h3>
-                      <p className="text-black text-xs leading-tight">
+                      <p className="text-black text-xs leading-tight text-center line-clamp-2">
                         {getToolDescription(tool.name)}
                       </p>
                     </div>

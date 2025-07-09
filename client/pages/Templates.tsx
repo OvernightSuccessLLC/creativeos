@@ -140,43 +140,9 @@ export default function Templates() {
         </p>
       </div>
 
-      {/* Filters */}
-      <div className="bg-black/10 px-6 py-6 border-b border-black/20">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
-            {/* Search */}
-            <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-black/60" />
-            </div>
-
-            {/* Category Filter */}
-            <div className="flex items-center space-x-2 overflow-x-auto">
-              {categories.map((category) => (
-                <Button
-                  key={category.id}
-                  variant={
-                    selectedCategory === category.id ? "default" : "outline"
-                  }
-                  size="sm"
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={
-                    selectedCategory === category.id
-                      ? "bg-black text-brand-red hover:bg-gray-900 whitespace-nowrap"
-                      : "border-black text-black hover:bg-black hover:text-brand-red whitespace-nowrap"
-                  }
-                >
-                  <category.icon className="w-4 h-4 mr-2" />
-                  {category.name}
-                </Button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Templates Grid */}
       <div className="max-w-6xl mx-auto px-6 py-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {filteredTemplates.map((template) => (
             <Card
               key={template.id}
@@ -196,13 +162,6 @@ export default function Templates() {
                       )}
                     </div>
                   </div>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="text-gray-400 hover:text-brand-red"
-                  >
-                    <Star className="w-4 h-4" />
-                  </Button>
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -226,19 +185,6 @@ export default function Templates() {
                   ))}
                 </div>
 
-                {/* Stats */}
-                <div className="flex items-center justify-between text-sm">
-                  <div className="flex items-center space-x-4">
-                    <div className="flex items-center space-x-1">
-                      <Star className="w-3 h-3 text-yellow-500 fill-yellow-500" />
-                      <span className="text-gray-400">{template.rating}</span>
-                    </div>
-                    <div className="text-gray-400">
-                      {template.uses.toLocaleString()} uses
-                    </div>
-                  </div>
-                </div>
-
                 {/* Actions */}
                 <div className="flex space-x-2">
                   <Button
@@ -251,8 +197,7 @@ export default function Templates() {
                   </Button>
                   <Button
                     size="sm"
-                    variant="outline"
-                    className="border-gray-700 text-white hover:bg-gray-800"
+                    className="bg-black text-white hover:bg-gray-800 border border-gray-700"
                   >
                     EDIT
                   </Button>

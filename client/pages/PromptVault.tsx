@@ -342,7 +342,7 @@ export default function PromptVault() {
                 STEP 1: CREATIVE VISION
               </CardTitle>
             </CardHeader>
-            <CardContent className="pt-2 pb-3">
+            <CardContent className="pt-2 pb-6">
               <div>
                 <Label htmlFor="instructions" className="text-white text-xs">
                   Describe your subject, scene, or concept

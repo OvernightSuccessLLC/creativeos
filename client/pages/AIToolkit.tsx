@@ -426,20 +426,26 @@ export default function AIToolkit() {
                 {category.tools.map((tool) => (
                   <div
                     key={tool.name}
-                    className="bg-brand-red rounded border-2 border-transparent hover:border-brand-red hover:bg-brand-red hover:shadow-lg transition-all duration-200 cursor-pointer p-4 h-24 flex flex-col justify-between"
-                    onClick={() => window.open(tool.link, "_blank")}
+                    className="bg-brand-red rounded border-2 border-transparent hover:border-brand-red hover:shadow-lg transition-all duration-200 p-4 h-32 flex flex-col justify-between"
                   >
-                    <div className="flex-1 flex flex-col justify-center">
+                    <div className="flex-1 flex flex-col justify-center text-center">
                       <h3
-                        className="text-black font-black text-sm leading-tight text-center mb-1"
+                        className="text-black font-black text-lg leading-tight mb-2"
                         style={{ fontWeight: 900 }}
                       >
                         {tool.name.toUpperCase()}
                       </h3>
-                      <p className="text-black text-xs leading-tight text-center line-clamp-2">
+                      <p className="text-black text-xs leading-tight line-clamp-1 mb-3">
                         {getToolDescription(tool.name)}
                       </p>
                     </div>
+                    <button
+                      className="bg-black text-brand-red hover:bg-brand-red hover:text-black font-black text-xs py-2 px-3 rounded-full transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+                      style={{ fontWeight: 900 }}
+                      onClick={() => window.open(tool.link, "_blank")}
+                    >
+                      CLICK HERE
+                    </button>
                   </div>
                 ))}
               </div>

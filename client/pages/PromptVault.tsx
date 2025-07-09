@@ -396,14 +396,14 @@ export default function PromptVault() {
                       <h4 className="text-white font-black mb-3 text-base uppercase tracking-wide">
                         {category}
                       </h4>
-                      <div className="grid grid-cols-4 gap-2 flex-1">
-                        {keywords.slice(0, 32).map((keyword, index) => (
+                      <div className="grid grid-cols-8 gap-1 flex-1">
+                        {keywords.slice(0, 32).map((keyword) => (
                           <Button
                             key={keyword}
                             variant="outline"
                             size="sm"
                             onClick={() => toggleKeyword(keyword)}
-                            className={`text-xs h-7 px-2 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
+                            className={`text-xs h-7 px-1 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
                               selectedKeywords.includes(keyword)
                                 ? "text-white border-brand-red hover:shadow-brand-red/50"
                                 : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
@@ -415,11 +415,9 @@ export default function PromptVault() {
                               )
                                 ? "#FF4E33"
                                 : "#000000",
-                              gridRow: Math.floor(index / 8) + 1,
-                              gridColumn: (index % 8) + 1,
                             }}
                           >
-                            <span className="text-[9px] truncate">
+                            <span className="text-[8px] truncate">
                               {keyword}
                               {selectedKeywords.includes(keyword) && (
                                 <span className="ml-1">×</span>
@@ -445,14 +443,14 @@ export default function PromptVault() {
                       <h4 className="text-white font-black mb-3 text-base uppercase tracking-wide">
                         {category}
                       </h4>
-                      <div className="grid grid-cols-4 gap-2 flex-1">
-                        {keywords.slice(0, 32).map((keyword, index) => (
+                      <div className="grid grid-cols-8 gap-1 flex-1">
+                        {keywords.slice(0, 32).map((keyword) => (
                           <Button
                             key={keyword}
                             variant="outline"
                             size="sm"
                             onClick={() => toggleKeyword(keyword)}
-                            className={`text-xs h-7 px-2 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
+                            className={`text-xs h-7 px-1 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
                               selectedKeywords.includes(keyword)
                                 ? "text-white border-brand-red hover:shadow-brand-red/50"
                                 : "text-white border-brand-red hover:text-white hover:border-brand-red hover:shadow-brand-red/50"
@@ -464,11 +462,9 @@ export default function PromptVault() {
                               )
                                 ? "#FF4E33"
                                 : "#000000",
-                              gridRow: Math.floor(index / 8) + 1,
-                              gridColumn: (index % 8) + 1,
                             }}
                           >
-                            <span className="text-[9px] truncate">
+                            <span className="text-[8px] truncate">
                               {keyword}
                               {selectedKeywords.includes(keyword) && (
                                 <span className="ml-1">×</span>

@@ -347,6 +347,25 @@ export default function AIToolkit() {
     }
   };
 
+  const getToolDescription = (toolName: string) => {
+    const descriptions: { [key: string]: string } = {
+      SORA: "Advanced AI video generation with text-to-video capabilities",
+      Midjourney: "High-quality AI art and image generation",
+      "DALL-E 3": "Advanced AI image generation from OpenAI",
+      "Stable Diffusion": "Open-source AI image generation model",
+      RunwayML: "Creative AI video tools for filmmakers and content creators",
+      "Pika Labs": "AI video creation platform with text and image inputs",
+      ElevenLabs: "Ultra-realistic voice synthesis and cloning technology",
+      "GPT-4": "Advanced AI language model for text generation",
+      Claude: "AI assistant for analysis and creative work",
+      "Canva AI": "AI-powered design assistance for graphics and layouts",
+      Upscayl: "AI image upscaling for higher resolution and quality",
+    };
+    return (
+      descriptions[toolName] || "AI-powered creative tool for professionals"
+    );
+  };
+
   return (
     <div className="min-h-screen bg-brand-red text-black">
       {/* Header */}
@@ -365,54 +384,53 @@ export default function AIToolkit() {
       </div>
 
       {/* Tools Grid */}
-      <div className="max-w-6xl mx-auto px-6 py-8 space-y-12">
+      <div className="max-w-6xl mx-auto px-6 py-8 space-y-6">
         {toolCategories.map((category) => (
-          <div key={category.title}>
-            <div className="flex items-center space-x-3 mb-6">
-              <category.icon className="w-6 h-6 text-black" />
-              <h2 className="text-2xl font-bold text-black">
-                {category.title}
-              </h2>
-              <Badge className="bg-black text-brand-red">
-                {category.tools.length} tools
-              </Badge>
+          <div key={category.title} className="space-y-4">
+            {/* Category Header */}
+            <div className="bg-brand-red rounded-lg px-6 py-4 border-4 border-black">
+              <div className="flex items-center space-x-3">
+                <category.icon className="w-6 h-6 text-black" />
+                <h2
+                  className="text-2xl font-black text-black"
+                  style={{ fontWeight: 900 }}
+                >
+                  {category.title}
+                </h2>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-              {category.tools.map((tool) => (
-                <Card
-                  key={tool.name}
-                  className="bg-black border border-gray-800 hover:border-brand-red transition-colors"
-                >
-                  <CardContent className="p-3">
+            {/* Tools Container */}
+            <div className="bg-black rounded-lg p-6 border-4 border-black">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {category.tools.map((tool) => (
+                  <div
+                    key={tool.name}
+                    className="bg-brand-red rounded-lg p-4 border-2 border-black hover:border-gray-700 transition-colors cursor-pointer"
+                    onClick={() => window.open(tool.link, "_blank")}
+                  >
                     <div className="space-y-2">
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-start justify-between">
                         <h3
-                          className="text-white font-black text-sm truncate"
+                          className="text-black font-black text-sm leading-tight"
                           style={{ fontWeight: 900 }}
                         >
                           {tool.name}
                         </h3>
                         <Badge
-                          className={`${getStatusColor(tool.status)} text-white text-xs font-black`}
+                          className={`${getStatusColor(tool.status)} text-white text-xs font-black ml-2 flex-shrink-0`}
                           style={{ fontWeight: 900 }}
                         >
                           {tool.status.charAt(0).toUpperCase()}
                         </Badge>
                       </div>
-                      <Button
-                        size="sm"
-                        className="w-full bg-brand-red hover:bg-brand-red-hover text-black font-black text-xs"
-                        style={{ fontWeight: 900 }}
-                        onClick={() => window.open(tool.link, "_blank")}
-                      >
-                        <ExternalLink className="w-3 h-3 mr-1" />
-                        VISIT
-                      </Button>
+                      <p className="text-black text-xs opacity-80 leading-tight">
+                        {getToolDescription(tool.name)}
+                      </p>
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         ))}

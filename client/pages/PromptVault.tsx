@@ -228,7 +228,7 @@ export default function PromptVault() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-6 py-8 space-y-8">
+      <div className="max-w-6xl mx-auto px-6 py-6 space-y-6">
         {/* Top Row: Step 1 (Left) and Step 2 (Right) */}
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Step 1 - Top Left */}
@@ -332,25 +332,27 @@ export default function PromptVault() {
               STEP 3: SELECT KEYWORDS
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-4">
             {Object.entries(keywordCategories).map(([category, keywords]) => (
               <div key={category}>
-                <h4 className="text-white font-semibold mb-3">{category}</h4>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+                <h4 className="text-white font-black mb-2 text-sm uppercase">
+                  {category}
+                </h4>
+                <div className="grid grid-cols-5 sm:grid-cols-8 md:grid-cols-10 gap-1">
                   {keywords.map((keyword) => (
                     <Button
                       key={keyword}
                       variant="outline"
                       size="sm"
                       onClick={() => toggleKeyword(keyword)}
-                      className={`text-xs h-8 px-3 font-black border-2 transition-all duration-200 ${
+                      className={`text-xs h-6 px-2 font-black border rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg ${
                         selectedKeywords.includes(keyword)
-                          ? "bg-brand-red text-black border-brand-red hover:bg-brand-red-hover"
-                          : "bg-transparent text-brand-red border-brand-red hover:bg-brand-red hover:text-black"
+                          ? "bg-brand-red text-black border-brand-red hover:bg-brand-red hover:shadow-brand-red/50"
+                          : "bg-transparent text-brand-red border-brand-red hover:bg-brand-red hover:text-black hover:shadow-brand-red/50"
                       }`}
-                      style={{ fontWeight: 900, minWidth: "80px" }}
+                      style={{ fontWeight: 900, minWidth: "60px" }}
                     >
-                      <span className="truncate">
+                      <span className="truncate text-[10px]">
                         {keyword}
                         {selectedKeywords.includes(keyword) && (
                           <span className="ml-1">×</span>

@@ -120,6 +120,12 @@ export default function Index() {
                       setShowBriefcase(true);
                     } else if (item.name === "THE PLAYBOOK") {
                       navigate("/playbook");
+                    } else if (item.name === "PROMPT VAULT") {
+                      navigate("/prompt-vault");
+                    } else if (item.name === "TEMPLATES") {
+                      navigate("/templates");
+                    } else if (item.name === "AI TOOLKIT") {
+                      navigate("/ai-toolkit");
                     }
                   }}
                 >

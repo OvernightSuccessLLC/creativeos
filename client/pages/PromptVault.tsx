@@ -458,19 +458,20 @@ export default function PromptVault() {
                   <button
                     key={keyword}
                     onClick={() => toggleKeyword(keyword)}
-                    className={`px-4 py-2 rounded-full font-bold text-sm transition-all duration-300 transform hover:scale-105 ${
+                    className={`px-3 py-1.5 rounded-full font-medium text-xs transition-all duration-300 transform hover:scale-105 ${
                       selectedKeywords.includes(keyword)
                         ? "bg-black text-white shadow-lg"
                         : "bg-black text-white opacity-80 hover:opacity-100 hover:shadow-md"
                     }`}
                     style={{
-                      fontWeight: 700,
+                      fontWeight: 500,
+                      fontFamily: "Poppins, sans-serif",
                       border: selectedKeywords.includes(keyword)
                         ? "2px solid #fff"
                         : "1px solid rgba(255,255,255,0.3)",
                     }}
                   >
-                    {keyword}
+                    {keyword.toLowerCase()}
                   </button>
                 ))}
               </div>
@@ -490,6 +491,7 @@ export default function PromptVault() {
                 className="text-black text-sm font-black mb-2 text-left"
                 style={{
                   fontWeight: 900,
+                  fontFamily: "Poppins, sans-serif",
                   textShadow: "0 1px 2px rgba(0,0,0,0.1)",
                 }}
               >
@@ -500,19 +502,20 @@ export default function PromptVault() {
                   <button
                     key={keyword}
                     onClick={() => toggleKeyword(keyword)}
-                    className={`px-4 py-2 rounded-full font-bold text-sm transition-all duration-300 transform hover:scale-105 ${
+                    className={`px-3 py-1.5 rounded-full font-medium text-xs transition-all duration-300 transform hover:scale-105 ${
                       selectedKeywords.includes(keyword)
                         ? "bg-black text-white shadow-lg"
                         : "bg-black text-white opacity-80 hover:opacity-100 hover:shadow-md"
                     }`}
                     style={{
-                      fontWeight: 700,
+                      fontWeight: 500,
+                      fontFamily: "Poppins, sans-serif",
                       border: selectedKeywords.includes(keyword)
                         ? "2px solid #fff"
                         : "1px solid rgba(255,255,255,0.3)",
                     }}
                   >
-                    {keyword}
+                    {keyword.toLowerCase()}
                   </button>
                 ))}
               </div>
@@ -532,6 +535,7 @@ export default function PromptVault() {
                 className="text-black text-sm font-black mb-2 text-left"
                 style={{
                   fontWeight: 900,
+                  fontFamily: "Poppins, sans-serif",
                   textShadow: "0 1px 2px rgba(0,0,0,0.1)",
                 }}
               >
@@ -542,19 +546,20 @@ export default function PromptVault() {
                   <button
                     key={keyword}
                     onClick={() => toggleKeyword(keyword)}
-                    className={`px-4 py-2 rounded-full font-bold text-sm transition-all duration-300 transform hover:scale-105 ${
+                    className={`px-3 py-1.5 rounded-full font-medium text-xs transition-all duration-300 transform hover:scale-105 ${
                       selectedKeywords.includes(keyword)
                         ? "bg-black text-white shadow-lg"
                         : "bg-black text-white opacity-80 hover:opacity-100 hover:shadow-md"
                     }`}
                     style={{
-                      fontWeight: 700,
+                      fontWeight: 500,
+                      fontFamily: "Poppins, sans-serif",
                       border: selectedKeywords.includes(keyword)
                         ? "2px solid #fff"
                         : "1px solid rgba(255,255,255,0.3)",
                     }}
                   >
-                    {keyword}
+                    {keyword.toLowerCase()}
                   </button>
                 ))}
               </div>
@@ -574,6 +579,7 @@ export default function PromptVault() {
                 className="text-black text-sm font-black mb-2 text-left"
                 style={{
                   fontWeight: 900,
+                  fontFamily: "Poppins, sans-serif",
                   textShadow: "0 1px 2px rgba(0,0,0,0.1)",
                 }}
               >
@@ -585,19 +591,20 @@ export default function PromptVault() {
                     <button
                       key={keyword}
                       onClick={() => toggleKeyword(keyword)}
-                      className={`px-4 py-2 rounded-full font-bold text-sm transition-all duration-300 transform hover:scale-105 ${
+                      className={`px-3 py-1.5 rounded-full font-medium text-xs transition-all duration-300 transform hover:scale-105 ${
                         selectedKeywords.includes(keyword)
                           ? "bg-black text-white shadow-lg"
                           : "bg-black text-white opacity-80 hover:opacity-100 hover:shadow-md"
                       }`}
                       style={{
-                        fontWeight: 700,
+                        fontWeight: 500,
+                        fontFamily: "Poppins, sans-serif",
                         border: selectedKeywords.includes(keyword)
                           ? "2px solid #fff"
                           : "1px solid rgba(255,255,255,0.3)",
                       }}
                     >
-                      {keyword}
+                      {keyword.toLowerCase()}
                     </button>
                   ),
                 )}
@@ -618,6 +625,7 @@ export default function PromptVault() {
                 className="text-black text-sm font-black mb-2 text-left"
                 style={{
                   fontWeight: 900,
+                  fontFamily: "Poppins, sans-serif",
                   textShadow: "0 1px 2px rgba(0,0,0,0.1)",
                 }}
               >
@@ -628,19 +636,20 @@ export default function PromptVault() {
                   <button
                     key={keyword}
                     onClick={() => toggleKeyword(keyword)}
-                    className={`px-4 py-2 rounded-full font-bold text-sm transition-all duration-300 transform hover:scale-105 ${
+                    className={`px-3 py-1.5 rounded-full font-medium text-xs transition-all duration-300 transform hover:scale-105 ${
                       selectedKeywords.includes(keyword)
                         ? "bg-black text-white shadow-lg"
                         : "bg-black text-white opacity-80 hover:opacity-100 hover:shadow-md"
                     }`}
                     style={{
-                      fontWeight: 700,
+                      fontWeight: 500,
+                      fontFamily: "Poppins, sans-serif",
                       border: selectedKeywords.includes(keyword)
                         ? "2px solid #fff"
                         : "1px solid rgba(255,255,255,0.3)",
                     }}
                   >
-                    {keyword}
+                    {keyword.toLowerCase()}
                   </button>
                 ))}
               </div>

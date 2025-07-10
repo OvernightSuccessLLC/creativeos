@@ -140,7 +140,10 @@ export default function Templates() {
       <div className="bg-black px-6 py-8 text-center">
         <div className="flex items-center justify-center space-x-3 mb-4">
           <LayoutTemplate className="w-8 h-8 text-brand-red" />
-          <h1 className="text-4xl md:text-6xl font-bold text-white">
+          <h1
+            className="text-4xl md:text-6xl font-brand-black text-white brand-heading"
+            style={{ fontFamily: "Poppins, sans-serif", fontWeight: "900" }}
+          >
             TEMPLATES
           </h1>
         </div>

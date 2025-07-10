@@ -195,14 +195,44 @@ export default function Index() {
     return prompt;
   };
 
-  // Copy to clipboard
+  // Copy to clipboard with fallback
   const copyPrompt = async () => {
+    const text = generatePrompt();
+
     try {
-      await navigator.clipboard.writeText(generatePrompt());
-      setCopiedPrompt(true);
-      setTimeout(() => setCopiedPrompt(false), 2000);
+      // Try modern clipboard API first
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        setCopiedPrompt(true);
+        setTimeout(() => setCopiedPrompt(false), 2000);
+        return;
+      }
     } catch (err) {
-      console.error("Failed to copy:", err);
+      console.warn("Clipboard API failed, using fallback:", err);
+    }
+
+    // Fallback method using temporary textarea
+    try {
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      textArea.style.position = "fixed";
+      textArea.style.left = "-999999px";
+      textArea.style.top = "-999999px";
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+
+      const successful = document.execCommand("copy");
+      document.body.removeChild(textArea);
+
+      if (successful) {
+        setCopiedPrompt(true);
+        setTimeout(() => setCopiedPrompt(false), 2000);
+      } else {
+        console.error("Fallback copy method failed");
+      }
+    } catch (err) {
+      console.error("All copy methods failed:", err);
     }
   };
 

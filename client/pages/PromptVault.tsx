@@ -264,9 +264,7 @@ export default function PromptVault() {
             className="bg-black border border-gray-900 shadow-xl"
             style={{ flexGrow: "0", height: "auto" }}
           >
-            <CardContent
-              style={{ marginBottom: "12px", padding: "12px 24px 16px" }}
-            >
+            <CardContent style={{ padding: "8px 24px" }}>
               <h3
                 className="text-brand-red text-xs font-black tracking-wide"
                 style={{

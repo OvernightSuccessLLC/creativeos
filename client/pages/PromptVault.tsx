@@ -581,7 +581,11 @@ export default function PromptVault() {
                 onClick={copyPrompt}
                 disabled={!customInstructions && selectedKeywords.length === 0}
                 className="bg-brand-red hover:bg-brand-red-hover text-black font-black flex-1"
-                style={{ fontWeight: 900 }}
+                style={{
+                  fontWeight: 900,
+                  marginRight: "24px",
+                  padding: "4px 24px",
+                }}
                 data-copy-button
               >
                 <Copy className="w-4 h-4 mr-2" />

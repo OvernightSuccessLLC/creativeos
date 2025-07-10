@@ -261,7 +261,9 @@ export default function PromptVault() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {/* Step 1 - Top Left */}
           <Card className="bg-black border border-gray-900 shadow-xl">
-            <CardContent style={{ padding: "12px 24px 16px" }}>
+            <CardContent
+              style={{ marginBottom: "12px", padding: "12px 24px 16px" }}
+            >
               <h3
                 className="text-brand-red text-xs font-black tracking-wide border-b border-brand-red pb-1"
                 style={{

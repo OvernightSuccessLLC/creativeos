@@ -383,7 +383,7 @@ export default function PromptVault() {
           </CardHeader>
           <CardContent className="space-y-4">
             {/* Lighting Section */}
-            <div className="bg-black border border-gray-600 rounded-lg p-4">
+            <div className="bg-black border border-gray-600 rounded-lg py-2 px-3">
               <h3 className="text-white text-base font-bold mb-3">Lighting</h3>
               <div className="flex flex-wrap gap-2">
                 {keywordCategories.Lighting.map((keyword) => (

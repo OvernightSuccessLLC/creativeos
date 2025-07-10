@@ -524,9 +524,14 @@ export default function PromptVault() {
             {/* Modifiers Section */}
             <div
               className="bg-black border border-gray-600 rounded-lg"
-              style={{ margin: "12px 0", padding: "0 6px 8px" }}
+              style={{ margin: "20px 0 12px", padding: "12px 6px" }}
             >
-              <h3 className="text-white text-base font-bold mb-3">Modifiers</h3>
+              <h3
+                className="text-white text-base font-bold mb-3"
+                style={{ fontSize: "14px" }}
+              >
+                Modifiers
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {enhancedKeywordCategories.Modifiers.map((keyword) => (
                   <button

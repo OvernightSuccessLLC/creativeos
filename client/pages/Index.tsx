@@ -643,9 +643,6 @@ export default function Index() {
                 </div>
 
                 <div className="space-y-2 sm:space-y-3">
-                  <div className="text-white font-medium text-xs sm:text-sm">
-                    AI RECOMMENDATIONS
-                  </div>
                   <ul className="space-y-1 text-xs sm:text-sm text-white/60">
                     <li>
                       • Add detailed scene descriptions for better results

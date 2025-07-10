@@ -416,7 +416,7 @@ export default function Index() {
                         <div className="text-white font-medium text-xs sm:text-sm">
                           AI RECOMMENDATIONS
                         </div>
-                        <ul className="space-y-1 text-xs sm:text-sm text-gray-400">
+                        <ul className="space-y-1 text-xs sm:text-sm text-white/60">
                           <li>• Add more selections for richer SORA output</li>
                           <li>
                             • Custom instructions help SORA understand your

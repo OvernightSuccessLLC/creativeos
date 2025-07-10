@@ -652,7 +652,13 @@ export default function PromptVault() {
           {/* Quality Meter - Takes 1/3 width */}
           <Card className="bg-black border border-gray-900 shadow-xl">
             <CardContent style={{ padding: "20px" }}>
-              <h3 className="text-brand-red text-lg font-bold mb-4 tracking-wide">
+              <h3
+                className="text-lg font-bold mb-4 tracking-wide"
+                style={{
+                  color: "#EE1C25",
+                  fontFamily: "Poppins, Helvetica Neue, sans-serif",
+                }}
+              >
                 AI PROMPT OPTIMIZER
               </h3>
 
@@ -661,18 +667,24 @@ export default function PromptVault() {
                 <div className="relative w-24 h-24">
                   <div className="w-24 h-24 rounded-full border-4 border-gray-700 flex items-center justify-center relative">
                     <div
-                      className="absolute inset-0 rounded-full border-4 border-transparent border-t-brand-red border-r-brand-red transition-all duration-500"
+                      className="absolute inset-0 rounded-full border-4 border-transparent transition-all duration-500"
                       style={{
                         transform: `rotate(${(qualityScore / 100) * 360}deg)`,
+                        borderTopColor: "#EE1C25",
                         borderRightColor:
-                          qualityScore > 25 ? "#ff4e33" : "transparent",
+                          qualityScore > 25 ? "#EE1C25" : "transparent",
                         borderBottomColor:
-                          qualityScore > 50 ? "#ff4e33" : "transparent",
+                          qualityScore > 50 ? "#EE1C25" : "transparent",
                         borderLeftColor:
-                          qualityScore > 75 ? "#ff4e33" : "transparent",
+                          qualityScore > 75 ? "#EE1C25" : "transparent",
                       }}
                     />
-                    <span className="text-white text-xl font-bold relative z-10">
+                    <span
+                      className="text-white text-xl font-bold relative z-10"
+                      style={{
+                        fontFamily: "Poppins, Helvetica Neue, sans-serif",
+                      }}
+                    >
                       {qualityScore}%
                     </span>
                   </div>

@@ -673,12 +673,14 @@ export default function PromptVault() {
               <div className="text-gray-400 text-xs mb-2 font-semibold">
                 GENERATED SORA PROMPT
               </div>
-              <p className="text-white text-sm">
+              <p className="text-white text-sm leading-relaxed">
                 {generatePrompt() ||
-                  "Start by adding your creative vision and selecting keywords..."}
+                  "Start by adding your creative vision and selecting keywords to generate your optimized SORA prompt..."}
               </p>
             </div>
-            <div className="flex space-x-2">
+
+            {/* Action Buttons */}
+            <div className="flex gap-4 mb-4">
               <Button
                 onClick={copyPrompt}
                 disabled={!customInstructions && selectedKeywords.length === 0}

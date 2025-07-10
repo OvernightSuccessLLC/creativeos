@@ -229,6 +229,13 @@ export default function Templates() {
           </div>
         )}
       </div>
+
+      {/* Briefcase Modal */}
+      <BriefcaseModal
+        isOpen={showBriefcase}
+        onClose={() => setShowBriefcase(false)}
+        onNavigate={(path) => navigate(path)}
+      />
     </div>
   );
 }

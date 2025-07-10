@@ -312,7 +312,7 @@ export default function PromptVault() {
               </h3>
               <div
                 className="border-2 border-dashed border-gray-700 rounded-lg text-center"
-                style={{ margin: "12px 0", padding: "18px 12px" }}
+                style={{ margin: "24px 0 8px", padding: "12px" }}
               >
                 <Upload className="w-5 h-5 text-gray-400 mx-auto mb-1" />
                 <p className="text-gray-400 mb-2 text-xs">

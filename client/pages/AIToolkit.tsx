@@ -25,36 +25,91 @@ import {
 export default function AIToolkit() {
   const navigate = useNavigate();
   const [showBriefcase, setShowBriefcase] = useState(false);
-  const toolCategories = [
+  const toolsData = [
     {
-      title: "Image Generation",
-      icon: Image,
-      tools: [
-        {
-          name: "SORA",
-          link: "https://openai.com/sora",
-          status: "recommended",
-        },
-        {
-          name: "Midjourney",
-          link: "https://midjourney.com",
-          status: "popular",
-        },
-        {
-          name: "DALL-E 3",
-          link: "https://openai.com/dall-e-3",
-          status: "featured",
-        },
-        {
-          name: "Stable Diffusion",
-          link: "https://stability.ai",
-          status: "free",
-        },
-        {
-          name: "Adobe Firefly",
-          link: "https://firefly.adobe.com",
-          status: "pro",
-        },
+      id: 1,
+      name: "GitHub Copilot",
+      category: "Development",
+      categoryColor: "bg-orange-500",
+      isPremium: false,
+      description: "AI pair programmer that autocompletes code in real time",
+      keyFeatures: [
+        "Code completion",
+        "Real-time suggestions",
+        "Multi-language"
+      ],
+      link: "https://github.com/features/copilot"
+    },
+    {
+      id: 2,
+      name: "Gemini",
+      category: "Premium",
+      categoryColor: "bg-blue-500",
+      isPremium: true,
+      description: "Google's LLM for text, image, and code understanding",
+      keyFeatures: [
+        "Multimodal",
+        "Code understanding",
+        "Text generation"
+      ],
+      link: "https://gemini.google.com"
+    },
+    {
+      id: 3,
+      name: "Framer",
+      category: "Web Design",
+      categoryColor: "bg-orange-500",
+      isPremium: true,
+      description: "AI-powered website builder that creates and publishes sites with ease",
+      keyFeatures: [
+        "Website builder",
+        "AI design",
+        "No-code"
+      ],
+      link: "https://framer.com"
+    },
+    {
+      id: 4,
+      name: "Figma AI",
+      category: "Design",
+      categoryColor: "bg-orange-500",
+      isPremium: true,
+      description: "Intelligent design assistant inside Figma",
+      keyFeatures: [
+        "Design assistance",
+        "Auto-layout",
+        "Content generation"
+      ],
+      link: "https://figma.com"
+    },
+    {
+      id: 5,
+      name: "Exactly",
+      category: "Art Generation",
+      categoryColor: "bg-orange-500",
+      isPremium: true,
+      description: "AI for generating commercial-quality artwork",
+      keyFeatures: [
+        "Commercial quality",
+        "Custom training",
+        "Brand consistency"
+      ],
+      link: "https://exactly.ai"
+    },
+    {
+      id: 6,
+      name: "Dream by Wombo",
+      category: "Art Generation",
+      categoryColor: "bg-purple-500",
+      isPremium: false,
+      description: "AI app for creating vibrant artwork from text prompts",
+      keyFeatures: [
+        "Text-to-art",
+        "Multiple styles",
+        "Mobile app"
+      ],
+      link: "https://dream.ai"
+    }
         { name: "Leonardo AI", link: "https://leonardo.ai", status: "new" },
         { name: "Ideogram", link: "https://ideogram.ai", status: "popular" },
         { name: "Flux", link: "https://flux.1.ai", status: "new" },

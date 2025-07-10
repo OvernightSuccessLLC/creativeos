@@ -69,7 +69,6 @@ export default function PromptVault() {
       "Beach",
       "Forest",
       "Desert",
-      "Office",
       "Street",
       "Gallery",
     ],

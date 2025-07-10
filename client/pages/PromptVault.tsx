@@ -553,14 +553,19 @@ export default function PromptVault() {
 
         {/* Generated Prompt - Full Width Single Column */}
         <Card className="bg-black border border-gray-900 shadow-xl">
-          <CardHeader className="py-3">
-            <CardTitle
+          <CardContent style={{ padding: "12px 24px" }}>
+            <h3
               className="text-brand-red text-sm font-black tracking-wide border-b border-brand-red pb-2"
-              style={{ fontWeight: 900 }}
+              style={{
+                fontWeight: 900,
+                fontSize: "16px",
+                alignSelf: "center",
+                paddingBottom: "8px",
+              }}
             >
               GENERATED SORA PROMPT
-            </CardTitle>
-          </CardHeader>
+            </h3>
+          </CardContent>
           <CardContent className="space-y-3">
             <div className="bg-gray-900 border border-gray-700 rounded p-3 pb-2 min-h-[80px]">
               <p className="text-white text-sm">

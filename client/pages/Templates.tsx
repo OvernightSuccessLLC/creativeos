@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 
 export default function Templates() {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [showBriefcase, setShowBriefcase] = useState(false);

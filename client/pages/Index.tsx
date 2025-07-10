@@ -254,9 +254,9 @@ export default function Index() {
   };
 
   // Update quality score when dependencies change
-  useState(() => {
+  React.useEffect(() => {
     setQualityScore(calculateQuality());
-  });
+  }, [customInstructions, selectedKeywords, uploadedFile]);
 
   const renderStepContent = (stepId: number) => {
     switch (stepId) {

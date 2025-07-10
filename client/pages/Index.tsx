@@ -375,7 +375,7 @@ export default function Index() {
                     ].map((item, index) => (
                       <Card
                         key={item.step}
-                        className="bg-black border border-gray-800 hover:border-brand-red transition-colors cursor-pointer"
+                        className="bg-black border border-white/20 hover:border-brand-red transition-colors cursor-pointer"
                         onClick={() => navigate("/prompt-vault")}
                       >
                         <CardContent className="p-3 sm:p-4">

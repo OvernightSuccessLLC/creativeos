@@ -557,7 +557,10 @@ export default function PromptVault() {
         </Card>
 
         {/* Generated Prompt - Full Width Single Column */}
-        <Card className="bg-black border border-gray-900 shadow-xl">
+        <Card
+          className="bg-black border border-gray-900 shadow-xl"
+          style={{ margin: "8px 0 12px", padding: "8px 0 12px" }}
+        >
           <CardContent style={{ padding: "12px 24px" }}>
             <h3
               className="text-brand-red text-sm font-black tracking-wide border-b border-brand-red pb-2"

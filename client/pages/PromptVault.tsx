@@ -239,7 +239,7 @@ export default function PromptVault() {
       {/* Header */}
       <div
         className="bg-black px-6 text-center"
-        style={{ marginTop: "6px", padding: "20px 24px 12px" }}
+        style={{ margin: "12px 0 18px", padding: "24px 24px 18px" }}
       >
         <div className="flex items-center justify-center space-x-3 mb-4">
           <Database className="w-8 h-8 text-brand-red" />

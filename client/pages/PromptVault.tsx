@@ -253,7 +253,10 @@ export default function PromptVault() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 space-y-4">
+      <div
+        className="max-w-7xl mx-auto space-y-4"
+        style={{ padding: "0 24px 12px" }}
+      >
         {/* Top Row: Step 1 (Left) and Step 2 (Right) - Same width as Step 3 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {/* Step 1 - Top Left */}

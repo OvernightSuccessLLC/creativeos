@@ -619,8 +619,83 @@ export default function PromptVault() {
           </CardContent>
         </Card>
 
-        {/* Step 4 & Quality Meter Side by Side */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Step 4: Compact Prompt Output */}
+        <Card className="bg-black border-2 border-brand-red shadow-xl mt-4">
+          <CardContent style={{ padding: "16px" }}>
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center">
+                <div className="w-6 h-6 rounded-full bg-brand-red flex items-center justify-center mr-3">
+                  <span className="text-black font-bold text-sm">4</span>
+                </div>
+                <h3 className="text-white text-lg font-bold">Your Optimized SORA Prompt</h3>
+              </div>
+
+              {/* Compact Quality Score */}
+              <div className="flex items-center gap-3">
+                <span className="text-xs text-gray-400">Quality:</span>
+                <div className={`text-lg font-bold ${
+                  qualityScore >= 80 ? 'text-green-400' :
+                  qualityScore >= 50 ? 'text-yellow-400' : 'text-red-400'
+                }`}>
+                  {qualityScore}%
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gray-900 border border-gray-700 rounded-lg mb-3" style={{ padding: "12px" }}>
+              <textarea
+                value={generatePrompt()}
+                readOnly
+                className="w-full bg-transparent text-gray-300 text-sm leading-relaxed resize-none border-0 outline-0"
+                rows={5}
+                placeholder="Enter your vision above and click keywords below to build your optimized SORA prompt..."
+                style={{ minHeight: "100px", fontFamily: "monospace" }}
+              />
+            </div>
+
+            {/* Compact Progress Indicators */}
+            <div className="flex items-center gap-4 mb-3 text-xs">
+              <span className={`flex items-center gap-1 ${customInstructions ? 'text-green-400' : 'text-gray-500'}`}>
+                {customInstructions ? '✓' : '○'} Vision
+              </span>
+              <span className={`flex items-center gap-1 ${selectedKeywords.some(k => keywordCategories.Lighting.includes(k)) ? 'text-green-400' : 'text-gray-500'}`}>
+                {selectedKeywords.some(k => keywordCategories.Lighting.includes(k)) ? '✓' : '○'} Lighting
+              </span>
+              <span className={`flex items-center gap-1 ${selectedKeywords.some(k => keywordCategories.Framing.includes(k)) ? 'text-green-400' : 'text-gray-500'}`}>
+                {selectedKeywords.some(k => keywordCategories.Framing.includes(k)) ? '✓' : '○'} Framing
+              </span>
+              <span className={`flex items-center gap-1 ${selectedKeywords.some(k => enhancedKeywordCategories["Creative Direction"].includes(k)) ? 'text-green-400' : 'text-gray-500'}`}>
+                {selectedKeywords.some(k => enhancedKeywordCategories["Creative Direction"].includes(k)) ? '✓' : '○'} Style
+              </span>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex gap-3">
+              <Button
+                onClick={copyPrompt}
+                disabled={!customInstructions && selectedKeywords.length === 0}
+                className="bg-brand-red hover:bg-red-600 text-black font-bold py-2 px-4 transition-all duration-200"
+                style={{ background: "#ff4e33", border: "none" }}
+              >
+                <Copy className="w-4 h-4 mr-2" />
+                COPY PROMPT
+              </Button>
+
+              <Button
+                onClick={() => {
+                  setCustomInstructions("");
+                  setSelectedKeywords([]);
+                  setUploadedFile(null);
+                  setQualityScore(0);
+                }}
+                variant="outline"
+                className="px-4 py-2 border border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white font-bold transition-all duration-200"
+              >
+                CLEAR ALL
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
           {/* Step 4: Optimized SORA Prompt - Takes up 2/3 of the width */}
           <div className="lg:col-span-2">
             <Card className="bg-black border-2 border-brand-red shadow-xl h-full">

@@ -730,8 +730,15 @@ export default function PromptVault() {
                         keywordCategories.Framing.includes(k),
                       )
                         ? "text-green-400"
-                        : "text-gray-500"
+                        : "text-white"
                     }
+                    style={{
+                      opacity: selectedKeywords.some((k) =>
+                        keywordCategories.Framing.includes(k),
+                      )
+                        ? 1
+                        : 0.5,
+                    }}
                   >
                     {selectedKeywords.some((k) =>
                       keywordCategories.Framing.includes(k),

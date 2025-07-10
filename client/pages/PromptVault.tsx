@@ -529,27 +529,24 @@ export default function PromptVault() {
 
         {/* Quality Meter - Full Width */}
         <Card className="bg-black border border-gray-900 shadow-xl">
-          <CardHeader>
-            <div className="flex items-center justify-between">
-              <CardTitle
-                className="text-brand-red text-sm font-black tracking-wide"
-                style={{ fontWeight: 900 }}
-              >
-                PROMPT QUALITY
-              </CardTitle>
-              <Badge
-                className={`${
-                  qualityScore >= 80
-                    ? "bg-green-500"
-                    : qualityScore >= 50
-                      ? "bg-yellow-500"
-                      : "bg-brand-red"
-                } text-white font-bold`}
-              >
-                {qualityScore}% QUALITY
-              </Badge>
-            </div>
-          </CardHeader>
+          <CardTitle
+            className="text-brand-red text-sm font-black tracking-wide"
+            style={{ fontWeight: 900 }}
+          >
+            PROMPT QUALITY
+          </CardTitle>
+          <Badge
+            className={`${
+              qualityScore >= 80
+                ? "bg-green-500"
+                : qualityScore >= 50
+                  ? "bg-yellow-500"
+                  : "bg-brand-red"
+            } text-white font-bold mx-6 my-2`}
+          >
+            {qualityScore}% QUALITY
+          </Badge>
+          <div className="flex flex-col">
           <CardContent>
             <div className="w-full bg-gray-900 rounded-full h-3 mb-4 border border-gray-800">
               <div

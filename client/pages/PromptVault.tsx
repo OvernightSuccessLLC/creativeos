@@ -265,7 +265,7 @@ export default function PromptVault() {
               style={{ marginBottom: "12px", padding: "12px 24px 16px" }}
             >
               <h3
-                className="text-brand-red text-xs font-black tracking-wide border-b border-brand-red pb-1"
+                className="text-brand-red text-xs font-black tracking-wide"
                 style={{
                   fontWeight: 900,
                   fontSize: "15px",

@@ -368,13 +368,9 @@ export default function PromptVault() {
           style={{ margin: "12px 0", padding: "20px 0" }}
         >
           <h3
-            className="text-brand-red text-sm font-black tracking-wide"
+            className="text-brand-red text-lg font-black tracking-wide text-center mb-6"
             style={{
               fontWeight: 900,
-              alignSelf: "start",
-              textAlign: "left",
-              margin: "12px 18px 0",
-              padding: "6px 24px 5px",
             }}
           >
             STEP 3: SELECT KEYWORDS

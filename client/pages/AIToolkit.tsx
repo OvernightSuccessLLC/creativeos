@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import AppNavigation from "@/components/AppNavigation";
 import {
   Zap,
   Camera,
@@ -14,6 +16,8 @@ import {
   Play,
   Download,
   Settings,
+  TrendingUp,
+  Star,
 } from "lucide-react";
 
 export default function AIToolkit() {

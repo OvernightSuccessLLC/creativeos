@@ -279,7 +279,10 @@ export default function Playbook() {
       >
         {sections.map((section) => (
           <Card key={section.id} className="bg-black border-white">
-            <CardHeader className="bg-brand-red">
+            <CardHeader
+              className="bg-brand-red"
+              style={{ padding: "20px 24px" }}
+            >
               <CardTitle
                 className="text-black text-xl flex items-center space-x-3"
                 style={TYPOGRAPHY.subtitle}
@@ -293,7 +296,10 @@ export default function Playbook() {
                 <span>{section.title}</span>
               </CardTitle>
             </CardHeader>
-            <CardContent className="p-8 bg-black border border-white">
+            <CardContent
+              className="bg-black border border-white"
+              style={{ padding: section.id === 1 ? "32px 32px 20px" : "32px" }}
+            >
               {section.id === 1 && (
                 <div className="space-y-6">
                   <div className="space-y-3">

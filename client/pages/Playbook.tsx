@@ -497,9 +497,6 @@ export default function Playbook() {
                     >
                       {section.content.lifestyle.title}
                     </h4>
-                    <p className="text-white mb-3" style={TYPOGRAPHY.body}>
-                      {section.content.lifestyle.description}
-                    </p>
                     <ul className="space-y-1 mb-4">
                       {section.content.lifestyle.tips.map((tip, idx) => (
                         <li
@@ -511,7 +508,10 @@ export default function Playbook() {
                         </li>
                       ))}
                     </ul>
-                    <div className="bg-black p-3 rounded border border-white">
+                    <div
+                      className="bg-black rounded"
+                      style={{ padding: "12px 12px 12px 0" }}
+                    >
                       <h5
                         className="text-brand-red mb-2 text-sm"
                         style={TYPOGRAPHY.heading}
@@ -534,9 +534,6 @@ export default function Playbook() {
                     >
                       {section.content.studio.title}
                     </h4>
-                    <p className="text-white mb-3" style={TYPOGRAPHY.body}>
-                      {section.content.studio.description}
-                    </p>
                     <ul className="space-y-1 mb-4">
                       {section.content.studio.tips.map((tip, idx) => (
                         <li
@@ -548,7 +545,10 @@ export default function Playbook() {
                         </li>
                       ))}
                     </ul>
-                    <div className="bg-black p-3 rounded border border-white">
+                    <div
+                      className="bg-black rounded"
+                      style={{ padding: "12px 12px 12px 0" }}
+                    >
                       <h5
                         className="text-brand-red mb-2 text-sm"
                         style={TYPOGRAPHY.heading}

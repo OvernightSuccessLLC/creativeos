@@ -336,32 +336,81 @@ export default function Playbook() {
               {section.id === 2 && (
                 <div className="space-y-6">
                   <div>
-                    <h4
-                      className="text-brand-red text-lg mb-4"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      Core Principles:
-                    </h4>
                     <ul className="space-y-3">
-                      {section.content.principles.map((principle, idx) => (
-                        <li
-                          key={idx}
-                          className="text-white leading-relaxed"
-                          style={TYPOGRAPHY.body}
+                      <li
+                        className="text-white leading-relaxed"
+                        style={{
+                          ...TYPOGRAPHY.body,
+                          marginBottom: "20px",
+                          padding: "20px 0",
+                        }}
+                      >
+                        •{" "}
+                        <strong
+                          className="text-brand-red"
+                          style={TYPOGRAPHY.heading}
                         >
-                          •{" "}
-                          <strong
-                            className="text-brand-red"
-                            style={TYPOGRAPHY.heading}
-                          >
-                            {principle.split(":")[0]}:
-                          </strong>
-                          {principle.split(":")[1]}
-                        </li>
-                      ))}
+                          Be Specific and Clear:
+                        </strong>{" "}
+                        Provide concrete details about what you want. Vague
+                        prompts lead to unpredictable results. "A young man in a
+                        blue suit waiting at a New York City bus stop on a rainy
+                        night" vs "a person in a city". Include key attributes
+                        like colors, setting, and distinctive features.
+                      </li>
+                      <li
+                        className="text-white leading-relaxed"
+                        style={{ ...TYPOGRAPHY.body, paddingBottom: "20px" }}
+                      >
+                        •{" "}
+                        <strong
+                          className="text-brand-red"
+                          style={TYPOGRAPHY.heading}
+                        >
+                          Mention the Style or Mood:
+                        </strong>{" "}
+                        The same scene can look like a photograph, watercolor
+                        painting, Pixar animation, or oil painting. Use mood
+                        adjectives
+                      </li>
+                      <li
+                        className="text-white leading-relaxed"
+                        style={{ ...TYPOGRAPHY.body, paddingBottom: "20px" }}
+                      >
+                        •{" "}
+                        <strong
+                          className="text-brand-red"
+                          style={TYPOGRAPHY.heading}
+                        >
+                          Start Simple (Then Iterate):
+                        </strong>{" "}
+                        Begin with a short prompt focusing on one subject or
+                        scene. Build complexity through iterations rather than
+                        writing super long prompts from scratch. Treat each
+                        generation as feedback. Analyze what worked and what
+                        didn't, then improve your prompt and try again.
+                      </li>
+                      <li
+                        className="text-white leading-relaxed"
+                        style={{ ...TYPOGRAPHY.body, paddingBottom: "20px" }}
+                      >
+                        •{" "}
+                        <strong
+                          className="text-brand-red"
+                          style={TYPOGRAPHY.heading}
+                        >
+                          Use Natural Language:
+                        </strong>{" "}
+                        Write as if describing an image to another person, not
+                        like coding. Natural descriptions work better than
+                        keyword cramming.
+                      </li>
                     </ul>
                   </div>
-                  <div className="bg-black p-6 rounded-lg border border-white">
+                  <div
+                    className="bg-black rounded-lg"
+                    style={{ paddingRight: "24px" }}
+                  >
                     <h4
                       className="text-brand-red text-lg mb-3"
                       style={TYPOGRAPHY.heading}
@@ -372,7 +421,21 @@ export default function Playbook() {
                       className="text-white leading-relaxed"
                       style={TYPOGRAPHY.body}
                     >
-                      {section.content.progression}
+                      Beginner: "Photo of a cat sitting on a windowsill." –
+                      Basic idea with no particular flair.
+                      <br />
+                      <br />
+                      Advanced: "A tabby cat lounging on a sunny windowsill with
+                      soft morning light filtering through lace curtains,
+                      looking outside at birds." – Specified breed, lighting,
+                      context, and activity.
+                      <br />
+                      <br />
+                      Expert: "Candid pet photography, close-up shot of a
+                      green-eyed tabby cat lounging on a sunlit Victorian bay
+                      window, rays of golden morning light patterning its fur
+                      through ornate lace curtains. Shot with shallow depth of
+                      field (85mm f/1.8).
                     </p>
                   </div>
                 </div>

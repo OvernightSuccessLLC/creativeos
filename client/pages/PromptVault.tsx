@@ -437,10 +437,10 @@ export default function PromptVault() {
             <div
               className="rounded-lg mb-4"
               style={{
-                background: "#ff4e33",
+                background: "#EE1C25",
                 padding: "8px 12px 12px",
-                boxShadow: "0 0 20px rgba(255, 107, 53, 0.3)",
-                border: "1px solid rgba(255, 107, 53, 0.8)",
+                boxShadow: "0 0 20px rgba(238, 28, 37, 0.3)",
+                border: "1px solid rgba(238, 28, 37, 0.8)",
               }}
             >
               <h3

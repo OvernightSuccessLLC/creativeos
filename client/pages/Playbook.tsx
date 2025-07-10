@@ -406,13 +406,31 @@ export default function Playbook() {
               {section.id === 3 && (
                 <div className="space-y-4">
                   <div className="bg-gray-900 p-4 rounded border border-gray-700">
-                    <h4 className="text-white font-semibold mb-2">
+                    <h4
+                      className="text-white mb-2"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "600",
+                      }}
+                    >
                       Master Formula:
                     </h4>
-                    <code className="text-green-400 text-sm">
+                    <code
+                      className="text-green-400 text-sm"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "500",
+                      }}
+                    >
                       {section.content.formula}
                     </code>
-                    <p className="text-gray-300 text-sm mt-2">
+                    <p
+                      className="text-gray-300 text-sm mt-2"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "500",
+                      }}
+                    >
                       {section.content.description}
                     </p>
                   </div>
@@ -420,10 +438,24 @@ export default function Playbook() {
                     {Object.entries(section.content.components).map(
                       ([key, value]) => (
                         <div key={key} className="space-y-1">
-                          <h5 className="text-brand-red font-semibold">
+                          <h5
+                            className="text-brand-red"
+                            style={{
+                              fontFamily: "Poppins, sans-serif",
+                              fontWeight: "600",
+                            }}
+                          >
                             {key}
                           </h5>
-                          <p className="text-gray-300 text-sm">{value}</p>
+                          <p
+                            className="text-gray-300 text-sm"
+                            style={{
+                              fontFamily: "Poppins, sans-serif",
+                              fontWeight: "500",
+                            }}
+                          >
+                            {value}
+                          </p>
                         </div>
                       ),
                     )}
@@ -434,48 +466,110 @@ export default function Playbook() {
               {section.id === 4 && (
                 <div className="space-y-6">
                   <div>
-                    <h4 className="text-brand-red font-semibold mb-3">
+                    <h4
+                      className="text-brand-red mb-3"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "600",
+                      }}
+                    >
                       {section.content.lifestyle.title}
                     </h4>
-                    <p className="text-gray-300 mb-3">
+                    <p
+                      className="text-gray-300 mb-3"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "500",
+                      }}
+                    >
                       {section.content.lifestyle.description}
                     </p>
                     <ul className="space-y-1 mb-4">
                       {section.content.lifestyle.tips.map((tip, idx) => (
-                        <li key={idx} className="text-gray-300 text-sm">
+                        <li
+                          key={idx}
+                          className="text-gray-300 text-sm"
+                          style={{
+                            fontFamily: "Poppins, sans-serif",
+                            fontWeight: "500",
+                          }}
+                        >
                           • {tip}
                         </li>
                       ))}
                     </ul>
                     <div className="bg-gray-900 p-3 rounded border border-gray-700">
-                      <h5 className="text-white font-semibold mb-2 text-sm">
+                      <h5
+                        className="text-white mb-2 text-sm"
+                        style={{
+                          fontFamily: "Poppins, sans-serif",
+                          fontWeight: "600",
+                        }}
+                      >
                         Example:
                       </h5>
-                      <p className="text-gray-300 text-sm italic">
+                      <p
+                        className="text-gray-300 text-sm italic"
+                        style={{
+                          fontFamily: "Poppins, sans-serif",
+                          fontWeight: "500",
+                        }}
+                      >
                         "{section.content.lifestyle.example}"
                       </p>
                     </div>
                   </div>
 
                   <div>
-                    <h4 className="text-brand-red font-semibold mb-3">
+                    <h4
+                      className="text-brand-red mb-3"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "600",
+                      }}
+                    >
                       {section.content.studio.title}
                     </h4>
-                    <p className="text-gray-300 mb-3">
+                    <p
+                      className="text-gray-300 mb-3"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "500",
+                      }}
+                    >
                       {section.content.studio.description}
                     </p>
                     <ul className="space-y-1 mb-4">
                       {section.content.studio.tips.map((tip, idx) => (
-                        <li key={idx} className="text-gray-300 text-sm">
+                        <li
+                          key={idx}
+                          className="text-gray-300 text-sm"
+                          style={{
+                            fontFamily: "Poppins, sans-serif",
+                            fontWeight: "500",
+                          }}
+                        >
                           • {tip}
                         </li>
                       ))}
                     </ul>
                     <div className="bg-gray-900 p-3 rounded border border-gray-700">
-                      <h5 className="text-white font-semibold mb-2 text-sm">
+                      <h5
+                        className="text-white mb-2 text-sm"
+                        style={{
+                          fontFamily: "Poppins, sans-serif",
+                          fontWeight: "600",
+                        }}
+                      >
                         Example:
                       </h5>
-                      <p className="text-gray-300 text-sm italic">
+                      <p
+                        className="text-gray-300 text-sm italic"
+                        style={{
+                          fontFamily: "Poppins, sans-serif",
+                          fontWeight: "500",
+                        }}
+                      >
                         "{section.content.studio.example}"
                       </p>
                     </div>
@@ -485,18 +579,45 @@ export default function Playbook() {
 
               {section.id === 5 && (
                 <div className="space-y-4">
-                  <p className="text-gray-300">{section.content.description}</p>
+                  <p
+                    className="text-gray-300"
+                    style={{
+                      fontFamily: "Poppins, sans-serif",
+                      fontWeight: "500",
+                    }}
+                  >
+                    {section.content.description}
+                  </p>
 
                   <div>
-                    <h4 className="text-brand-red font-semibold mb-3">
+                    <h4
+                      className="text-brand-red mb-3"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "600",
+                      }}
+                    >
                       Scene Regeneration & Object Placement
                     </h4>
-                    <h5 className="text-white font-semibold mb-2">
+                    <h5
+                      className="text-white mb-2"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "600",
+                      }}
+                    >
                       Editing Best Practices:
                     </h5>
                     <ul className="space-y-2">
                       {section.content.editingTips.map((tip, idx) => (
-                        <li key={idx} className="text-gray-300">
+                        <li
+                          key={idx}
+                          className="text-gray-300"
+                          style={{
+                            fontFamily: "Poppins, sans-serif",
+                            fontWeight: "500",
+                          }}
+                        >
                           • {tip}
                         </li>
                       ))}
@@ -504,12 +625,25 @@ export default function Playbook() {
                   </div>
 
                   <div>
-                    <h5 className="text-white font-semibold mb-2">
+                    <h5
+                      className="text-white mb-2"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "600",
+                      }}
+                    >
                       Text in Images:
                     </h5>
                     <ul className="space-y-2">
                       {section.content.textInImages.map((tip, idx) => (
-                        <li key={idx} className="text-gray-300">
+                        <li
+                          key={idx}
+                          className="text-gray-300"
+                          style={{
+                            fontFamily: "Poppins, sans-serif",
+                            fontWeight: "500",
+                          }}
+                        >
                           • {tip}
                         </li>
                       ))}
@@ -517,12 +651,25 @@ export default function Playbook() {
                   </div>
 
                   <div className="bg-gray-900 p-4 rounded border border-gray-700">
-                    <h4 className="text-brand-red font-semibold mb-2">
+                    <h4
+                      className="text-brand-red mb-2"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "600",
+                      }}
+                    >
                       Example Edit Sequence:
                     </h4>
                     <ul className="space-y-1">
                       {section.content.exampleEditSequence.map((step, idx) => (
-                        <li key={idx} className="text-gray-300 text-sm">
+                        <li
+                          key={idx}
+                          className="text-gray-300 text-sm"
+                          style={{
+                            fontFamily: "Poppins, sans-serif",
+                            fontWeight: "500",
+                          }}
+                        >
                           {step}
                         </li>
                       ))}
@@ -533,7 +680,15 @@ export default function Playbook() {
 
               {section.id === 6 && (
                 <div className="space-y-4">
-                  <p className="text-gray-300">{section.content.description}</p>
+                  <p
+                    className="text-gray-300"
+                    style={{
+                      fontFamily: "Poppins, sans-serif",
+                      fontWeight: "500",
+                    }}
+                  >
+                    {section.content.description}
+                  </p>
 
                   <div className="grid gap-4">
                     {section.content.steps.map((step, idx) => (
@@ -542,22 +697,49 @@ export default function Playbook() {
                         className="bg-gray-900 p-4 rounded border border-gray-700"
                       >
                         <div className="flex items-start space-x-3">
-                          <span className="bg-brand-red text-black rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">
+                          <span
+                            className="bg-brand-red text-black rounded-full w-6 h-6 flex items-center justify-center text-sm"
+                            style={{
+                              fontFamily: "Poppins, sans-serif",
+                              fontWeight: "700",
+                            }}
+                          >
                             {idx + 1}
                           </span>
-                          <p className="text-gray-300">{step}</p>
+                          <p
+                            className="text-gray-300"
+                            style={{
+                              fontFamily: "Poppins, sans-serif",
+                              fontWeight: "500",
+                            }}
+                          >
+                            {step}
+                          </p>
                         </div>
                       </div>
                     ))}
                   </div>
 
                   <div>
-                    <h4 className="text-brand-red font-semibold mb-3">
+                    <h4
+                      className="text-brand-red mb-3"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "600",
+                      }}
+                    >
                       Pro Tips for the Vault:
                     </h4>
                     <ul className="space-y-2">
                       {section.content.proTips.map((tip, idx) => (
-                        <li key={idx} className="text-gray-300 text-sm">
+                        <li
+                          key={idx}
+                          className="text-gray-300 text-sm"
+                          style={{
+                            fontFamily: "Poppins, sans-serif",
+                            fontWeight: "500",
+                          }}
+                        >
                           • {tip}
                         </li>
                       ))}
@@ -565,10 +747,22 @@ export default function Playbook() {
                   </div>
 
                   <div className="bg-gray-900 p-4 rounded border border-gray-700">
-                    <h4 className="text-brand-red font-semibold mb-2">
+                    <h4
+                      className="text-brand-red mb-2"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "600",
+                      }}
+                    >
                       In Essence:
                     </h4>
-                    <p className="text-gray-300 text-sm">
+                    <p
+                      className="text-gray-300 text-sm"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "500",
+                      }}
+                    >
                       {section.content.essence}
                     </p>
                   </div>
@@ -578,12 +772,25 @@ export default function Playbook() {
               {section.id === 7 && (
                 <div className="space-y-6">
                   <div>
-                    <h4 className="text-green-400 font-semibold mb-3">
+                    <h4
+                      className="text-green-400 mb-3"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "600",
+                      }}
+                    >
                       ✅ Best Practices
                     </h4>
                     <ul className="space-y-2">
                       {section.content.bestPractices.map((tip, idx) => (
-                        <li key={idx} className="text-gray-300">
+                        <li
+                          key={idx}
+                          className="text-gray-300"
+                          style={{
+                            fontFamily: "Poppins, sans-serif",
+                            fontWeight: "500",
+                          }}
+                        >
                           • {tip}
                         </li>
                       ))}
@@ -591,12 +798,25 @@ export default function Playbook() {
                   </div>
 
                   <div>
-                    <h4 className="text-yellow-400 font-semibold mb-3">
+                    <h4
+                      className="text-yellow-400 mb-3"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "600",
+                      }}
+                    >
                       ⚠️ Common Issues
                     </h4>
                     <ul className="space-y-2">
                       {section.content.commonIssues.map((issue, idx) => (
-                        <li key={idx} className="text-gray-300">
+                        <li
+                          key={idx}
+                          className="text-gray-300"
+                          style={{
+                            fontFamily: "Poppins, sans-serif",
+                            fontWeight: "500",
+                          }}
+                        >
                           • {issue}
                         </li>
                       ))}
@@ -604,7 +824,13 @@ export default function Playbook() {
                   </div>
 
                   <div>
-                    <h4 className="text-brand-red font-semibold mb-3">
+                    <h4
+                      className="text-brand-red mb-3"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "600",
+                      }}
+                    >
                       Advanced Workflow Strategies:
                     </h4>
                     <div className="space-y-3">
@@ -613,7 +839,15 @@ export default function Playbook() {
                           key={idx}
                           className="bg-gray-900 p-3 rounded border border-gray-700"
                         >
-                          <p className="text-gray-300 text-sm">{workflow}</p>
+                          <p
+                            className="text-gray-300 text-sm"
+                            style={{
+                              fontFamily: "Poppins, sans-serif",
+                              fontWeight: "500",
+                            }}
+                          >
+                            {workflow}
+                          </p>
                         </div>
                       ))}
                     </div>

@@ -556,34 +556,116 @@ export default function PromptVault() {
         {/* Generated Prompt - Full Width Single Column */}
         <Card
           className="bg-black border border-gray-900 shadow-xl"
-          style={{ margin: "8px 0 12px", padding: "8px 0 12px" }}
+          style={{ margin: "12px 0", padding: "20px 0" }}
         >
-          <CardContent style={{ marginTop: "12px", padding: "8px 24px" }}>
-            <h3
-              className="text-brand-red text-sm font-black tracking-wide"
-              style={{
-                fontWeight: 900,
-                alignSelf: "center",
-                lineHeight: "12px",
-                textAlign: "center",
-              }}
-            >
-              PROMPT QUALITY
-            </h3>
-            <Badge
-              className={`${
-                qualityScore >= 80
-                  ? "bg-green-500"
-                  : qualityScore >= 50
-                    ? "bg-yellow-500"
-                    : "bg-brand-red"
-              } text-white font-bold`}
-              style={{ margin: "12px 0 4px", padding: "0 6px" }}
-            >
-              {qualityScore}% QUALITY
-            </Badge>
-            <div></div>
-            <div></div>
+          <CardContent style={{ padding: "0 24px 20px" }}>
+            <div className="text-center mb-6">
+              <h3
+                className="text-brand-red text-lg font-black tracking-wide mb-4"
+                style={{ fontWeight: 900 }}
+              >
+                PROMPT QUALITY METER
+              </h3>
+
+              {/* Quality Progress Ring */}
+              <div className="relative w-32 h-32 mx-auto mb-4">
+                <svg
+                  className="w-32 h-32 transform -rotate-90"
+                  viewBox="0 0 120 120"
+                >
+                  {/* Background circle */}
+                  <circle
+                    cx="60"
+                    cy="60"
+                    r="50"
+                    stroke="rgb(31, 41, 55)"
+                    strokeWidth="8"
+                    fill="none"
+                  />
+                  {/* Progress circle */}
+                  <circle
+                    cx="60"
+                    cy="60"
+                    r="50"
+                    stroke={
+                      qualityScore >= 80
+                        ? "#10b981"
+                        : qualityScore >= 50
+                          ? "#f59e0b"
+                          : "#ef4444"
+                    }
+                    strokeWidth="8"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeDasharray={`${(qualityScore / 100) * 314} 314`}
+                    className="transition-all duration-500 ease-out"
+                    style={{
+                      filter:
+                        qualityScore >= 80
+                          ? "drop-shadow(0 0 8px #10b981)"
+                          : qualityScore >= 50
+                            ? "drop-shadow(0 0 8px #f59e0b)"
+                            : "drop-shadow(0 0 8px #ef4444)",
+                    }}
+                  />
+                </svg>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-3xl font-black text-white">
+                      {qualityScore}%
+                    </div>
+                    <div className="text-xs text-gray-400">QUALITY</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Quality Metrics Grid */}
+              <div className="grid grid-cols-2 gap-4 text-sm max-w-md mx-auto">
+                <div className="bg-gray-900 rounded-lg p-3 border border-gray-700">
+                  <div className="text-gray-400 text-xs mb-1">INSTRUCTIONS</div>
+                  <div
+                    className={`font-bold ${customInstructions ? "text-green-400" : "text-red-400"}`}
+                  >
+                    {customInstructions ? "✓ ADDED" : "✗ MISSING"}
+                  </div>
+                </div>
+                <div className="bg-gray-900 rounded-lg p-3 border border-gray-700">
+                  <div className="text-gray-400 text-xs mb-1">
+                    REFERENCE IMAGE
+                  </div>
+                  <div
+                    className={`font-bold ${uploadedFile ? "text-green-400" : "text-red-400"}`}
+                  >
+                    {uploadedFile ? "✓ UPLOADED" : "✗ MISSING"}
+                  </div>
+                </div>
+                <div className="bg-gray-900 rounded-lg p-3 border border-gray-700">
+                  <div className="text-gray-400 text-xs mb-1">KEYWORDS</div>
+                  <div className="font-bold text-brand-red">
+                    {selectedKeywords.length} SELECTED
+                  </div>
+                </div>
+                <div className="bg-gray-900 rounded-lg p-3 border border-gray-700">
+                  <div className="text-gray-400 text-xs mb-1">CATEGORIES</div>
+                  <div className="font-bold text-brand-red">
+                    {
+                      new Set(
+                        selectedKeywords.map((keyword) => {
+                          const allCategories = {
+                            ...keywordCategories,
+                            ...enhancedKeywordCategories,
+                          };
+                          return Object.entries(allCategories).find(
+                            ([_, words]) => words.includes(keyword),
+                          )?.[0];
+                        }),
+                      ).size
+                    }
+                    /6 COVERED
+                  </div>
+                </div>
+              </div>
+            </div>
           </CardContent>
           <CardContent style={{ padding: "0 24px 12px" }}>
             <div

@@ -301,7 +301,7 @@ export default function PromptVault() {
                 rows={6}
               />
 
-              <p className="text-gray-400 text-sm mt-3">
+              <p className="text-white text-sm mt-3" style={{ opacity: 0.7 }}>
                 Be specific about subjects, actions, and the overall scene you
                 envision.
               </p>

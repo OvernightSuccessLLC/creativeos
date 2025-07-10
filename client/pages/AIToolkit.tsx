@@ -769,9 +769,9 @@ export default function AIToolkit() {
           {toolsData.map((tool) => (
             <Card
               key={tool.id}
-              className="bg-black border border-gray-800 hover:border-gray-700 transition-all duration-300"
+              className="bg-black border border-gray-800 hover:border-gray-700 transition-all duration-300 flex flex-col h-full"
             >
-              <CardHeader className="pb-4">
+              <CardHeader className="pb-4 flex-shrink-0">
                 <div className="flex items-start justify-between mb-3">
                   <Badge
                     className={`${tool.categoryColor} text-white text-xs font-medium px-2 py-1 rounded`}
@@ -788,46 +788,56 @@ export default function AIToolkit() {
                 </div>
                 <h3
                   className="text-white text-xl font-semibold mb-2"
-                  style={{ fontFamily: "Poppins, sans-serif" }}
+                  style={{
+                    fontFamily: "Poppins, sans-serif",
+                    minHeight: "28px",
+                  }}
                 >
                   {tool.name}
                 </h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
+                <p
+                  className="text-gray-300 text-sm leading-relaxed"
+                  style={{
+                    minHeight: "40px",
+                    display: "-webkit-box",
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                  }}
+                >
                   {tool.description}
                 </p>
               </CardHeader>
 
-              <CardContent className="pt-0">
-                <div className="space-y-4">
-                  <div>
-                    <h4
-                      className="text-orange-400 text-sm font-semibold mb-2"
-                      style={{ fontFamily: "Poppins, sans-serif" }}
-                    >
-                      Key Features:
-                    </h4>
-                    <ul className="space-y-1">
-                      {tool.keyFeatures.map((feature, index) => (
-                        <li
-                          key={index}
-                          className="text-gray-300 text-sm flex items-start"
-                        >
-                          <span className="text-orange-400 mr-2">•</span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <Button
-                    onClick={() => handleVisitTool(tool.link)}
-                    className="w-full bg-orange-500 hover:bg-orange-600 text-black font-semibold py-2 px-4 rounded transition-colors duration-200"
+              <CardContent className="pt-0 flex-grow flex flex-col">
+                <div className="flex-grow">
+                  <h4
+                    className="text-orange-400 text-sm font-semibold mb-2"
                     style={{ fontFamily: "Poppins, sans-serif" }}
                   >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Visit Tool
-                  </Button>
+                    Key Features:
+                  </h4>
+                  <ul className="space-y-1 mb-4" style={{ minHeight: "72px" }}>
+                    {tool.keyFeatures.slice(0, 3).map((feature, index) => (
+                      <li
+                        key={index}
+                        className="text-gray-300 text-sm flex items-start"
+                      >
+                        <span className="text-orange-400 mr-2">•</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
+
+                <Button
+                  onClick={() => handleVisitTool(tool.link)}
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-black font-semibold py-2 px-4 rounded transition-colors duration-200 mt-auto"
+                  style={{ fontFamily: "Poppins, sans-serif", height: "40px" }}
+                >
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Visit Tool
+                </Button>
               </CardContent>
             </Card>
           ))}

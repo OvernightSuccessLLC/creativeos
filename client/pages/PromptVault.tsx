@@ -237,7 +237,10 @@ export default function PromptVault() {
   return (
     <div className="min-h-screen bg-brand-red text-black">
       {/* Header */}
-      <div className="bg-black px-6 py-6 text-center">
+      <div
+        className="bg-black px-6 text-center"
+        style={{ marginTop: "6px", padding: "20px 24px 12px" }}
+      >
         <div className="flex items-center justify-center space-x-3 mb-4">
           <Database className="w-8 h-8 text-brand-red" />
           <h1
@@ -558,7 +561,7 @@ export default function PromptVault() {
                 onClick={() => {
                   const prompt = generatePrompt();
                   if (prompt) {
-                    alert("Prompt saved to favorites! ⭐");
+                    alert("Prompt saved to favorites! ��");
                   }
                 }}
                 className="border-brand-red text-brand-red hover:bg-brand-red hover:text-black font-black"

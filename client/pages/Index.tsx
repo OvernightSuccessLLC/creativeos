@@ -184,8 +184,8 @@ export default function Index() {
           <div className="fixed right-0 top-0 h-full w-80 bg-black p-6 shadow-xl">
             <div className="flex items-center justify-between mb-8">
               <h2
-                className="text-xl font-black text-white"
-                style={{ fontWeight: 900 }}
+                className="text-xl text-white brand-heading"
+                style={{ fontFamily: "Poppins, sans-serif", fontWeight: "900" }}
               >
                 MENU
               </h2>
@@ -201,12 +201,17 @@ export default function Index() {
               {navigationItems.map((item) => (
                 <button
                   key={item.name}
-                  className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left font-black transition-colors ${
+                  className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left font-brand-bold transition-colors ${
                     item.highlight
-                      ? "bg-brand-red text-black"
+                      ? "bg-brand-red text-white"
                       : "text-white hover:bg-gray-800"
                   }`}
-                  style={{ fontWeight: 900 }}
+                  style={{
+                    fontFamily: "Poppins, sans-serif",
+                    fontWeight: "700",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.5px",
+                  }}
                   onClick={() => {
                     setShowMobileMenu(false);
                     if (item.name === "UPDATES") {

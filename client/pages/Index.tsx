@@ -349,7 +349,7 @@ export default function Index() {
                           4
                         </div>
                         <p className="text-white text-xs">Review Quality</p>
-                        <p className="text-gray-400 text-xs">
+                        <p className="text-white/60 text-xs">
                           Check AI analysis and suggestions
                         </p>
                       </div>

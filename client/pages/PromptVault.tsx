@@ -463,7 +463,7 @@ export default function PromptVault() {
             </div>
 
             {/* Creative Direction Section */}
-            <div className="bg-black border border-gray-600 rounded-lg p-4">
+            <div className="bg-black border border-gray-600 rounded-lg py-2 px-3">
               <h3 className="text-white text-base font-bold mb-3">
                 Creative Direction
               </h3>

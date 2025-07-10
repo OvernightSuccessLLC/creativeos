@@ -305,7 +305,7 @@ export default function PromptVault() {
               style={{ padding: "8px 24px 12px" }}
             >
               <h3
-                className="text-brand-red text-xs font-black tracking-wide border-b border-brand-red pb-1"
+                className="text-brand-red text-xs font-black tracking-wide"
                 style={{
                   fontWeight: 900,
                   fontSize: "15px",
@@ -313,7 +313,7 @@ export default function PromptVault() {
                   padding: "6px 0",
                 }}
               >
-                STEP 1: CREATIVE VISION
+                STEP 2: REFERENCE IMAGE
               </h3>
               <div
                 className="border-2 border-dashed border-gray-700 rounded-lg text-center"

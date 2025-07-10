@@ -780,7 +780,7 @@ export default function PromptVault() {
                     fontFamily: "Poppins, Helvetica Neue, sans-serif",
                   }}
                 >
-                  💡 OPTIMIZATION TIPS
+                  ���� OPTIMIZATION TIPS
                 </h4>
                 <ul className="text-xs text-gray-300 space-y-1">
                   {qualityScore < 30 && (
@@ -845,8 +845,14 @@ export default function PromptVault() {
                     disabled={
                       !customInstructions && selectedKeywords.length === 0
                     }
-                    className="bg-brand-red hover:bg-red-600 text-black font-bold py-3 px-6 transition-all duration-200"
-                    style={{ background: "#ff4e33", border: "none" }}
+                    className="text-white font-bold py-3 px-6 transition-all duration-200 hover:opacity-90"
+                    style={{
+                      backgroundColor: "#EE1C25",
+                      border: "none",
+                      fontFamily: "Poppins, Helvetica Neue, sans-serif",
+                      fontWeight: "700",
+                      textTransform: "uppercase",
+                    }}
                     data-copy-button
                   >
                     <Copy className="w-4 h-4 mr-2" />

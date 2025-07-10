@@ -773,7 +773,13 @@ export default function PromptVault() {
 
               {/* Quality Tips */}
               <div className="mt-6 p-3 bg-gray-900 rounded-lg border border-gray-700">
-                <h4 className="text-brand-red text-xs font-bold mb-2">
+                <h4
+                  className="text-xs font-bold mb-2"
+                  style={{
+                    color: "#EE1C25",
+                    fontFamily: "Poppins, Helvetica Neue, sans-serif",
+                  }}
+                >
                   💡 OPTIMIZATION TIPS
                 </h4>
                 <ul className="text-xs text-gray-300 space-y-1">

@@ -346,14 +346,33 @@ export default function Playbook() {
               {section.id === 2 && (
                 <div className="space-y-4">
                   <div>
-                    <h4 className="text-brand-red font-semibold mb-3">
+                    <h4
+                      className="text-brand-red mb-3"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "600",
+                      }}
+                    >
                       Core Principles:
                     </h4>
                     <ul className="space-y-2">
                       {section.content.principles.map((principle, idx) => (
-                        <li key={idx} className="text-gray-300">
+                        <li
+                          key={idx}
+                          className="text-gray-300"
+                          style={{
+                            fontFamily: "Poppins, sans-serif",
+                            fontWeight: "500",
+                          }}
+                        >
                           •{" "}
-                          <strong className="text-white">
+                          <strong
+                            className="text-white"
+                            style={{
+                              fontFamily: "Poppins, sans-serif",
+                              fontWeight: "600",
+                            }}
+                          >
                             {principle.split(":")[0]}:
                           </strong>
                           {principle.split(":")[1]}
@@ -362,10 +381,22 @@ export default function Playbook() {
                     </ul>
                   </div>
                   <div className="bg-gray-900 p-4 rounded border border-gray-700">
-                    <h4 className="text-brand-red font-semibold mb-2">
+                    <h4
+                      className="text-brand-red mb-2"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "600",
+                      }}
+                    >
                       Example Progression:
                     </h4>
-                    <p className="text-gray-300 text-sm">
+                    <p
+                      className="text-gray-300 text-sm"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "500",
+                      }}
+                    >
                       {section.content.progression}
                     </p>
                   </div>

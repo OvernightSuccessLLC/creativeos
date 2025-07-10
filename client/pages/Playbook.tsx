@@ -291,20 +291,54 @@ export default function Playbook() {
             <CardContent className="p-6 bg-black border border-gray-800">
               {section.id === 1 && (
                 <div className="space-y-4">
-                  <p className="text-gray-300">{section.content.description}</p>
+                  <p
+                    className="text-gray-300"
+                    style={{
+                      fontFamily: "Poppins, sans-serif",
+                      fontWeight: "500",
+                    }}
+                  >
+                    {section.content.description}
+                  </p>
                   <div>
-                    <h4 className="text-white font-semibold mb-2">
+                    <h4
+                      className="text-white mb-2"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "600",
+                      }}
+                    >
                       How it Works:
                     </h4>
-                    <p className="text-gray-300">
+                    <p
+                      className="text-gray-300"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "500",
+                      }}
+                    >
                       {section.content.howItWorks}
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-white font-semibold mb-2">
+                    <h4
+                      className="text-white mb-2"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "600",
+                      }}
+                    >
                       Who This Guide is For:
                     </h4>
-                    <p className="text-gray-300">{section.content.whoFor}</p>
+                    <p
+                      className="text-gray-300"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "500",
+                      }}
+                    >
+                      {section.content.whoFor}
+                    </p>
                   </div>
                 </div>
               )}

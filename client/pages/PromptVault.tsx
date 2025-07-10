@@ -240,12 +240,12 @@ export default function PromptVault() {
         <div className="flex items-center justify-center space-x-3 mb-4">
           <Database className="w-8 h-8" style={{ color: "#F93822" }} />
           <h1
-            className="text-white font-bold"
+            className="text-white brand-heading"
             style={{
               fontSize: "30px",
               lineHeight: "30px",
-              fontFamily: "Poppins, Helvetica Neue, sans-serif",
-              fontWeight: "700",
+              fontFamily: "Poppins, sans-serif",
+              fontWeight: "900",
             }}
           >
             PROMPT VAULT

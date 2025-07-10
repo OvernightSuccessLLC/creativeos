@@ -706,8 +706,11 @@ export default function PromptVault() {
                     alert("Prompt saved to favorites! ��");
                   }
                 }}
-                className="border-brand-red text-brand-red hover:bg-brand-red hover:text-black font-black"
-                style={{ fontWeight: 900 }}
+                className="px-6 py-4 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-black font-black transition-all duration-300"
+                style={{
+                  fontWeight: 900,
+                  background: "rgba(255, 78, 51, 0.1)",
+                }}
               >
                 <Star className="w-4 h-4" />
               </Button>

@@ -479,7 +479,7 @@ export default function Playbook() {
 
               {section.id === 5 && (
                 <div className="space-y-4">
-                  <p className="text-gray-300" style={TYPOGRAPHY.body}>
+                  <p className="text-white" style={TYPOGRAPHY.body}>
                     {section.content.description}
                   </p>
 
@@ -497,7 +497,7 @@ export default function Playbook() {
                       {section.content.editingTips.map((tip, idx) => (
                         <li
                           key={idx}
-                          className="text-gray-300"
+                          className="text-white"
                           style={TYPOGRAPHY.body}
                         >
                           • {tip}
@@ -514,7 +514,7 @@ export default function Playbook() {
                       {section.content.textInImages.map((tip, idx) => (
                         <li
                           key={idx}
-                          className="text-gray-300"
+                          className="text-white"
                           style={TYPOGRAPHY.body}
                         >
                           • {tip}
@@ -523,7 +523,7 @@ export default function Playbook() {
                     </ul>
                   </div>
 
-                  <div className="bg-gray-900 p-4 rounded border border-gray-700">
+                  <div className="bg-black p-4 rounded border border-white">
                     <h4
                       className="text-brand-red mb-2"
                       style={TYPOGRAPHY.heading}
@@ -534,7 +534,7 @@ export default function Playbook() {
                       {section.content.exampleEditSequence.map((step, idx) => (
                         <li
                           key={idx}
-                          className="text-gray-300 text-sm"
+                          className="text-white text-sm"
                           style={TYPOGRAPHY.body}
                         >
                           {step}
@@ -547,7 +547,7 @@ export default function Playbook() {
 
               {section.id === 6 && (
                 <div className="space-y-4">
-                  <p className="text-gray-300" style={TYPOGRAPHY.body}>
+                  <p className="text-white" style={TYPOGRAPHY.body}>
                     {section.content.description}
                   </p>
 
@@ -555,7 +555,7 @@ export default function Playbook() {
                     {section.content.steps.map((step, idx) => (
                       <div
                         key={idx}
-                        className="bg-gray-900 p-4 rounded border border-gray-700"
+                        className="bg-black p-4 rounded border border-white"
                       >
                         <div className="flex items-start space-x-3">
                           <span
@@ -564,7 +564,7 @@ export default function Playbook() {
                           >
                             {idx + 1}
                           </span>
-                          <p className="text-gray-300" style={TYPOGRAPHY.body}>
+                          <p className="text-white" style={TYPOGRAPHY.body}>
                             {step}
                           </p>
                         </div>
@@ -583,7 +583,7 @@ export default function Playbook() {
                       {section.content.proTips.map((tip, idx) => (
                         <li
                           key={idx}
-                          className="text-gray-300 text-sm"
+                          className="text-white text-sm"
                           style={TYPOGRAPHY.body}
                         >
                           • {tip}
@@ -592,17 +592,14 @@ export default function Playbook() {
                     </ul>
                   </div>
 
-                  <div className="bg-gray-900 p-4 rounded border border-gray-700">
+                  <div className="bg-black p-4 rounded border border-white">
                     <h4
                       className="text-brand-red mb-2"
                       style={TYPOGRAPHY.heading}
                     >
                       In Essence:
                     </h4>
-                    <p
-                      className="text-gray-300 text-sm"
-                      style={TYPOGRAPHY.body}
-                    >
+                    <p className="text-white text-sm" style={TYPOGRAPHY.body}>
                       {section.content.essence}
                     </p>
                   </div>
@@ -613,7 +610,7 @@ export default function Playbook() {
                 <div className="space-y-6">
                   <div>
                     <h4
-                      className="text-green-400 mb-3"
+                      className="text-brand-red mb-3"
                       style={TYPOGRAPHY.heading}
                     >
                       ✅ Best Practices
@@ -622,7 +619,7 @@ export default function Playbook() {
                       {section.content.bestPractices.map((tip, idx) => (
                         <li
                           key={idx}
-                          className="text-gray-300"
+                          className="text-white"
                           style={TYPOGRAPHY.body}
                         >
                           • {tip}
@@ -633,7 +630,7 @@ export default function Playbook() {
 
                   <div>
                     <h4
-                      className="text-yellow-400 mb-3"
+                      className="text-brand-red mb-3"
                       style={TYPOGRAPHY.heading}
                     >
                       ⚠️ Common Issues
@@ -642,7 +639,7 @@ export default function Playbook() {
                       {section.content.commonIssues.map((issue, idx) => (
                         <li
                           key={idx}
-                          className="text-gray-300"
+                          className="text-white"
                           style={TYPOGRAPHY.body}
                         >
                           • {issue}
@@ -662,10 +659,10 @@ export default function Playbook() {
                       {section.content.workflows.map((workflow, idx) => (
                         <div
                           key={idx}
-                          className="bg-gray-900 p-3 rounded border border-gray-700"
+                          className="bg-black p-3 rounded border border-white"
                         >
                           <p
-                            className="text-gray-300 text-sm"
+                            className="text-white text-sm"
                             style={TYPOGRAPHY.body}
                           >
                             {workflow}

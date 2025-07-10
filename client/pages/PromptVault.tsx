@@ -754,8 +754,17 @@ export default function PromptVault() {
                         ].includes(k),
                       )
                         ? "text-green-400"
-                        : "text-gray-500"
+                        : "text-white"
                     }
+                    style={{
+                      opacity: selectedKeywords.some((k) =>
+                        enhancedKeywordCategories[
+                          "Creative Direction"
+                        ].includes(k),
+                      )
+                        ? 1
+                        : 0.5,
+                    }}
                   >
                     {selectedKeywords.some((k) =>
                       enhancedKeywordCategories["Creative Direction"].includes(

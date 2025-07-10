@@ -131,6 +131,7 @@ export default function Index() {
                   letterSpacing: "0.5px",
                 }}
                 onClick={() => {
+                  console.log("Navigation clicked:", item.name);
                   if (item.name === "UPDATES") {
                     setShowBriefcase(true);
                   } else if (item.name === "THE PLAYBOOK") {

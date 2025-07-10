@@ -32,12 +32,10 @@ export default function PromptVault() {
   const keywordCategories = {
     Lighting: [
       "Golden hour",
-      "Soft diffused",
       "Dramatic",
       "Neon",
       "Studio lighting",
       "Natural light",
-      "Cinematic",
       "Backlit",
       "Rim lighting",
       "Hard shadows",
@@ -47,11 +45,9 @@ export default function PromptVault() {
       "Close-up",
       "Wide shot",
       "Bird's eye",
-      "Low angle",
       "Eye level",
       "Over shoulder",
       "Full body",
-      "Aerial view",
       "Centered",
       "Rule of thirds",
       "Symmetrical",
@@ -59,12 +55,9 @@ export default function PromptVault() {
     Locations: [
       "Studio",
       "Urban",
-      "Nature",
       "Interior",
       "Minimalist",
-      "Industrial",
       "Vintage",
-      "Modern",
       "Rooftop",
       "Beach",
       "Forest",
@@ -81,13 +74,10 @@ export default function PromptVault() {
       "ultra-high resolution",
       "commercial ready",
       "studio quality",
-      "optimized for SORA AI",
       "magazine cover quality",
     ],
     Style: [
       "Natural",
-      "Clean",
-      "Cinematic",
       "Minimal",
       "Hyperrealistic",
       "Replica",
@@ -107,7 +97,6 @@ export default function PromptVault() {
       "Yeezy drop in a NASA lab",
       "Scorsese gritty realism",
       "Warhol meets Warhol",
-      "High fashion in a war zone",
     ],
   };
 
@@ -264,14 +253,14 @@ export default function PromptVault() {
             className="bg-black border border-gray-900 shadow-xl"
             style={{ flexGrow: "1", height: "auto" }}
           >
-            <CardContent style={{ padding: "8px 24px" }}>
+            <CardContent style={{ marginTop: "8px", padding: "8px 24px" }}>
               <h3
                 className="text-brand-red text-xs font-black tracking-wide"
                 style={{
                   fontWeight: 900,
                   fontSize: "15px",
-                  margin: "6px 0",
-                  padding: "6px 0",
+                  margin: "8px 0 6px",
+                  padding: "8px 0 6px",
                 }}
               >
                 STEP 1: CREATIVE VISION
@@ -291,7 +280,7 @@ export default function PromptVault() {
                   setQualityScore(Math.min(100, score));
                 }}
                 className="bg-gray-900 border-gray-700 text-white focus:border-brand-red focus:ring-brand-red text-xs"
-                style={{ marginTop: "12px", padding: "8px 12px" }}
+                style={{ marginTop: "4px", padding: "4px 12px" }}
                 rows={2}
               />
             </CardContent>
@@ -301,22 +290,22 @@ export default function PromptVault() {
           <Card className="bg-black border border-gray-900 shadow-xl">
             <CardContent
               className="pt-2 pb-3"
-              style={{ padding: "8px 24px 12px" }}
+              style={{ marginTop: "8px", padding: "8px 24px 12px" }}
             >
               <h3
                 className="text-brand-red text-xs font-black tracking-wide"
                 style={{
                   fontWeight: 900,
                   fontSize: "15px",
-                  margin: "6px 0",
-                  padding: "6px 0",
+                  marginBottom: "6px",
+                  padding: "8px 0 6px",
                 }}
               >
                 STEP 2: REFERENCE IMAGE
               </h3>
               <div
                 className="border-2 border-dashed border-gray-700 rounded-lg text-center"
-                style={{ margin: "24px 0 8px", padding: "12px" }}
+                style={{ marginBottom: "8px", padding: "8px 12px" }}
               >
                 <Upload className="w-5 h-5 text-gray-400 mx-auto mb-1" />
                 <p className="text-gray-400 mb-2 text-xs">
@@ -365,12 +354,13 @@ export default function PromptVault() {
         {/* Step 3 - Full Width Keywords */}
         <Card
           className="bg-black border border-gray-900 shadow-xl"
-          style={{ margin: "8px 0", padding: "12px 0" }}
+          style={{ margin: "18px 0 12px", padding: "12px 0" }}
         >
           <h3
             className="text-brand-red text-lg font-black tracking-wide text-left mb-4 ml-6"
             style={{
               fontWeight: 900,
+              paddingTop: "8px",
             }}
           >
             STEP 3: SELECT KEYWORDS
@@ -381,7 +371,7 @@ export default function PromptVault() {
               className="rounded-lg mb-4"
               style={{
                 background: "#ff6b35",
-                padding: "12px",
+                padding: "8px 12px 12px",
                 boxShadow: "0 0 20px rgba(255, 107, 53, 0.3)",
                 border: "1px solid rgba(255, 107, 53, 0.8)",
               }}
@@ -423,7 +413,7 @@ export default function PromptVault() {
               className="rounded-lg mb-4"
               style={{
                 background: "#ff6b35",
-                padding: "12px",
+                padding: "8px 12px 12px",
                 boxShadow: "0 0 20px rgba(255, 107, 53, 0.3)",
                 border: "1px solid rgba(255, 107, 53, 0.8)",
               }}
@@ -465,7 +455,7 @@ export default function PromptVault() {
               className="rounded-lg mb-4"
               style={{
                 background: "#ff6b35",
-                padding: "12px",
+                padding: "8px 12px 12px",
                 boxShadow: "0 0 20px rgba(255, 107, 53, 0.3)",
                 border: "1px solid rgba(255, 107, 53, 0.8)",
               }}
@@ -507,7 +497,7 @@ export default function PromptVault() {
               className="rounded-lg mb-4"
               style={{
                 background: "#ff6b35",
-                padding: "12px",
+                padding: "8px 12px 12px",
                 boxShadow: "0 0 20px rgba(255, 107, 53, 0.3)",
                 border: "1px solid rgba(255, 107, 53, 0.8)",
               }}
@@ -549,7 +539,7 @@ export default function PromptVault() {
               className="rounded-lg mb-4"
               style={{
                 background: "#ff6b35",
-                padding: "12px",
+                padding: "8px 12px 12px",
                 boxShadow: "0 0 20px rgba(255, 107, 53, 0.3)",
                 border: "1px solid rgba(255, 107, 53, 0.8)",
               }}
@@ -593,7 +583,7 @@ export default function PromptVault() {
               className="rounded-lg mb-4"
               style={{
                 background: "#ff6b35",
-                padding: "12px",
+                padding: "8px 12px 12px",
                 boxShadow: "0 0 20px rgba(255, 107, 53, 0.3)",
                 border: "1px solid rgba(255, 107, 53, 0.8)",
               }}

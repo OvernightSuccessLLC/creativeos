@@ -21,6 +21,18 @@ import {
   Users,
 } from "lucide-react";
 
+const FONT_STYLE = {
+  fontFamily: "Poppins, sans-serif",
+};
+
+const TYPOGRAPHY = {
+  title: { ...FONT_STYLE, fontWeight: "900" },
+  subtitle: { ...FONT_STYLE, fontWeight: "700" },
+  heading: { ...FONT_STYLE, fontWeight: "600" },
+  body: { ...FONT_STYLE, fontWeight: "500" },
+  button: { ...FONT_STYLE, fontWeight: "700" },
+};
+
 export default function Playbook() {
   const navigate = useNavigate();
   const [showBriefcase, setShowBriefcase] = useState(false);
@@ -240,7 +252,7 @@ export default function Playbook() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white" style={FONT_STYLE}>
       {/* Navigation */}
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
 
@@ -248,13 +260,13 @@ export default function Playbook() {
       <div className="bg-brand-red px-6 py-5 text-center">
         <h1
           className="text-4xl md:text-6xl text-black mb-4"
-          style={{ fontFamily: "Poppins, sans-serif", fontWeight: "900" }}
+          style={TYPOGRAPHY.title}
         >
           THE PLAYBOOK
         </h1>
         <h2
           className="text-xl md:text-2xl text-black mb-2"
-          style={{ fontFamily: "Poppins, sans-serif", fontWeight: "700" }}
+          style={TYPOGRAPHY.subtitle}
         >
           Image Generation with Sora & ChatGPT
         </h2>
@@ -267,14 +279,11 @@ export default function Playbook() {
             <CardHeader className="bg-brand-red">
               <CardTitle
                 className="text-black text-xl flex items-center space-x-3"
-                style={{ fontFamily: "Poppins, sans-serif", fontWeight: "700" }}
+                style={TYPOGRAPHY.subtitle}
               >
                 <span
                   className="bg-black text-brand-red rounded px-2 py-1 text-lg"
-                  style={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: "700",
-                  }}
+                  style={TYPOGRAPHY.subtitle}
                 >
                   {section.id}.
                 </span>
@@ -284,52 +293,22 @@ export default function Playbook() {
             <CardContent className="p-6 bg-black border border-gray-800">
               {section.id === 1 && (
                 <div className="space-y-4">
-                  <p
-                    className="text-gray-300"
-                    style={{
-                      fontFamily: "Poppins, sans-serif",
-                      fontWeight: "500",
-                    }}
-                  >
+                  <p className="text-gray-300" style={TYPOGRAPHY.body}>
                     {section.content.description}
                   </p>
                   <div>
-                    <h4
-                      className="text-white mb-2"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "600",
-                      }}
-                    >
+                    <h4 className="text-white mb-2" style={TYPOGRAPHY.heading}>
                       How it Works:
                     </h4>
-                    <p
-                      className="text-gray-300"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "500",
-                      }}
-                    >
+                    <p className="text-gray-300" style={TYPOGRAPHY.body}>
                       {section.content.howItWorks}
                     </p>
                   </div>
                   <div>
-                    <h4
-                      className="text-white mb-2"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "600",
-                      }}
-                    >
+                    <h4 className="text-white mb-2" style={TYPOGRAPHY.heading}>
                       Who This Guide is For:
                     </h4>
-                    <p
-                      className="text-gray-300"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "500",
-                      }}
-                    >
+                    <p className="text-gray-300" style={TYPOGRAPHY.body}>
                       {section.content.whoFor}
                     </p>
                   </div>
@@ -341,10 +320,7 @@ export default function Playbook() {
                   <div>
                     <h4
                       className="text-brand-red mb-3"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "600",
-                      }}
+                      style={TYPOGRAPHY.heading}
                     >
                       Core Principles:
                     </h4>
@@ -353,18 +329,12 @@ export default function Playbook() {
                         <li
                           key={idx}
                           className="text-gray-300"
-                          style={{
-                            fontFamily: "Poppins, sans-serif",
-                            fontWeight: "500",
-                          }}
+                          style={TYPOGRAPHY.body}
                         >
                           •{" "}
                           <strong
                             className="text-white"
-                            style={{
-                              fontFamily: "Poppins, sans-serif",
-                              fontWeight: "600",
-                            }}
+                            style={TYPOGRAPHY.heading}
                           >
                             {principle.split(":")[0]}:
                           </strong>
@@ -376,19 +346,13 @@ export default function Playbook() {
                   <div className="bg-gray-900 p-4 rounded border border-gray-700">
                     <h4
                       className="text-brand-red mb-2"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "600",
-                      }}
+                      style={TYPOGRAPHY.heading}
                     >
                       Example Progression:
                     </h4>
                     <p
                       className="text-gray-300 text-sm"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "500",
-                      }}
+                      style={TYPOGRAPHY.body}
                     >
                       {section.content.progression}
                     </p>
@@ -399,30 +363,18 @@ export default function Playbook() {
               {section.id === 3 && (
                 <div className="space-y-4">
                   <div className="bg-gray-900 p-4 rounded border border-gray-700">
-                    <h4
-                      className="text-white mb-2"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "600",
-                      }}
-                    >
+                    <h4 className="text-white mb-2" style={TYPOGRAPHY.heading}>
                       Master Formula:
                     </h4>
                     <code
                       className="text-green-400 text-sm"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "500",
-                      }}
+                      style={TYPOGRAPHY.body}
                     >
                       {section.content.formula}
                     </code>
                     <p
                       className="text-gray-300 text-sm mt-2"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "500",
-                      }}
+                      style={TYPOGRAPHY.body}
                     >
                       {section.content.description}
                     </p>
@@ -433,19 +385,13 @@ export default function Playbook() {
                         <div key={key} className="space-y-1">
                           <h5
                             className="text-brand-red"
-                            style={{
-                              fontFamily: "Poppins, sans-serif",
-                              fontWeight: "600",
-                            }}
+                            style={TYPOGRAPHY.heading}
                           >
                             {key}
                           </h5>
                           <p
                             className="text-gray-300 text-sm"
-                            style={{
-                              fontFamily: "Poppins, sans-serif",
-                              fontWeight: "500",
-                            }}
+                            style={TYPOGRAPHY.body}
                           >
                             {value}
                           </p>
@@ -461,20 +407,11 @@ export default function Playbook() {
                   <div>
                     <h4
                       className="text-brand-red mb-3"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "600",
-                      }}
+                      style={TYPOGRAPHY.heading}
                     >
                       {section.content.lifestyle.title}
                     </h4>
-                    <p
-                      className="text-gray-300 mb-3"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "500",
-                      }}
-                    >
+                    <p className="text-gray-300 mb-3" style={TYPOGRAPHY.body}>
                       {section.content.lifestyle.description}
                     </p>
                     <ul className="space-y-1 mb-4">
@@ -482,10 +419,7 @@ export default function Playbook() {
                         <li
                           key={idx}
                           className="text-gray-300 text-sm"
-                          style={{
-                            fontFamily: "Poppins, sans-serif",
-                            fontWeight: "500",
-                          }}
+                          style={TYPOGRAPHY.body}
                         >
                           • {tip}
                         </li>
@@ -494,19 +428,13 @@ export default function Playbook() {
                     <div className="bg-gray-900 p-3 rounded border border-gray-700">
                       <h5
                         className="text-white mb-2 text-sm"
-                        style={{
-                          fontFamily: "Poppins, sans-serif",
-                          fontWeight: "600",
-                        }}
+                        style={TYPOGRAPHY.heading}
                       >
                         Example:
                       </h5>
                       <p
                         className="text-gray-300 text-sm italic"
-                        style={{
-                          fontFamily: "Poppins, sans-serif",
-                          fontWeight: "500",
-                        }}
+                        style={TYPOGRAPHY.body}
                       >
                         "{section.content.lifestyle.example}"
                       </p>
@@ -516,20 +444,11 @@ export default function Playbook() {
                   <div>
                     <h4
                       className="text-brand-red mb-3"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "600",
-                      }}
+                      style={TYPOGRAPHY.heading}
                     >
                       {section.content.studio.title}
                     </h4>
-                    <p
-                      className="text-gray-300 mb-3"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "500",
-                      }}
-                    >
+                    <p className="text-gray-300 mb-3" style={TYPOGRAPHY.body}>
                       {section.content.studio.description}
                     </p>
                     <ul className="space-y-1 mb-4">
@@ -537,10 +456,7 @@ export default function Playbook() {
                         <li
                           key={idx}
                           className="text-gray-300 text-sm"
-                          style={{
-                            fontFamily: "Poppins, sans-serif",
-                            fontWeight: "500",
-                          }}
+                          style={TYPOGRAPHY.body}
                         >
                           • {tip}
                         </li>
@@ -549,19 +465,13 @@ export default function Playbook() {
                     <div className="bg-gray-900 p-3 rounded border border-gray-700">
                       <h5
                         className="text-white mb-2 text-sm"
-                        style={{
-                          fontFamily: "Poppins, sans-serif",
-                          fontWeight: "600",
-                        }}
+                        style={TYPOGRAPHY.heading}
                       >
                         Example:
                       </h5>
                       <p
                         className="text-gray-300 text-sm italic"
-                        style={{
-                          fontFamily: "Poppins, sans-serif",
-                          fontWeight: "500",
-                        }}
+                        style={TYPOGRAPHY.body}
                       >
                         "{section.content.studio.example}"
                       </p>
@@ -572,33 +482,18 @@ export default function Playbook() {
 
               {section.id === 5 && (
                 <div className="space-y-4">
-                  <p
-                    className="text-gray-300"
-                    style={{
-                      fontFamily: "Poppins, sans-serif",
-                      fontWeight: "500",
-                    }}
-                  >
+                  <p className="text-gray-300" style={TYPOGRAPHY.body}>
                     {section.content.description}
                   </p>
 
                   <div>
                     <h4
                       className="text-brand-red mb-3"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "600",
-                      }}
+                      style={TYPOGRAPHY.heading}
                     >
                       Scene Regeneration & Object Placement
                     </h4>
-                    <h5
-                      className="text-white mb-2"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "600",
-                      }}
-                    >
+                    <h5 className="text-white mb-2" style={TYPOGRAPHY.heading}>
                       Editing Best Practices:
                     </h5>
                     <ul className="space-y-2">
@@ -606,10 +501,7 @@ export default function Playbook() {
                         <li
                           key={idx}
                           className="text-gray-300"
-                          style={{
-                            fontFamily: "Poppins, sans-serif",
-                            fontWeight: "500",
-                          }}
+                          style={TYPOGRAPHY.body}
                         >
                           • {tip}
                         </li>
@@ -618,13 +510,7 @@ export default function Playbook() {
                   </div>
 
                   <div>
-                    <h5
-                      className="text-white mb-2"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "600",
-                      }}
-                    >
+                    <h5 className="text-white mb-2" style={TYPOGRAPHY.heading}>
                       Text in Images:
                     </h5>
                     <ul className="space-y-2">
@@ -632,10 +518,7 @@ export default function Playbook() {
                         <li
                           key={idx}
                           className="text-gray-300"
-                          style={{
-                            fontFamily: "Poppins, sans-serif",
-                            fontWeight: "500",
-                          }}
+                          style={TYPOGRAPHY.body}
                         >
                           • {tip}
                         </li>
@@ -646,10 +529,7 @@ export default function Playbook() {
                   <div className="bg-gray-900 p-4 rounded border border-gray-700">
                     <h4
                       className="text-brand-red mb-2"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "600",
-                      }}
+                      style={TYPOGRAPHY.heading}
                     >
                       Example Edit Sequence:
                     </h4>
@@ -658,10 +538,7 @@ export default function Playbook() {
                         <li
                           key={idx}
                           className="text-gray-300 text-sm"
-                          style={{
-                            fontFamily: "Poppins, sans-serif",
-                            fontWeight: "500",
-                          }}
+                          style={TYPOGRAPHY.body}
                         >
                           {step}
                         </li>
@@ -673,13 +550,7 @@ export default function Playbook() {
 
               {section.id === 6 && (
                 <div className="space-y-4">
-                  <p
-                    className="text-gray-300"
-                    style={{
-                      fontFamily: "Poppins, sans-serif",
-                      fontWeight: "500",
-                    }}
-                  >
+                  <p className="text-gray-300" style={TYPOGRAPHY.body}>
                     {section.content.description}
                   </p>
 
@@ -692,20 +563,11 @@ export default function Playbook() {
                         <div className="flex items-start space-x-3">
                           <span
                             className="bg-brand-red text-black rounded-full w-6 h-6 flex items-center justify-center text-sm"
-                            style={{
-                              fontFamily: "Poppins, sans-serif",
-                              fontWeight: "700",
-                            }}
+                            style={TYPOGRAPHY.subtitle}
                           >
                             {idx + 1}
                           </span>
-                          <p
-                            className="text-gray-300"
-                            style={{
-                              fontFamily: "Poppins, sans-serif",
-                              fontWeight: "500",
-                            }}
-                          >
+                          <p className="text-gray-300" style={TYPOGRAPHY.body}>
                             {step}
                           </p>
                         </div>
@@ -716,10 +578,7 @@ export default function Playbook() {
                   <div>
                     <h4
                       className="text-brand-red mb-3"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "600",
-                      }}
+                      style={TYPOGRAPHY.heading}
                     >
                       Pro Tips for the Vault:
                     </h4>
@@ -728,10 +587,7 @@ export default function Playbook() {
                         <li
                           key={idx}
                           className="text-gray-300 text-sm"
-                          style={{
-                            fontFamily: "Poppins, sans-serif",
-                            fontWeight: "500",
-                          }}
+                          style={TYPOGRAPHY.body}
                         >
                           • {tip}
                         </li>
@@ -742,19 +598,13 @@ export default function Playbook() {
                   <div className="bg-gray-900 p-4 rounded border border-gray-700">
                     <h4
                       className="text-brand-red mb-2"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "600",
-                      }}
+                      style={TYPOGRAPHY.heading}
                     >
                       In Essence:
                     </h4>
                     <p
                       className="text-gray-300 text-sm"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "500",
-                      }}
+                      style={TYPOGRAPHY.body}
                     >
                       {section.content.essence}
                     </p>
@@ -767,10 +617,7 @@ export default function Playbook() {
                   <div>
                     <h4
                       className="text-green-400 mb-3"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "600",
-                      }}
+                      style={TYPOGRAPHY.heading}
                     >
                       ✅ Best Practices
                     </h4>
@@ -779,10 +626,7 @@ export default function Playbook() {
                         <li
                           key={idx}
                           className="text-gray-300"
-                          style={{
-                            fontFamily: "Poppins, sans-serif",
-                            fontWeight: "500",
-                          }}
+                          style={TYPOGRAPHY.body}
                         >
                           • {tip}
                         </li>
@@ -793,10 +637,7 @@ export default function Playbook() {
                   <div>
                     <h4
                       className="text-yellow-400 mb-3"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "600",
-                      }}
+                      style={TYPOGRAPHY.heading}
                     >
                       ⚠️ Common Issues
                     </h4>
@@ -805,10 +646,7 @@ export default function Playbook() {
                         <li
                           key={idx}
                           className="text-gray-300"
-                          style={{
-                            fontFamily: "Poppins, sans-serif",
-                            fontWeight: "500",
-                          }}
+                          style={TYPOGRAPHY.body}
                         >
                           • {issue}
                         </li>
@@ -819,10 +657,7 @@ export default function Playbook() {
                   <div>
                     <h4
                       className="text-brand-red mb-3"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "600",
-                      }}
+                      style={TYPOGRAPHY.heading}
                     >
                       Advanced Workflow Strategies:
                     </h4>
@@ -834,10 +669,7 @@ export default function Playbook() {
                         >
                           <p
                             className="text-gray-300 text-sm"
-                            style={{
-                              fontFamily: "Poppins, sans-serif",
-                              fontWeight: "500",
-                            }}
+                            style={TYPOGRAPHY.body}
                           >
                             {workflow}
                           </p>
@@ -856,7 +688,7 @@ export default function Playbook() {
           <CardHeader>
             <CardTitle
               className="text-black text-xl"
-              style={{ fontFamily: "Poppins, sans-serif", fontWeight: "700" }}
+              style={TYPOGRAPHY.subtitle}
             >
               Quick Reference Guide
             </CardTitle>
@@ -867,10 +699,7 @@ export default function Playbook() {
                 <div key={category}>
                   <h4
                     className="text-brand-red mb-2 capitalize"
-                    style={{
-                      fontFamily: "Poppins, sans-serif",
-                      fontWeight: "600",
-                    }}
+                    style={TYPOGRAPHY.heading}
                   >
                     {category.replace(/([A-Z])/g, " $1").trim()}
                   </h4>
@@ -879,10 +708,7 @@ export default function Playbook() {
                       <li
                         key={idx}
                         className="text-gray-300 text-sm"
-                        style={{
-                          fontFamily: "Poppins, sans-serif",
-                          fontWeight: "500",
-                        }}
+                        style={TYPOGRAPHY.body}
                       >
                         • {example}
                       </li>
@@ -899,7 +725,7 @@ export default function Playbook() {
           <Button
             size="lg"
             className="bg-brand-red hover:bg-brand-red-hover text-white px-8 py-4"
-            style={{ fontFamily: "Poppins, sans-serif", fontWeight: "700" }}
+            style={TYPOGRAPHY.button}
           >
             <BookOpen className="w-5 h-5 mr-2" />
             START CREATING WITH THE PROMPT VAULT

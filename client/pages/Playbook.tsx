@@ -245,7 +245,7 @@ export default function Playbook() {
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
 
       {/* Header */}
-      <div className="bg-brand-red px-6 py-12 text-center">
+      <div className="bg-brand-red px-6 py-5 text-center">
         <h1
           className="text-4xl md:text-6xl text-black mb-4"
           style={{ fontFamily: "Poppins, sans-serif", fontWeight: "900" }}

@@ -835,10 +835,13 @@ export default function PromptVault() {
                   setQualityScore(0);
                 }}
                 variant="outline"
-                className="px-4 py-2 text-white font-medium transition-all duration-200"
+                className="brand-button-secondary px-4 py-2 text-white font-brand-medium transition-all duration-200"
                 style={{
                   fontFamily: "Poppins, sans-serif",
                   fontSize: "12px",
+                  fontWeight: "600",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px",
                   border: "1px solid #333",
                   backgroundColor: "transparent",
                 }}

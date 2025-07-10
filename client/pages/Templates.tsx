@@ -198,12 +198,16 @@ export default function Templates() {
                 <div className="flex space-x-2">
                   <Button
                     size="sm"
-                    onClick={() => copyPrompt(template.prompt)}
+                    onClick={() => copyPrompt(template.prompt, template.id)}
                     className="bg-brand-red hover:opacity-90 text-white font-bold flex-1"
-                    style={{ backgroundColor: "#F93822", border: "none" }}
+                    style={{
+                      backgroundColor:
+                        copiedTemplate === template.id ? "#22C55E" : "#F93822",
+                      border: "none",
+                    }}
                   >
                     <Copy className="w-4 h-4 mr-2" />
-                    COPY PROMPT
+                    {copiedTemplate === template.id ? "COPIED!" : "COPY PROMPT"}
                   </Button>
                 </div>
               </CardContent>

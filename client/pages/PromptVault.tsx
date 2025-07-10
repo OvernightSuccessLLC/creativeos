@@ -627,22 +627,32 @@ export default function PromptVault() {
                 <div className="w-6 h-6 rounded-full bg-brand-red flex items-center justify-center mr-3">
                   <span className="text-black font-bold text-sm">4</span>
                 </div>
-                <h3 className="text-white text-lg font-bold">Your Optimized SORA Prompt</h3>
+                <h3 className="text-white text-lg font-bold">
+                  Your Optimized SORA Prompt
+                </h3>
               </div>
 
               {/* Compact Quality Score */}
               <div className="flex items-center gap-3">
                 <span className="text-xs text-gray-400">Quality:</span>
-                <div className={`text-lg font-bold ${
-                  qualityScore >= 80 ? 'text-green-400' :
-                  qualityScore >= 50 ? 'text-yellow-400' : 'text-red-400'
-                }`}>
+                <div
+                  className={`text-lg font-bold ${
+                    qualityScore >= 80
+                      ? "text-green-400"
+                      : qualityScore >= 50
+                        ? "text-yellow-400"
+                        : "text-red-400"
+                  }`}
+                >
                   {qualityScore}%
                 </div>
               </div>
             </div>
 
-            <div className="bg-gray-900 border border-gray-700 rounded-lg mb-3" style={{ padding: "12px" }}>
+            <div
+              className="bg-gray-900 border border-gray-700 rounded-lg mb-3"
+              style={{ padding: "12px" }}
+            >
               <textarea
                 value={generatePrompt()}
                 readOnly
@@ -655,17 +665,40 @@ export default function PromptVault() {
 
             {/* Compact Progress Indicators */}
             <div className="flex items-center gap-4 mb-3 text-xs">
-              <span className={`flex items-center gap-1 ${customInstructions ? 'text-green-400' : 'text-gray-500'}`}>
-                {customInstructions ? '✓' : '○'} Vision
+              <span
+                className={`flex items-center gap-1 ${customInstructions ? "text-green-400" : "text-gray-500"}`}
+              >
+                {customInstructions ? "✓" : "○"} Vision
               </span>
-              <span className={`flex items-center gap-1 ${selectedKeywords.some(k => keywordCategories.Lighting.includes(k)) ? 'text-green-400' : 'text-gray-500'}`}>
-                {selectedKeywords.some(k => keywordCategories.Lighting.includes(k)) ? '✓' : '○'} Lighting
+              <span
+                className={`flex items-center gap-1 ${selectedKeywords.some((k) => keywordCategories.Lighting.includes(k)) ? "text-green-400" : "text-gray-500"}`}
+              >
+                {selectedKeywords.some((k) =>
+                  keywordCategories.Lighting.includes(k),
+                )
+                  ? "✓"
+                  : "○"}{" "}
+                Lighting
               </span>
-              <span className={`flex items-center gap-1 ${selectedKeywords.some(k => keywordCategories.Framing.includes(k)) ? 'text-green-400' : 'text-gray-500'}`}>
-                {selectedKeywords.some(k => keywordCategories.Framing.includes(k)) ? '✓' : '○'} Framing
+              <span
+                className={`flex items-center gap-1 ${selectedKeywords.some((k) => keywordCategories.Framing.includes(k)) ? "text-green-400" : "text-gray-500"}`}
+              >
+                {selectedKeywords.some((k) =>
+                  keywordCategories.Framing.includes(k),
+                )
+                  ? "✓"
+                  : "○"}{" "}
+                Framing
               </span>
-              <span className={`flex items-center gap-1 ${selectedKeywords.some(k => enhancedKeywordCategories["Creative Direction"].includes(k)) ? 'text-green-400' : 'text-gray-500'}`}>
-                {selectedKeywords.some(k => enhancedKeywordCategories["Creative Direction"].includes(k)) ? '✓' : '○'} Style
+              <span
+                className={`flex items-center gap-1 ${selectedKeywords.some((k) => enhancedKeywordCategories["Creative Direction"].includes(k)) ? "text-green-400" : "text-gray-500"}`}
+              >
+                {selectedKeywords.some((k) =>
+                  enhancedKeywordCategories["Creative Direction"].includes(k),
+                )
+                  ? "✓"
+                  : "○"}{" "}
+                Style
               </span>
             </div>
 
@@ -696,297 +729,6 @@ export default function PromptVault() {
             </div>
           </CardContent>
         </Card>
-          {/* Step 4: Optimized SORA Prompt - Takes up 2/3 of the width */}
-          <div className="lg:col-span-2">
-            <Card className="bg-black border-2 border-brand-red shadow-xl h-full">
-              <CardContent style={{ padding: "20px" }}>
-                <div className="flex items-center mb-4">
-                  <div className="w-6 h-6 rounded-full bg-brand-red flex items-center justify-center mr-3">
-                    <span className="text-black font-bold text-sm">4</span>
-                  </div>
-                  <h3 className="text-white text-lg font-bold">
-                    Step 4: Your Optimized SORA Prompt
-                  </h3>
-                </div>
-
-                <div
-                  className="bg-gray-900 border border-gray-700 rounded-lg mb-4"
-                  style={{ padding: "16px" }}
-                >
-                  <textarea
-                    value={generatePrompt()}
-                    readOnly
-                    className="w-full bg-transparent text-gray-300 text-sm leading-relaxed resize-none border-0 outline-0"
-                    rows={10}
-                    placeholder="Enter your vision above and click keywords below to build your optimized SORA prompt..."
-                    style={{ minHeight: "200px", fontFamily: "monospace" }}
-                  />
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-4">
-                  <Button
-                    onClick={copyPrompt}
-                    disabled={
-                      !customInstructions && selectedKeywords.length === 0
-                    }
-                    className="bg-brand-red hover:bg-red-600 text-black font-bold py-3 px-6 transition-all duration-200"
-                    style={{
-                      background: "#ff4e33",
-                      border: "none",
-                    }}
-                  >
-                    <Copy className="w-4 h-4 mr-2" />
-                    COPY PROMPT
-                  </Button>
-
-                  <Button
-                    onClick={() => {
-                      setCustomInstructions("");
-                      setSelectedKeywords([]);
-                      setUploadedFile(null);
-                      setQualityScore(0);
-                    }}
-                    variant="outline"
-                    className="px-6 py-3 border border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white font-bold transition-all duration-200"
-                  >
-                    CLEAR ALL
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Enhanced Prompt Quality Meter - Takes up 1/3 of the width */}
-          <div className="lg:col-span-1">
-            <Card className="bg-black border border-gray-900 shadow-xl h-full">
-              <CardContent style={{ padding: "20px" }}>
-                <div className="text-center mb-6">
-                  <h3 className="text-white text-lg font-bold mb-4">
-                    PROMPT QUALITY
-                  </h3>
-
-                  {/* Circular Progress Ring */}
-                  <div className="relative w-32 h-32 mx-auto mb-4">
-                    <svg
-                      className="w-32 h-32 transform -rotate-90"
-                      viewBox="0 0 120 120"
-                    >
-                      {/* Background circle */}
-                      <circle
-                        cx="60"
-                        cy="60"
-                        r="45"
-                        stroke="rgb(31, 41, 55)"
-                        strokeWidth="8"
-                        fill="none"
-                      />
-                      {/* Progress circle */}
-                      <circle
-                        cx="60"
-                        cy="60"
-                        r="45"
-                        stroke={
-                          qualityScore >= 80
-                            ? "#10b981"
-                            : qualityScore >= 50
-                              ? "#f59e0b"
-                              : "#ef4444"
-                        }
-                        strokeWidth="8"
-                        fill="none"
-                        strokeLinecap="round"
-                        strokeDasharray={`${(qualityScore / 100) * 283} 283`}
-                        className="transition-all duration-500 ease-out"
-                        style={{
-                          filter: `drop-shadow(0 0 12px ${
-                            qualityScore >= 80
-                              ? "#10b981"
-                              : qualityScore >= 50
-                                ? "#f59e0b"
-                                : "#ef4444"
-                          })`,
-                        }}
-                      />
-                    </svg>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="text-3xl font-black text-white">
-                          {qualityScore}%
-                        </div>
-                        <div className="text-xs text-gray-400 uppercase tracking-wide">
-                          {qualityScore >= 80
-                            ? "Excellent"
-                            : qualityScore >= 50
-                              ? "Good"
-                              : "Needs Work"}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Progress Checklist */}
-                <div className="space-y-3">
-                  <div className="flex items-center">
-                    <div
-                      className={`w-5 h-5 rounded-full flex items-center justify-center mr-3 ${
-                        customInstructions ? "bg-green-500" : "bg-gray-600"
-                      }`}
-                    >
-                      <span className="text-white text-xs">
-                        {customInstructions ? "✓" : "1"}
-                      </span>
-                    </div>
-                    <span
-                      className={`text-sm ${customInstructions ? "text-green-400" : "text-gray-400"}`}
-                    >
-                      Vision Description
-                    </span>
-                  </div>
-
-                  <div className="flex items-center">
-                    <div
-                      className={`w-5 h-5 rounded-full flex items-center justify-center mr-3 ${
-                        selectedKeywords.some((k) =>
-                          keywordCategories.Lighting.includes(k),
-                        )
-                          ? "bg-green-500"
-                          : "bg-gray-600"
-                      }`}
-                    >
-                      <span className="text-white text-xs">
-                        {selectedKeywords.some((k) =>
-                          keywordCategories.Lighting.includes(k),
-                        )
-                          ? "✓"
-                          : "L"}
-                      </span>
-                    </div>
-                    <span
-                      className={`text-sm ${
-                        selectedKeywords.some((k) =>
-                          keywordCategories.Lighting.includes(k),
-                        )
-                          ? "text-green-400"
-                          : "text-gray-400"
-                      }`}
-                    >
-                      Lighting Keywords
-                    </span>
-                  </div>
-
-                  <div className="flex items-center">
-                    <div
-                      className={`w-5 h-5 rounded-full flex items-center justify-center mr-3 ${
-                        selectedKeywords.some((k) =>
-                          keywordCategories.Framing.includes(k),
-                        )
-                          ? "bg-green-500"
-                          : "bg-gray-600"
-                      }`}
-                    >
-                      <span className="text-white text-xs">
-                        {selectedKeywords.some((k) =>
-                          keywordCategories.Framing.includes(k),
-                        )
-                          ? "✓"
-                          : "F"}
-                      </span>
-                    </div>
-                    <span
-                      className={`text-sm ${
-                        selectedKeywords.some((k) =>
-                          keywordCategories.Framing.includes(k),
-                        )
-                          ? "text-green-400"
-                          : "text-gray-400"
-                      }`}
-                    >
-                      Camera Framing
-                    </span>
-                  </div>
-
-                  <div className="flex items-center">
-                    <div
-                      className={`w-5 h-5 rounded-full flex items-center justify-center mr-3 ${
-                        selectedKeywords.some((k) =>
-                          enhancedKeywordCategories[
-                            "Creative Direction"
-                          ].includes(k),
-                        )
-                          ? "bg-green-500"
-                          : "bg-gray-600"
-                      }`}
-                    >
-                      <span className="text-white text-xs">
-                        {selectedKeywords.some((k) =>
-                          enhancedKeywordCategories[
-                            "Creative Direction"
-                          ].includes(k),
-                        )
-                          ? "✓"
-                          : "C"}
-                      </span>
-                    </div>
-                    <span
-                      className={`text-sm ${
-                        selectedKeywords.some((k) =>
-                          enhancedKeywordCategories[
-                            "Creative Direction"
-                          ].includes(k),
-                        )
-                          ? "text-green-400"
-                          : "text-gray-400"
-                      }`}
-                    >
-                      Creative Direction
-                    </span>
-                  </div>
-
-                  <div className="flex items-center">
-                    <div
-                      className={`w-5 h-5 rounded-full flex items-center justify-center mr-3 ${
-                        uploadedFile ? "bg-green-500" : "bg-gray-600"
-                      }`}
-                    >
-                      <span className="text-white text-xs">
-                        {uploadedFile ? "✓" : "2"}
-                      </span>
-                    </div>
-                    <span
-                      className={`text-sm ${uploadedFile ? "text-green-400" : "text-gray-400"}`}
-                    >
-                      Reference Image
-                    </span>
-                  </div>
-                </div>
-
-                {/* Quality Tips */}
-                <div className="mt-6 p-3 bg-gray-800 rounded-lg">
-                  <div className="text-xs text-gray-400 uppercase tracking-wide font-semibold mb-2">
-                    Quick Tips
-                  </div>
-                  {qualityScore < 50 && (
-                    <p className="text-yellow-400 text-xs">
-                      Add more details and keywords for better results
-                    </p>
-                  )}
-                  {qualityScore >= 50 && qualityScore < 80 && (
-                    <p className="text-blue-400 text-xs">
-                      Good start! Add more specific keywords to optimize
-                    </p>
-                  )}
-                  {qualityScore >= 80 && (
-                    <p className="text-green-400 text-xs">
-                      Excellent! Your prompt is ready for SORA
-                    </p>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
       </div>
     </div>
   );

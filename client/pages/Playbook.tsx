@@ -272,8 +272,17 @@ export default function Playbook() {
         {sections.map((section) => (
           <Card key={section.id} className="bg-gray-900 border-gray-800">
             <CardHeader className="bg-brand-red">
-              <CardTitle className="text-black text-xl font-bold flex items-center space-x-3">
-                <span className="bg-black text-brand-red rounded px-2 py-1 text-lg font-bold">
+              <CardTitle
+                className="text-black text-xl flex items-center space-x-3"
+                style={{ fontFamily: "Poppins, sans-serif", fontWeight: "700" }}
+              >
+                <span
+                  className="bg-black text-brand-red rounded px-2 py-1 text-lg"
+                  style={{
+                    fontFamily: "Poppins, sans-serif",
+                    fontWeight: "700",
+                  }}
+                >
                   {section.id}.
                 </span>
                 <span>{section.title}</span>

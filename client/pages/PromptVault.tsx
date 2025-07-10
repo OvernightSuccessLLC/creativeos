@@ -370,7 +370,7 @@ export default function PromptVault() {
             <div
               className="rounded-lg mb-4"
               style={{
-                background: "#ff6b35",
+                background: "#ff4e33",
                 padding: "8px 12px 12px",
                 boxShadow: "0 0 20px rgba(255, 107, 53, 0.3)",
                 border: "1px solid rgba(255, 107, 53, 0.8)",
@@ -412,7 +412,7 @@ export default function PromptVault() {
             <div
               className="rounded-lg mb-4"
               style={{
-                background: "#ff6b35",
+                background: "#ff4e33",
                 padding: "8px 12px 12px",
                 boxShadow: "0 0 20px rgba(255, 107, 53, 0.3)",
                 border: "1px solid rgba(255, 107, 53, 0.8)",
@@ -427,7 +427,7 @@ export default function PromptVault() {
               >
                 FRAMING
               </h3>
-              <div className="flex flex-wrap gap-2 justify-center">
+              <div className="flex flex-wrap gap-2 justify-start text-left mr-auto items-start">
                 {keywordCategories.Framing.map((keyword) => (
                   <button
                     key={keyword}
@@ -454,7 +454,7 @@ export default function PromptVault() {
             <div
               className="rounded-lg mb-4"
               style={{
-                background: "#ff6b35",
+                background: "#ff4e33",
                 padding: "8px 12px 12px",
                 boxShadow: "0 0 20px rgba(255, 107, 53, 0.3)",
                 border: "1px solid rgba(255, 107, 53, 0.8)",
@@ -469,7 +469,7 @@ export default function PromptVault() {
               >
                 LOCATIONS
               </h3>
-              <div className="flex flex-wrap gap-2 justify-center">
+              <div className="flex flex-wrap gap-2 justify-start text-left mr-auto items-start">
                 {keywordCategories.Locations.map((keyword) => (
                   <button
                     key={keyword}
@@ -496,7 +496,7 @@ export default function PromptVault() {
             <div
               className="rounded-lg mb-4"
               style={{
-                background: "#ff6b35",
+                background: "#ff4e33",
                 padding: "8px 12px 12px",
                 boxShadow: "0 0 20px rgba(255, 107, 53, 0.3)",
                 border: "1px solid rgba(255, 107, 53, 0.8)",
@@ -511,7 +511,7 @@ export default function PromptVault() {
               >
                 STYLE
               </h3>
-              <div className="flex flex-wrap gap-2 justify-center">
+              <div className="flex flex-wrap gap-2 justify-start text-left mr-auto items-start">
                 {enhancedKeywordCategories.Style.map((keyword) => (
                   <button
                     key={keyword}
@@ -538,7 +538,7 @@ export default function PromptVault() {
             <div
               className="rounded-lg mb-4"
               style={{
-                background: "#ff6b35",
+                background: "#ff4e33",
                 padding: "8px 12px 12px",
                 boxShadow: "0 0 20px rgba(255, 107, 53, 0.3)",
                 border: "1px solid rgba(255, 107, 53, 0.8)",
@@ -553,9 +553,18 @@ export default function PromptVault() {
               >
                 CREATIVE DIRECTION
               </h3>
-              <div className="flex flex-wrap gap-2 justify-center">
-                {enhancedKeywordCategories["Creative Direction"].map(
-                  (keyword) => (
+              <div className="flex flex-wrap gap-2 justify-start text-left mr-auto items-start">
+                {enhancedKeywordCategories["Creative Direction"]
+                  .filter(
+                    (keyword) =>
+                      ![
+                        "Wes Anderson meets Balenciaga",
+                        "Yeezy drop in a NASA lab",
+                        "Scorsese gritty realism",
+                        "Warhol meets Warhol",
+                      ].includes(keyword),
+                  )
+                  .map((keyword) => (
                     <button
                       key={keyword}
                       onClick={() => toggleKeyword(keyword)}
@@ -573,8 +582,7 @@ export default function PromptVault() {
                     >
                       {keyword}
                     </button>
-                  ),
-                )}
+                  ))}
               </div>
             </div>
 
@@ -582,7 +590,7 @@ export default function PromptVault() {
             <div
               className="rounded-lg mb-4"
               style={{
-                background: "#ff6b35",
+                background: "#ff4e33",
                 padding: "8px 12px 12px",
                 boxShadow: "0 0 20px rgba(255, 107, 53, 0.3)",
                 border: "1px solid rgba(255, 107, 53, 0.8)",
@@ -597,7 +605,7 @@ export default function PromptVault() {
               >
                 MODIFIERS
               </h3>
-              <div className="flex flex-wrap gap-2 justify-center">
+              <div className="flex flex-wrap gap-2 justify-start text-left mr-auto items-start">
                 {enhancedKeywordCategories.Modifiers.map((keyword) => (
                   <button
                     key={keyword}

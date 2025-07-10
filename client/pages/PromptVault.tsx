@@ -415,7 +415,7 @@ export default function PromptVault() {
             {/* Framing Section */}
             <div
               className="bg-black border border-gray-600 rounded-lg"
-              style={{ margin: "12px 0 20px", padding: "0 6px 8px" }}
+              style={{ margin: "12px 6px 18px 0", padding: "10px 18px 12px" }}
             >
               <h3
                 className="text-white text-base font-bold mb-3"

@@ -363,18 +363,21 @@ export default function PromptVault() {
           className="bg-black border border-gray-900 shadow-xl"
           style={{ marginTop: "12px" }}
         >
-          <CardHeader className="py-2">
-            <CardTitle
+          <CardContent style={{ padding: "4px 24px 0" }}>
+            <h3
               className="text-brand-red text-sm font-black tracking-wide border-b border-brand-red pb-2"
               style={{
                 fontWeight: 900,
+                fontSize: "16px",
+                alignSelf: "center",
+                textAlign: "center",
                 margin: "12px 0 16px",
                 padding: "0 24px 8px",
               }}
             >
               STEP 3: SELECT KEYWORDS
-            </CardTitle>
-          </CardHeader>
+            </h3>
+          </CardContent>
           <CardContent className="space-y-4">
             {/* Lighting Section */}
             <div

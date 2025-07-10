@@ -452,8 +452,13 @@ export default function Index() {
         <div className="text-center py-6 sm:py-8 space-y-3 sm:space-y-4">
           <Button
             size="lg"
-            className="bg-black text-brand-red hover:bg-gray-900 font-black px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto"
-            style={{ fontWeight: 900 }}
+            className="bg-black text-brand-red hover:bg-gray-900 font-brand-black px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto"
+            style={{
+              fontFamily: "Poppins, sans-serif",
+              fontWeight: "900",
+              textTransform: "uppercase",
+              letterSpacing: "0.5px",
+            }}
             onClick={() => navigate("/join")}
           >
             <Crown className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
@@ -463,8 +468,13 @@ export default function Index() {
             <Button
               variant="outline"
               size="lg"
-              className="border-black text-black hover:bg-black hover:text-brand-red font-black px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto"
-              style={{ fontWeight: 900 }}
+              className="border-black text-black hover:bg-black hover:text-brand-red font-brand-black px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto"
+              style={{
+                fontFamily: "Poppins, sans-serif",
+                fontWeight: "900",
+                textTransform: "uppercase",
+                letterSpacing: "0.5px",
+              }}
               onClick={() => navigate("/playbook")}
             >
               <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />

@@ -119,12 +119,17 @@ export default function Index() {
             {navigationItems.map((item) => (
               <button
                 key={item.name}
-                className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-black transition-colors ${
+                className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm transition-colors font-brand-bold ${
                   item.highlight
                     ? "bg-black text-brand-red"
                     : "text-black hover:text-black hover:bg-black/10"
                 }`}
-                style={{ fontWeight: 900 }}
+                style={{
+                  fontFamily: "Poppins, sans-serif",
+                  fontWeight: "700",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px",
+                }}
                 onClick={() => {
                   if (item.name === "UPDATES") {
                     setShowBriefcase(true);

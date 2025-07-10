@@ -276,9 +276,7 @@ export default function PromptVault() {
               >
                 STEP 1: CREATIVE VISION
               </h3>
-              <Label htmlFor="instructions" className="text-white text-xs">
-                Describe your subject, scene, or concept
-              </Label>
+
               <Textarea
                 id="instructions"
                 placeholder="e.g., Professional portrait of a confident businesswoman..."

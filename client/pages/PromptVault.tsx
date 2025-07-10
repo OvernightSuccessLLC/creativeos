@@ -249,22 +249,19 @@ export default function PromptVault() {
             className="bg-black border border-gray-900 shadow-xl"
             style={{ flexGrow: "1", height: "auto" }}
           >
-            <CardContent style={{ marginTop: "8px", padding: "8px 24px" }}>
-              <h3
-                className="text-brand-red text-xs font-black tracking-wide"
-                style={{
-                  fontWeight: 900,
-                  fontSize: "15px",
-                  margin: "8px 0 6px",
-                  padding: "8px 0 6px",
-                }}
-              >
-                STEP 1: CREATIVE VISION
-              </h3>
+            <CardContent style={{ padding: "20px" }}>
+              <div className="flex items-center mb-4">
+                <div className="w-6 h-6 rounded-full bg-brand-red flex items-center justify-center mr-3">
+                  <span className="text-black font-bold text-sm">1</span>
+                </div>
+                <h3 className="text-white text-lg font-bold">
+                  Step 1: Describe Your Vision
+                </h3>
+              </div>
 
               <Textarea
                 id="instructions"
-                placeholder="e.g., Professional portrait of a confident businesswoman..."
+                placeholder="Describe exactly what you want to create... (e.g., 'A modern entrepreneur working on a laptop in a minimalist coffee shop')"
                 value={customInstructions}
                 onChange={(e) => {
                   setCustomInstructions(e.target.value);
@@ -275,73 +272,77 @@ export default function PromptVault() {
                   score += Math.min(50, selectedKeywords.length * 5);
                   setQualityScore(Math.min(100, score));
                 }}
-                className="bg-gray-900 border-gray-700 text-white focus:border-brand-red focus:ring-brand-red text-xs"
-                style={{ marginTop: "4px", padding: "4px 12px" }}
-                rows={2}
+                className="bg-gray-900 border-gray-700 text-white focus:border-brand-red focus:ring-brand-red resize-none"
+                style={{
+                  minHeight: "120px",
+                  padding: "16px",
+                  fontSize: "14px",
+                }}
+                rows={6}
               />
+
+              <p className="text-gray-400 text-sm mt-3">
+                Be specific about subjects, actions, and the overall scene you
+                envision.
+              </p>
             </CardContent>
           </Card>
 
           {/* Step 2 - Top Right */}
           <Card className="bg-black border border-gray-900 shadow-xl">
-            <CardContent
-              className="pt-2 pb-3"
-              style={{ marginTop: "8px", padding: "8px 24px 12px" }}
-            >
-              <h3
-                className="text-brand-red text-xs font-black tracking-wide"
-                style={{
-                  fontWeight: 900,
-                  fontSize: "15px",
-                  marginBottom: "6px",
-                  padding: "8px 0 6px",
-                }}
-              >
-                STEP 2: REFERENCE IMAGE
-              </h3>
+            <CardContent style={{ padding: "20px" }}>
+              <div className="flex items-center mb-4">
+                <div className="w-6 h-6 rounded-full bg-brand-red flex items-center justify-center mr-3">
+                  <span className="text-black font-bold text-sm">2</span>
+                </div>
+                <h3 className="text-white text-lg font-bold">
+                  Step 2: Upload Reference Image (Optional)
+                </h3>
+              </div>
+
               <div
-                className="border-2 border-dashed border-gray-700 rounded-lg text-center"
-                style={{ marginBottom: "8px", padding: "8px 12px" }}
+                className="border-2 border-dashed border-gray-600 rounded-lg text-center cursor-pointer hover:border-gray-500 transition-colors"
+                style={{ padding: "40px 20px", minHeight: "120px" }}
+                onClick={() => document.getElementById("file-upload")?.click()}
               >
-                <Upload className="w-5 h-5 text-gray-400 mx-auto mb-1" />
-                <p className="text-gray-400 mb-2 text-xs">
-                  Upload reference image
-                </p>
                 {uploadedFile ? (
-                  <div className="mb-2">
-                    <p className="text-brand-red font-black text-xs">
-                      ✓ {uploadedFile.name}
+                  <div>
+                    <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <span className="text-white text-xl">✓</span>
+                    </div>
+                    <p className="text-green-400 font-medium mb-2">
+                      {uploadedFile.name}
                     </p>
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => setUploadedFile(null)}
-                      className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-black mt-1 text-xs h-5"
-                      style={{ fontWeight: 900 }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setUploadedFile(null);
+                      }}
+                      className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-medium"
                     >
-                      REMOVE
+                      Remove
                     </Button>
                   </div>
-                ) : null}
-                <div className="relative">
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handleFileUpload}
-                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                    id="file-upload"
-                  />
-                  <Button
-                    variant="outline"
-                    className="bg-brand-red text-black hover:bg-brand-red-hover font-black border-0 text-xs h-5"
-                    style={{ fontWeight: 900 }}
-                    asChild
-                  >
-                    <label htmlFor="file-upload" className="cursor-pointer">
-                      CHOOSE FILE
-                    </label>
-                  </Button>
-                </div>
+                ) : (
+                  <div>
+                    <div className="w-12 h-12 border-2 border-gray-600 rounded-lg flex items-center justify-center mx-auto mb-3">
+                      <Upload className="w-6 h-6 text-gray-400" />
+                    </div>
+                    <p className="text-white font-medium mb-1">
+                      Click to upload reference image
+                    </p>
+                    <p className="text-gray-400 text-sm">JPG, PNG up to 10MB</p>
+                  </div>
+                )}
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleFileUpload}
+                  className="hidden"
+                  id="file-upload"
+                />
               </div>
             </CardContent>
           </Card>

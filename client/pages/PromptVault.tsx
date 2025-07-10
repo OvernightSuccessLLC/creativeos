@@ -384,7 +384,7 @@ export default function PromptVault() {
             {/* Lighting Section */}
             <div
               className="bg-black border border-gray-600 rounded-lg"
-              style={{ margin: "12px 6px 18px 0", padding: "10px 18px 12px" }}
+              style={{ margin: "12px 18px 18px", padding: "10px 12px 12px" }}
             >
               <h3
                 className="text-white text-base font-bold mb-3"

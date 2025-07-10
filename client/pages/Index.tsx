@@ -320,7 +320,7 @@ export default function Index() {
                         <p className="text-white text-xs">
                           Add Custom Instructions
                         </p>
-                        <p className="text-gray-400 text-xs">
+                        <p className="text-white/60 text-xs">
                           Start with your specific requirements
                         </p>
                       </div>

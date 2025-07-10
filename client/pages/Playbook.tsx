@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import AppNavigation from "@/components/AppNavigation";
 import {
   BookOpen,
   Lightbulb,
@@ -13,6 +15,9 @@ import {
   AlertTriangle,
   ArrowLeft,
   Home,
+  Clock,
+  Target,
+  Users,
 } from "lucide-react";
 
 export default function Playbook() {

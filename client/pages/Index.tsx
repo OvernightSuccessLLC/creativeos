@@ -204,7 +204,7 @@ export default function Index() {
                   className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left font-brand-bold transition-colors ${
                     item.highlight
                       ? "bg-brand-red text-white"
-                      : "text-white hover:bg-gray-800"
+                      : "text-white hover:bg-white/10"
                   }`}
                   style={{
                     fontFamily: "Poppins, sans-serif",

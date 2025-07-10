@@ -694,7 +694,8 @@ export default function PromptVault() {
                 }}
                 data-copy-button
               >
-                <Copy className="w-4 h-4 mr-2" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 group-hover:animate-pulse"></div>
+                <Copy className="w-5 h-5 mr-3" />
                 COPY FOR SORA
               </Button>
               <Button

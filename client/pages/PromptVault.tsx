@@ -784,13 +784,13 @@ export default function PromptVault() {
             </div>
 
             <div
-              className="bg-gray-900 border border-gray-700 rounded-lg mb-3"
-              style={{ padding: "12px" }}
+              className="bg-black rounded-lg mb-3"
+              style={{ padding: "12px", border: "1px solid #333" }}
             >
               <textarea
                 value={generatePrompt()}
                 readOnly
-                className="w-full bg-transparent text-gray-300 text-sm leading-relaxed resize-none border-0 outline-0"
+                className="w-full bg-transparent text-white text-sm leading-relaxed resize-none border-0 outline-0"
                 rows={4}
                 placeholder="Enter your vision above and select keywords to build your optimized SORA prompt..."
                 style={{ minHeight: "80px", fontFamily: "monospace" }}

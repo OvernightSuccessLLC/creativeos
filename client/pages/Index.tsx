@@ -253,8 +253,8 @@ export default function Index() {
         <div className="mb-6 sm:mb-8">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 sm:mb-6 space-y-4 sm:space-y-0">
             <h1
-              className="text-2xl sm:text-3xl font-black text-black"
-              style={{ fontWeight: 900 }}
+              className="text-2xl sm:text-3xl text-black brand-heading"
+              style={{ fontFamily: "Poppins, sans-serif", fontWeight: "900" }}
             >
               PRODUCT STUDIO
             </h1>

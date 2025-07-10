@@ -250,10 +250,6 @@ export default function PromptVault() {
             PROMPT VAULT
           </h1>
         </div>
-        <p className="text-gray-400 max-w-2xl mx-auto">
-          Advanced formula builder that combines custom vision, professional
-          keywords.
-        </p>
       </div>
 
       {/* Main Content */}

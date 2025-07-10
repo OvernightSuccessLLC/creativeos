@@ -16,6 +16,22 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Global Creative Director OS Context
+const CreativeDirectorOSContext = {
+  version: "1.0.0",
+  features: {
+    promptVault: true,
+    playbook: true,
+    templates: true,
+    aiToolkit: true,
+    studios: {
+      product: true,
+      lifestyle: true,
+      graphic: true,
+    },
+  },
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -29,6 +45,7 @@ const App = () => (
           <Route path="/templates" element={<Templates />} />
           <Route path="/ai-toolkit" element={<AIToolkit />} />
           <Route path="/join" element={<PaywallLanding />} />
+          <Route path="/upgrade" element={<PaywallLanding />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

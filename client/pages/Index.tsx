@@ -329,7 +329,7 @@ export default function Index() {
                           2
                         </div>
                         <p className="text-white text-xs">Select Categories</p>
-                        <p className="text-gray-400 text-xs">
+                        <p className="text-white/60 text-xs">
                           Choose options from each category
                         </p>
                       </div>

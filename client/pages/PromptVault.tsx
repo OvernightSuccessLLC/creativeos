@@ -811,13 +811,15 @@ export default function PromptVault() {
               <Button
                 onClick={copyPrompt}
                 disabled={!customInstructions && selectedKeywords.length === 0}
-                className="text-white font-bold py-2 px-4 transition-all duration-200 hover:opacity-90"
+                className="brand-button-primary text-white font-brand-bold py-2 px-4 transition-all duration-200 hover:opacity-90"
                 style={{
                   backgroundColor: "#F93822",
                   border: "none",
                   fontFamily: "Poppins, sans-serif",
-                  fontWeight: "600",
+                  fontWeight: "700",
                   fontSize: "12px",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px",
                 }}
                 data-copy-button
               >

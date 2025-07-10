@@ -466,9 +466,14 @@ export default function PromptVault() {
             {/* Style Section */}
             <div
               className="bg-black border border-gray-600 rounded-lg"
-              style={{ margin: "12px 0", padding: "0 6px 8px" }}
+              style={{ margin: "12px 0 20px", padding: "0 6px 8px" }}
             >
-              <h3 className="text-white text-base font-bold mb-3">Style</h3>
+              <h3
+                className="text-white text-base font-bold mb-3"
+                style={{ fontSize: "14px" }}
+              >
+                Style
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {enhancedKeywordCategories.Style.map((keyword) => (
                   <button

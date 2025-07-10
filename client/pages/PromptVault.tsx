@@ -274,10 +274,10 @@ export default function PromptVault() {
                   <span className="text-white font-bold text-sm">1</span>
                 </div>
                 <h3
-                  className="text-white text-lg font-bold"
+                  className="text-white text-lg font-brand-bold"
                   style={{
-                    fontFamily: "Poppins, Helvetica Neue, sans-serif",
-                    fontWeight: "600",
+                    fontFamily: "Poppins, sans-serif",
+                    fontWeight: "700",
                   }}
                 >
                   Step 1: Describe Your Vision

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import OvernightSuccessSignup from "@/components/OvernightSuccessSignup";
+import BriefcaseModal from "@/components/BriefcaseModal";
 import {
   Card,
   CardContent,

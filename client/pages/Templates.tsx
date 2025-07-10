@@ -198,16 +198,11 @@ export default function Templates() {
                   <Button
                     size="sm"
                     onClick={() => copyPrompt(template.prompt)}
-                    className="bg-brand-red hover:bg-brand-red-hover text-black font-bold flex-1"
+                    className="bg-brand-red hover:opacity-90 text-white font-bold flex-1"
+                    style={{ backgroundColor: "#F93822", border: "none" }}
                   >
                     <Copy className="w-4 h-4 mr-2" />
-                    COPY
-                  </Button>
-                  <Button
-                    size="sm"
-                    className="bg-black text-white hover:bg-gray-800 border border-gray-700"
-                  >
-                    EDIT
+                    COPY PROMPT
                   </Button>
                 </div>
               </CardContent>

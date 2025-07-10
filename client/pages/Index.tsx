@@ -408,7 +408,7 @@ export default function Index() {
                       </div>
                     </CardHeader>
                     <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0">
-                      <div className="bg-black border border-gray-800 rounded p-3 sm:p-4 text-xs sm:text-sm text-gray-400">
+                      <div className="bg-black border border-white/20 rounded p-3 sm:p-4 text-xs sm:text-sm text-white/60">
                         Add custom instructions and select from categorized
                         keywords to build your SORA AI formula...
                       </div>

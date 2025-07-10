@@ -370,7 +370,7 @@ export default function PromptVault() {
         >
           <CardContent style={{ padding: "4px 24px 0" }}>
             <h3
-              className="text-brand-red text-sm font-black tracking-wide border-b border-brand-red pb-2"
+              className="text-brand-red text-sm font-black tracking-wide"
               style={{
                 fontWeight: 900,
                 fontSize: "16px",

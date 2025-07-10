@@ -701,7 +701,7 @@ export default function Playbook() {
                     {examples.map((example, idx) => (
                       <li
                         key={idx}
-                        className="text-gray-300 text-sm"
+                        className="text-white text-sm"
                         style={TYPOGRAPHY.body}
                       >
                         • {example}

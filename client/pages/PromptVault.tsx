@@ -729,6 +729,112 @@ export default function PromptVault() {
             </div>
           </CardContent>
         </Card>
+
+        {/* Prompt Quality Meter - Compact */}
+        <Card className="bg-black border border-gray-900 shadow-xl mt-4">
+          <CardContent style={{ padding: "16px" }}>
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="text-white text-sm font-bold tracking-wide">
+                PROMPT QUALITY METER
+              </h3>
+              <span className="text-brand-red text-lg font-bold">
+                {qualityScore}%
+              </span>
+            </div>
+
+            <div className="flex items-center gap-6 text-sm">
+              <span
+                className={`flex items-center gap-2 ${customInstructions ? "text-green-400" : "text-gray-500"}`}
+              >
+                {customInstructions ? "✓" : "○"} Start by describing your vision
+                in Step 1
+              </span>
+              <span
+                className={`flex items-center gap-2 ${selectedKeywords.some((k) => keywordCategories.Lighting.includes(k)) ? "text-green-400" : "text-gray-500"}`}
+              >
+                {selectedKeywords.some((k) =>
+                  keywordCategories.Lighting.includes(k),
+                )
+                  ? "✓"
+                  : "○"}{" "}
+                Add lighting keywords
+              </span>
+              <span
+                className={`flex items-center gap-2 ${selectedKeywords.some((k) => keywordCategories.Framing.includes(k)) ? "text-green-400" : "text-gray-500"}`}
+              >
+                {selectedKeywords.some((k) =>
+                  keywordCategories.Framing.includes(k),
+                )
+                  ? "✓"
+                  : "○"}{" "}
+                Choose camera framing
+              </span>
+              <span
+                className={`flex items-center gap-2 ${selectedKeywords.some((k) => enhancedKeywordCategories["Creative Direction"].includes(k)) ? "text-green-400" : "text-gray-500"}`}
+              >
+                {selectedKeywords.some((k) =>
+                  enhancedKeywordCategories["Creative Direction"].includes(k),
+                )
+                  ? "✓"
+                  : "○"}{" "}
+                Select creative direction
+              </span>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Step 4: Your Optimized SORA Prompt */}
+        <Card className="bg-black border-2 border-brand-red shadow-xl mt-4">
+          <CardContent style={{ padding: "20px" }}>
+            <div className="flex items-center mb-4">
+              <div className="w-6 h-6 rounded-full bg-brand-red flex items-center justify-center mr-3">
+                <span className="text-black font-bold text-sm">4</span>
+              </div>
+              <h3 className="text-white text-lg font-bold">
+                Step 4: Your Optimized SORA Prompt
+              </h3>
+            </div>
+
+            <div
+              className="bg-gray-900 border border-gray-700 rounded-lg mb-4"
+              style={{ padding: "16px" }}
+            >
+              <textarea
+                value={generatePrompt()}
+                readOnly
+                className="w-full bg-transparent text-gray-300 text-sm leading-relaxed resize-none border-0 outline-0"
+                rows={6}
+                placeholder="Enter your vision above and click keywords below to build your optimized SORA prompt..."
+                style={{ minHeight: "140px", fontFamily: "monospace" }}
+              />
+            </div>
+
+            <div className="flex gap-4">
+              <Button
+                onClick={copyPrompt}
+                disabled={!customInstructions && selectedKeywords.length === 0}
+                className="bg-brand-red hover:bg-red-600 text-black font-bold py-2 px-6 transition-all duration-200"
+                style={{ background: "#ff4e33", border: "none" }}
+              >
+                <Copy className="w-4 h-4 mr-2" />
+                COPY PROMPT
+              </Button>
+
+              <Button
+                onClick={() => {
+                  setCustomInstructions("");
+                  setSelectedKeywords([]);
+                  setUploadedFile(null);
+                  setQualityScore(0);
+                }}
+                variant="outline"
+                className="px-6 py-2 border border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white font-bold transition-all duration-200"
+              >
+                CLEAR ALL
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

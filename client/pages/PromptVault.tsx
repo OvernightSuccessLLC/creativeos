@@ -294,7 +294,7 @@ export default function PromptVault() {
 
           {/* Step 2 - Top Right */}
           <Card className="bg-black border border-gray-900 shadow-xl">
-            <CardHeader className="pb-2">
+            <CardHeader style={{ padding: "12px 24px 8px" }}>
               <CardTitle
                 className="text-brand-red text-xs font-black tracking-wide border-b border-brand-red pb-1"
                 style={{ fontWeight: 900 }}

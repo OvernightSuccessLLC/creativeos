@@ -59,12 +59,11 @@ export default function Playbook() {
         principles: [
           'Be Specific and Clear: Provide concrete details about what you want. Vague prompts lead to unpredictable results. "A young man in a blue suit waiting at a New York City bus stop on a rainy night" vs "a person in a city". Include key attributes like colors, setting, and distinctive features.',
           'Mention the Style or Mood: The same scene can look like a photograph, watercolor painting, Pixar animation, or oil painting. Use mood adjectives: "warm and inviting", "dark and dystopian", "whimsical and cartoonish".',
-          "Start Simple (Then Iterate): Begin with a short prompt focusing on one subject or scene. Build complexity through iterations rather than writing super long prompts from scratch.",
+          "Start Simple (Then Iterate): Begin with a short prompt focusing on one subject or scene. Build complexity through iterations rather than writing super long prompts from scratch.  Treat each generation as feedback. Analyze what worked and what didn't, then improve your prompt and try again.",
           "Use Natural Language: Write as if describing an image to another person, not like coding. Natural descriptions work better than keyword cramming.",
-          "Check Output and Refine: Treat each generation as feedback. Analyze what worked and what didn't, then improve your prompt and try again.",
         ],
         progression:
-          'Beginner: "Photo of a cat sitting on a windowsill." – Basic idea with no particular flair. | Advanced: "A tabby cat lounging on a sunny windowsill with soft morning light filtering through lace curtains, looking outside at birds." – Specified breed, lighting, context, and activity. | Expert: "Candid pet photography, close-up shot of a green-eyed tabby cat lounging on a sunlit Victorian bay window, rays of golden morning light patterning its fur through ornate lace curtains. Shot with shallow depth of field (85mm f/1.8)." – Added camera details, specific setting, and professional photography style.',
+          'Beginner: "Photo of a cat sitting on a windowsill." – Basic idea with no particular flair.   Advanced: "A tabby cat lounging on a sunny windowsill with soft morning light filtering through lace curtains, looking outside at birds." – Specified breed, lighting, context, and activity.   Expert: "Candid pet photography, close-up shot of a green-eyed tabby cat lounging on a sunlit Victorian bay window, rays of golden morning light patterning its fur through ornate lace curtains. Shot with shallow depth of field (85mm f/1.8).',
       },
     },
     {
@@ -298,7 +297,18 @@ export default function Playbook() {
             </CardHeader>
             <CardContent
               className="bg-black border border-white"
-              style={{ padding: section.id === 1 ? "32px 32px 20px" : "32px" }}
+              style={{
+                padding:
+                  section.id === 1
+                    ? "32px 32px 20px"
+                    : section.id === 3
+                      ? "20px 32px"
+                      : section.id === 5
+                        ? "20px 32px"
+                        : section.id === 7
+                          ? "24px"
+                          : "32px",
+              }}
             >
               {section.id === 1 && (
                 <div className="space-y-6">
@@ -442,7 +452,7 @@ export default function Playbook() {
               )}
 
               {section.id === 3 && (
-                <div className="space-y-6" style={{ padding: "20px 32px" }}>
+                <div className="space-y-6">
                   <div
                     className="bg-black rounded-lg"
                     style={{ paddingRight: "24px" }}
@@ -567,7 +577,7 @@ export default function Playbook() {
               )}
 
               {section.id === 5 && (
-                <div className="space-y-4" style={{ padding: "20px 32px" }}>
+                <div className="space-y-4">
                   <div>
                     <h4
                       className="text-brand-red mb-3"
@@ -637,60 +647,92 @@ export default function Playbook() {
 
               {section.id === 6 && (
                 <div className="space-y-4">
-                  <p className="text-white" style={TYPOGRAPHY.body}>
-                    {section.content.description}
-                  </p>
-
-                  <div className="grid gap-4">
-                    {section.content.steps.map((step, idx) => (
-                      <div
-                        key={idx}
-                        className="bg-black p-4 rounded border border-white"
-                      >
-                        <div className="flex items-start space-x-3">
-                          <span
-                            className="bg-brand-red text-black rounded-full w-6 h-6 flex items-center justify-center text-sm"
-                            style={TYPOGRAPHY.subtitle}
-                          >
-                            {idx + 1}
-                          </span>
-                          <p className="text-white" style={TYPOGRAPHY.body}>
-                            {step}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div>
-                    <h4
-                      className="text-brand-red mb-3"
-                      style={TYPOGRAPHY.heading}
+                  {/* Numbered Steps */}
+                  {section.content.steps.map((step, idx) => (
+                    <div
+                      key={idx}
+                      className="bg-black p-4 rounded border border-white"
                     >
-                      Pro Tips for the Vault:
-                    </h4>
-                    <ul className="space-y-2">
-                      {section.content.proTips.map((tip, idx) => (
-                        <li
-                          key={idx}
-                          className="text-white text-sm"
-                          style={TYPOGRAPHY.body}
+                      <div className="flex items-start space-x-3">
+                        <span
+                          className="bg-brand-red text-black rounded-full w-6 h-6 flex items-center justify-center text-sm"
+                          style={TYPOGRAPHY.subtitle}
                         >
-                          • {tip}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                          {idx + 1}
+                        </span>
+                        <p className="text-white" style={TYPOGRAPHY.body}>
+                          {step.split(":")[0]}:<br />
+                          {step.split(":").slice(1).join(":")}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
 
-                  <div className="bg-black p-4 rounded border border-white">
+                  {/* Pro Tips Section */}
+                  <div
+                    className="bg-black border border-white"
+                    style={{ padding: "20px 32px 0" }}
+                  >
+                    <span style={TYPOGRAPHY.body}>
+                      <span style={{ color: "rgb(249, 57, 33)" }}>
+                        Structured approach:
+                      </span>{" "}
+                      The vault ensures you don't forget a variable. It's
+                      especially useful if you're not yet comfortable juggling
+                      all the prompt components in your head.
+                    </span>
+                    <span style={TYPOGRAPHY.body}>
+                      <br />
+                      <br />
+                      <span style={{ color: "rgb(249, 57, 33)" }}>
+                        Reference images are powerful:
+                      </span>{" "}
+                      If you upload a sketch of a logo and describe it, Sora can
+                      produce a cleaner or more detailed version. Or if you love
+                      the style of a particular painting, you can reference it
+                      to imbue your generated image with a similar vibe.
+                    </span>
+                    <span style={TYPOGRAPHY.body}>
+                      <br />
+                      <br />
+                      <span style={{ color: "rgb(249, 57, 33)" }}>
+                        Quality meter guidance:
+                      </span>{" "}
+                      The quality meter might indicate how comprehensive your
+                      prompt is. If it's low, you probably have a minimal
+                      description – consider adding more keywords or details
+                      until the meter suggests the prompt is robust.
+                    </span>
+                    <span style={TYPOGRAPHY.body}>
+                      <br />
+                      <br />
+                      <span style={{ color: "rgb(249, 57, 33)" }}>
+                        Pre-vetted keywords:{" "}
+                      </span>
+                      The vault uses keywords known to work well. Terms like
+                      '4K', 'bokeh', 'dramatic lighting', 'concept art' etc.,
+                      which the AI responds to strongly.
+                    </span>
+                    <span style={TYPOGRAPHY.body}>
+                      Continue iterating: After generating with the vault
+                      prompt, you can still iterate further. The vault gets you
+                      a great first prompt. From there, treat it like any image:
+                      use follow-up edits or try slight variations.
+                    </span>
                     <h4
                       className="text-brand-red mb-2"
-                      style={TYPOGRAPHY.heading}
+                      style={{ ...TYPOGRAPHY.heading, paddingTop: "20px" }}
                     >
                       In Essence:
                     </h4>
-                    <p className="text-white text-sm" style={TYPOGRAPHY.body}>
-                      {section.content.essence}
+                    <p
+                      className="text-white text-sm leading-relaxed"
+                      style={TYPOGRAPHY.body}
+                    >
+                      The Prompt Vault is like having an AI prompt engineer
+                      co-pilot with you. It's very useful for complex visions or
+                      when you want to explore a variety of styles for the same
+                      basic idea.
                     </p>
                   </div>
                 </div>
@@ -698,67 +740,100 @@ export default function Playbook() {
 
               {section.id === 7 && (
                 <div className="space-y-6">
-                  <div>
-                    <h4
-                      className="text-brand-red mb-3"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      ✅ Best Practices
-                    </h4>
-                    <ul className="space-y-2">
-                      {section.content.bestPractices.map((tip, idx) => (
-                        <li
-                          key={idx}
-                          className="text-white"
-                          style={TYPOGRAPHY.body}
-                        >
-                          • {tip}
-                        </li>
-                      ))}
-                    </ul>
+                  {/* Quick Reference Grid */}
+                  <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6">
+                    {Object.entries(quickReference).map(
+                      ([category, examples]) => (
+                        <div key={category}>
+                          <h4
+                            className="text-brand-red mb-2 capitalize"
+                            style={TYPOGRAPHY.heading}
+                          >
+                            {category.replace(/([A-Z])/g, " $1").trim()}
+                          </h4>
+                          <ul className="space-y-1">
+                            {examples.map((example, idx) => (
+                              <li
+                                key={idx}
+                                className="text-white text-sm"
+                                style={TYPOGRAPHY.body}
+                              >
+                                • {example}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ),
+                    )}
                   </div>
 
-                  <div>
-                    <h4
-                      className="text-brand-red mb-3"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      ⚠️ Common Issues
-                    </h4>
-                    <ul className="space-y-2">
-                      {section.content.commonIssues.map((issue, idx) => (
-                        <li
-                          key={idx}
-                          className="text-white"
-                          style={TYPOGRAPHY.body}
-                        >
-                          • {issue}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h4
-                      className="text-brand-red mb-3"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      Advanced Workflow Strategies:
-                    </h4>
-                    <div className="space-y-3">
-                      {section.content.workflows.map((workflow, idx) => (
-                        <div
-                          key={idx}
-                          className="bg-black p-3 rounded border border-white"
-                        >
-                          <p
-                            className="text-white text-sm"
+                  {/* Best Practices */}
+                  <div
+                    className="bg-black border border-white"
+                    style={{ padding: "32px 32px 20px" }}
+                  >
+                    <div>
+                      <h4
+                        className="text-brand-red mb-3"
+                        style={TYPOGRAPHY.heading}
+                      >
+                        ✅ Best Practices
+                      </h4>
+                      <ul className="space-y-2">
+                        {section.content.bestPractices.map((tip, idx) => (
+                          <li
+                            key={idx}
+                            className="text-white"
                             style={TYPOGRAPHY.body}
                           >
-                            {workflow}
-                          </p>
-                        </div>
-                      ))}
+                            • {tip}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="mt-6">
+                      <h4
+                        className="text-brand-red mb-3"
+                        style={TYPOGRAPHY.heading}
+                      >
+                        ⚠️ Common Issues
+                      </h4>
+                      <ul className="space-y-2">
+                        {section.content.commonIssues.map((issue, idx) => (
+                          <li
+                            key={idx}
+                            className="text-white"
+                            style={TYPOGRAPHY.body}
+                          >
+                            • {issue}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="mt-6">
+                      <h4
+                        className="text-brand-red mb-3"
+                        style={TYPOGRAPHY.heading}
+                      >
+                        Advanced Workflow Strategies:
+                      </h4>
+                      <div className="space-y-3">
+                        {section.content.workflows.map((workflow, idx) => (
+                          <div
+                            key={idx}
+                            className="bg-black p-3 rounded border border-white"
+                          >
+                            <p
+                              className="text-white text-sm"
+                              style={TYPOGRAPHY.body}
+                            >
+                              {workflow}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -767,7 +842,7 @@ export default function Playbook() {
           </Card>
         ))}
 
-        {/* Quick Reference */}
+        {/* Quick Reference Card */}
         <Card className="bg-brand-red border-brand-red">
           <CardHeader>
             <CardTitle
@@ -803,18 +878,6 @@ export default function Playbook() {
             </div>
           </CardContent>
         </Card>
-
-        {/* Call to Action */}
-        <div className="text-center py-8">
-          <Button
-            size="lg"
-            className="bg-brand-red hover:bg-brand-red-hover text-white px-8 py-4"
-            style={TYPOGRAPHY.button}
-          >
-            <BookOpen className="w-5 h-5 mr-2" />
-            START CREATING WITH THE PROMPT VAULT
-          </Button>
-        </div>
       </div>
 
       {/* Briefcase Modal */}

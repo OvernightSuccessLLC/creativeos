@@ -551,11 +551,11 @@ export default function Playbook() {
         <Card className="bg-brand-red border-brand-red">
           <CardHeader>
             <CardTitle className="text-black font-bold text-xl">
-              Quick Reference: Variable Examples
+              Quick Reference Guide
             </CardTitle>
           </CardHeader>
           <CardContent className="bg-black p-6">
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {Object.entries(quickReference).map(([category, examples]) => (
                 <div key={category}>
                   <h4 className="text-brand-red font-semibold mb-2 capitalize">
@@ -564,7 +564,7 @@ export default function Playbook() {
                   <ul className="space-y-1">
                     {examples.map((example, idx) => (
                       <li key={idx} className="text-gray-300 text-sm">
-                        {example}
+                        • {example}
                       </li>
                     ))}
                   </ul>

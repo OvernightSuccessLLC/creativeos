@@ -24,6 +24,10 @@
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
     --radius: 0.5rem;
+    --brand-red: 356 89% 55%;
+    --brand-red-hover: 356 89% 50%;
+    --brand-dark: 0 0% 0%;
+    --brand-dark-lighter: 0 0% 10%;
   }
 
   .dark {

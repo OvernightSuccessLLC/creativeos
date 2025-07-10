@@ -497,23 +497,23 @@ export default function Index() {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
-        {/* Studio Selection */}
+        {/* Current Studio Header */}
         <div className="mb-6 sm:mb-8">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 sm:mb-6 space-y-4 sm:space-y-0">
             <h1
               className="text-2xl sm:text-3xl text-black"
               style={{ fontFamily: "Poppins, sans-serif", fontWeight: "900" }}
             >
-              LIFESTYLE STUDIO
+              {studios.find((s) => s.id === selectedStudio)?.name ||
+                "LIFESTYLE STUDIO"}
             </h1>
             <div className="flex items-center space-x-2 text-sm">
               <Users className="w-4 h-4 sm:w-5 sm:h-5 text-black/60" />
               <span className="text-black/60">1.2k</span>
               <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 text-black/60 ml-2 sm:ml-4" />
               <Button
-                variant="outline"
                 size="sm"
-                className="border-black text-black hover:bg-black hover:text-brand-red ml-2 sm:ml-4"
+                className="bg-brand-red text-black hover:bg-black hover:text-brand-red ml-2 sm:ml-4 transition-colors"
                 style={{ fontWeight: 900 }}
                 onClick={() => {
                   setCustomInstructions("");
@@ -528,7 +528,8 @@ export default function Index() {
           </div>
 
           <p className="text-black/80 mb-6">
-            Generate authentic lifestyle and candid photography prompts
+            {studios.find((s) => s.id === selectedStudio)?.description ||
+              "Generate authentic lifestyle and candid photography prompts"}
           </p>
 
           <Tabs

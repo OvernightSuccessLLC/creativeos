@@ -526,7 +526,7 @@ export default function PromptVault() {
             {/* Modifiers Section */}
             <div
               className="bg-black border border-gray-600 rounded-lg"
-              style={{ margin: "12px 6px 18px 0", padding: "12px 18px" }}
+              style={{ margin: "16px 16px 22px", padding: "12px" }}
             >
               <h3
                 className="text-white text-base font-bold mb-3"

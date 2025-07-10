@@ -376,36 +376,39 @@ export default function Playbook() {
               )}
 
               {section.id === 3 && (
-                <div className="space-y-4">
-                  <div className="bg-black p-4 rounded border border-white">
-                    <h4 className="text-white mb-2" style={TYPOGRAPHY.heading}>
+                <div className="space-y-6">
+                  <div className="bg-black p-6 rounded-lg border border-white">
+                    <h4
+                      className="text-brand-red text-lg mb-3"
+                      style={TYPOGRAPHY.heading}
+                    >
                       Master Formula:
                     </h4>
                     <code
-                      className="text-brand-red text-sm"
+                      className="text-brand-red text-base block mb-3"
                       style={TYPOGRAPHY.body}
                     >
                       {section.content.formula}
                     </code>
                     <p
-                      className="text-white text-sm mt-2"
+                      className="text-white leading-relaxed"
                       style={TYPOGRAPHY.body}
                     >
                       {section.content.description}
                     </p>
                   </div>
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid md:grid-cols-2 gap-6">
                     {Object.entries(section.content.components).map(
                       ([key, value]) => (
-                        <div key={key} className="space-y-1">
+                        <div key={key} className="space-y-2">
                           <h5
-                            className="text-brand-red"
+                            className="text-brand-red text-base"
                             style={TYPOGRAPHY.heading}
                           >
                             {key}
                           </h5>
                           <p
-                            className="text-white text-sm"
+                            className="text-white leading-relaxed"
                             style={TYPOGRAPHY.body}
                           >
                             {value}

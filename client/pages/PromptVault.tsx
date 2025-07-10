@@ -222,7 +222,7 @@ export default function PromptVault() {
   return (
     <div
       className="min-h-screen text-black"
-      style={{ backgroundColor: "#EE1C25" }}
+      style={{ backgroundColor: "#F93822" }}
     >
       {/* Header */}
       <div
@@ -780,7 +780,7 @@ export default function PromptVault() {
                     fontFamily: "Poppins, Helvetica Neue, sans-serif",
                   }}
                 >
-                  ���� OPTIMIZATION TIPS
+                  💡 OPTIMIZATION TIPS
                 </h4>
                 <ul className="text-xs text-gray-300 space-y-1">
                   {qualityScore < 30 && (

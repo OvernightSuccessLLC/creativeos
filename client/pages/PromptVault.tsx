@@ -245,7 +245,7 @@ export default function PromptVault() {
           <Database className="w-8 h-8 text-brand-red" />
           <h1
             className="text-4xl md:text-6xl font-bold text-white"
-            style={{ fontSize: "55px" }}
+            style={{ fontSize: "30px", lineHeight: "30px" }}
           >
             PROMPT VAULT
           </h1>

@@ -50,6 +50,10 @@
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
+    --brand-red: 356 89% 55%;
+    --brand-red-hover: 356 89% 50%;
+    --brand-dark: 0 0% 0%;
+    --brand-dark-lighter: 0 0% 10%;
   }
 }
 

@@ -330,11 +330,14 @@ export default function Playbook() {
                 <div className="space-y-4">
                   <div className="bg-gray-900 p-4 rounded border border-gray-700">
                     <h4 className="text-white font-semibold mb-2">
-                      Prompt Structure Formula:
+                      Master Formula:
                     </h4>
                     <code className="text-green-400 text-sm">
                       {section.content.formula}
                     </code>
+                    <p className="text-gray-300 text-sm mt-2">
+                      {section.content.description}
+                    </p>
                   </div>
                   <div className="grid md:grid-cols-2 gap-4">
                     {Object.entries(section.content.components).map(
@@ -352,23 +355,53 @@ export default function Playbook() {
               )}
 
               {section.id === 4 && (
-                <div className="space-y-4">
-                  <p className="text-gray-300">{section.content.description}</p>
+                <div className="space-y-6">
                   <div>
                     <h4 className="text-brand-red font-semibold mb-3">
-                      Characteristics:
+                      {section.content.lifestyle.title}
                     </h4>
-                    <ul className="space-y-2">
-                      {section.content.characteristics.map((char, idx) => (
-                        <li key={idx} className="text-gray-300">
-                          •{" "}
-                          <strong className="text-white">
-                            {char.split(":")[0]}:
-                          </strong>
-                          {char.split(":")[1]}
+                    <p className="text-gray-300 mb-3">
+                      {section.content.lifestyle.description}
+                    </p>
+                    <ul className="space-y-1 mb-4">
+                      {section.content.lifestyle.tips.map((tip, idx) => (
+                        <li key={idx} className="text-gray-300 text-sm">
+                          • {tip}
                         </li>
                       ))}
                     </ul>
+                    <div className="bg-gray-900 p-3 rounded border border-gray-700">
+                      <h5 className="text-white font-semibold mb-2 text-sm">
+                        Example:
+                      </h5>
+                      <p className="text-gray-300 text-sm italic">
+                        "{section.content.lifestyle.example}"
+                      </p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-brand-red font-semibold mb-3">
+                      {section.content.studio.title}
+                    </h4>
+                    <p className="text-gray-300 mb-3">
+                      {section.content.studio.description}
+                    </p>
+                    <ul className="space-y-1 mb-4">
+                      {section.content.studio.tips.map((tip, idx) => (
+                        <li key={idx} className="text-gray-300 text-sm">
+                          • {tip}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="bg-gray-900 p-3 rounded border border-gray-700">
+                      <h5 className="text-white font-semibold mb-2 text-sm">
+                        Example:
+                      </h5>
+                      <p className="text-gray-300 text-sm italic">
+                        "{section.content.studio.example}"
+                      </p>
+                    </div>
                   </div>
                 </div>
               )}
@@ -376,29 +409,47 @@ export default function Playbook() {
               {section.id === 5 && (
                 <div className="space-y-4">
                   <p className="text-gray-300">{section.content.description}</p>
+
                   <div>
                     <h4 className="text-brand-red font-semibold mb-3">
-                      Key Elements:
+                      Scene Regeneration & Object Placement
                     </h4>
+                    <h5 className="text-white font-semibold mb-2">
+                      Editing Best Practices:
+                    </h5>
                     <ul className="space-y-2">
-                      {section.content.keyElements.map((element, idx) => (
+                      {section.content.editingTips.map((tip, idx) => (
                         <li key={idx} className="text-gray-300">
-                          •{" "}
-                          <strong className="text-white">
-                            {element.split(":")[0]}:
-                          </strong>
-                          {element.split(":")[1]}
+                          • {tip}
                         </li>
                       ))}
                     </ul>
                   </div>
+
+                  <div>
+                    <h5 className="text-white font-semibold mb-2">
+                      Text in Images:
+                    </h5>
+                    <ul className="space-y-2">
+                      {section.content.textInImages.map((tip, idx) => (
+                        <li key={idx} className="text-gray-300">
+                          • {tip}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
                   <div className="bg-gray-900 p-4 rounded border border-gray-700">
                     <h4 className="text-brand-red font-semibold mb-2">
-                      Expert Example:
+                      Example Edit Sequence:
                     </h4>
-                    <p className="text-gray-300 text-sm italic">
-                      {section.content.expertExample}
-                    </p>
+                    <ul className="space-y-1">
+                      {section.content.exampleEditSequence.map((step, idx) => (
+                        <li key={idx} className="text-gray-300 text-sm">
+                          {step}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               )}
@@ -406,122 +457,70 @@ export default function Playbook() {
               {section.id === 6 && (
                 <div className="space-y-4">
                   <p className="text-gray-300">{section.content.description}</p>
+
+                  <div className="grid gap-4">
+                    {section.content.steps.map((step, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-gray-900 p-4 rounded border border-gray-700"
+                      >
+                        <div className="flex items-start space-x-3">
+                          <span className="bg-brand-red text-black rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">
+                            {idx + 1}
+                          </span>
+                          <p className="text-gray-300">{step}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
                   <div>
                     <h4 className="text-brand-red font-semibold mb-3">
-                      Logo Creation Tips:
+                      Pro Tips for the Vault:
                     </h4>
                     <ul className="space-y-2">
-                      {section.content.logoTips.map((tip, idx) => (
-                        <li key={idx} className="text-gray-300">
-                          •{" "}
-                          <strong className="text-white">
-                            {tip.split(":")[0]}:
-                          </strong>
-                          {tip.split(":")[1]}
+                      {section.content.proTips.map((tip, idx) => (
+                        <li key={idx} className="text-gray-300 text-sm">
+                          • {tip}
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <div>
-                    <h4 className="text-brand-red font-semibold mb-3">
-                      Text Rendering (GPT-4o):
+
+                  <div className="bg-gray-900 p-4 rounded border border-gray-700">
+                    <h4 className="text-brand-red font-semibold mb-2">
+                      In Essence:
                     </h4>
-                    <ul className="space-y-2">
-                      {section.content.textRendering.map((tip, idx) => (
-                        <li key={idx} className="text-gray-300">
-                          •{" "}
-                          <strong className="text-white">
-                            {tip.split(":")[0]}:
-                          </strong>
-                          {tip.split(":")[1]}
-                        </li>
-                      ))}
-                    </ul>
+                    <p className="text-gray-300 text-sm">
+                      {section.content.essence}
+                    </p>
                   </div>
                 </div>
               )}
 
               {section.id === 7 && (
-                <div className="space-y-4">
-                  <p className="text-gray-300">{section.content.description}</p>
-                  <div>
-                    <h4 className="text-brand-red font-semibold mb-3">
-                      Editing Tips:
-                    </h4>
-                    <ul className="space-y-2">
-                      {section.content.editingTips.map((tip, idx) => (
-                        <li key={idx} className="text-gray-300">
-                          •{" "}
-                          <strong className="text-white">
-                            {tip.split(":")[0]}:
-                          </strong>
-                          {tip.split(":")[1]}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="bg-gray-900 p-4 rounded border border-gray-700">
-                    <h4 className="text-brand-red font-semibold mb-2">
-                      Example Edit:
-                    </h4>
-                    <p className="text-gray-300 text-sm">
-                      {section.content.exampleEdit}
-                    </p>
-                  </div>
-                </div>
-              )}
-
-              {section.id === 8 && (
-                <div className="space-y-4">
-                  <p className="text-gray-300">{section.content.description}</p>
-                  <div>
-                    <h4 className="text-brand-red font-semibold mb-3">
-                      Step-by-Step Process:
-                    </h4>
-                    <ul className="space-y-2">
-                      {section.content.process.map((step, idx) => (
-                        <li key={idx} className="text-gray-300">
-                          •{" "}
-                          <strong className="text-white">
-                            {step.split(":")[0]}:
-                          </strong>
-                          {step.split(":")[1]}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="bg-gray-900 p-4 rounded border border-gray-700">
-                    <h4 className="text-brand-red font-semibold mb-3">
-                      Pro Tips:
-                    </h4>
-                    <ul className="space-y-1">
-                      {section.content.proTips.map((tip, idx) => (
-                        <li key={idx} className="text-gray-300 text-sm">
-                          <strong className="text-white">
-                            {tip.split(":")[0]}:
-                          </strong>
-                          {tip.split(":")[1]}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              )}
-
-              {section.id === 9 && (
                 <div className="space-y-6">
                   <div>
-                    <h4 className="text-brand-red font-semibold mb-3">
-                      General Tips:
+                    <h4 className="text-green-400 font-semibold mb-3">
+                      ✅ Best Practices
                     </h4>
                     <ul className="space-y-2">
-                      {section.content.generalTips.map((tip, idx) => (
+                      {section.content.bestPractices.map((tip, idx) => (
                         <li key={idx} className="text-gray-300">
-                          •{" "}
-                          <strong className="text-white">
-                            {tip.split(":")[0]}:
-                          </strong>
-                          {tip.split(":")[1]}
+                          • {tip}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="text-yellow-400 font-semibold mb-3">
+                      ⚠️ Common Issues
+                    </h4>
+                    <ul className="space-y-2">
+                      {section.content.commonIssues.map((issue, idx) => (
+                        <li key={idx} className="text-gray-300">
+                          • {issue}
                         </li>
                       ))}
                     </ul>
@@ -529,45 +528,18 @@ export default function Playbook() {
 
                   <div>
                     <h4 className="text-brand-red font-semibold mb-3">
-                      Content Warnings:
+                      Advanced Workflow Strategies:
                     </h4>
-                    <ul className="space-y-2">
-                      {section.content.contentWarnings.map((warning, idx) => (
-                        <li key={idx} className="text-gray-300">
-                          •{" "}
-                          <strong className="text-white">
-                            {warning.split(":")[0]}:
-                          </strong>
-                          {warning.split(":")[1]}
-                        </li>
+                    <div className="space-y-3">
+                      {section.content.workflows.map((workflow, idx) => (
+                        <div
+                          key={idx}
+                          className="bg-gray-900 p-3 rounded border border-gray-700"
+                        >
+                          <p className="text-gray-300 text-sm">{workflow}</p>
+                        </div>
                       ))}
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h4 className="text-brand-red font-semibold mb-3">
-                      When Things Go Wrong:
-                    </h4>
-                    <ul className="space-y-2">
-                      {section.content.troubleshooting.map((item, idx) => (
-                        <li key={idx} className="text-gray-300">
-                          •{" "}
-                          <strong className="text-white">
-                            {item.split(":")[0]}:
-                          </strong>
-                          {item.split(":")[1]}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="bg-gray-900 p-4 rounded border border-gray-700">
-                    <h4 className="text-brand-red font-semibold mb-2">
-                      Final Advice:
-                    </h4>
-                    <p className="text-gray-300 text-sm">
-                      {section.content.finalAdvice}
-                    </p>
+                    </div>
                   </div>
                 </div>
               )}

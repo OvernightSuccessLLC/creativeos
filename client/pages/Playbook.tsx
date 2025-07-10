@@ -275,7 +275,7 @@ export default function Playbook() {
       {/* Content Sections */}
       <div className="max-w-4xl mx-auto px-6 py-8 space-y-8">
         {sections.map((section) => (
-          <Card key={section.id} className="bg-gray-900 border-gray-800">
+          <Card key={section.id} className="bg-black border-white">
             <CardHeader className="bg-brand-red">
               <CardTitle
                 className="text-black text-xl flex items-center space-x-3"
@@ -290,7 +290,7 @@ export default function Playbook() {
                 <span>{section.title}</span>
               </CardTitle>
             </CardHeader>
-            <CardContent className="p-6 bg-black border border-gray-800">
+            <CardContent className="p-6 bg-black border border-white">
               {section.id === 1 && (
                 <div className="space-y-4">
                   <p className="text-gray-300" style={TYPOGRAPHY.body}>

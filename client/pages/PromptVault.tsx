@@ -771,8 +771,8 @@ export default function PromptVault() {
                 <h4
                   className="text-xs font-bold mb-2"
                   style={{
-                    color: "#EE1C25",
-                    fontFamily: "Poppins, Helvetica Neue, sans-serif",
+                    color: "#F93822",
+                    fontFamily: "Poppins, sans-serif",
                   }}
                 >
                   💡 OPTIMIZATION TIPS

@@ -380,7 +380,7 @@ export default function PromptVault() {
             STEP 3: SELECT KEYWORDS
           </h3>
           <CardContent style={{ padding: "4px 24px 0" }} />
-          <CardContent style={{ padding: "0 24px 12px" }}>
+          <CardContent style={{ margin: "0 12px", padding: "0 12px 12px" }}>
             {/* Lighting Section */}
             <div
               className="bg-black border border-gray-600 rounded-lg"

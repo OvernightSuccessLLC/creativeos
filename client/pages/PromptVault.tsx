@@ -258,11 +258,11 @@ export default function PromptVault() {
         style={{ padding: "0 24px 10px" }}
       >
         {/* Top Row: Step 1 (Left) and Step 2 (Right) - Same width as Step 3 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           {/* Step 1 - Top Left */}
           <Card
             className="bg-black border border-gray-900 shadow-xl"
-            style={{ flexGrow: "0", height: "auto" }}
+            style={{ flexGrow: "1", height: "auto" }}
           >
             <CardContent style={{ padding: "8px 24px" }}>
               <h3
@@ -365,10 +365,10 @@ export default function PromptVault() {
         {/* Step 3 - Full Width Keywords */}
         <Card
           className="bg-black border border-gray-900 shadow-xl"
-          style={{ margin: "12px 0", padding: "20px 0" }}
+          style={{ margin: "8px 0", padding: "12px 0" }}
         >
           <h3
-            className="text-brand-red text-lg font-black tracking-wide text-center mb-6"
+            className="text-brand-red text-lg font-black tracking-wide text-left mb-4 ml-6"
             style={{
               fontWeight: 900,
             }}
@@ -378,16 +378,16 @@ export default function PromptVault() {
           <CardContent style={{ padding: "0 24px" }}>
             {/* Lighting Section */}
             <div
-              className="rounded-lg mb-6"
+              className="rounded-lg mb-4"
               style={{
-                background: "linear-gradient(135deg, #ff6b35, #ff8f00)",
-                padding: "20px",
-                boxShadow: "0 0 30px rgba(255, 107, 53, 0.4)",
-                border: "2px solid rgba(255, 107, 53, 0.6)",
+                background: "#ff6b35",
+                padding: "12px",
+                boxShadow: "0 0 20px rgba(255, 107, 53, 0.3)",
+                border: "1px solid rgba(255, 107, 53, 0.8)",
               }}
             >
               <h3
-                className="text-black text-lg font-black mb-4 text-center"
+                className="text-black text-sm font-black mb-2 text-left"
                 style={{
                   fontWeight: 900,
                   textShadow: "0 1px 2px rgba(0,0,0,0.1)",
@@ -395,7 +395,7 @@ export default function PromptVault() {
               >
                 LIGHTING
               </h3>
-              <div className="flex flex-wrap gap-3 justify-center">
+              <div className="flex flex-wrap gap-2 justify-center">
                 {keywordCategories.Lighting.map((keyword) => (
                   <button
                     key={keyword}
@@ -420,16 +420,16 @@ export default function PromptVault() {
 
             {/* Framing Section */}
             <div
-              className="rounded-lg mb-6"
+              className="rounded-lg mb-4"
               style={{
-                background: "linear-gradient(135deg, #ff6b35, #ff8f00)",
-                padding: "20px",
-                boxShadow: "0 0 30px rgba(255, 107, 53, 0.4)",
-                border: "2px solid rgba(255, 107, 53, 0.6)",
+                background: "#ff6b35",
+                padding: "12px",
+                boxShadow: "0 0 20px rgba(255, 107, 53, 0.3)",
+                border: "1px solid rgba(255, 107, 53, 0.8)",
               }}
             >
               <h3
-                className="text-black text-lg font-black mb-4 text-center"
+                className="text-black text-sm font-black mb-2 text-left"
                 style={{
                   fontWeight: 900,
                   textShadow: "0 1px 2px rgba(0,0,0,0.1)",
@@ -437,7 +437,7 @@ export default function PromptVault() {
               >
                 FRAMING
               </h3>
-              <div className="flex flex-wrap gap-3 justify-center">
+              <div className="flex flex-wrap gap-2 justify-center">
                 {keywordCategories.Framing.map((keyword) => (
                   <button
                     key={keyword}
@@ -462,16 +462,16 @@ export default function PromptVault() {
 
             {/* Locations Section */}
             <div
-              className="rounded-lg mb-6"
+              className="rounded-lg mb-4"
               style={{
-                background: "linear-gradient(135deg, #ff6b35, #ff8f00)",
-                padding: "20px",
-                boxShadow: "0 0 30px rgba(255, 107, 53, 0.4)",
-                border: "2px solid rgba(255, 107, 53, 0.6)",
+                background: "#ff6b35",
+                padding: "12px",
+                boxShadow: "0 0 20px rgba(255, 107, 53, 0.3)",
+                border: "1px solid rgba(255, 107, 53, 0.8)",
               }}
             >
               <h3
-                className="text-black text-lg font-black mb-4 text-center"
+                className="text-black text-sm font-black mb-2 text-left"
                 style={{
                   fontWeight: 900,
                   textShadow: "0 1px 2px rgba(0,0,0,0.1)",
@@ -479,7 +479,7 @@ export default function PromptVault() {
               >
                 LOCATIONS
               </h3>
-              <div className="flex flex-wrap gap-3 justify-center">
+              <div className="flex flex-wrap gap-2 justify-center">
                 {keywordCategories.Locations.map((keyword) => (
                   <button
                     key={keyword}
@@ -504,16 +504,16 @@ export default function PromptVault() {
 
             {/* Style Section */}
             <div
-              className="rounded-lg mb-6"
+              className="rounded-lg mb-4"
               style={{
-                background: "linear-gradient(135deg, #ff6b35, #ff8f00)",
-                padding: "20px",
-                boxShadow: "0 0 30px rgba(255, 107, 53, 0.4)",
-                border: "2px solid rgba(255, 107, 53, 0.6)",
+                background: "#ff6b35",
+                padding: "12px",
+                boxShadow: "0 0 20px rgba(255, 107, 53, 0.3)",
+                border: "1px solid rgba(255, 107, 53, 0.8)",
               }}
             >
               <h3
-                className="text-black text-lg font-black mb-4 text-center"
+                className="text-black text-sm font-black mb-2 text-left"
                 style={{
                   fontWeight: 900,
                   textShadow: "0 1px 2px rgba(0,0,0,0.1)",
@@ -521,7 +521,7 @@ export default function PromptVault() {
               >
                 STYLE
               </h3>
-              <div className="flex flex-wrap gap-3 justify-center">
+              <div className="flex flex-wrap gap-2 justify-center">
                 {enhancedKeywordCategories.Style.map((keyword) => (
                   <button
                     key={keyword}
@@ -546,16 +546,16 @@ export default function PromptVault() {
 
             {/* Creative Direction Section */}
             <div
-              className="rounded-lg mb-6"
+              className="rounded-lg mb-4"
               style={{
-                background: "linear-gradient(135deg, #ff6b35, #ff8f00)",
-                padding: "20px",
-                boxShadow: "0 0 30px rgba(255, 107, 53, 0.4)",
-                border: "2px solid rgba(255, 107, 53, 0.6)",
+                background: "#ff6b35",
+                padding: "12px",
+                boxShadow: "0 0 20px rgba(255, 107, 53, 0.3)",
+                border: "1px solid rgba(255, 107, 53, 0.8)",
               }}
             >
               <h3
-                className="text-black text-lg font-black mb-4 text-center"
+                className="text-black text-sm font-black mb-2 text-left"
                 style={{
                   fontWeight: 900,
                   textShadow: "0 1px 2px rgba(0,0,0,0.1)",
@@ -563,7 +563,7 @@ export default function PromptVault() {
               >
                 CREATIVE DIRECTION
               </h3>
-              <div className="flex flex-wrap gap-3 justify-center">
+              <div className="flex flex-wrap gap-2 justify-center">
                 {enhancedKeywordCategories["Creative Direction"].map(
                   (keyword) => (
                     <button
@@ -590,16 +590,16 @@ export default function PromptVault() {
 
             {/* Modifiers Section */}
             <div
-              className="rounded-lg mb-6"
+              className="rounded-lg mb-4"
               style={{
-                background: "linear-gradient(135deg, #ff6b35, #ff8f00)",
-                padding: "20px",
-                boxShadow: "0 0 30px rgba(255, 107, 53, 0.4)",
-                border: "2px solid rgba(255, 107, 53, 0.6)",
+                background: "#ff6b35",
+                padding: "12px",
+                boxShadow: "0 0 20px rgba(255, 107, 53, 0.3)",
+                border: "1px solid rgba(255, 107, 53, 0.8)",
               }}
             >
               <h3
-                className="text-black text-lg font-black mb-4 text-center"
+                className="text-black text-sm font-black mb-2 text-left"
                 style={{
                   fontWeight: 900,
                   textShadow: "0 1px 2px rgba(0,0,0,0.1)",
@@ -607,7 +607,7 @@ export default function PromptVault() {
               >
                 MODIFIERS
               </h3>
-              <div className="flex flex-wrap gap-3 justify-center">
+              <div className="flex flex-wrap gap-2 justify-center">
                 {enhancedKeywordCategories.Modifiers.map((keyword) => (
                   <button
                     key={keyword}
@@ -635,7 +635,7 @@ export default function PromptVault() {
         {/* Generated Prompt - Full Width Single Column */}
         <Card
           className="bg-black border border-gray-900 shadow-xl"
-          style={{ margin: "12px 0", padding: "20px 0" }}
+          style={{ margin: "8px 0", padding: "12px 0" }}
         >
           <CardContent style={{ padding: "0 24px 20px" }}>
             <div className="text-center mb-6">

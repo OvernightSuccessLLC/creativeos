@@ -654,10 +654,7 @@ export default function PromptVault() {
             <CardContent style={{ padding: "20px" }}>
               <h3
                 className="text-lg font-bold mb-4 tracking-wide"
-                style={{
-                  color: "#EE1C25",
-                  fontFamily: "Poppins, Helvetica Neue, sans-serif",
-                }}
+                style={{ color: "#F93822", fontFamily: "Poppins, sans-serif" }}
               >
                 AI PROMPT OPTIMIZER
               </h3>
@@ -670,20 +667,18 @@ export default function PromptVault() {
                       className="absolute inset-0 rounded-full border-4 border-transparent transition-all duration-500"
                       style={{
                         transform: `rotate(${(qualityScore / 100) * 360}deg)`,
-                        borderTopColor: "#EE1C25",
+                        borderTopColor: "#F93822",
                         borderRightColor:
-                          qualityScore > 25 ? "#EE1C25" : "transparent",
+                          qualityScore > 25 ? "#F93822" : "transparent",
                         borderBottomColor:
-                          qualityScore > 50 ? "#EE1C25" : "transparent",
+                          qualityScore > 50 ? "#F93822" : "transparent",
                         borderLeftColor:
-                          qualityScore > 75 ? "#EE1C25" : "transparent",
+                          qualityScore > 75 ? "#F93822" : "transparent",
                       }}
                     />
                     <span
                       className="text-white text-xl font-bold relative z-10"
-                      style={{
-                        fontFamily: "Poppins, Helvetica Neue, sans-serif",
-                      }}
+                      style={{ fontFamily: "Poppins, sans-serif" }}
                     >
                       {qualityScore}%
                     </span>

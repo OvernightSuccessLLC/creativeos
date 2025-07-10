@@ -330,9 +330,19 @@ export default function PromptVault() {
               </div>
 
               <div
-                className="border-2 border-dashed border-gray-600 rounded-lg text-center cursor-pointer hover:border-gray-500 transition-colors"
-                style={{ padding: "40px 20px", minHeight: "120px" }}
+                className="border-2 border-dashed rounded-lg text-center cursor-pointer transition-colors"
+                style={{
+                  padding: "40px 20px",
+                  minHeight: "120px",
+                  borderColor: "#444",
+                }}
                 onClick={() => document.getElementById("file-upload")?.click()}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.borderColor = "#F93822")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.borderColor = "#444")
+                }
               >
                 {uploadedFile ? (
                   <div>

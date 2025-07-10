@@ -309,7 +309,7 @@ export default function PromptVault() {
           </Card>
 
           {/* Step 2 - Top Right */}
-          <Card className="bg-black border border-gray-900 shadow-xl">
+          <Card className="bg-black border border-gray-800 shadow-xl">
             <CardContent style={{ padding: "20px" }}>
               <div className="flex items-center mb-4">
                 <div

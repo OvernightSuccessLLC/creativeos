@@ -396,7 +396,7 @@ export default function Index() {
                   </div>
 
                   {/* Right Column - AI PROMPT FORMULA Section */}
-                  <Card className="bg-gray-900 border border-gray-700 order-1 xl:order-2">
+                  <Card className="bg-black border border-white/20 order-1 xl:order-2">
                     <CardHeader className="p-4 sm:p-6">
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between space-y-2 sm:space-y-0">
                         <CardTitle className="text-brand-red text-xs sm:text-sm font-bold tracking-wide">

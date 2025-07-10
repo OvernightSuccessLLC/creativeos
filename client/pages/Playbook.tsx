@@ -442,26 +442,28 @@ export default function Playbook() {
               )}
 
               {section.id === 3 && (
-                <div className="space-y-6">
-                  <div className="bg-black p-6 rounded-lg border border-white">
+                <div className="space-y-6" style={{ padding: "20px 32px" }}>
+                  <div
+                    className="bg-black rounded-lg"
+                    style={{ paddingRight: "24px" }}
+                  >
                     <h4
-                      className="text-brand-red text-lg mb-3"
-                      style={TYPOGRAPHY.heading}
+                      className="text-brand-red mb-3"
+                      style={{ ...TYPOGRAPHY.heading, fontSize: "21px" }}
                     >
-                      Master Formula:
+                      <span style={{ color: "rgb(249, 57, 33)" }}>
+                        Master Formula:
+                      </span>
                     </h4>
                     <code
-                      className="text-brand-red text-base block mb-3"
-                      style={TYPOGRAPHY.body}
+                      className="text-white block mb-3"
+                      style={{ ...TYPOGRAPHY.body, fontSize: "12px" }}
                     >
-                      {section.content.formula}
+                      <span style={{ color: "rgb(255, 255, 255)" }}>
+                        [Subject] + [Action/Pose] + [Setting] + [Lighting] +
+                        [Camera Details] + [Style] + [Quality]
+                      </span>
                     </code>
-                    <p
-                      className="text-white leading-relaxed"
-                      style={TYPOGRAPHY.body}
-                    >
-                      {section.content.description}
-                    </p>
                   </div>
                   <div className="grid md:grid-cols-2 gap-6">
                     {Object.entries(section.content.components).map(

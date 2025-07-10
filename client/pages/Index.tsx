@@ -459,94 +459,12 @@ export default function Index() {
         </div>
       </main>
 
-      {/* The Briefcase Modal */}
-      {showBriefcase && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <Card className="bg-black border border-gray-800 w-full max-w-4xl max-h-[90vh] overflow-hidden">
-            <CardHeader className="border-b border-gray-800">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-brand-red rounded flex items-center justify-center">
-                    <Package className="w-4 h-4 text-black" />
-                  </div>
-                  <CardTitle className="text-xl text-white">
-                    THE BRIEFCASE
-                  </CardTitle>
-                </div>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => setShowBriefcase(false)}
-                  className="text-gray-400 hover:text-white"
-                >
-                  <X className="w-4 h-4" />
-                </Button>
-              </div>
-              <div className="flex space-x-6 mt-4">
-                {navigationItems.slice(0, 5).map((item) => (
-                  <button
-                    key={item.name}
-                    className="flex items-center space-x-2 px-3 py-2 rounded text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 transition-colors"
-                  >
-                    <item.icon className="w-4 h-4" />
-                    <span>{item.name}</span>
-                  </button>
-                ))}
-              </div>
-            </CardHeader>
-            <CardContent className="p-6 overflow-y-auto max-h-[70vh]">
-              <div className="space-y-6">
-                <div>
-                  <h2 className="text-2xl font-bold text-white mb-2">
-                    Latest Updates
-                  </h2>
-                  <p className="text-gray-400">
-                    Stay up to date with new features, content, and improvements
-                  </p>
-                </div>
-
-                <div className="space-y-4">
-                  {updates.map((update, index) => (
-                    <Card
-                      key={index}
-                      className="bg-gray-900 border border-gray-700 hover:border-gray-600 transition-colors"
-                    >
-                      <CardContent className="p-6">
-                        <div className="flex items-start justify-between">
-                          <div className="flex-1">
-                            <div className="flex items-center space-x-3 mb-2">
-                              <span className="text-sm text-gray-400 flex items-center">
-                                <Calendar className="w-4 h-4 mr-1" />
-                                {update.date}
-                              </span>
-                              <Badge
-                                className={`${update.badgeColor} text-white text-xs`}
-                              >
-                                {update.badge}
-                              </Badge>
-                            </div>
-                            <h3 className="text-lg font-semibold text-white mb-2">
-                              {update.title}
-                            </h3>
-                            <p className="text-gray-400 text-sm">
-                              {update.description}
-                            </p>
-                          </div>
-                          <div className="text-right">
-                            <span className="text-brand-red text-sm font-medium">
-                              {update.type}
-                            </span>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      )}
+      {/* Briefcase Modal */}
+      <BriefcaseModal
+        isOpen={showBriefcase}
+        onClose={() => setShowBriefcase(false)}
+        onNavigate={(path) => navigate(path)}
+      />
 
       {/* Overnight Success Signup Modal */}
       <OvernightSuccessSignup

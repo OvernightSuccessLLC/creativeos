@@ -178,8 +178,8 @@ export default function BriefcaseModal({
           <div className="space-y-6">
             <div>
               <h2
-                className="text-2xl font-bold text-white mb-2"
-                style={{ fontFamily: "Poppins, sans-serif", fontWeight: "700" }}
+                className="text-2xl font-brand-black text-white mb-2 brand-heading"
+                style={{ fontFamily: "Poppins, sans-serif", fontWeight: "900" }}
               >
                 Latest Updates & Features
               </h2>

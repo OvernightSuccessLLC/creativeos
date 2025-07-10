@@ -220,17 +220,25 @@ export default function PromptVault() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-red text-black">
+    <div
+      className="min-h-screen text-black"
+      style={{ backgroundColor: "#EE1C25" }}
+    >
       {/* Header */}
       <div
         className="bg-black px-6 text-center"
         style={{ margin: "12px 0 18px", padding: "24px 24px 18px" }}
       >
         <div className="flex items-center justify-center space-x-3 mb-4">
-          <Database className="w-8 h-8 text-brand-red" />
+          <Database className="w-8 h-8" style={{ color: "#EE1C25" }} />
           <h1
-            className="text-4xl md:text-6xl font-bold text-white"
-            style={{ fontSize: "30px", lineHeight: "30px" }}
+            className="text-white font-bold"
+            style={{
+              fontSize: "30px",
+              lineHeight: "30px",
+              fontFamily: "Poppins, Helvetica Neue, sans-serif",
+              fontWeight: "700",
+            }}
           >
             PROMPT VAULT
           </h1>

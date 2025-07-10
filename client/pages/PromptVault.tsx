@@ -88,15 +88,11 @@ export default function PromptVault() {
       "90s VHS grain",
     ],
     "Creative Direction": [
-      "Wes Anderson meets Balenciaga",
       "Edward Hopper moodboard",
       "Gucci in a cyber slum",
       "Tarantino aesthetic violence",
       "Old Money vibes",
       "Virgil Abloh x Eames visual tension",
-      "Yeezy drop in a NASA lab",
-      "Scorsese gritty realism",
-      "Warhol meets Warhol",
     ],
   };
 
@@ -385,7 +381,7 @@ export default function PromptVault() {
               >
                 LIGHTING
               </h3>
-              <div className="flex flex-wrap gap-2 justify-center">
+              <div className="flex flex-wrap gap-2 justify-start text-left mr-auto items-start">
                 {keywordCategories.Lighting.map((keyword) => (
                   <button
                     key={keyword}
@@ -554,17 +550,8 @@ export default function PromptVault() {
                 CREATIVE DIRECTION
               </h3>
               <div className="flex flex-wrap gap-2 justify-start text-left mr-auto items-start">
-                {enhancedKeywordCategories["Creative Direction"]
-                  .filter(
-                    (keyword) =>
-                      ![
-                        "Wes Anderson meets Balenciaga",
-                        "Yeezy drop in a NASA lab",
-                        "Scorsese gritty realism",
-                        "Warhol meets Warhol",
-                      ].includes(keyword),
-                  )
-                  .map((keyword) => (
+                {enhancedKeywordCategories["Creative Direction"].map(
+                  (keyword) => (
                     <button
                       key={keyword}
                       onClick={() => toggleKeyword(keyword)}
@@ -582,7 +569,8 @@ export default function PromptVault() {
                     >
                       {keyword}
                     </button>
-                  ))}
+                  ),
+                )}
               </div>
             </div>
 

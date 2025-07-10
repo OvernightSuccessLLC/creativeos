@@ -229,6 +229,9 @@ export default function PromptVault() {
       className="min-h-screen text-black"
       style={{ backgroundColor: "#F93822" }}
     >
+      {/* Navigation */}
+      <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
+
       {/* Header */}
       <div
         className="bg-black px-6 text-center"

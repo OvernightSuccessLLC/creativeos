@@ -122,8 +122,8 @@ export default function BriefcaseModal({
                 <Package className="w-4 h-4 text-white" />
               </div>
               <CardTitle
-                className="text-xl text-white"
-                style={{ fontFamily: "Poppins, sans-serif", fontWeight: "700" }}
+                className="text-xl text-white brand-heading"
+                style={{ fontFamily: "Poppins, sans-serif", fontWeight: "900" }}
               >
                 THE BRIEFCASE
               </CardTitle>

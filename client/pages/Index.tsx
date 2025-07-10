@@ -36,6 +36,11 @@ export default function Index() {
   const [showBriefcase, setShowBriefcase] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [activeStep, setActiveStep] = useState<number | null>(null);
+  const [customInstructions, setCustomInstructions] = useState("");
+  const [selectedKeywords, setSelectedKeywords] = useState<string[]>([]);
+  const [uploadedFile, setUploadedFile] = useState<File | null>(null);
+  const [qualityScore, setQualityScore] = useState(0);
 
   const studios = [
     {

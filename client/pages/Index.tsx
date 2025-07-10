@@ -288,15 +288,12 @@ export default function Index() {
               {keywords.map((keyword) => (
                 <Button
                   key={keyword}
-                  variant={
-                    selectedKeywords.includes(keyword) ? "default" : "outline"
-                  }
                   size="sm"
                   onClick={() => toggleKeyword(keyword)}
                   className={
                     selectedKeywords.includes(keyword)
-                      ? "bg-brand-red text-black"
-                      : "border-white/20 text-white hover:bg-white/10"
+                      ? "bg-brand-red text-black hover:bg-black hover:text-brand-red transition-colors"
+                      : "bg-brand-red text-black hover:bg-black hover:text-brand-red border-white/20 transition-colors"
                   }
                 >
                   {keyword}

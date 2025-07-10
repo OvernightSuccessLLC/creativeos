@@ -692,10 +692,10 @@ export default function PromptVault() {
                   <span className="text-white font-bold text-sm">4</span>
                 </div>
                 <h3
-                  className="text-white text-lg font-bold"
+                  className="text-white text-lg font-brand-bold"
                   style={{
                     fontFamily: "Poppins, sans-serif",
-                    fontWeight: "600",
+                    fontWeight: "700",
                   }}
                 >
                   Your Optimized SORA Prompt

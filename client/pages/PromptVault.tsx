@@ -303,7 +303,10 @@ export default function PromptVault() {
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-2 pb-3">
-              <div className="border-2 border-dashed border-gray-700 rounded-lg p-3 text-center">
+              <div
+                className="border-2 border-dashed border-gray-700 rounded-lg text-center"
+                style={{ margin: "12px 0", padding: "18px 12px" }}
+              >
                 <Upload className="w-5 h-5 text-gray-400 mx-auto mb-1" />
                 <p className="text-gray-400 mb-2 text-xs">
                   Upload reference image

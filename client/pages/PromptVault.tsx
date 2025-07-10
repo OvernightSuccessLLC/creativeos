@@ -27,10 +27,12 @@ import {
 } from "lucide-react";
 
 export default function PromptVault() {
+  const navigate = useNavigate();
   const [customInstructions, setCustomInstructions] = useState("");
   const [selectedKeywords, setSelectedKeywords] = useState<string[]>([]);
   const [qualityScore, setQualityScore] = useState(0);
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
+  const [showBriefcase, setShowBriefcase] = useState(false);
 
   const keywordCategories = {
     Lighting: [

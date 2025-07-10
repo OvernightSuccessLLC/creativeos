@@ -289,7 +289,15 @@ export default function PromptVault() {
                   score += Math.min(50, selectedKeywords.length * 5);
                   setQualityScore(Math.min(100, score));
                 }}
-                className="bg-gray-900 border-gray-700 text-white focus:border-brand-red focus:ring-brand-red resize-none"
+                className="bg-black border-gray-800 text-white resize-none"
+                style={{
+                  minHeight: "120px",
+                  padding: "16px",
+                  fontSize: "14px",
+                  borderColor: "#333",
+                }}
+                onFocus={(e) => (e.target.style.borderColor = "#F93822")}
+                onBlur={(e) => (e.target.style.borderColor = "#333")}
                 style={{
                   minHeight: "120px",
                   padding: "16px",

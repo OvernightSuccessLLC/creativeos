@@ -340,7 +340,7 @@ export default function Index() {
                         <p className="text-white text-xs">
                           Upload Reference Files
                         </p>
-                        <p className="text-gray-400 text-xs">
+                        <p className="text-white/60 text-xs">
                           Add images (optional)
                         </p>
                       </div>

@@ -292,7 +292,7 @@ export default function PromptVault() {
                   setQualityScore(Math.min(100, score));
                 }}
                 className="bg-gray-900 border-gray-700 text-white focus:border-brand-red focus:ring-brand-red text-xs"
-                style={{ marginTop: "12px", padding: "12px" }}
+                style={{ marginTop: "12px", padding: "8px 12px" }}
                 rows={2}
               />
             </CardContent>

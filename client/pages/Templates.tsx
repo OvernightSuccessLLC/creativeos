@@ -128,12 +128,12 @@ export default function Templates() {
     return matchesSearch && matchesCategory;
   });
 
-  const copyPrompt = (prompt: string) => {
+  const copyPrompt = (prompt: string, templateId: number) => {
     navigator.clipboard
       .writeText(prompt)
       .then(() => {
-        // Show visual feedback that copy was successful
-        console.log("Prompt copied to clipboard");
+        setCopiedTemplate(templateId);
+        setTimeout(() => setCopiedTemplate(null), 2000);
       })
       .catch((err) => {
         console.error("Failed to copy prompt: ", err);

@@ -802,13 +802,25 @@ export default function PromptVault() {
 
           {/* Step 4 Prompt Output - Takes 2/3 width */}
           <div className="md:col-span-2">
-            <Card className="bg-black border-2 border-brand-red shadow-xl h-full">
+            <Card
+              className="bg-black shadow-xl h-full"
+              style={{ border: "2px solid #EE1C25" }}
+            >
               <CardContent style={{ padding: "20px" }}>
                 <div className="flex items-center mb-4">
-                  <div className="w-6 h-6 rounded-full bg-brand-red flex items-center justify-center mr-3">
-                    <span className="text-black font-bold text-sm">4</span>
+                  <div
+                    className="w-6 h-6 rounded-full flex items-center justify-center mr-3"
+                    style={{ backgroundColor: "#EE1C25" }}
+                  >
+                    <span className="text-white font-bold text-sm">4</span>
                   </div>
-                  <h3 className="text-white text-lg font-bold">
+                  <h3
+                    className="text-white text-lg font-bold"
+                    style={{
+                      fontFamily: "Poppins, Helvetica Neue, sans-serif",
+                      fontWeight: "600",
+                    }}
+                  >
                     Your Optimized SORA Prompt
                   </h3>
                 </div>

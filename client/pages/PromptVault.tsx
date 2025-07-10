@@ -258,36 +258,38 @@ export default function PromptVault() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {/* Step 1 - Top Left */}
           <Card className="bg-black border border-gray-900 shadow-xl">
-            <CardHeader style={{ padding: "20px 24px 16px" }}>
-              <CardTitle
+            <CardContent style={{ padding: "12px 24px 16px" }}>
+              <h3
                 className="text-brand-red text-xs font-black tracking-wide border-b border-brand-red pb-1"
-                style={{ fontWeight: 900 }}
+                style={{
+                  fontWeight: 900,
+                  fontSize: "15px",
+                  margin: "6px 0",
+                  padding: "6px 0",
+                }}
               >
                 STEP 1: CREATIVE VISION
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="pt-2 pb-6">
-              <div>
-                <Label htmlFor="instructions" className="text-white text-xs">
-                  Describe your subject, scene, or concept
-                </Label>
-                <Textarea
-                  id="instructions"
-                  placeholder="e.g., Professional portrait of a confident businesswoman..."
-                  value={customInstructions}
-                  onChange={(e) => {
-                    setCustomInstructions(e.target.value);
-                    // Recalculate quality score
-                    let score = 0;
-                    if (e.target.value.length > 0) score += 30;
-                    if (uploadedFile) score += 20;
-                    score += Math.min(50, selectedKeywords.length * 5);
-                    setQualityScore(Math.min(100, score));
-                  }}
-                  className="bg-gray-900 border-gray-700 text-white mt-1 focus:border-brand-red focus:ring-brand-red text-xs"
-                  rows={2}
-                />
-              </div>
+              </h3>
+              <Label htmlFor="instructions" className="text-white text-xs">
+                Describe your subject, scene, or concept
+              </Label>
+              <Textarea
+                id="instructions"
+                placeholder="e.g., Professional portrait of a confident businesswoman..."
+                value={customInstructions}
+                onChange={(e) => {
+                  setCustomInstructions(e.target.value);
+                  // Recalculate quality score
+                  let score = 0;
+                  if (e.target.value.length > 0) score += 30;
+                  if (uploadedFile) score += 20;
+                  score += Math.min(50, selectedKeywords.length * 5);
+                  setQualityScore(Math.min(100, score));
+                }}
+                className="bg-gray-900 border-gray-700 text-white focus:border-brand-red focus:ring-brand-red text-xs"
+                style={{ marginTop: "12px", padding: "12px" }}
+                rows={2}
+              />
             </CardContent>
           </Card>
 

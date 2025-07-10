@@ -261,7 +261,7 @@ export default function PromptVault() {
               <div className="flex items-center mb-4">
                 <div
                   className="w-6 h-6 rounded-full flex items-center justify-center mr-3"
-                  style={{ backgroundColor: "#EE1C25" }}
+                  style={{ backgroundColor: "#F93822" }}
                 >
                   <span className="text-white font-bold text-sm">1</span>
                 </div>

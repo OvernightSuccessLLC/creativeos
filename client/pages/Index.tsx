@@ -154,8 +154,13 @@ export default function Index() {
           <div className="flex items-center space-x-2">
             <Button
               variant="outline"
-              className="hidden sm:flex border-black text-black hover:bg-black hover:text-brand-red font-black"
-              style={{ fontWeight: 900 }}
+              className="hidden sm:flex border-black text-black hover:bg-black hover:text-brand-red font-brand-bold"
+              style={{
+                fontFamily: "Poppins, sans-serif",
+                fontWeight: "700",
+                textTransform: "uppercase",
+                letterSpacing: "0.5px",
+              }}
               onClick={() => setShowBriefcase(true)}
             >
               <Bell className="w-4 h-4 sm:mr-2" />
@@ -163,8 +168,8 @@ export default function Index() {
             </Button>
             <Button
               variant="ghost"
-              className="lg:hidden text-black font-black"
-              style={{ fontWeight: 900 }}
+              className="lg:hidden text-black font-brand-bold"
+              style={{ fontFamily: "Poppins, sans-serif", fontWeight: "700" }}
               onClick={() => setShowMobileMenu(true)}
             >
               <Menu className="w-6 h-6" />

@@ -328,12 +328,12 @@ export default function Playbook() {
                       {section.content.principles.map((principle, idx) => (
                         <li
                           key={idx}
-                          className="text-gray-300"
+                          className="text-white"
                           style={TYPOGRAPHY.body}
                         >
                           •{" "}
                           <strong
-                            className="text-white"
+                            className="text-brand-red"
                             style={TYPOGRAPHY.heading}
                           >
                             {principle.split(":")[0]}:
@@ -343,17 +343,14 @@ export default function Playbook() {
                       ))}
                     </ul>
                   </div>
-                  <div className="bg-gray-900 p-4 rounded border border-gray-700">
+                  <div className="bg-black p-4 rounded border border-white">
                     <h4
                       className="text-brand-red mb-2"
                       style={TYPOGRAPHY.heading}
                     >
                       Example Progression:
                     </h4>
-                    <p
-                      className="text-gray-300 text-sm"
-                      style={TYPOGRAPHY.body}
-                    >
+                    <p className="text-white text-sm" style={TYPOGRAPHY.body}>
                       {section.content.progression}
                     </p>
                   </div>

@@ -684,11 +684,13 @@ export default function PromptVault() {
               <Button
                 onClick={copyPrompt}
                 disabled={!customInstructions && selectedKeywords.length === 0}
-                className="bg-brand-red hover:bg-brand-red-hover text-black font-black flex-1"
+                className="flex-1 text-black font-black text-lg py-4 relative overflow-hidden group"
                 style={{
                   fontWeight: 900,
-                  margin: "12px 18px 8px 0",
-                  padding: "8px 24px",
+                  background: "linear-gradient(45deg, #ff6b35, #ff8f00)",
+                  boxShadow:
+                    "0 0 20px rgba(255, 107, 53, 0.5), inset 0 1px 0 rgba(255,255,255,0.2)",
+                  border: "1px solid rgba(255, 107, 53, 0.8)",
                 }}
                 data-copy-button
               >

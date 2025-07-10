@@ -258,13 +258,6 @@ export default function Playbook() {
         >
           Image Generation with Sora & ChatGPT
         </h2>
-        <p
-          className="text-black/80 max-w-2xl mx-auto"
-          style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
-        >
-          Complete guide for mastering AI image generation from beginner to
-          expert
-        </p>
       </div>
 
       {/* Content Sections */}

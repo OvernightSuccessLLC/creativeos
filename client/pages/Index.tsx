@@ -388,7 +388,7 @@ export default function Index() {
                                 {item.step}
                               </span>
                             </div>
-                            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
+                            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
                           </div>
                         </CardContent>
                       </Card>

@@ -697,7 +697,7 @@ export default function PromptVault() {
                 <div className="flex items-center gap-1 text-xs">
                   <span
                     className={
-                      customInstructions ? "text-green-400" : "text-gray-500"
+                      customInstructions ? "text-green-400" : "text-white"
                     }
                   >
                     {customInstructions ? "✓" : "○"}

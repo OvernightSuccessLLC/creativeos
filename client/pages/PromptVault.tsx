@@ -561,18 +561,32 @@ export default function PromptVault() {
           className="bg-black border border-gray-900 shadow-xl"
           style={{ margin: "8px 0 12px", padding: "8px 0 12px" }}
         >
-          <CardContent style={{ padding: "12px 24px" }}>
+          <CardContent style={{ marginTop: "12px", padding: "8px 24px" }}>
             <h3
-              className="text-brand-red text-sm font-black tracking-wide border-b border-brand-red pb-2"
+              className="text-brand-red text-sm font-black tracking-wide"
               style={{
                 fontWeight: 900,
-                fontSize: "16px",
                 alignSelf: "center",
-                paddingBottom: "8px",
+                lineHeight: "12px",
+                textAlign: "center",
               }}
             >
-              GENERATED SORA PROMPT
+              PROMPT QUALITY
             </h3>
+            <Badge
+              className={`${
+                qualityScore >= 80
+                  ? "bg-green-500"
+                  : qualityScore >= 50
+                    ? "bg-yellow-500"
+                    : "bg-brand-red"
+              } text-white font-bold`}
+              style={{ margin: "12px 0 4px", padding: "0 6px" }}
+            >
+              {qualityScore}% QUALITY
+            </Badge>
+            <div></div>
+            <div></div>
           </CardContent>
           <CardContent className="space-y-3">
             <div

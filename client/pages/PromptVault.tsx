@@ -547,7 +547,7 @@ export default function PromptVault() {
             {qualityScore}% QUALITY
           </Badge>
           <div className="flex flex-col">
-          <CardContent>
+            <CardContent>
             <div className="w-full bg-gray-900 rounded-full h-3 mb-4 border border-gray-800">
               <div
                 className={`h-3 rounded-full transition-all duration-300 ${

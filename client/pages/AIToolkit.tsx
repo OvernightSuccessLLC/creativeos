@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 
 export default function AIToolkit() {
+  const [showBriefcase, setShowBriefcase] = useState(false);
   const toolCategories = [
     {
       title: "Image Generation",

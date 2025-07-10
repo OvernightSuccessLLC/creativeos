@@ -292,23 +292,38 @@ export default function Playbook() {
             </CardHeader>
             <CardContent className="p-8 bg-black border border-white">
               {section.id === 1 && (
-                <div className="space-y-4">
-                  <p className="text-white" style={TYPOGRAPHY.body}>
+                <div className="space-y-6">
+                  <p
+                    className="text-white leading-relaxed text-lg"
+                    style={TYPOGRAPHY.body}
+                  >
                     {section.content.description}
                   </p>
-                  <div>
-                    <h4 className="text-white mb-2" style={TYPOGRAPHY.heading}>
+                  <div className="space-y-3">
+                    <h4
+                      className="text-brand-red text-lg"
+                      style={TYPOGRAPHY.heading}
+                    >
                       How it Works:
                     </h4>
-                    <p className="text-white" style={TYPOGRAPHY.body}>
+                    <p
+                      className="text-white leading-relaxed"
+                      style={TYPOGRAPHY.body}
+                    >
                       {section.content.howItWorks}
                     </p>
                   </div>
-                  <div>
-                    <h4 className="text-white mb-2" style={TYPOGRAPHY.heading}>
+                  <div className="space-y-3">
+                    <h4
+                      className="text-brand-red text-lg"
+                      style={TYPOGRAPHY.heading}
+                    >
                       Who This Guide is For:
                     </h4>
-                    <p className="text-white" style={TYPOGRAPHY.body}>
+                    <p
+                      className="text-white leading-relaxed"
+                      style={TYPOGRAPHY.body}
+                    >
                       {section.content.whoFor}
                     </p>
                   </div>

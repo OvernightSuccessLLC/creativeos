@@ -454,7 +454,7 @@ export default function Index() {
         <div className="text-center py-6 sm:py-8 space-y-3 sm:space-y-4">
           <Button
             size="lg"
-            className="bg-black text-brand-red hover:bg-gray-900 font-brand-black px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto"
+            className="bg-black text-brand-red hover:bg-white/10 font-brand-black px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto"
             style={{
               fontFamily: "Poppins, sans-serif",
               fontWeight: "900",

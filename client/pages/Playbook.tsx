@@ -273,7 +273,7 @@ export default function Playbook() {
       </div>
 
       {/* Content Sections */}
-      <div className="max-w-4xl mx-auto px-6 py-8 space-y-8">
+      <div className="max-w-5xl mx-auto px-8 py-12 space-y-12">
         {sections.map((section) => (
           <Card key={section.id} className="bg-black border-white">
             <CardHeader className="bg-brand-red">

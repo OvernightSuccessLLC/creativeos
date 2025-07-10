@@ -609,13 +609,27 @@ export default function PromptVault() {
         </Card>
 
         {/* Quality Meter - Full Width */}
-        <Card className="bg-black border border-gray-900 shadow-xl">
-          <CardTitle
+        <Card
+          className="bg-black border border-gray-900 shadow-xl"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            margin: "20px 0 12px",
+            padding: "20px 0 12px",
+          }}
+        >
+          <h3
             className="text-brand-red text-sm font-black tracking-wide"
-            style={{ fontWeight: 900 }}
+            style={{
+              fontWeight: 900,
+              fontSize: "16px",
+              lineHeight: "12px",
+              textAlign: "center",
+              alignSelf: "center",
+            }}
           >
             PROMPT QUALITY
-          </CardTitle>
+          </h3>
           <Badge
             className={`${
               qualityScore >= 80
@@ -623,24 +637,13 @@ export default function PromptVault() {
                 : qualityScore >= 50
                   ? "bg-yellow-500"
                   : "bg-brand-red"
-            } text-white font-bold mx-6 my-2`}
+            } text-white font-bold`}
+            style={{ margin: "12px 24px", padding: "0 10px" }}
           >
             {qualityScore}% QUALITY
           </Badge>
           <div className="flex flex-col">
-            <CardContent>
-              <div className="w-full bg-gray-900 rounded-full h-3 mb-4 border border-gray-800">
-                <div
-                  className={`h-3 rounded-full transition-all duration-300 ${
-                    qualityScore >= 80
-                      ? "bg-green-500"
-                      : qualityScore >= 50
-                        ? "bg-yellow-500"
-                        : "bg-brand-red"
-                  }`}
-                  style={{ width: `${qualityScore}%` }}
-                ></div>
-              </div>
+            <CardContent style={{ padding: "0 24px" }}>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
                 <div className="flex items-center justify-between text-white">
                   <span>Instructions</span>

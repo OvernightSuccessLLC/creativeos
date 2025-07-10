@@ -128,7 +128,15 @@ export default function Templates() {
   });
 
   const copyPrompt = (prompt: string) => {
-    navigator.clipboard.writeText(prompt);
+    navigator.clipboard
+      .writeText(prompt)
+      .then(() => {
+        // Show visual feedback that copy was successful
+        console.log("Prompt copied to clipboard");
+      })
+      .catch((err) => {
+        console.error("Failed to copy prompt: ", err);
+      });
   };
 
   return (

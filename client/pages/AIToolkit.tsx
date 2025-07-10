@@ -404,9 +404,10 @@ export default function AIToolkit() {
         <div className="flex items-center justify-center space-x-3 mb-4">
           <Zap className="w-8 h-8 text-brand-red" />
           <h1
-            className="text-4xl md:text-6xl font-bold text-white"
+            className="text-4xl md:text-6xl font-brand-black text-white brand-heading"
             style={{
-              fontWeight: 900,
+              fontFamily: "Poppins, sans-serif",
+              fontWeight: "900",
               paddingTop: "6px",
               margin: "6px 0 0 12px",
             }}

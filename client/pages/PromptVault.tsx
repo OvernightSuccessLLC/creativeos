@@ -493,7 +493,7 @@ export default function PromptVault() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            <div className="bg-gray-900 border border-gray-700 rounded p-3 min-h-[80px]">
+            <div className="bg-gray-900 border border-gray-700 rounded p-3 pb-2 min-h-[80px]">
               <p className="text-white text-sm">
                 {generatePrompt() ||
                   "Start by adding your creative vision and selecting keywords..."}

@@ -28,6 +28,7 @@ export default function Templates() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [showBriefcase, setShowBriefcase] = useState(false);
+  const [copiedTemplate, setCopiedTemplate] = useState<number | null>(null);
 
   const categories = [
     { id: "all", name: "All Templates", icon: LayoutTemplate },

@@ -671,7 +671,7 @@ export default function PromptVault() {
         </Card>
 
         {/* Step 4: Compact Quality + Prompt Section */}
-        <Card className="bg-black border border-gray-900 shadow-xl mt-4">
+        <Card className="bg-black border border-gray-800 shadow-xl mt-4">
           <CardContent style={{ padding: "16px" }}>
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center">

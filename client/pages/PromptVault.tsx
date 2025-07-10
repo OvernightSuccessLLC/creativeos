@@ -823,8 +823,21 @@ export default function PromptVault() {
                   setQualityScore(0);
                 }}
                 variant="outline"
-                className="px-4 py-2 border border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white font-medium transition-all duration-200"
-                style={{ fontFamily: "Poppins, sans-serif", fontSize: "12px" }}
+                className="px-4 py-2 text-white font-medium transition-all duration-200"
+                style={{
+                  fontFamily: "Poppins, sans-serif",
+                  fontSize: "12px",
+                  border: "1px solid #333",
+                  backgroundColor: "transparent",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = "#333";
+                  e.currentTarget.style.borderColor = "#F93822";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = "transparent";
+                  e.currentTarget.style.borderColor = "#333";
+                }}
               >
                 CLEAR ALL
               </Button>

@@ -408,29 +408,29 @@ export default function Playbook() {
                     >
                       {section.content.lifestyle.title}
                     </h4>
-                    <p className="text-gray-300 mb-3" style={TYPOGRAPHY.body}>
+                    <p className="text-white mb-3" style={TYPOGRAPHY.body}>
                       {section.content.lifestyle.description}
                     </p>
                     <ul className="space-y-1 mb-4">
                       {section.content.lifestyle.tips.map((tip, idx) => (
                         <li
                           key={idx}
-                          className="text-gray-300 text-sm"
+                          className="text-white text-sm"
                           style={TYPOGRAPHY.body}
                         >
                           • {tip}
                         </li>
                       ))}
                     </ul>
-                    <div className="bg-gray-900 p-3 rounded border border-gray-700">
+                    <div className="bg-black p-3 rounded border border-white">
                       <h5
-                        className="text-white mb-2 text-sm"
+                        className="text-brand-red mb-2 text-sm"
                         style={TYPOGRAPHY.heading}
                       >
                         Example:
                       </h5>
                       <p
-                        className="text-gray-300 text-sm italic"
+                        className="text-white text-sm italic"
                         style={TYPOGRAPHY.body}
                       >
                         "{section.content.lifestyle.example}"
@@ -445,29 +445,29 @@ export default function Playbook() {
                     >
                       {section.content.studio.title}
                     </h4>
-                    <p className="text-gray-300 mb-3" style={TYPOGRAPHY.body}>
+                    <p className="text-white mb-3" style={TYPOGRAPHY.body}>
                       {section.content.studio.description}
                     </p>
                     <ul className="space-y-1 mb-4">
                       {section.content.studio.tips.map((tip, idx) => (
                         <li
                           key={idx}
-                          className="text-gray-300 text-sm"
+                          className="text-white text-sm"
                           style={TYPOGRAPHY.body}
                         >
                           • {tip}
                         </li>
                       ))}
                     </ul>
-                    <div className="bg-gray-900 p-3 rounded border border-gray-700">
+                    <div className="bg-black p-3 rounded border border-white">
                       <h5
-                        className="text-white mb-2 text-sm"
+                        className="text-brand-red mb-2 text-sm"
                         style={TYPOGRAPHY.heading}
                       >
                         Example:
                       </h5>
                       <p
-                        className="text-gray-300 text-sm italic"
+                        className="text-white text-sm italic"
                         style={TYPOGRAPHY.body}
                       >
                         "{section.content.studio.example}"

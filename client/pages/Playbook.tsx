@@ -567,11 +567,7 @@ export default function Playbook() {
               )}
 
               {section.id === 5 && (
-                <div className="space-y-4">
-                  <p className="text-white" style={TYPOGRAPHY.body}>
-                    {section.content.description}
-                  </p>
-
+                <div className="space-y-4" style={{ padding: "20px 32px" }}>
                   <div>
                     <h4
                       className="text-brand-red mb-3"
@@ -579,9 +575,6 @@ export default function Playbook() {
                     >
                       Scene Regeneration & Object Placement
                     </h4>
-                    <h5 className="text-white mb-2" style={TYPOGRAPHY.heading}>
-                      Editing Best Practices:
-                    </h5>
                     <ul className="space-y-2">
                       {section.content.editingTips.map((tip, idx) => (
                         <li
@@ -596,8 +589,13 @@ export default function Playbook() {
                   </div>
 
                   <div>
-                    <h5 className="text-white mb-2" style={TYPOGRAPHY.heading}>
-                      Text in Images:
+                    <h5
+                      className="text-brand-red mb-2"
+                      style={TYPOGRAPHY.heading}
+                    >
+                      <span style={{ color: "rgb(249, 57, 33)" }}>
+                        Text in Images:
+                      </span>
                     </h5>
                     <ul className="space-y-2">
                       {section.content.textInImages.map((tip, idx) => (
@@ -612,7 +610,10 @@ export default function Playbook() {
                     </ul>
                   </div>
 
-                  <div className="bg-black p-4 rounded border border-white">
+                  <div
+                    className="bg-black rounded"
+                    style={{ padding: "20px 16px 0 0" }}
+                  >
                     <h4
                       className="text-brand-red mb-2"
                       style={TYPOGRAPHY.heading}

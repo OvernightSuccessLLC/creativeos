@@ -356,7 +356,11 @@ export default function PromptVault() {
           <CardHeader className="py-2">
             <CardTitle
               className="text-brand-red text-sm font-black tracking-wide border-b border-brand-red pb-2"
-              style={{ fontWeight: 900 }}
+              style={{
+                fontWeight: 900,
+                margin: "12px 0 16px",
+                padding: "0 24px 8px",
+              }}
             >
               STEP 3: SELECT KEYWORDS
             </CardTitle>

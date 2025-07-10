@@ -366,7 +366,7 @@ export default function PromptVault() {
         {/* Step 3 - Full Width Keywords */}
         <Card
           className="bg-black border border-gray-900 shadow-xl"
-          style={{ marginTop: "12px" }}
+          style={{ margin: "12px 0", padding: "12px 0" }}
         >
           <CardContent style={{ padding: "4px 24px 0" }}>
             <h3

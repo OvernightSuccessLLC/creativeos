@@ -588,7 +588,7 @@ export default function PromptVault() {
             <div></div>
             <div></div>
           </CardContent>
-          <CardContent className="space-y-3">
+          <CardContent style={{ padding: "0 24px 12px" }}>
             <div
               className="bg-gray-900 border border-gray-700 rounded p-3 pb-2 min-h-[80px]"
               style={{ margin: "12px 0 20px" }}

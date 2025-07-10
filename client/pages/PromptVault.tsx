@@ -298,11 +298,6 @@ export default function PromptVault() {
                 }}
                 onFocus={(e) => (e.target.style.borderColor = "#F93822")}
                 onBlur={(e) => (e.target.style.borderColor = "#333")}
-                style={{
-                  minHeight: "120px",
-                  padding: "16px",
-                  fontSize: "14px",
-                }}
                 rows={6}
               />
 

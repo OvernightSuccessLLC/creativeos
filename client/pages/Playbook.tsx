@@ -224,26 +224,7 @@ export default function Playbook() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Navigation */}
-      <nav className="bg-black border-b border-gray-800 px-6 py-4">
-        <div className="flex items-center justify-between max-w-4xl mx-auto">
-          <Button
-            variant="ghost"
-            onClick={() => navigate("/")}
-            className="text-gray-400 hover:text-white"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Creative Director OS
-          </Button>
-          <Button
-            variant="outline"
-            onClick={() => navigate("/")}
-            className="border-gray-700 text-white hover:bg-gray-800"
-          >
-            <Home className="w-4 h-4 mr-2" />
-            Home
-          </Button>
-        </div>
-      </nav>
+      <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
 
       {/* Header */}
       <div className="bg-brand-red px-6 py-12 text-center">

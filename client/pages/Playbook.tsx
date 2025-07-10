@@ -861,7 +861,10 @@ export default function Playbook() {
         {/* Quick Reference */}
         <Card className="bg-brand-red border-brand-red">
           <CardHeader>
-            <CardTitle className="text-black font-bold text-xl">
+            <CardTitle
+              className="text-black text-xl"
+              style={{ fontFamily: "Poppins, sans-serif", fontWeight: "700" }}
+            >
               Quick Reference Guide
             </CardTitle>
           </CardHeader>
@@ -869,12 +872,25 @@ export default function Playbook() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {Object.entries(quickReference).map(([category, examples]) => (
                 <div key={category}>
-                  <h4 className="text-brand-red font-semibold mb-2 capitalize">
+                  <h4
+                    className="text-brand-red mb-2 capitalize"
+                    style={{
+                      fontFamily: "Poppins, sans-serif",
+                      fontWeight: "600",
+                    }}
+                  >
                     {category.replace(/([A-Z])/g, " $1").trim()}
                   </h4>
                   <ul className="space-y-1">
                     {examples.map((example, idx) => (
-                      <li key={idx} className="text-gray-300 text-sm">
+                      <li
+                        key={idx}
+                        className="text-gray-300 text-sm"
+                        style={{
+                          fontFamily: "Poppins, sans-serif",
+                          fontWeight: "500",
+                        }}
+                      >
                         • {example}
                       </li>
                     ))}

@@ -197,27 +197,45 @@ export default function Playbook() {
   ];
 
   const quickReference = {
-    lighting: [
-      "Soft diffused light",
-      "Golden hour sunlight",
+    lightingStyles: [
+      "Golden hour",
+      "Soft diffused",
+      "Dramatic chiaroscuro",
       "Neon glow",
       "Candlelight",
-      "Dramatic rim lighting",
+      "Studio lighting",
+      "Backlit",
+      "Rim lighting",
     ],
-    cameraAngles: [
-      "Eye-level",
+    cameraTechniques: [
+      "Eye-level shot",
       "Low-angle",
-      "Bird's-eye",
-      "First-person POV",
-      "Close-up",
+      "Bird's-eye view",
+      "Close-up/macro",
       "Wide shot",
+      "85mm portrait",
+      "Fisheye lens",
+      "Shallow depth of field",
+    ],
+    artStyles: [
+      "Photorealistic",
+      "Oil painting",
+      "Watercolor",
+      "Studio Ghibli",
+      "Cyberpunk",
+      "Vintage film",
+      "Minimalist",
+      "Concept art",
     ],
     moodTone: [
-      "Cheerful and bright",
-      "Moody and dark",
-      "Tranquil",
-      "Whimsical",
       "Cinematic",
+      "Dreamy",
+      "Dramatic",
+      "Whimsical",
+      "Dark/dystopian",
+      "Warm/inviting",
+      "Serene",
+      "Gritty",
     ],
   };
 

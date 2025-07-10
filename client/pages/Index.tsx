@@ -524,11 +524,6 @@ export default function Index() {
             </div>
           </div>
 
-          <p className="text-black/80 mb-6">
-            {studios.find((s) => s.id === selectedStudio)?.description ||
-              "Generate authentic lifestyle and candid photography prompts"}
-          </p>
-
           {/* Main Studio Content */}
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-6">
             {/* Left Column - Step Cards */}

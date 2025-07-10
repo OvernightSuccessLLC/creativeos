@@ -376,6 +376,7 @@ export default function Index() {
                       <Card
                         key={item.step}
                         className="bg-black border border-gray-800 hover:border-brand-red transition-colors cursor-pointer"
+                        onClick={() => navigate("/prompt-vault")}
                       >
                         <CardContent className="p-3 sm:p-4">
                           <div className="flex items-center justify-between">

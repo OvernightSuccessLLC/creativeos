@@ -247,18 +247,21 @@ export default function Playbook() {
       {/* Header */}
       <div className="bg-brand-red px-6 py-12 text-center">
         <h1
-          className="text-4xl md:text-6xl font-brand-black text-black mb-4 brand-heading"
+          className="text-4xl md:text-6xl text-black mb-4"
           style={{ fontFamily: "Poppins, sans-serif", fontWeight: "900" }}
         >
           THE PLAYBOOK
         </h1>
         <h2
-          className="text-xl md:text-2xl text-black font-brand-bold mb-2"
+          className="text-xl md:text-2xl text-black mb-2"
           style={{ fontFamily: "Poppins, sans-serif", fontWeight: "700" }}
         >
           Image Generation with Sora & ChatGPT
         </h2>
-        <p className="text-black/80 max-w-2xl mx-auto">
+        <p
+          className="text-black/80 max-w-2xl mx-auto"
+          style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
+        >
           Complete guide for mastering AI image generation from beginner to
           expert
         </p>

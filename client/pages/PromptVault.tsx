@@ -496,7 +496,7 @@ export default function PromptVault() {
             {/* Creative Direction Section */}
             <div
               className="bg-black border border-gray-600 rounded-lg"
-              style={{ margin: "10px 6px 12px 0", padding: "10px 18px 12px" }}
+              style={{ margin: "16px", padding: "10px 12px 12px" }}
             >
               <h3
                 className="text-white text-base font-bold mb-3"

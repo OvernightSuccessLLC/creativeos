@@ -76,21 +76,13 @@ export default function PromptVault() {
 
   const enhancedKeywordCategories = {
     Modifiers: [
-      "4K resolution",
-      "cinematic quality",
       "professional grade",
       "award-winning",
       "ultra-high resolution",
-      "masterpiece",
       "commercial ready",
       "studio quality",
       "optimized for SORA AI",
       "magazine cover quality",
-      "social media optimized",
-      "HDR color grading",
-      "commercial advertisement grade",
-      "floating dust particles",
-      "lens flare streak",
     ],
     Style: [
       "Natural",

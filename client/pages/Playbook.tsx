@@ -359,18 +359,18 @@ export default function Playbook() {
 
               {section.id === 3 && (
                 <div className="space-y-4">
-                  <div className="bg-gray-900 p-4 rounded border border-gray-700">
+                  <div className="bg-black p-4 rounded border border-white">
                     <h4 className="text-white mb-2" style={TYPOGRAPHY.heading}>
                       Master Formula:
                     </h4>
                     <code
-                      className="text-green-400 text-sm"
+                      className="text-brand-red text-sm"
                       style={TYPOGRAPHY.body}
                     >
                       {section.content.formula}
                     </code>
                     <p
-                      className="text-gray-300 text-sm mt-2"
+                      className="text-white text-sm mt-2"
                       style={TYPOGRAPHY.body}
                     >
                       {section.content.description}
@@ -387,7 +387,7 @@ export default function Playbook() {
                             {key}
                           </h5>
                           <p
-                            className="text-gray-300 text-sm"
+                            className="text-white text-sm"
                             style={TYPOGRAPHY.body}
                           >
                             {value}

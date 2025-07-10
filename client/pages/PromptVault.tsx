@@ -712,7 +712,7 @@ export default function PromptVault() {
                   background: "rgba(255, 78, 51, 0.1)",
                 }}
               >
-                <Star className="w-4 h-4" />
+                <Star className="w-5 h-5" />
               </Button>
             </div>
           </CardContent>

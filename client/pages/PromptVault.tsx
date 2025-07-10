@@ -612,42 +612,6 @@ export default function PromptVault() {
           </div>
         </Card>
       </div>
-
-      {/* Pro Tips Footer */}
-      <div className="bg-black/20 border-t border-black/30 px-6 py-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-            <div className="flex items-start space-x-2">
-              <Lightbulb className="w-3 h-3 text-brand-red mt-0.5 flex-shrink-0" />
-              <p className="text-white">
-                <strong>Structure:</strong> Auto-organizes keywords for optimal
-                SORA understanding
-              </p>
-            </div>
-            <div className="flex items-start space-x-2">
-              <Camera className="w-3 h-3 text-brand-red mt-0.5 flex-shrink-0" />
-              <p className="text-white">
-                <strong>Images:</strong> Uploaded images become "--reference
-                image" parameters
-              </p>
-            </div>
-            <div className="flex items-start space-x-2">
-              <Zap className="w-3 h-3 text-brand-red mt-0.5 flex-shrink-0" />
-              <p className="text-white">
-                <strong>Keywords:</strong> Click to add, click × to remove
-                selected keywords
-              </p>
-            </div>
-            <div className="flex items-start space-x-2">
-              <Palette className="w-3 h-3 text-brand-red mt-0.5 flex-shrink-0" />
-              <p className="text-white">
-                <strong>Quality:</strong> Use the quality meter to optimize
-                prompt completeness
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

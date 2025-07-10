@@ -359,7 +359,10 @@ export default function PromptVault() {
         </div>
 
         {/* Step 3 - Full Width Keywords */}
-        <Card className="bg-black border border-gray-900 shadow-xl">
+        <Card
+          className="bg-black border border-gray-900 shadow-xl"
+          style={{ marginTop: "12px" }}
+        >
           <CardHeader className="py-2">
             <CardTitle
               className="text-brand-red text-sm font-black tracking-wide border-b border-brand-red pb-2"

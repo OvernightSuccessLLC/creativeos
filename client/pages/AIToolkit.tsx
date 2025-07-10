@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 
 export default function AIToolkit() {
+  const navigate = useNavigate();
   const [showBriefcase, setShowBriefcase] = useState(false);
   const toolCategories = [
     {

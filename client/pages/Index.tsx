@@ -254,7 +254,7 @@ export default function Index() {
   };
 
   // Update quality score when dependencies change
-  React.useEffect(() => {
+  useEffect(() => {
     setQualityScore(calculateQuality());
   }, [customInstructions, selectedKeywords, uploadedFile]);
 

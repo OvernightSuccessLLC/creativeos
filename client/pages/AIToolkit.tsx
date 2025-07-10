@@ -485,6 +485,13 @@ export default function AIToolkit() {
           SUGGEST A TOOL
         </Button>
       </div>
+
+      {/* Briefcase Modal */}
+      <BriefcaseModal
+        isOpen={showBriefcase}
+        onClose={() => setShowBriefcase(false)}
+        onNavigate={(path) => navigate(path)}
+      />
     </div>
   );
 }

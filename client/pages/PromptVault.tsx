@@ -309,10 +309,19 @@ export default function PromptVault() {
           <Card className="bg-black border border-gray-900 shadow-xl">
             <CardContent style={{ padding: "20px" }}>
               <div className="flex items-center mb-4">
-                <div className="w-6 h-6 rounded-full bg-brand-red flex items-center justify-center mr-3">
-                  <span className="text-black font-bold text-sm">2</span>
+                <div
+                  className="w-6 h-6 rounded-full flex items-center justify-center mr-3"
+                  style={{ backgroundColor: "#EE1C25" }}
+                >
+                  <span className="text-white font-bold text-sm">2</span>
                 </div>
-                <h3 className="text-white text-lg font-bold">
+                <h3
+                  className="text-white text-lg font-bold"
+                  style={{
+                    fontFamily: "Poppins, Helvetica Neue, sans-serif",
+                    fontWeight: "600",
+                  }}
+                >
                   Step 2: Upload Reference Image (Optional)
                 </h3>
               </div>

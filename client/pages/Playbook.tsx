@@ -22,6 +22,7 @@ import {
 
 export default function Playbook() {
   const navigate = useNavigate();
+  const [showBriefcase, setShowBriefcase] = useState(false);
 
   const sections = [
     {

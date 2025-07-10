@@ -130,6 +130,9 @@ export default function Templates() {
 
   return (
     <div className="min-h-screen bg-brand-red text-black">
+      {/* Navigation */}
+      <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
+
       {/* Header */}
       <div className="bg-black px-6 py-8 text-center">
         <div className="flex items-center justify-center space-x-3 mb-4">

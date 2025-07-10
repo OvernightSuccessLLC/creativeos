@@ -532,157 +532,157 @@ export default function Index() {
               "Generate authentic lifestyle and candid photography prompts"}
           </p>
 
-          <Tabs
-            value={selectedStudio}
-            onValueChange={setSelectedStudio}
-            className="w-full"
-          >
-            <TabsList className="grid w-full grid-cols-3 bg-black border border-black">
-              {studios.map((studio) => (
-                <TabsTrigger
-                  key={studio.id}
-                  value={studio.id}
-                  className={`flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-2 py-3 sm:py-2 data-[state=active]:bg-brand-red data-[state=active]:text-black text-white ${
-                    studio.id === selectedStudio
-                      ? "bg-brand-red text-black"
-                      : ""
-                  }`}
-                  style={{ fontWeight: 900 }}
-                >
-                  <studio.icon className="w-4 h-4 sm:w-4 sm:h-4" />
-                  <span className="text-xs sm:text-sm">
-                    {studio.name.split(" ")[0]}
-                  </span>
-                  <span className="hidden lg:inline text-xs sm:text-sm">
-                    {studio.name.split(" ").slice(1).join(" ")}
-                  </span>
-                </TabsTrigger>
-              ))}
-            </TabsList>
-
-            <TabsContent value="lifestyle" className="mt-6">
-              <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-6">
-                {/* Left Column - Step Cards */}
-                <div className="space-y-2 sm:space-y-3 order-2 xl:order-1">
-                  {stepCards.map((step) => (
-                    <div key={step.id}>
-                      <Card
-                        className="bg-black border border-white/20 hover:border-brand-red transition-colors cursor-pointer"
-                        onClick={() =>
-                          setActiveStep(activeStep === step.id ? null : step.id)
-                        }
-                      >
-                        <CardContent className="p-3 sm:p-4">
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center space-x-3">
-                              <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-xs sm:text-sm font-bold">
-                                {step.id}
-                              </div>
-                              <div>
-                                <span className="font-medium text-white text-sm sm:text-base">
-                                  {step.title}
-                                </span>
-                                <p className="text-white/60 text-xs">
-                                  {step.description}
-                                </p>
-                              </div>
-                            </div>
-                            {activeStep === step.id ? (
-                              <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
-                            ) : (
-                              <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
-                            )}
+          {/* Main Studio Content */}
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-6">
+            {/* Left Column - Step Cards */}
+            <div className="space-y-2 sm:space-y-3 order-2 xl:order-1">
+              {stepCards.map((step) => (
+                <div key={step.id}>
+                  <Card
+                    className="bg-black border border-white/20 hover:border-brand-red transition-colors cursor-pointer"
+                    onClick={() =>
+                      setActiveStep(activeStep === step.id ? null : step.id)
+                    }
+                  >
+                    <CardContent className="p-3 sm:p-4">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-xs sm:text-sm font-bold">
+                            {step.id}
                           </div>
-                        </CardContent>
-                      </Card>
+                          <div>
+                            <span className="font-medium text-white text-sm sm:text-base">
+                              {step.title}
+                            </span>
+                            <p className="text-white/60 text-xs">
+                              {step.description}
+                            </p>
+                          </div>
+                        </div>
+                        {activeStep === step.id ? (
+                          <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
+                        ) : (
+                          <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
 
-                      {/* Expandable Content */}
-                      {activeStep === step.id && (
-                        <Card className="bg-black border border-white/20 mt-2">
-                          <CardContent className="p-4">
-                            {renderStepContent(step.id)}
-                          </CardContent>
-                        </Card>
-                      )}
-                    </div>
-                  ))}
+                  {/* Expandable Content */}
+                  {activeStep === step.id && (
+                    <Card className="bg-black border border-white/20 mt-2">
+                      <CardContent className="p-4">
+                        {renderStepContent(step.id)}
+                      </CardContent>
+                    </Card>
+                  )}
+                </div>
+              ))}
+
+              {/* File Upload Section */}
+              <Card className="bg-black border border-white/20">
+                <CardHeader>
+                  <CardTitle className="text-brand-red text-sm font-bold flex items-center">
+                    <Upload className="w-4 h-4 mr-2" />
+                    REFERENCE UPLOAD
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="border-2 border-dashed border-white/20 rounded-lg p-6 text-center">
+                    <Upload className="w-8 h-8 text-white/60 mx-auto mb-2" />
+                    <Input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleFileUpload}
+                      className="bg-black border-white/20 text-white file:bg-brand-red file:text-black file:border-0 file:rounded file:px-3 file:py-1"
+                    />
+                    {uploadedFile && (
+                      <p className="text-brand-red mt-2 text-sm">
+                        ✓ {uploadedFile.name} uploaded
+                      </p>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Right Column - AI PROMPT FORMULA Section */}
+            <Card className="bg-black border border-white/20 order-1 xl:order-2">
+              <CardHeader className="p-4 sm:p-6">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between space-y-2 sm:space-y-0">
+                  <CardTitle className="text-brand-red text-xs sm:text-sm font-bold tracking-wide">
+                    AI PROMPT FORMULA
+                  </CardTitle>
+                  <Badge className="bg-brand-red text-black text-xs font-bold self-start">
+                    {calculateQuality()}% QUALITY
+                  </Badge>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0">
+                <div className="bg-black border border-white/20 rounded p-3 sm:p-4 text-xs sm:text-sm text-white">
+                  {generatePrompt() ||
+                    "Build your prompt by adding custom instructions and selecting keywords from the categories..."}
                 </div>
 
-                {/* Right Column - AI PROMPT FORMULA Section */}
-                <Card className="bg-black border border-white/20 order-1 xl:order-2">
-                  <CardHeader className="p-4 sm:p-6">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between space-y-2 sm:space-y-0">
-                      <CardTitle className="text-brand-red text-xs sm:text-sm font-bold tracking-wide">
-                        LIFESTYLE PROMPT GENERATOR
-                      </CardTitle>
-                      <Badge className="bg-brand-red text-black text-xs font-bold self-start">
-                        {calculateQuality()}% QUALITY
-                      </Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0">
-                    <div className="bg-black border border-white/20 rounded p-3 sm:p-4 text-xs sm:text-sm text-white">
-                      {generatePrompt() ||
-                        "Build your lifestyle prompt by adding custom instructions and selecting keywords from the categories..."}
-                    </div>
-                    <div className="space-y-2 sm:space-y-3">
-                      <div className="text-white font-medium text-xs sm:text-sm">
-                        AI RECOMMENDATIONS
-                      </div>
-                      <ul className="space-y-1 text-xs sm:text-sm text-white/60">
-                        <li>
-                          • Add detailed scene descriptions for better results
-                        </li>
-                        <li>• Select mood and atmosphere keywords</li>
-                        <li>• Choose specific lighting and camera angles</li>
-                        <li>• Upload reference images for style matching</li>
-                      </ul>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button
-                        size="sm"
-                        onClick={copyPrompt}
-                        className="bg-brand-red hover:bg-brand-red text-black font-bold text-xs sm:text-sm"
-                      >
-                        <Copy className="w-3 h-3 mr-1" />
-                        {copiedPrompt ? "COPIED!" : "COPY"}
-                      </Button>
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        className="border-white/20 text-white hover:bg-white/10 text-xs sm:text-sm"
-                      >
-                        FAVORITE
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </TabsContent>
+                {/* AI Optimized Quality Meter */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-white font-medium text-xs">
+                      AI QUALITY SCORE
+                    </span>
+                    <span className="text-brand-red font-bold text-xs">
+                      {calculateQuality()}%
+                    </span>
+                  </div>
+                  <div className="w-full bg-white/20 rounded-full h-2">
+                    <div
+                      className="bg-brand-red h-2 rounded-full transition-all duration-500"
+                      style={{ width: `${calculateQuality()}%` }}
+                    ></div>
+                  </div>
+                  <div className="text-white/60 text-xs">
+                    {calculateQuality() < 30 &&
+                      "Add more details to improve quality"}
+                    {calculateQuality() >= 30 &&
+                      calculateQuality() < 70 &&
+                      "Good start! Add more keywords for better results"}
+                    {calculateQuality() >= 70 && "Excellent prompt quality!"}
+                  </div>
+                </div>
 
-            {/* Other studio tabs - placeholder */}
-            <TabsContent value="product" className="mt-6">
-              <div className="text-center py-8">
-                <h3 className="text-xl font-bold text-black mb-2">
-                  Product Studio
-                </h3>
-                <p className="text-black/60">
-                  Product photography prompts coming soon...
-                </p>
-              </div>
-            </TabsContent>
+                <div className="space-y-2 sm:space-y-3">
+                  <div className="text-white font-medium text-xs sm:text-sm">
+                    AI RECOMMENDATIONS
+                  </div>
+                  <ul className="space-y-1 text-xs sm:text-sm text-white/60">
+                    <li>
+                      • Add detailed scene descriptions for better results
+                    </li>
+                    <li>• Select mood and atmosphere keywords</li>
+                    <li>• Choose specific lighting and camera angles</li>
+                    <li>• Upload reference images for style matching</li>
+                  </ul>
+                </div>
 
-            <TabsContent value="graphic" className="mt-6">
-              <div className="text-center py-8">
-                <h3 className="text-xl font-bold text-black mb-2">
-                  Graphic Studio
-                </h3>
-                <p className="text-black/60">
-                  Graphic design prompts coming soon...
-                </p>
-              </div>
-            </TabsContent>
-          </Tabs>
+                <div className="flex space-x-2">
+                  <Button
+                    size="sm"
+                    onClick={copyPrompt}
+                    className="bg-brand-red hover:bg-black hover:text-brand-red text-black font-bold text-xs sm:text-sm transition-colors"
+                  >
+                    <Copy className="w-3 h-3 mr-1" />
+                    {copiedPrompt ? "COPIED!" : "COPY"}
+                  </Button>
+                  <Button
+                    size="sm"
+                    className="bg-brand-red hover:bg-black hover:text-brand-red text-black font-bold text-xs sm:text-sm transition-colors"
+                  >
+                    FAVORITE
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </main>
 

@@ -293,12 +293,6 @@ export default function Playbook() {
             <CardContent className="p-8 bg-black border border-white">
               {section.id === 1 && (
                 <div className="space-y-6">
-                  <p
-                    className="text-white leading-relaxed text-lg"
-                    style={TYPOGRAPHY.body}
-                  >
-                    {section.content.description}
-                  </p>
                   <div className="space-y-3">
                     <h4
                       className="text-brand-red text-lg"

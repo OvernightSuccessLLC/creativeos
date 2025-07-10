@@ -331,19 +331,19 @@ export default function Playbook() {
               )}
 
               {section.id === 2 && (
-                <div className="space-y-4">
+                <div className="space-y-6">
                   <div>
                     <h4
-                      className="text-brand-red mb-3"
+                      className="text-brand-red text-lg mb-4"
                       style={TYPOGRAPHY.heading}
                     >
                       Core Principles:
                     </h4>
-                    <ul className="space-y-2">
+                    <ul className="space-y-3">
                       {section.content.principles.map((principle, idx) => (
                         <li
                           key={idx}
-                          className="text-white"
+                          className="text-white leading-relaxed"
                           style={TYPOGRAPHY.body}
                         >
                           •{" "}
@@ -358,14 +358,17 @@ export default function Playbook() {
                       ))}
                     </ul>
                   </div>
-                  <div className="bg-black p-4 rounded border border-white">
+                  <div className="bg-black p-6 rounded-lg border border-white">
                     <h4
-                      className="text-brand-red mb-2"
+                      className="text-brand-red text-lg mb-3"
                       style={TYPOGRAPHY.heading}
                     >
                       Example Progression:
                     </h4>
-                    <p className="text-white text-sm" style={TYPOGRAPHY.body}>
+                    <p
+                      className="text-white leading-relaxed"
+                      style={TYPOGRAPHY.body}
+                    >
                       {section.content.progression}
                     </p>
                   </div>

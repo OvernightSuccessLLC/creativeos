@@ -193,19 +193,6 @@ export default function Templates() {
                   </p>
                 </div>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-1">
-                  {template.tags.map((tag) => (
-                    <Badge
-                      key={tag}
-                      variant="outline"
-                      className="border-gray-700 text-gray-400 text-xs"
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-
                 {/* Actions */}
                 <div className="flex space-x-2">
                   <Button

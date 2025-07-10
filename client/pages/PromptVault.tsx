@@ -260,7 +260,10 @@ export default function PromptVault() {
         {/* Top Row: Step 1 (Left) and Step 2 (Right) - Same width as Step 3 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {/* Step 1 - Top Left */}
-          <Card className="bg-black border border-gray-900 shadow-xl">
+          <Card
+            className="bg-black border border-gray-900 shadow-xl"
+            style={{ flexGrow: "0", height: "auto" }}
+          >
             <CardContent
               style={{ marginBottom: "12px", padding: "12px 24px 16px" }}
             >

@@ -423,8 +423,16 @@ export default function PromptVault() {
             </div>
 
             {/* Locations Section */}
-            <div className="bg-black border border-gray-600 rounded-lg py-2 px-3">
-              <h3 className="text-white text-base font-bold mb-3">Locations</h3>
+            <div
+              className="bg-black border border-gray-600 rounded-lg"
+              style={{ margin: "12px 0", padding: "0 6px 8px" }}
+            >
+              <h3
+                className="text-white text-base font-bold mb-3"
+                style={{ fontSize: "12px" }}
+              >
+                Locations
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {keywordCategories.Locations.map((keyword) => (
                   <button

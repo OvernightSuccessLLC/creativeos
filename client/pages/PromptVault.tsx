@@ -529,11 +529,11 @@ export default function PromptVault() {
             {/* Modifiers Section */}
             <div
               className="bg-black border border-gray-600 rounded-lg"
-              style={{ margin: "20px 0 12px", padding: "12px 6px" }}
+              style={{ margin: "12px 6px 18px 0", padding: "12px 18px" }}
             >
               <h3
                 className="text-white text-base font-bold mb-3"
-                style={{ fontSize: "14px" }}
+                style={{ fontSize: "14px", marginBottom: "8px" }}
               >
                 Modifiers
               </h3>
@@ -601,7 +601,7 @@ export default function PromptVault() {
                 onClick={() => {
                   const prompt = generatePrompt();
                   if (prompt) {
-                    alert("Prompt saved to favorites! ���");
+                    alert("Prompt saved to favorites! ��");
                   }
                 }}
                 className="border-brand-red text-brand-red hover:bg-brand-red hover:text-black font-black"

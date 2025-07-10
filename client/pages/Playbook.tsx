@@ -28,7 +28,7 @@ export default function Playbook() {
   const sections = [
     {
       id: 1,
-      title: "Introduction to Sora Image Generation",
+      title: "Introduction to AI Image Generation",
       icon: BookOpen,
       content: {
         description:
@@ -36,7 +36,7 @@ export default function Playbook() {
         howItWorks:
           "In Sora (or ChatGPT's image mode), you simply describe the image you want. The AI interprets your description and generates an image to match. You can specify visual details like style, lighting, composition, and more.",
         whoFor:
-          "Anyone looking to create images – from beginners who have never written an image prompt, to advanced users seeking to fine-tune their results, up to experts who want to automate prompt generation.",
+          "Anyone looking to create images – from beginners who have never written an image prompt, to advanced users seeking to fine-tune their results, up to experts who want to automate prompt generation and master complex scenes.",
       },
     },
     {
@@ -45,14 +45,14 @@ export default function Playbook() {
       icon: Lightbulb,
       content: {
         principles: [
-          'Be Specific and Clear: Provide concrete details about the subject and scene. "A young woman in a red coat walking through a snowy forest" vs "a person in a city"',
-          'Mention the Style or Mood: "Shot in natural, casual style" or "photorealistic, 4K detail, ultra-realistic"',
-          "Keep It Simple (at first): Start with single sentences focusing on one scene",
-          "Use Natural Language: Write as if describing an image to a person",
-          "Check Output and Iterate: Treat first image as a draft and refine",
+          'Be Specific and Clear: Provide concrete details about what you want. Vague prompts lead to unpredictable results. "A young man in a blue suit waiting at a New York City bus stop on a rainy night" vs "a person in a city". Include key attributes like colors, setting, and distinctive features.',
+          'Mention the Style or Mood: The same scene can look like a photograph, watercolor painting, Pixar animation, or oil painting. Use mood adjectives: "warm and inviting", "dark and dystopian", "whimsical and cartoonish".',
+          "Start Simple (Then Iterate): Begin with a short prompt focusing on one subject or scene. Build complexity through iterations rather than writing super long prompts from scratch.",
+          "Use Natural Language: Write as if describing an image to another person, not like coding. Natural descriptions work better than keyword cramming.",
+          "Check Output and Refine: Treat each generation as feedback. Analyze what worked and what didn't, then improve your prompt and try again.",
         ],
         progression:
-          'Beginner: "Photo of a cat sitting on a windowsill." | Advanced: "A tabby cat lounging on a sunny windowsill with soft morning light filtering through lace curtains, looking outside at birds." | Expert: "Candid pet photography, close-up shot of a green-eyed tabby cat lounging on a sunlit Victorian bay window, rays of golden morning light patterning its fur through ornate lace curtains. Shot with shallow depth of field (85mm f/1.8)."',
+          'Beginner: "Photo of a cat sitting on a windowsill." – Basic idea with no particular flair. | Advanced: "A tabby cat lounging on a sunny windowsill with soft morning light filtering through lace curtains, looking outside at birds." – Specified breed, lighting, context, and activity. | Expert: "Candid pet photography, close-up shot of a green-eyed tabby cat lounging on a sunlit Victorian bay window, rays of golden morning light patterning its fur through ornate lace curtains. Shot with shallow depth of field (85mm f/1.8)." – Added camera details, specific setting, and professional photography style.',
       },
     },
     {
@@ -61,138 +61,137 @@ export default function Playbook() {
       icon: Database,
       content: {
         formula:
-          "[Subject] + [Action/Pose] + [Environment/Setting] + [Lighting] + [Camera Details] + [Style/Mood] + [Quality Parameters]",
+          "[Subject] + [Action/Pose] + [Setting] + [Lighting] + [Camera Details] + [Style] + [Quality]",
+        description:
+          "Not every prompt needs all components, but this formula reminds you of available options.",
         components: {
           "Subject Description":
-            "Who or what is the focus. Be specific about color, size, distinctive features.",
+            "The main focus of your image. Be specific about physical attributes, clothing, species, size, color, material, etc.",
           "Action/Pose":
-            "What the subject is doing. Adds dynamism and context.",
-          "Environment/Setting":
-            "Surroundings, background. Include time of day or weather if relevant.",
+            "What is the subject doing? Running, smiling, reading, dancing, or describe expression like 'with a gentle smile' or 'looking into camera'.",
+          Setting:
+            "Where is the scene taking place? Include weather, time of day, era if relevant. 'Medieval village' vs 'futuristic spaceship interior'.",
           Lighting:
-            "Quality and direction of light. Most powerful mood setter.",
+            "Crucial for mood. 'Soft diffused morning light', 'dramatic chiaroscuro', 'neon city lights', 'golden hour glow', 'candlelight'.",
           "Camera Details":
-            "Angle, framing, lens type, depth of field, composition terms.",
-          "Style/Mood": "Artistic style, genre, overall vibe, color palette.",
+            "Camera angle, lens choice, depth of field. '85mm portrait lens', 'wide-angle shot', 'macro lens', 'shallow depth with bokeh'.",
+          Style:
+            "Artistic approach and mood. 'Photorealistic', 'Studio Ghibli style', 'oil painting', 'minimalist', 'cyberpunk', 'vintage film photography'.",
         },
       },
     },
     {
       id: 4,
-      title: "Lifestyle Photography Prompts",
+      title: "Specialized Photography Styles",
       icon: Camera,
       content: {
-        description:
-          "Lifestyle images capture people in everyday, real-life contexts. They feel candid, authentic, and relatable.",
-        characteristics: [
-          "Everyday Scenarios: Focus on common activities – friends at cafe, family cooking, person jogging",
-          'Natural Styling: Use "candid", "unposed", "in the moment" descriptors',
-          "Environmental Context: Include background details, props, decor for realism",
-          "Lighting for Mood: Daylight and ambient lighting are common",
-        ],
+        lifestyle: {
+          title: "Lifestyle Photography",
+          description:
+            "Depicts people in everyday situations with a candid, relatable feel.",
+          tips: [
+            "Focus on everyday scenarios and activities",
+            'Use words like "candid", "natural", "unposed"',
+            "Include environmental context and props",
+            "Emphasize natural lighting and warm tones",
+          ],
+          example:
+            "A candid photo of a young couple hiking on a forest trail in autumn. They're laughing and looking at each other, surrounded by trees with orange and red leaves. The sun is low, casting warm golden light through the trees.",
+        },
+        studio: {
+          title: "Studio/Product Photography",
+          description:
+            "Professional product shots with clean aesthetics and perfect lighting.",
+          tips: [
+            "Isolate product with plain backgrounds",
+            "Specify lighting to minimize harsh reflections",
+            'Use terms like "ultra-sharp focus" and camera angles',
+            "Consider contextual vs isolated approaches",
+          ],
+          example:
+            "Studio product shot of a luxury watch on a marble surface with soft reflection, ambient warm lighting. Two-point lighting setup, ultra-sharp focus on the watch.",
+        },
       },
     },
     {
       id: 5,
-      title: "Product & Studio Photography Prompts",
-      icon: Package,
+      title: "Advanced Techniques & Image Editing",
+      icon: RefreshCw,
       content: {
         description:
-          "Product photography focuses on highlighting item features in a clear, visually appealing way.",
-        keyElements: [
-          "Isolate the Product: Clean background, good lighting, product centered",
-          "Lighting & Reflections: Match lighting to material - softbox for shiny objects",
-          "Camera and Focus: Sharp focus, high resolution, consider angle",
-          "Contextual vs. Isolated: Decide on props or plain background",
+          "One of the most powerful features is editing images through language - essentially image editing through prompts instead of Photoshop.",
+        editingTips: [
+          'Reference elements clearly ("the car in the background")',
+          "Be spatially specific (left, right, foreground, background)",
+          "Make one change at a time for complex edits",
+          "Maintain consistency with original style and lighting",
+          'Use "same art style" or "same lighting" for seamless additions',
         ],
-        expertExample:
-          '"Hero shot of new smartphone levitating above matte black pedestal, against dimly lit studio with two-point lighting (cool blue fill from left, soft white key from right). Minimal reflections on screen displays faint home screen glow. Detailed reflections on phone edges highlight metallic frame. Background in deep shadow with bokeh city lights. Shot in 4K, ultra-sharp."',
+        textInImages: [
+          "Keep phrases short and use simple fonts",
+          "Put exact text in quotes in your prompt",
+          "GPT-4o handles text better than previous models",
+          'Specify font style: "bold red font" or "handwritten"',
+          'For plain text, specify "plain block letters"',
+        ],
+        exampleEditSequence: [
+          'Initial: "A group of friends having a picnic on a sunny day in the park"',
+          'Edit 1: "Make it look like early evening, with a vibrant sunset sky"',
+          'Edit 2: "Add string lights hanging between the trees to create a cozy atmosphere"',
+          "Edit 3: \"Everyone's clothing should be a bit warmer (light jackets), since it's evening now\"",
+        ],
       },
     },
     {
       id: 6,
-      title: "Custom Graphics & Design Prompts",
-      icon: Palette,
-      content: {
-        description:
-          "Sora can generate graphic designs: logos, icons, banners with text, illustrations for branding.",
-        logoTips: [
-          'Keep It Simple: "Minimalist logo" or "bold emblem-style logo"',
-          'Specify Style: "Modern flat design", "vintage retro style"',
-          "Colors and Fonts: Include color schemes and font style descriptions",
-          'Background: Usually "plain white background" or transparent',
-        ],
-        textRendering: [
-          "Be Concise: Short phrases work better than paragraphs",
-          "Use Quotes: \"A poster with title 'Summer Festival 2025'\"",
-          'Specify Style: "in red bold font" or "handwritten style text"',
-        ],
-      },
-    },
-    {
-      id: 7,
-      title: "Scene Regeneration & Object Placement (Editing Images)",
-      icon: RefreshCw,
-      content: {
-        description:
-          "Sora's powerful editing feature lets you modify generated images by describing changes.",
-        editingTips: [
-          "Identify Elements: Describe what you want changed as you see it",
-          'Be Spatially Specific: Use "left", "right", "foreground", "background"',
-          "Maintain Consistency: Consider overall scene coherence",
-          "One Change at a Time: For big edits, work stepwise",
-          'Object Removal: "Remove" or "erase" usually works',
-        ],
-        exampleEdit:
-          'Initial: Outdoor picnic scene on sunny day | Remix: "Make it look like evening, with sunset sky. Add string lights hanging between trees to create cozy atmosphere."',
-      },
-    },
-    {
-      id: 8,
       title: "Using the Prompt Vault",
       icon: Database,
       content: {
         description:
-          "The Prompt Vault is your advanced formula builder that combines custom vision, professional keywords, and image references into perfectly structured SORA prompts.",
-        process: [
-          "Step 1: Write your creative vision in the text area (describe your subject, scene, or concept)",
-          "Step 2: Upload a reference image for visual context (optional but recommended)",
-          "Step 3: Select keywords from categories: Lighting, Framing, Locations, Texture, Creative Direction, Quality",
-          "Step 4: Review the complete formula that automatically organizes your inputs",
-          "Step 5: Copy the formula and paste directly into SORA",
+          "The Prompt Vault helps you build 'formula' prompts by combining your ideas, reference images, and expert-curated keywords.",
+        steps: [
+          "Write Your Vision: Freely describe your image concept. Don't worry about structure yet - just get your creative vision down.",
+          "Upload Reference Image (Optional): Add an inspiring image for style or color palette guidance. GPT-4o can use references as visual inspiration.",
+          "Select Keywords from Categories: Choose from professionally curated keywords organized by Art Style, Lighting, Composition, Camera, Mood, etc.",
+          "Review & Copy Formula: The vault compiles everything into a structured, optimized prompt ready to paste into Sora.",
         ],
         proTips: [
-          "Structure: The vault auto-organizes keywords for optimal SORA understanding",
-          'Images: Uploaded images become "--reference image" parameters',
-          "Keywords: Click to add, click x to remove selected keywords",
-          "Quality: Use the quality meter to optimize your prompt completeness",
+          "Structured approach: The vault ensures you don't forget a variable. It's especially useful if you're not yet comfortable juggling all the prompt components in your head.",
+          "Reference images are powerful: If you upload a sketch of a logo and describe it, Sora can produce a cleaner or more detailed version. Or if you love the style of a particular painting, you can reference it to imbue your generated image with a similar vibe.",
+          "Quality meter guidance: The quality meter might indicate how comprehensive your prompt is. If it's low, you probably have a minimal description – consider adding more keywords or details until the meter suggests the prompt is robust.",
+          "Pre-vetted keywords: The vault uses keywords known to work well. Terms like '4K', 'bokeh', 'dramatic lighting', 'concept art' etc., which the AI responds to strongly.",
+          "Continue iterating: After generating with the vault prompt, you can still iterate further. The vault gets you a great first prompt. From there, treat it like any image: use follow-up edits or try slight variations.",
         ],
+        essence:
+          "The Prompt Vault is like having an AI prompt engineer co-pilot with you. It's very useful for complex visions or when you want to explore a variety of styles for the same basic idea.",
       },
     },
     {
-      id: 9,
-      title: "Tips, Best Practices, and Warnings",
+      id: 7,
+      title: "Pro Tips, Best Practices & Common Pitfalls",
       icon: AlertTriangle,
       content: {
-        generalTips: [
-          'Be Specific, Avoid Redundancy: "Red ball on wooden table" not "nice pretty red ball sitting on wooden table that is brown"',
-          "Avoid Ambiguity: Clarify words with multiple meanings",
-          "Test in Parts: Try mini-prompts first for complex concepts",
-          "Use ChatGPT to Improve: Ask for prompt refinements conversationally",
+        bestPractices: [
+          'Avoid ambiguity: "Bank" could mean river bank or money bank - add context',
+          "Be specific, not redundant: Don't pile on synonymous adjectives",
+          "Test complex ideas in chunks: Build elaborate scenes layer by layer",
+          "Leverage ChatGPT's conversation: Ask for prompt improvements between generations",
+          "Re-run for variations: Same prompt can yield different results",
+          "Use the remix feature: Fine-tune images through edits rather than starting over",
         ],
-        contentWarnings: [
-          "No Disallowed Content: Violence, gore, sexual, hate content",
-          "Avoid Real Person Likeness: No named celebrities or individuals",
-          "No Trademark Violations: Don't request copyrighted logos",
+        commonIssues: [
+          'Conflicting instructions: "Bright night scene" - clarify what you mean',
+          "Overly complex prompts: Sometimes simple works better than 100+ words",
+          "Ignoring iteration: Professional artists do multiple drafts - so should you",
+          "Not using natural language: Write descriptively, not like keyword lists",
+          "Starting fresh too quickly: Try editing before completely rewriting prompts",
+          "Forgetting context: When editing, maintain the original scene's style and lighting",
         ],
-        troubleshooting: [
-          "Conflicting Elements: Resolve contradictions",
-          "Too Complex: Break into simpler scenes",
-          "Obscure Terms: Use simpler descriptions",
-          "Use Variations: Re-run same prompt for different results",
+        workflows: [
+          "Re-run or Variations: Because image generation has some randomness, if an output is close but not perfect, try hitting generate again with the same prompt (or a tiny tweak). Often the second or third try gives a result you like.",
+          "Final Refinements – Remix and Iterate: Use the Remix (Edit) feature to your advantage. It's there to fine-tune images in ways that would be tedious to prompt from scratch. Want that car a little more to the left? Prompt an edit. Wish the scene was at night instead of day? Edit it.",
+          "The motto here is Iterate and Refine. Professional artists do many sketches and drafts – consider each generation a draft that you can build upon.",
         ],
-        finalAdvice:
-          'Great images may not come on first try. Use Remix feature to refine. Treat each generation as a prototype. "Iterate and Refine" is key - even professional artists make many sketches!',
       },
     },
   ];

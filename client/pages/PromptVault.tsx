@@ -384,8 +384,8 @@ export default function PromptVault() {
             style={{
               fontWeight: "900",
               paddingTop: "8px",
-              color: "#EE1C25",
-              fontFamily: "Poppins, Helvetica Neue, sans-serif",
+              color: "#F93822",
+              fontFamily: "Poppins, sans-serif",
             }}
           >
             STEP 3: SELECT KEYWORDS

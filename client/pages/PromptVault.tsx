@@ -605,8 +605,8 @@ export default function PromptVault() {
                 className="bg-brand-red hover:bg-brand-red-hover text-black font-black flex-1"
                 style={{
                   fontWeight: 900,
-                  marginRight: "24px",
-                  padding: "4px 24px",
+                  margin: "12px 18px 8px 0",
+                  padding: "8px 24px",
                 }}
                 data-copy-button
               >

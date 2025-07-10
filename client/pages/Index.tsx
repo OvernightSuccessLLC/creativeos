@@ -437,7 +437,7 @@ export default function Index() {
                         <Button
                           size="sm"
                           variant="outline"
-                          className="border-gray-700 text-white hover:bg-gray-800 text-xs sm:text-sm"
+                          className="border-white/20 text-white hover:bg-white/10 text-xs sm:text-sm"
                         >
                           FAVORITE
                         </Button>

@@ -647,230 +647,144 @@ export default function PromptVault() {
           </CardContent>
         </Card>
 
-        {/* Row: Quality Meter and Step 4 Prompt Output */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-          {/* Quality Meter - Takes 1/3 width */}
-          <Card className="bg-black border border-gray-900 shadow-xl">
-            <CardContent style={{ padding: "20px" }}>
-              <h3
-                className="text-lg font-bold mb-4 tracking-wide"
-                style={{ color: "#F93822", fontFamily: "Poppins, sans-serif" }}
-              >
-                AI PROMPT OPTIMIZER
-              </h3>
-
-              {/* Circular Quality Score */}
-              <div className="flex items-center justify-center mb-6">
-                <div className="relative w-24 h-24">
-                  <div className="w-24 h-24 rounded-full border-4 border-gray-700 flex items-center justify-center relative">
-                    <div
-                      className="absolute inset-0 rounded-full border-4 border-transparent transition-all duration-500"
-                      style={{
-                        transform: `rotate(${(qualityScore / 100) * 360}deg)`,
-                        borderTopColor: "#F93822",
-                        borderRightColor:
-                          qualityScore > 25 ? "#F93822" : "transparent",
-                        borderBottomColor:
-                          qualityScore > 50 ? "#F93822" : "transparent",
-                        borderLeftColor:
-                          qualityScore > 75 ? "#F93822" : "transparent",
-                      }}
-                    />
-                    <span
-                      className="text-white text-xl font-bold relative z-10"
-                      style={{ fontFamily: "Poppins, sans-serif" }}
-                    >
-                      {qualityScore}%
-                    </span>
-                  </div>
+        {/* Step 4: Compact Quality + Prompt Section */}
+        <Card className="bg-black border border-gray-900 shadow-xl mt-4">
+          <CardContent style={{ padding: "16px" }}>
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center">
+                <div
+                  className="w-6 h-6 rounded-full flex items-center justify-center mr-3"
+                  style={{ backgroundColor: "#F93822" }}
+                >
+                  <span className="text-white font-bold text-sm">4</span>
                 </div>
+                <h3
+                  className="text-white text-lg font-bold"
+                  style={{
+                    fontFamily: "Poppins, sans-serif",
+                    fontWeight: "600",
+                  }}
+                >
+                  Your Optimized SORA Prompt
+                </h3>
               </div>
 
-              {/* Progress Checklist */}
-              <div className="space-y-3">
-                <div
-                  className={`flex items-center gap-3 ${customInstructions ? "text-green-400" : "text-gray-500"}`}
-                >
-                  <div
-                    className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${customInstructions ? "border-green-400 bg-green-400" : "border-gray-500"}`}
+              {/* Compact Quality Score */}
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-1 text-xs">
+                  <span
+                    className={
+                      customInstructions ? "text-green-400" : "text-gray-500"
+                    }
                   >
-                    {customInstructions ? (
-                      <span className="text-black text-xs font-bold">✓</span>
-                    ) : null}
-                  </div>
-                  <span className="text-sm font-medium">
-                    Vision Description
+                    {customInstructions ? "✓" : "○"}
                   </span>
-                </div>
-
-                <div
-                  className={`flex items-center gap-3 ${uploadedFile ? "text-green-400" : "text-gray-500"}`}
-                >
-                  <div
-                    className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${uploadedFile ? "border-green-400 bg-green-400" : "border-gray-500"}`}
-                  >
-                    {uploadedFile ? (
-                      <span className="text-black text-xs font-bold">✓</span>
-                    ) : null}
-                  </div>
-                  <span className="text-sm font-medium">Reference Image</span>
-                </div>
-
-                <div
-                  className={`flex items-center gap-3 ${selectedKeywords.some((k) => keywordCategories.Lighting.includes(k)) ? "text-green-400" : "text-gray-500"}`}
-                >
-                  <div
-                    className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${selectedKeywords.some((k) => keywordCategories.Lighting.includes(k)) ? "border-green-400 bg-green-400" : "border-gray-500"}`}
+                  <span
+                    className={
+                      selectedKeywords.some((k) =>
+                        keywordCategories.Lighting.includes(k),
+                      )
+                        ? "text-green-400"
+                        : "text-gray-500"
+                    }
                   >
                     {selectedKeywords.some((k) =>
                       keywordCategories.Lighting.includes(k),
-                    ) ? (
-                      <span className="text-black text-xs font-bold">✓</span>
-                    ) : null}
-                  </div>
-                  <span className="text-sm font-medium">Lighting Setup</span>
-                </div>
-
-                <div
-                  className={`flex items-center gap-3 ${selectedKeywords.some((k) => keywordCategories.Framing.includes(k)) ? "text-green-400" : "text-gray-500"}`}
-                >
-                  <div
-                    className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${selectedKeywords.some((k) => keywordCategories.Framing.includes(k)) ? "border-green-400 bg-green-400" : "border-gray-500"}`}
+                    )
+                      ? "✓"
+                      : "○"}
+                  </span>
+                  <span
+                    className={
+                      selectedKeywords.some((k) =>
+                        keywordCategories.Framing.includes(k),
+                      )
+                        ? "text-green-400"
+                        : "text-gray-500"
+                    }
                   >
                     {selectedKeywords.some((k) =>
                       keywordCategories.Framing.includes(k),
-                    ) ? (
-                      <span className="text-black text-xs font-bold">✓</span>
-                    ) : null}
-                  </div>
-                  <span className="text-sm font-medium">Camera Framing</span>
-                </div>
-
-                <div
-                  className={`flex items-center gap-3 ${selectedKeywords.some((k) => enhancedKeywordCategories["Creative Direction"].includes(k)) ? "text-green-400" : "text-gray-500"}`}
-                >
-                  <div
-                    className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${selectedKeywords.some((k) => enhancedKeywordCategories["Creative Direction"].includes(k)) ? "border-green-400 bg-green-400" : "border-gray-500"}`}
+                    )
+                      ? "✓"
+                      : "○"}
+                  </span>
+                  <span
+                    className={
+                      selectedKeywords.some((k) =>
+                        enhancedKeywordCategories[
+                          "Creative Direction"
+                        ].includes(k),
+                      )
+                        ? "text-green-400"
+                        : "text-gray-500"
+                    }
                   >
                     {selectedKeywords.some((k) =>
                       enhancedKeywordCategories["Creative Direction"].includes(
                         k,
                       ),
-                    ) ? (
-                      <span className="text-black text-xs font-bold">✓</span>
-                    ) : null}
-                  </div>
-                  <span className="text-sm font-medium">
-                    Creative Direction
+                    )
+                      ? "✓"
+                      : "○"}
                   </span>
                 </div>
-              </div>
-
-              {/* Quality Tips */}
-              <div className="mt-6 p-3 bg-gray-900 rounded-lg border border-gray-700">
-                <h4
-                  className="text-xs font-bold mb-2"
-                  style={{
-                    color: "#F93822",
-                    fontFamily: "Poppins, sans-serif",
-                  }}
-                >
-                  💡 OPTIMIZATION TIPS
-                </h4>
-                <ul className="text-xs text-gray-300 space-y-1">
-                  {qualityScore < 30 && (
-                    <li>• Start with a detailed vision description</li>
-                  )}
-                  {qualityScore < 50 && (
-                    <li>• Add lighting and framing keywords</li>
-                  )}
-                  {qualityScore < 80 && (
-                    <li>• Include creative direction for style</li>
-                  )}
-                  {qualityScore >= 80 && (
-                    <li>• ✨ Excellent! Your prompt is optimized</li>
-                  )}
-                </ul>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Step 4 Prompt Output - Takes 2/3 width */}
-          <div className="md:col-span-2">
-            <Card
-              className="bg-black shadow-xl h-full"
-              style={{ border: "2px solid #EE1C25" }}
-            >
-              <CardContent style={{ padding: "20px" }}>
-                <div className="flex items-center mb-4">
-                  <div
-                    className="w-6 h-6 rounded-full flex items-center justify-center mr-3"
-                    style={{ backgroundColor: "#EE1C25" }}
-                  >
-                    <span className="text-white font-bold text-sm">4</span>
-                  </div>
-                  <h3
-                    className="text-white text-lg font-bold"
-                    style={{
-                      fontFamily: "Poppins, Helvetica Neue, sans-serif",
-                      fontWeight: "600",
-                    }}
-                  >
-                    Your Optimized SORA Prompt
-                  </h3>
-                </div>
-
                 <div
-                  className="bg-gray-900 border border-gray-700 rounded-lg mb-4"
-                  style={{ padding: "16px" }}
+                  className={`text-sm font-bold px-2 py-1 rounded ${qualityScore >= 80 ? "bg-green-500" : qualityScore >= 50 ? "bg-yellow-500" : "bg-red-500"} text-white`}
                 >
-                  <textarea
-                    value={generatePrompt()}
-                    readOnly
-                    className="w-full bg-transparent text-gray-300 text-sm leading-relaxed resize-none border-0 outline-0"
-                    rows={8}
-                    placeholder="Enter your vision above and select keywords to build your optimized SORA prompt..."
-                    style={{ minHeight: "180px", fontFamily: "monospace" }}
-                  />
+                  {qualityScore}%
                 </div>
+              </div>
+            </div>
 
-                <div className="flex gap-4">
-                  <Button
-                    onClick={copyPrompt}
-                    disabled={
-                      !customInstructions && selectedKeywords.length === 0
-                    }
-                    className="text-white font-bold py-3 px-6 transition-all duration-200 hover:opacity-90"
-                    style={{
-                      backgroundColor: "#EE1C25",
-                      border: "none",
-                      fontFamily: "Poppins, Helvetica Neue, sans-serif",
-                      fontWeight: "700",
-                      textTransform: "uppercase",
-                    }}
-                    data-copy-button
-                  >
-                    <Copy className="w-4 h-4 mr-2" />
-                    COPY PROMPT
-                  </Button>
+            <div
+              className="bg-gray-900 border border-gray-700 rounded-lg mb-3"
+              style={{ padding: "12px" }}
+            >
+              <textarea
+                value={generatePrompt()}
+                readOnly
+                className="w-full bg-transparent text-gray-300 text-sm leading-relaxed resize-none border-0 outline-0"
+                rows={4}
+                placeholder="Enter your vision above and select keywords to build your optimized SORA prompt..."
+                style={{ minHeight: "80px", fontFamily: "monospace" }}
+              />
+            </div>
 
-                  <Button
-                    onClick={() => {
-                      setCustomInstructions("");
-                      setSelectedKeywords([]);
-                      setUploadedFile(null);
-                      setQualityScore(0);
-                    }}
-                    variant="outline"
-                    className="px-6 py-3 border border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white font-bold transition-all duration-200"
-                  >
-                    CLEAR ALL
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
+            <div className="flex gap-3">
+              <Button
+                onClick={copyPrompt}
+                disabled={!customInstructions && selectedKeywords.length === 0}
+                className="text-white font-bold py-2 px-4 transition-all duration-200 hover:opacity-90"
+                style={{
+                  backgroundColor: "#F93822",
+                  border: "none",
+                  fontFamily: "Poppins, sans-serif",
+                  fontWeight: "600",
+                  fontSize: "12px",
+                }}
+                data-copy-button
+              >
+                <Copy className="w-3 h-3 mr-1" />
+                COPY PROMPT
+              </Button>
+
+              <Button
+                onClick={() => {
+                  setCustomInstructions("");
+                  setSelectedKeywords([]);
+                  setUploadedFile(null);
+                  setQualityScore(0);
+                }}
+                variant="outline"
+                className="px-4 py-2 border border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white font-medium transition-all duration-200"
+                style={{ fontFamily: "Poppins, sans-serif", fontSize: "12px" }}
+              >
+                CLEAR ALL
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

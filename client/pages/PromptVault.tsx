@@ -590,25 +590,39 @@ export default function PromptVault() {
 
             {/* Modifiers Section */}
             <div
-              className="bg-black border border-gray-600 rounded-lg"
-              style={{ margin: "16px 16px 22px", padding: "12px" }}
+              className="rounded-lg mb-6"
+              style={{
+                background: "linear-gradient(135deg, #ff6b35, #ff8f00)",
+                padding: "20px",
+                boxShadow: "0 0 30px rgba(255, 107, 53, 0.4)",
+                border: "2px solid rgba(255, 107, 53, 0.6)",
+              }}
             >
               <h3
-                className="text-white text-base font-bold mb-3"
-                style={{ fontSize: "14px", marginBottom: "8px" }}
+                className="text-black text-lg font-black mb-4 text-center"
+                style={{
+                  fontWeight: 900,
+                  textShadow: "0 1px 2px rgba(0,0,0,0.1)",
+                }}
               >
-                Modifiers
+                MODIFIERS
               </h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3 justify-center">
                 {enhancedKeywordCategories.Modifiers.map((keyword) => (
                   <button
                     key={keyword}
                     onClick={() => toggleKeyword(keyword)}
-                    className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
+                    className={`px-4 py-2 rounded-full font-bold text-sm transition-all duration-300 transform hover:scale-105 ${
                       selectedKeywords.includes(keyword)
-                        ? "bg-brand-red text-white"
-                        : "bg-gray-700 text-white hover:bg-gray-600"
+                        ? "bg-black text-white shadow-lg"
+                        : "bg-black text-white opacity-80 hover:opacity-100 hover:shadow-md"
                     }`}
+                    style={{
+                      fontWeight: 700,
+                      border: selectedKeywords.includes(keyword)
+                        ? "2px solid #fff"
+                        : "1px solid rgba(255,255,255,0.3)",
+                    }}
                   >
                     {keyword}
                   </button>

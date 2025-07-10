@@ -259,7 +259,7 @@ export default function PromptVault() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {/* Step 1 - Top Left */}
           <Card className="bg-black border border-gray-900 shadow-xl">
-            <CardHeader className="pb-2">
+            <CardHeader style={{ padding: "20px 24px 16px" }}>
               <CardTitle
                 className="text-brand-red text-xs font-black tracking-wide border-b border-brand-red pb-1"
                 style={{ fontWeight: 900 }}

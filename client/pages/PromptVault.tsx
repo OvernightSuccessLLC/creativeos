@@ -373,7 +373,7 @@ export default function PromptVault() {
 
         {/* Step 3 - Full Width Keywords */}
         <Card className="bg-black border border-gray-900 shadow-xl">
-          <CardHeader className="py-3">
+          <CardHeader className="py-2">
             <CardTitle
               className="text-brand-red text-sm font-black tracking-wide border-b border-brand-red pb-2"
               style={{ fontWeight: 900 }}

@@ -618,6 +618,200 @@ export default function PromptVault() {
             </div>
           </CardContent>
         </Card>
+
+        {/* Prompt Quality Meter */}
+        <Card className="bg-black border border-gray-900 shadow-xl mb-4">
+          <CardContent style={{ padding: "20px" }}>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-white text-lg font-bold">
+                PROMPT QUALITY METER
+              </h3>
+              <div className="text-right">
+                <span className="text-3xl font-bold text-brand-red">
+                  {qualityScore}%
+                </span>
+              </div>
+            </div>
+
+            {/* Progress indicators */}
+            <div className="space-y-2">
+              <div className="flex items-center">
+                <div
+                  className={`w-4 h-4 rounded mr-3 ${customInstructions ? "bg-green-500" : "bg-gray-600"}`}
+                >
+                  {customInstructions && (
+                    <span className="text-white text-xs flex justify-center">
+                      ✓
+                    </span>
+                  )}
+                </div>
+                <span className="text-gray-300 text-sm">
+                  Start by describing your vision in Step 1
+                </span>
+              </div>
+
+              <div className="flex items-center">
+                <div
+                  className={`w-4 h-4 rounded mr-3 ${selectedKeywords.some((k) => keywordCategories.Lighting.includes(k)) ? "bg-green-500" : "bg-gray-600"}`}
+                >
+                  {selectedKeywords.some((k) =>
+                    keywordCategories.Lighting.includes(k),
+                  ) && (
+                    <span className="text-white text-xs flex justify-center">
+                      ✓
+                    </span>
+                  )}
+                </div>
+                <span className="text-gray-300 text-sm">
+                  Add lighting keywords
+                </span>
+              </div>
+
+              <div className="flex items-center">
+                <div
+                  className={`w-4 h-4 rounded mr-3 ${selectedKeywords.some((k) => keywordCategories.Framing.includes(k)) ? "bg-green-500" : "bg-gray-600"}`}
+                >
+                  {selectedKeywords.some((k) =>
+                    keywordCategories.Framing.includes(k),
+                  ) && (
+                    <span className="text-white text-xs flex justify-center">
+                      ✓
+                    </span>
+                  )}
+                </div>
+                <span className="text-gray-300 text-sm">
+                  Choose camera framing
+                </span>
+              </div>
+
+              <div className="flex items-center">
+                <div
+                  className={`w-4 h-4 rounded mr-3 ${selectedKeywords.some((k) => enhancedKeywordCategories["Creative Direction"].includes(k)) ? "bg-green-500" : "bg-gray-600"}`}
+                >
+                  {selectedKeywords.some((k) =>
+                    enhancedKeywordCategories["Creative Direction"].includes(k),
+                  ) && (
+                    <span className="text-white text-xs flex justify-center">
+                      ✓
+                    </span>
+                  )}
+                </div>
+                <span className="text-gray-300 text-sm">
+                  Select creative direction
+                </span>
+              </div>
+            </div>
+
+            {/* Quality progress bar */}
+            <div className="mt-4">
+              <div className="w-full bg-gray-700 rounded-full h-2">
+                <div
+                  className="bg-brand-red h-2 rounded-full transition-all duration-300"
+                  style={{ width: `${qualityScore}%` }}
+                ></div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Step 4: Optimized SORA Prompt */}
+        <Card className="bg-black border-2 border-brand-red shadow-xl">
+          <CardContent style={{ padding: "20px" }}>
+            <div className="flex items-center mb-4">
+              <div className="w-6 h-6 rounded-full bg-brand-red flex items-center justify-center mr-3">
+                <span className="text-black font-bold text-sm">4</span>
+              </div>
+              <h3 className="text-white text-lg font-bold">
+                Step 4: Your Optimized SORA Prompt
+              </h3>
+            </div>
+
+            <div className="bg-gray-900 border border-gray-700 rounded-lg p-4 mb-4">
+              <textarea
+                value={generatePrompt()}
+                readOnly
+                className="w-full bg-transparent text-white text-sm leading-relaxed resize-none border-0 outline-0"
+                rows={6}
+                placeholder="Enter your vision above and click keywords below to build your optimized SORA prompt..."
+                style={{ minHeight: "150px" }}
+              />
+            </div>
+
+            {/* AI Optimization Tips */}
+            {qualityScore < 70 && (
+              <div className="bg-yellow-900/30 border border-yellow-600 rounded-lg p-3 mb-4">
+                <h4 className="text-yellow-400 font-semibold text-sm mb-2">
+                  💡 AI Optimization Tips:
+                </h4>
+                <ul className="text-yellow-200 text-sm space-y-1">
+                  {!customInstructions && (
+                    <li>• Add a detailed description in Step 1</li>
+                  )}
+                  {selectedKeywords.length < 3 && (
+                    <li>• Select more keywords to enhance your prompt</li>
+                  )}
+                  {!selectedKeywords.some((k) =>
+                    keywordCategories.Lighting.includes(k),
+                  ) && (
+                    <li>• Add lighting keywords for better visual results</li>
+                  )}
+                  {!selectedKeywords.some((k) =>
+                    keywordCategories.Framing.includes(k),
+                  ) && <li>• Choose camera framing for composition</li>}
+                </ul>
+              </div>
+            )}
+
+            {qualityScore >= 70 && (
+              <div className="bg-green-900/30 border border-green-600 rounded-lg p-3 mb-4">
+                <h4 className="text-green-400 font-semibold text-sm mb-2">
+                  ✅ Great! Your prompt is optimized for SORA
+                </h4>
+                <p className="text-green-200 text-sm">
+                  This prompt should generate high-quality results in SORA AI.
+                </p>
+              </div>
+            )}
+
+            {/* Action Buttons */}
+            <div className="flex gap-4">
+              <Button
+                onClick={copyPrompt}
+                disabled={!customInstructions && selectedKeywords.length === 0}
+                className="flex-1 bg-brand-red hover:bg-red-600 text-black font-bold text-lg py-3 transition-all duration-200"
+                style={{
+                  background: "linear-gradient(45deg, #ff4e33, #ff6b35)",
+                  border: "none",
+                }}
+              >
+                <Copy className="w-5 h-5 mr-2" />
+                COPY PROMPT
+              </Button>
+
+              <Button
+                onClick={() => {
+                  setCustomInstructions("");
+                  setSelectedKeywords([]);
+                  setUploadedFile(null);
+                  setQualityScore(0);
+                }}
+                variant="outline"
+                className="px-6 py-3 border-2 border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white font-bold transition-all duration-200"
+              >
+                CLEAR ALL
+              </Button>
+            </div>
+
+            {/* Usage Instructions */}
+            <div className="mt-4 p-3 bg-gray-800 rounded-lg">
+              <p className="text-gray-400 text-sm">
+                <strong className="text-white">How to use:</strong> Copy the
+                generated prompt above and paste it directly into SORA AI for
+                optimal video generation results.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

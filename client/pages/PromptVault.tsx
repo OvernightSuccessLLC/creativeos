@@ -548,64 +548,68 @@ export default function PromptVault() {
           </Badge>
           <div className="flex flex-col">
             <CardContent>
-            <div className="w-full bg-gray-900 rounded-full h-3 mb-4 border border-gray-800">
-              <div
-                className={`h-3 rounded-full transition-all duration-300 ${
-                  qualityScore >= 80
-                    ? "bg-green-500"
-                    : qualityScore >= 50
-                      ? "bg-yellow-500"
-                      : "bg-brand-red"
-                }`}
-                style={{ width: `${qualityScore}%` }}
-              ></div>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
-              <div className="flex items-center justify-between text-white">
-                <span>Instructions</span>
-                <span
-                  className={
-                    customInstructions ? "text-green-500" : "text-gray-500"
-                  }
-                >
-                  {customInstructions ? "✓" : "○"}
-                </span>
+              <div className="w-full bg-gray-900 rounded-full h-3 mb-4 border border-gray-800">
+                <div
+                  className={`h-3 rounded-full transition-all duration-300 ${
+                    qualityScore >= 80
+                      ? "bg-green-500"
+                      : qualityScore >= 50
+                        ? "bg-yellow-500"
+                        : "bg-brand-red"
+                  }`}
+                  style={{ width: `${qualityScore}%` }}
+                ></div>
               </div>
-              <div className="flex items-center justify-between text-white">
-                <span>Reference Image</span>
-                <span
-                  className={uploadedFile ? "text-green-500" : "text-gray-500"}
-                >
-                  {uploadedFile ? "✓" : "○"}
-                </span>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                <div className="flex items-center justify-between text-white">
+                  <span>Instructions</span>
+                  <span
+                    className={
+                      customInstructions ? "text-green-500" : "text-gray-500"
+                    }
+                  >
+                    {customInstructions ? "✓" : "○"}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between text-white">
+                  <span>Reference Image</span>
+                  <span
+                    className={
+                      uploadedFile ? "text-green-500" : "text-gray-500"
+                    }
+                  >
+                    {uploadedFile ? "✓" : "○"}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between text-white">
+                  <span>Keywords Selected</span>
+                  <span className="text-brand-red font-black">
+                    {selectedKeywords.length}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between text-white">
+                  <span>Categories Covered</span>
+                  <span className="text-brand-red font-black">
+                    {
+                      new Set(
+                        selectedKeywords.map((keyword) => {
+                          const allCategories = {
+                            ...keywordCategories,
+                            ...enhancedKeywordCategories,
+                          };
+                          return Object.entries(allCategories).find(
+                            ([_, words]) => words.includes(keyword),
+                          )?.[0];
+                        }),
+                      ).size
+                    }
+                    /6
+                  </span>
+                </div>
               </div>
-              <div className="flex items-center justify-between text-white">
-                <span>Keywords Selected</span>
-                <span className="text-brand-red font-black">
-                  {selectedKeywords.length}
-                </span>
-              </div>
-              <div className="flex items-center justify-between text-white">
-                <span>Categories Covered</span>
-                <span className="text-brand-red font-black">
-                  {
-                    new Set(
-                      selectedKeywords.map((keyword) => {
-                        const allCategories = {
-                          ...keywordCategories,
-                          ...enhancedKeywordCategories,
-                        };
-                        return Object.entries(allCategories).find(
-                          ([_, words]) => words.includes(keyword),
-                        )?.[0];
-                      }),
-                    ).size
-                  }
-                  /6
-                </span>
-              </div>
-            </div>
-          </CardContent>
+            </CardContent>
+            <div></div>
+          </div>
         </Card>
       </div>
 

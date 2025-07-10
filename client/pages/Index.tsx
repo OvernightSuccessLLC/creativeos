@@ -107,8 +107,8 @@ export default function Index() {
         <div className="flex items-center justify-between max-w-7xl mx-auto">
           <div className="flex items-center space-x-4">
             <div
-              className="text-lg sm:text-xl font-black text-black"
-              style={{ fontWeight: 900 }}
+              className="text-lg sm:text-xl text-black brand-heading"
+              style={{ fontFamily: "Poppins, sans-serif", fontWeight: "900" }}
             >
               CREATIVE DIRECTOR OS
             </div>

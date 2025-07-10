@@ -295,15 +295,21 @@ export default function PromptVault() {
 
           {/* Step 2 - Top Right */}
           <Card className="bg-black border border-gray-900 shadow-xl">
-            <CardHeader style={{ padding: "12px 24px 8px" }}>
-              <CardTitle
+            <CardContent
+              className="pt-2 pb-3"
+              style={{ padding: "8px 24px 12px" }}
+            >
+              <h3
                 className="text-brand-red text-xs font-black tracking-wide border-b border-brand-red pb-1"
-                style={{ fontWeight: 900 }}
+                style={{
+                  fontWeight: 900,
+                  fontSize: "15px",
+                  margin: "6px 0",
+                  padding: "6px 0",
+                }}
               >
-                STEP 2: REFERENCE IMAGE
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="pt-2 pb-3">
+                STEP 1: CREATIVE VISION
+              </h3>
               <div
                 className="border-2 border-dashed border-gray-700 rounded-lg text-center"
                 style={{ margin: "12px 0", padding: "18px 12px" }}

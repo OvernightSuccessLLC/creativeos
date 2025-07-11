@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -12,14 +13,11 @@ import {
   Heart,
   MessageCircle,
   Share2,
-  X,
+  ArrowLeft,
 } from "lucide-react";
 
-interface UpdatesProps {
-  onClose: () => void;
-}
-
-const Updates: React.FC<UpdatesProps> = ({ onClose }) => {
+const Updates: React.FC = () => {
+  const navigate = useNavigate();
   const updates = [
     {
       id: 1,

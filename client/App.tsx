@@ -14,6 +14,8 @@ import AIToolkit from "./pages/AIToolkit";
 import Updates from "./pages/Updates";
 import PaywallLanding from "./pages/PaywallLanding";
 import NotFound from "./pages/NotFound";
+import LifestyleStudio from "./pages/LifestyleStudio";
+import GraphicStudio from "./pages/GraphicStudio";
 
 const queryClient = new QueryClient();
 

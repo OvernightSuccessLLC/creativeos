@@ -52,14 +52,11 @@ export default function ProductStudio() {
   const keywordCategories = {
     "Intended Use": [
       "E-commerce",
-      "Amazon Listing",
       "Product Hero Shot",
       "Social Media Ad",
-      "Material Showcase",
       "Floating Product",
       "Stop Motion Setup",
       "Web Banner",
-      "Product Launch",
       "Explainer",
       "Before/After",
       "Tutorial",
@@ -79,7 +76,6 @@ export default function ProductStudio() {
       "Flyer",
       "Thumbnail",
       "Branding Element",
-      "Icon Set",
       "Sticker Design",
       "Advertising",
       "Promotion",

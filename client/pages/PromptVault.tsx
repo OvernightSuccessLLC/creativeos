@@ -26,6 +26,7 @@ import {
   Zap,
   ChevronDown,
   ChevronUp,
+  ChevronRight,
 } from "lucide-react";
 
 export default function PromptVault() {
@@ -35,327 +36,153 @@ export default function PromptVault() {
   const [qualityScore, setQualityScore] = useState(0);
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [showBriefcase, setShowBriefcase] = useState(false);
-  const [collapsedSections, setCollapsedSections] = useState<
-    Record<string, boolean>
-  >({
-    lighting: false,
-    framing: true,
-    locations: true,
-    style: true,
-    creativeDirection: true,
-    modifiers: true,
-  });
+  const [activeStep, setActiveStep] = useState<number | null>(1);
 
   const keywordCategories = {
     Lighting: [
       "Golden hour",
-      "Dramatic",
-      "Neon",
-      "Studio lighting",
+      "Soft lighting",
       "Natural light",
-      "Backlit",
+      "Studio lighting",
+      "Dramatic lighting",
+      "Backlighting",
       "Rim lighting",
+      "Ambient lighting",
       "Hard shadows",
-      "Moody",
-      "Soft light",
-      "Harsh light",
-      "Volumetric",
-      "Cinematic",
-      "Ambient",
-      "Directional",
-      "Diffused",
-      "Spotlight",
+      "Diffused light",
+      "Warm lighting",
+      "Cool lighting",
+      "Neon lighting",
       "Candlelight",
-      "Firelight",
+      "Sunlight",
       "Moonlight",
-      "Sunrise",
-      "Sunset",
-      "Overcast",
-      "Bright",
-      "Low light",
-      "High contrast",
-      "Even lighting",
-      "Side lighting",
-      "Top lighting",
-      "Bottom lighting",
     ],
     Framing: [
       "Close-up",
       "Wide shot",
-      "Bird's eye",
-      "Eye level",
-      "Over shoulder",
-      "Full body",
-      "Centered",
-      "Rule of thirds",
-      "Symmetrical",
       "Medium shot",
-      "Long shot",
       "Extreme close-up",
-      "Macro",
-      "Portrait",
-      "Landscape",
-      "Panoramic",
-      "Dutch angle",
+      "Bird's eye view",
       "Low angle",
       "High angle",
-      "Worm's eye",
+      "Eye level",
+      "Dutch angle",
+      "Over shoulder",
+      "Point of view",
+      "Establishing shot",
+      "Master shot",
+      "Two shot",
       "Profile shot",
-      "Three quarter",
-      "Front facing",
-      "Back view",
-      "Side view",
-      "Dynamic angle",
-      "Static composition",
-      "Candid",
-      "Posed",
-      "Group shot",
+      "Full body",
     ],
     Locations: [
       "Studio",
+      "Outdoor",
       "Urban",
-      "Interior",
-      "Minimalist",
-      "Vintage",
-      "Rooftop",
-      "Beach",
-      "Forest",
-      "Desert",
-      "Street",
-      "Gallery",
-      "Coffee shop",
-      "Office",
-      "Home",
-      "Restaurant",
-      "Hotel",
-      "Airport",
-      "Train station",
-      "Park",
-      "Garden",
-      "Mountains",
-      "City skyline",
-      "Countryside",
-      "Warehouse",
-      "Factory",
-      "Library",
-      "Museum",
-      "Shopping mall",
-      "Gym",
-      "Spa",
+      "Nature",
+      "Indoor",
+      "Minimalist background",
+      "Textured background",
+      "Gradient background",
+      "White background",
+      "Black background",
+      "Colored background",
+      "Patterned background",
+      "Blurred background",
+      "Sharp background",
+      "Clean background",
+      "Busy background",
     ],
   };
 
   const enhancedKeywordCategories = {
-    Modifiers: [
-      "professional grade",
-      "award-winning",
-      "ultra-high resolution",
-      "commercial ready",
-      "studio quality",
-      "magazine cover quality",
-      "premium",
-      "luxury",
-      "elegant",
-      "sophisticated",
-      "polished",
-      "refined",
-      "high-end",
-      "exclusive",
-      "pristine",
-      "flawless",
-      "immaculate",
-      "impeccable",
-      "exceptional",
-      "outstanding",
-      "remarkable",
-      "stunning",
-      "breathtaking",
-      "captivating",
-      "mesmerizing",
-      "compelling",
-      "striking",
-      "powerful",
-      "dynamic",
-      "vibrant",
-    ],
     Style: [
-      "Natural",
-      "Minimal",
-      "Hyperrealistic",
-      "Replica",
-      "editorial sharp",
-      "raw & real",
-      "tech aesthetic",
-      "soft focus",
-      "90s VHS grain",
-      "Film photography",
-      "Digital",
-      "Analog",
-      "Vintage",
+      "Minimalist",
       "Modern",
+      "Vintage",
+      "Retro",
       "Contemporary",
       "Classic",
-      "Timeless",
-      "Retro",
       "Futuristic",
-      "Artistic",
-      "Documentary",
-      "Fashion",
-      "Lifestyle",
-      "Commercial",
-      "Portrait",
-      "Street style",
-      "Fine art",
+      "Industrial",
+      "Organic",
+      "Geometric",
       "Abstract",
-      "Conceptual",
-      "Minimalist",
+      "Realistic",
+      "Stylized",
+      "Artistic",
+      "Commercial",
+      "Editorial",
     ],
     "Creative Direction": [
-      "Edward Hopper moodboard",
-      "Gucci in a cyber slum",
-      "Tarantino aesthetic violence",
-      "Old Money vibes",
-      "Virgil Abloh x Eames visual tension",
-      "Wes Anderson symmetry",
-      "Blade Runner atmosphere",
-      "David Lynch surreal",
-      "Stanley Kubrick precision",
-      "Christopher Nolan time",
-      "Sofia Coppola dreamy",
-      "Terrence Malick nature",
-      "Denis Villeneuve scale",
-      "Ridley Scott epic",
-      "Paul Thomas Anderson character",
-      "Coen Brothers quirky",
-      "Jordan Peele tension",
-      "Ari Aster unsettling",
-      "Greta Gerwig warmth",
-      "Barry Jenkins intimacy",
-      "Chloé Zhao landscapes",
-      "Lulu Wang family",
-      "Bong Joon-ho class",
-      "Yorgos Lanthimos absurd",
-      "Robert Eggers period",
-      "Chazelle rhythm",
-      "Scorsese energy",
-      "Fincher dark",
-      "Spielberg wonder",
-      "Cameron technical",
+      "Lifestyle",
+      "Luxury",
+      "Casual",
+      "Professional",
+      "Playful",
+      "Serious",
+      "Dynamic",
+      "Static",
+      "Energetic",
+      "Calm",
+      "Bold",
+      "Subtle",
+      "Colorful",
+      "Monochrome",
+      "High contrast",
+      "Low contrast",
+    ],
+    Modifiers: [
+      "High resolution",
+      "4K",
+      "8K",
+      "Ultra HD",
+      "Sharp focus",
+      "Shallow depth",
+      "Deep focus",
+      "Bokeh",
+      "Crisp details",
+      "Soft focus",
+      "Motion blur",
+      "Crystal clear",
+      "Professional grade",
+      "Commercial quality",
+      "Award winning",
+      "Masterpiece",
     ],
   };
 
-  const toggleSection = (sectionKey: string) => {
-    setCollapsedSections((prev) => ({
-      ...prev,
-      [sectionKey]: !prev[sectionKey],
-    }));
-  };
-
-  const toggleKeyword = (keyword: string) => {
-    const newKeywords = selectedKeywords.includes(keyword)
-      ? selectedKeywords.filter((k) => k !== keyword)
-      : [...selectedKeywords, keyword];
-
-    setSelectedKeywords(newKeywords);
-
-    // Calculate quality score
+  const calculateQuality = () => {
     let score = 0;
-    if (customInstructions.length > 0) score += 30;
-    if (uploadedFile) score += 20;
-    score += Math.min(50, newKeywords.length * 5);
-    setQualityScore(Math.min(100, score));
+    if (customInstructions.length > 20) score += 30;
+    if (selectedKeywords.length > 0) score += selectedKeywords.length * 3;
+    if (uploadedFile) score += 25;
+    return Math.min(100, score);
   };
 
   const generatePrompt = () => {
-    if (!customInstructions && selectedKeywords.length === 0) {
-      return "";
+    let prompt = "";
+    if (customInstructions.trim()) {
+      prompt += customInstructions.trim() + ". ";
     }
-
-    // Organize keywords by category for optimal SORA structure
-    const organizedKeywords = {
-      lighting: [] as string[],
-      framing: [] as string[],
-      locations: [] as string[],
-      modifiers: [] as string[],
-      style: [] as string[],
-      creativeDirection: [] as string[],
-    };
-
-    selectedKeywords.forEach((keyword) => {
-      const allCategories = {
-        ...keywordCategories,
-        ...enhancedKeywordCategories,
-      };
-      const category = Object.entries(allCategories)
-        .find(([_, words]) => words.includes(keyword))?.[0]
-        ?.toLowerCase();
-
-      switch (category) {
-        case "lighting":
-          organizedKeywords.lighting.push(keyword.toLowerCase());
-          break;
-        case "framing":
-          organizedKeywords.framing.push(keyword.toLowerCase());
-          break;
-        case "locations":
-          organizedKeywords.locations.push(keyword.toLowerCase());
-          break;
-        case "modifiers":
-          organizedKeywords.modifiers.push(keyword.toLowerCase());
-          break;
-        case "style":
-          organizedKeywords.style.push(keyword.toLowerCase());
-          break;
-        case "creative direction":
-          organizedKeywords.creativeDirection.push(keyword.toLowerCase());
-          break;
-      }
-    });
-
-    // Build structured prompt for SORA
-    let prompt = customInstructions || "";
-
-    // Add location/setting context
-    if (organizedKeywords.locations.length > 0) {
-      prompt += `, ${organizedKeywords.locations.join(", ")}`;
+    if (selectedKeywords.length > 0) {
+      prompt += selectedKeywords.join(", ") + ". ";
     }
-
-    // Add framing/camera details
-    if (organizedKeywords.framing.length > 0) {
-      prompt += `, ${organizedKeywords.framing.join(", ")}`;
-    }
-
-    // Add lighting information
-    if (organizedKeywords.lighting.length > 0) {
-      prompt += `, ${organizedKeywords.lighting.join(", ")}`;
-    }
-
-    // Add style elements
-    if (organizedKeywords.style.length > 0) {
-      prompt += `, ${organizedKeywords.style.join(", ")}`;
-    }
-
-    // Add creative direction elements
-    if (organizedKeywords.creativeDirection.length > 0) {
-      prompt += `, ${organizedKeywords.creativeDirection.join(", ")}`;
-    }
-
-    // Add modifier elements
-    if (organizedKeywords.modifiers.length > 0) {
-      prompt += `, ${organizedKeywords.modifiers.join(", ")}`;
-    }
-
-    // Add reference image notation if file uploaded
-    if (uploadedFile) {
-      prompt += ` --reference ${uploadedFile.name}`;
-    }
-
+    prompt += "Professional photography, high quality, detailed.";
     return prompt;
+  };
+
+  const toggleKeyword = (keyword: string) => {
+    setSelectedKeywords((prev) =>
+      prev.includes(keyword)
+        ? prev.filter((k) => k !== keyword)
+        : [...prev, keyword],
+    );
   };
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-    if (file && file.type.startsWith("image/")) {
+    if (file) {
       setUploadedFile(file);
     }
   };
@@ -448,8 +275,12 @@ export default function PromptVault() {
                 1
               </div>
               <div>
-                <div className="text-white font-medium text-sm">Add Custom Instructions</div>
-                <div className="text-white/60 text-xs">Start with your specific requirements</div>
+                <div className="text-white font-medium text-sm">
+                  Add Custom Instructions
+                </div>
+                <div className="text-white/60 text-xs">
+                  Start with your specific requirements
+                </div>
               </div>
             </div>
             <div className="flex items-center space-x-3">
@@ -457,8 +288,12 @@ export default function PromptVault() {
                 2
               </div>
               <div>
-                <div className="text-white font-medium text-sm">Select Categories</div>
-                <div className="text-white/60 text-xs">Choose options from each category</div>
+                <div className="text-white font-medium text-sm">
+                  Select Categories
+                </div>
+                <div className="text-white/60 text-xs">
+                  Choose options from each category
+                </div>
               </div>
             </div>
             <div className="flex items-center space-x-3">
@@ -466,8 +301,12 @@ export default function PromptVault() {
                 3
               </div>
               <div>
-                <div className="text-white font-medium text-sm">Upload Reference Files</div>
-                <div className="text-white/60 text-xs">Add images (optional)</div>
+                <div className="text-white font-medium text-sm">
+                  Upload Reference Files
+                </div>
+                <div className="text-white/60 text-xs">
+                  Add images (optional)
+                </div>
               </div>
             </div>
             <div className="flex items-center space-x-3">
@@ -475,8 +314,12 @@ export default function PromptVault() {
                 4
               </div>
               <div>
-                <div className="text-white font-medium text-sm">Review Quality</div>
-                <div className="text-white/60 text-xs">Check AI analysis and suggestions</div>
+                <div className="text-white font-medium text-sm">
+                  Review Quality
+                </div>
+                <div className="text-white/60 text-xs">
+                  Check AI analysis and suggestions
+                </div>
               </div>
             </div>
           </div>
@@ -489,546 +332,299 @@ export default function PromptVault() {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
         {/* Left Column - Steps */}
-        <div className="lg:col-span-2 space-y-4">
+        <div className="lg:col-span-2 space-y-3">
           {/* Step 1: Custom Instructions */}
-          <div className="bg-black rounded-lg">
-            <div className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-900 transition-colors">
+          <div className="bg-black rounded-lg border border-white/10">
+            <div
+              className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-900 transition-colors"
+              onClick={() => setActiveStep(activeStep === 1 ? null : 1)}
+            >
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-sm font-bold">
                   1
                 </div>
-                <span className="text-white font-medium">Custom Instructions</span>
+                <span className="text-white font-medium">
+                  Custom Instructions
+                </span>
               </div>
-              <ChevronDown className="w-5 h-5 text-white" />
-            </div>
-            <div className="px-4 pb-4">
-              <Textarea
-                placeholder="Describe exactly what you want to create..."
-                value={customInstructions}
-                onChange={(e) => {
-                  setCustomInstructions(e.target.value);
-                  let score = 0;
-
-              <Textarea
-                id="instructions"
-                placeholder="Describe exactly what you want to create..."
-                value={customInstructions}
-                onChange={(e) => {
-                  setCustomInstructions(e.target.value);
-                  // Recalculate quality score
-                  let score = 0;
-                  if (e.target.value.length > 0) score += 30;
-                  if (uploadedFile) score += 20;
-                  score += Math.min(50, selectedKeywords.length * 5);
-                  setQualityScore(Math.min(100, score));
-                }}
-                className="bg-gray-900 border-0 text-white resize-none rounded-lg"
-                style={{
-                  minHeight: "160px",
-                  padding: "20px",
-                  fontSize: "16px",
-                  fontFamily: "Poppins, sans-serif",
-                }}
-                rows={7}
+              <ChevronRight
+                className={`w-5 h-5 text-white transition-transform ${activeStep === 1 ? "rotate-90" : ""}`}
               />
-            </CardContent>
-          </Card>
-
-          {/* Upload Module - Right */}
-          <Card className="bg-black border-0 shadow-xl rounded-xl">
-            <CardContent style={{ padding: "24px" }}>
-              <div className="flex items-center mb-4">
-                <div
-                  className="w-8 h-8 rounded-full flex items-center justify-center mr-3"
-                  style={{ backgroundColor: "#F93822" }}
-                >
-                  <span className="text-white font-black text-sm">2</span>
-                </div>
-                <h3
-                  className="text-white text-xl font-black"
-                  style={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: "900",
-                    textTransform: "uppercase",
-                    letterSpacing: "1px",
-                  }}
-                >
-                  upload reference
-                </h3>
+            </div>
+            {activeStep === 1 && (
+              <div className="px-4 pb-4">
+                <Textarea
+                  placeholder="Describe exactly what you want to create..."
+                  value={customInstructions}
+                  onChange={(e) => setCustomInstructions(e.target.value)}
+                  className="w-full bg-gray-900 text-white border-gray-700 rounded-lg resize-none focus:ring-2 focus:ring-brand-red"
+                  rows={4}
+                />
               </div>
+            )}
+          </div>
 
-              <div
-                className="border-2 border-dashed rounded-xl text-center cursor-pointer transition-colors bg-gray-900"
-                style={{
-                  padding: "32px 16px",
-                  minHeight: "160px",
-                  borderColor: "#555",
-                }}
-                onClick={() => document.getElementById("file-upload")?.click()}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.borderColor = "#F93822")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.borderColor = "#555")
-                }
-              >
-                {uploadedFile ? (
-                  <div>
-                    <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-white text-lg font-bold">✓</span>
-                    </div>
-                    <p className="text-green-400 font-bold mb-2 text-sm">
-                      {uploadedFile.name}
-                    </p>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setUploadedFile(null);
-                      }}
-                      className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-bold text-sm"
+          {/* Step 2: Product Style */}
+          <div className="bg-black rounded-lg border border-white/10">
+            <div
+              className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-900 transition-colors"
+              onClick={() => setActiveStep(activeStep === 2 ? null : 2)}
+            >
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-sm font-bold">
+                  2
+                </div>
+                <span className="text-white font-medium">Product Style</span>
+              </div>
+              <ChevronRight
+                className={`w-5 h-5 text-white transition-transform ${activeStep === 2 ? "rotate-90" : ""}`}
+              />
+            </div>
+            {activeStep === 2 && (
+              <div className="px-4 pb-4">
+                <div className="flex flex-wrap gap-2">
+                  {enhancedKeywordCategories.Style.map((keyword) => (
+                    <button
+                      key={keyword}
+                      onClick={() => toggleKeyword(keyword)}
+                      className={`text-sm px-4 py-2 rounded-full font-medium transition-all duration-200 ${
+                        selectedKeywords.includes(keyword)
+                          ? "bg-brand-red text-black"
+                          : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
+                      } hover:scale-105`}
                     >
-                      Remove
-                    </Button>
-                  </div>
-                ) : (
-                  <div>
-                    <div className="w-12 h-12 border-2 border-gray-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <Upload className="w-6 h-6 text-gray-400" />
-                    </div>
-                    <p className="text-white font-bold mb-1 text-sm">
-                      Click to upload reference image
-                    </p>
-                    <p className="text-gray-400 text-sm font-medium">
-                      JPG, PNG up to 10MB
-                    </p>
-                  </div>
-                )}
-                <input
+                      {keyword.toLowerCase()}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Step 3: Background Setting */}
+          <div className="bg-black rounded-lg border border-white/10">
+            <div
+              className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-900 transition-colors"
+              onClick={() => setActiveStep(activeStep === 3 ? null : 3)}
+            >
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-sm font-bold">
+                  3
+                </div>
+                <span className="text-white font-medium">
+                  Background Setting
+                </span>
+              </div>
+              <ChevronRight
+                className={`w-5 h-5 text-white transition-transform ${activeStep === 3 ? "rotate-90" : ""}`}
+              />
+            </div>
+            {activeStep === 3 && (
+              <div className="px-4 pb-4">
+                <div className="flex flex-wrap gap-2">
+                  {keywordCategories.Locations.map((keyword) => (
+                    <button
+                      key={keyword}
+                      onClick={() => toggleKeyword(keyword)}
+                      className={`text-sm px-4 py-2 rounded-full font-medium transition-all duration-200 ${
+                        selectedKeywords.includes(keyword)
+                          ? "bg-brand-red text-black"
+                          : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
+                      } hover:scale-105`}
+                    >
+                      {keyword.toLowerCase()}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Step 4: Lighting Setup */}
+          <div className="bg-black rounded-lg border border-white/10">
+            <div
+              className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-900 transition-colors"
+              onClick={() => setActiveStep(activeStep === 4 ? null : 4)}
+            >
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-sm font-bold">
+                  4
+                </div>
+                <span className="text-white font-medium">Lighting Setup</span>
+              </div>
+              <ChevronRight
+                className={`w-5 h-5 text-white transition-transform ${activeStep === 4 ? "rotate-90" : ""}`}
+              />
+            </div>
+            {activeStep === 4 && (
+              <div className="px-4 pb-4">
+                <div className="flex flex-wrap gap-2">
+                  {keywordCategories.Lighting.map((keyword) => (
+                    <button
+                      key={keyword}
+                      onClick={() => toggleKeyword(keyword)}
+                      className={`text-sm px-4 py-2 rounded-full font-medium transition-all duration-200 ${
+                        selectedKeywords.includes(keyword)
+                          ? "bg-brand-red text-black"
+                          : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
+                      } hover:scale-105`}
+                    >
+                      {keyword.toLowerCase()}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Step 5: Camera Angle */}
+          <div className="bg-black rounded-lg border border-white/10">
+            <div
+              className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-900 transition-colors"
+              onClick={() => setActiveStep(activeStep === 5 ? null : 5)}
+            >
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-sm font-bold">
+                  5
+                </div>
+                <span className="text-white font-medium">Camera Angle</span>
+              </div>
+              <ChevronRight
+                className={`w-5 h-5 text-white transition-transform ${activeStep === 5 ? "rotate-90" : ""}`}
+              />
+            </div>
+            {activeStep === 5 && (
+              <div className="px-4 pb-4">
+                <div className="flex flex-wrap gap-2">
+                  {keywordCategories.Framing.map((keyword) => (
+                    <button
+                      key={keyword}
+                      onClick={() => toggleKeyword(keyword)}
+                      className={`text-sm px-4 py-2 rounded-full font-medium transition-all duration-200 ${
+                        selectedKeywords.includes(keyword)
+                          ? "bg-brand-red text-black"
+                          : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
+                      } hover:scale-105`}
+                    >
+                      {keyword.toLowerCase()}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Step 6: Visual Elements */}
+          <div className="bg-black rounded-lg border border-white/10">
+            <div
+              className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-900 transition-colors"
+              onClick={() => setActiveStep(activeStep === 6 ? null : 6)}
+            >
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-sm font-bold">
+                  6
+                </div>
+                <span className="text-white font-medium">Visual Elements</span>
+              </div>
+              <ChevronRight
+                className={`w-5 h-5 text-white transition-transform ${activeStep === 6 ? "rotate-90" : ""}`}
+              />
+            </div>
+            {activeStep === 6 && (
+              <div className="px-4 pb-4">
+                <div className="flex flex-wrap gap-2">
+                  {enhancedKeywordCategories.Modifiers.map((keyword) => (
+                    <button
+                      key={keyword}
+                      onClick={() => toggleKeyword(keyword)}
+                      className={`text-sm px-4 py-2 rounded-full font-medium transition-all duration-200 ${
+                        selectedKeywords.includes(keyword)
+                          ? "bg-brand-red text-black"
+                          : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
+                      } hover:scale-105`}
+                    >
+                      {keyword.toLowerCase()}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Right Column - AI Prompt Formula */}
+        <div className="lg:col-span-1">
+          <div className="bg-gray-900 rounded-lg p-6 sticky top-6 border border-white/10">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-brand-red text-sm font-bold tracking-wide">
+                AI PROMPT FORMULA
+              </h3>
+              <Badge className="bg-brand-red text-black text-xs font-bold">
+                {calculateQuality()}% QUALITY
+              </Badge>
+            </div>
+
+            <div className="mb-6">
+              <div className="bg-black rounded p-4 min-h-[120px] border border-white/10">
+                <p className="text-white/70 text-sm">
+                  {generatePrompt() ||
+                    "Add custom instructions and select from categorized keywords to build your SORA AI formula."}
+                </p>
+              </div>
+            </div>
+
+            <div className="mb-6">
+              <h4 className="text-brand-red text-xs font-bold mb-3">
+                AI RECOMMENDATIONS
+              </h4>
+              <ul className="space-y-2 text-white/60 text-sm">
+                <li>• Add more selections for better SORA output</li>
+                <li>• Custom instructions help SORA understand your vision</li>
+                <li>• Logo files help SORA incorporate brand elements</li>
+              </ul>
+            </div>
+
+            <div className="space-y-3">
+              <Button
+                onClick={copyPrompt}
+                data-copy-button
+                className="w-full bg-brand-red hover:bg-brand-red/90 text-black font-bold"
+              >
+                <Copy className="w-4 h-4 mr-2" />
+                COPY
+              </Button>
+
+              <Button
+                variant="outline"
+                className="w-full border-white/20 text-white hover:bg-white/10"
+              >
+                <Star className="w-4 h-4 mr-2" />
+                FAVORITE
+              </Button>
+            </div>
+
+            {/* Upload Section */}
+            <div className="mt-6 pt-6 border-t border-white/10">
+              <h4 className="text-white font-medium mb-3 text-sm">
+                Upload Reference
+              </h4>
+              <div className="border-2 border-dashed border-white/20 rounded-lg p-4 text-center">
+                <Upload className="w-6 h-6 text-white/40 mx-auto mb-2" />
+                <Input
                   type="file"
                   accept="image/*"
                   onChange={handleFileUpload}
-                  className="hidden"
-                  id="file-upload"
+                  className="bg-transparent border-0 text-white text-xs"
                 />
+                {uploadedFile && (
+                  <p className="text-brand-red mt-2 text-xs">
+                    ✓ {uploadedFile.name} uploaded
+                  </p>
+                )}
               </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Step 3 - Full Width Keywords */}
-        <Card
-          className="bg-black border-0 shadow-xl rounded-xl"
-          style={{ padding: "24px" }}
-        >
-          <div className="flex items-center mb-6">
-            <div
-              className="w-8 h-8 rounded-full flex items-center justify-center mr-3"
-              style={{ backgroundColor: "#F93822" }}
-            >
-              <span className="text-white font-black text-sm">2</span>
             </div>
-            <h3
-              className="text-white text-2xl font-black"
-              style={{
-                fontFamily: "Poppins, sans-serif",
-                fontWeight: "900",
-                textTransform: "uppercase",
-                letterSpacing: "2px",
-              }}
-            >
-              select keywords
-            </h3>
           </div>
-          <CardContent style={{ padding: "0" }}>
-            {/* Lighting Section */}
-            <div className="mb-4">
-              <button
-                className="w-full bg-black text-white rounded-lg p-4 flex items-center justify-between cursor-pointer transition-all duration-300 hover:bg-gray-900 border-0"
-                onClick={() => toggleSection("lighting")}
-                style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: 700,
-                  fontSize: "16px",
-                }}
-              >
-                <span>lighting</span>
-                {collapsedSections.lighting ? (
-                  <ChevronDown className="w-5 h-5 text-white" />
-                ) : (
-                  <ChevronUp className="w-5 h-5 text-white" />
-                )}
-              </button>
-              {!collapsedSections.lighting && (
-                <div className="mt-3 p-4 bg-gray-900 rounded-lg">
-                  <div className="flex flex-wrap gap-2">
-                    {keywordCategories.Lighting.map((keyword) => (
-                      <button
-                        key={keyword}
-                        onClick={() => toggleKeyword(keyword)}
-                        className={`text-sm px-4 py-2 rounded-full font-medium transition-all duration-200 ${
-                          selectedKeywords.includes(keyword)
-                            ? "bg-brand-red text-black"
-                            : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
-                        } hover:scale-105`}
-                        style={{
-                          fontFamily: "Poppins, sans-serif",
-                          fontWeight: 500,
-                        }}
-                      >
-                        {keyword.toLowerCase()}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Framing Section */}
-            <div className="mb-4">
-              <button
-                className="w-full bg-black text-white rounded-lg p-4 flex items-center justify-between cursor-pointer transition-all duration-300 hover:bg-gray-900 border-0"
-                onClick={() => toggleSection("framing")}
-                style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: 700,
-                  fontSize: "16px",
-                }}
-              >
-                <span>framing</span>
-                {collapsedSections.framing ? (
-                  <ChevronDown className="w-5 h-5 text-white" />
-                ) : (
-                  <ChevronUp className="w-5 h-5 text-white" />
-                )}
-              </button>
-              {!collapsedSections.framing && (
-                <div className="mt-3 p-4 bg-gray-900 rounded-lg">
-                  <div className="flex flex-wrap gap-2">
-                    {keywordCategories.Framing.map((keyword) => (
-                      <button
-                        key={keyword}
-                        onClick={() => toggleKeyword(keyword)}
-                        className={`text-sm px-4 py-2 rounded-full font-medium transition-all duration-200 ${
-                          selectedKeywords.includes(keyword)
-                            ? "bg-brand-red text-black"
-                            : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
-                        } hover:scale-105`}
-                        style={{
-                          fontFamily: "Poppins, sans-serif",
-                          fontWeight: 500,
-                        }}
-                      >
-                        {keyword.toLowerCase()}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Locations Section */}
-            <div className="mb-4">
-              <button
-                className="w-full bg-black text-white rounded-lg p-4 flex items-center justify-between cursor-pointer transition-all duration-300 hover:bg-gray-900 border-0"
-                onClick={() => toggleSection("locations")}
-                style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: 700,
-                  fontSize: "16px",
-                }}
-              >
-                <span>locations</span>
-                {collapsedSections.locations ? (
-                  <ChevronDown className="w-5 h-5 text-white" />
-                ) : (
-                  <ChevronUp className="w-5 h-5 text-white" />
-                )}
-              </button>
-              {!collapsedSections.locations && (
-                <div className="mt-3 p-4 bg-gray-900 rounded-lg">
-                  <div className="flex flex-wrap gap-2">
-                    {keywordCategories.Locations.map((keyword) => (
-                      <button
-                        key={keyword}
-                        onClick={() => toggleKeyword(keyword)}
-                        className={`text-sm px-4 py-2 rounded-full font-medium transition-all duration-200 ${
-                          selectedKeywords.includes(keyword)
-                            ? "bg-brand-red text-black"
-                            : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
-                        } hover:scale-105`}
-                        style={{
-                          fontFamily: "Poppins, sans-serif",
-                          fontWeight: 500,
-                        }}
-                      >
-                        {keyword.toLowerCase()}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Style Section */}
-            <div className="mb-4">
-              <button
-                className="w-full bg-black text-white rounded-lg p-4 flex items-center justify-between cursor-pointer transition-all duration-300 hover:bg-gray-900 border-0"
-                onClick={() => toggleSection("style")}
-                style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: 700,
-                  fontSize: "16px",
-                }}
-              >
-                <span>style</span>
-                {collapsedSections.style ? (
-                  <ChevronDown className="w-5 h-5 text-white" />
-                ) : (
-                  <ChevronUp className="w-5 h-5 text-white" />
-                )}
-              </button>
-              {!collapsedSections.style && (
-                <div className="mt-3 p-4 bg-gray-900 rounded-lg">
-                  <div className="flex flex-wrap gap-2">
-                    {enhancedKeywordCategories.Style.map((keyword) => (
-                      <button
-                        key={keyword}
-                        onClick={() => toggleKeyword(keyword)}
-                        className={`text-sm px-4 py-2 rounded-full font-medium transition-all duration-200 ${
-                          selectedKeywords.includes(keyword)
-                            ? "bg-brand-red text-black"
-                            : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
-                        } hover:scale-105`}
-                        style={{
-                          fontFamily: "Poppins, sans-serif",
-                          fontWeight: 500,
-                        }}
-                      >
-                        {keyword.toLowerCase()}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Creative Direction Section */}
-            <div className="mb-4">
-              <button
-                className="w-full bg-black text-white rounded-lg p-4 flex items-center justify-between cursor-pointer transition-all duration-300 hover:bg-gray-900 border-0"
-                onClick={() => toggleSection("creativeDirection")}
-                style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: 700,
-                  fontSize: "16px",
-                }}
-              >
-                <span>creative direction</span>
-                {collapsedSections.creativeDirection ? (
-                  <ChevronDown className="w-5 h-5 text-white" />
-                ) : (
-                  <ChevronUp className="w-5 h-5 text-white" />
-                )}
-              </button>
-              {!collapsedSections.creativeDirection && (
-                <div className="mt-3 p-4 bg-gray-900 rounded-lg">
-                  <div className="flex flex-wrap gap-2">
-                    {enhancedKeywordCategories["Creative Direction"].map(
-                      (keyword) => (
-                        <button
-                          key={keyword}
-                          onClick={() => toggleKeyword(keyword)}
-                          className={`text-sm px-4 py-2 rounded-full font-medium transition-all duration-200 ${
-                            selectedKeywords.includes(keyword)
-                              ? "bg-brand-red text-black"
-                              : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
-                          } hover:scale-105`}
-                          style={{
-                            fontFamily: "Poppins, sans-serif",
-                            fontWeight: 500,
-                          }}
-                        >
-                          {keyword.toLowerCase()}
-                        </button>
-                      ),
-                    )}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Modifiers Section */}
-            <div className="mb-4">
-              <button
-                className="w-full bg-black text-white rounded-lg p-4 flex items-center justify-between cursor-pointer transition-all duration-300 hover:bg-gray-900 border-0"
-                onClick={() => toggleSection("modifiers")}
-                style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: 700,
-                  fontSize: "16px",
-                }}
-              >
-                <span>modifiers</span>
-                {collapsedSections.modifiers ? (
-                  <ChevronDown className="w-5 h-5 text-white" />
-                ) : (
-                  <ChevronUp className="w-5 h-5 text-white" />
-                )}
-              </button>
-              {!collapsedSections.modifiers && (
-                <div className="mt-3 p-4 bg-gray-900 rounded-lg">
-                  <div className="flex flex-wrap gap-2">
-                    {enhancedKeywordCategories.Modifiers.map((keyword) => (
-                      <button
-                        key={keyword}
-                        onClick={() => toggleKeyword(keyword)}
-                        className={`text-sm px-4 py-2 rounded-full font-medium transition-all duration-200 ${
-                          selectedKeywords.includes(keyword)
-                            ? "bg-brand-red text-black"
-                            : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
-                        } hover:scale-105`}
-                        style={{
-                          fontFamily: "Poppins, sans-serif",
-                          fontWeight: 500,
-                        }}
-                      >
-                        {keyword.toLowerCase()}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Step 3: Optimized Prompt Section - Moved Below Keywords */}
-        <Card className="bg-black border-0 shadow-xl rounded-xl">
-          <CardContent style={{ padding: "24px" }}>
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center">
-                <div
-                  className="w-8 h-8 rounded-full flex items-center justify-center mr-3"
-                  style={{ backgroundColor: "#F93822" }}
-                >
-                  <span className="text-white font-black text-sm">3</span>
-                </div>
-                <h3
-                  className="text-white text-2xl font-black"
-                  style={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: "900",
-                    textTransform: "uppercase",
-                    letterSpacing: "2px",
-                  }}
-                >
-                  your optimized prompt
-                </h3>
-              </div>
-
-              {/* Quality Score */}
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2 text-sm">
-                  <span
-                    className={
-                      customInstructions ? "text-green-400" : "text-gray-400"
-                    }
-                  >
-                    {customInstructions ? "✓" : "○"}
-                  </span>
-                  <span className="text-white font-medium">Vision</span>
-
-                  <span
-                    className={
-                      selectedKeywords.length > 0
-                        ? "text-green-400"
-                        : "text-gray-400"
-                    }
-                  >
-                    {selectedKeywords.length > 0 ? "✓" : "○"}
-                  </span>
-                  <span className="text-white font-medium">Keywords</span>
-
-                  <span
-                    className={
-                      uploadedFile ? "text-green-400" : "text-gray-400"
-                    }
-                  >
-                    {uploadedFile ? "✓" : "○"}
-                  </span>
-                  <span className="text-white font-medium">Reference</span>
-                </div>
-                <div
-                  className={`text-lg font-black px-4 py-2 rounded-lg ${qualityScore >= 80 ? "bg-green-600" : qualityScore >= 50 ? "bg-yellow-600" : "bg-red-600"} text-white`}
-                  style={{ fontFamily: "Poppins, sans-serif" }}
-                >
-                  {qualityScore}%
-                </div>
-              </div>
-            </div>
-
-            <div
-              className="bg-gray-900 rounded-xl mb-4"
-              style={{ padding: "20px" }}
-            >
-              <textarea
-                value={generatePrompt()}
-                readOnly
-                className="w-full bg-transparent text-white text-base leading-relaxed resize-none border-0 outline-0"
-                rows={5}
-                placeholder="Enter your vision above and select keywords to build your optimized prompt..."
-                style={{
-                  minHeight: "120px",
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: "500",
-                }}
-              />
-            </div>
-
-            <div className="flex gap-4">
-              <Button
-                onClick={copyPrompt}
-                disabled={!customInstructions && selectedKeywords.length === 0}
-                className="bg-orange-500 hover:bg-orange-600 text-white font-black py-3 px-6 rounded-lg transition-all duration-200 border-0"
-                style={{
-                  backgroundColor: "#F93822",
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: "900",
-                  fontSize: "14px",
-                  textTransform: "uppercase",
-                  letterSpacing: "1px",
-                }}
-                data-copy-button
-              >
-                <Copy className="w-4 h-4 mr-2" />
-                copy prompt
-              </Button>
-
-              <Button
-                onClick={() => {
-                  setCustomInstructions("");
-                  setSelectedKeywords([]);
-                  setUploadedFile(null);
-                  setQualityScore(0);
-                }}
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-black font-black py-3 px-6 rounded-lg transition-all duration-200"
-                style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontSize: "14px",
-                  fontWeight: "900",
-                  textTransform: "uppercase",
-                  letterSpacing: "1px",
-                  backgroundColor: "transparent",
-                }}
-              >
-                clear all
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+        </div>
       </div>
 
       {/* Briefcase Modal */}

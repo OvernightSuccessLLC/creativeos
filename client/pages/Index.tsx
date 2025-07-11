@@ -625,7 +625,9 @@ export default function Index() {
               <div>
                 <Card
                   className="bg-black border border-white/20 hover:border-brand-red transition-colors cursor-pointer"
-                  onClick={() => setActiveStep(activeStep === 1 ? null : 1)}
+                  onClick={() =>
+                    setActiveStep(activeStep === 1 ? null : 1)
+                  }
                 >
                   <CardContent className="p-3 sm:p-4">
                     <div className="flex items-center justify-between">
@@ -666,9 +668,7 @@ export default function Index() {
                 <CardHeader className="p-5 sm:p-6">
                   <div className="flex items-center">
                     <Upload className="w-4 h-4 mr-2 text-brand-red" />
-                    <span className="font-medium text-white">
-                      Upload Reference
-                    </span>
+                    <span className="font-medium text-white">Upload Reference</span>
                   </div>
                   <p className="text-white/60 text-xs">Add visual references</p>
                   <CardTitle className="flex items-center text-brand-red text-sm font-bold tracking-wide -mt-2">
@@ -883,7 +883,9 @@ export default function Index() {
             </Card>
 
             {/* Bottom Row - Mood and Other Steps */}
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-6">
+            <div className="flex flex-col gap-5">
+              <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+                <div className="flex flex-col line-height-normal w-full ml-0 max-md:w-full max-md:ml-0">
               {/* Left Column - Step Cards (Steps 2-5) */}
               <div className="space-y-2 sm:space-y-3">
                 {stepCards.slice(1, 5).map((step) => (

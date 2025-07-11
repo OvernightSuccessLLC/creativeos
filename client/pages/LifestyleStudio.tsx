@@ -668,7 +668,6 @@ export default function LifestyleStudio() {
 
                     {step.id === 9 && (
                       <div>
-                        <Label className="text-white">Finishing</Label>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
                           {keywordCategories["Finishing"].map((keyword) => (
                             <button

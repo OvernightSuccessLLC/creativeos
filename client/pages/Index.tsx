@@ -529,7 +529,7 @@ export default function Index() {
       </div>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
+      <main className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 px-6 pt-6 pb-0">
         {/* Left Column - Steps */}
         <div className="lg:col-span-2 space-y-3">
           {/* Step 1: Custom Instructions */}

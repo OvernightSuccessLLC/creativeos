@@ -769,7 +769,7 @@ export default function GraphicStudio() {
                           </div>
                         </div>
                         <div>
-                          <Label htmlFor="file-upload">
+                          <Label htmlFor="file-upload" className="text-white">
                             Upload Reference Image
                           </Label>
                           <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center mt-2">

@@ -285,6 +285,36 @@ export default function LifestyleStudio() {
       "Cinematic",
       "Comforting",
     ],
+    Finishing: [
+      "Clean",
+      "Cinematic",
+      "Saturated",
+      "Minimal",
+      "Hyperdetailed",
+      "High contrast",
+      "Desaturated",
+      "Overexposed",
+      "Stylized",
+      "Replica",
+      "Editorial",
+      "Sharp",
+      "Raw & real",
+      "Tech aesthetic",
+      "90s ad",
+      "Magazine cover",
+      "80s VHS",
+      "Grain",
+      "Street editorial",
+      "Lifestyle",
+      "Polished",
+      "Product-centric",
+      "Minimalist",
+      "Futuristic",
+      "Instagram-core",
+      "Disposable film",
+      "Lo-fi",
+      "Brand",
+    ],
   };
 
   // Calculate quality score based on inputs
@@ -427,6 +457,12 @@ export default function LifestyleStudio() {
       id: 7,
       title: "Visual Elements",
       description: "Fine-tune overall aesthetic and mood",
+      icon: <Camera className="w-5 h-5" />,
+    },
+    {
+      id: 8,
+      title: "Finishing",
+      description: "Final post-processing and aesthetic treatment",
       icon: <Camera className="w-5 h-5" />,
     },
   ];
@@ -657,25 +693,41 @@ export default function LifestyleStudio() {
                     )}
 
                     {step.id === 7 && (
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                        {keywordCategories["Visual Elements"].map((keyword) => (
+                          <button
+                            key={keyword}
+                            onClick={() => toggleKeyword(keyword)}
+                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                              selectedKeywords.includes(keyword)
+                                ? "bg-brand-red text-black"
+                                : "bg-white text-black border border-gray-300 hover:bg-gray-100"
+                            }`}
+                          >
+                            {keyword}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+
+                    {step.id === 8 && (
                       <div className="space-y-6">
                         <div>
-                          <Label className="text-white">Visual Elements</Label>
+                          <Label className="text-white">Finishing</Label>
                           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
-                            {keywordCategories["Visual Elements"].map(
-                              (keyword) => (
-                                <button
-                                  key={keyword}
-                                  onClick={() => toggleKeyword(keyword)}
-                                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
-                                    selectedKeywords.includes(keyword)
-                                      ? "bg-brand-red text-black"
-                                      : "bg-white text-black border border-gray-300 hover:bg-gray-100"
-                                  }`}
-                                >
-                                  {keyword}
-                                </button>
-                              ),
-                            )}
+                            {keywordCategories["Finishing"].map((keyword) => (
+                              <button
+                                key={keyword}
+                                onClick={() => toggleKeyword(keyword)}
+                                className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                                  selectedKeywords.includes(keyword)
+                                    ? "bg-brand-red text-black"
+                                    : "bg-white text-black border border-gray-300 hover:bg-gray-100"
+                                }`}
+                              >
+                                {keyword}
+                              </button>
+                            ))}
                           </div>
                         </div>
                         <div>

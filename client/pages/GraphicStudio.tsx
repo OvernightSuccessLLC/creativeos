@@ -570,7 +570,9 @@ export default function GraphicStudio() {
                           </select>
                         </div>
                         <div>
-                          <Label htmlFor="color-scheme">Color Scheme</Label>
+                          <Label htmlFor="color-scheme" className="text-white">
+                            Color Scheme
+                          </Label>
                           <select
                             id="color-scheme"
                             value={colorScheme}

@@ -410,139 +410,138 @@ export default function PromptVault() {
         className="max-w-7xl mx-auto space-y-6"
         style={{ padding: "0 24px 40px" }}
       >
-        {/* Top Row: Custom Instructions with Upload on the Right */}
-        <Card className="bg-black border-0 shadow-xl rounded-xl">
-          <CardContent style={{ padding: "24px" }}>
-            <div className="flex items-center mb-4">
-              <div
-                className="w-8 h-8 rounded-full flex items-center justify-center mr-3"
-                style={{ backgroundColor: "#F93822" }}
-              >
-                <span className="text-white font-black text-sm">1</span>
-              </div>
-              <h3
-                className="text-white text-2xl font-black"
-                style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: "900",
-                  textTransform: "uppercase",
-                  letterSpacing: "2px",
-                }}
-              >
-                describe your vision
-              </h3>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {/* Custom Instructions - Left Side (2/3 width) */}
-              <div className="lg:col-span-2">
-                <Textarea
-                  id="instructions"
-                  placeholder="Describe exactly what you want to create..."
-                  value={customInstructions}
-                  onChange={(e) => {
-                    setCustomInstructions(e.target.value);
-                    // Recalculate quality score
-                    let score = 0;
-                    if (e.target.value.length > 0) score += 30;
-                    if (uploadedFile) score += 20;
-                    score += Math.min(50, selectedKeywords.length * 5);
-                    setQualityScore(Math.min(100, score));
-                  }}
-                  className="bg-gray-900 border-0 text-white resize-none rounded-lg"
+        {/* Top Row: Custom Instructions (Left) and Upload (Right) as separate modules */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Custom Instructions Module - Left */}
+          <Card className="bg-black border-0 shadow-xl rounded-xl">
+            <CardContent style={{ padding: "24px" }}>
+              <div className="flex items-center mb-4">
+                <div
+                  className="w-8 h-8 rounded-full flex items-center justify-center mr-3"
+                  style={{ backgroundColor: "#F93822" }}
+                >
+                  <span className="text-white font-black text-sm">1</span>
+                </div>
+                <h3
+                  className="text-white text-xl font-black"
                   style={{
-                    minHeight: "140px",
-                    padding: "20px",
-                    fontSize: "16px",
                     fontFamily: "Poppins, sans-serif",
+                    fontWeight: "900",
+                    textTransform: "uppercase",
+                    letterSpacing: "1px",
                   }}
-                  rows={6}
+                >
+                  describe your vision
+                </h3>
+              </div>
+
+              <Textarea
+                id="instructions"
+                placeholder="Describe exactly what you want to create..."
+                value={customInstructions}
+                onChange={(e) => {
+                  setCustomInstructions(e.target.value);
+                  // Recalculate quality score
+                  let score = 0;
+                  if (e.target.value.length > 0) score += 30;
+                  if (uploadedFile) score += 20;
+                  score += Math.min(50, selectedKeywords.length * 5);
+                  setQualityScore(Math.min(100, score));
+                }}
+                className="bg-gray-900 border-0 text-white resize-none rounded-lg"
+                style={{
+                  minHeight: "160px",
+                  padding: "20px",
+                  fontSize: "16px",
+                  fontFamily: "Poppins, sans-serif",
+                }}
+                rows={7}
+              />
+            </CardContent>
+          </Card>
+
+          {/* Upload Module - Right */}
+          <Card className="bg-black border-0 shadow-xl rounded-xl">
+            <CardContent style={{ padding: "24px" }}>
+              <div className="flex items-center mb-4">
+                <div
+                  className="w-8 h-8 rounded-full flex items-center justify-center mr-3"
+                  style={{ backgroundColor: "#F93822" }}
+                >
+                  <span className="text-white font-black text-sm">2</span>
+                </div>
+                <h3
+                  className="text-white text-xl font-black"
+                  style={{
+                    fontFamily: "Poppins, sans-serif",
+                    fontWeight: "900",
+                    textTransform: "uppercase",
+                    letterSpacing: "1px",
+                  }}
+                >
+                  upload reference
+                </h3>
+              </div>
+
+              <div
+                className="border-2 border-dashed rounded-xl text-center cursor-pointer transition-colors bg-gray-900"
+                style={{
+                  padding: "32px 16px",
+                  minHeight: "160px",
+                  borderColor: "#555",
+                }}
+                onClick={() => document.getElementById("file-upload")?.click()}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.borderColor = "#F93822")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.borderColor = "#555")
+                }
+              >
+                {uploadedFile ? (
+                  <div>
+                    <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <span className="text-white text-lg font-bold">✓</span>
+                    </div>
+                    <p className="text-green-400 font-bold mb-2 text-sm">
+                      {uploadedFile.name}
+                    </p>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setUploadedFile(null);
+                      }}
+                      className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-bold text-sm"
+                    >
+                      Remove
+                    </Button>
+                  </div>
+                ) : (
+                  <div>
+                    <div className="w-12 h-12 border-2 border-gray-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                      <Upload className="w-6 h-6 text-gray-400" />
+                    </div>
+                    <p className="text-white font-bold mb-1 text-sm">
+                      Click to upload reference image
+                    </p>
+                    <p className="text-gray-400 text-sm font-medium">
+                      JPG, PNG up to 10MB
+                    </p>
+                  </div>
+                )}
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleFileUpload}
+                  className="hidden"
+                  id="file-upload"
                 />
               </div>
-
-              {/* Upload Module - Right Side (1/3 width) */}
-              <div className="lg:col-span-1">
-                <div className="flex items-center mb-3">
-                  <div
-                    className="w-6 h-6 rounded-full flex items-center justify-center mr-2"
-                    style={{ backgroundColor: "#F93822" }}
-                  >
-                    <span className="text-white font-black text-xs">2</span>
-                  </div>
-                  <h4
-                    className="text-white text-sm font-black"
-                    style={{
-                      fontFamily: "Poppins, sans-serif",
-                      fontWeight: "900",
-                      textTransform: "uppercase",
-                      letterSpacing: "1px",
-                    }}
-                  >
-                    upload reference
-                  </h4>
-                </div>
-                <div
-                  className="border-2 border-dashed rounded-xl text-center cursor-pointer transition-colors bg-gray-900"
-                  style={{
-                    padding: "24px 12px",
-                    minHeight: "140px",
-                    borderColor: "#555",
-                  }}
-                  onClick={() =>
-                    document.getElementById("file-upload")?.click()
-                  }
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.borderColor = "#F93822")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.borderColor = "#555")
-                  }
-                >
-                  {uploadedFile ? (
-                    <div>
-                      <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-2">
-                        <span className="text-white text-sm font-bold">✓</span>
-                      </div>
-                      <p className="text-green-400 font-bold mb-2 text-xs">
-                        {uploadedFile.name}
-                      </p>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setUploadedFile(null);
-                        }}
-                        className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-bold text-xs"
-                      >
-                        Remove
-                      </Button>
-                    </div>
-                  ) : (
-                    <div>
-                      <div className="w-10 h-10 border-2 border-gray-600 rounded-xl flex items-center justify-center mx-auto mb-2">
-                        <Upload className="w-5 h-5 text-gray-400" />
-                      </div>
-                      <p className="text-white font-bold mb-1 text-xs">
-                        Click to upload
-                      </p>
-                      <p className="text-gray-400 text-xs font-medium">
-                        JPG, PNG up to 10MB
-                      </p>
-                    </div>
-                  )}
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handleFileUpload}
-                    className="hidden"
-                    id="file-upload"
-                  />
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+        </div>
 
         {/* Step 3 - Full Width Keywords */}
         <Card

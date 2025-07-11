@@ -485,35 +485,7 @@ export default function GraphicStudio() {
 
                     {step.id === 2 && (
                       <div className="space-y-4">
-                        <div>
-                          <Label htmlFor="design-type" className="text-white">
-                            Design Type
-                          </Label>
-                          <select
-                            id="design-type"
-                            value={designType}
-                            onChange={(e) => setDesignType(e.target.value)}
-                            className="w-full mt-1 p-2 border rounded"
-                          >
-                            <option value="">Select design type...</option>
-                            <option value="Logo design">Logo design</option>
-                            <option value="Brand identity">
-                              Brand identity
-                            </option>
-                            <option value="Marketing materials">
-                              Marketing materials
-                            </option>
-                            <option value="Social media graphics">
-                              Social media graphics
-                            </option>
-                            <option value="Web graphics">Web graphics</option>
-                            <option value="Print design">Print design</option>
-                            <option value="Illustration">Illustration</option>
-                            <option value="Typography design">
-                              Typography design
-                            </option>
-                          </select>
-                        </div>
+                        <div></div>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                           {keywordCategories["Design Type"].map((keyword) => (
                             <button

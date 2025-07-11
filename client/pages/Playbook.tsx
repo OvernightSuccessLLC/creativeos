@@ -435,13 +435,11 @@ export default function Playbook() {
                       Master Formula:
                     </h4>
                     <code
-                      className="text-white block mb-3"
-                      style={{ ...TYPOGRAPHY.body, fontSize: "12px" }}
+                      className="text-white block mb-3 text-sm bg-black p-3 rounded"
+                      style={TYPOGRAPHY.body}
                     >
-                      <span style={{ color: "rgb(255, 255, 255)" }}>
-                        [Subject] + [Action/Pose] + [Setting] + [Lighting] +
-                        [Camera Details] + [Style] + [Quality]
-                      </span>
+                      [Subject] + [Action/Pose] + [Setting] + [Lighting] +
+                      [Camera Details] + [Style] + [Quality]
                     </code>
                   </div>
                   <div className="grid md:grid-cols-2 gap-6">

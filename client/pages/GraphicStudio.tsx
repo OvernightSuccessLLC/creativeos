@@ -535,7 +535,9 @@ export default function GraphicStudio() {
                     {step.id === 3 && (
                       <div className="space-y-4">
                         <div>
-                          <Label htmlFor="brand-tone">Brand Tone</Label>
+                          <Label htmlFor="brand-tone" className="text-white">
+                            Brand Tone
+                          </Label>
                           <select
                             id="brand-tone"
                             value={brandTone}

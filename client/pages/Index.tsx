@@ -338,7 +338,13 @@ export default function Index() {
   // Update quality score when inputs change
   useEffect(() => {
     setQualityScore(calculateQuality());
-  }, [customInstructions, selectedKeywords, uploadedFile]);
+  }, [
+    customInstructions,
+    selectedKeywords,
+    uploadedFile,
+    uploadedFile2,
+    uploadedFile3,
+  ]);
 
   return (
     <div className="min-h-screen bg-brand-red text-black">

@@ -348,7 +348,7 @@ export default function GraphicStudio() {
   return (
     <div className="min-h-screen bg-brand-red text-black">
       {/* Top Navigation Bar */}
-      <nav className="bg-black px-6 py-3">
+      <nav className="bg-black px-6 py-5">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="text-brand-red font-bold text-lg">LOGO</div>
           <div className="flex items-center space-x-1">

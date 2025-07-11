@@ -354,7 +354,7 @@ export default function LifestyleStudio() {
             >
               PRODUCT STUDIO
             </button>
-            <button className="bg-white text-black px-4 py-2 rounded text-sm font-bold">
+            <button className="bg-black text-white px-4 py-2 rounded text-sm font-bold">
               LIFESTYLE STUDIO
             </button>
             <button

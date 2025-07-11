@@ -355,7 +355,7 @@ export default function ProductStudio() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="text-brand-red font-bold text-lg">LOGO</div>
           <div className="flex items-center space-x-1">
-            <button className="bg-white text-black px-4 py-2 rounded text-sm font-bold">
+            <button className="bg-black text-white px-4 py-2 rounded text-sm font-bold">
               PRODUCT STUDIO
             </button>
             <button

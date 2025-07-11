@@ -486,7 +486,9 @@ export default function GraphicStudio() {
                     {step.id === 2 && (
                       <div className="space-y-4">
                         <div>
-                          <Label htmlFor="design-type">Design Type</Label>
+                          <Label htmlFor="design-type" className="text-white">
+                            Design Type
+                          </Label>
                           <select
                             id="design-type"
                             value={designType}

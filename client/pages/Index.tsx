@@ -672,7 +672,7 @@ export default function Index() {
                   </div>
                   <p className="text-white/60 text-xs">Add visual references</p>
                 </CardHeader>
-                <CardContent className="p-0 px-6 pb-6">
+                <CardContent className="p-0 px-6 pb-5">
                   <div className="border-2 border-dashed border-white/20 rounded-lg p-6 text-center">
                     <Upload className="w-8 h-8 text-white/60 mx-auto mb-2" />
                     <Input

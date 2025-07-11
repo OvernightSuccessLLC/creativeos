@@ -352,12 +352,7 @@ export default function Index() {
       <nav className="border-b border-black/20 px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between max-w-7xl mx-auto">
           <div className="flex items-center space-x-4">
-            <div
-              className="text-lg sm:text-xl text-black"
-              style={{ fontFamily: "Poppins, sans-serif", fontWeight: "900" }}
-            >
-              CREATIVE DIRECTOR OS
-            </div>
+            <div className="flex items-center" />
           </div>
 
           {/* Desktop Navigation */}

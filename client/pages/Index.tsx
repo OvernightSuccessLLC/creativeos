@@ -941,6 +941,9 @@ export default function Index() {
         onClose={() => setShowBriefcase(false)}
         onNavigate={(path) => navigate(path)}
       />
+
+      {/* Updates Feed */}
+      {showUpdates && <Updates onClose={() => setShowUpdates(false)} />}
     </div>
   );
 }

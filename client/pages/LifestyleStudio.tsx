@@ -368,9 +368,9 @@ export default function LifestyleStudio() {
     },
     {
       id: 6,
-      title: "Camera Angle",
-      description: "Set camera perspective and composition",
-      icon: <Camera className="w-5 h-5" />,
+      title: "Lighting Setup",
+      description: "Select lighting style and mood",
+      icon: <Coffee className="w-5 h-5" />,
     },
     {
       id: 7,

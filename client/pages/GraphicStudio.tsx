@@ -464,7 +464,7 @@ export default function GraphicStudio() {
                 </CardHeader>
 
                 {activeStep === step.id && (
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-4 bg-black">
                     {step.id === 1 && (
                       <div>
                         <Label htmlFor="instructions">

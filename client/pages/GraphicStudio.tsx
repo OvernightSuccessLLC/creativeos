@@ -447,7 +447,9 @@ export default function GraphicStudio() {
                         {step.id}
                       </div>
                       <div>
-                        <CardTitle className="text-lg">{step.title}</CardTitle>
+                        <CardTitle className="text-lg text-white">
+                          {step.title}
+                        </CardTitle>
                         <p className="text-gray-600 text-sm">
                           {step.description}
                         </p>

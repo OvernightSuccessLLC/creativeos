@@ -571,39 +571,6 @@ export default function GraphicStudio() {
 
                     {step.id === 5 && (
                       <div>
-                        <Label htmlFor="layout" className="text-white">
-                          Layout Style
-                        </Label>
-                        <select
-                          id="layout"
-                          value={layoutStyle}
-                          onChange={(e) => setLayoutStyle(e.target.value)}
-                          className="w-full mt-1 p-2 border rounded"
-                        >
-                          <option value="">Select layout...</option>
-                          <option value="Clean and minimal">
-                            Clean and minimal
-                          </option>
-                          <option value="Complex and detailed">
-                            Complex and detailed
-                          </option>
-                          <option value="Grid-based structure">
-                            Grid-based structure
-                          </option>
-                          <option value="Asymmetrical design">
-                            Asymmetrical design
-                          </option>
-                          <option value="Centered composition">
-                            Centered composition
-                          </option>
-                          <option value="Layered elements">
-                            Layered elements
-                          </option>
-                          <option value="Geometric arrangement">
-                            Geometric arrangement
-                          </option>
-                          <option value="Organic flow">Organic flow</option>
-                        </select>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4">
                           {keywordCategories["Layout & Composition"].map(
                             (keyword) => (

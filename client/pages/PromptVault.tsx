@@ -398,7 +398,7 @@ export default function PromptVault() {
               fontWeight: "900",
             }}
           >
-            PROMPT VAULT
+            prompt vault
           </h1>
         </div>
       </div>
@@ -863,7 +863,7 @@ export default function PromptVault() {
                     {selectedKeywords.some((k) =>
                       keywordCategories.Lighting.includes(k),
                     )
-                      ? "✓"
+                      ? "��"
                       : "○"}
                   </span>
                   <span

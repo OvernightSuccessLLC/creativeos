@@ -436,7 +436,7 @@ export default function GraphicStudio() {
             {steps.map((step) => (
               <Card key={step.id} className="border-black">
                 <CardHeader
-                  className="cursor-pointer"
+                  className="cursor-pointer bg-black"
                   onClick={() =>
                     setActiveStep(activeStep === step.id ? null : step.id)
                   }

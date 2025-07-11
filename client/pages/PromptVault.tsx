@@ -24,6 +24,8 @@ import {
   Camera,
   Palette,
   Zap,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 
 export default function PromptVault() {

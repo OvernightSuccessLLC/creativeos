@@ -393,12 +393,13 @@ export default function Index() {
           <div className="flex items-center space-x-2">
             <Button
               variant="outline"
-              className="hidden sm:flex border-black text-black hover:bg-black hover:text-brand-red"
+              className="hidden sm:flex bg-black text-white border-white hover:bg-black hover:text-white"
               style={{
                 fontFamily: "Poppins, sans-serif",
-                fontWeight: "700",
+                fontWeight: "400",
                 textTransform: "uppercase",
                 letterSpacing: "0.5px",
+                padding: "8px 12px 8px 0",
               }}
               onClick={() => setShowBriefcase(true)}
             >

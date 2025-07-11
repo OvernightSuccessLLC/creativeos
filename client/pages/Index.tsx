@@ -7,7 +7,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import BriefcaseModal from "@/components/BriefcaseModal";
-import Updates from "@/components/Updates";
 import {
   Camera,
   Palette,

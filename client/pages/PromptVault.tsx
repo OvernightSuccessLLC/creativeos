@@ -620,7 +620,7 @@ export default function PromptVault() {
             {/* Framing Section */}
             <div className="mb-4">
               <button
-                className="w-full bg-black text-white rounded-lg p-4 flex items-center justify-between cursor-pointer transition-all duration-300 hover:bg-gray-900"
+                className="w-full bg-black text-white rounded-lg p-4 flex items-center justify-between cursor-pointer transition-all duration-300 hover:bg-gray-900 border-0"
                 onClick={() => toggleSection("framing")}
                 style={{
                   fontFamily: "Poppins, sans-serif",

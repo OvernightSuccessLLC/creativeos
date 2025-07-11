@@ -581,10 +581,7 @@ export default function Playbook() {
                     </ul>
                   </div>
 
-                  <div
-                    className="bg-black rounded"
-                    style={{ padding: "20px 16px 0 0" }}
-                  >
+                  <div className="bg-gray-900 rounded p-6">
                     <h4
                       className="text-brand-red mb-2"
                       style={TYPOGRAPHY.heading}

@@ -359,13 +359,22 @@ export default function Index() {
             <button className="bg-white text-black px-4 py-2 rounded text-sm font-bold">
               PRODUCT STUDIO
             </button>
-            <button className="text-white px-4 py-2 rounded text-sm font-medium hover:bg-white/10">
+            <button
+              onClick={() => navigate("/lifestyle-studio")}
+              className="text-white px-4 py-2 rounded text-sm font-medium hover:bg-white/10"
+            >
               LIFESTYLE STUDIO
             </button>
-            <button className="text-white px-4 py-2 rounded text-sm font-medium hover:bg-white/10">
+            <button
+              onClick={() => navigate("/graphic-studio")}
+              className="text-white px-4 py-2 rounded text-sm font-medium hover:bg-white/10"
+            >
               GRAPHIC STUDIO
             </button>
-            <button className="text-white px-4 py-2 rounded text-sm font-medium hover:bg-white/10">
+            <button
+              onClick={() => setShowBriefcase(true)}
+              className="text-white px-4 py-2 rounded text-sm font-medium hover:bg-white/10"
+            >
               THE BRIEFCASE
             </button>
           </div>

@@ -41,6 +41,8 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/lifestyle-studio" element={<LifestyleStudio />} />
+          <Route path="/graphic-studio" element={<GraphicStudio />} />
           <Route path="/playbook" element={<Playbook />} />
           <Route path="/prompt-vault" element={<PromptVault />} />
           <Route path="/templates" element={<Templates />} />

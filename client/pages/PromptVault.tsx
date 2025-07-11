@@ -360,17 +360,71 @@ export default function PromptVault() {
     }
   };
 
-  const copyPrompt = () => {
+  const copyPrompt = async () => {
     const prompt = generatePrompt();
-    navigator.clipboard.writeText(prompt);
-    // Show visual feedback that copy was successful
-    const button = document.querySelector("[data-copy-button]");
-    if (button) {
-      const originalText = button.textContent;
-      button.textContent = "COPIED!";
-      setTimeout(() => {
-        button.textContent = originalText;
-      }, 2000);
+
+    try {
+      // Try the modern Clipboard API first
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(prompt);
+        // Show visual feedback that copy was successful
+        const button = document.querySelector("[data-copy-button]");
+        if (button) {
+          const originalText = button.textContent;
+          button.textContent = "COPIED!";
+          setTimeout(() => {
+            button.textContent = originalText;
+          }, 2000);
+        }
+        return;
+      }
+
+      // Fallback to the older method
+      const textArea = document.createElement("textarea");
+      textArea.value = prompt;
+
+      // Make the textarea invisible
+      textArea.style.position = "fixed";
+      textArea.style.left = "-999999px";
+      textArea.style.top = "-999999px";
+
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+
+      const successful = document.execCommand("copy");
+      document.body.removeChild(textArea);
+
+      if (successful) {
+        // Show visual feedback that copy was successful
+        const button = document.querySelector("[data-copy-button]");
+        if (button) {
+          const originalText = button.textContent;
+          button.textContent = "COPIED!";
+          setTimeout(() => {
+            button.textContent = originalText;
+          }, 2000);
+        }
+      } else {
+        throw new Error("Copy command was unsuccessful");
+      }
+    } catch (err) {
+      console.error("Failed to copy prompt: ", err);
+
+      // Last resort: show the text for manual copying
+      const userAgent = navigator.userAgent;
+      const isMobile =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          userAgent,
+        );
+
+      if (isMobile) {
+        alert(`Copy this prompt manually:\n\n${prompt}`);
+      } else {
+        alert(
+          "Automatic copying failed. Please manually copy the text from the prompt area.",
+        );
+      }
     }
   };
 

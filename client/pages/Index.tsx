@@ -573,7 +573,7 @@ export default function Index() {
             )}
           </div>
 
-          {/* Step 2: File Upload */}
+          {/* Step 2: Product Style */}
           <div className="bg-black rounded-lg border border-white/10">
             <div
               className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-900 transition-colors"
@@ -583,7 +583,7 @@ export default function Index() {
                 <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
                   2
                 </div>
-                <span className="text-white font-medium">File Upload</span>
+                <span className="text-white font-medium">Product Style</span>
               </div>
               <ChevronRight
                 className={`w-5 h-5 text-white transition-transform ${activeStep === 2 ? "rotate-90" : ""}`}

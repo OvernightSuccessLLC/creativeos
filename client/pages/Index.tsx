@@ -241,7 +241,9 @@ export default function Index() {
     let score = 0;
     if (customInstructions.length > 20) score += 30;
     if (selectedKeywords.length > 0) score += selectedKeywords.length * 3;
-    if (uploadedFile) score += 25;
+    if (uploadedFile) score += 10;
+    if (uploadedFile2) score += 10;
+    if (uploadedFile3) score += 10;
     return Math.min(100, score);
   };
 

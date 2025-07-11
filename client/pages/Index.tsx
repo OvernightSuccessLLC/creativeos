@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import BriefcaseModal from "@/components/BriefcaseModal";
+import Updates from "@/components/Updates";
 import {
   Camera,
   Palette,
@@ -32,6 +33,7 @@ export default function Index() {
   const navigate = useNavigate();
   const [selectedStudio, setSelectedStudio] = useState<string>("lifestyle");
   const [showBriefcase, setShowBriefcase] = useState(false);
+  const [showUpdates, setShowUpdates] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   // Prompt Builder State

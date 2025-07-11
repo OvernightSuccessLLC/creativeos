@@ -632,7 +632,7 @@ export default function LifestyleStudio() {
 
                     {step.id === 7 && (
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                        {keywordCategories["Intended Use"].map((keyword) => (
+                        {keywordCategories["Camera Angle"].map((keyword) => (
                           <button
                             key={keyword}
                             onClick={() => toggleKeyword(keyword)}

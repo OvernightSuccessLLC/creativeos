@@ -337,6 +337,12 @@ export default function GraphicStudio() {
       description: "Add colors, shapes, and graphic elements",
       icon: <Layers className="w-5 h-5" />,
     },
+    {
+      id: 7,
+      title: "File Upload",
+      description: "Upload reference images for your design",
+      icon: <Upload className="w-5 h-5" />,
+    },
   ];
 
   return (

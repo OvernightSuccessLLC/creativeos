@@ -695,8 +695,7 @@ export default function Index() {
               </Card>
             </div>
 
-            {/* Prompt Output Section */}
-            <Card className="bg-black border border-white/20">
+
               <CardHeader className="p-4 sm:py-5 sm:px-6">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between space-y-2 sm:space-y-0">
                   <CardTitle className="text-brand-red text-xs sm:text-sm font-bold tracking-wide">

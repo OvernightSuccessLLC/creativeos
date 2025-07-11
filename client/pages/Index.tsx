@@ -586,7 +586,7 @@ export default function Index() {
       )}
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-5 sm:py-5">
         {/* Current Studio Header */}
         <div className="mb-6 sm:mb-8">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 sm:mb-6 space-y-4 sm:space-y-0">

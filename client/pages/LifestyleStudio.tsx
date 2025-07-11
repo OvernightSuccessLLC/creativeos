@@ -356,9 +356,9 @@ export default function LifestyleStudio() {
     },
     {
       id: 4,
-      title: "Background Setting",
-      description: "Choose the perfect environment and location",
-      icon: <MapPin className="w-5 h-5" />,
+      title: "Product/Subject Style",
+      description: "Define the style and aesthetic of products or subjects",
+      icon: <Users className="w-5 h-5" />,
     },
     {
       id: 5,

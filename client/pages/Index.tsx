@@ -68,12 +68,8 @@ export default function Index() {
   ];
 
   const navigationItems = [
-    { name: "UPDATES", icon: Bell, active: false },
-    { name: "THE PLAYBOOK", icon: BookOpen, active: false },
-    { name: "PROMPT VAULT", icon: Database, active: false },
-    { name: "TEMPLATES", icon: LayoutTemplate, active: false },
-    { name: "AI TOOLKIT", icon: Zap, active: false },
-    { name: "UPGRADE", icon: Crown, active: false, highlight: true },
+    { name: "THE BRIEFCASE", icon: Bell, active: false, path: "/briefcase" },
+    { name: "AI TOOLKIT", icon: Zap, active: false, path: "/ai-toolkit" },
   ];
 
   const keywordCategories = {

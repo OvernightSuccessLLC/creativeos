@@ -574,7 +574,7 @@ export default function PromptVault() {
               select keywords
             </h3>
           </div>
-          <CardContent style={{ padding: "0 24px" }}>
+          <CardContent style={{ padding: "0" }}>
             {/* Lighting Section */}
             <div className="mb-4">
               <button

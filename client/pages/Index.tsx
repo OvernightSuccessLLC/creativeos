@@ -940,6 +940,190 @@ export default function Index() {
                 </div>
               </div>
             </div>
+
+            {/* Prompt Output Section */}
+            <Card className="bg-black border border-white/20 mt-6">
+              <CardHeader className="p-4 sm:py-5 sm:px-6">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between space-y-2 sm:space-y-0">
+                  <CardTitle className="text-brand-red text-xs sm:text-sm font-bold tracking-wide">
+                    AI PROMPT FORMULA
+                  </CardTitle>
+                  <Badge className="bg-brand-red text-black text-xs font-bold self-start">
+                    {calculateQuality()}% QUALITY
+                  </Badge>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0">
+                <div className="bg-black border border-white/20 rounded p-3 sm:p-4 text-xs sm:text-sm text-white">
+                  {generatePrompt() ||
+                    "Build your prompt by adding custom instructions and selecting keywords from the categories..."}
+                </div>
+
+                {/* AI Optimized Quality Meter with Visual Graph */}
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-white font-medium text-xs">
+                      AI QUALITY OPTIMIZER
+                    </span>
+                    <span className="text-brand-red font-bold text-xs">
+                      {calculateQuality()}%
+                    </span>
+                  </div>
+
+                  {/* Circular Progress Indicator */}
+                  <div className="flex items-center space-x-4">
+                    <div className="relative w-16 h-16">
+                      <svg
+                        className="w-16 h-16 transform -rotate-90"
+                        viewBox="0 0 64 64"
+                      >
+                        {/* Background circle */}
+                        <circle
+                          cx="32"
+                          cy="32"
+                          r="28"
+                          stroke="rgba(255,255,255,0.2)"
+                          strokeWidth="4"
+                          fill="none"
+                        />
+                        {/* Progress circle */}
+                        <circle
+                          cx="32"
+                          cy="32"
+                          r="28"
+                          stroke="#F93822"
+                          strokeWidth="4"
+                          fill="none"
+                          strokeLinecap="round"
+                          strokeDasharray={`${2 * Math.PI * 28}`}
+                          strokeDashoffset={`${2 * Math.PI * 28 * (1 - calculateQuality() / 100)}`}
+                          className="transition-all duration-500 ease-out"
+                        />
+                      </svg>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-brand-red font-bold text-sm">
+                          {calculateQuality()}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Quality Breakdown Bars */}
+                    <div className="flex-1 space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="text-white text-xs font-semibold">
+                          Instructions
+                        </span>
+                        <div className="w-20 bg-white/20 rounded-full h-1">
+                          <div
+                            className="bg-brand-red h-1 rounded-full transition-all duration-300"
+                            style={{
+                              width: `${customInstructions.length > 20 ? 100 : (customInstructions.length / 20) * 100}%`,
+                            }}
+                          ></div>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-white text-xs font-semibold">
+                          Keywords
+                        </span>
+                        <div className="w-20 bg-white/20 rounded-full h-1">
+                          <div
+                            className="bg-brand-red h-1 rounded-full transition-all duration-300"
+                            style={{
+                              width: `${Math.min((selectedKeywords.length / 10) * 100, 100)}%`,
+                            }}
+                          ></div>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-white text-xs font-semibold">
+                          Reference
+                        </span>
+                        <div className="w-20 bg-white/20 rounded-full h-1">
+                          <div
+                            className="bg-brand-red h-1 rounded-full transition-all duration-300"
+                            style={{ width: `${uploadedFile ? 100 : 0}%` }}
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Main Quality Bar */}
+                  <div className="w-full bg-white/20 rounded-full h-3 relative overflow-hidden">
+                    <div
+                      className="bg-gradient-to-r from-brand-red to-brand-red/80 h-3 rounded-full transition-all duration-500 relative"
+                      style={{ width: `${calculateQuality()}%` }}
+                    >
+                      {/* Animated pulse effect */}
+                      <div className="absolute inset-0 bg-white/30 rounded-full animate-pulse opacity-50"></div>
+                    </div>
+                    {/* Quality threshold markers */}
+                    <div className="absolute top-0 left-1/3 w-0.5 h-3 bg-white/40"></div>
+                    <div className="absolute top-0 left-2/3 w-0.5 h-3 bg-white/40"></div>
+                  </div>
+
+                  {/* Quality Status with Visual Indicators */}
+                  <div className="flex items-center space-x-2">
+                    <div
+                      className={`w-2 h-2 rounded-full ${
+                        calculateQuality() < 30
+                          ? "bg-red-500"
+                          : calculateQuality() < 70
+                            ? "bg-yellow-500"
+                            : "bg-green-500"
+                      } animate-pulse`}
+                    ></div>
+                    <div className="text-white text-xs font-semibold">
+                      {calculateQuality() < 30 &&
+                        "Add more details to improve quality"}
+                      {calculateQuality() >= 30 &&
+                        calculateQuality() < 70 &&
+                        "Good start! Add more keywords for better results"}
+                      {calculateQuality() >= 70 && "Excellent prompt quality!"}
+                    </div>
+                  </div>
+
+                  {/* Live Analytics Mini Chart */}
+                  <div className="flex items-center space-x-1 pt-2 border-t border-white/10">
+                    <span className="text-white text-xs font-semibold mr-2">
+                      Analysis:
+                    </span>
+                    {[...Array(8)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="w-1 bg-brand-red/60 rounded-full transition-all duration-300"
+                        style={{
+                          height: `${Math.max(2, Math.min(12, (calculateQuality() / 100) * 12 + Math.random() * 4))}px`,
+                          animationDelay: `${i * 0.1}s`,
+                        }}
+                      ></div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-2 sm:space-y-3">
+                  <ul className="space-y-1 text-xs sm:text-sm text-white/60"></ul>
+                </div>
+
+                <div className="flex space-x-2">
+                  <Button
+                    size="sm"
+                    onClick={copyPrompt}
+                    className="bg-brand-red hover:bg-black hover:text-brand-red text-black font-bold text-xs sm:text-sm transition-colors"
+                  >
+                    <Copy className="w-3 h-3 mr-1" />
+                    {copiedPrompt ? "COPIED!" : "COPY"}
+                  </Button>
+                  <Button
+                    size="sm"
+                    className="bg-brand-red hover:bg-black hover:text-brand-red text-black font-bold text-xs sm:text-sm transition-colors"
+                  >
+                    FAVORITE
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </main>

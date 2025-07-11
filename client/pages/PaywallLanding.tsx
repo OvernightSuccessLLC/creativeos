@@ -99,43 +99,6 @@ export default function PaywallLanding() {
         </div>
       </div>
 
-      {/* Features Grid */}
-      <div className="bg-black py-12 sm:py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2
-            className="text-2xl sm:text-3xl font-black text-white text-center mb-8 sm:mb-12"
-            style={{ fontWeight: 900 }}
-          >
-            WHAT YOU GET INSTANT ACCESS TO
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, index) => (
-              <Card
-                key={index}
-                className="bg-gray-900 border-gray-700 text-center"
-              >
-                <CardHeader className="pb-4">
-                  <div className="flex justify-center mb-4">
-                    <feature.icon className="w-8 h-8 sm:w-10 sm:h-10 text-brand-red" />
-                  </div>
-                  <CardTitle
-                    className="text-white font-black text-sm sm:text-base"
-                    style={{ fontWeight: 900 }}
-                  >
-                    {feature.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-400 text-xs sm:text-sm">
-                    {feature.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Signup Form */}
       <div className="py-12 sm:py-16">
         <div className="max-w-md mx-auto px-4 sm:px-6">

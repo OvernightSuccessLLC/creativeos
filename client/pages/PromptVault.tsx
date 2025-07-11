@@ -626,34 +626,46 @@ export default function PromptVault() {
                 border: "1px solid rgba(249, 56, 34, 0.8)",
               }}
             >
-              <h3
-                className="text-black text-sm font-black mb-2 text-left"
-                style={{
-                  fontWeight: 900,
-                  textShadow: "0 1px 2px rgba(0,0,0,0.1)",
-                }}
+              <div
+                className="flex items-center justify-between cursor-pointer mb-2"
+                onClick={() => toggleSection("framing")}
               >
-                FRAMING
-              </h3>
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2">
-                {keywordCategories.Framing.map((keyword) => (
-                  <button
-                    key={keyword}
-                    onClick={() => toggleKeyword(keyword)}
-                    className={`text-xs px-2 py-1 h-8 rounded font-medium transition-all duration-200 ${
-                      selectedKeywords.includes(keyword)
-                        ? "bg-black text-white border border-white"
-                        : "bg-black text-white opacity-80 hover:opacity-100 border border-transparent"
-                    }`}
-                    style={{
-                      fontFamily: "Poppins, sans-serif",
-                      fontWeight: 500,
-                    }}
-                  >
-                    {keyword.toLowerCase()}
-                  </button>
-                ))}
+                <h3
+                  className="text-black text-sm font-black text-left"
+                  style={{
+                    fontWeight: 900,
+                    textShadow: "0 1px 2px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  framing
+                </h3>
+                {collapsedSections.framing ? (
+                  <ChevronDown className="w-4 h-4 text-black" />
+                ) : (
+                  <ChevronUp className="w-4 h-4 text-black" />
+                )}
               </div>
+              {!collapsedSections.framing && (
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2">
+                  {keywordCategories.Framing.map((keyword) => (
+                    <button
+                      key={keyword}
+                      onClick={() => toggleKeyword(keyword)}
+                      className={`text-xs px-2 py-1 h-8 rounded font-medium transition-all duration-200 ${
+                        selectedKeywords.includes(keyword)
+                          ? "bg-black text-white border border-white"
+                          : "bg-black text-white opacity-80 hover:opacity-100 border border-transparent"
+                      }`}
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: 500,
+                      }}
+                    >
+                      {keyword.toLowerCase()}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Locations Section */}

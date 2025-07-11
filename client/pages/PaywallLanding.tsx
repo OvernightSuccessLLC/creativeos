@@ -85,10 +85,7 @@ export default function PaywallLanding() {
               </span>
             </h1>
           </div>
-          <p className="text-lg sm:text-xl text-black/80 mb-4 max-w-2xl mx-auto">
-            Join thousands changing their lives overnight with next-level
-            creative AI systems
-          </p>
+
           <div className="flex items-center justify-center space-x-4 text-sm text-black/70 mb-8">
             <div className="flex items-center space-x-1">
               <Star className="w-4 h-4 fill-current" />

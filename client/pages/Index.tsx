@@ -990,53 +990,7 @@ export default function Index() {
         </div>
       </main>
 
-              {/* Upload Reference - Integrated */}
-              <Card className="bg-black border border-white/20 h-fit">
-                <CardHeader className="py-5 px-6 sm:py-5 sm:px-6">
-                  <div className="flex items-center">
-                    <Upload className="w-4 h-4 mr-2 text-brand-red" />
-                    <span className="font-medium text-white">
-                      Upload Reference
-                    </span>
-                  </div>
-                  <p className="text-white/60 text-xs">Add visual references</p>
-                </CardHeader>
-                <CardContent className="p-0 px-6 pb-5">
-                  <div className="border-2 border-dashed border-white/20 rounded-lg p-6 text-center">
-                    <Upload className="w-8 h-8 text-white/60 mx-auto mb-2" />
-                    <Input
-                      type="file"
-                      accept="image/*"
-                      onChange={handleFileUpload}
-                      className="bg-black border-white/20 text-white"
-                    />
-                    {uploadedFile && (
-                      <p className="text-brand-red mt-2">
-                        ✓ {uploadedFile.name} uploaded
-                      </p>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
 
-            {/* Bottom Row - Mood and Other Steps */}
-            <div className="flex flex-col gap-5">
-              <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-                <div className="flex flex-col line-height-normal w-full ml-0 max-md:w-full max-md:ml-0">
-                  {/* Left Column - Step Cards (Steps 2-5) */}
-                  <div className="space-y-2 sm:space-y-3">
-                    {stepCards.slice(1, 5).map((step) => (
-                      <div key={step.id}>
-                        <Card
-                          className="bg-black border border-white/20 hover:border-brand-red transition-colors cursor-pointer"
-                          onClick={() =>
-                            setActiveStep(
-                              activeStep === step.id ? null : step.id,
-                            )
-                          }
-                        >
-                          <CardContent className="p-3 sm:p-4">
                             <div className="flex items-center justify-between">
                               <div className="flex items-center space-x-3">
                                 <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-xs sm:text-sm font-bold">

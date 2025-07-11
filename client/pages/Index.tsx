@@ -717,16 +717,32 @@ export default function Index() {
               </div>
 
               {/* Right Column - File Upload Section */}
-              <Card className="bg-black border border-white/20 h-fit"
-              <CardHeader className="p-4 sm:py-5 sm:px-6">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between space-y-2 sm:space-y-0">
-                  <CardTitle className="text-brand-red text-xs sm:text-sm font-bold tracking-wide">
-                    AI PROMPT FORMULA
+              <Card className="bg-black border border-white/20 h-fit">
+                <CardHeader>
+                  <CardTitle className="text-brand-red text-sm font-bold flex items-center">
+                    <Upload className="w-4 h-4 mr-2" />
+                    REFERENCE UPLOAD
                   </CardTitle>
-                  <Badge className="bg-brand-red text-black text-xs font-bold self-start">
-                    {calculateQuality()}% QUALITY
-                  </Badge>
-                </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="border-2 border-dashed border-white/20 rounded-lg p-6 text-center">
+                    <Upload className="w-8 h-8 text-white/60 mx-auto mb-2" />
+                    <Input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleFileUpload}
+                      className="bg-black border-white/20 text-white file:bg-brand-red file:text-black file:border-0 file:rounded file:px-3 file:py-1"
+                    />
+                    {uploadedFile && (
+                      <p className="text-brand-red mt-2 text-sm">
+                        ✓ {uploadedFile.name} uploaded
+                      </p>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
               </CardHeader>
               <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0">
                 <div className="bg-black border border-white/20 rounded p-3 sm:p-4 text-xs sm:text-sm text-white">

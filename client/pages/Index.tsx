@@ -256,7 +256,7 @@ export default function Index() {
       prompt += selectedKeywords.join(", ") + ". ";
     }
     prompt +=
-      "Lifestyle photography, authentic moment, natural lighting, high quality, detailed, realistic.";
+      "Product photography, commercial quality, professional lighting, clean composition, high resolution, detailed, realistic, SORA video generation optimized.";
     return prompt;
   };
 

@@ -384,19 +384,16 @@ export default function GraphicStudio() {
 
       {/* Studio Header */}
       <div className="px-6 py-8">
-        <div className="max-w-7xl mx-auto">
-          <h1
-            className="text-5xl font-bold text-black mb-2"
-            style={{ fontFamily: "Poppins, sans-serif" }}
-          >
-            GRAPHIC STUDIO
-          </h1>
-          <p
-            className="text-black text-lg"
-            style={{ fontFamily: "Poppins, sans-serif" }}
-          >
-            Design compelling graphics and professional visual content
-          </p>
+        <div
+          className="max-w-7xl mx-auto pb-2"
+          style={{
+            fontFamily: "Poppins, sans-serif",
+            fontWeight: "400",
+            fontSize: "48px",
+            lineHeight: "48px",
+          }}
+        >
+          GRAPHIC STUDIO
         </div>
       </div>
 

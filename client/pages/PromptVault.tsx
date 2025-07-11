@@ -932,23 +932,22 @@ export default function PromptVault() {
               />
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex gap-4">
               <Button
                 onClick={copyPrompt}
                 disabled={!customInstructions && selectedKeywords.length === 0}
-                className="brand-button-primary text-white font-brand-bold py-2 px-4 transition-all duration-200 hover:opacity-90"
+                className="bg-orange-500 hover:bg-orange-600 text-white font-black py-3 px-6 rounded-lg transition-all duration-200 border-0"
                 style={{
                   backgroundColor: "#F93822",
-                  border: "none",
                   fontFamily: "Poppins, sans-serif",
-                  fontWeight: "700",
-                  fontSize: "12px",
+                  fontWeight: "900",
+                  fontSize: "14px",
                   textTransform: "uppercase",
-                  letterSpacing: "0.5px",
+                  letterSpacing: "1px",
                 }}
                 data-copy-button
               >
-                <Copy className="w-3 h-3 mr-1" />
+                <Copy className="w-4 h-4 mr-2" />
                 copy prompt
               </Button>
 
@@ -960,26 +959,17 @@ export default function PromptVault() {
                   setQualityScore(0);
                 }}
                 variant="outline"
-                className="brand-button-secondary px-4 py-2 text-white font-brand-medium transition-all duration-200"
+                className="border-2 border-white text-white hover:bg-white hover:text-black font-black py-3 px-6 rounded-lg transition-all duration-200"
                 style={{
                   fontFamily: "Poppins, sans-serif",
-                  fontSize: "12px",
-                  fontWeight: "600",
+                  fontSize: "14px",
+                  fontWeight: "900",
                   textTransform: "uppercase",
-                  letterSpacing: "0.5px",
-                  border: "1px solid #333",
+                  letterSpacing: "1px",
                   backgroundColor: "transparent",
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = "#333";
-                  e.currentTarget.style.borderColor = "#F93822";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = "transparent";
-                  e.currentTarget.style.borderColor = "#333";
-                }}
               >
-                CLEAR ALL
+                clear all
               </Button>
             </div>
           </CardContent>

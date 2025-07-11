@@ -467,7 +467,7 @@ export default function GraphicStudio() {
                   <CardContent className="space-y-4 bg-black">
                     {step.id === 1 && (
                       <div>
-                        <Label htmlFor="instructions">
+                        <Label htmlFor="instructions" className="text-white">
                           Describe your graphic design project
                         </Label>
                         <Textarea

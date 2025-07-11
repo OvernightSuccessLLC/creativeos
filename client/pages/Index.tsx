@@ -671,10 +671,6 @@ export default function Index() {
                     </span>
                   </div>
                   <p className="text-white/60 text-xs">Add visual references</p>
-                  <CardTitle className="flex items-center text-brand-red text-sm font-bold tracking-wide -mt-2">
-                    <Upload className="w-4 h-4 mr-2" />
-                    <span>REFERENCE UPLOAD</span>
-                  </CardTitle>
                 </CardHeader>
                 <CardContent className="p-0 px-6 pb-6">
                   <div className="border-2 border-dashed border-white/20 rounded-lg p-6 text-center">

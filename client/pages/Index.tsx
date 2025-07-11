@@ -343,35 +343,8 @@ export default function Index() {
             </div>
           </div>
 
-          {/* Studio Selection & Navigation */}
+          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6">
-            {/* Studio Selection */}
-            <div className="flex items-center space-x-2 border-r border-black/20 pr-6">
-              {studios.map((studio) => (
-                <button
-                  key={studio.id}
-                  className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm transition-colors ${
-                    selectedStudio === studio.id
-                      ? "bg-black text-brand-red"
-                      : "text-black hover:text-black hover:bg-black/10"
-                  }`}
-                  style={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: "700",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.5px",
-                  }}
-                  onClick={() => setSelectedStudio(studio.id)}
-                >
-                  <studio.icon className="w-4 h-4" />
-                  <span className="hidden xl:inline">
-                    {studio.name.split(" ")[0]}
-                  </span>
-                </button>
-              ))}
-            </div>
-
-            {/* Navigation Items */}
             {navigationItems.map((item) => (
               <button
                 key={item.name}

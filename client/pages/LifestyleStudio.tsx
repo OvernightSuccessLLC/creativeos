@@ -649,6 +649,24 @@ export default function LifestyleStudio() {
                     )}
 
                     {step.id === 8 && (
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                        {keywordCategories["Intended Use"].map((keyword) => (
+                          <button
+                            key={keyword}
+                            onClick={() => toggleKeyword(keyword)}
+                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                              selectedKeywords.includes(keyword)
+                                ? "bg-brand-red text-black"
+                                : "bg-white text-black border border-gray-300 hover:bg-gray-100"
+                            }`}
+                          >
+                            {keyword}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+
+                    {step.id === 9 && (
                       <div className="space-y-6">
                         <div>
                           <Label className="text-white">Finishing</Label>

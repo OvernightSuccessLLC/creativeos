@@ -855,7 +855,7 @@ export default function GraphicStudio() {
                 </div>
 
                 <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
+                  <div className="flex justify-between text-sm text-white">
                     <span>Keywords</span>
                     <span className="font-medium">
                       {Math.min(50, selectedKeywords.length * 2)}%

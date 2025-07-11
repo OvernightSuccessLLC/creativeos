@@ -902,7 +902,7 @@ export default function PromptVault() {
                     fontWeight: "700",
                   }}
                 >
-                  Your Optimized SORA Prompt
+                  your optimized sora prompt
                 </h3>
               </div>
 

@@ -490,8 +490,9 @@ export default function Index() {
         </div>
       </div>
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 px-6 pt-6 pb-0">
+      {/* Main Content Grid */}
+      <div className="px-6 pb-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Left Column - Steps */}
         <div className="lg:col-span-2 space-y-3">
           {/* Step 1: Custom Instructions */}

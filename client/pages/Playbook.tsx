@@ -427,17 +427,12 @@ export default function Playbook() {
 
               {section.id === 3 && (
                 <div className="space-y-6">
-                  <div
-                    className="bg-black rounded-lg"
-                    style={{ paddingRight: "24px" }}
-                  >
+                  <div className="bg-gray-900 rounded-lg p-6">
                     <h4
-                      className="text-brand-red mb-3"
-                      style={{ ...TYPOGRAPHY.heading, fontSize: "21px" }}
+                      className="text-brand-red mb-3 text-xl"
+                      style={TYPOGRAPHY.heading}
                     >
-                      <span style={{ color: "rgb(249, 57, 33)" }}>
-                        Master Formula:
-                      </span>
+                      Master Formula:
                     </h4>
                     <code
                       className="text-white block mb-3"

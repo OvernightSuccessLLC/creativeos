@@ -779,25 +779,25 @@ export default function Index() {
             )}
           </div>
 
-          {/* Step 5: Camera & Technical */}
+          {/* Step 7: Camera & Technical */}
           <div className="bg-black rounded-lg border border-white/10">
             <div
               className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-900 transition-colors"
-              onClick={() => setActiveStep(activeStep === 5 ? null : 5)}
+              onClick={() => setActiveStep(activeStep === 7 ? null : 7)}
             >
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
-                  5
+                  7
                 </div>
                 <span className="text-white font-medium">
                   Camera & Technical
                 </span>
               </div>
               <ChevronRight
-                className={`w-5 h-5 text-white transition-transform ${activeStep === 5 ? "rotate-90" : ""}`}
+                className={`w-5 h-5 text-white transition-transform ${activeStep === 7 ? "rotate-90" : ""}`}
               />
             </div>
-            {activeStep === 5 && (
+            {activeStep === 7 && (
               <div className="px-4 pb-4">
                 <div className="flex flex-wrap gap-2">
                   {keywordCategories["Camera & Technical"].map((keyword) => (

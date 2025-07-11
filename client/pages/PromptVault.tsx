@@ -686,22 +686,19 @@ export default function PromptVault() {
               >
                 STYLE
               </h3>
-              <div className="flex flex-wrap gap-2 justify-start text-left mr-auto items-start">
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2">
                 {enhancedKeywordCategories.Style.map((keyword) => (
                   <button
                     key={keyword}
                     onClick={() => toggleKeyword(keyword)}
-                    className={`px-3 py-1.5 rounded-full font-medium text-xs transition-all duration-300 transform hover:scale-105 ${
+                    className={`text-xs px-2 py-1 h-8 rounded font-medium transition-all duration-200 ${
                       selectedKeywords.includes(keyword)
-                        ? "bg-black text-white shadow-lg"
-                        : "bg-black text-white opacity-80 hover:opacity-100 hover:shadow-md"
+                        ? "bg-black text-white border border-white"
+                        : "bg-black text-white opacity-80 hover:opacity-100 border border-transparent"
                     }`}
                     style={{
-                      fontWeight: 500,
                       fontFamily: "Poppins, sans-serif",
-                      border: selectedKeywords.includes(keyword)
-                        ? "2px solid #fff"
-                        : "1px solid rgba(255,255,255,0.3)",
+                      fontWeight: 500,
                     }}
                   >
                     {keyword.toLowerCase()}

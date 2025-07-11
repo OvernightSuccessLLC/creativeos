@@ -50,157 +50,167 @@ export default function LifestyleStudio() {
   const [locationSetting, setLocationSetting] = useState("");
 
   const keywordCategories = {
-    "Mood & Atmosphere": [
-      "Candid",
-      "Spontaneous",
-      "Relaxed",
-      "Joyful",
-      "Serene",
-      "Energetic",
-      "Intimate",
-      "Contemplative",
-      "Playful",
-      "Nostalgic",
-      "Peaceful",
-      "Vibrant",
-      "Dreamy",
-      "Cozy",
-      "Romantic",
-      "Adventurous",
-      "Cheerful",
-      "Melancholic",
-      "Mysterious",
-      "Uplifting",
-      "Tranquil",
-      "Dynamic",
-    ],
-    "Setting & Location": [
-      "Urban environment",
-      "Natural setting",
-      "Home interior",
-      "Outdoor space",
-      "Coffee shop",
-      "Restaurant",
-      "Beach location",
-      "Mountain view",
-      "City street",
-      "Park setting",
-      "Garden area",
-      "Rooftop terrace",
-      "Living room",
-      "Kitchen space",
-      "Bedroom scene",
-      "Workspace",
-      "Library",
-      "Art gallery",
-      "Museum",
-      "Market place",
+    "Scene Objective": [
+      "Influencer",
+      "Vacation",
+      "Brunch",
+      "Party",
+      "Gym Session",
+      "Hiking",
+      "Yoga",
+      "Meditation",
+      "Travel",
+      "Work-from-home",
+      "Cafe",
+      "Beach Day",
+      "City Walk",
+      "Luxury Dinner",
+      "Family Moment",
+      "Friendship",
+      "Wellness",
+      "Poolside",
+      "Adventure",
+      "Road Trip",
       "Festival",
-      "Concert venue",
+      "Concert",
+      "Date Night",
+      "Camping",
+      "Home Gathering",
     ],
-    "Lighting & Quality": [
-      "Golden hour",
-      "Blue hour",
-      "Natural light",
-      "Soft lighting",
-      "Dramatic lighting",
-      "Backlighting",
-      "Window light",
-      "Ambient lighting",
-      "Warm lighting",
-      "Cool lighting",
-      "Harsh shadows",
-      "Diffused light",
-      "Sunset glow",
-      "Morning light",
-      "Overcast day",
-      "Bright daylight",
-      "Evening mood",
+    "Product/Subject Style": [
+      "Streetwear",
+      "Athleisure",
+      "Bohemian",
+      "Minimalist",
+      "Modern Chic",
+      "Vintage-inspired",
+      "Activewear",
+      "High Fashion",
+      "Casual Cool",
+      "Skincare",
+      "Tech Accessories",
+      "Home Decor",
+      "Sustainable",
+      "Ethical",
+      "Tailored",
+      "Luxury Casual",
+      "Denim",
+      "Footwear",
+      "Sunglasses",
+      "Bags",
+      "Jewelry",
+      "Swimwear",
+      "Watches",
+      "Knitwear",
+      "Outerwear",
+    ],
+    "Background Setting": [
+      "Beach",
+      "Mountains",
+      "Rooftop",
+      "City Skyline",
+      "Park",
+      "Coffee Shop",
+      "Spa",
+      "Gym",
+      "Resort",
+      "Boutique Hotel",
+      "Home Interior",
+      "Modern Office",
+      "Urban Street",
+      "Garden",
+      "Poolside",
+      "Forest",
+      "Desert",
+      "Countryside",
+      "Lakeside",
+      "Sunset",
+      "Restaurant",
+      "Loft",
+      "Art Gallery",
+      "Vineyard",
+      "Studio Apartment",
+    ],
+    "Lighting Setup": [
+      "Golden Hour",
+      "Diffused Daylight",
+      "Soft Ambient",
+      "Neon Glow",
       "Candlelight",
-      "String lights",
-      "Neon lighting",
-      "Street lights",
-      "Spotlight",
+      "Twilight",
+      "Backlit",
+      "Natural Sunlight",
+      "Cloudy Softness",
+      "Dramatic Shadows",
+      "Indoor Warmth",
+      "Studio Softbox",
+      "High Contrast",
+      "Nightlife Neon",
+      "Street Lamp",
+      "Window Lighting",
+      "Romantic",
+      "Moody",
+      "Cinematic",
+      "Reflective",
+      "Subtle Flare",
+      "Bright Overhead",
+      "Dusk",
+      "Firelight",
+      "Cool Evening",
     ],
-    "Camera & Technical": [
-      "85mm lens",
-      "50mm lens",
-      "35mm lens",
-      "Portrait lens",
-      "Wide angle",
-      "Shallow depth",
-      "Deep focus",
-      "Bokeh effect",
-      "Film grain",
-      "High contrast",
-      "Low contrast",
-      "Saturated colors",
-      "Muted tones",
-      "Black and white",
-      "Vintage filter",
-      "Modern processing",
-      "Sharp details",
-      "Soft focus",
-      "Motion blur",
-      "Freeze frame",
-      "Long exposure",
-      "Close up",
+    "Camera Angle": [
+      "POV",
+      "Eye-level",
+      "Overhead",
+      "Wide-angle",
+      "Close-up",
+      "Portrait",
+      "Candid",
+      "Low-angle Heroic",
+      "Side Profile",
+      "Centered",
+      "Symmetrical",
+      "Rule of Thirds",
+      "Diagonal",
+      "Elevated",
+      "Drone Shot",
+      "Macro Detail",
+      "45-degree Angle",
+      "Action Capture",
+      "Depth of Field",
+      "Panorama",
+      "Lifestyle Observational",
+      "Vertical",
+      "Landscape",
+      "Dynamic Motion",
+      "Still-life",
     ],
-    "Subjects & People": [
-      "Young adult",
-      "Middle aged",
-      "Senior person",
-      "Child subject",
-      "Teen portrait",
-      "Family group",
-      "Couple together",
-      "Friends hanging",
-      "Professional pose",
-      "Casual stance",
-      "Active movement",
-      "Relaxed posture",
-      "Laughing expression",
-      "Serious look",
-      "Contemplative mood",
-      "Joyful smile",
-      "Natural pose",
-      "Staged setup",
-      "Candid moment",
-      "Formal attire",
-      "Casual clothes",
-      "Business wear",
-      "Athletic gear",
-      "Vintage style",
-      "Modern fashion",
-      "Bohemian look",
-      "Minimalist style",
-      "Colorful outfit",
-      "Neutral tones",
-      "Seasonal wear",
-    ],
-    "Activities & Moments": [
-      "Morning routine",
-      "Coffee drinking",
-      "Reading book",
-      "Working on laptop",
-      "Cooking meal",
-      "Exercising",
-      "Walking dog",
-      "Playing music",
-      "Gardening",
-      "Shopping",
-      "Traveling",
-      "Socializing",
-      "Relaxing",
-      "Celebrating",
-      "Learning",
-      "Creating art",
-      "Playing sports",
-      "Meditating",
-      "Dancing",
-      "Eating meal",
-      "Having conversation",
-      "Taking selfie",
+    "Visual Elements": [
+      "Aspirational",
+      "Relaxed",
+      "Luxurious",
+      "Energetic",
+      "Carefree",
+      "Vibrant",
+      "Nostalgic",
+      "Authentic",
+      "Dreamy",
+      "Inspirational",
+      "Adventurous",
+      "Youthful",
+      "Minimalist",
+      "Modern",
+      "Chic",
+      "Elevated",
+      "Exclusive",
+      "Organic",
+      "Romantic",
+      "Friendly",
+      "Bold",
+      "Urban",
+      "Edgy",
+      "Cinematic",
+      "Comforting",
     ],
   };
 
@@ -311,32 +321,39 @@ export default function LifestyleStudio() {
     },
     {
       id: 2,
-      title: "Mood & Atmosphere",
-      description: "Set the emotional tone and feeling",
+      title: "Scene Objective",
+      description:
+        "Influencer setting, branded product placement, lifestyle scenario",
       icon: <Heart className="w-5 h-5" />,
     },
     {
       id: 3,
-      title: "Subject & Demographics",
-      description: "Define who is in your lifestyle scene",
+      title: "Product/Subject Style",
+      description: "Define the style and aesthetic of products or subjects",
       icon: <Users className="w-5 h-5" />,
     },
     {
       id: 4,
-      title: "Activity & Moment",
-      description: "Choose the action or lifestyle moment",
-      icon: <Coffee className="w-5 h-5" />,
-    },
-    {
-      id: 5,
-      title: "Setting & Location",
-      description: "Select the perfect environment",
+      title: "Background Setting",
+      description: "Choose the perfect environment and location",
       icon: <MapPin className="w-5 h-5" />,
     },
     {
+      id: 5,
+      title: "Lighting Setup",
+      description: "Select lighting style and mood",
+      icon: <Coffee className="w-5 h-5" />,
+    },
+    {
       id: 6,
+      title: "Camera Angle",
+      description: "Set camera perspective and composition",
+      icon: <Camera className="w-5 h-5" />,
+    },
+    {
+      id: 7,
       title: "Visual Elements",
-      description: "Fine-tune lighting, camera, and style",
+      description: "Fine-tune overall aesthetic and mood",
       icon: <Camera className="w-5 h-5" />,
     },
   ];
@@ -474,27 +491,25 @@ export default function LifestyleStudio() {
 
                     {step.id === 2 && (
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                        {keywordCategories["Mood & Atmosphere"].map(
-                          (keyword) => (
-                            <button
-                              key={keyword}
-                              onClick={() => toggleKeyword(keyword)}
-                              className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
-                                selectedKeywords.includes(keyword)
-                                  ? "bg-brand-red text-black"
-                                  : "bg-white text-black border border-gray-300 hover:bg-gray-100"
-                              }`}
-                            >
-                              {keyword}
-                            </button>
-                          ),
-                        )}
+                        {keywordCategories["Scene Objective"].map((keyword) => (
+                          <button
+                            key={keyword}
+                            onClick={() => toggleKeyword(keyword)}
+                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                              selectedKeywords.includes(keyword)
+                                ? "bg-brand-red text-black"
+                                : "bg-white text-black border border-gray-300 hover:bg-gray-100"
+                            }`}
+                          >
+                            {keyword}
+                          </button>
+                        ))}
                       </div>
                     )}
 
                     {step.id === 3 && (
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                        {keywordCategories["Subjects & People"].map(
+                        {keywordCategories["Product/Subject Style"].map(
                           (keyword) => (
                             <button
                               key={keyword}
@@ -514,7 +529,7 @@ export default function LifestyleStudio() {
 
                     {step.id === 4 && (
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                        {keywordCategories["Activities & Moments"].map(
+                        {keywordCategories["Background Setting"].map(
                           (keyword) => (
                             <button
                               key={keyword}
@@ -534,54 +549,46 @@ export default function LifestyleStudio() {
 
                     {step.id === 5 && (
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                        {keywordCategories["Setting & Location"].map(
-                          (keyword) => (
-                            <button
-                              key={keyword}
-                              onClick={() => toggleKeyword(keyword)}
-                              className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
-                                selectedKeywords.includes(keyword)
-                                  ? "bg-brand-red text-black"
-                                  : "bg-white text-black border border-gray-300 hover:bg-gray-100"
-                              }`}
-                            >
-                              {keyword}
-                            </button>
-                          ),
-                        )}
+                        {keywordCategories["Lighting Setup"].map((keyword) => (
+                          <button
+                            key={keyword}
+                            onClick={() => toggleKeyword(keyword)}
+                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                              selectedKeywords.includes(keyword)
+                                ? "bg-brand-red text-black"
+                                : "bg-white text-black border border-gray-300 hover:bg-gray-100"
+                            }`}
+                          >
+                            {keyword}
+                          </button>
+                        ))}
                       </div>
                     )}
 
                     {step.id === 6 && (
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                        {keywordCategories["Camera Angle"].map((keyword) => (
+                          <button
+                            key={keyword}
+                            onClick={() => toggleKeyword(keyword)}
+                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                              selectedKeywords.includes(keyword)
+                                ? "bg-brand-red text-black"
+                                : "bg-white text-black border border-gray-300 hover:bg-gray-100"
+                            }`}
+                          >
+                            {keyword}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+
+                    {step.id === 7 && (
                       <div className="space-y-6">
                         <div>
-                          <Label className="text-white">
-                            Lighting & Technical
-                          </Label>
+                          <Label className="text-white">Visual Elements</Label>
                           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
-                            {keywordCategories["Lighting & Quality"].map(
-                              (keyword) => (
-                                <button
-                                  key={keyword}
-                                  onClick={() => toggleKeyword(keyword)}
-                                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
-                                    selectedKeywords.includes(keyword)
-                                      ? "bg-brand-red text-black"
-                                      : "bg-white text-black border border-gray-300 hover:bg-gray-100"
-                                  }`}
-                                >
-                                  {keyword}
-                                </button>
-                              ),
-                            )}
-                          </div>
-                        </div>
-                        <div>
-                          <Label className="text-white">
-                            Camera & Technical
-                          </Label>
-                          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
-                            {keywordCategories["Camera & Technical"].map(
+                            {keywordCategories["Visual Elements"].map(
                               (keyword) => (
                                 <button
                                   key={keyword}

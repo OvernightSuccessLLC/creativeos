@@ -694,7 +694,7 @@ export default function LifestyleStudio() {
           {/* Right Column - AI Prompt Formula */}
           <div className="space-y-6">
             <Card className="border-black sticky top-6">
-              <CardHeader className="bg-black py-3 px-6 pb-5">
+              <CardHeader className="bg-black py-5 px-6">
                 <CardTitle className="text-xl text-white py-5">
                   AI Prompt Formula
                 </CardTitle>

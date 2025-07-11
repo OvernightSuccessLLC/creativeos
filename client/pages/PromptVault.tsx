@@ -430,7 +430,7 @@ export default function PromptVault() {
                     fontWeight: "700",
                   }}
                 >
-                  Step 1: Describe Your Vision
+                  step 1: describe your vision
                 </h3>
               </div>
 
@@ -863,7 +863,7 @@ export default function PromptVault() {
                     {selectedKeywords.some((k) =>
                       keywordCategories.Lighting.includes(k),
                     )
-                      ? "��"
+                      ? "✓"
                       : "○"}
                   </span>
                   <span

@@ -873,91 +873,41 @@ export default function PromptVault() {
                 </h3>
               </div>
 
-              {/* Compact Quality Score */}
-              <div className="flex items-center gap-3">
-                <div className="flex items-center gap-1 text-xs">
+              {/* Quality Score */}
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2 text-sm">
                   <span
                     className={
-                      customInstructions ? "text-green-400" : "text-white"
+                      customInstructions ? "text-green-400" : "text-gray-400"
                     }
                   >
                     {customInstructions ? "✓" : "○"}
                   </span>
+                  <span className="text-white font-medium">Vision</span>
+
                   <span
                     className={
-                      selectedKeywords.some((k) =>
-                        keywordCategories.Lighting.includes(k),
-                      )
+                      selectedKeywords.length > 0
                         ? "text-green-400"
-                        : "text-white"
+                        : "text-gray-400"
                     }
-                    style={{
-                      opacity: selectedKeywords.some((k) =>
-                        keywordCategories.Lighting.includes(k),
-                      )
-                        ? 1
-                        : 0.5,
-                    }}
                   >
-                    {selectedKeywords.some((k) =>
-                      keywordCategories.Lighting.includes(k),
-                    )
-                      ? "✓"
-                      : "○"}
+                    {selectedKeywords.length > 0 ? "✓" : "○"}
                   </span>
+                  <span className="text-white font-medium">Keywords</span>
+
                   <span
                     className={
-                      selectedKeywords.some((k) =>
-                        keywordCategories.Framing.includes(k),
-                      )
-                        ? "text-green-400"
-                        : "text-white"
+                      uploadedFile ? "text-green-400" : "text-gray-400"
                     }
-                    style={{
-                      opacity: selectedKeywords.some((k) =>
-                        keywordCategories.Framing.includes(k),
-                      )
-                        ? 1
-                        : 0.5,
-                    }}
                   >
-                    {selectedKeywords.some((k) =>
-                      keywordCategories.Framing.includes(k),
-                    )
-                      ? "✓"
-                      : "○"}
+                    {uploadedFile ? "✓" : "○"}
                   </span>
-                  <span
-                    className={
-                      selectedKeywords.some((k) =>
-                        enhancedKeywordCategories[
-                          "Creative Direction"
-                        ].includes(k),
-                      )
-                        ? "text-green-400"
-                        : "text-white"
-                    }
-                    style={{
-                      opacity: selectedKeywords.some((k) =>
-                        enhancedKeywordCategories[
-                          "Creative Direction"
-                        ].includes(k),
-                      )
-                        ? 1
-                        : 0.5,
-                    }}
-                  >
-                    {selectedKeywords.some((k) =>
-                      enhancedKeywordCategories["Creative Direction"].includes(
-                        k,
-                      ),
-                    )
-                      ? "✓"
-                      : "○"}
-                  </span>
+                  <span className="text-white font-medium">Reference</span>
                 </div>
                 <div
-                  className={`text-sm font-bold px-2 py-1 rounded ${qualityScore >= 80 ? "bg-green-500" : qualityScore >= 50 ? "bg-yellow-500" : "bg-red-500"} text-white`}
+                  className={`text-lg font-black px-4 py-2 rounded-lg ${qualityScore >= 80 ? "bg-green-600" : qualityScore >= 50 ? "bg-yellow-600" : "bg-red-600"} text-white`}
+                  style={{ fontFamily: "Poppins, sans-serif" }}
                 >
                   {qualityScore}%
                 </div>
@@ -965,16 +915,20 @@ export default function PromptVault() {
             </div>
 
             <div
-              className="bg-black rounded-lg mb-3"
-              style={{ padding: "12px", border: "1px solid #333" }}
+              className="bg-gray-900 rounded-xl mb-4"
+              style={{ padding: "20px" }}
             >
               <textarea
                 value={generatePrompt()}
                 readOnly
-                className="w-full bg-transparent text-white text-sm leading-relaxed resize-none border-0 outline-0"
-                rows={4}
-                placeholder="Enter your vision above and select keywords to build your optimized SORA prompt..."
-                style={{ minHeight: "80px", fontFamily: "monospace" }}
+                className="w-full bg-transparent text-white text-base leading-relaxed resize-none border-0 outline-0"
+                rows={5}
+                placeholder="Enter your vision above and select keywords to build your optimized prompt..."
+                style={{
+                  minHeight: "120px",
+                  fontFamily: "Poppins, sans-serif",
+                  fontWeight: "500",
+                }}
               />
             </div>
 

@@ -451,7 +451,6 @@ export default function ProductStudio() {
       <div className="px-6 mb-8">
         <div className="max-w-7xl mx-auto">
           <div className="bg-black rounded-lg py-3 px-6 pb-5">
-            <h2 className="text-white text-sm font-bold mb-6">HOW IT WORKS</h2>
             <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
               {[
                 "Add Custom Instructions",

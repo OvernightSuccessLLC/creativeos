@@ -574,46 +574,45 @@ export default function PromptVault() {
           <CardContent style={{ padding: "0 24px" }}>
             {/* Lighting Section */}
             <div className="mb-4">
-              <div
-                className="flex items-center justify-between cursor-pointer mb-3"
+              <button
+                className="w-full bg-black text-white rounded-lg p-4 flex items-center justify-between cursor-pointer transition-all duration-300 hover:bg-gray-900"
                 onClick={() => toggleSection("lighting")}
+                style={{
+                  fontFamily: "Poppins, sans-serif",
+                  fontWeight: 700,
+                  fontSize: "16px",
+                }}
               >
-                <h3
-                  className="text-white text-sm font-black text-left"
-                  style={{
-                    fontWeight: 900,
-                    fontFamily: "Poppins, sans-serif",
-                  }}
-                >
-                  lighting
-                </h3>
+                <span>lighting</span>
                 {collapsedSections.lighting ? (
-                  <ChevronDown className="w-4 h-4 text-white" />
+                  <ChevronDown className="w-5 h-5 text-white" />
                 ) : (
-                  <ChevronUp className="w-4 h-4 text-white" />
+                  <ChevronUp className="w-5 h-5 text-white" />
                 )}
-              </div>
+              </button>
               {!collapsedSections.lighting && (
-                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-1">
-                  {keywordCategories.Lighting.map((keyword) => (
-                    <button
-                      key={keyword}
-                      onClick={() => toggleKeyword(keyword)}
-                      className={`text-xs px-1 py-0.5 rounded font-bold transition-all duration-200 ${
-                        selectedKeywords.includes(keyword)
-                          ? "bg-black text-white border border-white"
-                          : "bg-black text-white opacity-80 hover:opacity-100"
-                      }`}
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: 700,
-                        minHeight: "24px",
-                        lineHeight: "1.2",
-                      }}
-                    >
-                      {keyword.toLowerCase()}
-                    </button>
-                  ))}
+                <div className="mt-3 p-4 bg-gray-900 rounded-lg">
+                  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-1">
+                    {keywordCategories.Lighting.map((keyword) => (
+                      <button
+                        key={keyword}
+                        onClick={() => toggleKeyword(keyword)}
+                        className={`text-xs px-1 py-0.5 rounded font-bold transition-all duration-200 ${
+                          selectedKeywords.includes(keyword)
+                            ? "bg-white text-black"
+                            : "bg-gray-700 text-white hover:bg-gray-600"
+                        }`}
+                        style={{
+                          fontFamily: "Poppins, sans-serif",
+                          fontWeight: 700,
+                          minHeight: "24px",
+                          lineHeight: "1.2",
+                        }}
+                      >
+                        {keyword.toLowerCase()}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>

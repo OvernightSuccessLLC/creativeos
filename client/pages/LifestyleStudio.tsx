@@ -343,10 +343,9 @@ export default function LifestyleStudio() {
     },
     {
       id: 2,
-      title: "Scene Objective",
-      description:
-        "Influencer setting, branded product placement, lifestyle scenario",
-      icon: <Heart className="w-5 h-5" />,
+      title: "File Upload",
+      description: "Upload reference images for your lifestyle scene",
+      icon: <Upload className="w-5 h-5" />,
     },
     {
       id: 3,

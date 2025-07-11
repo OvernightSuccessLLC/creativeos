@@ -828,7 +828,7 @@ export default function Index() {
                             : "bg-green-500"
                       } animate-pulse`}
                     ></div>
-                    <div className="text-white/60 text-xs">
+                    <div className="text-white text-xs font-semibold">
                       {calculateQuality() < 30 &&
                         "Add more details to improve quality"}
                       {calculateQuality() >= 30 &&

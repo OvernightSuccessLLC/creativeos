@@ -840,7 +840,7 @@ export default function Index() {
 
                   {/* Live Analytics Mini Chart */}
                   <div className="flex items-center space-x-1 pt-2 border-t border-white/10">
-                    <span className="text-white/60 text-xs mr-2">
+                    <span className="text-white text-xs font-semibold mr-2">
                       Analysis:
                     </span>
                     {[...Array(8)].map((_, i) => (

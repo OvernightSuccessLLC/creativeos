@@ -888,19 +888,29 @@ export default function GraphicStudio() {
 
                 <Button
                   onClick={copyPrompt}
-                  className="w-full bg-black text-white hover:bg-gray-800"
+                  className="w-full bg-brand-red text-white hover:bg-red-600"
                 >
                   <Copy className="w-4 h-4 mr-2" />
                   {copiedPrompt ? "COPIED!" : "COPY"}
                 </Button>
 
-                <div className="text-sm">
-                  <h4 className="font-semibold mb-2">AI RECOMMENDATIONS</h4>
-                  <ul className="space-y-1 text-gray-600">
-                    <li>• Specify brand guidelines for consistency</li>
-                    <li>• Add color codes for exact matching</li>
-                    <li>• Include dimensions for proper scaling</li>
-                    <li>• Consider file format requirements</li>
+                <div className="text-sm mt-4">
+                  <h4 className="font-semibold text-white my-1 py-1">
+                    <span className="text-brand-red">AI RECOMMENDATIONS</span>
+                  </h4>
+                  <ul className="text-gray-600">
+                    <li className="text-white font-semibold mt-1">
+                      • Specify brand guidelines for consistency
+                    </li>
+                    <li className="text-white font-semibold mt-1">
+                      • Add color codes for exact matching
+                    </li>
+                    <li className="text-white font-semibold mt-1">
+                      • Include dimensions for proper scaling
+                    </li>
+                    <li className="text-white font-semibold mt-1">
+                      • Consider file format requirements
+                    </li>
                   </ul>
                 </div>
               </CardContent>

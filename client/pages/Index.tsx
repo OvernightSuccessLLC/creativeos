@@ -750,7 +750,7 @@ export default function Index() {
             <Card className="bg-black border border-white/20 mt-6">
               <CardHeader className="p-4 sm:py-5 sm:px-6">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between space-y-2 sm:space-y-0">
-                  <CardTitle className="text-brand-red text-xs sm:text-sm font-bold tracking-wide">
+                  <CardTitle className="text-brand-red text-lg font-bold tracking-wide">
                     AI PROMPT FORMULA
                   </CardTitle>
                   <Badge className="bg-brand-red text-black text-xs font-bold self-start">

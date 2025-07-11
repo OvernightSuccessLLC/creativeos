@@ -790,7 +790,9 @@ export default function Index() {
                         </div>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-white/80 text-xs">Reference</span>
+                        <span className="text-white text-xs font-semibold">
+                          Reference
+                        </span>
                         <div className="w-20 bg-white/20 rounded-full h-1">
                           <div
                             className="bg-brand-red h-1 rounded-full transition-all duration-300"

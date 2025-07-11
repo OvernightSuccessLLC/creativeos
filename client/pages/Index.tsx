@@ -525,9 +525,6 @@ export default function Index() {
               </div>
             </div>
           </div>
-          <div className="text-right mt-4">
-            <span className="text-brand-red text-xs font-bold">STEP 1/5</span>
-          </div>
         </div>
       </div>
 

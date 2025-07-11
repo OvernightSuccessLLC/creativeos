@@ -922,19 +922,51 @@ export default function Index() {
                 ></div>
               </div>
 
-              {/* Reference Quality */}
+              {/* File Upload 1 Quality */}
               <div className="flex items-center justify-between mb-2">
                 <span className="text-white text-xs font-medium">
-                  Reference
+                  File Upload 1
                 </span>
                 <span className="text-brand-red text-xs font-bold">
                   {uploadedFile ? 100 : 0}%
                 </span>
               </div>
-              <div className="w-full bg-white/20 rounded-full h-1 mb-4">
+              <div className="w-full bg-white/20 rounded-full h-1 mb-3">
                 <div
                   className="bg-brand-red h-1 rounded-full transition-all duration-300"
                   style={{ width: `${uploadedFile ? 100 : 0}%` }}
+                ></div>
+              </div>
+
+              {/* File Upload 2 Quality */}
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-white text-xs font-medium">
+                  File Upload 2
+                </span>
+                <span className="text-brand-red text-xs font-bold">
+                  {uploadedFile2 ? 100 : 0}%
+                </span>
+              </div>
+              <div className="w-full bg-white/20 rounded-full h-1 mb-3">
+                <div
+                  className="bg-brand-red h-1 rounded-full transition-all duration-300"
+                  style={{ width: `${uploadedFile2 ? 100 : 0}%` }}
+                ></div>
+              </div>
+
+              {/* File Upload 3 Quality */}
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-white text-xs font-medium">
+                  File Upload 3
+                </span>
+                <span className="text-brand-red text-xs font-bold">
+                  {uploadedFile3 ? 100 : 0}%
+                </span>
+              </div>
+              <div className="w-full bg-white/20 rounded-full h-1 mb-4">
+                <div
+                  className="bg-brand-red h-1 rounded-full transition-all duration-300"
+                  style={{ width: `${uploadedFile3 ? 100 : 0}%` }}
                 ></div>
               </div>
 

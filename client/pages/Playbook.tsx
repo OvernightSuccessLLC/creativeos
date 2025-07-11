@@ -728,10 +728,7 @@ export default function Playbook() {
                   </div>
 
                   {/* Best Practices */}
-                  <div
-                    className="bg-black border border-white"
-                    style={{ padding: "32px 32px 20px" }}
-                  >
+                  <div className="bg-gray-900 border border-white rounded p-8">
                     <div>
                       <h4
                         className="text-brand-red mb-3"

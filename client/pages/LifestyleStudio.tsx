@@ -342,11 +342,11 @@ export default function LifestyleStudio() {
   ];
 
   return (
-    <div className="min-h-screen bg-brand-red text-black">
+    <div className="min-h-screen bg-green-500 text-black">
       {/* Top Navigation Bar */}
       <nav className="bg-black px-6 py-3">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="text-brand-red font-bold text-lg">LOGO</div>
+          <div className="text-green-500 font-bold text-lg">LOGO</div>
           <div className="flex items-center space-x-1">
             <button
               onClick={() => navigate("/")}
@@ -419,7 +419,7 @@ export default function LifestyleStudio() {
                   key={index}
                   className="flex flex-col items-center text-center"
                 >
-                  <div className="bg-brand-red text-black rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mb-2">
+                  <div className="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mb-2">
                     {index + 1}
                   </div>
                   <p className="text-white text-sm">{step}</p>
@@ -445,7 +445,7 @@ export default function LifestyleStudio() {
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
-                      <div className="bg-brand-red text-black rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">
+                      <div className="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">
                         {step.id}
                       </div>
                       <div>
@@ -789,7 +789,7 @@ export default function LifestyleStudio() {
                   <div className="flex-1">
                     <div className="bg-gray-200 rounded-full h-2">
                       <div
-                        className="bg-brand-red h-2 rounded-full transition-all duration-500"
+                        className="bg-green-500 h-2 rounded-full transition-all duration-500"
                         style={{ width: `${qualityScore}%` }}
                       ></div>
                     </div>

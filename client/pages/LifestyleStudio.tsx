@@ -362,9 +362,9 @@ export default function LifestyleStudio() {
     },
     {
       id: 5,
-      title: "Lighting Setup",
-      description: "Select lighting style and mood",
-      icon: <Coffee className="w-5 h-5" />,
+      title: "Background Setting",
+      description: "Choose the perfect environment and location",
+      icon: <MapPin className="w-5 h-5" />,
     },
     {
       id: 6,

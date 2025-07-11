@@ -374,8 +374,8 @@ export default function LifestyleStudio() {
     },
     {
       id: 7,
-      title: "Intended Use",
-      description: "Define the intended use and application type",
+      title: "Camera Angle",
+      description: "Set camera perspective and composition",
       icon: <Camera className="w-5 h-5" />,
     },
     {

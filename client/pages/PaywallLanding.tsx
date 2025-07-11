@@ -72,7 +72,7 @@ export default function PaywallLanding() {
   return (
     <div className="min-h-screen bg-black">
       {/* Hero Section */}
-      <div className="relative overflow-hidden py-12 sm:py-20">
+      <div className="relative overflow-hidden py-5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <div className="flex items-center justify-center space-x-3 mb-6">
             <Crown className="w-8 h-8 sm:w-12 sm:h-12 text-black" />

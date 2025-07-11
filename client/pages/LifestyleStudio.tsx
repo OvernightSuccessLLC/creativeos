@@ -349,9 +349,10 @@ export default function LifestyleStudio() {
     },
     {
       id: 3,
-      title: "Product/Subject Style",
-      description: "Define the style and aesthetic of products or subjects",
-      icon: <Users className="w-5 h-5" />,
+      title: "Scene Objective",
+      description:
+        "Influencer setting, branded product placement, lifestyle scenario",
+      icon: <Heart className="w-5 h-5" />,
     },
     {
       id: 4,

@@ -758,7 +758,7 @@ export default function Index() {
                   </Badge>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0">
+              <CardContent className="space-y-3 sm:space-y-4 p-0 px-6 pb-6">
                 <div className="bg-black border border-white/20 rounded p-3 sm:p-4 text-xs sm:text-sm text-white">
                   {generatePrompt() ||
                     "Build your prompt by adding custom instructions and selecting keywords from the categories..."}

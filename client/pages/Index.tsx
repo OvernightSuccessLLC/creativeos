@@ -362,7 +362,7 @@ export default function Index() {
                 key={item.name}
                 className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm transition-colors ${
                   item.highlight
-                    ? "bg-black text-brand-red"
+                    ? "bg-black text-white"
                     : "text-black hover:text-black hover:bg-black/10"
                 }`}
                 style={{

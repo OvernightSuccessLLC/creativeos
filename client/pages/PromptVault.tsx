@@ -561,7 +561,7 @@ export default function PromptVault() {
               letterSpacing: "1px",
             }}
           >
-            STEP 3: SELECT KEYWORDS
+            step 3: select keywords
           </h3>
           <CardContent style={{ padding: "0 24px" }}>
             {/* Lighting Section */}

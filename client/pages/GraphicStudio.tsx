@@ -497,72 +497,7 @@ export default function GraphicStudio() {
 
                     {step.id === 3 && (
                       <div className="space-y-4">
-                        <div>
-                          <Label htmlFor="brand-tone" className="text-white">
-                            Brand Tone
-                          </Label>
-                          <select
-                            id="brand-tone"
-                            value={brandTone}
-                            onChange={(e) => setBrandTone(e.target.value)}
-                            className="w-full mt-1 p-2 border rounded"
-                          >
-                            <option value="">Select brand tone...</option>
-                            <option value="Professional and corporate">
-                              Professional and corporate
-                            </option>
-                            <option value="Creative and artistic">
-                              Creative and artistic
-                            </option>
-                            <option value="Fun and playful">
-                              Fun and playful
-                            </option>
-                            <option value="Luxury and premium">
-                              Luxury and premium
-                            </option>
-                            <option value="Modern and tech-forward">
-                              Modern and tech-forward
-                            </option>
-                            <option value="Traditional and classic">
-                              Traditional and classic
-                            </option>
-                            <option value="Friendly and approachable">
-                              Friendly and approachable
-                            </option>
-                            <option value="Bold and edgy">Bold and edgy</option>
-                          </select>
-                        </div>
-                        <div>
-                          <Label htmlFor="color-scheme" className="text-white">
-                            Color Scheme
-                          </Label>
-                          <select
-                            id="color-scheme"
-                            value={colorScheme}
-                            onChange={(e) => setColorScheme(e.target.value)}
-                            className="w-full mt-1 p-2 border rounded"
-                          >
-                            <option value="">Select color scheme...</option>
-                            <option value="Monochromatic">Monochromatic</option>
-                            <option value="Vibrant and colorful">
-                              Vibrant and colorful
-                            </option>
-                            <option value="Minimal and neutral">
-                              Minimal and neutral
-                            </option>
-                            <option value="Black and white">
-                              Black and white
-                            </option>
-                            <option value="Pastel colors">Pastel colors</option>
-                            <option value="Bold and high contrast">
-                              Bold and high contrast
-                            </option>
-                            <option value="Earth tones">Earth tones</option>
-                            <option value="Gradient colors">
-                              Gradient colors
-                            </option>
-                          </select>
-                        </div>
+                        <div></div>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                           {keywordCategories["Style & Mood"].map((keyword) => (
                             <button

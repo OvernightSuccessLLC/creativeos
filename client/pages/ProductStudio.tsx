@@ -488,9 +488,6 @@ export default function ProductStudio() {
 
                     {step.id === 2 && (
                       <div>
-                        <Label htmlFor="file-upload" className="text-white">
-                          Upload Reference Image
-                        </Label>
                         <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center mt-2">
                           <Upload className="mx-auto h-12 w-12 text-gray-400" />
                           <div className="mt-4">

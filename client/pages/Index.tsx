@@ -566,7 +566,7 @@ export default function Index() {
                   onClick={() => {
                     setShowMobileMenu(false);
                     if (item.name === "UPDATES") {
-                      setShowBriefcase(true);
+                      setShowUpdates(true);
                     } else if (item.name === "THE PLAYBOOK") {
                       navigate("/playbook");
                     } else if (item.name === "PROMPT VAULT") {

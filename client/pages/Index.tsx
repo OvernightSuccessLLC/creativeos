@@ -481,7 +481,7 @@ export default function Index() {
                 }}
                 onClick={() => {
                   if (item.name === "UPDATES") {
-                    setShowUpdates(true);
+                    navigate("/updates");
                   } else if (item.name === "THE PLAYBOOK") {
                     navigate("/playbook");
                   } else if (item.name === "PROMPT VAULT") {

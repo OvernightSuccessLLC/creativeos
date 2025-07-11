@@ -740,25 +740,25 @@ export default function Index() {
             )}
           </div>
 
-          {/* Step 4: Lighting & Quality */}
+          {/* Step 6: Lighting & Quality */}
           <div className="bg-black rounded-lg border border-white/10">
             <div
               className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-900 transition-colors"
-              onClick={() => setActiveStep(activeStep === 4 ? null : 4)}
+              onClick={() => setActiveStep(activeStep === 6 ? null : 6)}
             >
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
-                  4
+                  6
                 </div>
                 <span className="text-white font-medium">
                   Lighting & Quality
                 </span>
               </div>
               <ChevronRight
-                className={`w-5 h-5 text-white transition-transform ${activeStep === 4 ? "rotate-90" : ""}`}
+                className={`w-5 h-5 text-white transition-transform ${activeStep === 6 ? "rotate-90" : ""}`}
               />
             </div>
-            {activeStep === 4 && (
+            {activeStep === 6 && (
               <div className="px-4 pb-4">
                 <div className="flex flex-wrap gap-2">
                   {keywordCategories["Lighting & Quality"].map((keyword) => (

@@ -251,7 +251,7 @@ export default function Playbook() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white" style={FONT_STYLE}>
+    <div className="min-h-screen bg-brand-red text-black" style={FONT_STYLE}>
       {/* Navigation */}
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
 

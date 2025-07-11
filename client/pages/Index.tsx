@@ -818,25 +818,25 @@ export default function Index() {
             )}
           </div>
 
-          {/* Step 6: Subjects & People */}
+          {/* Step 8: Subjects & People */}
           <div className="bg-black rounded-lg border border-white/10">
             <div
               className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-900 transition-colors"
-              onClick={() => setActiveStep(activeStep === 6 ? null : 6)}
+              onClick={() => setActiveStep(activeStep === 8 ? null : 8)}
             >
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
-                  6
+                  8
                 </div>
                 <span className="text-white font-medium">
                   Subjects & People
                 </span>
               </div>
               <ChevronRight
-                className={`w-5 h-5 text-white transition-transform ${activeStep === 6 ? "rotate-90" : ""}`}
+                className={`w-5 h-5 text-white transition-transform ${activeStep === 8 ? "rotate-90" : ""}`}
               />
             </div>
-            {activeStep === 6 && (
+            {activeStep === 8 && (
               <div className="px-4 pb-4">
                 <div className="flex flex-wrap gap-2">
                   {keywordCategories["Subjects & People"].map((keyword) => (

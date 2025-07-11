@@ -39,6 +39,8 @@ export default function Index() {
   const [customInstructions, setCustomInstructions] = useState("");
   const [selectedKeywords, setSelectedKeywords] = useState<string[]>([]);
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
+  const [uploadedFile2, setUploadedFile2] = useState<File | null>(null);
+  const [uploadedFile3, setUploadedFile3] = useState<File | null>(null);
   const [qualityScore, setQualityScore] = useState(0);
   const [copiedPrompt, setCopiedPrompt] = useState(false);
 

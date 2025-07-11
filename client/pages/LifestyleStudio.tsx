@@ -878,7 +878,14 @@ export default function LifestyleStudio() {
       </div>
 
       {showBriefcase && (
-        <BriefcaseModal onClose={() => setShowBriefcase(false)} />
+        <BriefcaseModal
+          isOpen={showBriefcase}
+          onClose={() => setShowBriefcase(false)}
+          onNavigate={(path) => {
+            navigate(path);
+            setShowBriefcase(false);
+          }}
+        />
       )}
     </div>
   );

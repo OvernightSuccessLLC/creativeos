@@ -514,9 +514,6 @@ export default function ProductStudio() {
                   <CardContent className="space-y-4 bg-black">
                     {step.id === 1 && (
                       <div>
-                        <Label htmlFor="instructions" className="text-white">
-                          Describe your product photography vision
-                        </Label>
                         <Textarea
                           id="instructions"
                           placeholder="A sleek modern smartphone positioned at a dynamic angle on a clean white background, showcasing its premium metallic finish and elegant design..."

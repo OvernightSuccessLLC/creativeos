@@ -319,6 +319,22 @@ export default function Index() {
     }
   };
 
+  // Handle file upload 2
+  const handleFileUpload2 = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      setUploadedFile2(file);
+    }
+  };
+
+  // Handle file upload 3
+  const handleFileUpload3 = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      setUploadedFile3(file);
+    }
+  };
+
   // Update quality score when inputs change
   useEffect(() => {
     setQualityScore(calculateQuality());

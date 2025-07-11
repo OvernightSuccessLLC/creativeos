@@ -114,6 +114,127 @@ export default function Templates() {
       uses: 321,
       featured: true,
     },
+    // New templates from the images
+    {
+      id: 7,
+      title: "AI Product Creation",
+      category: "product",
+      description: "Generate entirely new product concepts",
+      prompt:
+        "Generate an innovative smart home device that doesn't exist yet, sleek futuristic design with organic minimalist premium materials like brushed aluminum and glass, compact form factor, modern product photography style, studio lighting, clean background, concept product visualization, industrial design perfection",
+      tags: ["product design", "innovation", "futuristic", "concept"],
+      rating: 4.9,
+      uses: 892,
+      featured: true,
+    },
+    {
+      id: 8,
+      title: "AI Model Creation",
+      category: "portraits",
+      description: "Generate realistic human models for campaigns",
+      prompt:
+        "Generate a diverse group of professional models for fashion campaigns, varied ethnicities and ages, confident posing, smart casual wear, studio photography with professional lighting, clean white background, high fashion aesthetic, commercial photography style, suitable for brand campaigns, photorealistic quality, editorial fashion photography",
+      tags: ["models", "fashion", "diversity", "commercial"],
+      rating: 4.8,
+      uses: 745,
+      featured: true,
+    },
+    {
+      id: 9,
+      title: "Authentic Lifestyle Moment",
+      category: "lifestyle",
+      description: "Genuine lifestyle photography capturing real moments",
+      prompt:
+        "Authentic lifestyle scene of a young family having breakfast together in a bright kitchen overlooking window, light streaming through window with parents and children laughing around wooden dining table, casual clothing, unposed and candid moments, warm color palette, shot with 35mm lens, documentary style photography, genuine emotions and connections",
+      tags: ["lifestyle", "family", "authentic", "candid"],
+      rating: 4.9,
+      uses: 663,
+      featured: true,
+    },
+    {
+      id: 10,
+      title: "Social Media Advertisement",
+      category: "graphics",
+      description: "Eye-catching graphic design for digital advertising",
+      prompt:
+        "Bold graphic advertisement for fitness app, vibrant gradient background from electric blue to magenta, dynamic typography with strong call-to-action, smartphone mockup showing app interface, energetic design elements, modern sans-serif fonts, high contrast colors, optimized for Instagram and Facebook ads, 1080x1080 square format",
+      tags: ["advertising", "social media", "graphic design", "mobile"],
+      rating: 4.7,
+      uses: 534,
+      featured: false,
+    },
+    {
+      id: 11,
+      title: "Website Header Banner",
+      category: "graphics",
+      description: "Professional web banner for website headers",
+      prompt:
+        "Professional website banner design for SaaS company, clean geometric background with subtle gradients, confident business professional using laptop in modern office environment, corporate blue and white color scheme, space for headline text overlay, 1920x600 resolution, web-optimized design, professional and trustworthy aesthetic",
+      tags: ["web design", "banner", "corporate", "SaaS"],
+      rating: 4.6,
+      uses: 421,
+      featured: false,
+    },
+    {
+      id: 12,
+      title: "E-commerce Product Photo",
+      category: "product",
+      description: "Clean product photography for online stores",
+      prompt:
+        "E-commerce product photography of luxury watch on clean white background, professional studio lighting with softbox setup, detailed close-up showing watch face and metal bracelet, crisp focus, no shadows, commercial photography style, optimized for online retail, high resolution for zoom functionality, Amazon/Shopify ready format",
+      tags: ["e-commerce", "product", "white background", "retail"],
+      rating: 4.8,
+      uses: 789,
+      featured: false,
+    },
+    {
+      id: 13,
+      title: "Gourmet Food Styling",
+      category: "creative",
+      description: "Restaurant-quality food photography",
+      prompt:
+        "Gourmet food photography of artisanal pasta dish on rustic wooden table, garnished with fresh herbs and parmesan, warm overhead lighting, shallow depth of field focusing on the pasta, rustic table setting with linen napkin and vintage cutlery, food styling magazine quality, appetizing and mouth-watering presentation",
+      tags: ["food", "styling", "restaurant", "gourmet"],
+      rating: 4.9,
+      uses: 567,
+      featured: true,
+    },
+    {
+      id: 14,
+      title: "Modern Building",
+      category: "architecture",
+      description: "Contemporary architectural photography",
+      prompt:
+        "Modern architectural photography of sleek glass skyscraper, clean geometric lines and reflective surfaces, shot during blue hour with building lights creating warm glow against cool sky, low angle perspective emphasizing height and grandeur, minimal composition, urban photography style, sharp details throughout",
+      tags: ["architecture", "modern", "urban", "geometric"],
+      rating: 4.7,
+      uses: 445,
+      featured: false,
+    },
+    {
+      id: 15,
+      title: "Product Mockup Scene",
+      category: "product",
+      description: "Professional product mockup with contextual environment",
+      prompt:
+        "Product mockup of sleek wireless headphones displayed on a minimalist white desk setup, MacBook Pro open in background, succulent plant in ceramic pot, natural daylight from window creating soft shadows, clean modern aesthetic, styled product photography for e-commerce, shot with 50mm lens, shallow depth of field highlighting the product",
+      tags: ["mockup", "product", "minimalist", "e-commerce"],
+      rating: 4.8,
+      uses: 623,
+      featured: false,
+    },
+    {
+      id: 16,
+      title: "Modern Logo Creation",
+      category: "graphics",
+      description: "Clean, professional logo design concepts",
+      prompt:
+        "Modern minimalist logo design for tech startup, geometric shapes with clean lines, monochrome color scheme, simple icon combined with elegant sans-serif typography, scalable vector style, professional brand identity, suitable for digital and print applications, white background, PNG format with transparency",
+      tags: ["logo", "branding", "minimalist", "tech"],
+      rating: 4.8,
+      uses: 712,
+      featured: true,
+    },
   ];
 
   const filteredTemplates = templates.filter((template) => {

@@ -344,69 +344,56 @@ export default function LifestyleStudio() {
   return (
     <div className="min-h-screen bg-brand-red text-black">
       {/* Top Navigation Bar */}
-      <nav className="bg-black px-6 py-3">
+      <nav className="bg-black mb-1 px-6 py-6 pb-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="text-brand-red font-bold text-lg">LOGO</div>
-          <div className="flex items-center space-x-1">
+          <div className="flex items-center">
             <button
               onClick={() => navigate("/")}
-              className="text-white px-4 py-2 rounded text-sm font-medium hover:bg-white/10"
+              className="bg-brand-red text-black px-3 py-2 rounded text-sm font-semibold mr-3"
             >
-              PRODUCT STUDIO
+              <span>PRODUCT STUDIO</span>
             </button>
-            <button className="bg-black text-white px-4 py-2 rounded text-sm font-bold">
-              LIFESTYLE STUDIO
+            <button className="bg-brand-red text-black px-3 py-2 rounded text-sm font-semibold mx-3">
+              <b>LIFESTYLE STUDIO</b>
             </button>
             <button
               onClick={() => navigate("/graphic-studio")}
-              className="text-white px-4 py-2 rounded text-sm font-medium hover:bg-white/10"
+              className="bg-brand-red text-black px-3 py-2 rounded text-sm font-semibold mx-3"
             >
-              GRAPHIC STUDIO
+              <b>GRAPHIC STUDIO</b>
             </button>
             <button
               onClick={() => setShowBriefcase(true)}
-              className="text-white px-4 py-2 rounded text-sm font-medium hover:bg-white/10"
+              className="bg-brand-red text-black px-3 py-2 rounded text-sm font-semibold mx-3"
             >
-              THE BRIEFCASE
+              <b>THE BRIEFCASE</b>
             </button>
           </div>
           <div className="flex items-center space-x-2">
-            <div className="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+            <div className="bg-brand-red text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
               ?
             </div>
-            <div className="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+            <div className="bg-brand-red text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
               ♀
             </div>
             <button className="text-white text-sm font-medium hover:bg-white/10 px-3 py-1 rounded">
-              RESET
+              <b>RESET</b>
             </button>
           </div>
         </div>
       </nav>
 
       {/* Studio Header */}
-      <div className="px-6 py-8">
-        <div className="max-w-7xl mx-auto">
-          <h1
-            className="text-5xl font-bold text-black mb-2"
-            style={{ fontFamily: "Poppins, sans-serif" }}
-          >
-            LIFESTYLE STUDIO
-          </h1>
-          <p
-            className="text-black text-lg"
-            style={{ fontFamily: "Poppins, sans-serif" }}
-          >
-            Create authentic lifestyle visuals and human-centered content
-          </p>
-        </div>
+      <div className="px-6 py-5">
+        <div className="max-w-7xl mx-auto"></div>
       </div>
 
       {/* HOW IT WORKS Section */}
       <div className="px-6 mb-8">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-black rounded-lg p-6">
-            <h2 className="text-white text-xl font-bold mb-6">HOW IT WORKS</h2>
+          <div className="bg-black rounded-lg py-3 px-6 pb-5">
+            <h2 className="text-white text-sm font-bold mb-6">HOW IT WORKS</h2>
             <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
               {[
                 "Add Custom Instructions",
@@ -438,7 +425,7 @@ export default function LifestyleStudio() {
             {steps.map((step) => (
               <Card key={step.id} className="border-black">
                 <CardHeader
-                  className="cursor-pointer"
+                  className="cursor-pointer bg-black"
                   onClick={() =>
                     setActiveStep(activeStep === step.id ? null : step.id)
                   }
@@ -449,7 +436,9 @@ export default function LifestyleStudio() {
                         {step.id}
                       </div>
                       <div>
-                        <CardTitle className="text-lg">{step.title}</CardTitle>
+                        <CardTitle className="text-lg text-white">
+                          {step.title}
+                        </CardTitle>
                         <p className="text-gray-600 text-sm">
                           {step.description}
                         </p>
@@ -464,10 +453,10 @@ export default function LifestyleStudio() {
                 </CardHeader>
 
                 {activeStep === step.id && (
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-4 bg-black">
                     {step.id === 1 && (
                       <div>
-                        <Label htmlFor="instructions">
+                        <Label htmlFor="instructions" className="text-white">
                           Describe your lifestyle scene or story
                         </Label>
                         <Textarea
@@ -484,222 +473,91 @@ export default function LifestyleStudio() {
                     )}
 
                     {step.id === 2 && (
-                      <div className="space-y-4">
-                        <div>
-                          <Label htmlFor="mood">Mood & Tone</Label>
-                          <select
-                            id="mood"
-                            value={moodTone}
-                            onChange={(e) => setMoodTone(e.target.value)}
-                            className="w-full mt-1 p-2 border rounded"
-                          >
-                            <option value="">Select mood...</option>
-                            <option value="Joyful and energetic">
-                              Joyful and energetic
-                            </option>
-                            <option value="Calm and serene">
-                              Calm and serene
-                            </option>
-                            <option value="Romantic and intimate">
-                              Romantic and intimate
-                            </option>
-                            <option value="Adventurous and dynamic">
-                              Adventurous and dynamic
-                            </option>
-                            <option value="Cozy and comfortable">
-                              Cozy and comfortable
-                            </option>
-                            <option value="Professional and confident">
-                              Professional and confident
-                            </option>
-                            <option value="Playful and spontaneous">
-                              Playful and spontaneous
-                            </option>
-                            <option value="Contemplative and peaceful">
-                              Contemplative and peaceful
-                            </option>
-                          </select>
-                        </div>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                          {keywordCategories["Mood & Atmosphere"].map(
-                            (keyword) => (
-                              <button
-                                key={keyword}
-                                onClick={() => toggleKeyword(keyword)}
-                                className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
-                                  selectedKeywords.includes(keyword)
-                                    ? "bg-brand-red text-black"
-                                    : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
-                                }`}
-                              >
-                                {keyword}
-                              </button>
-                            ),
-                          )}
-                        </div>
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                        {keywordCategories["Mood & Atmosphere"].map(
+                          (keyword) => (
+                            <button
+                              key={keyword}
+                              onClick={() => toggleKeyword(keyword)}
+                              className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                                selectedKeywords.includes(keyword)
+                                  ? "bg-brand-red text-black"
+                                  : "bg-white text-black border border-gray-300 hover:bg-gray-100"
+                              }`}
+                            >
+                              {keyword}
+                            </button>
+                          ),
+                        )}
                       </div>
                     )}
 
                     {step.id === 3 && (
-                      <div>
-                        <Label htmlFor="subject">Subject Demographics</Label>
-                        <select
-                          id="subject"
-                          value={subjectAge}
-                          onChange={(e) => setSubjectAge(e.target.value)}
-                          className="w-full mt-1 p-2 border rounded"
-                        >
-                          <option value="">Select subject...</option>
-                          <option value="Young adult (20-30)">
-                            Young adult (20-30)
-                          </option>
-                          <option value="Middle aged (30-50)">
-                            Middle aged (30-50)
-                          </option>
-                          <option value="Senior person (50+)">
-                            Senior person (50+)
-                          </option>
-                          <option value="Child or teen">Child or teen</option>
-                          <option value="Family group">Family group</option>
-                          <option value="Couple together">
-                            Couple together
-                          </option>
-                          <option value="Friends group">Friends group</option>
-                        </select>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4">
-                          {keywordCategories["Subjects & People"].map(
-                            (keyword) => (
-                              <button
-                                key={keyword}
-                                onClick={() => toggleKeyword(keyword)}
-                                className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
-                                  selectedKeywords.includes(keyword)
-                                    ? "bg-brand-red text-black"
-                                    : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
-                                }`}
-                              >
-                                {keyword}
-                              </button>
-                            ),
-                          )}
-                        </div>
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                        {keywordCategories["Subjects & People"].map(
+                          (keyword) => (
+                            <button
+                              key={keyword}
+                              onClick={() => toggleKeyword(keyword)}
+                              className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                                selectedKeywords.includes(keyword)
+                                  ? "bg-brand-red text-black"
+                                  : "bg-white text-black border border-gray-300 hover:bg-gray-100"
+                              }`}
+                            >
+                              {keyword}
+                            </button>
+                          ),
+                        )}
                       </div>
                     )}
 
                     {step.id === 4 && (
-                      <div>
-                        <Label htmlFor="activity">Activity Type</Label>
-                        <select
-                          id="activity"
-                          value={activityType}
-                          onChange={(e) => setActivityType(e.target.value)}
-                          className="w-full mt-1 p-2 border rounded"
-                        >
-                          <option value="">Select activity...</option>
-                          <option value="Morning routine">
-                            Morning routine
-                          </option>
-                          <option value="Coffee and work">
-                            Coffee and work
-                          </option>
-                          <option value="Cooking and dining">
-                            Cooking and dining
-                          </option>
-                          <option value="Exercise and wellness">
-                            Exercise and wellness
-                          </option>
-                          <option value="Social gathering">
-                            Social gathering
-                          </option>
-                          <option value="Outdoor adventure">
-                            Outdoor adventure
-                          </option>
-                          <option value="Creative pursuits">
-                            Creative pursuits
-                          </option>
-                          <option value="Relaxation time">
-                            Relaxation time
-                          </option>
-                        </select>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4">
-                          {keywordCategories["Activities & Moments"].map(
-                            (keyword) => (
-                              <button
-                                key={keyword}
-                                onClick={() => toggleKeyword(keyword)}
-                                className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
-                                  selectedKeywords.includes(keyword)
-                                    ? "bg-brand-red text-black"
-                                    : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
-                                }`}
-                              >
-                                {keyword}
-                              </button>
-                            ),
-                          )}
-                        </div>
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                        {keywordCategories["Activities & Moments"].map(
+                          (keyword) => (
+                            <button
+                              key={keyword}
+                              onClick={() => toggleKeyword(keyword)}
+                              className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                                selectedKeywords.includes(keyword)
+                                  ? "bg-brand-red text-black"
+                                  : "bg-white text-black border border-gray-300 hover:bg-gray-100"
+                              }`}
+                            >
+                              {keyword}
+                            </button>
+                          ),
+                        )}
                       </div>
                     )}
 
                     {step.id === 5 && (
-                      <div>
-                        <Label htmlFor="location">Location Setting</Label>
-                        <select
-                          id="location"
-                          value={locationSetting}
-                          onChange={(e) => setLocationSetting(e.target.value)}
-                          className="w-full mt-1 p-2 border rounded"
-                        >
-                          <option value="">Select location...</option>
-                          <option value="cozy home interior">
-                            Cozy home interior
-                          </option>
-                          <option value="urban coffee shop">
-                            Urban coffee shop
-                          </option>
-                          <option value="natural outdoor setting">
-                            Natural outdoor setting
-                          </option>
-                          <option value="modern workspace">
-                            Modern workspace
-                          </option>
-                          <option value="beach or waterfront">
-                            Beach or waterfront
-                          </option>
-                          <option value="city street or park">
-                            City street or park
-                          </option>
-                          <option value="restaurant or dining">
-                            Restaurant or dining
-                          </option>
-                          <option value="fitness or wellness space">
-                            Fitness or wellness space
-                          </option>
-                        </select>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4">
-                          {keywordCategories["Setting & Location"].map(
-                            (keyword) => (
-                              <button
-                                key={keyword}
-                                onClick={() => toggleKeyword(keyword)}
-                                className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
-                                  selectedKeywords.includes(keyword)
-                                    ? "bg-brand-red text-black"
-                                    : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
-                                }`}
-                              >
-                                {keyword}
-                              </button>
-                            ),
-                          )}
-                        </div>
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                        {keywordCategories["Setting & Location"].map(
+                          (keyword) => (
+                            <button
+                              key={keyword}
+                              onClick={() => toggleKeyword(keyword)}
+                              className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                                selectedKeywords.includes(keyword)
+                                  ? "bg-brand-red text-black"
+                                  : "bg-white text-black border border-gray-300 hover:bg-gray-100"
+                              }`}
+                            >
+                              {keyword}
+                            </button>
+                          ),
+                        )}
                       </div>
                     )}
 
                     {step.id === 6 && (
                       <div className="space-y-6">
                         <div>
-                          <Label>Lighting & Technical</Label>
+                          <Label className="text-white">
+                            Lighting & Technical
+                          </Label>
                           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
                             {keywordCategories["Lighting & Quality"].map(
                               (keyword) => (
@@ -709,7 +567,7 @@ export default function LifestyleStudio() {
                                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
                                     selectedKeywords.includes(keyword)
                                       ? "bg-brand-red text-black"
-                                      : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
+                                      : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                                   }`}
                                 >
                                   {keyword}
@@ -719,7 +577,9 @@ export default function LifestyleStudio() {
                           </div>
                         </div>
                         <div>
-                          <Label>Camera & Technical</Label>
+                          <Label className="text-white">
+                            Camera & Technical
+                          </Label>
                           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
                             {keywordCategories["Camera & Technical"].map(
                               (keyword) => (
@@ -729,7 +589,7 @@ export default function LifestyleStudio() {
                                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
                                     selectedKeywords.includes(keyword)
                                       ? "bg-brand-red text-black"
-                                      : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
+                                      : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                                   }`}
                                 >
                                   {keyword}
@@ -739,7 +599,7 @@ export default function LifestyleStudio() {
                           </div>
                         </div>
                         <div>
-                          <Label htmlFor="file-upload">
+                          <Label htmlFor="file-upload" className="text-white">
                             Upload Reference Image
                           </Label>
                           <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center mt-2">
@@ -782,31 +642,39 @@ export default function LifestyleStudio() {
           {/* Right Column - AI Prompt Formula */}
           <div className="space-y-6">
             <Card className="border-black sticky top-6">
-              <CardHeader>
-                <CardTitle className="text-xl">AI Prompt Formula</CardTitle>
-                <div className="flex items-center space-x-2">
-                  <div className="text-2xl font-bold">{qualityScore}%</div>
-                  <div className="flex-1">
-                    <div className="bg-gray-200 rounded-full h-2">
-                      <div
-                        className="bg-brand-red h-2 rounded-full transition-all duration-500"
-                        style={{ width: `${qualityScore}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                </div>
+              <CardHeader className="bg-black py-3 px-6 pb-5">
+                <CardTitle className="text-xl text-white py-5">
+                  AI Prompt Formula
+                </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 bg-black px-6 pb-6">
                 <div>
-                  <Label>Generated Prompt</Label>
+                  <Label>
+                    <span className="text-white">Generated Prompt</span>
+                  </Label>
                   <div className="bg-gray-50 p-3 rounded border text-sm min-h-[100px] mt-1">
                     {generatePrompt() ||
                       "Start building your prompt by filling out the steps..."}
                   </div>
                 </div>
 
+                <div className="bg-gray-200 rounded-full h-2 my-5 py-3">
+                  <div
+                    className="bg-brand-red h-2 rounded-full transition-all duration-500"
+                    style={{ width: `${qualityScore}%` }}
+                  ></div>
+                </div>
+
+                <Button
+                  onClick={copyPrompt}
+                  className="w-full bg-brand-red text-white hover:bg-red-600"
+                >
+                  <Copy className="w-4 h-4 mr-2" />
+                  {copiedPrompt ? "COPIED!" : "COPY"}
+                </Button>
+
                 <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
+                  <div className="flex justify-between text-sm text-white">
                     <span>Instructions</span>
                     <span className="font-medium">
                       {customInstructions.length > 20 ? "25%" : "0%"}
@@ -823,7 +691,7 @@ export default function LifestyleStudio() {
                 </div>
 
                 <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
+                  <div className="flex justify-between text-sm text-white">
                     <span>Keywords</span>
                     <span className="font-medium">
                       {Math.min(50, selectedKeywords.length * 2)}%
@@ -840,7 +708,7 @@ export default function LifestyleStudio() {
                 </div>
 
                 <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
+                  <div className="flex justify-between text-sm text-white">
                     <span>Reference</span>
                     <span className="font-medium">
                       {uploadedFile ? "15%" : "0%"}
@@ -854,21 +722,23 @@ export default function LifestyleStudio() {
                   </div>
                 </div>
 
-                <Button
-                  onClick={copyPrompt}
-                  className="w-full bg-black text-white hover:bg-gray-800"
-                >
-                  <Copy className="w-4 h-4 mr-2" />
-                  {copiedPrompt ? "COPIED!" : "COPY"}
-                </Button>
-
-                <div className="text-sm">
-                  <h4 className="font-semibold mb-2">AI RECOMMENDATIONS</h4>
-                  <ul className="space-y-1 text-gray-600">
-                    <li>• Add more emotional descriptors for depth</li>
-                    <li>• Include lighting details for mood</li>
-                    <li>• Specify camera angle for composition</li>
-                    <li>• Consider adding seasonal elements</li>
+                <div className="text-sm mt-4">
+                  <h4 className="font-semibold text-white my-1 py-1">
+                    <span className="text-brand-red">AI RECOMMENDATIONS</span>
+                  </h4>
+                  <ul className="text-gray-600">
+                    <li className="text-white font-semibold mt-1">
+                      • Add more emotional descriptors for depth
+                    </li>
+                    <li className="text-white font-semibold mt-1">
+                      • Include lighting details for mood
+                    </li>
+                    <li className="text-white font-semibold mt-1">
+                      • Specify camera angle for composition
+                    </li>
+                    <li className="text-white font-semibold mt-1">
+                      • Consider adding seasonal elements
+                    </li>
                   </ul>
                 </div>
               </CardContent>

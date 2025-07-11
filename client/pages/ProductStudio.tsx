@@ -369,8 +369,8 @@ export default function ProductStudio() {
     },
     {
       id: 3,
-      title: "Product Style",
-      description: "Select the product type and style approach",
+      title: "Intended Use",
+      description: "Select the intended use and application type",
       icon: <Package className="w-5 h-5" />,
     },
     {

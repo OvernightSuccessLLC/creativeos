@@ -348,74 +348,62 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-brand-red text-black">
-      {/* Navigation Header */}
-      <nav className="border-b border-black/20 px-4 sm:px-6 py-4">
-        <div className="flex items-center justify-between max-w-7xl mx-auto">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center" />
+      {/* Studio Navigation Tabs */}
+      <nav className="px-6 py-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center">
+            <div className="text-black font-bold text-lg">LOGO</div>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6">
-            {navigationItems.map((item) => (
-              <button
-                key={item.name}
-                className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm transition-colors ${
-                  item.highlight
-                    ? "bg-black text-white"
-                    : "text-black hover:text-black hover:bg-black/10"
-                }`}
-                style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: "700",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.5px",
-                }}
-                onClick={() => {
-                  if (item.name === "THE PLAYBOOK") {
-                    navigate("/playbook");
-                  } else if (item.name === "PROMPT VAULT") {
-                    navigate("/prompt-vault");
-                  } else if (item.name === "TEMPLATES") {
-                    navigate("/templates");
-                  } else if (item.name === "AI TOOLKIT") {
-                    navigate("/ai-toolkit");
-                  }
-                }}
-              >
-                <item.icon className="w-4 h-4" />
-                <span className="hidden xl:inline">{item.name}</span>
-              </button>
-            ))}
+          {/* Studio Tabs */}
+          <div className="flex items-center space-x-1">
+            <button className="bg-black text-white px-4 py-2 rounded text-sm font-medium">
+              PRODUCT STUDIO
+            </button>
+            <button className="text-black px-4 py-2 rounded text-sm font-medium hover:bg-black/10">
+              LIFESTYLE STUDIO
+            </button>
+            <button className="text-black px-4 py-2 rounded text-sm font-medium hover:bg-black/10">
+              GRAPHIC STUDIO
+            </button>
+            <button className="text-black px-4 py-2 rounded text-sm font-medium hover:bg-black/10">
+              THE BRIEFCASE
+            </button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Right side buttons */}
           <div className="flex items-center space-x-2">
-            <Button
-              variant="outline"
-              className="hidden sm:flex bg-black text-white border-white hover:bg-black hover:text-white"
-              style={{
-                fontFamily: "Poppins, sans-serif",
-                fontWeight: "400",
-                textTransform: "uppercase",
-                letterSpacing: "0.5px",
-                padding: "8px 12px 8px 0",
-              }}
-              onClick={() => setShowBriefcase(true)}
-            >
-              <Bell className="w-4 h-4 sm:mr-2" />
-              <span className="hidden sm:inline">THE BRIEFCASE</span>
-            </Button>
-            <Button
-              variant="ghost"
-              className="lg:hidden"
-              onClick={() => setShowMobileMenu(!showMobileMenu)}
-            >
-              <Menu className="w-6 h-6" />
-            </Button>
+            <div className="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+              ?
+            </div>
+            <div className="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+              ♀
+            </div>
+            <button className="text-black text-sm font-medium hover:bg-black/10 px-3 py-1 rounded">
+              RESET
+            </button>
           </div>
         </div>
       </nav>
+
+      {/* Studio Header */}
+      <div className="px-6 py-8">
+        <div className="max-w-7xl mx-auto">
+          <h1
+            className="text-5xl font-bold text-black mb-2"
+            style={{ fontFamily: "Poppins, sans-serif" }}
+          >
+            PRODUCT STUDIO
+          </h1>
+          <p
+            className="text-black text-lg"
+            style={{ fontFamily: "Poppins, sans-serif" }}
+          >
+            Create stunning product visuals and e-commerce content
+          </p>
+        </div>
+      </div>
 
       {/* Mobile Menu */}
       {showMobileMenu && (

@@ -953,27 +953,6 @@ export default function Index() {
                 FAVORITE
               </Button>
             </div>
-
-            {/* Upload Section */}
-            <div className="mt-6 pt-6 border-t border-white/10">
-              <h4 className="text-white font-medium mb-3 text-sm">
-                Upload Reference
-              </h4>
-              <div className="border-2 border-dashed border-white/20 rounded-lg p-4 text-center">
-                <Upload className="w-6 h-6 text-white/40 mx-auto mb-2" />
-                <Input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleFileUpload}
-                  className="bg-transparent border-0 text-white text-xs"
-                />
-                {uploadedFile && (
-                  <p className="text-brand-red mt-2 text-xs">
-                    ✓ {uploadedFile.name} uploaded
-                  </p>
-                )}
-              </div>
-            </div>
           </div>
         </div>
       </main>

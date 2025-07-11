@@ -348,39 +348,37 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-brand-red text-black">
-      {/* Studio Navigation Tabs */}
-      <nav className="px-6 py-4">
+      {/* Top Navigation Bar */}
+      <nav className="bg-black px-6 py-3">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center">
-            <div className="text-black font-bold text-lg">LOGO</div>
-          </div>
+          <div className="text-brand-red font-bold text-lg">LOGO</div>
 
           {/* Studio Tabs */}
           <div className="flex items-center space-x-1">
-            <button className="bg-black text-white px-4 py-2 rounded text-sm font-medium">
+            <button className="bg-white text-black px-4 py-2 rounded text-sm font-bold">
               PRODUCT STUDIO
             </button>
-            <button className="text-black px-4 py-2 rounded text-sm font-medium hover:bg-black/10">
+            <button className="text-white px-4 py-2 rounded text-sm font-medium hover:bg-white/10">
               LIFESTYLE STUDIO
             </button>
-            <button className="text-black px-4 py-2 rounded text-sm font-medium hover:bg-black/10">
+            <button className="text-white px-4 py-2 rounded text-sm font-medium hover:bg-white/10">
               GRAPHIC STUDIO
             </button>
-            <button className="text-black px-4 py-2 rounded text-sm font-medium hover:bg-black/10">
+            <button className="text-white px-4 py-2 rounded text-sm font-medium hover:bg-white/10">
               THE BRIEFCASE
             </button>
           </div>
 
           {/* Right side buttons */}
           <div className="flex items-center space-x-2">
-            <div className="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+            <div className="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
               ?
             </div>
-            <div className="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+            <div className="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
               ♀
             </div>
-            <button className="text-black text-sm font-medium hover:bg-black/10 px-3 py-1 rounded">
+            <button className="text-white text-sm font-medium hover:bg-white/10 px-3 py-1 rounded">
               RESET
             </button>
           </div>

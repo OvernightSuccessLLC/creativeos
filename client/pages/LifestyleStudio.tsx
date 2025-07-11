@@ -380,6 +380,12 @@ export default function LifestyleStudio() {
     },
     {
       id: 8,
+      title: "Intended Use",
+      description: "Define the intended use and application type",
+      icon: <Camera className="w-5 h-5" />,
+    },
+    {
+      id: 9,
       title: "Finishing",
       description: "Final post-processing and aesthetic treatment",
       icon: <Camera className="w-5 h-5" />,

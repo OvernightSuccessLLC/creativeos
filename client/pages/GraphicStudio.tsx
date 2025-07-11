@@ -867,6 +867,7 @@ export default function GraphicStudio() {
                 <Button
                   onClick={copyPrompt}
                   className="w-full bg-brand-red text-white hover:bg-red-600"
+                  style={{ margin: "12px 0", padding: "12px 16px" }}
                 >
                   <Copy className="w-4 h-4 mr-2" />
                   {copiedPrompt ? "COPIED!" : "COPY"}

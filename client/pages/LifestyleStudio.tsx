@@ -574,7 +574,7 @@ export default function LifestyleStudio() {
 
                     {step.id === 4 && (
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                        {keywordCategories["Background Setting"].map(
+                        {keywordCategories["Product/Subject Style"].map(
                           (keyword) => (
                             <button
                               key={keyword}

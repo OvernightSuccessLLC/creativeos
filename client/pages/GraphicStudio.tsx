@@ -401,7 +401,6 @@ export default function GraphicStudio() {
       <div className="px-6 mb-8">
         <div className="max-w-7xl mx-auto">
           <div className="bg-black rounded-lg p-6">
-            <h2 className="text-white text-xl font-bold mb-6">HOW IT WORKS</h2>
             <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
               {[
                 "Add Custom Instructions",

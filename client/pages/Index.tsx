@@ -32,7 +32,6 @@ export default function Index() {
   const navigate = useNavigate();
   const [selectedStudio, setSelectedStudio] = useState<string>("lifestyle");
   const [showBriefcase, setShowBriefcase] = useState(false);
-  const [showUpdates, setShowUpdates] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   // Prompt Builder State

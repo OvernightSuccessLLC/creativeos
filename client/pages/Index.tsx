@@ -927,48 +927,6 @@ export default function Index() {
                   style={{ width: `${uploadedFile ? 100 : 0}%` }}
                 ></div>
               </div>
-
-              {/* File Upload 2 Quality */}
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-white text-xs font-medium">
-                  File Upload 2
-                </span>
-                <span className="text-brand-red text-xs font-bold">
-                  {uploadedFile2 ? 100 : 0}%
-                </span>
-              </div>
-              <div className="w-full bg-white/20 rounded-full h-1 mb-3">
-                <div
-                  className="bg-brand-red h-1 rounded-full transition-all duration-300"
-                  style={{ width: `${uploadedFile2 ? 100 : 0}%` }}
-                ></div>
-              </div>
-
-              {/* File Upload 3 Quality */}
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-white text-xs font-medium">
-                  File Upload 3
-                </span>
-                <span className="text-brand-red text-xs font-bold">
-                  {uploadedFile3 ? 100 : 0}%
-                </span>
-              </div>
-              <div className="w-full bg-white/20 rounded-full h-1 mb-4">
-                <div
-                  className="bg-brand-red h-1 rounded-full transition-all duration-300"
-                  style={{ width: `${uploadedFile3 ? 100 : 0}%` }}
-                ></div>
-              </div>
-
-              {/* Overall Quality Bar */}
-              <div className="w-full bg-white/20 rounded-full h-3 relative overflow-hidden">
-                <div
-                  className="bg-gradient-to-r from-brand-red to-brand-red/80 h-3 rounded-full transition-all duration-500 relative"
-                  style={{ width: `${calculateQuality()}%` }}
-                >
-                  <div className="absolute inset-0 bg-white/30 rounded-full animate-pulse opacity-50"></div>
-                </div>
-              </div>
             </div>
 
             <div className="mb-6">

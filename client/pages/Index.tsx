@@ -930,11 +930,7 @@ export default function Index() {
             </div>
 
             <div className="mb-6">
-              <h4 className="text-brand-red text-xs font-bold mb-3">
-                AI RECOMMENDATIONS
-              </h4>
               <ul className="space-y-2 text-white/60 text-sm">
-                <li>• Add detailed scene descriptions for better results</li>
                 <li>• Select mood and atmosphere keywords</li>
                 <li>• Choose specific lighting and camera angles</li>
                 <li>• Upload reference images for style matching</li>

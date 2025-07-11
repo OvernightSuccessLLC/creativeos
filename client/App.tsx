@@ -45,6 +45,7 @@ const App = () => (
           <Route path="/prompt-vault" element={<PromptVault />} />
           <Route path="/templates" element={<Templates />} />
           <Route path="/ai-toolkit" element={<AIToolkit />} />
+          <Route path="/updates" element={<Updates />} />
           <Route path="/join" element={<PaywallLanding />} />
           <Route path="/upgrade" element={<PaywallLanding />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

@@ -889,11 +889,11 @@ export default function Index() {
               </CardContent>
             </Card>
 
-            {/* Bottom Row - Remaining Steps */}
+            {/* Bottom Row - Mood and Other Steps */}
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-6">
-              {/* Left Column - Remaining Step Cards */}
+              {/* Left Column - Step Cards (Steps 2-5) */}
               <div className="space-y-2 sm:space-y-3">
-                {stepCards.slice(2).map((step) => (
+                {stepCards.slice(1, 5).map((step) => (
                   <div key={step.id}>
                     <Card
                       className="bg-black border border-white/20 hover:border-brand-red transition-colors cursor-pointer"

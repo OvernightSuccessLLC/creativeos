@@ -518,37 +518,6 @@ export default function GraphicStudio() {
 
                     {step.id === 4 && (
                       <div>
-                        <Label htmlFor="typography" className="text-white">
-                          Typography Style
-                        </Label>
-                        <select
-                          id="typography"
-                          value={typographyStyle}
-                          onChange={(e) => setTypographyStyle(e.target.value)}
-                          className="w-full mt-1 p-2 border rounded"
-                        >
-                          <option value="">Select typography...</option>
-                          <option value="Modern sans serif">
-                            Modern sans serif
-                          </option>
-                          <option value="Classic serif">Classic serif</option>
-                          <option value="Bold and impactful">
-                            Bold and impactful
-                          </option>
-                          <option value="Elegant script">Elegant script</option>
-                          <option value="Handwritten style">
-                            Handwritten style
-                          </option>
-                          <option value="Tech and futuristic">
-                            Tech and futuristic
-                          </option>
-                          <option value="Vintage and retro">
-                            Vintage and retro
-                          </option>
-                          <option value="Minimalist text">
-                            Minimalist text
-                          </option>
-                        </select>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4">
                           {keywordCategories["Typography & Text"].map(
                             (keyword) => (

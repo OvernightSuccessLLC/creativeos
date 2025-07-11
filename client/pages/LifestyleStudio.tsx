@@ -561,7 +561,7 @@ export default function LifestyleStudio() {
       </nav>
 
       {/* Studio Header */}
-      <div className="px-6 py-5">
+      <div className="px-6 py-3">
         <div className="max-w-7xl mx-auto"></div>
       </div>
 

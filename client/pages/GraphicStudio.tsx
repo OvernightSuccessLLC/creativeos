@@ -375,12 +375,6 @@ export default function GraphicStudio() {
             </button>
           </div>
           <div className="flex items-center space-x-2">
-            <div className="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
-              ?
-            </div>
-            <div className="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
-              ♀
-            </div>
             <button className="text-white text-sm font-medium hover:bg-white/10 px-3 py-1 rounded">
               RESET
             </button>

@@ -627,59 +627,61 @@ export default function Playbook() {
                   ))}
 
                   {/* Pro Tips Section */}
-                  <div
-                    className="bg-black border border-white"
-                    style={{ padding: "20px 32px 0" }}
-                  >
-                    <span style={TYPOGRAPHY.body}>
-                      <span style={{ color: "rgb(249, 57, 33)" }}>
-                        Structured approach:
-                      </span>{" "}
-                      The vault ensures you don't forget a variable. It's
-                      especially useful if you're not yet comfortable juggling
-                      all the prompt components in your head.
-                    </span>
-                    <span style={TYPOGRAPHY.body}>
-                      <br />
-                      <br />
-                      <span style={{ color: "rgb(249, 57, 33)" }}>
-                        Reference images are powerful:
-                      </span>{" "}
-                      If you upload a sketch of a logo and describe it, Sora can
-                      produce a cleaner or more detailed version. Or if you love
-                      the style of a particular painting, you can reference it
-                      to imbue your generated image with a similar vibe.
-                    </span>
-                    <span style={TYPOGRAPHY.body}>
-                      <br />
-                      <br />
-                      <span style={{ color: "rgb(249, 57, 33)" }}>
-                        Quality meter guidance:
-                      </span>{" "}
-                      The quality meter might indicate how comprehensive your
-                      prompt is. If it's low, you probably have a minimal
-                      description – consider adding more keywords or details
-                      until the meter suggests the prompt is robust.
-                    </span>
-                    <span style={TYPOGRAPHY.body}>
-                      <br />
-                      <br />
-                      <span style={{ color: "rgb(249, 57, 33)" }}>
-                        Pre-vetted keywords:{" "}
-                      </span>
-                      The vault uses keywords known to work well. Terms like
-                      '4K', 'bokeh', 'dramatic lighting', 'concept art' etc.,
-                      which the AI responds to strongly.
-                    </span>
-                    <span style={TYPOGRAPHY.body}>
-                      Continue iterating: After generating with the vault
-                      prompt, you can still iterate further. The vault gets you
-                      a great first prompt. From there, treat it like any image:
-                      use follow-up edits or try slight variations.
-                    </span>
+                  <div className="bg-gray-900 border border-white rounded p-6">
+                    <div className="space-y-4">
+                      <p style={TYPOGRAPHY.body}>
+                        <span className="text-brand-red font-semibold">
+                          Structured approach:
+                        </span>{" "}
+                        The vault ensures you don't forget a variable. It's
+                        especially useful if you're not yet comfortable juggling
+                        all the prompt components in your head.
+                      </p>
+
+                      <p style={TYPOGRAPHY.body}>
+                        <span className="text-brand-red font-semibold">
+                          Reference images are powerful:
+                        </span>{" "}
+                        If you upload a sketch of a logo and describe it, Sora
+                        can produce a cleaner or more detailed version. Or if
+                        you love the style of a particular painting, you can
+                        reference it to imbue your generated image with a
+                        similar vibe.
+                      </p>
+
+                      <p style={TYPOGRAPHY.body}>
+                        <span className="text-brand-red font-semibold">
+                          Quality meter guidance:
+                        </span>{" "}
+                        The quality meter might indicate how comprehensive your
+                        prompt is. If it's low, you probably have a minimal
+                        description – consider adding more keywords or details
+                        until the meter suggests the prompt is robust.
+                      </p>
+
+                      <p style={TYPOGRAPHY.body}>
+                        <span className="text-brand-red font-semibold">
+                          Pre-vetted keywords:
+                        </span>{" "}
+                        The vault uses keywords known to work well. Terms like
+                        '4K', 'bokeh', 'dramatic lighting', 'concept art' etc.,
+                        which the AI responds to strongly.
+                      </p>
+
+                      <p style={TYPOGRAPHY.body}>
+                        <span className="text-brand-red font-semibold">
+                          Continue iterating:
+                        </span>{" "}
+                        After generating with the vault prompt, you can still
+                        iterate further. The vault gets you a great first
+                        prompt. From there, treat it like any image: use
+                        follow-up edits or try slight variations.
+                      </p>
+                    </div>
+
                     <h4
-                      className="text-brand-red mb-2"
-                      style={{ ...TYPOGRAPHY.heading, paddingTop: "20px" }}
+                      className="text-brand-red mb-2 mt-6"
+                      style={TYPOGRAPHY.heading}
                     >
                       In Essence:
                     </h4>

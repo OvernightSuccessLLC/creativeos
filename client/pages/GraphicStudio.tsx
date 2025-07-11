@@ -453,11 +453,11 @@ export default function GraphicStudio() {
                         </p>
                       </div>
                     </div>
-                    <ChevronRight
-                      className={`w-5 h-5 transition-transform ${
-                        activeStep === step.id ? "rotate-90" : ""
-                      }`}
-                    />
+                    {activeStep === step.id ? (
+                      <ChevronUp className="w-4 h-4 text-white" />
+                    ) : (
+                      <ChevronDown className="w-4 h-4 text-white" />
+                    )}
                   </div>
                 </CardHeader>
 

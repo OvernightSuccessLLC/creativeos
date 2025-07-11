@@ -717,21 +717,19 @@ export default function PromptVault() {
               </button>
               {!collapsedSections.style && (
                 <div className="mt-3 p-4 bg-gray-900 rounded-lg">
-                  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-1">
+                  <div className="flex flex-wrap gap-2">
                     {enhancedKeywordCategories.Style.map((keyword) => (
                       <button
                         key={keyword}
                         onClick={() => toggleKeyword(keyword)}
-                        className={`text-xs px-1 py-0.5 rounded font-bold transition-all duration-200 ${
+                        className={`text-sm px-4 py-2 rounded-full font-medium transition-all duration-200 ${
                           selectedKeywords.includes(keyword)
-                            ? "bg-white text-black"
-                            : "bg-gray-700 text-white hover:bg-gray-600"
-                        }`}
+                            ? "bg-brand-red text-black"
+                            : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
+                        } hover:scale-105`}
                         style={{
                           fontFamily: "Poppins, sans-serif",
-                          fontWeight: 700,
-                          minHeight: "24px",
-                          lineHeight: "1.2",
+                          fontWeight: 500,
                         }}
                       >
                         {keyword.toLowerCase()}

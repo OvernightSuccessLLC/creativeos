@@ -830,9 +830,7 @@ export default function LifestyleStudio() {
               </CardHeader>
               <CardContent className="space-y-4 bg-black px-6 pb-6">
                 <div>
-                  <Label>
-                    <span className="text-white">Generated Prompt</span>
-                  </Label>
+                  <Label></Label>
                   <div className="bg-gray-50 p-3 rounded border text-sm min-h-[100px] mt-1">
                     {generatePrompt() ||
                       "Start building your prompt by filling out the steps..."}

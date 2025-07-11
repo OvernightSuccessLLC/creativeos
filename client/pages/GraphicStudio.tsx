@@ -776,7 +776,10 @@ export default function GraphicStudio() {
           <div className="space-y-6">
             <Card className="border-black sticky top-6">
               <CardHeader className="bg-black py-3 px-6 pb-5">
-                <CardTitle className="text-xl text-white py-5">
+                <CardTitle
+                  className="text-xl text-white"
+                  style={{ padding: "12px 0 20px" }}
+                >
                   AI Prompt Formula
                 </CardTitle>
                 <div className="flex items-center space-x-2">

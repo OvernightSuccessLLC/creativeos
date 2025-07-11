@@ -915,9 +915,6 @@ export default function LifestyleStudio() {
                     <li className="text-white font-semibold mt-1">
                       • Specify camera angle for composition
                     </li>
-                    <li className="text-white font-semibold mt-1">
-                      • Consider adding seasonal elements
-                    </li>
                   </ul>
                 </div>
               </CardContent>

@@ -749,7 +749,7 @@ export default function GraphicStudio() {
                           </div>
                         </div>
                         <div>
-                          <Label>Visual Elements</Label>
+                          <Label className="text-white">Visual Elements</Label>
                           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
                             {keywordCategories["Visual Elements"].map(
                               (keyword) => (

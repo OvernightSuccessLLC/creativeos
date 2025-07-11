@@ -673,7 +673,9 @@ export default function GraphicStudio() {
 
                     {step.id === 5 && (
                       <div>
-                        <Label htmlFor="layout">Layout Style</Label>
+                        <Label htmlFor="layout" className="text-white">
+                          Layout Style
+                        </Label>
                         <select
                           id="layout"
                           value={layoutStyle}

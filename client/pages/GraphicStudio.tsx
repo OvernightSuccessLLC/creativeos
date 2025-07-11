@@ -887,9 +887,6 @@ export default function GraphicStudio() {
                     <li className="text-white font-semibold mt-1">
                       • Include dimensions for proper scaling
                     </li>
-                    <li className="text-white font-semibold mt-1">
-                      • Consider file format requirements
-                    </li>
                   </ul>
                 </div>
               </CardContent>

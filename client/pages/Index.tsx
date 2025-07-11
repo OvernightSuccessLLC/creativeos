@@ -619,50 +619,87 @@ export default function Index() {
 
           {/* Main Studio Content */}
           <div className="space-y-6">
-            {/* Top Row - First Two Steps */}
+            {/* Top Row - Custom Instructions (Left) and Upload (Right) */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {stepCards.slice(0, 2).map((step) => (
-                <div key={step.id}>
-                  <Card
-                    className="bg-black border border-white/20 hover:border-brand-red transition-colors cursor-pointer"
-                    onClick={() =>
-                      setActiveStep(activeStep === step.id ? null : step.id)
-                    }
-                  >
-                    <CardContent className="p-3 sm:p-4">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-xs sm:text-sm font-bold">
-                            {step.id}
-                          </div>
-                          <div>
-                            <span className="font-medium text-white text-sm sm:text-base">
-                              {step.title}
-                            </span>
-                            <p className="text-white/60 text-xs">
-                              {step.description}
-                            </p>
-                          </div>
+              {/* Step 1 - Custom Instructions */}
+              <div>
+                <Card
+                  className="bg-black border border-white/20 hover:border-brand-red transition-colors cursor-pointer"
+                  onClick={() => setActiveStep(activeStep === 1 ? null : 1)}
+                >
+                  <CardContent className="p-3 sm:p-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-xs sm:text-sm font-bold">
+                          1
                         </div>
-                        {activeStep === step.id ? (
-                          <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
-                        ) : (
-                          <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
-                        )}
+                        <div>
+                          <span className="font-medium text-white text-sm sm:text-base">
+                            Custom Instructions
+                          </span>
+                          <p className="text-white/60 text-xs">
+                            Describe your vision in detail
+                          </p>
+                        </div>
                       </div>
+                      {activeStep === 1 ? (
+                        <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
+                      ) : (
+                        <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Expandable Content */}
+                {activeStep === 1 && (
+                  <Card className="bg-black border border-white/20 mt-2">
+                    <CardContent className="p-4">
+                      {renderStepContent(1)}
                     </CardContent>
                   </Card>
+                )}
+              </div>
 
-                  {/* Expandable Content */}
-                  {activeStep === step.id && (
-                    <Card className="bg-black border border-white/20 mt-2">
-                      <CardContent className="p-4">
-                        {renderStepContent(step.id)}
-                      </CardContent>
-                    </Card>
-                  )}
-                </div>
-              ))}
+              {/* Step 6 - Upload Reference (Moved from bottom) */}
+              <div>
+                <Card
+                  className="bg-black border border-white/20 hover:border-brand-red transition-colors cursor-pointer"
+                  onClick={() => setActiveStep(activeStep === 6 ? null : 6)}
+                >
+                  <CardContent className="p-3 sm:p-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-xs sm:text-sm font-bold">
+                          6
+                        </div>
+                        <div>
+                          <span className="font-medium text-white text-sm sm:text-base">
+                            Upload Reference
+                          </span>
+                          <p className="text-white/60 text-xs">
+                            Add visual references
+                          </p>
+                        </div>
+                      </div>
+                      {activeStep === 6 ? (
+                        <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
+                      ) : (
+                        <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Expandable Content */}
+                {activeStep === 6 && (
+                  <Card className="bg-black border border-white/20 mt-2">
+                    <CardContent className="p-4">
+                      {renderStepContent(6)}
+                    </CardContent>
+                  </Card>
+                )}
+              </div>
             </div>
 
             {/* Prompt Output Section */}

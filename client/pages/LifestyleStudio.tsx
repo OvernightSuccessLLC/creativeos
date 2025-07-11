@@ -552,9 +552,6 @@ export default function LifestyleStudio() {
                   <CardContent className="space-y-4 bg-black">
                     {step.id === 1 && (
                       <div>
-                        <Label htmlFor="instructions" className="text-white">
-                          Describe your lifestyle scene or story
-                        </Label>
                         <Textarea
                           id="instructions"
                           placeholder="A young professional woman enjoying her morning coffee routine in a sunlit kitchen, creating an authentic moment of calm before starting her day..."

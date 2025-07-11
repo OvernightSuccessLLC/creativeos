@@ -519,7 +519,7 @@ export default function LifestyleStudio() {
           {/* Left Column - Steps */}
           <div className="lg:col-span-2 space-y-4">
             {steps.map((step) => (
-              <Card key={step.id} className="border-black">
+              <Card key={step.id} className="border-black bg-black">
                 <CardHeader
                   className="cursor-pointer bg-black"
                   onClick={() =>

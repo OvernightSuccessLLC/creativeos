@@ -627,7 +627,7 @@ export default function Index() {
                   className="bg-black border border-white/20 hover:border-brand-red transition-colors cursor-pointer"
                   onClick={() => setActiveStep(activeStep === 1 ? null : 1)}
                 >
-                  <CardContent className="p-3 sm:p-4">
+                  <CardContent className="p-3 sm:p-4 flex flex-col">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
                         <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-xs sm:text-sm font-bold">

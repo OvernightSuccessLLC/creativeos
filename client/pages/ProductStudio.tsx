@@ -480,185 +480,27 @@ export default function ProductStudio() {
                     )}
 
                     {step.id === 2 && (
-                      <div className="space-y-4">
-                        <div>
-                          <Label htmlFor="product-type">Product Type</Label>
-                          <select
-                            id="product-type"
-                            value={productType}
-                            onChange={(e) => setProductType(e.target.value)}
-                            className="w-full mt-1 p-2 border rounded"
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                        {keywordCategories["Product Style"].map((keyword) => (
+                          <button
+                            key={keyword}
+                            onClick={() => toggleKeyword(keyword)}
+                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                              selectedKeywords.includes(keyword)
+                                ? "bg-brand-red text-black"
+                                : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
+                            }`}
                           >
-                            <option value="">Select product type...</option>
-                            <option value="Electronics">Electronics</option>
-                            <option value="Fashion accessories">
-                              Fashion accessories
-                            </option>
-                            <option value="Beauty products">
-                              Beauty products
-                            </option>
-                            <option value="Home goods">Home goods</option>
-                            <option value="Kitchen items">Kitchen items</option>
-                            <option value="Tech gadgets">Tech gadgets</option>
-                            <option value="Jewelry">Jewelry</option>
-                            <option value="Watches">Watches</option>
-                          </select>
-                        </div>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                          {keywordCategories["Product Style"].map((keyword) => (
-                            <button
-                              key={keyword}
-                              onClick={() => toggleKeyword(keyword)}
-                              className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
-                                selectedKeywords.includes(keyword)
-                                  ? "bg-brand-red text-black"
-                                  : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
-                              }`}
-                            >
-                              {keyword}
-                            </button>
-                          ))}
-                        </div>
+                            {keyword}
+                          </button>
+                        ))}
                       </div>
                     )}
 
                     {step.id === 3 && (
-                      <div>
-                        <Label htmlFor="background">Background Style</Label>
-                        <select
-                          id="background"
-                          value={backgroundStyle}
-                          onChange={(e) => setBackgroundStyle(e.target.value)}
-                          className="w-full mt-1 p-2 border rounded"
-                        >
-                          <option value="">Select background...</option>
-                          <option value="Clean white background">
-                            Clean white background
-                          </option>
-                          <option value="Dramatic black background">
-                            Dramatic black background
-                          </option>
-                          <option value="Neutral gray backdrop">
-                            Neutral gray backdrop
-                          </option>
-                          <option value="Textured surface">
-                            Textured surface
-                          </option>
-                          <option value="Wood surface">Wood surface</option>
-                          <option value="Marble surface">Marble surface</option>
-                          <option value="Lifestyle context">
-                            Lifestyle context
-                          </option>
-                          <option value="Studio setup">Studio setup</option>
-                        </select>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4">
-                          {keywordCategories["Background Setting"].map(
-                            (keyword) => (
-                              <button
-                                key={keyword}
-                                onClick={() => toggleKeyword(keyword)}
-                                className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
-                                  selectedKeywords.includes(keyword)
-                                    ? "bg-brand-red text-black"
-                                    : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
-                                }`}
-                              >
-                                {keyword}
-                              </button>
-                            ),
-                          )}
-                        </div>
-                      </div>
-                    )}
-
-                    {step.id === 4 && (
-                      <div>
-                        <Label htmlFor="lighting">Lighting Setup</Label>
-                        <select
-                          id="lighting"
-                          value={lightingSetup}
-                          onChange={(e) => setLightingSetup(e.target.value)}
-                          className="w-full mt-1 p-2 border rounded"
-                        >
-                          <option value="">Select lighting...</option>
-                          <option value="Professional studio lighting">
-                            Professional studio lighting
-                          </option>
-                          <option value="Soft diffused lighting">
-                            Soft diffused lighting
-                          </option>
-                          <option value="Dramatic side lighting">
-                            Dramatic side lighting
-                          </option>
-                          <option value="Even key and fill">
-                            Even key and fill
-                          </option>
-                          <option value="Natural window light">
-                            Natural window light
-                          </option>
-                          <option value="High key bright">
-                            High key bright
-                          </option>
-                          <option value="Low key moody">Low key moody</option>
-                          <option value="Three-point setup">
-                            Three-point setup
-                          </option>
-                        </select>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4">
-                          {keywordCategories["Lighting Setup"].map(
-                            (keyword) => (
-                              <button
-                                key={keyword}
-                                onClick={() => toggleKeyword(keyword)}
-                                className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
-                                  selectedKeywords.includes(keyword)
-                                    ? "bg-brand-red text-black"
-                                    : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
-                                }`}
-                              >
-                                {keyword}
-                              </button>
-                            ),
-                          )}
-                        </div>
-                      </div>
-                    )}
-
-                    {step.id === 5 && (
-                      <div>
-                        <Label htmlFor="camera">Camera Angle</Label>
-                        <select
-                          id="camera"
-                          value={cameraAngle}
-                          onChange={(e) => setCameraAngle(e.target.value)}
-                          className="w-full mt-1 p-2 border rounded"
-                        >
-                          <option value="">Select camera angle...</option>
-                          <option value="Front hero view">
-                            Front hero view
-                          </option>
-                          <option value="Three-quarter angle">
-                            Three-quarter angle
-                          </option>
-                          <option value="Top down flat lay">
-                            Top down flat lay
-                          </option>
-                          <option value="Diagonal composition">
-                            Diagonal composition
-                          </option>
-                          <option value="Close-up detail shot">
-                            Close-up detail shot
-                          </option>
-                          <option value="Wide product shot">
-                            Wide product shot
-                          </option>
-                          <option value="Lifestyle in-use">
-                            Lifestyle in-use
-                          </option>
-                          <option value="Macro detail">Macro detail</option>
-                        </select>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4">
-                          {keywordCategories["Camera Angle"].map((keyword) => (
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                        {keywordCategories["Background Setting"].map(
+                          (keyword) => (
                             <button
                               key={keyword}
                               onClick={() => toggleKeyword(keyword)}
@@ -670,8 +512,44 @@ export default function ProductStudio() {
                             >
                               {keyword}
                             </button>
-                          ))}
-                        </div>
+                          ),
+                        )}
+                      </div>
+                    )}
+
+                    {step.id === 4 && (
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                        {keywordCategories["Lighting Setup"].map((keyword) => (
+                          <button
+                            key={keyword}
+                            onClick={() => toggleKeyword(keyword)}
+                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                              selectedKeywords.includes(keyword)
+                                ? "bg-brand-red text-black"
+                                : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
+                            }`}
+                          >
+                            {keyword}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+
+                    {step.id === 5 && (
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                        {keywordCategories["Camera Angle"].map((keyword) => (
+                          <button
+                            key={keyword}
+                            onClick={() => toggleKeyword(keyword)}
+                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                              selectedKeywords.includes(keyword)
+                                ? "bg-brand-red text-black"
+                                : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
+                            }`}
+                          >
+                            {keyword}
+                          </button>
+                        ))}
                       </div>
                     )}
 

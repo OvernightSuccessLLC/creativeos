@@ -583,7 +583,7 @@ export default function ProductStudio() {
                       </div>
                     )}
 
-                    {step.id === 4 && (
+                    {step.id === 5 && (
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                         {keywordCategories["Lighting Setup"].map((keyword) => (
                           <button
@@ -601,7 +601,7 @@ export default function ProductStudio() {
                       </div>
                     )}
 
-                    {step.id === 5 && (
+                    {step.id === 6 && (
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                         {keywordCategories["Camera Angle"].map((keyword) => (
                           <button

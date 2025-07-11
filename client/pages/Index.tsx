@@ -988,10 +988,7 @@ export default function Index() {
             </div>
           </div>
         </div>
-                    </CardContent>
-                  </Card>
-                )}
-              </div>
+      </main>
 
               {/* Upload Reference - Integrated */}
               <Card className="bg-black border border-white/20 h-fit">

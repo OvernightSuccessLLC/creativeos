@@ -764,7 +764,7 @@ export default function Index() {
                     {/* Quality Breakdown Bars */}
                     <div className="flex-1 space-y-2">
                       <div className="flex items-center justify-between">
-                        <span className="text-white/80 text-xs">
+                        <span className="text-white text-xs font-semibold">
                           Instructions
                         </span>
                         <div className="w-20 bg-white/20 rounded-full h-1">

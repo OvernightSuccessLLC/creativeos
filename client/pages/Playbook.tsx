@@ -328,12 +328,8 @@ export default function Playbook() {
                   <div>
                     <ul className="space-y-3">
                       <li
-                        className="text-white leading-relaxed"
-                        style={{
-                          ...TYPOGRAPHY.body,
-                          marginBottom: "20px",
-                          padding: "20px 0",
-                        }}
+                        className="text-white leading-relaxed mb-6"
+                        style={TYPOGRAPHY.body}
                       >
                         •{" "}
                         <strong
@@ -349,8 +345,8 @@ export default function Playbook() {
                         like colors, setting, and distinctive features.
                       </li>
                       <li
-                        className="text-white leading-relaxed"
-                        style={{ ...TYPOGRAPHY.body, paddingBottom: "20px" }}
+                        className="text-white leading-relaxed mb-6"
+                        style={TYPOGRAPHY.body}
                       >
                         •{" "}
                         <strong
@@ -361,11 +357,12 @@ export default function Playbook() {
                         </strong>{" "}
                         The same scene can look like a photograph, watercolor
                         painting, Pixar animation, or oil painting. Use mood
-                        adjectives
+                        adjectives: "warm and inviting", "dark and dystopian",
+                        "whimsical and cartoonish".
                       </li>
                       <li
-                        className="text-white leading-relaxed"
-                        style={{ ...TYPOGRAPHY.body, paddingBottom: "20px" }}
+                        className="text-white leading-relaxed mb-6"
+                        style={TYPOGRAPHY.body}
                       >
                         •{" "}
                         <strong
@@ -381,8 +378,8 @@ export default function Playbook() {
                         didn't, then improve your prompt and try again.
                       </li>
                       <li
-                        className="text-white leading-relaxed"
-                        style={{ ...TYPOGRAPHY.body, paddingBottom: "20px" }}
+                        className="text-white leading-relaxed mb-6"
+                        style={TYPOGRAPHY.body}
                       >
                         •{" "}
                         <strong

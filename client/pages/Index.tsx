@@ -469,11 +469,8 @@ export default function Index() {
       )}
 
       {/* HOW IT WORKS Section */}
-      <div className="border-b border-black/20 px-6 py-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-black/60 text-xs font-bold tracking-wide mb-4">
-            HOW IT WORKS
-          </h2>
+      <div className="border-b border-black/20 px-6 py-5 bg-black">
+        <div className="max-w-7xl mx-auto bg-black text-white">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">

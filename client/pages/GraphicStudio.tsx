@@ -333,7 +333,7 @@ export default function GraphicStudio() {
     },
     {
       id: 6,
-      title: "Visual Elements",
+      title: "Color & Style",
       description: "Add colors, shapes, and graphic elements",
       icon: <Layers className="w-5 h-5" />,
     },

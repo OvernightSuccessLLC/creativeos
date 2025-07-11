@@ -828,7 +828,7 @@ export default function GraphicStudio() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <Label>Generated Prompt</Label>
+                  <Label className="text-white">Generated Prompt</Label>
                   <div className="bg-gray-50 p-3 rounded border text-sm min-h-[100px] mt-1">
                     {generatePrompt() ||
                       "Start building your prompt by filling out the steps..."}

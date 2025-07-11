@@ -573,7 +573,7 @@ export default function Index() {
             )}
           </div>
 
-          {/* Step 2: Mood & Atmosphere */}
+          {/* Step 2: File Upload */}
           <div className="bg-black rounded-lg border border-white/10">
             <div
               className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-900 transition-colors"
@@ -583,15 +583,104 @@ export default function Index() {
                 <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
                   2
                 </div>
-                <span className="text-white font-medium">
-                  Mood & Atmosphere
-                </span>
+                <span className="text-white font-medium">File Upload</span>
               </div>
               <ChevronRight
                 className={`w-5 h-5 text-white transition-transform ${activeStep === 2 ? "rotate-90" : ""}`}
               />
             </div>
             {activeStep === 2 && (
+              <div className="px-4 pb-4">
+                <div className="border-2 border-dashed border-white/20 rounded-lg p-6 text-center bg-gray-900">
+                  <Upload className="w-8 h-8 text-white/40 mx-auto mb-3" />
+                  <p className="text-white/60 text-sm mb-4">
+                    Upload reference images, mood boards, or style examples
+                  </p>
+                  <Input
+                    type="file"
+                    accept="image/*,video/*,.pdf"
+                    onChange={handleFileUpload2}
+                    className="bg-gray-800 border-gray-600 text-white file:bg-brand-red file:text-white file:border-0 file:rounded file:px-3 file:py-1 file:mr-3"
+                  />
+                  {uploadedFile2 && (
+                    <div className="mt-3 p-3 bg-gray-800 rounded-lg">
+                      <p className="text-brand-red text-sm font-medium">
+                        ✓ {uploadedFile2.name} uploaded successfully
+                      </p>
+                      <p className="text-white/50 text-xs mt-1">
+                        File size: {Math.round(uploadedFile2.size / 1024)} KB
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Step 3: File Upload */}
+          <div className="bg-black rounded-lg border border-white/10">
+            <div
+              className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-900 transition-colors"
+              onClick={() => setActiveStep(activeStep === 3 ? null : 3)}
+            >
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
+                  3
+                </div>
+                <span className="text-white font-medium">File Upload</span>
+              </div>
+              <ChevronRight
+                className={`w-5 h-5 text-white transition-transform ${activeStep === 3 ? "rotate-90" : ""}`}
+              />
+            </div>
+            {activeStep === 3 && (
+              <div className="px-4 pb-4">
+                <div className="border-2 border-dashed border-white/20 rounded-lg p-6 text-center bg-gray-900">
+                  <Upload className="w-8 h-8 text-white/40 mx-auto mb-3" />
+                  <p className="text-white/60 text-sm mb-4">
+                    Upload additional reference images, mood boards, or style
+                    examples
+                  </p>
+                  <Input
+                    type="file"
+                    accept="image/*,video/*,.pdf"
+                    onChange={handleFileUpload3}
+                    className="bg-gray-800 border-gray-600 text-white file:bg-brand-red file:text-white file:border-0 file:rounded file:px-3 file:py-1 file:mr-3"
+                  />
+                  {uploadedFile3 && (
+                    <div className="mt-3 p-3 bg-gray-800 rounded-lg">
+                      <p className="text-brand-red text-sm font-medium">
+                        ✓ {uploadedFile3.name} uploaded successfully
+                      </p>
+                      <p className="text-white/50 text-xs mt-1">
+                        File size: {Math.round(uploadedFile3.size / 1024)} KB
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Step 4: Mood & Atmosphere */}
+          <div className="bg-black rounded-lg border border-white/10">
+            <div
+              className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-900 transition-colors"
+              onClick={() => setActiveStep(activeStep === 4 ? null : 4)}
+            >
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
+                  4
+                </div>
+                <span className="text-white font-medium">
+                  Mood & Atmosphere
+                </span>
+              </div>
+              <ChevronRight
+                className={`w-5 h-5 text-white transition-transform ${activeStep === 4 ? "rotate-90" : ""}`}
+              />
+            </div>
+            {activeStep === 4 && (
               <div className="px-4 pb-4">
                 <div className="flex flex-wrap gap-2">
                   {keywordCategories["Mood & Atmosphere"].map((keyword) => (

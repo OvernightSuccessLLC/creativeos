@@ -483,7 +483,7 @@ export default function Index() {
                 }}
                 onClick={() => {
                   if (item.name === "UPDATES") {
-                    setShowBriefcase(true);
+                    setShowUpdates(true);
                   } else if (item.name === "THE PLAYBOOK") {
                     navigate("/playbook");
                   } else if (item.name === "PROMPT VAULT") {

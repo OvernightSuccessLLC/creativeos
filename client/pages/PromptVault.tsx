@@ -458,9 +458,6 @@ export default function PromptVault() {
                   }}
                   rows={6}
                 />
-                <p className="text-gray-400 text-sm mt-3 font-medium">
-                  Be specific about subjects, actions, and the overall scene.
-                </p>
               </div>
 
               {/* Upload Module - Right Side (1/3 width) */}

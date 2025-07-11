@@ -376,7 +376,7 @@ export default function PromptVault() {
 
   return (
     <div
-      className="min-h-screen text-black"
+      className="min-h-screen text-white"
       style={{ backgroundColor: "#F93822" }}
     >
       {/* Navigation */}

@@ -552,26 +552,28 @@ export default function PromptVault() {
 
         {/* Step 3 - Full Width Keywords */}
         <Card
-          className="border border-gray-800 shadow-xl"
-          style={{
-            backgroundColor: "#f13721",
-            margin: "18px 0 12px",
-            padding: "12px 0",
-          }}
+          className="bg-black border-0 shadow-xl rounded-xl"
+          style={{ padding: "24px" }}
         >
-          <h3
-            className="text-lg font-brand-black tracking-wide text-left mb-4 ml-6"
-            style={{
-              fontWeight: "900",
-              paddingTop: "8px",
-              color: "rgba(255, 255, 255, 1)",
-              fontFamily: "Poppins, sans-serif",
-              textTransform: "uppercase",
-              letterSpacing: "1px",
-            }}
-          >
-            step 3: select keywords
-          </h3>
+          <div className="flex items-center mb-6">
+            <div
+              className="w-8 h-8 rounded-full flex items-center justify-center mr-3"
+              style={{ backgroundColor: "#F93822" }}
+            >
+              <span className="text-white font-black text-sm">3</span>
+            </div>
+            <h3
+              className="text-white text-2xl font-black"
+              style={{
+                fontFamily: "Poppins, sans-serif",
+                fontWeight: "900",
+                textTransform: "uppercase",
+                letterSpacing: "2px",
+              }}
+            >
+              select keywords
+            </h3>
+          </div>
           <CardContent style={{ padding: "0 24px" }}>
             {/* Lighting Section */}
             <div className="mb-4">

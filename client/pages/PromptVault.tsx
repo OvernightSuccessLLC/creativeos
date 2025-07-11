@@ -448,12 +448,8 @@ export default function PromptVault() {
                 1
               </div>
               <div>
-                <div className="text-white font-medium text-sm">
-                  Add Custom Instructions
-                </div>
-                <div className="text-white/60 text-xs">
-                  Start with your specific requirements
-                </div>
+                <div className="text-white font-medium text-sm">Add Custom Instructions</div>
+                <div className="text-white/60 text-xs">Start with your specific requirements</div>
               </div>
             </div>
             <div className="flex items-center space-x-3">
@@ -461,12 +457,8 @@ export default function PromptVault() {
                 2
               </div>
               <div>
-                <div className="text-white font-medium text-sm">
-                  Select Categories
-                </div>
-                <div className="text-white/60 text-xs">
-                  Choose options from each category
-                </div>
+                <div className="text-white font-medium text-sm">Select Categories</div>
+                <div className="text-white/60 text-xs">Choose options from each category</div>
               </div>
             </div>
             <div className="flex items-center space-x-3">
@@ -474,12 +466,8 @@ export default function PromptVault() {
                 3
               </div>
               <div>
-                <div className="text-white font-medium text-sm">
-                  Upload Reference Files
-                </div>
-                <div className="text-white/60 text-xs">
-                  Add images (optional)
-                </div>
+                <div className="text-white font-medium text-sm">Upload Reference Files</div>
+                <div className="text-white/60 text-xs">Add images (optional)</div>
               </div>
             </div>
             <div className="flex items-center space-x-3">
@@ -487,12 +475,8 @@ export default function PromptVault() {
                 4
               </div>
               <div>
-                <div className="text-white font-medium text-sm">
-                  Review Quality
-                </div>
-                <div className="text-white/60 text-xs">
-                  Check AI analysis and suggestions
-                </div>
+                <div className="text-white font-medium text-sm">Review Quality</div>
+                <div className="text-white/60 text-xs">Check AI analysis and suggestions</div>
               </div>
             </div>
           </div>
@@ -504,30 +488,26 @@ export default function PromptVault() {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
-        {/* Top Row: Custom Instructions (Left) and Upload (Right) as separate modules */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Custom Instructions Module - Left */}
-          <Card className="bg-black border-0 shadow-xl rounded-xl">
-            <CardContent style={{ padding: "24px" }}>
-              <div className="flex items-center mb-4">
-                <div
-                  className="w-8 h-8 rounded-full flex items-center justify-center mr-3"
-                  style={{ backgroundColor: "#F93822" }}
-                >
-                  <span className="text-white font-black text-sm">1</span>
+        {/* Left Column - Steps */}
+        <div className="lg:col-span-2 space-y-4">
+          {/* Step 1: Custom Instructions */}
+          <div className="bg-black rounded-lg">
+            <div className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-900 transition-colors">
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-sm font-bold">
+                  1
                 </div>
-                <h3
-                  className="text-white text-xl font-black"
-                  style={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: "900",
-                    textTransform: "uppercase",
-                    letterSpacing: "1px",
-                  }}
-                >
-                  describe your vision
-                </h3>
+                <span className="text-white font-medium">Custom Instructions</span>
               </div>
+              <ChevronDown className="w-5 h-5 text-white" />
+            </div>
+            <div className="px-4 pb-4">
+              <Textarea
+                placeholder="Describe exactly what you want to create..."
+                value={customInstructions}
+                onChange={(e) => {
+                  setCustomInstructions(e.target.value);
+                  let score = 0;
 
               <Textarea
                 id="instructions"
@@ -956,7 +936,7 @@ export default function PromptVault() {
                       customInstructions ? "text-green-400" : "text-gray-400"
                     }
                   >
-                    {customInstructions ? "✓" : "��"}
+                    {customInstructions ? "✓" : "○"}
                   </span>
                   <span className="text-white font-medium">Vision</span>
 

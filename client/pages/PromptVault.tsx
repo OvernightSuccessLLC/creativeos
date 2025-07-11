@@ -849,25 +849,27 @@ export default function PromptVault() {
           </CardContent>
         </Card>
 
-        {/* Step 4: Compact Quality + Prompt Section */}
-        <Card className="bg-black border border-gray-800 shadow-xl mt-4">
-          <CardContent style={{ padding: "16px" }}>
-            <div className="flex items-center justify-between mb-3">
+        {/* Step 4: Optimized Prompt Section */}
+        <Card className="bg-black border-0 shadow-xl rounded-xl">
+          <CardContent style={{ padding: "24px" }}>
+            <div className="flex items-center justify-between mb-6">
               <div className="flex items-center">
                 <div
-                  className="w-6 h-6 rounded-full flex items-center justify-center mr-3"
+                  className="w-8 h-8 rounded-full flex items-center justify-center mr-3"
                   style={{ backgroundColor: "#F93822" }}
                 >
-                  <span className="text-white font-bold text-sm">4</span>
+                  <span className="text-white font-black text-sm">4</span>
                 </div>
                 <h3
-                  className="text-white text-lg font-brand-bold"
+                  className="text-white text-2xl font-black"
                   style={{
                     fontFamily: "Poppins, sans-serif",
-                    fontWeight: "700",
+                    fontWeight: "900",
+                    textTransform: "uppercase",
+                    letterSpacing: "2px",
                   }}
                 >
-                  your optimized sora prompt
+                  your optimized prompt
                 </h3>
               </div>
 

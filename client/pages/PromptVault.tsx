@@ -1028,7 +1028,7 @@ export default function PromptVault() {
                 data-copy-button
               >
                 <Copy className="w-3 h-3 mr-1" />
-                COPY PROMPT
+                copy prompt
               </Button>
 
               <Button

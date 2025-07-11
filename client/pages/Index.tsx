@@ -664,7 +664,7 @@ export default function Index() {
             )}
           </div>
 
-          {/* Step 4: Mood & Atmosphere */}
+          {/* Step 4: Lighting Setup */}
           <div className="bg-black rounded-lg border border-white/10">
             <div
               className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-900 transition-colors"
@@ -674,93 +674,13 @@ export default function Index() {
                 <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
                   4
                 </div>
-                <span className="text-white font-medium">
-                  Mood & Atmosphere
-                </span>
+                <span className="text-white font-medium">Lighting Setup</span>
               </div>
               <ChevronRight
                 className={`w-5 h-5 text-white transition-transform ${activeStep === 4 ? "rotate-90" : ""}`}
               />
             </div>
             {activeStep === 4 && (
-              <div className="px-4 pb-4">
-                <div className="flex flex-wrap gap-2">
-                  {keywordCategories["Mood & Atmosphere"].map((keyword) => (
-                    <button
-                      key={keyword}
-                      onClick={() => toggleKeyword(keyword)}
-                      className={`text-sm px-4 py-2 rounded-full font-medium transition-all duration-200 ${
-                        selectedKeywords.includes(keyword)
-                          ? "bg-brand-red text-white"
-                          : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
-                      } hover:scale-105`}
-                    >
-                      {keyword.toLowerCase()}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Step 5: Setting & Location */}
-          <div className="bg-black rounded-lg border border-white/10">
-            <div
-              className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-900 transition-colors"
-              onClick={() => setActiveStep(activeStep === 5 ? null : 5)}
-            >
-              <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
-                  5
-                </div>
-                <span className="text-white font-medium">
-                  Setting & Location
-                </span>
-              </div>
-              <ChevronRight
-                className={`w-5 h-5 text-white transition-transform ${activeStep === 5 ? "rotate-90" : ""}`}
-              />
-            </div>
-            {activeStep === 5 && (
-              <div className="px-4 pb-4">
-                <div className="flex flex-wrap gap-2">
-                  {keywordCategories["Setting & Location"].map((keyword) => (
-                    <button
-                      key={keyword}
-                      onClick={() => toggleKeyword(keyword)}
-                      className={`text-sm px-4 py-2 rounded-full font-medium transition-all duration-200 ${
-                        selectedKeywords.includes(keyword)
-                          ? "bg-brand-red text-white"
-                          : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
-                      } hover:scale-105`}
-                    >
-                      {keyword.toLowerCase()}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Step 6: Lighting & Quality */}
-          <div className="bg-black rounded-lg border border-white/10">
-            <div
-              className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-900 transition-colors"
-              onClick={() => setActiveStep(activeStep === 6 ? null : 6)}
-            >
-              <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
-                  6
-                </div>
-                <span className="text-white font-medium">
-                  Lighting & Quality
-                </span>
-              </div>
-              <ChevronRight
-                className={`w-5 h-5 text-white transition-transform ${activeStep === 6 ? "rotate-90" : ""}`}
-              />
-            </div>
-            {activeStep === 6 && (
               <div className="px-4 pb-4">
                 <div className="flex flex-wrap gap-2">
                   {keywordCategories["Lighting & Quality"].map((keyword) => (
@@ -781,67 +701,26 @@ export default function Index() {
             )}
           </div>
 
-          {/* Step 7: Camera & Technical */}
+          {/* Step 5: Camera Angle */}
           <div className="bg-black rounded-lg border border-white/10">
             <div
               className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-900 transition-colors"
-              onClick={() => setActiveStep(activeStep === 7 ? null : 7)}
+              onClick={() => setActiveStep(activeStep === 5 ? null : 5)}
             >
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
-                  7
+                  5
                 </div>
-                <span className="text-white font-medium">
-                  Camera & Technical
-                </span>
+                <span className="text-white font-medium">Camera Angle</span>
               </div>
               <ChevronRight
-                className={`w-5 h-5 text-white transition-transform ${activeStep === 7 ? "rotate-90" : ""}`}
+                className={`w-5 h-5 text-white transition-transform ${activeStep === 5 ? "rotate-90" : ""}`}
               />
             </div>
-            {activeStep === 7 && (
+            {activeStep === 5 && (
               <div className="px-4 pb-4">
                 <div className="flex flex-wrap gap-2">
                   {keywordCategories["Camera & Technical"].map((keyword) => (
-                    <button
-                      key={keyword}
-                      onClick={() => toggleKeyword(keyword)}
-                      className={`text-sm px-4 py-2 rounded-full font-medium transition-all duration-200 ${
-                        selectedKeywords.includes(keyword)
-                          ? "bg-brand-red text-white"
-                          : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
-                      } hover:scale-105`}
-                    >
-                      {keyword.toLowerCase()}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Step 8: Subjects & People */}
-          <div className="bg-black rounded-lg border border-white/10">
-            <div
-              className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-900 transition-colors"
-              onClick={() => setActiveStep(activeStep === 8 ? null : 8)}
-            >
-              <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
-                  8
-                </div>
-                <span className="text-white font-medium">
-                  Subjects & People
-                </span>
-              </div>
-              <ChevronRight
-                className={`w-5 h-5 text-white transition-transform ${activeStep === 8 ? "rotate-90" : ""}`}
-              />
-            </div>
-            {activeStep === 8 && (
-              <div className="px-4 pb-4">
-                <div className="flex flex-wrap gap-2">
-                  {keywordCategories["Subjects & People"].map((keyword) => (
                     <button
                       key={keyword}
                       onClick={() => toggleKeyword(keyword)}

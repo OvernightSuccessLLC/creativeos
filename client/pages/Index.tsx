@@ -625,9 +625,7 @@ export default function Index() {
               <div>
                 <Card
                   className="bg-black border border-white/20 hover:border-brand-red transition-colors cursor-pointer"
-                  onClick={() =>
-                    setActiveStep(activeStep === 1 ? null : 1)
-                  }
+                  onClick={() => setActiveStep(activeStep === 1 ? null : 1)}
                 >
                   <CardContent className="p-3 sm:p-4">
                     <div className="flex items-center justify-between">
@@ -668,7 +666,9 @@ export default function Index() {
                 <CardHeader className="p-5 sm:p-6">
                   <div className="flex items-center">
                     <Upload className="w-4 h-4 mr-2 text-brand-red" />
-                    <span className="font-medium text-white">Upload Reference</span>
+                    <span className="font-medium text-white">
+                      Upload Reference
+                    </span>
                   </div>
                   <p className="text-white/60 text-xs">Add visual references</p>
                   <CardTitle className="flex items-center text-brand-red text-sm font-bold tracking-wide -mt-2">
@@ -888,75 +888,53 @@ export default function Index() {
                 <div className="flex flex-col line-height-normal w-full ml-0 max-md:w-full max-md:ml-0">
                   {/* Left Column - Step Cards (Steps 2-5) */}
                   <div className="space-y-2 sm:space-y-3">
-                {stepCards.slice(1, 5).map((step) => (
-                  <div key={step.id}>
-                    <Card
-                      className="bg-black border border-white/20 hover:border-brand-red transition-colors cursor-pointer"
-                      onClick={() =>
-                        setActiveStep(activeStep === step.id ? null : step.id)
-                      }
-                    >
-                      <CardContent className="p-3 sm:p-4">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center space-x-3">
-                            <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-xs sm:text-sm font-bold">
-                              {step.id}
+                    {stepCards.slice(1, 5).map((step) => (
+                      <div key={step.id}>
+                        <Card
+                          className="bg-black border border-white/20 hover:border-brand-red transition-colors cursor-pointer"
+                          onClick={() =>
+                            setActiveStep(
+                              activeStep === step.id ? null : step.id,
+                            )
+                          }
+                        >
+                          <CardContent className="p-3 sm:p-4">
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center space-x-3">
+                                <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-xs sm:text-sm font-bold">
+                                  {step.id}
+                                </div>
+                                <div>
+                                  <span className="font-medium text-white text-sm sm:text-base">
+                                    {step.title}
+                                  </span>
+                                  <p className="text-white/60 text-xs">
+                                    {step.description}
+                                  </p>
+                                </div>
+                              </div>
+                              {activeStep === step.id ? (
+                                <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
+                              ) : (
+                                <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
+                              )}
                             </div>
-                            <div>
-                              <span className="font-medium text-white text-sm sm:text-base">
-                                {step.title}
-                              </span>
-                              <p className="text-white/60 text-xs">
-                                {step.description}
-                              </p>
-                            </div>
-                          </div>
-                          {activeStep === step.id ? (
-                            <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
-                          ) : (
-                            <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
-                          )}
-                        </div>
-                      </CardContent>
-                    </Card>
+                          </CardContent>
+                        </Card>
 
-                    {/* Expandable Content */}
-                    {activeStep === step.id && (
-                      <Card className="bg-black border border-white/20 mt-2">
-                        <CardContent className="p-4">
-                          {renderStepContent(step.id)}
-                        </CardContent>
-                      </Card>
-                    )}
+                        {/* Expandable Content */}
+                        {activeStep === step.id && (
+                          <Card className="bg-black border border-white/20 mt-2">
+                            <CardContent className="p-4">
+                              {renderStepContent(step.id)}
+                            </CardContent>
+                          </Card>
+                        )}
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
-
-              {/* Right Column - File Upload Section */}
-              <Card className="bg-black border border-white/20 h-fit">
-                <CardHeader>
-                  <CardTitle className="text-brand-red text-sm font-bold flex items-center">
-                    <Upload className="w-4 h-4 mr-2" />
-                    REFERENCE UPLOAD
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="border-2 border-dashed border-white/20 rounded-lg p-6 text-center">
-                    <Upload className="w-8 h-8 text-white/60 mx-auto mb-2" />
-                    <Input
-                      type="file"
-                      accept="image/*"
-                      onChange={handleFileUpload}
-                      className="bg-black border-white/20 text-white file:bg-brand-red file:text-black file:border-0 file:rounded file:px-3 file:py-1"
-                    />
-                    {uploadedFile && (
-                      <p className="text-brand-red mt-2 text-sm">
-                        ✓ {uploadedFile.name} uploaded
-                      </p>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>

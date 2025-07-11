@@ -250,16 +250,74 @@ export default function Templates() {
     return matchesSearch && matchesCategory;
   });
 
-  const copyPrompt = (prompt: string, templateId: number) => {
-    navigator.clipboard
-      .writeText(prompt)
-      .then(() => {
+  const copyPrompt = async (prompt: string, templateId: number) => {
+    try {
+      // Try the modern Clipboard API first
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(prompt);
         setCopiedTemplate(templateId);
         setTimeout(() => setCopiedTemplate(null), 2000);
-      })
-      .catch((err) => {
-        console.error("Failed to copy prompt: ", err);
-      });
+        return;
+      }
+
+      // Fallback to the older method
+      const textArea = document.createElement("textarea");
+      textArea.value = prompt;
+
+      // Make the textarea invisible
+      textArea.style.position = "fixed";
+      textArea.style.left = "-999999px";
+      textArea.style.top = "-999999px";
+
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+
+      const successful = document.execCommand("copy");
+      document.body.removeChild(textArea);
+
+      if (successful) {
+        setCopiedTemplate(templateId);
+        setTimeout(() => setCopiedTemplate(null), 2000);
+      } else {
+        throw new Error("Copy command was unsuccessful");
+      }
+    } catch (err) {
+      console.error("Failed to copy prompt: ", err);
+
+      // Last resort: show the text in a prompt for manual copying
+      const userAgent = navigator.userAgent;
+      const isMobile =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          userAgent,
+        );
+
+      if (isMobile) {
+        // On mobile, create a modal or alert
+        alert(`Copy this prompt manually:\n\n${prompt}`);
+      } else {
+        // On desktop, try to select the text
+        const selection = window.getSelection();
+        const range = document.createRange();
+        const tempElement = document.createElement("div");
+        tempElement.style.position = "fixed";
+        tempElement.style.left = "-999999px";
+        tempElement.textContent = prompt;
+        document.body.appendChild(tempElement);
+
+        range.selectNodeContents(tempElement);
+        selection?.removeAllRanges();
+        selection?.addRange(range);
+
+        setTimeout(() => {
+          document.body.removeChild(tempElement);
+        }, 100);
+
+        alert(
+          "Automatic copying failed. The text has been selected for you - please press Ctrl+C (or Cmd+C) to copy.",
+        );
+      }
+    }
   };
 
   return (

@@ -729,7 +729,7 @@ export default function GraphicStudio() {
                     {step.id === 6 && (
                       <div className="space-y-6">
                         <div>
-                          <Label>Color & Style</Label>
+                          <Label className="text-white">Color & Style</Label>
                           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
                             {keywordCategories["Color & Style"].map(
                               (keyword) => (

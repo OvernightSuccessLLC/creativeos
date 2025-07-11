@@ -384,22 +384,20 @@ export default function PromptVault() {
 
       {/* Header */}
       <div
-        className="px-6 text-center"
-        style={{
-          backgroundColor: "#f53820",
-          margin: "12px 0 18px",
-          padding: "0 24px",
-        }}
+        className="px-6 text-center py-6"
+        style={{ backgroundColor: "transparent" }}
       >
         <div className="flex items-center justify-center space-x-3 mb-4">
-          <Database className="w-8 h-8" style={{ color: "#F93822" }} />
+          <Database className="w-10 h-10 text-white" />
           <h1
-            className="text-white brand-heading"
+            className="text-white font-black"
             style={{
-              fontSize: "30px",
-              lineHeight: "30px",
+              fontSize: "36px",
+              lineHeight: "36px",
               fontFamily: "Poppins, sans-serif",
               fontWeight: "900",
+              textTransform: "uppercase",
+              letterSpacing: "2px",
             }}
           >
             prompt vault

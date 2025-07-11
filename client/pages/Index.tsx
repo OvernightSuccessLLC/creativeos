@@ -463,84 +463,28 @@ export default function Index() {
       )}
 
       {/* HOW IT WORKS Section */}
-      <div className="px-6 py-6">
+      <div className="px-6 mb-8">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-black rounded-lg p-6 relative">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-white text-sm font-bold">HOW IT WORKS</h2>
-              <span className="text-brand-red text-sm font-bold">STEP 1/5</span>
-            </div>
-
+          <div className="bg-black rounded-lg p-6">
+            <h2 className="text-white text-xl font-bold mb-6">HOW IT WORKS</h2>
             <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 rounded-full bg-brand-red text-white flex items-center justify-center text-xs font-bold flex-shrink-0">
-                  1
-                </div>
-                <div>
-                  <div className="text-white font-medium text-sm mb-1">
-                    Add Custom Instructions
+              {[
+                "Add Custom Instructions",
+                "Select Categories",
+                "Upload Reference Files",
+                "Review Quality",
+                "Copy for SORA",
+              ].map((step, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center text-center"
+                >
+                  <div className="bg-brand-red text-black rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mb-2">
+                    {index + 1}
                   </div>
-                  <div className="text-white/60 text-xs">
-                    Start with your specific requirements
-                  </div>
+                  <p className="text-white text-sm">{step}</p>
                 </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 rounded-full bg-brand-red text-white flex items-center justify-center text-xs font-bold flex-shrink-0">
-                  2
-                </div>
-                <div>
-                  <div className="text-white font-medium text-sm mb-1">
-                    Select Categories
-                  </div>
-                  <div className="text-white/60 text-xs">
-                    Choose options from each category
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 rounded-full bg-brand-red text-white flex items-center justify-center text-xs font-bold flex-shrink-0">
-                  3
-                </div>
-                <div>
-                  <div className="text-white font-medium text-sm mb-1">
-                    Upload Reference Files
-                  </div>
-                  <div className="text-white/60 text-xs">
-                    Add images (optional)
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 rounded-full bg-brand-red text-white flex items-center justify-center text-xs font-bold flex-shrink-0">
-                  4
-                </div>
-                <div>
-                  <div className="text-white font-medium text-sm mb-1">
-                    Review Quality
-                  </div>
-                  <div className="text-white/60 text-xs">
-                    Check AI analysis and suggestions
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 rounded-full bg-brand-red text-white flex items-center justify-center text-xs font-bold flex-shrink-0">
-                  5
-                </div>
-                <div>
-                  <div className="text-white font-medium text-sm mb-1">
-                    Copy for SORA
-                  </div>
-                  <div className="text-white/60 text-xs">
-                    Copy your optimized prompt ready for SORA
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

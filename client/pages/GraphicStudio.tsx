@@ -837,6 +837,13 @@ export default function GraphicStudio() {
                   </div>
                 </div>
 
+                <div className="bg-gray-200 rounded-full h-2 my-5 py-3">
+                  <div
+                    className="bg-brand-red h-2 rounded-full transition-all duration-500"
+                    style={{ width: `${qualityScore}%` }}
+                  ></div>
+                </div>
+
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm text-white">
                     <span>Instructions</span>

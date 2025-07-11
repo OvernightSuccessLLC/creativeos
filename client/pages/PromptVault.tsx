@@ -244,6 +244,13 @@ export default function PromptVault() {
     ],
   };
 
+  const toggleSection = (sectionKey: string) => {
+    setCollapsedSections((prev) => ({
+      ...prev,
+      [sectionKey]: !prev[sectionKey],
+    }));
+  };
+
   const toggleKeyword = (keyword: string) => {
     const newKeywords = selectedKeywords.includes(keyword)
       ? selectedKeywords.filter((k) => k !== keyword)

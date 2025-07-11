@@ -35,7 +35,7 @@ export default function Index() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   // Prompt Builder State
-  const [activeStep, setActiveStep] = useState<number | null>(null);
+  const [activeStep, setActiveStep] = useState<number | null>(1);
   const [customInstructions, setCustomInstructions] = useState("");
   const [selectedKeywords, setSelectedKeywords] = useState<string[]>([]);
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
@@ -48,31 +48,27 @@ export default function Index() {
       name: "LIFESTYLE STUDIO",
       description: "Generate authentic lifestyle and candid photography",
       icon: Camera,
-      color: "bg-brand-red",
     },
     {
       id: "product",
       name: "PRODUCT STUDIO",
-      description: "Create stunning product visuals and e-commerce content",
+      description: "Create stunning product photography and commercial shots",
       icon: Package,
-      color: "bg-black",
     },
     {
       id: "graphic",
       name: "GRAPHIC STUDIO",
-      description: "Design logos, banners, and brand visual content",
+      description: "Design compelling graphics and visual elements",
       icon: Palette,
-      color: "bg-black",
     },
   ];
 
   const navigationItems = [
-    { name: "UPDATES", icon: Bell, active: false },
     { name: "THE PLAYBOOK", icon: BookOpen, active: false },
     { name: "PROMPT VAULT", icon: Database, active: false },
     { name: "TEMPLATES", icon: LayoutTemplate, active: false },
     { name: "AI TOOLKIT", icon: Zap, active: false },
-    { name: "UPGRADE", icon: Crown, active: false, highlight: true },
+    { name: "UPGRADE", icon: Crown, highlight: true },
   ];
 
   const keywordCategories = {
@@ -117,195 +113,141 @@ export default function Index() {
       "Cozy bedroom",
       "Kitchen space",
       "Garden area",
-      "Rooftop terrace",
       "Living room",
+      "Rooftop terrace",
+      "Forest path",
+      "Mountain view",
+      "Lakeside",
+      "City backdrop",
+      "Studio apartment",
+      "Country house",
+      "Modern office",
+      "Art gallery",
+      "Library setting",
+      "Bookstore corner",
       "Coffee shop",
-      "Library",
-      "Art studio",
-      "Balcony",
-      "Backyard",
-      "Office space",
-      "Restaurant",
-      "Bookstore",
-      "Museum",
-      "Gallery",
-      "Loft apartment",
-      "Farmhouse",
-      "Cabin",
-      "Hotel room",
-      "Workspace",
-      "Courtyard",
-      "Patio",
-      "Conservatory",
-      "Workshop",
-      "Greenhouse",
+      "Restaurant patio",
+      "Farmers market",
+      "Music venue",
+      "Dance studio",
+      "Yoga space",
+      "Workout gym",
+      "Spa environment",
+      "Hotel lobby",
+      "Airport lounge",
     ],
-    "Lighting Style": [
-      "Natural window light",
+    "Lighting & Quality": [
+      "Natural light",
       "Golden hour",
-      "Soft diffused",
-      "Warm ambient",
-      "Morning sunlight",
-      "Evening glow",
-      "Backlit silhouette",
-      "Side lighting",
-      "Overcast sky",
-      "Harsh shadows",
-      "Rim lighting",
-      "Studio lighting",
+      "Soft lighting",
+      "Dramatic shadows",
+      "Backlighting",
+      "Window light",
       "Candlelight",
-      "Neon glow",
-      "Firelight",
-      "Dramatic contrast",
-      "High key",
-      "Low key",
-      "Chiaroscuro",
+      "String lights",
+      "Neon ambiance",
+      "Studio lighting",
+      "Harsh sunlight",
+      "Overcast sky",
+      "Indoor lighting",
+      "Warm tones",
+      "Cool tones",
+      "High contrast",
+      "Low contrast",
+      "Bright exposure",
+      "Moody darkness",
+      "Rim lighting",
+      "Side lighting",
+      "Top lighting",
+      "Ambient glow",
+      "Sunset hues",
+      "Sunrise colors",
       "Blue hour",
       "Magic hour",
-      "Dappled light",
-      "Reflected light",
-      "Hard light",
-      "Bounce light",
-      "Available light",
-      "Mixed lighting",
-      "Color temperature",
-      "Mood lighting",
+      "Diffused light",
+      "Direct sunlight",
+      "Filtered light",
     ],
-    "Camera Angle": [
-      "Eye level",
-      "Slightly above",
+    "Camera & Technical": [
+      "Close-up shot",
+      "Wide angle",
+      "Portrait orientation",
+      "Landscape format",
+      "Shallow depth",
+      "Deep focus",
+      "Bokeh effect",
+      "Sharp detail",
+      "Motion blur",
+      "Freeze motion",
       "Low angle",
-      "Close-up portrait",
-      "Medium shot",
-      "Wide environmental",
-      "Over shoulder",
-      "Profile view",
-      "Three-quarter angle",
+      "High angle",
+      "Eye level",
       "Bird's eye view",
       "Worm's eye view",
-      "Dutch angle",
-      "Straight on",
-      "From behind",
-      "Extreme close-up",
+      "Over shoulder",
+      "Profile shot",
       "Full body",
-      "Waist up",
-      "Head and shoulders",
-      "Aerial view",
-      "Ground level",
-      "High angle",
-      "Tilted frame",
-      "Symmetrical",
-      "Off-center",
-      "Rule of thirds",
-      "Leading lines",
-      "Depth of field",
-      "Foreground focus",
-      "Background blur",
+      "Half body",
+      "Head shot",
+      "Group shot",
+      "Solo portrait",
+      "Environmental",
+      "Macro detail",
+      "Ultra wide",
+      "Telephoto",
+      "Standard lens",
+      "Fish eye",
+      "Tilt shift",
+      "Long exposure",
     ],
-    "Lifestyle Activities": [
-      "Reading a book",
-      "Drinking coffee",
-      "Cooking together",
-      "Walking outdoors",
-      "Working on laptop",
-      "Playing with pets",
-      "Exercising",
-      "Gardening",
-      "Listening to music",
-      "Writing in journal",
-      "Painting",
-      "Yoga practice",
-      "Meditation",
-      "Stretching",
-      "Dancing",
-      "Singing",
-      "Playing instrument",
-      "Board games",
-      "Crafting",
-      "Knitting",
-      "Photography",
-      "Sketching",
-      "Cleaning",
-      "Organizing",
-      "Decorating",
-      "Shopping",
-      "Traveling",
-      "Hiking",
-      "Cycling",
-      "Studying",
-    ],
-    "Visual Style": [
-      "Film photography",
-      "Documentary style",
-      "Editorial fashion",
-      "Street photography",
-      "Minimalist aesthetic",
-      "Bohemian vibe",
-      "Modern clean",
-      "Rustic charm",
-      "Artistic mood",
-      "Cinematic",
-      "Vintage filter",
-      "Black and white",
-      "High contrast",
-      "Soft focus",
-      "Sharp details",
-      "Grain texture",
-      "Color grading",
-      "Desaturated",
-      "Vibrant colors",
-      "Matte finish",
-      "Glossy",
-      "Natural tones",
-      "Warm palette",
-      "Cool palette",
-      "Monochromatic",
-      "Analogous colors",
-      "Complementary",
+    "Subjects & People": [
+      "Young adult",
+      "Middle aged",
+      "Senior person",
+      "Child subject",
+      "Teen portrait",
+      "Family group",
+      "Couple together",
+      "Friends hanging",
+      "Professional pose",
+      "Casual stance",
+      "Active movement",
+      "Relaxed posture",
+      "Laughing expression",
+      "Serious look",
+      "Contemplative mood",
+      "Joyful smile",
+      "Natural pose",
+      "Staged setup",
+      "Candid moment",
+      "Formal attire",
+      "Casual clothes",
+      "Business wear",
+      "Athletic gear",
+      "Vintage style",
+      "Modern fashion",
+      "Bohemian look",
+      "Minimalist style",
+      "Colorful outfit",
       "Neutral tones",
-      "Earth tones",
+      "Seasonal wear",
     ],
   };
 
-  const stepCards = [
-    {
-      id: 1,
-      title: "Custom Instructions",
-      description: "Describe your vision in detail",
-    },
-    {
-      id: 2,
-      title: "Mood & Atmosphere",
-      description: "Set the emotional tone",
-    },
-    {
-      id: 3,
-      title: "Setting & Location",
-      description: "Choose the environment",
-    },
-    { id: 4, title: "Lighting Style", description: "Define the lighting mood" },
-    {
-      id: 5,
-      title: "Camera & Composition",
-      description: "Select camera angles",
-    },
-    { id: 6, title: "Upload Reference", description: "Add visual references" },
-  ];
-
-  // Calculate quality score
+  // Calculate quality score based on inputs
   const calculateQuality = () => {
     let score = 0;
     if (customInstructions.length > 20) score += 30;
-    if (selectedKeywords.length > 0) score += selectedKeywords.length * 5;
-    if (uploadedFile) score += 20;
-    return Math.min(score, 100);
+    if (selectedKeywords.length > 0) score += selectedKeywords.length * 3;
+    if (uploadedFile) score += 25;
+    return Math.min(100, score);
   };
 
-  // Generate prompt
+  // Generate the final prompt
   const generatePrompt = () => {
     let prompt = "";
-    if (customInstructions) {
-      prompt += customInstructions + ". ";
+    if (customInstructions.trim()) {
+      prompt += customInstructions.trim() + ". ";
     }
     if (selectedKeywords.length > 0) {
       prompt += selectedKeywords.join(", ") + ". ";
@@ -373,81 +315,10 @@ export default function Index() {
     }
   };
 
-  // Update quality score when dependencies change
+  // Update quality score when inputs change
   useEffect(() => {
     setQualityScore(calculateQuality());
   }, [customInstructions, selectedKeywords, uploadedFile]);
-
-  const renderStepContent = (stepId: number) => {
-    switch (stepId) {
-      case 1:
-        return (
-          <div className="space-y-4">
-            <Label className="text-white">Describe your lifestyle scene:</Label>
-            <Textarea
-              placeholder="e.g., A young woman in her 20s sitting by a large window, reading a book with a cup of coffee, wearing a cozy sweater, natural morning light streaming in..."
-              value={customInstructions}
-              onChange={(e) => setCustomInstructions(e.target.value)}
-              className="bg-black border-white/20 text-white placeholder-white/60"
-              rows={4}
-            />
-          </div>
-        );
-
-      case 2:
-      case 3:
-      case 4:
-      case 5:
-        const categoryKey = Object.keys(keywordCategories)[stepId - 2];
-        const keywords =
-          keywordCategories[categoryKey as keyof typeof keywordCategories];
-        return (
-          <div className="space-y-4">
-            <Label className="text-white">{categoryKey}:</Label>
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2">
-              {keywords.map((keyword) => (
-                <Button
-                  key={keyword}
-                  size="sm"
-                  onClick={() => toggleKeyword(keyword)}
-                  className={`text-xs px-2 py-1 h-8 ${
-                    selectedKeywords.includes(keyword)
-                      ? "bg-brand-red text-black hover:bg-black hover:text-brand-red transition-colors"
-                      : "bg-brand-red text-black hover:bg-black hover:text-brand-red border-white/20 transition-colors"
-                  }`}
-                >
-                  {keyword}
-                </Button>
-              ))}
-            </div>
-          </div>
-        );
-
-      case 6:
-        return (
-          <div className="space-y-4">
-            <Label className="text-white">Upload Reference Image:</Label>
-            <div className="border-2 border-dashed border-white/20 rounded-lg p-6 text-center">
-              <Upload className="w-8 h-8 text-white/60 mx-auto mb-2" />
-              <Input
-                type="file"
-                accept="image/*"
-                onChange={handleFileUpload}
-                className="bg-black border-white/20 text-white"
-              />
-              {uploadedFile && (
-                <p className="text-brand-red mt-2">
-                  ✓ {uploadedFile.name} uploaded
-                </p>
-              )}
-            </div>
-          </div>
-        );
-
-      default:
-        return null;
-    }
-  };
 
   return (
     <div className="min-h-screen bg-brand-red text-black">
@@ -480,9 +351,7 @@ export default function Index() {
                   letterSpacing: "0.5px",
                 }}
                 onClick={() => {
-                  if (item.name === "UPDATES") {
-                    navigate("/updates");
-                  } else if (item.name === "THE PLAYBOOK") {
+                  if (item.name === "THE PLAYBOOK") {
                     navigate("/playbook");
                   } else if (item.name === "PROMPT VAULT") {
                     navigate("/prompt-vault");
@@ -517,9 +386,8 @@ export default function Index() {
             </Button>
             <Button
               variant="ghost"
-              className="lg:hidden text-black"
-              style={{ fontFamily: "Poppins, sans-serif", fontWeight: "700" }}
-              onClick={() => setShowMobileMenu(true)}
+              className="lg:hidden"
+              onClick={() => setShowMobileMenu(!showMobileMenu)}
             >
               <Menu className="w-6 h-6" />
             </Button>
@@ -527,23 +395,18 @@ export default function Index() {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu */}
       {showMobileMenu && (
-        <div className="fixed inset-0 bg-black/50 z-50 lg:hidden">
-          <div className="fixed right-0 top-0 h-full w-80 bg-black p-6 shadow-xl">
-            <div className="flex items-center justify-between mb-8">
-              <h2
-                className="text-xl text-white"
-                style={{ fontFamily: "Poppins, sans-serif", fontWeight: "900" }}
-              >
-                MENU
-              </h2>
+        <div className="lg:hidden bg-black text-white p-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex justify-between items-center mb-4">
+              <span className="text-lg font-bold">MENU</span>
               <Button
                 variant="ghost"
+                size="sm"
                 onClick={() => setShowMobileMenu(false)}
-                className="text-white"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5" />
               </Button>
             </div>
             <div className="space-y-4">
@@ -563,9 +426,7 @@ export default function Index() {
                   }}
                   onClick={() => {
                     setShowMobileMenu(false);
-                    if (item.name === "UPDATES") {
-                      navigate("/updates");
-                    } else if (item.name === "THE PLAYBOOK") {
+                    if (item.name === "THE PLAYBOOK") {
                       navigate("/playbook");
                     } else if (item.name === "PROMPT VAULT") {
                       navigate("/prompt-vault");
@@ -597,8 +458,12 @@ export default function Index() {
                 1
               </div>
               <div>
-                <div className="text-black font-medium text-sm">Add Custom Instructions</div>
-                <div className="text-black/60 text-xs">Start with your specific requirements</div>
+                <div className="text-black font-medium text-sm">
+                  Add Custom Instructions
+                </div>
+                <div className="text-black/60 text-xs">
+                  Start with your specific requirements
+                </div>
               </div>
             </div>
             <div className="flex items-center space-x-3">
@@ -606,8 +471,12 @@ export default function Index() {
                 2
               </div>
               <div>
-                <div className="text-black font-medium text-sm">Select Categories</div>
-                <div className="text-black/60 text-xs">Choose mood and style options</div>
+                <div className="text-black font-medium text-sm">
+                  Select Categories
+                </div>
+                <div className="text-black/60 text-xs">
+                  Choose mood and style options
+                </div>
               </div>
             </div>
             <div className="flex items-center space-x-3">
@@ -615,8 +484,12 @@ export default function Index() {
                 3
               </div>
               <div>
-                <div className="text-black font-medium text-sm">Upload Reference Files</div>
-                <div className="text-black/60 text-xs">Add images (optional)</div>
+                <div className="text-black font-medium text-sm">
+                  Upload Reference Files
+                </div>
+                <div className="text-black/60 text-xs">
+                  Add images (optional)
+                </div>
               </div>
             </div>
             <div className="flex items-center space-x-3">
@@ -624,8 +497,12 @@ export default function Index() {
                 4
               </div>
               <div>
-                <div className="text-black font-medium text-sm">Review Quality</div>
-                <div className="text-black/60 text-xs">Check AI analysis and suggestions</div>
+                <div className="text-black font-medium text-sm">
+                  Review Quality
+                </div>
+                <div className="text-black/60 text-xs">
+                  Check AI analysis and suggestions
+                </div>
               </div>
             </div>
           </div>
@@ -637,7 +514,6 @@ export default function Index() {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
-
         {/* Left Column - Steps */}
         <div className="lg:col-span-2 space-y-3">
           {/* Step 1: Custom Instructions */}
@@ -650,7 +526,9 @@ export default function Index() {
                 <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
                   1
                 </div>
-                <span className="text-white font-medium">Custom Instructions</span>
+                <span className="text-white font-medium">
+                  Custom Instructions
+                </span>
               </div>
               <ChevronRight
                 className={`w-5 h-5 text-white transition-transform ${activeStep === 1 ? "rotate-90" : ""}`}
@@ -679,7 +557,9 @@ export default function Index() {
                 <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
                   2
                 </div>
-                <span className="text-white font-medium">Mood & Atmosphere</span>
+                <span className="text-white font-medium">
+                  Mood & Atmosphere
+                </span>
               </div>
               <ChevronRight
                 className={`w-5 h-5 text-white transition-transform ${activeStep === 2 ? "rotate-90" : ""}`}
@@ -716,7 +596,9 @@ export default function Index() {
                 <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
                   3
                 </div>
-                <span className="text-white font-medium">Setting & Location</span>
+                <span className="text-white font-medium">
+                  Setting & Location
+                </span>
               </div>
               <ChevronRight
                 className={`w-5 h-5 text-white transition-transform ${activeStep === 3 ? "rotate-90" : ""}`}
@@ -753,7 +635,9 @@ export default function Index() {
                 <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
                   4
                 </div>
-                <span className="text-white font-medium">Lighting & Quality</span>
+                <span className="text-white font-medium">
+                  Lighting & Quality
+                </span>
               </div>
               <ChevronRight
                 className={`w-5 h-5 text-white transition-transform ${activeStep === 4 ? "rotate-90" : ""}`}
@@ -790,7 +674,9 @@ export default function Index() {
                 <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
                   5
                 </div>
-                <span className="text-white font-medium">Camera & Technical</span>
+                <span className="text-white font-medium">
+                  Camera & Technical
+                </span>
               </div>
               <ChevronRight
                 className={`w-5 h-5 text-white transition-transform ${activeStep === 5 ? "rotate-90" : ""}`}
@@ -827,7 +713,9 @@ export default function Index() {
                 <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
                   6
                 </div>
-                <span className="text-white font-medium">Subjects & People</span>
+                <span className="text-white font-medium">
+                  Subjects & People
+                </span>
               </div>
               <ChevronRight
                 className={`w-5 h-5 text-white transition-transform ${activeStep === 6 ? "rotate-90" : ""}`}
@@ -884,9 +772,14 @@ export default function Index() {
 
               {/* Instructions Quality */}
               <div className="flex items-center justify-between mb-2">
-                <span className="text-white text-xs font-medium">Instructions</span>
+                <span className="text-white text-xs font-medium">
+                  Instructions
+                </span>
                 <span className="text-brand-red text-xs font-bold">
-                  {customInstructions.length > 20 ? 100 : Math.round((customInstructions.length / 20) * 100)}%
+                  {customInstructions.length > 20
+                    ? 100
+                    : Math.round((customInstructions.length / 20) * 100)}
+                  %
                 </span>
               </div>
               <div className="w-full bg-white/20 rounded-full h-1 mb-3">
@@ -916,7 +809,9 @@ export default function Index() {
 
               {/* Reference Quality */}
               <div className="flex items-center justify-between mb-2">
-                <span className="text-white text-xs font-medium">Reference</span>
+                <span className="text-white text-xs font-medium">
+                  Reference
+                </span>
                 <span className="text-brand-red text-xs font-bold">
                   {uploadedFile ? 100 : 0}%
                 </span>
@@ -940,7 +835,9 @@ export default function Index() {
             </div>
 
             <div className="mb-6">
-              <h4 className="text-brand-red text-xs font-bold mb-3">AI RECOMMENDATIONS</h4>
+              <h4 className="text-brand-red text-xs font-bold mb-3">
+                AI RECOMMENDATIONS
+              </h4>
               <ul className="space-y-2 text-white/60 text-sm">
                 <li>• Add detailed scene descriptions for better results</li>
                 <li>• Select mood and atmosphere keywords</li>
@@ -986,232 +883,6 @@ export default function Index() {
                 )}
               </div>
             </div>
-          </div>
-        </div>
-      </main>
-
-
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center space-x-3">
-                                <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-xs sm:text-sm font-bold">
-                                  {step.id}
-                                </div>
-                                <div>
-                                  <span className="font-medium text-white text-sm sm:text-base">
-                                    {step.title}
-                                  </span>
-                                  <p className="text-white/60 text-xs">
-                                    {step.description}
-                                  </p>
-                                </div>
-                              </div>
-                              {activeStep === step.id ? (
-                                <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
-                              ) : (
-                                <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
-                              )}
-                            </div>
-                          </CardContent>
-                        </Card>
-
-                        {/* Expandable Content */}
-                        {activeStep === step.id && (
-                          <Card className="bg-black border border-white/20 mt-2">
-                            <CardContent className="p-4">
-                              {renderStepContent(step.id)}
-                            </CardContent>
-                          </Card>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Prompt Output Section */}
-            <Card className="bg-black border border-white/20 mt-6">
-              <CardHeader className="p-4 sm:py-5 sm:px-6">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between space-y-2 sm:space-y-0">
-                  <CardTitle className="text-brand-red text-lg font-bold tracking-wide">
-                    AI PROMPT FORMULA
-                  </CardTitle>
-                  <Badge className="bg-brand-red text-black text-xs font-bold self-start">
-                    {calculateQuality()}% QUALITY
-                  </Badge>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-3 sm:space-y-4 p-0 px-6 pb-6">
-                <div className="bg-black border border-white/20 rounded p-3 sm:p-4 text-xs sm:text-sm text-white">
-                  {generatePrompt() ||
-                    "Build your prompt by adding custom instructions and selecting keywords from the categories..."}
-                </div>
-
-                {/* AI Optimized Quality Meter with Visual Graph */}
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-white font-medium text-xs">
-                      <b>AI QUALITY OPTIMIZER</b>
-                    </span>
-                    <span className="text-brand-red font-bold text-xs">
-                      {calculateQuality()}%
-                    </span>
-                  </div>
-
-                  {/* Circular Progress Indicator */}
-                  <div className="flex items-center space-x-4">
-                    <div className="relative w-16 h-16">
-                      <svg
-                        className="w-16 h-16 transform -rotate-90"
-                        viewBox="0 0 64 64"
-                      >
-                        {/* Background circle */}
-                        <circle
-                          cx="32"
-                          cy="32"
-                          r="28"
-                          stroke="rgba(255,255,255,0.2)"
-                          strokeWidth="4"
-                          fill="none"
-                        />
-                        {/* Progress circle */}
-                        <circle
-                          cx="32"
-                          cy="32"
-                          r="28"
-                          stroke="#F93822"
-                          strokeWidth="4"
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeDasharray={`${2 * Math.PI * 28}`}
-                          strokeDashoffset={`${2 * Math.PI * 28 * (1 - calculateQuality() / 100)}`}
-                          className="transition-all duration-500 ease-out"
-                        />
-                      </svg>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-brand-red font-bold text-sm">
-                          {calculateQuality()}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Quality Breakdown Bars */}
-                    <div className="flex-1 space-y-2">
-                      <div className="flex items-center justify-between">
-                        <span className="text-white text-xs font-semibold">
-                          Instructions
-                        </span>
-                        <div className="w-20 bg-white/20 rounded-full h-1">
-                          <div
-                            className="bg-brand-red h-1 rounded-full transition-all duration-300"
-                            style={{
-                              width: `${customInstructions.length > 20 ? 100 : (customInstructions.length / 20) * 100}%`,
-                            }}
-                          ></div>
-                        </div>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-white text-xs font-semibold">
-                          Keywords
-                        </span>
-                        <div className="w-20 bg-white/20 rounded-full h-1">
-                          <div
-                            className="bg-brand-red h-1 rounded-full transition-all duration-300"
-                            style={{
-                              width: `${Math.min((selectedKeywords.length / 10) * 100, 100)}%`,
-                            }}
-                          ></div>
-                        </div>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-white text-xs font-semibold">
-                          Reference
-                        </span>
-                        <div className="w-20 bg-white/20 rounded-full h-1">
-                          <div
-                            className="bg-brand-red h-1 rounded-full transition-all duration-300"
-                            style={{ width: `${uploadedFile ? 100 : 0}%` }}
-                          ></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Main Quality Bar */}
-                  <div className="w-full bg-white/20 rounded-full h-3 relative overflow-hidden">
-                    <div
-                      className="bg-gradient-to-r from-brand-red to-brand-red/80 h-3 rounded-full transition-all duration-500 relative"
-                      style={{ width: `${calculateQuality()}%` }}
-                    >
-                      {/* Animated pulse effect */}
-                      <div className="absolute inset-0 bg-white/30 rounded-full animate-pulse opacity-50"></div>
-                    </div>
-                    {/* Quality threshold markers */}
-                    <div className="absolute top-0 left-1/3 w-0.5 h-3 bg-white/40"></div>
-                    <div className="absolute top-0 left-2/3 w-0.5 h-3 bg-white/40"></div>
-                  </div>
-
-                  {/* Quality Status with Visual Indicators */}
-                  <div className="flex items-center space-x-2">
-                    <div
-                      className={`w-2 h-2 rounded-full ${
-                        calculateQuality() < 30
-                          ? "bg-red-500"
-                          : calculateQuality() < 70
-                            ? "bg-yellow-500"
-                            : "bg-green-500"
-                      } animate-pulse`}
-                    ></div>
-                    <div className="text-white text-xs font-semibold">
-                      {calculateQuality() < 30 &&
-                        "Add more details to improve quality"}
-                      {calculateQuality() >= 30 &&
-                        calculateQuality() < 70 &&
-                        "Good start! Add more keywords for better results"}
-                      {calculateQuality() >= 70 && "Excellent prompt quality!"}
-                    </div>
-                  </div>
-
-                  {/* Live Analytics Mini Chart */}
-                  <div className="flex items-center space-x-1 pt-2 border-t border-white/10">
-                    <span className="text-white text-xs font-semibold mr-2">
-                      Analysis:
-                    </span>
-                    {[...Array(8)].map((_, i) => (
-                      <div
-                        key={i}
-                        className="w-1 bg-brand-red/60 rounded-full transition-all duration-300"
-                        style={{
-                          height: `${Math.max(2, Math.min(12, (calculateQuality() / 100) * 12 + Math.random() * 4))}px`,
-                          animationDelay: `${i * 0.1}s`,
-                        }}
-                      ></div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="space-y-2 sm:space-y-3">
-                  <ul className="space-y-1 text-xs sm:text-sm text-white/60"></ul>
-                </div>
-
-                <div className="flex space-x-2">
-                  <Button
-                    size="sm"
-                    onClick={copyPrompt}
-                    className="bg-brand-red hover:bg-black hover:text-brand-red text-black font-bold text-xs sm:text-sm transition-colors"
-                  >
-                    <Copy className="w-3 h-3 mr-1" />
-                    {copiedPrompt ? "COPIED!" : "COPY"}
-                  </Button>
-                  <Button
-                    size="sm"
-                    className="bg-brand-red hover:bg-black hover:text-brand-red text-black font-bold text-xs sm:text-sm transition-colors"
-                  >
-                    FAVORITE
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </main>

@@ -828,7 +828,7 @@ export default function GraphicStudio() {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 bg-black px-6 pb-6">
                 <div>
                   <Label className="text-white">Generated Prompt</Label>
                   <div className="bg-gray-50 p-3 rounded border text-sm min-h-[100px] mt-1">

@@ -21,6 +21,7 @@ import {
   Filter,
   TrendingUp,
   Clock,
+  UtensilsCrossed,
 } from "lucide-react";
 
 export default function Templates() {

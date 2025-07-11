@@ -886,8 +886,8 @@ export default function Index() {
             <div className="flex flex-col gap-5">
               <div className="flex gap-5 max-md:flex-col max-md:gap-0">
                 <div className="flex flex-col line-height-normal w-full ml-0 max-md:w-full max-md:ml-0">
-              {/* Left Column - Step Cards (Steps 2-5) */}
-              <div className="space-y-2 sm:space-y-3">
+                  {/* Left Column - Step Cards (Steps 2-5) */}
+                  <div className="space-y-2 sm:space-y-3">
                 {stepCards.slice(1, 5).map((step) => (
                   <div key={step.id}>
                     <Card

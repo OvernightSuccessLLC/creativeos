@@ -563,29 +563,9 @@ export default function GraphicStudio() {
                     {step.id === 6 && (
                       <div className="space-y-6">
                         <div>
-                          <Label className="text-white">Color & Style</Label>
+                          <Label className="text-white"></Label>
                           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
                             {keywordCategories["Color & Style"].map(
-                              (keyword) => (
-                                <button
-                                  key={keyword}
-                                  onClick={() => toggleKeyword(keyword)}
-                                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
-                                    selectedKeywords.includes(keyword)
-                                      ? "bg-brand-red text-black"
-                                      : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
-                                  }`}
-                                >
-                                  {keyword}
-                                </button>
-                              ),
-                            )}
-                          </div>
-                        </div>
-                        <div>
-                          <Label className="text-white">Visual Elements</Label>
-                          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
-                            {keywordCategories["Visual Elements"].map(
                               (keyword) => (
                                 <button
                                   key={keyword}

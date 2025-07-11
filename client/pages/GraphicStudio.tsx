@@ -442,13 +442,8 @@ export default function GraphicStudio() {
                       <div className="bg-brand-red text-black rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">
                         {step.id}
                       </div>
-                      <div>
-                        <CardTitle className="text-lg text-white">
-                          {step.title}
-                        </CardTitle>
-                        <p className="text-gray-600 text-sm">
-                          {step.description}
-                        </p>
+                      <div className="ml-3 text-white text-lg leading-7 -tracking-wide">
+                        {step.title}
                       </div>
                     </div>
                     {activeStep === step.id ? (

@@ -768,7 +768,7 @@ export default function Index() {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-white font-medium text-xs">
-                      AI QUALITY OPTIMIZER
+                      <b>AI QUALITY OPTIMIZER</b>
                     </span>
                     <span className="text-brand-red font-bold text-xs">
                       {calculateQuality()}%

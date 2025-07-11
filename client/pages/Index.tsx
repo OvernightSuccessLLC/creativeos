@@ -661,45 +661,38 @@ export default function Index() {
                 )}
               </div>
 
-              {/* Step 6 - Upload Reference (Moved from bottom) */}
-              <div>
-                <Card
-                  className="bg-black border border-white/20 hover:border-brand-red transition-colors cursor-pointer"
-                  onClick={() => setActiveStep(activeStep === 6 ? null : 6)}
-                >
-                  <CardContent className="p-3 sm:p-4">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-xs sm:text-sm font-bold">
-                          6
-                        </div>
-                        <div>
-                          <span className="font-medium text-white text-sm sm:text-base">
-                            Upload Reference
-                          </span>
-                          <p className="text-white/60 text-xs">
-                            Add visual references
-                          </p>
-                        </div>
-                      </div>
-                      {activeStep === 6 ? (
-                        <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
-                      ) : (
-                        <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Expandable Content */}
-                {activeStep === 6 && (
-                  <Card className="bg-black border border-white/20 mt-2">
-                    <CardContent className="p-4">
-                      {renderStepContent(6)}
-                    </CardContent>
-                  </Card>
-                )}
-              </div>
+              {/* Upload Reference - Integrated */}
+              <Card className="bg-black border border-white/20 h-fit">
+                <CardHeader className="p-5 sm:p-6">
+                  <div className="flex items-center">
+                    <Upload className="w-4 h-4 mr-2 text-brand-red" />
+                    <span className="font-medium text-white">
+                      Upload Reference
+                    </span>
+                  </div>
+                  <p className="text-white/60 text-xs">Add visual references</p>
+                  <CardTitle className="flex items-center text-brand-red text-sm font-bold tracking-wide -mt-2">
+                    <Upload className="w-4 h-4 mr-2" />
+                    <span>REFERENCE UPLOAD</span>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-0 px-6 pb-6">
+                  <div className="border-2 border-dashed border-white/20 rounded-lg p-6 text-center">
+                    <Upload className="w-8 h-8 text-white/60 mx-auto mb-2" />
+                    <Input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleFileUpload}
+                      className="bg-black border-white/20 text-white"
+                    />
+                    {uploadedFile && (
+                      <p className="text-brand-red mt-2">
+                        ✓ {uploadedFile.name} uploaded
+                      </p>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
             </div>
 
             {/* Prompt Output Section */}

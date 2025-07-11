@@ -797,49 +797,42 @@ export default function PromptVault() {
             </div>
 
             {/* Modifiers Section */}
-            <div
-              className="rounded-lg mb-4"
-              style={{
-                background: "#F93822",
-                padding: "8px 12px 12px",
-                boxShadow: "0 0 20px rgba(249, 56, 34, 0.3)",
-                border: "1px solid rgba(249, 56, 34, 0.8)",
-              }}
-            >
+            <div className="mb-4">
               <div
-                className="flex items-center justify-between cursor-pointer mb-2"
+                className="flex items-center justify-between cursor-pointer mb-3"
                 onClick={() => toggleSection("modifiers")}
               >
                 <h3
-                  className="text-black text-sm font-black text-left"
+                  className="text-white text-sm font-black text-left"
                   style={{
                     fontWeight: 900,
                     fontFamily: "Poppins, sans-serif",
-                    textShadow: "0 1px 2px rgba(0,0,0,0.1)",
                   }}
                 >
                   modifiers
                 </h3>
                 {collapsedSections.modifiers ? (
-                  <ChevronDown className="w-4 h-4 text-black" />
+                  <ChevronDown className="w-4 h-4 text-white" />
                 ) : (
-                  <ChevronUp className="w-4 h-4 text-black" />
+                  <ChevronUp className="w-4 h-4 text-white" />
                 )}
               </div>
               {!collapsedSections.modifiers && (
-                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2">
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-1">
                   {enhancedKeywordCategories.Modifiers.map((keyword) => (
                     <button
                       key={keyword}
                       onClick={() => toggleKeyword(keyword)}
-                      className={`text-xs px-2 py-1 h-8 rounded font-medium transition-all duration-200 ${
+                      className={`text-xs px-1 py-0.5 rounded font-bold transition-all duration-200 ${
                         selectedKeywords.includes(keyword)
                           ? "bg-black text-white border border-white"
-                          : "bg-black text-white opacity-80 hover:opacity-100 border border-transparent"
+                          : "bg-black text-white opacity-80 hover:opacity-100"
                       }`}
                       style={{
                         fontFamily: "Poppins, sans-serif",
-                        fontWeight: 500,
+                        fontWeight: 700,
+                        minHeight: "24px",
+                        lineHeight: "1.2",
                       }}
                     >
                       {keyword.toLowerCase()}

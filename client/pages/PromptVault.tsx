@@ -846,7 +846,7 @@ export default function PromptVault() {
           </CardContent>
         </Card>
 
-        {/* Step 4: Optimized Prompt Section */}
+        {/* Step 3: Optimized Prompt Section - Moved Below Keywords */}
         <Card className="bg-black border-0 shadow-xl rounded-xl">
           <CardContent style={{ padding: "24px" }}>
             <div className="flex items-center justify-between mb-6">
@@ -855,7 +855,7 @@ export default function PromptVault() {
                   className="w-8 h-8 rounded-full flex items-center justify-center mr-3"
                   style={{ backgroundColor: "#F93822" }}
                 >
-                  <span className="text-white font-black text-sm">4</span>
+                  <span className="text-white font-black text-sm">3</span>
                 </div>
                 <h3
                   className="text-white text-2xl font-black"

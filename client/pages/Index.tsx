@@ -405,17 +405,17 @@ export default function Index() {
         return (
           <div className="space-y-4">
             <Label className="text-white">{categoryKey}:</Label>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2">
               {keywords.map((keyword) => (
                 <Button
                   key={keyword}
                   size="sm"
                   onClick={() => toggleKeyword(keyword)}
-                  className={
+                  className={`text-xs px-2 py-1 h-8 ${
                     selectedKeywords.includes(keyword)
                       ? "bg-brand-red text-black hover:bg-black hover:text-brand-red transition-colors"
                       : "bg-brand-red text-black hover:bg-black hover:text-brand-red border-white/20 transition-colors"
-                  }
+                  }`}
                 >
                   {keyword}
                 </Button>

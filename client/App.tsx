@@ -11,6 +11,7 @@ import Playbook from "./pages/Playbook";
 import PromptVault from "./pages/PromptVault";
 import Templates from "./pages/Templates";
 import AIToolkit from "./pages/AIToolkit";
+import Updates from "./pages/Updates";
 import PaywallLanding from "./pages/PaywallLanding";
 import NotFound from "./pages/NotFound";
 

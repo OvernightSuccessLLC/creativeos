@@ -289,21 +289,7 @@ export default function Playbook() {
                 <span>{section.title}</span>
               </CardTitle>
             </CardHeader>
-            <CardContent
-              className="bg-black border border-white"
-              style={{
-                padding:
-                  section.id === 1
-                    ? "32px 32px 20px"
-                    : section.id === 3
-                      ? "20px 32px"
-                      : section.id === 5
-                        ? "20px 32px"
-                        : section.id === 7
-                          ? "24px"
-                          : "32px",
-              }}
-            >
+            <CardContent className="bg-black border border-white p-8">
               {section.id === 1 && (
                 <div className="space-y-6">
                   <div className="space-y-3">

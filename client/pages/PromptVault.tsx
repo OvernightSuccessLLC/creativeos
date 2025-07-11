@@ -436,34 +436,74 @@ export default function PromptVault() {
       {/* Navigation */}
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
 
-      {/* Header */}
-      <div
-        className="px-6 text-center py-6"
-        style={{ backgroundColor: "transparent" }}
-      >
-        <div className="flex items-center justify-center space-x-3 mb-4">
-          <Database className="w-10 h-10 text-white" />
-          <h1
-            className="text-white font-black"
-            style={{
-              fontSize: "36px",
-              lineHeight: "36px",
-              fontFamily: "Poppins, sans-serif",
-              fontWeight: "900",
-              textTransform: "uppercase",
-              letterSpacing: "2px",
-            }}
-          >
-            prompt vault
-          </h1>
+      {/* HOW IT WORKS Section */}
+      <div className="border-b border-white/20 px-6 py-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-white/60 text-xs font-bold tracking-wide mb-4">
+            HOW IT WORKS
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-sm font-bold">
+                1
+              </div>
+              <div>
+                <div className="text-white font-medium text-sm">
+                  Add Custom Instructions
+                </div>
+                <div className="text-white/60 text-xs">
+                  Start with your specific requirements
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-sm font-bold">
+                2
+              </div>
+              <div>
+                <div className="text-white font-medium text-sm">
+                  Select Categories
+                </div>
+                <div className="text-white/60 text-xs">
+                  Choose options from each category
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-sm font-bold">
+                3
+              </div>
+              <div>
+                <div className="text-white font-medium text-sm">
+                  Upload Reference Files
+                </div>
+                <div className="text-white/60 text-xs">
+                  Add images (optional)
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 rounded-full bg-brand-red text-black flex items-center justify-center text-sm font-bold">
+                4
+              </div>
+              <div>
+                <div className="text-white font-medium text-sm">
+                  Review Quality
+                </div>
+                <div className="text-white/60 text-xs">
+                  Check AI analysis and suggestions
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="text-right mt-4">
+            <span className="text-brand-red text-xs font-bold">STEP 1/5</span>
+          </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div
-        className="max-w-7xl mx-auto space-y-6"
-        style={{ padding: "0 24px 40px" }}
-      >
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
         {/* Top Row: Custom Instructions (Left) and Upload (Right) as separate modules */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Custom Instructions Module - Left */}
@@ -916,7 +956,7 @@ export default function PromptVault() {
                       customInstructions ? "text-green-400" : "text-gray-400"
                     }
                   >
-                    {customInstructions ? "✓" : "○"}
+                    {customInstructions ? "✓" : "��"}
                   </span>
                   <span className="text-white font-medium">Vision</span>
 

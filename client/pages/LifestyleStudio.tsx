@@ -505,8 +505,8 @@ export default function LifestyleStudio() {
     },
     {
       id: 7,
-      title: "Project Goal",
-      description: "Define the specific objective and style for your project",
+      title: "Intended Use",
+      description: "Define the intended use and application type",
       icon: <Camera className="w-5 h-5" />,
     },
     {

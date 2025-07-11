@@ -812,8 +812,10 @@ export default function GraphicStudio() {
           {/* Right Column - AI Prompt Formula */}
           <div className="space-y-6">
             <Card className="border-black sticky top-6">
-              <CardHeader>
-                <CardTitle className="text-xl">AI Prompt Formula</CardTitle>
+              <CardHeader className="bg-black py-3 px-6 pb-5">
+                <CardTitle className="text-xl text-white py-5">
+                  AI Prompt Formula
+                </CardTitle>
                 <div className="flex items-center space-x-2">
                   <div className="text-2xl font-bold">{qualityScore}%</div>
                   <div className="flex-1">

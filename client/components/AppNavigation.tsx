@@ -41,39 +41,31 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
 
   return (
     <nav
-      className={`border-b px-6 py-4 ${
-        isHomePage ? "border-black/20 bg-transparent" : "border-white bg-black"
-      }`}
-      style={FONT_STYLE}
+      className="border-0 px-6 py-4"
+      style={{ backgroundColor: "#F93822", ...FONT_STYLE }}
     >
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         <div className="flex items-center space-x-8">
           <Button
             variant="ghost"
             onClick={() => navigate("/")}
-            className={`text-xl hover:bg-transparent ${
-              isHomePage ? "text-black" : "text-brand-red"
-            }`}
-            style={{ ...FONT_STYLE, fontWeight: "700", letterSpacing: "1px" }}
+            className="text-xl hover:bg-transparent text-white font-black"
+            style={{ ...FONT_STYLE, fontWeight: "900", letterSpacing: "1px" }}
           >
             CREATIVE DIRECTOR OS
           </Button>
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-4">
             {navigationItems.map((item) => (
               <button
                 key={item.name}
-                className={`flex items-center space-x-2 px-4 py-2 rounded text-sm transition-colors ${
+                className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-bold transition-colors ${
                   item.highlight
-                    ? isHomePage
-                      ? "bg-black text-brand-red"
-                      : "bg-brand-red text-black"
-                    : isHomePage
-                      ? "text-black/80 hover:text-black hover:bg-black/10"
-                      : "text-white hover:text-brand-red hover:bg-white/10"
+                    ? "bg-black text-white border-2 border-white"
+                    : "text-white hover:bg-black/20 border border-transparent"
                 }`}
                 style={{
                   ...FONT_STYLE,
-                  fontWeight: item.highlight ? "700" : "600",
+                  fontWeight: "700",
                   textTransform: "uppercase",
                   letterSpacing: "0.75px",
                 }}
@@ -87,14 +79,10 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
         </div>
         <Button
           variant="outline"
-          className={`${
-            isHomePage
-              ? "border-black text-black hover:bg-black hover:text-brand-red"
-              : "border-white text-white hover:bg-white hover:text-black"
-          }`}
+          className="border-2 border-white text-white hover:bg-white hover:text-black font-bold bg-transparent"
           style={{
             ...FONT_STYLE,
-            fontWeight: "600",
+            fontWeight: "700",
             textTransform: "uppercase",
             letterSpacing: "0.75px",
           }}

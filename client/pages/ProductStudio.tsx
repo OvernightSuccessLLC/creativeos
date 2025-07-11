@@ -567,7 +567,7 @@ export default function ProductStudio() {
 
                     {step.id === 3 && (
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                        {keywordCategories["Product Style"].map((keyword) => (
+                        {keywordCategories["Intended Use"].map((keyword) => (
                           <button
                             key={keyword}
                             onClick={() => toggleKeyword(keyword)}

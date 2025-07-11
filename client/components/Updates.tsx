@@ -118,6 +118,14 @@ const Updates: React.FC = () => {
       <div className="sticky top-0 z-10 bg-brand-red border-b border-black/20 px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between max-w-4xl mx-auto">
           <div className="flex items-center space-x-3">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => navigate("/")}
+              className="text-black hover:bg-black/10 mr-2"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </Button>
             <Bell className="w-6 h-6 text-black" />
             <h1
               className="text-xl sm:text-2xl text-black font-bold"
@@ -129,14 +137,6 @@ const Updates: React.FC = () => {
               7 NEW
             </Badge>
           </div>
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={onClose}
-            className="text-black hover:bg-black/10"
-          >
-            <X className="w-5 h-5" />
-          </Button>
         </div>
       </div>
 

@@ -407,32 +407,34 @@ export default function PromptVault() {
 
       {/* Main Content */}
       <div
-        className="max-w-7xl mx-auto space-y-4"
-        style={{ padding: "0 24px 10px" }}
+        className="max-w-7xl mx-auto space-y-6"
+        style={{ padding: "0 24px 40px" }}
       >
-        {/* Top Row: Step 1 (Left) and Step 2 (Right) - Smaller and matching theme */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        {/* Top Row: Step 1 (Left) and Step 2 (Right) - Clean black modules */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Step 1 - Top Left */}
           <Card
-            className="bg-black border-0 shadow-lg"
+            className="bg-black border-0 shadow-xl rounded-xl"
             style={{ height: "auto" }}
           >
-            <CardContent style={{ padding: "16px" }}>
-              <div className="flex items-center mb-3">
+            <CardContent style={{ padding: "24px" }}>
+              <div className="flex items-center mb-4">
                 <div
-                  className="w-5 h-5 rounded-full flex items-center justify-center mr-2"
+                  className="w-8 h-8 rounded-full flex items-center justify-center mr-3"
                   style={{ backgroundColor: "#F93822" }}
                 >
-                  <span className="text-white font-bold text-xs">1</span>
+                  <span className="text-white font-black text-sm">1</span>
                 </div>
                 <h3
-                  className="text-white text-sm font-bold"
+                  className="text-white text-lg font-black"
                   style={{
                     fontFamily: "Poppins, sans-serif",
-                    fontWeight: "700",
+                    fontWeight: "900",
+                    textTransform: "uppercase",
+                    letterSpacing: "1px",
                   }}
                 >
-                  step 1: describe your vision
+                  describe your vision
                 </h3>
               </div>
 
@@ -449,63 +451,66 @@ export default function PromptVault() {
                   score += Math.min(50, selectedKeywords.length * 5);
                   setQualityScore(Math.min(100, score));
                 }}
-                className="bg-gray-900 border-0 text-white resize-none"
+                className="bg-gray-900 border-0 text-white resize-none rounded-lg"
                 style={{
-                  minHeight: "80px",
-                  padding: "12px",
-                  fontSize: "13px",
+                  minHeight: "100px",
+                  padding: "16px",
+                  fontSize: "14px",
+                  fontFamily: "Poppins, sans-serif",
                 }}
                 rows={4}
               />
 
-              <p className="text-gray-400 text-xs mt-2">
+              <p className="text-gray-400 text-sm mt-3 font-medium">
                 Be specific about subjects, actions, and the overall scene.
               </p>
             </CardContent>
           </Card>
 
           {/* Step 2 - Top Right */}
-          <Card className="bg-black border-0 shadow-lg">
-            <CardContent style={{ padding: "16px" }}>
-              <div className="flex items-center mb-3">
+          <Card className="bg-black border-0 shadow-xl rounded-xl">
+            <CardContent style={{ padding: "24px" }}>
+              <div className="flex items-center mb-4">
                 <div
-                  className="w-5 h-5 rounded-full flex items-center justify-center mr-2"
+                  className="w-8 h-8 rounded-full flex items-center justify-center mr-3"
                   style={{ backgroundColor: "#F93822" }}
                 >
-                  <span className="text-white font-bold text-xs">2</span>
+                  <span className="text-white font-black text-sm">2</span>
                 </div>
                 <h3
-                  className="text-white text-sm font-bold"
+                  className="text-white text-lg font-black"
                   style={{
                     fontFamily: "Poppins, sans-serif",
-                    fontWeight: "700",
+                    fontWeight: "900",
+                    textTransform: "uppercase",
+                    letterSpacing: "1px",
                   }}
                 >
-                  step 2: upload reference image (optional)
+                  upload reference image
                 </h3>
               </div>
 
               <div
-                className="border border-dashed rounded-lg text-center cursor-pointer transition-colors bg-gray-900"
+                className="border-2 border-dashed rounded-xl text-center cursor-pointer transition-colors bg-gray-900"
                 style={{
-                  padding: "20px 12px",
-                  minHeight: "80px",
-                  borderColor: "#444",
+                  padding: "32px 16px",
+                  minHeight: "100px",
+                  borderColor: "#555",
                 }}
                 onClick={() => document.getElementById("file-upload")?.click()}
                 onMouseEnter={(e) =>
                   (e.currentTarget.style.borderColor = "#F93822")
                 }
                 onMouseLeave={(e) =>
-                  (e.currentTarget.style.borderColor = "#444")
+                  (e.currentTarget.style.borderColor = "#555")
                 }
               >
                 {uploadedFile ? (
                   <div>
-                    <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <span className="text-white text-sm">✓</span>
+                    <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <span className="text-white text-lg font-bold">✓</span>
                     </div>
-                    <p className="text-green-400 font-medium mb-1 text-xs">
+                    <p className="text-green-400 font-bold mb-2 text-sm">
                       {uploadedFile.name}
                     </p>
                     <Button
@@ -515,20 +520,22 @@ export default function PromptVault() {
                         e.stopPropagation();
                         setUploadedFile(null);
                       }}
-                      className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-medium text-xs h-6"
+                      className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-bold text-sm"
                     >
                       Remove
                     </Button>
                   </div>
                 ) : (
                   <div>
-                    <div className="w-8 h-8 border border-gray-600 rounded-lg flex items-center justify-center mx-auto mb-2">
-                      <Upload className="w-4 h-4 text-gray-400" />
+                    <div className="w-12 h-12 border-2 border-gray-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                      <Upload className="w-6 h-6 text-gray-400" />
                     </div>
-                    <p className="text-white font-medium mb-1 text-xs">
+                    <p className="text-white font-bold mb-1 text-sm">
                       Click to upload reference image
                     </p>
-                    <p className="text-gray-400 text-xs">JPG, PNG up to 10MB</p>
+                    <p className="text-gray-400 text-sm font-medium">
+                      JPG, PNG up to 10MB
+                    </p>
                   </div>
                 )}
                 <input

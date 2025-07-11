@@ -29,9 +29,9 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
   ];
 
   const handleNavigation = (item: (typeof navigationItems)[0]) => {
-    if (item.action === "updates" && onUpdatesClick) {
+    if ("action" in item && item.action === "updates" && onUpdatesClick) {
       onUpdatesClick();
-    } else if (item.path) {
+    } else if ("path" in item && item.path) {
       navigate(item.path);
     }
   };

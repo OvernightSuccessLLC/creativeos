@@ -412,23 +412,23 @@ export default function PromptVault() {
         className="max-w-7xl mx-auto space-y-4"
         style={{ padding: "0 24px 10px" }}
       >
-        {/* Top Row: Step 1 (Left) and Step 2 (Right) - Same width as Step 3 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+        {/* Top Row: Step 1 (Left) and Step 2 (Right) - Smaller and matching theme */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {/* Step 1 - Top Left */}
           <Card
-            className="bg-black border border-gray-800 shadow-xl"
-            style={{ flexGrow: "1", height: "auto" }}
+            className="bg-black border-0 shadow-lg"
+            style={{ height: "auto" }}
           >
-            <CardContent style={{ padding: "20px" }}>
-              <div className="flex items-center mb-4">
+            <CardContent style={{ padding: "16px" }}>
+              <div className="flex items-center mb-3">
                 <div
-                  className="w-6 h-6 rounded-full flex items-center justify-center mr-3"
+                  className="w-5 h-5 rounded-full flex items-center justify-center mr-2"
                   style={{ backgroundColor: "#F93822" }}
                 >
-                  <span className="text-white font-bold text-sm">1</span>
+                  <span className="text-white font-bold text-xs">1</span>
                 </div>
                 <h3
-                  className="text-white text-lg font-brand-bold"
+                  className="text-white text-sm font-bold"
                   style={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "700",
@@ -440,7 +440,7 @@ export default function PromptVault() {
 
               <Textarea
                 id="instructions"
-                placeholder="Describe exactly what you want to create... (e.g., 'A modern entrepreneur working on a laptop in a minimalist coffee shop')"
+                placeholder="Describe exactly what you want to create..."
                 value={customInstructions}
                 onChange={(e) => {
                   setCustomInstructions(e.target.value);
@@ -451,37 +451,33 @@ export default function PromptVault() {
                   score += Math.min(50, selectedKeywords.length * 5);
                   setQualityScore(Math.min(100, score));
                 }}
-                className="bg-black border-gray-800 text-white resize-none"
+                className="bg-gray-900 border-0 text-white resize-none"
                 style={{
-                  minHeight: "120px",
-                  padding: "16px",
-                  fontSize: "14px",
-                  borderColor: "#333",
+                  minHeight: "80px",
+                  padding: "12px",
+                  fontSize: "13px",
                 }}
-                onFocus={(e) => (e.target.style.borderColor = "#F93822")}
-                onBlur={(e) => (e.target.style.borderColor = "#333")}
-                rows={6}
+                rows={4}
               />
 
-              <p className="text-white text-sm mt-3" style={{ opacity: 0.7 }}>
-                Be specific about subjects, actions, and the overall scene you
-                envision.
+              <p className="text-gray-400 text-xs mt-2">
+                Be specific about subjects, actions, and the overall scene.
               </p>
             </CardContent>
           </Card>
 
           {/* Step 2 - Top Right */}
-          <Card className="bg-black border border-gray-800 shadow-xl">
-            <CardContent style={{ padding: "20px" }}>
-              <div className="flex items-center mb-4">
+          <Card className="bg-black border-0 shadow-lg">
+            <CardContent style={{ padding: "16px" }}>
+              <div className="flex items-center mb-3">
                 <div
-                  className="w-6 h-6 rounded-full flex items-center justify-center mr-3"
+                  className="w-5 h-5 rounded-full flex items-center justify-center mr-2"
                   style={{ backgroundColor: "#F93822" }}
                 >
-                  <span className="text-white font-bold text-sm">2</span>
+                  <span className="text-white font-bold text-xs">2</span>
                 </div>
                 <h3
-                  className="text-white text-lg font-brand-bold"
+                  className="text-white text-sm font-bold"
                   style={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "700",
@@ -492,10 +488,10 @@ export default function PromptVault() {
               </div>
 
               <div
-                className="border-2 border-dashed rounded-lg text-center cursor-pointer transition-colors"
+                className="border border-dashed rounded-lg text-center cursor-pointer transition-colors bg-gray-900"
                 style={{
-                  padding: "40px 20px",
-                  minHeight: "120px",
+                  padding: "20px 12px",
+                  minHeight: "80px",
                   borderColor: "#444",
                 }}
                 onClick={() => document.getElementById("file-upload")?.click()}
@@ -508,10 +504,10 @@ export default function PromptVault() {
               >
                 {uploadedFile ? (
                   <div>
-                    <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-white text-xl">✓</span>
+                    <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                      <span className="text-white text-sm">✓</span>
                     </div>
-                    <p className="text-green-400 font-medium mb-2">
+                    <p className="text-green-400 font-medium mb-1 text-xs">
                       {uploadedFile.name}
                     </p>
                     <Button
@@ -521,20 +517,20 @@ export default function PromptVault() {
                         e.stopPropagation();
                         setUploadedFile(null);
                       }}
-                      className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-medium"
+                      className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-medium text-xs h-6"
                     >
                       Remove
                     </Button>
                   </div>
                 ) : (
                   <div>
-                    <div className="w-12 h-12 border-2 border-gray-600 rounded-lg flex items-center justify-center mx-auto mb-3">
-                      <Upload className="w-6 h-6 text-gray-400" />
+                    <div className="w-8 h-8 border border-gray-600 rounded-lg flex items-center justify-center mx-auto mb-2">
+                      <Upload className="w-4 h-4 text-gray-400" />
                     </div>
-                    <p className="text-white font-medium mb-1">
+                    <p className="text-white font-medium mb-1 text-xs">
                       Click to upload reference image
                     </p>
-                    <p className="text-gray-400 text-sm">JPG, PNG up to 10MB</p>
+                    <p className="text-gray-400 text-xs">JPG, PNG up to 10MB</p>
                   </div>
                 )}
                 <input

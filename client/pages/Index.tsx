@@ -476,8 +476,8 @@ export default function Index() {
               <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
                 1
               </div>
-              <div>
-                <div className="text-black font-medium text-sm">
+              <div className="flex flex-col ml-3">
+                <div className="text-white font-medium text-sm">
                   Add Custom Instructions
                 </div>
                 <div className="text-black/60 text-xs">

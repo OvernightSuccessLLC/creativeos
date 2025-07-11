@@ -460,10 +460,10 @@ export default function ProductStudio() {
                 </CardHeader>
 
                 {activeStep === step.id && (
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-4 bg-black">
                     {step.id === 1 && (
                       <div>
-                        <Label htmlFor="instructions">
+                        <Label htmlFor="instructions" className="text-white">
                           Describe your product photography vision
                         </Label>
                         <Textarea
@@ -488,7 +488,7 @@ export default function ProductStudio() {
                             className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
                               selectedKeywords.includes(keyword)
                                 ? "bg-brand-red text-black"
-                                : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
+                                : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                             }`}
                           >
                             {keyword}
@@ -507,7 +507,7 @@ export default function ProductStudio() {
                               className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
                                 selectedKeywords.includes(keyword)
                                   ? "bg-brand-red text-black"
-                                  : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
+                                  : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                               }`}
                             >
                               {keyword}
@@ -526,7 +526,7 @@ export default function ProductStudio() {
                             className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
                               selectedKeywords.includes(keyword)
                                 ? "bg-brand-red text-black"
-                                : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
+                                : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                             }`}
                           >
                             {keyword}
@@ -544,7 +544,7 @@ export default function ProductStudio() {
                             className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
                               selectedKeywords.includes(keyword)
                                 ? "bg-brand-red text-black"
-                                : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
+                                : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                             }`}
                           >
                             {keyword}
@@ -556,7 +556,9 @@ export default function ProductStudio() {
                     {step.id === 6 && (
                       <div className="space-y-6">
                         <div>
-                          <Label>Product Categories</Label>
+                          <Label className="text-white">
+                            Product Categories
+                          </Label>
                           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
                             {keywordCategories["Product Categories"].map(
                               (keyword) => (
@@ -566,7 +568,7 @@ export default function ProductStudio() {
                                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
                                     selectedKeywords.includes(keyword)
                                       ? "bg-brand-red text-black"
-                                      : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
+                                      : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                                   }`}
                                 >
                                   {keyword}
@@ -576,7 +578,7 @@ export default function ProductStudio() {
                           </div>
                         </div>
                         <div>
-                          <Label htmlFor="file-upload">
+                          <Label htmlFor="file-upload" className="text-white">
                             Upload Reference Image
                           </Label>
                           <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center mt-2">

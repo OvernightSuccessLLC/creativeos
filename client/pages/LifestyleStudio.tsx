@@ -667,57 +667,22 @@ export default function LifestyleStudio() {
                     )}
 
                     {step.id === 9 && (
-                      <div className="space-y-6">
-                        <div>
-                          <Label className="text-white">Finishing</Label>
-                          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
-                            {keywordCategories["Finishing"].map((keyword) => (
-                              <button
-                                key={keyword}
-                                onClick={() => toggleKeyword(keyword)}
-                                className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
-                                  selectedKeywords.includes(keyword)
-                                    ? "bg-brand-red text-black"
-                                    : "bg-white text-black border border-gray-300 hover:bg-gray-100"
-                                }`}
-                              >
-                                {keyword}
-                              </button>
-                            ))}
-                          </div>
-                        </div>
-                        <div>
-                          <Label htmlFor="file-upload" className="text-white">
-                            Upload Reference Image
-                          </Label>
-                          <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center mt-2">
-                            <Upload className="mx-auto h-12 w-12 text-gray-400" />
-                            <div className="mt-4">
-                              <Label
-                                htmlFor="file-upload"
-                                className="cursor-pointer"
-                              >
-                                <span className="mt-2 block text-sm font-medium text-gray-900">
-                                  Click to upload or drag and drop
-                                </span>
-                              </Label>
-                              <Input
-                                id="file-upload"
-                                name="file-upload"
-                                type="file"
-                                className="sr-only"
-                                onChange={handleFileUpload}
-                                accept="image/*"
-                              />
-                            </div>
-                            {uploadedFile && (
-                              <div className="mt-4 text-sm text-gray-600">
-                                Uploaded: {uploadedFile.name} (
-                                {(uploadedFile.size / 1024 / 1024).toFixed(2)}{" "}
-                                MB)
-                              </div>
-                            )}
-                          </div>
+                      <div>
+                        <Label className="text-white">Finishing</Label>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
+                          {keywordCategories["Finishing"].map((keyword) => (
+                            <button
+                              key={keyword}
+                              onClick={() => toggleKeyword(keyword)}
+                              className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                                selectedKeywords.includes(keyword)
+                                  ? "bg-brand-red text-black"
+                                  : "bg-white text-black border border-gray-300 hover:bg-gray-100"
+                              }`}
+                            >
+                              {keyword}
+                            </button>
+                          ))}
                         </div>
                       </div>
                     )}

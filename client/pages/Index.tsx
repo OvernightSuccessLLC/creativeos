@@ -585,37 +585,58 @@ export default function Index() {
         </div>
       )}
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-5 sm:py-5">
-        {/* Current Studio Header */}
-        <div className="mb-6 sm:mb-8">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 sm:mb-6 space-y-4 sm:space-y-0">
-            <h1
-              className="text-2xl sm:text-3xl text-black"
-              style={{ fontFamily: "Poppins, sans-serif", fontWeight: "900" }}
-            >
-              {studios.find((s) => s.id === selectedStudio)?.name ||
-                "LIFESTYLE STUDIO"}
-            </h1>
-            <div className="flex items-center space-x-2 text-sm">
-              <Users className="w-4 h-4 sm:w-5 sm:h-5 text-black/60" />
-              <span className="text-black/60">1.2k</span>
-              <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 text-black/60 ml-2 sm:ml-4" />
-              <Button
-                size="sm"
-                className="bg-brand-red text-black hover:bg-black hover:text-brand-red ml-2 sm:ml-4 transition-colors"
-                style={{ fontWeight: 900 }}
-                onClick={() => {
-                  setCustomInstructions("");
-                  setSelectedKeywords([]);
-                  setUploadedFile(null);
-                  setActiveStep(null);
-                }}
-              >
-                RESET
-              </Button>
+      {/* HOW IT WORKS Section */}
+      <div className="border-b border-black/20 px-6 py-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-black/60 text-xs font-bold tracking-wide mb-4">
+            HOW IT WORKS
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
+                1
+              </div>
+              <div>
+                <div className="text-black font-medium text-sm">Add Custom Instructions</div>
+                <div className="text-black/60 text-xs">Start with your specific requirements</div>
+              </div>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
+                2
+              </div>
+              <div>
+                <div className="text-black font-medium text-sm">Select Categories</div>
+                <div className="text-black/60 text-xs">Choose mood and style options</div>
+              </div>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
+                3
+              </div>
+              <div>
+                <div className="text-black font-medium text-sm">Upload Reference Files</div>
+                <div className="text-black/60 text-xs">Add images (optional)</div>
+              </div>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
+                4
+              </div>
+              <div>
+                <div className="text-black font-medium text-sm">Review Quality</div>
+                <div className="text-black/60 text-xs">Check AI analysis and suggestions</div>
+              </div>
             </div>
           </div>
+          <div className="text-right mt-4">
+            <span className="text-brand-red text-xs font-bold">STEP 1/5</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
 
           {/* Main Studio Content */}
           <div className="space-y-6">

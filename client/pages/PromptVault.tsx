@@ -39,11 +39,11 @@ export default function PromptVault() {
     Record<string, boolean>
   >({
     lighting: false,
-    framing: false,
-    locations: false,
-    style: false,
-    creativeDirection: false,
-    modifiers: false,
+    framing: true,
+    locations: true,
+    style: true,
+    creativeDirection: true,
+    modifiers: true,
   });
 
   const keywordCategories = {

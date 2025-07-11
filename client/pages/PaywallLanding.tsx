@@ -77,10 +77,12 @@ export default function PaywallLanding() {
           <div className="flex items-center justify-center space-x-3 mb-6">
             <Crown className="w-8 h-8 sm:w-12 sm:h-12 text-black" />
             <h1
-              className="text-3xl sm:text-5xl lg:text-6xl font-brand-black text-black brand-heading"
+              className="text-2xl font-brand-black brand-heading"
               style={{ fontFamily: "Poppins, sans-serif", fontWeight: "900" }}
             >
-              OVERNIGHT SUCCESS
+              <span style={{ color: "rgb(255, 252, 252)" }}>
+                OVERNIGHT SUCCESS
+              </span>
             </h1>
           </div>
           <p className="text-lg sm:text-xl text-black/80 mb-4 max-w-2xl mx-auto">

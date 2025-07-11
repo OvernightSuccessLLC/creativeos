@@ -663,7 +663,7 @@ export default function Index() {
 
               {/* Upload Reference - Integrated */}
               <Card className="bg-black border border-white/20 h-fit">
-                <CardHeader className="p-5 sm:p-6">
+                <CardHeader className="py-5 px-6 sm:py-5 sm:px-6">
                   <div className="flex items-center">
                     <Upload className="w-4 h-4 mr-2 text-brand-red" />
                     <span className="font-medium text-white">

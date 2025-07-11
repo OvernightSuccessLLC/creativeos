@@ -483,7 +483,7 @@ export default function PromptVault() {
                     fontWeight: "700",
                   }}
                 >
-                  Step 2: Upload Reference Image (Optional)
+                  step 2: upload reference image (optional)
                 </h3>
               </div>
 

@@ -254,7 +254,7 @@ export default function PaywallLanding() {
       </div>
 
       {/* Testimonials */}
-      <div className="bg-black py-12 sm:py-16">
+      <div className="bg-black py-5 my-5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h3
             className="text-xl sm:text-2xl font-black text-white mb-8"

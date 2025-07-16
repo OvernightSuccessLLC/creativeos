@@ -391,12 +391,6 @@ export default function LifestyleStudio() {
             >
               <b>GRAPHIC STUDIO</b>
             </button>
-            <button
-              onClick={() => setShowBriefcase(true)}
-              className="bg-brand-red text-black px-3 py-2 rounded text-sm font-semibold mx-3"
-            >
-              <b>THE BRIEFCASE</b>
-            </button>
           </div>
           <div className="flex items-center space-x-2">
             <div className="bg-brand-red text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">

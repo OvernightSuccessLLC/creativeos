@@ -51,7 +51,6 @@ const App = () => (
           <Route path="/ai-toolkit" element={<AIToolkit />} />
           <Route path="/updates" element={<Updates />} />
           <Route path="/join" element={<PaywallLanding />} />
-          <Route path="/upgrade" element={<PaywallLanding />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

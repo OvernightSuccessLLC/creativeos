@@ -380,6 +380,23 @@ export default function GraphicStudio() {
         </div>
       </nav>
 
+      {/* Studio Header */}
+      <div className="px-6 py-5">
+        <div className="max-w-7xl mx-auto">
+          <h1
+            className="text-4xl font-black text-black"
+            style={{
+              fontFamily: "Poppins, sans-serif",
+              fontWeight: "400",
+              fontSize: "48px",
+              lineHeight: "48px",
+            }}
+          >
+            GRAPHIC STUDIO
+          </h1>
+        </div>
+      </div>
+
       {/* HOW IT WORKS Section */}
       <div className="px-6 mb-8">
         <div className="max-w-7xl mx-auto">

@@ -413,8 +413,20 @@ export default function LifestyleStudio() {
       </nav>
 
       {/* Studio Header */}
-      <div className="px-6 py-3">
-        <div className="max-w-7xl mx-auto"></div>
+      <div className="px-6 py-5">
+        <div className="max-w-7xl mx-auto">
+          <h1
+            className="text-4xl font-black text-black"
+            style={{
+              fontFamily: "Poppins, sans-serif",
+              fontWeight: "400",
+              fontSize: "48px",
+              lineHeight: "48px",
+            }}
+          >
+            LIFESTYLE STUDIO
+          </h1>
+        </div>
       </div>
 
       {/* HOW IT WORKS Section */}

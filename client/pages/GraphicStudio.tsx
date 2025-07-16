@@ -381,7 +381,7 @@ export default function GraphicStudio() {
       </nav>
 
       {/* Studio Header */}
-      <div className="px-6 py-5">
+      <div className="px-6 py-5 pb-0">
         <div className="max-w-7xl mx-auto">
           <h1
             className="text-4xl font-black text-black"

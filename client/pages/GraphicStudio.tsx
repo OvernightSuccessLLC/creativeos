@@ -351,12 +351,6 @@ export default function GraphicStudio() {
           <div className="text-brand-red font-bold text-lg">LOGO</div>
           <div className="flex items-center space-x-1">
             <button
-              onClick={() => setShowBriefcase(true)}
-              className="text-white px-4 py-2 rounded text-sm font-semibold hover:bg-white/10"
-            >
-              THE BRIEFCASE
-            </button>
-            <button
               onClick={() => navigate("/")}
               className="text-white px-4 py-2 rounded text-sm font-semibold hover:bg-white/10"
             >

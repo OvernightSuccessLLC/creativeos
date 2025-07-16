@@ -70,7 +70,6 @@ export default function Index() {
     { name: "PROMPT VAULT", icon: Database, active: false },
     { name: "TEMPLATES", icon: LayoutTemplate, active: false },
     { name: "AI TOOLKIT", icon: Zap, active: false },
-    { name: "UPGRADE", icon: Crown, highlight: true },
   ];
 
   const keywordCategories = {

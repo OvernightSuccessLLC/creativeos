@@ -36,7 +36,7 @@ import {
 
 export default function GraphicStudio() {
   const navigate = useNavigate();
-  const [showBriefcase, setShowBriefcase] = useState(false);
+
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   // Prompt Builder State

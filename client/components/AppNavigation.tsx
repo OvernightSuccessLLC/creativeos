@@ -25,7 +25,6 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
     { name: "PROMPT VAULT", icon: Database, path: "/prompt-vault" },
     { name: "TEMPLATES", icon: LayoutTemplate, path: "/templates" },
     { name: "AI TOOLKIT", icon: Zap, path: "/ai-toolkit" },
-    { name: "UPGRADE", icon: Crown, path: "/upgrade", highlight: true },
   ];
 
   const handleNavigation = (item: (typeof navigationItems)[0]) => {

@@ -769,10 +769,10 @@ export default function Playbook() {
         ))}
 
         {/* Quick Reference Card */}
-        <Card className="bg-brand-red border-brand-red">
-          <CardHeader>
+        <Card className="bg-black border-white">
+          <CardHeader className="bg-black">
             <CardTitle
-              className="text-black text-xl"
+              className="text-white text-xl"
               style={TYPOGRAPHY.subtitle}
             >
               Quick Reference Guide

@@ -547,12 +547,6 @@ export default function Playbook() {
               {/* Section 1: Introduction */}
               {section.id === 1 && (
                 <div className="space-y-6">
-                  <p
-                    className="text-white leading-relaxed"
-                    style={TYPOGRAPHY.body}
-                  >
-                    {section.content.overview}
-                  </p>
                   <div className="space-y-3">
                     <h4
                       className="text-brand-red font-bold"
@@ -561,7 +555,7 @@ export default function Playbook() {
                       How It Works
                     </h4>
                     <p
-                      className="text-white leading-relaxed"
+                      className="text-white leading-relaxed text-sm"
                       style={TYPOGRAPHY.body}
                     >
                       {section.content.howItWorks}
@@ -575,7 +569,7 @@ export default function Playbook() {
                       Why Special
                     </h4>
                     <p
-                      className="text-white leading-relaxed"
+                      className="text-white leading-relaxed text-sm"
                       style={TYPOGRAPHY.body}
                     >
                       {section.content.whySpecial}
@@ -589,7 +583,7 @@ export default function Playbook() {
                       Who This Is For
                     </h4>
                     <p
-                      className="text-white leading-relaxed"
+                      className="text-white leading-relaxed text-sm"
                       style={TYPOGRAPHY.body}
                     >
                       {section.content.whoFor}
@@ -705,12 +699,6 @@ export default function Playbook() {
               {/* Section 4: Lifestyle Photography */}
               {section.id === 4 && (
                 <div className="space-y-6">
-                  <p
-                    className="text-white leading-relaxed"
-                    style={TYPOGRAPHY.body}
-                  >
-                    {section.content.description}
-                  </p>
                   <div className="space-y-4">
                     {section.content.characteristics.map((char, idx) => (
                       <div key={idx} className="space-y-2">
@@ -806,12 +794,14 @@ export default function Playbook() {
                         >
                           {category.title}
                         </h4>
-                        <p
-                          className="text-white leading-relaxed text-sm"
-                          style={TYPOGRAPHY.body}
-                        >
-                          {category.description}
-                        </p>
+                        {category.title !== "Logo Creation" && (
+                          <p
+                            className="text-white leading-relaxed text-sm"
+                            style={TYPOGRAPHY.body}
+                          >
+                            {category.description}
+                          </p>
+                        )}
                         <div className="space-y-1">
                           {category.tips.map((tip, tipIdx) => (
                             <p
@@ -952,12 +942,6 @@ export default function Playbook() {
               {/* Section 9: Warnings */}
               {section.id === 9 && (
                 <div className="space-y-4">
-                  <h4
-                    className="text-brand-red font-bold text-base"
-                    style={TYPOGRAPHY.heading}
-                  >
-                    ⚠️ Warnings
-                  </h4>
                   {section.content.warnings.map((warning, idx) => (
                     <div
                       key={idx}

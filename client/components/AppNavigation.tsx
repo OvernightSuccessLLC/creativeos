@@ -8,6 +8,9 @@ import {
   Zap,
   Crown,
   Home,
+  Camera,
+  Users,
+  Palette,
 } from "lucide-react";
 
 interface AppNavigationProps {

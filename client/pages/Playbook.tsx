@@ -252,7 +252,7 @@ export default function Playbook() {
         style={{ padding: "0 32px 48px" }}
       >
         {sections.map((section) => (
-          <Card key={section.id} className="bg-black border-white">
+          <Card key={section.id} className="bg-black border-none">
             <CardHeader className="bg-black p-6">
               <CardTitle
                 className="text-white text-xl flex items-center space-x-3"

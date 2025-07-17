@@ -11,8 +11,6 @@ import {
   Camera,
   Users,
   Palette,
-  Instagram,
-  Mail,
 } from "lucide-react";
 
 interface AppNavigationProps {

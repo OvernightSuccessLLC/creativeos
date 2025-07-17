@@ -118,32 +118,6 @@ const Updates: React.FC = () => {
       {/* Navigation */}
       <AppNavigation />
 
-      {/* Header */}
-      <div className="sticky top-0 z-10 bg-brand-red border-b border-black/20 px-4 sm:px-6 py-4">
-        <div className="flex items-center justify-between max-w-4xl mx-auto">
-          <div className="flex items-center space-x-3">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => navigate("/")}
-              className="text-black hover:bg-black/10 mr-2"
-            >
-              <ArrowLeft className="w-5 h-5" />
-            </Button>
-            <Bell className="w-6 h-6 text-black" />
-            <h1
-              className="text-xl sm:text-2xl text-black font-bold"
-              style={{ fontFamily: "Poppins, sans-serif" }}
-            >
-              UPDATES
-            </h1>
-            <Badge className="bg-black text-brand-red text-xs font-bold">
-              7 NEW
-            </Badge>
-          </div>
-        </div>
-      </div>
-
       {/* Updates Feed */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
         <div className="space-y-4">

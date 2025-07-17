@@ -23,7 +23,6 @@ const queryClient = new QueryClient();
 const CreativeDirectorOSContext = {
   version: "1.0.0",
   features: {
-    promptVault: true,
     playbook: true,
     templates: true,
     aiToolkit: true,

@@ -346,34 +346,7 @@ export default function GraphicStudio() {
 
   return (
     <div className="min-h-screen bg-brand-red text-black">
-      {/* Top Navigation Bar */}
-      <nav className="bg-black px-6 py-5">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="text-brand-red font-bold text-lg">LOGO</div>
-          <div className="flex items-center space-x-1">
-            <button
-              onClick={() => navigate("/")}
-              className="text-white px-4 py-2 rounded text-sm font-semibold hover:bg-white/10"
-            >
-              PRODUCT STUDIO
-            </button>
-            <button
-              onClick={() => navigate("/lifestyle-studio")}
-              className="text-white px-4 py-2 rounded text-sm font-semibold hover:bg-white/10"
-            >
-              LIFESTYLE STUDIO
-            </button>
-            <button className="bg-black text-white px-4 py-2 rounded text-sm font-semibold">
-              GRAPHIC STUDIO
-            </button>
-          </div>
-          <div className="flex items-center space-x-2">
-            <button className="text-white text-sm font-medium hover:bg-white/10 px-3 py-1 rounded">
-              RESET
-            </button>
-          </div>
-        </div>
-      </nav>
+      <AppNavigation />
 
       {/* Studio Header */}
       <div className="px-6 py-5 pb-0">

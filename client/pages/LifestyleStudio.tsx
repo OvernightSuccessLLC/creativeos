@@ -312,11 +312,21 @@ export default function LifestyleStudio() {
 
   // Toggle keyword selection
   const toggleKeyword = (keyword: string) => {
-    setSelectedKeywords((prev) =>
-      prev.includes(keyword)
-        ? prev.filter((k) => k !== keyword)
-        : [...prev, keyword],
-    );
+    if (!keyword || typeof keyword !== "string") {
+      console.error("Invalid keyword:", keyword);
+      return;
+    }
+
+    setSelectedKeywords((prev) => {
+      const currentKeywords = Array.isArray(prev) ? prev : [];
+      const isSelected = currentKeywords.includes(keyword);
+
+      if (isSelected) {
+        return currentKeywords.filter((k) => k !== keyword);
+      } else {
+        return [...currentKeywords, keyword];
+      }
+    });
   };
 
   // Handle file upload

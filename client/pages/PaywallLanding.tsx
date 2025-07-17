@@ -265,7 +265,7 @@ export default function PaywallLanding() {
                 role: "Content Creator",
               },
               {
-                text: "The prompt vault alone is worth the investment. Saved me hundreds of hours.",
+                text: "The template library alone is worth the investment. Saved me hundreds of hours.",
                 author: "Mike R.",
                 role: "Digital Marketer",
               },

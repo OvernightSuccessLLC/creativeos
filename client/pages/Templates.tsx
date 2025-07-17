@@ -336,10 +336,6 @@ export default function Templates() {
             TEMPLATES
           </h1>
         </div>
-        <p className="text-gray-400 max-w-2xl mx-auto text-xs">
-          Pre-built prompt templates for every creative need. Copy, customize,
-          and create professional content instantly.
-        </p>
       </div>
 
       {/* Templates Grid */}

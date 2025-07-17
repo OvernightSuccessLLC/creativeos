@@ -236,8 +236,9 @@ export default function Index() {
   // Calculate quality score based on inputs
   const calculateQuality = () => {
     let score = 0;
-    if (customInstructions.length > 20) score += 30;
-    if (selectedKeywords.length > 0) score += selectedKeywords.length * 3;
+    if (customInstructions && customInstructions.length > 20) score += 30;
+    if (selectedKeywords && selectedKeywords.length > 0)
+      score += Math.min(selectedKeywords.length * 3, 40);
     if (uploadedFile) score += 10;
     if (uploadedFile2) score += 10;
     if (uploadedFile3) score += 10;
@@ -247,15 +248,23 @@ export default function Index() {
   // Generate the final prompt
   const generatePrompt = () => {
     let prompt = "";
-    if (customInstructions.trim()) {
+
+    if (customInstructions && customInstructions.trim()) {
       prompt += customInstructions.trim() + ". ";
     }
-    if (selectedKeywords.length > 0) {
+
+    if (selectedKeywords && selectedKeywords.length > 0) {
       prompt += selectedKeywords.join(", ") + ". ";
     }
+
+    if (!prompt.trim()) {
+      return "Add custom instructions and select lifestyle photography keywords to build your optimized prompt...";
+    }
+
     prompt +=
       "Product photography, commercial quality, professional lighting, clean composition, high resolution, detailed, realistic, SORA video generation optimized.";
-    return prompt;
+
+    return prompt.trim();
   };
 
   // Copy to clipboard with fallback

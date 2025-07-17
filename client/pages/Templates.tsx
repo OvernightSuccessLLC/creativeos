@@ -325,21 +325,11 @@ export default function Templates() {
       {/* Navigation */}
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
 
-      {/* Header */}
-      <div className="bg-black px-6 py-8 text-center">
-        <div className="flex items-center justify-center space-x-3 mb-4">
-          <LayoutTemplate className="w-8 h-8 text-brand-red" />
-          <h1
-            className="text-4xl md:text-6xl font-brand-black text-white brand-heading"
-            style={{ fontFamily: "Poppins, sans-serif", fontWeight: "900" }}
-          >
-            TEMPLATES
-          </h1>
-        </div>
-      </div>
-
       {/* Templates Grid */}
-      <div className="max-w-6xl mx-auto px-6 py-8">
+      <div
+        className="max-w-6xl mx-auto px-6 py-8"
+        style={{ backgroundColor: "#f93921" }}
+      >
         <div className="grid md:grid-cols-2 gap-6">
           {filteredTemplates.map((template) => (
             <Card

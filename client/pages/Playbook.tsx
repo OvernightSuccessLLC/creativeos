@@ -524,7 +524,7 @@ export default function Playbook() {
 
       {/* Content Sections */}
       <div
-        className="max-w-5xl mx-auto px-8 space-y-4"
+        className="max-w-7xl mx-auto px-8 space-y-4"
         style={{ padding: "0 32px 24px" }}
       >
         {sections.map((section) => (

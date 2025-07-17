@@ -829,62 +829,42 @@ export default function Playbook() {
 
               {/* Section 7: Scene Regeneration */}
               {section.id === 7 && (
-                <div className="space-y-6">
-                  <p
-                    className="text-white leading-relaxed text-lg"
-                    style={TYPOGRAPHY.body}
-                  >
-                    {section.content.description}
-                  </p>
-
-                  <div className="bg-gray-900 rounded p-4">
-                    <h4 className="text-brand-red font-semibold mb-2">
-                      How It Works:
-                    </h4>
-                    <p className="text-white text-sm" style={TYPOGRAPHY.body}>
-                      {section.content.howItWorks}
-                    </p>
-                  </div>
-
-                  <div className="space-y-6">
+                <div className="space-y-3">
+                  <div className="space-y-3">
                     {section.content.techniques.map((technique, idx) => (
-                      <div key={idx} className="space-y-3">
+                      <div key={idx} className="space-y-1">
                         <h4
-                          className="text-brand-red text-lg font-semibold"
+                          className="text-brand-red font-semibold"
                           style={TYPOGRAPHY.heading}
                         >
                           {technique.title}
                         </h4>
                         <p
-                          className="text-white leading-relaxed"
+                          className="text-white leading-relaxed text-sm"
                           style={TYPOGRAPHY.body}
                         >
                           {technique.description}
                         </p>
-                        <div className="bg-gray-900 rounded p-3">
-                          <p className="text-gray-300 text-sm">
-                            <span className="text-brand-red font-semibold">
-                              Example:{" "}
-                            </span>
+                        <div className="bg-gray-900 rounded p-2">
+                          <p className="text-gray-300 text-xs italic">
                             {technique.example}
                           </p>
                         </div>
                       </div>
                     ))}
                   </div>
-
-                  <div className="bg-gray-900 rounded-lg p-6">
+                  <div className="bg-gray-900 rounded p-4">
                     <h4
-                      className="text-brand-red text-lg font-semibold mb-3"
+                      className="text-brand-red font-semibold mb-2"
                       style={TYPOGRAPHY.heading}
                     >
-                      Example Edit Sequence
+                      Edit Sequence Example
                     </h4>
-                    <div className="space-y-2">
+                    <div className="space-y-1">
                       {section.content.exampleSequence.map((step, idx) => (
                         <p
                           key={idx}
-                          className="text-white text-sm"
+                          className="text-white text-xs"
                           style={TYPOGRAPHY.body}
                         >
                           {step}
@@ -897,57 +877,44 @@ export default function Playbook() {
 
               {/* Section 8: Prompt Vault */}
               {section.id === 8 && (
-                <div className="space-y-6">
-                  <p
-                    className="text-white leading-relaxed text-lg"
-                    style={TYPOGRAPHY.body}
-                  >
-                    {section.content.description}
-                  </p>
-
-                  <div className="space-y-6">
+                <div className="space-y-3">
+                  <div className="space-y-3">
                     {section.content.steps.map((step, idx) => (
-                      <div key={idx} className="bg-gray-900 rounded p-4">
-                        <div className="flex items-start space-x-3">
-                          <span className="bg-brand-red text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+                      <div key={idx} className="bg-gray-900 rounded p-3">
+                        <div className="flex items-start space-x-2">
+                          <span className="bg-brand-red text-black rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">
                             {idx + 1}
                           </span>
-                          <div className="space-y-2">
+                          <div className="space-y-1">
                             <h4
-                              className="text-brand-red font-semibold"
+                              className="text-brand-red font-semibold text-sm"
                               style={TYPOGRAPHY.heading}
                             >
                               {step.title}
                             </h4>
                             <p
-                              className="text-white text-sm"
+                              className="text-white text-xs"
                               style={TYPOGRAPHY.body}
                             >
                               {step.description}
                             </p>
-                            <div className="bg-black p-2 rounded">
-                              <p className="text-gray-300 text-xs italic">
-                                Example: {step.example}
-                              </p>
-                            </div>
                           </div>
                         </div>
                       </div>
                     ))}
                   </div>
-
-                  <div className="bg-gray-900 rounded-lg p-6">
+                  <div className="bg-gray-900 rounded p-4">
                     <h4
-                      className="text-brand-red text-lg font-semibold mb-4"
+                      className="text-brand-red font-semibold mb-2"
                       style={TYPOGRAPHY.heading}
                     >
                       Pro Tips
                     </h4>
-                    <div className="space-y-3">
+                    <div className="space-y-1">
                       {section.content.proTips.map((tip, idx) => (
                         <p
                           key={idx}
-                          className="text-white text-sm"
+                          className="text-white text-xs"
                           style={TYPOGRAPHY.body}
                         >
                           • {tip}
@@ -960,91 +927,72 @@ export default function Playbook() {
 
               {/* Section 9: Tips & Warnings */}
               {section.id === 9 && (
-                <div className="space-y-8">
-                  <div className="space-y-6">
+                <div className="space-y-4">
+                  <div className="space-y-3">
                     <h4
-                      className="text-brand-red text-xl font-semibold"
+                      className="text-brand-red font-semibold"
                       style={TYPOGRAPHY.heading}
                     >
                       ✅ Best Practices
                     </h4>
                     {section.content.bestPractices.map((practice, idx) => (
-                      <div key={idx} className="space-y-2">
+                      <div key={idx} className="space-y-1">
                         <h5
-                          className="text-brand-red font-semibold"
+                          className="text-brand-red font-semibold text-sm"
                           style={TYPOGRAPHY.heading}
                         >
                           {practice.title}
                         </h5>
                         <p
-                          className="text-white text-sm"
+                          className="text-white text-xs"
                           style={TYPOGRAPHY.body}
                         >
                           {practice.description}
                         </p>
-                        <div className="bg-gray-900 rounded p-2">
-                          <p className="text-gray-300 text-xs italic">
-                            Example: {practice.example}
-                          </p>
-                        </div>
                       </div>
                     ))}
                   </div>
-
-                  <div className="space-y-6">
+                  <div className="space-y-3">
                     <h4
-                      className="text-brand-red text-xl font-semibold"
+                      className="text-brand-red font-semibold"
                       style={TYPOGRAPHY.heading}
                     >
-                      ⚠️ Content Warnings & Policy
+                      ⚠️ Warnings
                     </h4>
                     {section.content.warnings.map((warning, idx) => (
-                      <div key={idx} className="space-y-2">
+                      <div key={idx} className="space-y-1">
                         <h5
-                          className="text-brand-red font-semibold"
+                          className="text-brand-red font-semibold text-sm"
                           style={TYPOGRAPHY.heading}
                         >
                           {warning.title}
                         </h5>
                         <p
-                          className="text-white text-sm"
+                          className="text-white text-xs"
                           style={TYPOGRAPHY.body}
                         >
                           {warning.description}
                         </p>
-                        {warning.example && (
-                          <div className="bg-gray-900 rounded p-2">
-                            <p className="text-gray-300 text-xs italic">
-                              Example: {warning.example}
-                            </p>
-                          </div>
-                        )}
-                        {warning.consequence && (
-                          <p className="text-red-400 text-xs font-semibold">
-                            Consequence: {warning.consequence}
-                          </p>
-                        )}
                       </div>
                     ))}
                   </div>
-
-                  <div className="space-y-6">
+                  <div className="space-y-3">
                     <h4
-                      className="text-brand-red text-xl font-semibold"
+                      className="text-brand-red font-semibold"
                       style={TYPOGRAPHY.heading}
                     >
-                      🔧 Troubleshooting Common Issues
+                      🔧 Troubleshooting
                     </h4>
                     {section.content.troubleshooting.map((issue, idx) => (
-                      <div key={idx} className="space-y-2">
+                      <div key={idx} className="space-y-1">
                         <h5
-                          className="text-brand-red font-semibold"
+                          className="text-brand-red font-semibold text-sm"
                           style={TYPOGRAPHY.heading}
                         >
                           {issue.title}
                         </h5>
                         <p
-                          className="text-white text-sm"
+                          className="text-white text-xs"
                           style={TYPOGRAPHY.body}
                         >
                           {issue.description}

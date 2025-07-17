@@ -743,13 +743,15 @@ export default function AIToolkit() {
 
       {/* Header */}
       <div className="bg-black px-6 py-8 text-center">
-        <div className="flex items-center justify-center space-x-3 mb-4">
+        <div className="flex items-center justify-center space-x-3 mb-2">
           <Zap className="w-8 h-8 text-brand-red" />
           <h1
-            className="text-4xl md:text-6xl font-brand-black text-white brand-heading"
+            className="text-white"
             style={{
               fontFamily: "Poppins, sans-serif",
               fontWeight: "900",
+              fontSize: "40px",
+              lineHeight: "60px",
               paddingTop: "6px",
               margin: "6px 0 0 12px",
             }}
@@ -757,10 +759,6 @@ export default function AIToolkit() {
             AI TOOLKIT
           </h1>
         </div>
-        <p className="text-gray-400 max-w-2xl mx-auto text-sm">
-          Curated collection of the best AI tools for creative professionals and
-          developers
-        </p>
       </div>
 
       {/* Tools Grid */}

@@ -887,27 +887,41 @@ export default function Playbook() {
 
               {/* Section 8: Prompt Vault */}
               {section.id === 8 && (
-                <div className="space-y-3">
-                  <div className="space-y-3">
+                <div className="space-y-6">
+                  <p
+                    className="text-white leading-relaxed"
+                    style={TYPOGRAPHY.body}
+                  >
+                    {section.content.description}
+                  </p>
+                  <div className="space-y-4">
                     {section.content.steps.map((step, idx) => (
-                      <div key={idx} className="bg-gray-900 rounded p-3">
-                        <div className="flex items-start space-x-2">
-                          <span className="bg-brand-red text-black rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">
+                      <div key={idx} className="bg-gray-900 rounded p-4">
+                        <div className="flex items-start space-x-3">
+                          <span className="bg-brand-red text-black rounded-full w-7 h-7 flex items-center justify-center text-xs font-bold mt-1">
                             {idx + 1}
                           </span>
-                          <div className="space-y-1">
+                          <div className="space-y-2">
                             <h4
-                              className="text-brand-red font-semibold text-sm"
+                              className="text-brand-red font-bold text-sm"
                               style={TYPOGRAPHY.heading}
                             >
                               {step.title}
                             </h4>
                             <p
-                              className="text-white text-xs"
+                              className="text-white text-xs leading-relaxed"
                               style={TYPOGRAPHY.body}
                             >
                               {step.description}
                             </p>
+                            {step.example && (
+                              <p
+                                className="text-gray-300 text-xs italic"
+                                style={TYPOGRAPHY.body}
+                              >
+                                {step.example}
+                              </p>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -915,12 +929,12 @@ export default function Playbook() {
                   </div>
                   <div className="bg-gray-900 rounded p-4">
                     <h4
-                      className="text-brand-red font-semibold mb-2"
+                      className="text-brand-red font-bold mb-3"
                       style={TYPOGRAPHY.heading}
                     >
                       Pro Tips
                     </h4>
-                    <div className="space-y-1">
+                    <div className="space-y-2">
                       {section.content.proTips.map((tip, idx) => (
                         <p
                           key={idx}

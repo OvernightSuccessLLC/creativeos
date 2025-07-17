@@ -52,7 +52,7 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
             {navigationItems.map((item) => (
               <button
                 key={item.name}
-                className={`${item.simple ? "" : "flex items-center space-x-2"} px-4 py-2 rounded-lg text-sm font-bold transition-colors ${
+                className={`${item.simple ? "" : "flex items-center space-x-2"} rounded-lg text-sm font-bold transition-colors ${
                   item.highlight
                     ? "bg-black text-white border-2 border-white"
                     : "text-white hover:bg-black/20 border border-transparent"
@@ -62,7 +62,13 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                   fontWeight: "700",
                   textTransform: "uppercase",
                   letterSpacing: "0.75px",
-                  ...(item.simple ? { paddingLeft: "24px" } : {}),
+                  padding:
+                    item.name === "PRODUCT STUDIO"
+                      ? "8px"
+                      : item.simple
+                        ? "8px 12px"
+                        : "8px 16px",
+                  marginLeft: item.name === "GRAPHIC STUDIO" ? "12px" : "16px",
                 }}
                 onClick={() => handleNavigation(item)}
               >

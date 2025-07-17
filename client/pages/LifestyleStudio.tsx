@@ -375,7 +375,7 @@ export default function LifestyleStudio() {
       <AppNavigation />
 
       {/* HOW IT WORKS Section */}
-      <div className="px-6 mb-8">
+      <div className="px-6 mb-8 pt-6">
         <div className="max-w-7xl mx-auto">
           <div className="bg-black rounded-lg py-5 px-6">
             <div className="grid grid-cols-1 md:grid-cols-5 gap-4">

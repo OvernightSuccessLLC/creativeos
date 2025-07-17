@@ -349,9 +349,9 @@ export default function GraphicStudio() {
       <AppNavigation />
 
       {/* HOW IT WORKS Section */}
-      <div className="px-6 mb-8">
+      <div className="px-6 mb-8 pt-6">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-black rounded-lg py-[18px] px-6 mt-5">
+          <div className="bg-black rounded-lg py-[18px] px-6">
             <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
               {[
                 "Add Custom Instructions",

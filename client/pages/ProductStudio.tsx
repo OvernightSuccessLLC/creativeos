@@ -348,7 +348,7 @@ export default function ProductStudio() {
       <AppNavigation />
 
       {/* HOW IT WORKS Section */}
-      <div className="px-6 mb-8">
+      <div className="px-6 mb-8 pt-6">
         <div className="max-w-7xl mx-auto">
           <div className="bg-black rounded-lg py-3 px-6 pb-5">
             <div className="grid grid-cols-1 md:grid-cols-5 gap-4">

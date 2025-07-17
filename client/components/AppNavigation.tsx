@@ -21,6 +21,9 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
   const location = useLocation();
 
   const navigationItems = [
+    { name: "PRODUCT STUDIO", icon: Camera, path: "/" },
+    { name: "LIFESTYLE STUDIO", icon: Users, path: "/lifestyle-studio" },
+    { name: "GRAPHIC STUDIO", icon: Palette, path: "/graphic-studio" },
     { name: "THE PLAYBOOK", icon: BookOpen, path: "/playbook", simple: true },
     { name: "AI TOOLKIT", icon: Zap, path: "/ai-toolkit" },
   ];

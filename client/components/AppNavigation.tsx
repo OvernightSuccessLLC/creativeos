@@ -44,8 +44,13 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
 
   return (
     <nav
-      className="border-0 px-6 py-4 flex flex-col"
-      style={{ backgroundColor: "#000000", ...FONT_STYLE }}
+      className="border-0 flex flex-col"
+      style={{
+        backgroundColor: "#000000",
+        ...FONT_STYLE,
+        padding: "20px 24px",
+        marginBottom: "20px",
+      }}
     >
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         <div className="flex items-center">

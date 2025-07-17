@@ -67,7 +67,6 @@ export default function Index() {
 
   const navigationItems = [
     { name: "THE PLAYBOOK", icon: BookOpen, active: false },
-    { name: "PROMPT VAULT", icon: Database, active: false },
     { name: "TEMPLATES", icon: LayoutTemplate, active: false },
     { name: "AI TOOLKIT", icon: Zap, active: false },
   ];
@@ -557,7 +556,7 @@ export default function Index() {
                     {uploadedFile2 && (
                       <div className="mt-3 p-3 bg-gray-800 rounded-lg">
                         <p className="text-brand-red text-sm font-medium">
-                          ✓ {uploadedFile2.name} uploaded successfully
+                          �� {uploadedFile2.name} uploaded successfully
                         </p>
                         <p className="text-white/50 text-xs mt-1">
                           File size: {Math.round(uploadedFile2.size / 1024)} KB

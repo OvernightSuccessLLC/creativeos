@@ -542,17 +542,16 @@ export default function Playbook() {
             <CardContent className="bg-black p-5">
               {/* Section 1: Introduction */}
               {section.id === 1 && (
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <p
-                    className="text-white leading-relaxed text-lg"
+                    className="text-white leading-relaxed"
                     style={TYPOGRAPHY.body}
                   >
                     {section.content.overview}
                   </p>
-
-                  <div className="space-y-4">
+                  <div className="space-y-2">
                     <h4
-                      className="text-brand-red text-lg font-semibold"
+                      className="text-brand-red font-semibold"
                       style={TYPOGRAPHY.heading}
                     >
                       How It Works
@@ -564,13 +563,12 @@ export default function Playbook() {
                       {section.content.howItWorks}
                     </p>
                   </div>
-
-                  <div className="space-y-4">
+                  <div className="space-y-2">
                     <h4
-                      className="text-brand-red text-lg font-semibold"
+                      className="text-brand-red font-semibold"
                       style={TYPOGRAPHY.heading}
                     >
-                      Why Sora Is Special
+                      Why Special
                     </h4>
                     <p
                       className="text-white leading-relaxed"
@@ -579,13 +577,12 @@ export default function Playbook() {
                       {section.content.whySpecial}
                     </p>
                   </div>
-
-                  <div className="space-y-4">
+                  <div className="space-y-2">
                     <h4
-                      className="text-brand-red text-lg font-semibold"
+                      className="text-brand-red font-semibold"
                       style={TYPOGRAPHY.heading}
                     >
-                      Who This Guide Is For
+                      Who This Is For
                     </h4>
                     <p
                       className="text-white leading-relaxed"

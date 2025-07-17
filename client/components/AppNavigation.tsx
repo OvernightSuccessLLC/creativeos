@@ -44,7 +44,7 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
 
   return (
     <nav
-      className="border-0 px-6 py-4"
+      className="border-0 px-6 py-4 flex flex-col"
       style={{ backgroundColor: "#000000", ...FONT_STYLE }}
     >
       <div className="flex items-center justify-between max-w-7xl mx-auto">
@@ -85,35 +85,6 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
             ))}
           </div>
         </div>
-        <Button
-          variant="outline"
-          className="border-2 border-white text-white hover:bg-white hover:text-black font-bold bg-transparent"
-          style={{
-            ...FONT_STYLE,
-            fontWeight: "700",
-            textTransform: "uppercase",
-            letterSpacing: "0.75px",
-          }}
-          onClick={() => {
-            if (onUpdatesClick) {
-              onUpdatesClick();
-            } else {
-              navigate("/");
-            }
-          }}
-        >
-          {isHomePage ? (
-            <>
-              <Bell className="w-4 h-4 mr-2" />
-              THE BRIEFCASE
-            </>
-          ) : (
-            <>
-              <Home className="w-4 h-4 mr-2" />
-              HOME
-            </>
-          )}
-        </Button>
       </div>
     </nav>
   );

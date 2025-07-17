@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import AppNavigation from "@/components/AppNavigation";
 import {
   Bell,
   Zap,
@@ -114,6 +115,9 @@ const Updates: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-brand-red text-black">
+      {/* Navigation */}
+      <AppNavigation />
+
       {/* Header */}
       <div className="sticky top-0 z-10 bg-brand-red border-b border-black/20 px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between max-w-4xl mx-auto">

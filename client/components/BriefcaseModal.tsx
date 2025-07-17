@@ -43,17 +43,7 @@ export default function BriefcaseModal({
       action: "Visit Playbook",
       actionPath: "/playbook",
     },
-    {
-      date: "Jan 20, 2025",
-      type: "Free Resource",
-      title: "500+ Professional Keywords Added to Prompt Vault",
-      description:
-        "We've added over 500 professionally curated keywords across 6 categories: Lighting, Framing, Locations, Style, Creative Direction, and Modifiers.",
-      badge: "NEW",
-      badgeColor: "bg-blue-500",
-      action: "Explore Keywords",
-      actionPath: "/prompt-vault",
-    },
+
     {
       date: "Jan 20, 2025",
       type: "Enhancement",

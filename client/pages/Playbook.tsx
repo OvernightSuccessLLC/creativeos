@@ -596,26 +596,18 @@ export default function Playbook() {
 
               {/* Section 2: Basics of Prompting */}
               {section.id === 2 && (
-                <div className="space-y-6">
-                  <p
-                    className="text-white leading-relaxed text-lg mb-6"
-                    style={TYPOGRAPHY.body}
-                  >
-                    Getting great results from Sora starts with writing a good
-                    prompt. Here are the core principles:
-                  </p>
-
-                  <div className="space-y-6">
+                <div className="space-y-4">
+                  <div className="space-y-3">
                     {section.content.principles.map((principle, idx) => (
-                      <div key={idx} className="space-y-2">
+                      <div key={idx} className="space-y-1">
                         <h4
-                          className="text-brand-red text-lg font-semibold"
+                          className="text-brand-red font-semibold"
                           style={TYPOGRAPHY.heading}
                         >
                           {principle.title}
                         </h4>
                         <p
-                          className="text-white leading-relaxed"
+                          className="text-white leading-relaxed text-sm"
                           style={TYPOGRAPHY.body}
                         >
                           {principle.description}
@@ -623,65 +615,36 @@ export default function Playbook() {
                       </div>
                     ))}
                   </div>
-
-                  <div className="bg-gray-900 rounded-lg p-6 space-y-4">
+                  <div className="bg-gray-900 rounded p-4 space-y-2">
                     <h4
-                      className="text-brand-red text-lg font-semibold mb-4"
+                      className="text-brand-red font-semibold"
                       style={TYPOGRAPHY.heading}
                     >
-                      Example Progression: Cat on Windowsill
+                      Example Progression
                     </h4>
-                    <div className="space-y-4">
+                    <div className="space-y-2">
                       <div>
-                        <p
-                          className="text-brand-red font-semibold mb-1"
-                          style={TYPOGRAPHY.heading}
-                        >
+                        <span className="text-brand-red font-semibold text-sm">
                           Beginner:
-                        </p>
-                        <p
-                          className="text-white italic"
-                          style={TYPOGRAPHY.body}
-                        >
+                        </span>
+                        <p className="text-white italic text-sm">
                           "{section.content.progression.beginner}"
                         </p>
-                        <p className="text-gray-300 text-sm mt-1">
-                          Basic idea with no particular flair.
-                        </p>
                       </div>
                       <div>
-                        <p
-                          className="text-brand-red font-semibold mb-1"
-                          style={TYPOGRAPHY.heading}
-                        >
+                        <span className="text-brand-red font-semibold text-sm">
                           Advanced:
-                        </p>
-                        <p
-                          className="text-white italic"
-                          style={TYPOGRAPHY.body}
-                        >
+                        </span>
+                        <p className="text-white italic text-sm">
                           "{section.content.progression.advanced}"
                         </p>
-                        <p className="text-gray-300 text-sm mt-1">
-                          Specified breed, lighting, context, and activity.
-                        </p>
                       </div>
                       <div>
-                        <p
-                          className="text-brand-red font-semibold mb-1"
-                          style={TYPOGRAPHY.heading}
-                        >
+                        <span className="text-brand-red font-semibold text-sm">
                           Expert:
-                        </p>
-                        <p
-                          className="text-white italic"
-                          style={TYPOGRAPHY.body}
-                        >
+                        </span>
+                        <p className="text-white italic text-sm">
                           "{section.content.progression.expert}"
-                        </p>
-                        <p className="text-gray-300 text-sm mt-1">
-                          Includes photography style, specific setting, detailed
-                          lighting, and camera details.
                         </p>
                       </div>
                     </div>

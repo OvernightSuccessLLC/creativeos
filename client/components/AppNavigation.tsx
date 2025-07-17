@@ -50,27 +50,28 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
       style={{
         backgroundColor: "#000000",
         ...FONT_STYLE,
-        padding: "20px 24px",
+        padding: "20px 24px 12px",
         marginBottom: "20px",
       }}
     >
-      <div className="flex items-center justify-between max-w-7xl mx-auto">
+      {/* Main Navigation */}
+      <div className="flex items-center justify-between max-w-7xl mx-auto mb-3">
         <div className="flex items-center">
           {/* Logo */}
-          <div className="flex items-center mr-8">
+          <div className="flex items-center mr-6">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F1964cc1516094f2c9726884f044c2ef1%2Fe52dffb7c4f54f50b3b0d0f00bb479a2?format=webp&width=800"
               alt="Overnight Success Logo"
-              className="h-8 w-auto"
-              style={{ maxWidth: "120px" }}
+              className="h-6 w-auto"
+              style={{ maxWidth: "100px" }}
             />
           </div>
 
-          <div className="hidden md:flex items-center space-x-3">
+          <div className="hidden md:flex items-center space-x-2">
             {navigationItems.map((item) => (
               <button
                 key={item.name}
-                className={`${item.simple ? "" : "flex items-center space-x-2"} rounded-lg text-sm font-bold transition-colors ${
+                className={`${item.simple ? "" : "flex items-center space-x-1"} rounded-md text-xs font-bold transition-colors ${
                   item.highlight
                     ? "bg-black text-white border-2 border-white"
                     : "text-white hover:bg-black/20 border border-transparent"
@@ -79,14 +80,8 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                   ...FONT_STYLE,
                   fontWeight: "700",
                   textTransform: "uppercase",
-                  letterSpacing: "0.75px",
-                  padding:
-                    item.name === "PRODUCT STUDIO"
-                      ? "8px"
-                      : item.simple
-                        ? "8px 12px"
-                        : "8px 16px",
-                  marginLeft: item.name === "GRAPHIC STUDIO" ? "12px" : "16px",
+                  letterSpacing: "0.5px",
+                  padding: item.simple ? "6px 10px" : "6px 12px",
                 }}
                 onClick={() => handleNavigation(item)}
               >
@@ -94,7 +89,7 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                   item.name
                 ) : (
                   <>
-                    <item.icon className="w-4 h-4" />
+                    <item.icon className="w-3 h-3" />
                     <span>{item.name}</span>
                   </>
                 )}
@@ -102,40 +97,35 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
             ))}
           </div>
         </div>
+      </div>
 
-        {/* Social Media & Contact */}
-        <div className="flex items-center space-x-4">
-          <a
-            href="https://instagram.com/overnightsuccess"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center space-x-2 text-white hover:text-brand-red transition-colors"
-            style={{
-              ...FONT_STYLE,
-              fontWeight: "600",
-              fontSize: "12px",
-              textTransform: "uppercase",
-              letterSpacing: "0.5px",
-            }}
-          >
-            <Instagram className="w-4 h-4" />
-            <span className="hidden sm:block">@OvernightSuccess</span>
-          </a>
+      {/* Contact Info Bar */}
+      <div className="flex justify-center items-center space-x-6 border-t border-gray-800 pt-2 max-w-7xl mx-auto">
+        <a
+          href="https://instagram.com/overnightsuccess"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center space-x-1 text-gray-400 hover:text-white transition-colors text-xs"
+          style={{
+            ...FONT_STYLE,
+            fontWeight: "500",
+          }}
+        >
+          <Instagram className="w-3 h-3" />
+          <span>@OvernightSuccess</span>
+        </a>
 
-          <a
-            href="mailto:contact@overnightsuccess.com"
-            className="flex items-center space-x-2 bg-brand-red text-black px-3 py-1.5 rounded-md hover:bg-red-600 transition-colors font-bold text-xs"
-            style={{
-              ...FONT_STYLE,
-              fontWeight: "700",
-              textTransform: "uppercase",
-              letterSpacing: "0.5px",
-            }}
-          >
-            <Mail className="w-3 h-3" />
-            <span>Contact</span>
-          </a>
-        </div>
+        <a
+          href="mailto:contact@overnightsuccess.com"
+          className="flex items-center space-x-1 text-gray-400 hover:text-brand-red transition-colors text-xs"
+          style={{
+            ...FONT_STYLE,
+            fontWeight: "500",
+          }}
+        >
+          <Mail className="w-3 h-3" />
+          <span>Contact</span>
+        </a>
       </div>
     </nav>
   );

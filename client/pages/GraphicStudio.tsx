@@ -281,7 +281,20 @@ export default function GraphicStudio() {
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
+      // Check file type
+      if (!file.type.startsWith("image/")) {
+        console.error("Please select an image file");
+        return;
+      }
+
+      // Check file size (10MB limit)
+      if (file.size > 10 * 1024 * 1024) {
+        console.error("File size too large. Please select a file under 10MB");
+        return;
+      }
+
       setUploadedFile(file);
+      console.log("File uploaded successfully:", file.name);
     }
   };
 

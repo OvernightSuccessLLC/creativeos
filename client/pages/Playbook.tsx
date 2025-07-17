@@ -267,7 +267,7 @@ export default function Playbook() {
                 <span>{section.title}</span>
               </CardTitle>
             </CardHeader>
-            <CardContent className="bg-black border border-white p-8">
+            <CardContent className="bg-black p-8">
               {section.id === 1 && (
                 <div className="space-y-6">
                   <div className="space-y-3">

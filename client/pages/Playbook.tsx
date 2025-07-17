@@ -24,11 +24,11 @@ const FONT_STYLE = {
 };
 
 const TYPOGRAPHY = {
-  title: { ...FONT_STYLE, fontWeight: "900" },
-  subtitle: { ...FONT_STYLE, fontWeight: "700" },
-  heading: { ...FONT_STYLE, fontWeight: "600" },
-  body: { ...FONT_STYLE, fontWeight: "500" },
-  button: { ...FONT_STYLE, fontWeight: "700" },
+  title: { ...FONT_STYLE, fontWeight: "700" },
+  subtitle: { ...FONT_STYLE, fontWeight: "600" },
+  heading: { ...FONT_STYLE, fontWeight: "500" },
+  body: { ...FONT_STYLE, fontWeight: "400" },
+  button: { ...FONT_STYLE, fontWeight: "600" },
 };
 
 export default function Playbook() {

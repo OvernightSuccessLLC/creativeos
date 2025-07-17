@@ -585,10 +585,7 @@ export default function Playbook() {
                 <div className="space-y-4">
                   {/* Numbered Steps */}
                   {section.content.steps.map((step, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-black p-4 rounded border border-white"
-                    >
+                    <div key={idx} className="bg-black p-4 rounded">
                       <div className="flex items-start space-x-3">
                         <span
                           className="bg-brand-red text-black rounded-full w-6 h-6 flex items-center justify-center text-sm"

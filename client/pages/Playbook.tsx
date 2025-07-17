@@ -694,49 +694,47 @@ export default function Playbook() {
 
               {/* Section 4: Lifestyle Photography */}
               {section.id === 4 && (
-                <div className="space-y-6">
+                <div className="space-y-3">
                   <p
-                    className="text-white leading-relaxed text-lg"
+                    className="text-white leading-relaxed text-sm"
                     style={TYPOGRAPHY.body}
                   >
                     {section.content.description}
                   </p>
-
-                  <div className="space-y-6">
+                  <div className="space-y-3">
                     {section.content.characteristics.map((char, idx) => (
-                      <div key={idx} className="space-y-3">
+                      <div key={idx} className="space-y-1">
                         <h4
-                          className="text-brand-red text-lg font-semibold"
+                          className="text-brand-red font-semibold"
                           style={TYPOGRAPHY.heading}
                         >
                           {char.title}
                         </h4>
                         <p
-                          className="text-white leading-relaxed"
+                          className="text-white leading-relaxed text-sm"
                           style={TYPOGRAPHY.body}
                         >
                           {char.description}
                         </p>
-                        <div className="bg-gray-900 rounded p-3">
-                          <p className="text-gray-300 text-sm">
-                            <span className="text-brand-red font-semibold">
-                              Example:{" "}
-                            </span>
+                        <div className="bg-gray-900 rounded p-2">
+                          <p className="text-gray-300 text-xs italic">
                             {char.example}
                           </p>
                         </div>
                       </div>
                     ))}
                   </div>
-
-                  <div className="bg-gray-900 rounded-lg p-6">
+                  <div className="bg-gray-900 rounded p-4">
                     <h4
-                      className="text-brand-red text-lg font-semibold mb-3"
+                      className="text-brand-red font-semibold mb-2"
                       style={TYPOGRAPHY.heading}
                     >
-                      Complete Lifestyle Example
+                      Complete Example
                     </h4>
-                    <p className="text-white italic" style={TYPOGRAPHY.body}>
+                    <p
+                      className="text-white italic text-sm"
+                      style={TYPOGRAPHY.body}
+                    >
                       "{section.content.fullExample}"
                     </p>
                   </div>

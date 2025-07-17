@@ -751,12 +751,14 @@ export default function Playbook() {
                         >
                           {technique.title}
                         </h4>
-                        <p
-                          className="text-white leading-relaxed text-sm"
-                          style={TYPOGRAPHY.body}
-                        >
-                          {technique.description}
-                        </p>
+                        {technique.title !== "Isolate the Product" && (
+                          <p
+                            className="text-white leading-relaxed text-sm"
+                            style={TYPOGRAPHY.body}
+                          >
+                            {technique.description}
+                          </p>
+                        )}
                         <div className="bg-gray-900 rounded p-3">
                           <p className="text-gray-300 text-xs italic">
                             {technique.example}
@@ -839,12 +841,14 @@ export default function Playbook() {
                         >
                           {technique.title}
                         </h4>
-                        <p
-                          className="text-white leading-relaxed text-sm"
-                          style={TYPOGRAPHY.body}
-                        >
-                          {technique.description}
-                        </p>
+                        {technique.title !== "Identify Elements Clearly" && (
+                          <p
+                            className="text-white leading-relaxed text-sm"
+                            style={TYPOGRAPHY.body}
+                          >
+                            {technique.description}
+                          </p>
+                        )}
                         <div className="bg-gray-900 rounded p-3">
                           <p className="text-gray-300 text-xs italic">
                             {technique.example}

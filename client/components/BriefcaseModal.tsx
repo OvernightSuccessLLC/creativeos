@@ -254,7 +254,7 @@ export default function BriefcaseModal({
                   className="bg-white text-brand-red hover:bg-gray-100 font-bold"
                   onClick={() => {
                     if (onNavigate) {
-                      onNavigate("/prompt-vault");
+                      onNavigate("/playbook");
                       onClose();
                     }
                   }}

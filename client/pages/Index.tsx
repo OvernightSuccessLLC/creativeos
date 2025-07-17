@@ -442,8 +442,6 @@ export default function Index() {
                     setShowMobileMenu(false);
                     if (item.name === "THE PLAYBOOK") {
                       navigate("/playbook");
-                    } else if (item.name === "PROMPT VAULT") {
-                      navigate("/prompt-vault");
                     } else if (item.name === "TEMPLATES") {
                       navigate("/templates");
                     } else if (item.name === "AI TOOLKIT") {
@@ -556,7 +554,7 @@ export default function Index() {
                     {uploadedFile2 && (
                       <div className="mt-3 p-3 bg-gray-800 rounded-lg">
                         <p className="text-brand-red text-sm font-medium">
-                          �� {uploadedFile2.name} uploaded successfully
+                          ✓ {uploadedFile2.name} uploaded successfully
                         </p>
                         <p className="text-white/50 text-xs mt-1">
                           File size: {Math.round(uploadedFile2.size / 1024)} KB

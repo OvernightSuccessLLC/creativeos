@@ -372,40 +372,7 @@ export default function LifestyleStudio() {
 
   return (
     <div className="min-h-screen bg-brand-red text-black">
-      {/* Top Navigation Bar */}
-      <nav className="bg-black mb-1 px-6 py-6 pb-8">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="text-brand-red font-bold text-lg">LOGO</div>
-          <div className="flex items-center">
-            <button
-              onClick={() => navigate("/")}
-              className="bg-brand-red text-black px-3 py-2 rounded text-sm font-semibold mr-3"
-            >
-              <span>PRODUCT STUDIO</span>
-            </button>
-            <button className="bg-brand-red text-black px-3 py-2 rounded text-sm font-semibold mx-3">
-              <b>LIFESTYLE STUDIO</b>
-            </button>
-            <button
-              onClick={() => navigate("/graphic-studio")}
-              className="bg-brand-red text-black px-3 py-2 rounded text-sm font-semibold mx-3"
-            >
-              <b>GRAPHIC STUDIO</b>
-            </button>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="bg-brand-red text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
-              ?
-            </div>
-            <div className="bg-brand-red text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
-              ♀
-            </div>
-            <button className="text-white text-sm font-medium hover:bg-white/10 px-3 py-1 rounded">
-              <b>RESET</b>
-            </button>
-          </div>
-        </div>
-      </nav>
+      <AppNavigation />
 
       {/* Studio Header */}
       <div className="px-6 py-5">

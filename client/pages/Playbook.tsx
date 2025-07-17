@@ -233,23 +233,23 @@ export default function Playbook() {
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
 
       {/* Header */}
-      <div className="bg-brand-red px-6 py-5 text-center">
-        <h1
-          className="text-4xl md:text-6xl text-black mb-4"
-          style={TYPOGRAPHY.title}
-        >
-          THE PLAYBOOK
-        </h1>
-        <h2
-          className="text-xl md:text-2xl text-black mb-2"
-          style={TYPOGRAPHY.subtitle}
-        >
-          Image Generation with Sora & ChatGPT
-        </h2>
+      <div
+        className="bg-brand-red px-6 text-center"
+        style={{
+          fontSize: "60px",
+          fontWeight: "400",
+          lineHeight: "60px",
+          padding: "20px 24px 32px",
+        }}
+      >
+        THE PLAYBOOK
       </div>
 
       {/* Content Sections */}
-      <div className="max-w-5xl mx-auto px-8 py-12 space-y-12">
+      <div
+        className="max-w-5xl mx-auto px-8 space-y-12"
+        style={{ padding: "0 32px 48px" }}
+      >
         {sections.map((section) => (
           <Card key={section.id} className="bg-black border-white">
             <CardHeader className="bg-brand-red p-6">

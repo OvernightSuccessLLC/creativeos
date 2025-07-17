@@ -47,16 +47,8 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
       style={{ backgroundColor: "#000000", ...FONT_STYLE }}
     >
       <div className="flex items-center justify-between max-w-7xl mx-auto">
-        <div className="flex items-center space-x-8">
-          <Button
-            variant="ghost"
-            onClick={() => navigate("/")}
-            className="text-xl hover:bg-transparent text-white font-black"
-            style={{ ...FONT_STYLE, fontWeight: "900", letterSpacing: "1px" }}
-          >
-            CREATIVE DIRECTOR OS
-          </Button>
-          <div className="hidden md:flex items-center space-x-4">
+        <div className="flex items-center">
+          <div className="hidden md:flex items-center space-x-3">
             {navigationItems.map((item) => (
               <button
                 key={item.name}

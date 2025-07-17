@@ -34,11 +34,6 @@ export default function PaywallLanding() {
 
   const features = [
     {
-      icon: Database,
-      title: "PROMPT VAULT",
-      description: "Advanced formula builder with 500+ professional keywords",
-    },
-    {
       icon: LayoutTemplate,
       title: "TEMPLATE LIBRARY",
       description: "Pre-built prompts for every creative scenario",

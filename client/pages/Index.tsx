@@ -312,7 +312,14 @@ export default function Index() {
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
+      // Check file size (10MB limit)
+      if (file.size > 10 * 1024 * 1024) {
+        console.error("File size too large. Please select a file under 10MB");
+        return;
+      }
+
       setUploadedFile(file);
+      console.log("File uploaded successfully:", file.name);
     }
   };
 
@@ -320,7 +327,14 @@ export default function Index() {
   const handleFileUpload2 = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
+      // Check file size (10MB limit)
+      if (file.size > 10 * 1024 * 1024) {
+        console.error("File size too large. Please select a file under 10MB");
+        return;
+      }
+
       setUploadedFile2(file);
+      console.log("File 2 uploaded successfully:", file.name);
     }
   };
 
@@ -328,7 +342,14 @@ export default function Index() {
   const handleFileUpload3 = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
+      // Check file size (10MB limit)
+      if (file.size > 10 * 1024 * 1024) {
+        console.error("File size too large. Please select a file under 10MB");
+        return;
+      }
+
       setUploadedFile3(file);
+      console.log("File 3 uploaded successfully:", file.name);
     }
   };
 

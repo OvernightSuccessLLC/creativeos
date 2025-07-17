@@ -236,13 +236,14 @@ export default function Playbook() {
       <div
         className="bg-brand-red px-6 text-center"
         style={{
-          fontSize: "60px",
+          fontSize: "48px",
           fontWeight: "400",
           lineHeight: "60px",
+          marginTop: "12px",
           padding: "20px 24px 32px",
         }}
       >
-        THE PLAYBOOK
+        <b>THE PLAYBOOK</b>
       </div>
 
       {/* Content Sections */}

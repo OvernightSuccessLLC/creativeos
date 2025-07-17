@@ -8,7 +8,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProductStudio from "./pages/ProductStudio";
 import Playbook from "./pages/Playbook";
-import PromptVault from "./pages/PromptVault";
+
 import Templates from "./pages/Templates";
 import AIToolkit from "./pages/AIToolkit";
 import Updates from "./pages/Updates";

@@ -395,7 +395,7 @@ export default function Playbook() {
     },
     {
       id: 9,
-      title: "Tips, Best Practices & Warnings",
+      title: "Warnings",
       icon: AlertTriangle,
       content: {
         bestPractices: [
@@ -543,7 +543,7 @@ export default function Playbook() {
                 <span>{section.title}</span>
               </CardTitle>
             </CardHeader>
-            <CardContent className="bg-black p-6">
+            <CardContent className="bg-black px-6 pb-6">
               {/* Section 1: Introduction */}
               {section.id === 1 && (
                 <div className="space-y-6">
@@ -949,99 +949,61 @@ export default function Playbook() {
                 </div>
               )}
 
-              {/* Section 9: Tips & Warnings */}
+              {/* Section 9: Warnings */}
               {section.id === 9 && (
-                <div className="space-y-8">
-                  <div className="space-y-4">
-                    <h4
-                      className="text-brand-red font-bold text-base"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      ✅ Best Practices
-                    </h4>
-                    {section.content.bestPractices.map((practice, idx) => (
-                      <div
-                        key={idx}
-                        className="space-y-2 bg-gray-900 rounded p-3"
+                <div className="space-y-4">
+                  <h4
+                    className="text-brand-red font-bold text-base"
+                    style={TYPOGRAPHY.heading}
+                  >
+                    ⚠️ Warnings
+                  </h4>
+                  {section.content.warnings.map((warning, idx) => (
+                    <div key={idx} className="space-y-2 bg-gray-900 rounded p-3">
+                      <h5
+                        className="text-brand-red font-bold text-sm"
+                        style={TYPOGRAPHY.heading}
                       >
-                        <h5
-                          className="text-brand-red font-bold text-sm"
-                          style={TYPOGRAPHY.heading}
-                        >
-                          {practice.title}
-                        </h5>
+                        {warning.title}
+                      </h5>
+                      <p
+                        className="text-white text-xs leading-relaxed"
+                        style={TYPOGRAPHY.body}
+                      >
+                        {warning.description}
+                      </p>
+                      {warning.example && (
                         <p
-                          className="text-white text-xs leading-relaxed"
+                          className="text-gray-300 text-xs italic"
                           style={TYPOGRAPHY.body}
                         >
-                          {practice.description}
+                          {warning.example}
                         </p>
-                        {practice.example && (
-                          <p
-                            className="text-gray-300 text-xs italic"
-                            style={TYPOGRAPHY.body}
-                          >
-                            {practice.example}
-                          </p>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="space-y-4">
-                    <h4
-                      className="text-brand-red font-bold text-base"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      ⚠️ Warnings
-                    </h4>
-                    {section.content.warnings.map((warning, idx) => (
-                      <div
-                        key={idx}
-                        className="space-y-2 bg-gray-900 rounded p-3"
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Section 10: Troubleshooting */}
+              {section.id === 10 && (
+                <div className="space-y-4">
+                  <h4
+                    className="text-brand-red font-bold text-base"
+                    style={TYPOGRAPHY.heading}
+                  >
+                    🔧 Troubleshooting
+                  </h4>
+                  {section.content.troubleshooting.map((issue, idx) => (
+                    <div key={idx} className="space-y-2 bg-gray-900 rounded p-3">
+                      <h5
+                        className="text-brand-red font-bold text-sm"
+                        style={TYPOGRAPHY.heading}
                       >
-                        <h5
-                          className="text-brand-red font-bold text-sm"
-                          style={TYPOGRAPHY.heading}
-                        >
-                          {warning.title}
-                        </h5>
-                        <p
-                          className="text-white text-xs leading-relaxed"
-                          style={TYPOGRAPHY.body}
-                        >
-                          {warning.description}
-                        </p>
-                        {warning.example && (
-                          <p
-                            className="text-gray-300 text-xs italic"
-                            style={TYPOGRAPHY.body}
-                          >
-                            {warning.example}
-                          </p>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="space-y-4">
-                    <h4
-                      className="text-brand-red font-bold text-base"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      🔧 Troubleshooting
-                    </h4>
-                    {section.content.troubleshooting.map((issue, idx) => (
-                      <div
-                        key={idx}
-                        className="space-y-2 bg-gray-900 rounded p-3"
-                      >
-                        <h5
-                          className="text-brand-red font-bold text-sm"
-                          style={TYPOGRAPHY.heading}
-                        >
-                          {issue.title}
-                        </h5>
-                        <p
-                          className="text-white text-xs leading-relaxed"
+                        {issue.title}
+                      </h5>
+                      <p
+                        className="text-white text-xs leading-relaxed"
                           style={TYPOGRAPHY.body}
                         >
                           {issue.description}

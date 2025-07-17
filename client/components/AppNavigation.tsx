@@ -22,7 +22,6 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
 
   const navigationItems = [
     { name: "THE PLAYBOOK", icon: BookOpen, path: "/playbook", simple: true },
-    { name: "PROMPT VAULT", icon: LayoutTemplate, path: "/prompt-vault" },
     { name: "AI TOOLKIT", icon: Zap, path: "/ai-toolkit" },
   ];
 

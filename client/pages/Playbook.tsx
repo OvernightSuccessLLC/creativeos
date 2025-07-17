@@ -662,15 +662,6 @@ export default function Playbook() {
                     >
                       In Essence:
                     </h4>
-                    <p
-                      className="text-white text-sm leading-relaxed"
-                      style={TYPOGRAPHY.body}
-                    >
-                      The Prompt Vault is like having an AI prompt engineer
-                      co-pilot with you. It's very useful for complex visions or
-                      when you want to explore a variety of styles for the same
-                      basic idea.
-                    </p>
                   </div>
                 </div>
               )}

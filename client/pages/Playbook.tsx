@@ -153,30 +153,7 @@ export default function Playbook() {
         ],
       },
     },
-    {
-      id: 6,
-      title: "Using the Prompt Vault",
-      icon: Database,
-      content: {
-        description:
-          "The Prompt Vault helps you build 'formula' prompts by combining your ideas, reference images, and expert-curated keywords.",
-        steps: [
-          "Write Your Vision: Freely describe your image concept. Don't worry about structure yet - just get your creative vision down.",
-          "Upload Reference Image (Optional): Add an inspiring image for style or color palette guidance. GPT-4o can use references as visual inspiration.",
-          "Select Keywords from Categories: Choose from professionally curated keywords organized by Art Style, Lighting, Composition, Camera, Mood, etc.",
-          "Review & Copy Formula: The vault compiles everything into a structured, optimized prompt ready to paste into Sora.",
-        ],
-        proTips: [
-          "Structured approach: The vault ensures you don't forget a variable. It's especially useful if you're not yet comfortable juggling all the prompt components in your head.",
-          "Reference images are powerful: If you upload a sketch of a logo and describe it, Sora can produce a cleaner or more detailed version. Or if you love the style of a particular painting, you can reference it to imbue your generated image with a similar vibe.",
-          "Quality meter guidance: The quality meter might indicate how comprehensive your prompt is. If it's low, you probably have a minimal description – consider adding more keywords or details until the meter suggests the prompt is robust.",
-          "Pre-vetted keywords: The vault uses keywords known to work well. Terms like '4K', 'bokeh', 'dramatic lighting', 'concept art' etc., which the AI responds to strongly.",
-          "Continue iterating: After generating with the vault prompt, you can still iterate further. The vault gets you a great first prompt. From there, treat it like any image: use follow-up edits or try slight variations.",
-        ],
-        essence:
-          "The Prompt Vault is like having an AI prompt engineer co-pilot with you. It's very useful for complex visions or when you want to explore a variety of styles for the same basic idea.",
-      },
-    },
+
     {
       id: 7,
       title: "Pro Tips, Best Practices & Common Pitfalls",

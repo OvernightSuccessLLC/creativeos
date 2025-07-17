@@ -356,8 +356,8 @@ export default function GraphicStudio() {
             style={{
               fontFamily: "Poppins, sans-serif",
               fontWeight: "400",
-              fontSize: "48px",
-              lineHeight: "48px",
+              fontSize: "24px",
+              lineHeight: "24px",
             }}
           >
             GRAPHIC STUDIO

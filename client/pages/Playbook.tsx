@@ -743,49 +743,41 @@ export default function Playbook() {
 
               {/* Section 5: Product Photography */}
               {section.id === 5 && (
-                <div className="space-y-6">
-                  <p
-                    className="text-white leading-relaxed text-lg"
-                    style={TYPOGRAPHY.body}
-                  >
-                    {section.content.description}
-                  </p>
-
-                  <div className="space-y-6">
+                <div className="space-y-3">
+                  <div className="space-y-3">
                     {section.content.techniques.map((technique, idx) => (
-                      <div key={idx} className="space-y-3">
+                      <div key={idx} className="space-y-1">
                         <h4
-                          className="text-brand-red text-lg font-semibold"
+                          className="text-brand-red font-semibold"
                           style={TYPOGRAPHY.heading}
                         >
                           {technique.title}
                         </h4>
                         <p
-                          className="text-white leading-relaxed"
+                          className="text-white leading-relaxed text-sm"
                           style={TYPOGRAPHY.body}
                         >
                           {technique.description}
                         </p>
-                        <div className="bg-gray-900 rounded p-3">
-                          <p className="text-gray-300 text-sm">
-                            <span className="text-brand-red font-semibold">
-                              Example:{" "}
-                            </span>
+                        <div className="bg-gray-900 rounded p-2">
+                          <p className="text-gray-300 text-xs italic">
                             {technique.example}
                           </p>
                         </div>
                       </div>
                     ))}
                   </div>
-
-                  <div className="bg-gray-900 rounded-lg p-6">
+                  <div className="bg-gray-900 rounded p-4">
                     <h4
-                      className="text-brand-red text-lg font-semibold mb-3"
+                      className="text-brand-red font-semibold mb-2"
                       style={TYPOGRAPHY.heading}
                     >
-                      Expert Product Example
+                      Expert Example
                     </h4>
-                    <p className="text-white italic" style={TYPOGRAPHY.body}>
+                    <p
+                      className="text-white italic text-sm"
+                      style={TYPOGRAPHY.body}
+                    >
                       "{section.content.expertExample}"
                     </p>
                   </div>
@@ -794,53 +786,36 @@ export default function Playbook() {
 
               {/* Section 6: Graphics & Design */}
               {section.id === 6 && (
-                <div className="space-y-6">
-                  <p
-                    className="text-white leading-relaxed text-lg"
-                    style={TYPOGRAPHY.body}
-                  >
-                    {section.content.description}
-                  </p>
-
-                  <div className="space-y-8">
+                <div className="space-y-3">
+                  <div className="space-y-4">
                     {section.content.categories.map((category, idx) => (
-                      <div key={idx} className="space-y-4">
+                      <div key={idx} className="space-y-2">
                         <h4
-                          className="text-brand-red text-xl font-semibold"
+                          className="text-brand-red font-semibold"
                           style={TYPOGRAPHY.heading}
                         >
                           {category.title}
                         </h4>
                         <p
-                          className="text-white leading-relaxed"
+                          className="text-white leading-relaxed text-sm"
                           style={TYPOGRAPHY.body}
                         >
                           {category.description}
                         </p>
-
-                        <div className="space-y-2">
-                          <h5 className="text-brand-red font-semibold">
-                            Tips:
-                          </h5>
-                          <ul className="space-y-1">
-                            {category.tips.map((tip, tipIdx) => (
-                              <li
-                                key={tipIdx}
-                                className="text-white text-sm"
-                                style={TYPOGRAPHY.body}
-                              >
-                                • {tip}
-                              </li>
-                            ))}
-                          </ul>
+                        <div className="space-y-1">
+                          {category.tips.map((tip, tipIdx) => (
+                            <p
+                              key={tipIdx}
+                              className="text-white text-xs"
+                              style={TYPOGRAPHY.body}
+                            >
+                              • {tip}
+                            </p>
+                          ))}
                         </div>
-
-                        <div className="bg-gray-900 rounded p-4">
-                          <h5 className="text-brand-red font-semibold mb-2">
-                            Example:
-                          </h5>
+                        <div className="bg-gray-900 rounded p-2">
                           <p
-                            className="text-white italic text-sm"
+                            className="text-white italic text-xs"
                             style={TYPOGRAPHY.body}
                           >
                             "{category.example}"

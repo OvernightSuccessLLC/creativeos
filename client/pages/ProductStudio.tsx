@@ -347,23 +347,6 @@ export default function ProductStudio() {
     <div className="min-h-screen bg-brand-red text-black">
       <AppNavigation />
 
-      {/* Studio Header */}
-      <div className="px-6 py-5">
-        <div className="max-w-7xl mx-auto">
-          <h1
-            className="text-4xl font-black text-black"
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontWeight: "400",
-              fontSize: "48px",
-              lineHeight: "48px",
-            }}
-          >
-            PRODUCT STUDIO
-          </h1>
-        </div>
-      </div>
-
       {/* HOW IT WORKS Section */}
       <div className="px-6 mb-8">
         <div className="max-w-7xl mx-auto">
@@ -580,96 +563,93 @@ export default function ProductStudio() {
           {/* Right Column - AI Prompt Formula */}
           <div className="space-y-6">
             <Card className="border-black sticky top-6">
-              <CardHeader className="bg-black py-3 px-6 pb-5">
-                <CardTitle className="text-xl text-white py-5">
+              <CardHeader className="bg-black py-4 px-4 sm:px-6">
+                <CardTitle className="text-lg sm:text-xl text-white mb-3">
                   AI Prompt Formula
                 </CardTitle>
-                <div className="flex items-center space-x-2">
-                  <div className="text-2xl font-bold">{qualityScore}%</div>
+                <div className="flex items-center space-x-3">
+                  <div className="text-lg sm:text-xl font-bold text-white min-w-[3rem]">
+                    {qualityScore}%
+                  </div>
                   <div className="flex-1">
-                    <div className="bg-gray-200 rounded-full h-2">
+                    <div className="bg-gray-200 rounded-full h-2 sm:h-3">
                       <div
-                        className="bg-brand-red h-2 rounded-full transition-all duration-500"
+                        className="bg-brand-red h-2 sm:h-3 rounded-full transition-all duration-500"
                         style={{ width: `${qualityScore}%` }}
                       ></div>
                     </div>
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4 bg-black px-6 pb-6">
+              <CardContent className="space-y-4 bg-black px-4 sm:px-6 pb-6">
                 <div>
-                  <Label>
-                    <span className="text-white">Generated Prompt</span>
+                  <Label className="text-white text-sm font-medium">
+                    Generated Prompt
                   </Label>
-                  <div className="bg-gray-50 p-3 rounded border text-sm min-h-[100px] mt-1">
+                  <div className="bg-gray-50 p-3 rounded border text-xs sm:text-sm min-h-[80px] sm:min-h-[100px] mt-2">
                     {generatePrompt() ||
                       "Start building your prompt by filling out the steps..."}
                   </div>
                 </div>
 
-                <div className="bg-gray-200 rounded-full h-2 my-5 py-3">
-                  <div
-                    className="bg-brand-red h-2 rounded-full transition-all duration-500"
-                    style={{ width: `${qualityScore}%` }}
-                  ></div>
+                <div className="space-y-3">
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-xs sm:text-sm text-white">
+                      <span>Instructions</span>
+                      <span className="font-medium">
+                        {customInstructions.length > 20 ? "25%" : "0%"}
+                      </span>
+                    </div>
+                    <div className="bg-gray-200 rounded-full h-1.5 sm:h-2">
+                      <div
+                        className="bg-green-500 h-1.5 sm:h-2 rounded-full transition-all duration-300"
+                        style={{
+                          width: customInstructions.length > 20 ? "100%" : "0%",
+                        }}
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-xs sm:text-sm text-white">
+                      <span>Keywords</span>
+                      <span className="font-medium">
+                        {Math.min(50, selectedKeywords.length * 2)}%
+                      </span>
+                    </div>
+                    <div className="bg-gray-200 rounded-full h-1.5 sm:h-2">
+                      <div
+                        className="bg-blue-500 h-1.5 sm:h-2 rounded-full transition-all duration-300"
+                        style={{
+                          width: `${Math.min(100, selectedKeywords.length * 4)}%`,
+                        }}
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-xs sm:text-sm text-white">
+                      <span>Reference</span>
+                      <span className="font-medium">
+                        {uploadedFile ? "15%" : "0%"}
+                      </span>
+                    </div>
+                    <div className="bg-gray-200 rounded-full h-1.5 sm:h-2">
+                      <div
+                        className="bg-purple-500 h-1.5 sm:h-2 rounded-full transition-all duration-300"
+                        style={{ width: uploadedFile ? "100%" : "0%" }}
+                      ></div>
+                    </div>
+                  </div>
                 </div>
 
                 <Button
                   onClick={copyPrompt}
-                  className="w-full bg-brand-red text-white hover:bg-red-600"
+                  className="w-full bg-brand-red text-white hover:bg-red-600 font-medium text-sm sm:text-base py-2.5 sm:py-3 mt-4"
                 >
                   <Copy className="w-4 h-4 mr-2" />
                   {copiedPrompt ? "COPIED!" : "COPY"}
                 </Button>
-
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm text-white">
-                    <span>Instructions</span>
-                    <span className="font-medium">
-                      {customInstructions.length > 20 ? "25%" : "0%"}
-                    </span>
-                  </div>
-                  <div className="bg-gray-200 rounded-full h-1">
-                    <div
-                      className="bg-green-500 h-1 rounded-full transition-all"
-                      style={{
-                        width: customInstructions.length > 20 ? "100%" : "0%",
-                      }}
-                    ></div>
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm text-white">
-                    <span>Keywords</span>
-                    <span className="font-medium">
-                      {Math.min(50, selectedKeywords.length * 2)}%
-                    </span>
-                  </div>
-                  <div className="bg-gray-200 rounded-full h-1">
-                    <div
-                      className="bg-blue-500 h-1 rounded-full transition-all"
-                      style={{
-                        width: `${Math.min(100, selectedKeywords.length * 4)}%`,
-                      }}
-                    ></div>
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm text-white">
-                    <span>Reference</span>
-                    <span className="font-medium">
-                      {uploadedFile ? "15%" : "0%"}
-                    </span>
-                  </div>
-                  <div className="bg-gray-200 rounded-full h-1">
-                    <div
-                      className="bg-purple-500 h-1 rounded-full transition-all"
-                      style={{ width: uploadedFile ? "100%" : "0%" }}
-                    ></div>
-                  </div>
-                </div>
 
                 <div className="text-sm mt-4">
                   <h4 className="font-semibold text-white my-1 py-1">

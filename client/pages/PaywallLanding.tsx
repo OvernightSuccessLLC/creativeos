@@ -57,7 +57,7 @@ export default function PaywallLanding() {
     } else {
       // Process access code
       if (formData.accessCode === "DEMO2025") {
-        navigate("/prompt-vault");
+        navigate("/playbook");
       } else {
         alert("Invalid access code. Contact support for assistance.");
       }

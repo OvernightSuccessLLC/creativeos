@@ -715,17 +715,6 @@ export default function GraphicStudio() {
           </div>
         </div>
       </div>
-
-      {showBriefcase && (
-        <BriefcaseModal
-          isOpen={showBriefcase}
-          onClose={() => setShowBriefcase(false)}
-          onNavigate={(path) => {
-            navigate(path);
-            setShowBriefcase(false);
-          }}
-        />
-      )}
     </div>
   );
 }

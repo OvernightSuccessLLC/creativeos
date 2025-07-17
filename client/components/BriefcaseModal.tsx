@@ -75,12 +75,7 @@ export default function BriefcaseModal({
       path: "/playbook",
       color: "bg-green-600",
     },
-    {
-      name: "PROMPT VAULT",
-      icon: Database,
-      path: "/prompt-vault",
-      color: "bg-red-600",
-    },
+
     {
       name: "TEMPLATES",
       icon: LayoutTemplate,

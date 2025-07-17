@@ -604,12 +604,7 @@ export default function GraphicStudio() {
                   AI Prompt Formula
                 </CardTitle>
                 <div className="flex items-center space-x-2">
-                  <div className="text-2xl font-bold">
-                    <span style={{ backgroundColor: "#f93921" }}>
-                      {qualityScore}
-                    </span>
-                    <span style={{ backgroundColor: "#f93921" }}>%</span>
-                  </div>
+                  <div className="text-2xl font-bold" />
                   <div className="flex-1">
                     <div className="bg-gray-200 rounded-full h-2">
                       <div

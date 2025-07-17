@@ -500,7 +500,10 @@ export default function Playbook() {
   ];
 
   return (
-    <div className="min-h-screen bg-brand-red text-black" style={FONT_STYLE}>
+    <div
+      className="min-h-screen bg-brand-red text-black"
+      style={{ ...FONT_STYLE, width: "100%" }}
+    >
       {/* Navigation */}
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
 
@@ -508,15 +511,16 @@ export default function Playbook() {
       <div
         className="bg-brand-red px-6 text-center"
         style={{
+          backgroundColor: "rgb(249, 56, 34)",
           fontSize: "48px",
           fontWeight: "400",
           lineHeight: "60px",
           marginTop: "12px",
+          textAlign: "center",
+          pointerEvents: "auto",
           padding: "20px 24px 32px",
         }}
-      >
-        <b>THE PLAYBOOK</b>
-      </div>
+      />
 
       {/* Content Sections */}
       <div

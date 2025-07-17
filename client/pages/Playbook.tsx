@@ -744,10 +744,7 @@ export default function Playbook() {
                       </h4>
                       <div className="space-y-3">
                         {section.content.workflows.map((workflow, idx) => (
-                          <div
-                            key={idx}
-                            className="bg-black p-3 rounded border border-white"
-                          >
+                          <div key={idx} className="bg-black p-3 rounded">
                             <p
                               className="text-white text-sm"
                               style={TYPOGRAPHY.body}

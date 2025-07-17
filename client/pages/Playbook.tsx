@@ -1011,31 +1011,6 @@ export default function Playbook() {
             </CardContent>
           </Card>
         ))}
-
-        {/* Final Notes */}
-        <Card className="bg-black border-none">
-          <CardContent className="bg-black p-8 text-center">
-            <h3
-              className="text-brand-red text-2xl font-bold mb-4"
-              style={TYPOGRAPHY.subtitle}
-            >
-              Ready to Create Amazing Images!
-            </h3>
-            <p
-              className="text-white leading-relaxed text-lg"
-              style={TYPOGRAPHY.body}
-            >
-              You now have a comprehensive toolkit for mastering AI image
-              generation with Sora and ChatGPT. Remember: iterate and refine.
-              Professional artists do many drafts – consider each generation a
-              step towards your perfect image. The more you practice, the more
-              intuitive it becomes.
-            </p>
-            <p className="text-gray-300 mt-4 text-sm" style={TYPOGRAPHY.body}>
-              Happy creating! Now go turn your ideas into visuals.
-            </p>
-          </CardContent>
-        </Card>
       </div>
 
       {/* Briefcase Modal */}

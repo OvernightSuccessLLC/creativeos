@@ -654,40 +654,36 @@ export default function Playbook() {
 
               {/* Section 3: Key Components */}
               {section.id === 3 && (
-                <div className="space-y-6">
-                  <div className="bg-gray-900 rounded-lg p-6">
+                <div className="space-y-4">
+                  <div className="bg-gray-900 rounded p-4">
                     <h4
-                      className="text-brand-red text-xl font-semibold mb-3"
+                      className="text-brand-red font-semibold mb-2"
                       style={TYPOGRAPHY.heading}
                     >
-                      Master Formula
+                      Formula
                     </h4>
-                    <code className="text-white block text-sm bg-black p-4 rounded font-mono">
+                    <code className="text-white block text-xs bg-black p-3 rounded font-mono">
                       {section.content.formula}
                     </code>
-                    <p className="text-gray-300 mt-3 text-sm">
-                      {section.content.description}
-                    </p>
                   </div>
-
-                  <div className="space-y-6">
+                  <div className="space-y-3">
                     {section.content.components.map((component, idx) => (
-                      <div key={idx} className="space-y-3">
+                      <div key={idx} className="space-y-1">
                         <h4
-                          className="text-brand-red text-lg font-semibold"
+                          className="text-brand-red font-semibold"
                           style={TYPOGRAPHY.heading}
                         >
                           {component.name}
                         </h4>
                         <p
-                          className="text-white leading-relaxed"
+                          className="text-white leading-relaxed text-sm"
                           style={TYPOGRAPHY.body}
                         >
                           {component.description}
                         </p>
-                        <div className="bg-gray-900 rounded p-3">
-                          <p className="text-gray-300 text-sm italic">
-                            Example: {component.example}
+                        <div className="bg-gray-900 rounded p-2">
+                          <p className="text-gray-300 text-xs italic">
+                            {component.example}
                           </p>
                         </div>
                       </div>

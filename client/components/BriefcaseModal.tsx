@@ -37,11 +37,11 @@ export default function BriefcaseModal({
       type: "New Launch",
       title: "Creative Director OS v1.0 - Live Now!",
       description:
-        "The complete Creative Director OS is now live with all features integrated: Prompt Vault, Templates, Playbook, and AI Toolkit working seamlessly together.",
+        "The complete Creative Director OS is now live with all features integrated: Templates, Playbook, and AI Toolkit working seamlessly together.",
       badge: "LIVE",
       badgeColor: "bg-green-500",
-      action: "Visit Prompt Vault",
-      actionPath: "/prompt-vault",
+      action: "Visit Playbook",
+      actionPath: "/playbook",
     },
     {
       date: "Jan 20, 2025",

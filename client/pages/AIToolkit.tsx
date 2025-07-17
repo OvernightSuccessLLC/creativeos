@@ -741,26 +741,6 @@ export default function AIToolkit() {
       {/* Navigation */}
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
 
-      {/* Header */}
-      <div className="bg-black px-6 py-8 text-center">
-        <div className="flex items-center justify-center space-x-3 mb-2">
-          <Zap className="w-8 h-8 text-brand-red" />
-          <h1
-            className="text-white"
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontWeight: "900",
-              fontSize: "40px",
-              lineHeight: "60px",
-              paddingTop: "6px",
-              margin: "6px 0 0 12px",
-            }}
-          >
-            AI TOOLKIT
-          </h1>
-        </div>
-      </div>
-
       {/* Tools Grid */}
       <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

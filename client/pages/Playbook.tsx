@@ -959,7 +959,10 @@ export default function Playbook() {
                     ⚠️ Warnings
                   </h4>
                   {section.content.warnings.map((warning, idx) => (
-                    <div key={idx} className="space-y-2 bg-gray-900 rounded p-3">
+                    <div
+                      key={idx}
+                      className="space-y-2 bg-gray-900 rounded p-3"
+                    >
                       <h5
                         className="text-brand-red font-bold text-sm"
                         style={TYPOGRAPHY.heading}
@@ -982,41 +985,6 @@ export default function Playbook() {
                       )}
                     </div>
                   ))}
-                </div>
-              )}
-
-              {/* Section 10: Troubleshooting */}
-              {section.id === 10 && (
-                <div className="space-y-4">
-                  <h4
-                    className="text-brand-red font-bold text-base"
-                    style={TYPOGRAPHY.heading}
-                  >
-                    🔧 Troubleshooting
-                  </h4>
-                  {section.content.troubleshooting.map((issue, idx) => (
-                    <div key={idx} className="space-y-2 bg-gray-900 rounded p-3">
-                      <h5
-                        className="text-brand-red font-bold text-sm"
-                        style={TYPOGRAPHY.heading}
-                      >
-                        {issue.title}
-                      </h5>
-                      <p
-                        className="text-white text-xs leading-relaxed"
-                          style={TYPOGRAPHY.body}
-                        >
-                          {issue.description}
-                        </p>
-                        <div className="bg-gray-900 rounded p-2">
-                          <p className="text-green-400 text-xs">
-                            <span className="font-semibold">Solution: </span>
-                            {issue.solution}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
                 </div>
               )}
             </CardContent>

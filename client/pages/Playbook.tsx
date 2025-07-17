@@ -253,9 +253,9 @@ export default function Playbook() {
       >
         {sections.map((section) => (
           <Card key={section.id} className="bg-black border-white">
-            <CardHeader className="bg-brand-red p-6">
+            <CardHeader className="bg-black p-6">
               <CardTitle
-                className="text-black text-xl flex items-center space-x-3"
+                className="text-white text-xl flex items-center space-x-3"
                 style={TYPOGRAPHY.subtitle}
               >
                 <span

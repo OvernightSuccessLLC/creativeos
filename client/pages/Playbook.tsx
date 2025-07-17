@@ -25,8 +25,8 @@ const FONT_STYLE = {
 
 const TYPOGRAPHY = {
   title: { ...FONT_STYLE, fontWeight: "700" },
-  subtitle: { ...FONT_STYLE, fontWeight: "600" },
-  heading: { ...FONT_STYLE, fontWeight: "500" },
+  subtitle: { ...FONT_STYLE, fontWeight: "700" },
+  heading: { ...FONT_STYLE, fontWeight: "700" },
   body: { ...FONT_STYLE, fontWeight: "400" },
   button: { ...FONT_STYLE, fontWeight: "600" },
 };
@@ -524,8 +524,8 @@ export default function Playbook() {
 
       {/* Content Sections */}
       <div
-        className="max-w-7xl mx-auto px-8 space-y-4"
-        style={{ padding: "0 32px 24px" }}
+        className="max-w-7xl mx-auto px-8 space-y-6"
+        style={{ padding: "0 32px 32px" }}
       >
         {sections.map((section) => (
           <Card key={section.id} className="bg-black border-none">
@@ -543,19 +543,19 @@ export default function Playbook() {
                 <span>{section.title}</span>
               </CardTitle>
             </CardHeader>
-            <CardContent className="bg-black p-5">
+            <CardContent className="bg-black p-6">
               {/* Section 1: Introduction */}
               {section.id === 1 && (
-                <div className="space-y-4">
+                <div className="space-y-6">
                   <p
                     className="text-white leading-relaxed"
                     style={TYPOGRAPHY.body}
                   >
                     {section.content.overview}
                   </p>
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     <h4
-                      className="text-brand-red font-semibold"
+                      className="text-brand-red font-bold"
                       style={TYPOGRAPHY.heading}
                     >
                       How It Works
@@ -567,9 +567,9 @@ export default function Playbook() {
                       {section.content.howItWorks}
                     </p>
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     <h4
-                      className="text-brand-red font-semibold"
+                      className="text-brand-red font-bold"
                       style={TYPOGRAPHY.heading}
                     >
                       Why Special
@@ -581,9 +581,9 @@ export default function Playbook() {
                       {section.content.whySpecial}
                     </p>
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     <h4
-                      className="text-brand-red font-semibold"
+                      className="text-brand-red font-bold"
                       style={TYPOGRAPHY.heading}
                     >
                       Who This Is For
@@ -600,12 +600,12 @@ export default function Playbook() {
 
               {/* Section 2: Basics of Prompting */}
               {section.id === 2 && (
-                <div className="space-y-4">
-                  <div className="space-y-3">
+                <div className="space-y-6">
+                  <div className="space-y-4">
                     {section.content.principles.map((principle, idx) => (
-                      <div key={idx} className="space-y-1">
+                      <div key={idx} className="space-y-2">
                         <h4
-                          className="text-brand-red font-semibold"
+                          className="text-brand-red font-bold"
                           style={TYPOGRAPHY.heading}
                         >
                           {principle.title}
@@ -619,9 +619,9 @@ export default function Playbook() {
                       </div>
                     ))}
                   </div>
-                  <div className="bg-gray-900 rounded p-4 space-y-2">
+                  <div className="bg-gray-900 rounded p-4 space-y-3">
                     <h4
-                      className="text-brand-red font-semibold"
+                      className="text-brand-red font-bold"
                       style={TYPOGRAPHY.heading}
                     >
                       Example Progression
@@ -658,10 +658,10 @@ export default function Playbook() {
 
               {/* Section 3: Key Components */}
               {section.id === 3 && (
-                <div className="space-y-4">
+                <div className="space-y-6">
                   <div className="bg-gray-900 rounded p-4">
                     <h4
-                      className="text-brand-red font-semibold mb-2"
+                      className="text-brand-red font-bold mb-3"
                       style={TYPOGRAPHY.heading}
                     >
                       Formula
@@ -669,12 +669,18 @@ export default function Playbook() {
                     <code className="text-white block text-xs bg-black p-3 rounded font-mono">
                       {section.content.formula}
                     </code>
+                    <p
+                      className="text-white text-sm mt-2"
+                      style={TYPOGRAPHY.body}
+                    >
+                      {section.content.description}
+                    </p>
                   </div>
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     {section.content.components.map((component, idx) => (
-                      <div key={idx} className="space-y-1">
+                      <div key={idx} className="space-y-2">
                         <h4
-                          className="text-brand-red font-semibold"
+                          className="text-brand-red font-bold"
                           style={TYPOGRAPHY.heading}
                         >
                           {component.name}
@@ -685,7 +691,7 @@ export default function Playbook() {
                         >
                           {component.description}
                         </p>
-                        <div className="bg-gray-900 rounded p-2">
+                        <div className="bg-gray-900 rounded p-3">
                           <p className="text-gray-300 text-xs italic">
                             {component.example}
                           </p>
@@ -698,18 +704,18 @@ export default function Playbook() {
 
               {/* Section 4: Lifestyle Photography */}
               {section.id === 4 && (
-                <div className="space-y-3">
+                <div className="space-y-6">
                   <p
-                    className="text-white leading-relaxed text-sm"
+                    className="text-white leading-relaxed"
                     style={TYPOGRAPHY.body}
                   >
                     {section.content.description}
                   </p>
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     {section.content.characteristics.map((char, idx) => (
-                      <div key={idx} className="space-y-1">
+                      <div key={idx} className="space-y-2">
                         <h4
-                          className="text-brand-red font-semibold"
+                          className="text-brand-red font-bold"
                           style={TYPOGRAPHY.heading}
                         >
                           {char.title}
@@ -720,7 +726,7 @@ export default function Playbook() {
                         >
                           {char.description}
                         </p>
-                        <div className="bg-gray-900 rounded p-2">
+                        <div className="bg-gray-900 rounded p-3">
                           <p className="text-gray-300 text-xs italic">
                             {char.example}
                           </p>
@@ -730,7 +736,7 @@ export default function Playbook() {
                   </div>
                   <div className="bg-gray-900 rounded p-4">
                     <h4
-                      className="text-brand-red font-semibold mb-2"
+                      className="text-brand-red font-bold mb-3"
                       style={TYPOGRAPHY.heading}
                     >
                       Complete Example
@@ -747,12 +753,12 @@ export default function Playbook() {
 
               {/* Section 5: Product Photography */}
               {section.id === 5 && (
-                <div className="space-y-3">
-                  <div className="space-y-3">
+                <div className="space-y-6">
+                  <div className="space-y-4">
                     {section.content.techniques.map((technique, idx) => (
-                      <div key={idx} className="space-y-1">
+                      <div key={idx} className="space-y-2">
                         <h4
-                          className="text-brand-red font-semibold"
+                          className="text-brand-red font-bold"
                           style={TYPOGRAPHY.heading}
                         >
                           {technique.title}
@@ -763,7 +769,7 @@ export default function Playbook() {
                         >
                           {technique.description}
                         </p>
-                        <div className="bg-gray-900 rounded p-2">
+                        <div className="bg-gray-900 rounded p-3">
                           <p className="text-gray-300 text-xs italic">
                             {technique.example}
                           </p>
@@ -773,7 +779,7 @@ export default function Playbook() {
                   </div>
                   <div className="bg-gray-900 rounded p-4">
                     <h4
-                      className="text-brand-red font-semibold mb-2"
+                      className="text-brand-red font-bold mb-3"
                       style={TYPOGRAPHY.heading}
                     >
                       Expert Example
@@ -790,12 +796,12 @@ export default function Playbook() {
 
               {/* Section 6: Graphics & Design */}
               {section.id === 6 && (
-                <div className="space-y-3">
-                  <div className="space-y-4">
+                <div className="space-y-6">
+                  <div className="space-y-5">
                     {section.content.categories.map((category, idx) => (
-                      <div key={idx} className="space-y-2">
+                      <div key={idx} className="space-y-3">
                         <h4
-                          className="text-brand-red font-semibold"
+                          className="text-brand-red font-bold"
                           style={TYPOGRAPHY.heading}
                         >
                           {category.title}
@@ -817,7 +823,7 @@ export default function Playbook() {
                             </p>
                           ))}
                         </div>
-                        <div className="bg-gray-900 rounded p-2">
+                        <div className="bg-gray-900 rounded p-3">
                           <p
                             className="text-white italic text-xs"
                             style={TYPOGRAPHY.body}
@@ -833,12 +839,12 @@ export default function Playbook() {
 
               {/* Section 7: Scene Regeneration */}
               {section.id === 7 && (
-                <div className="space-y-3">
-                  <div className="space-y-3">
+                <div className="space-y-6">
+                  <div className="space-y-4">
                     {section.content.techniques.map((technique, idx) => (
-                      <div key={idx} className="space-y-1">
+                      <div key={idx} className="space-y-2">
                         <h4
-                          className="text-brand-red font-semibold"
+                          className="text-brand-red font-bold"
                           style={TYPOGRAPHY.heading}
                         >
                           {technique.title}
@@ -849,7 +855,7 @@ export default function Playbook() {
                         >
                           {technique.description}
                         </p>
-                        <div className="bg-gray-900 rounded p-2">
+                        <div className="bg-gray-900 rounded p-3">
                           <p className="text-gray-300 text-xs italic">
                             {technique.example}
                           </p>
@@ -859,12 +865,12 @@ export default function Playbook() {
                   </div>
                   <div className="bg-gray-900 rounded p-4">
                     <h4
-                      className="text-brand-red font-semibold mb-2"
+                      className="text-brand-red font-bold mb-3"
                       style={TYPOGRAPHY.heading}
                     >
                       Edit Sequence Example
                     </h4>
-                    <div className="space-y-1">
+                    <div className="space-y-2">
                       {section.content.exampleSequence.map((step, idx) => (
                         <p
                           key={idx}

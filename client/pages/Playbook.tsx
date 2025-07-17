@@ -602,7 +602,7 @@ export default function Playbook() {
                   ))}
 
                   {/* Pro Tips Section */}
-                  <div className="bg-gray-900 border border-white rounded p-6">
+                  <div className="bg-gray-900 rounded p-6">
                     <div className="space-y-4">
                       <p style={TYPOGRAPHY.body}>
                         <span className="text-brand-red font-semibold">

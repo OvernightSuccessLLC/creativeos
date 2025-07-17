@@ -28,6 +28,7 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
     { name: "LIFESTYLE STUDIO", icon: Users, path: "/lifestyle-studio" },
     { name: "GRAPHIC STUDIO", icon: Palette, path: "/graphic-studio" },
     { name: "THE PLAYBOOK", icon: BookOpen, path: "/playbook", simple: true },
+    { name: "TEMPLATES", icon: LayoutTemplate, path: "/templates" },
     { name: "AI TOOLKIT", icon: Zap, path: "/ai-toolkit" },
   ];
 

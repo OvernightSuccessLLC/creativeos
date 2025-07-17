@@ -203,32 +203,53 @@ export default function ProductStudio() {
   // Calculate quality score based on inputs
   const calculateQuality = () => {
     let score = 0;
-    if (customInstructions.length > 20) score += 25;
-    if (selectedKeywords.length > 0) score += selectedKeywords.length * 2;
+    if (customInstructions && customInstructions.length > 20) score += 25;
+    if (selectedKeywords && selectedKeywords.length > 0)
+      score += Math.min(selectedKeywords.length * 2, 30);
     if (uploadedFile) score += 15;
-    if (productType) score += 10;
-    if (backgroundStyle) score += 10;
-    if (lightingSetup) score += 10;
-    if (cameraAngle) score += 10;
+    if (productType && productType.trim()) score += 10;
+    if (backgroundStyle && backgroundStyle.trim()) score += 10;
+    if (lightingSetup && lightingSetup.trim()) score += 10;
+    if (cameraAngle && cameraAngle.trim()) score += 10;
     return Math.min(100, score);
   };
 
   // Generate the final prompt
   const generatePrompt = () => {
     let prompt = "";
-    if (customInstructions.trim()) {
+
+    if (customInstructions && customInstructions.trim()) {
       prompt += customInstructions.trim() + ". ";
     }
-    if (productType) prompt += `${productType} product. `;
-    if (backgroundStyle) prompt += `${backgroundStyle}. `;
-    if (lightingSetup) prompt += `${lightingSetup}. `;
-    if (cameraAngle) prompt += `${cameraAngle}. `;
-    if (selectedKeywords.length > 0) {
+
+    if (productType && productType.trim()) {
+      prompt += `${productType.trim()} product. `;
+    }
+
+    if (backgroundStyle && backgroundStyle.trim()) {
+      prompt += `${backgroundStyle.trim()}. `;
+    }
+
+    if (lightingSetup && lightingSetup.trim()) {
+      prompt += `${lightingSetup.trim()}. `;
+    }
+
+    if (cameraAngle && cameraAngle.trim()) {
+      prompt += `${cameraAngle.trim()}. `;
+    }
+
+    if (selectedKeywords && selectedKeywords.length > 0) {
       prompt += selectedKeywords.join(", ") + ". ";
     }
+
+    if (!prompt.trim()) {
+      return "Start building your prompt by filling out the steps...";
+    }
+
     prompt +=
       "Product photography, commercial quality, professional lighting, clean composition, high resolution, detailed, realistic, SORA video generation optimized.";
-    return prompt;
+
+    return prompt.trim();
   };
 
   // Copy to clipboard with fallback
@@ -281,7 +302,20 @@ export default function ProductStudio() {
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
+      // Check file type
+      if (!file.type.startsWith("image/")) {
+        console.error("Please select an image file");
+        return;
+      }
+
+      // Check file size (10MB limit)
+      if (file.size > 10 * 1024 * 1024) {
+        console.error("File size too large. Please select a file under 10MB");
+        return;
+      }
+
       setUploadedFile(file);
+      console.log("File uploaded successfully:", file.name);
     }
   };
 

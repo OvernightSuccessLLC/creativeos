@@ -217,37 +217,63 @@ export default function LifestyleStudio() {
   // Calculate quality score based on inputs
   const calculateQuality = () => {
     let score = 0;
-    if (customInstructions.length > 20) score += 25;
-    if (selectedKeywords.length > 0) score += selectedKeywords.length * 2;
+    if (customInstructions && customInstructions.length > 20) score += 25;
+    if (selectedKeywords && selectedKeywords.length > 0)
+      score += Math.min(selectedKeywords.length * 2, 30);
     if (uploadedFile) score += 15;
-    if (moodTone) score += 10;
-    if (subjectAge) score += 10;
-    if (activityType) score += 10;
-    if (locationSetting) score += 10;
+    if (moodTone && moodTone.trim()) score += 10;
+    if (subjectAge && subjectAge.trim()) score += 10;
+    if (activityType && activityType.trim()) score += 10;
+    if (locationSetting && locationSetting.trim()) score += 10;
     return Math.min(100, score);
   };
 
   // Generate the final prompt
   const generatePrompt = () => {
     let prompt = "";
-    if (customInstructions.trim()) {
+
+    if (customInstructions && customInstructions.trim()) {
       prompt += customInstructions.trim() + ". ";
     }
-    if (moodTone) prompt += `${moodTone} mood. `;
-    if (subjectAge) prompt += `${subjectAge} person. `;
-    if (activityType) prompt += `${activityType}. `;
-    if (locationSetting) prompt += `In ${locationSetting}. `;
-    if (selectedKeywords.length > 0) {
+
+    if (moodTone && moodTone.trim()) {
+      prompt += `${moodTone.trim()} mood. `;
+    }
+
+    if (subjectAge && subjectAge.trim()) {
+      prompt += `${subjectAge.trim()} person. `;
+    }
+
+    if (activityType && activityType.trim()) {
+      prompt += `${activityType.trim()}. `;
+    }
+
+    if (locationSetting && locationSetting.trim()) {
+      prompt += `In ${locationSetting.trim()}. `;
+    }
+
+    if (selectedKeywords && selectedKeywords.length > 0) {
       prompt += selectedKeywords.join(", ") + ". ";
     }
+
+    if (!prompt.trim()) {
+      return "Start building your prompt by filling out the steps...";
+    }
+
     prompt +=
       "Lifestyle photography, authentic human moment, natural expression, candid composition, emotional connection, high quality, detailed, realistic, SORA video generation optimized.";
-    return prompt;
+
+    return prompt.trim();
   };
 
   // Copy to clipboard with fallback
   const copyPrompt = async () => {
     const text = generatePrompt();
+
+    if (!text || text.trim() === "") {
+      console.warn("No text to copy");
+      return;
+    }
 
     try {
       if (navigator.clipboard && window.isSecureContext) {
@@ -276,6 +302,8 @@ export default function LifestyleStudio() {
       if (successful) {
         setCopiedPrompt(true);
         setTimeout(() => setCopiedPrompt(false), 2000);
+      } else {
+        console.error("Document.execCommand copy failed");
       }
     } catch (err) {
       console.error("All copy methods failed:", err);
@@ -295,7 +323,20 @@ export default function LifestyleStudio() {
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
+      // Check file type
+      if (!file.type.startsWith("image/")) {
+        console.error("Please select an image file");
+        return;
+      }
+
+      // Check file size (10MB limit)
+      if (file.size > 10 * 1024 * 1024) {
+        console.error("File size too large. Please select a file under 10MB");
+        return;
+      }
+
       setUploadedFile(file);
+      console.log("File uploaded successfully:", file.name);
     }
   };
 

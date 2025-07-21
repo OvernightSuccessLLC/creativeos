@@ -231,9 +231,40 @@ export default function GraphicStudio() {
     return prompt;
   };
 
-  // Copy to clipboard with fallback
+  // Copy to clipboard with enhanced fallback
   const copyPrompt = async () => {
     const text = generatePrompt();
+
+    // Enhanced legacy copy method
+    const legacyCopy = () => {
+      try {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        textArea.style.top = "-999999px";
+        textArea.style.opacity = "0";
+        textArea.setAttribute("readonly", "");
+
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        textArea.setSelectionRange(0, 99999);
+
+        const successful = document.execCommand("copy");
+        document.body.removeChild(textArea);
+
+        if (successful) {
+          setCopiedPrompt(true);
+          setTimeout(() => setCopiedPrompt(false), 2000);
+          return true;
+        }
+        return false;
+      } catch (err) {
+        console.warn("Legacy copy failed:", err);
+        return false;
+      }
+    };
 
     try {
       if (navigator.clipboard && window.isSecureContext) {
@@ -243,28 +274,27 @@ export default function GraphicStudio() {
         return;
       }
     } catch (err) {
-      console.warn("Clipboard API failed, using fallback:", err);
+      if (err instanceof DOMException && (
+        err.name === 'NotAllowedError' ||
+        err.name === 'SecurityError' ||
+        err.message.includes('permissions policy')
+      )) {
+        console.warn("Clipboard API blocked by permissions policy, using fallback");
+      } else {
+        console.warn("Clipboard API failed, using fallback:", err);
+      }
+
+      if (legacyCopy()) return;
     }
 
+    // If clipboard API not available, try legacy method
+    if (legacyCopy()) return;
+
+    // Final fallback - show prompt in alert
     try {
-      const textArea = document.createElement("textarea");
-      textArea.value = text;
-      textArea.style.position = "fixed";
-      textArea.style.left = "-999999px";
-      textArea.style.top = "-999999px";
-      document.body.appendChild(textArea);
-      textArea.focus();
-      textArea.select();
-
-      const successful = document.execCommand("copy");
-      document.body.removeChild(textArea);
-
-      if (successful) {
-        setCopiedPrompt(true);
-        setTimeout(() => setCopiedPrompt(false), 2000);
-      }
-    } catch (err) {
-      console.error("All copy methods failed:", err);
+      alert(`COPY THIS PROMPT:\n\n${text}`);
+    } catch (finalErr) {
+      console.error("All copy methods failed:", finalErr);
     }
   };
 

@@ -314,12 +314,15 @@ export default function LifestyleStudio() {
         return;
       }
     } catch (err) {
-      if (err instanceof DOMException && (
-        err.name === 'NotAllowedError' ||
-        err.name === 'SecurityError' ||
-        err.message.includes('permissions policy')
-      )) {
-        console.warn("Clipboard API blocked by permissions policy, using fallback");
+      if (
+        err instanceof DOMException &&
+        (err.name === "NotAllowedError" ||
+          err.name === "SecurityError" ||
+          err.message.includes("permissions policy"))
+      ) {
+        console.warn(
+          "Clipboard API blocked by permissions policy, using fallback",
+        );
       } else {
         console.warn("Clipboard API failed, using fallback:", err);
       }
@@ -544,7 +547,9 @@ export default function LifestyleStudio() {
                           <Upload className="mx-auto h-12 w-12 text-gray-400" />
                           <div className="mt-4">
                             <span className="mt-2 block text-sm font-medium text-white">
-                              {uploadedFile ? `Replace: ${uploadedFile.name}` : "Click to upload or drag and drop"}
+                              {uploadedFile
+                                ? `Replace: ${uploadedFile.name}`
+                                : "Click to upload or drag and drop"}
                             </span>
                             <span className="text-xs text-gray-400 mt-1 block">
                               PNG, JPG, GIF up to 10MB

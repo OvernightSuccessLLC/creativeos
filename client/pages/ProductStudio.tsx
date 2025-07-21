@@ -295,12 +295,15 @@ export default function ProductStudio() {
         return;
       }
     } catch (err) {
-      if (err instanceof DOMException && (
-        err.name === 'NotAllowedError' ||
-        err.name === 'SecurityError' ||
-        err.message.includes('permissions policy')
-      )) {
-        console.warn("Clipboard API blocked by permissions policy, using fallback");
+      if (
+        err instanceof DOMException &&
+        (err.name === "NotAllowedError" ||
+          err.name === "SecurityError" ||
+          err.message.includes("permissions policy"))
+      ) {
+        console.warn(
+          "Clipboard API blocked by permissions policy, using fallback",
+        );
       } else {
         console.warn("Clipboard API failed, using fallback:", err);
       }
@@ -321,8 +324,8 @@ export default function ProductStudio() {
 
   // Toggle keyword selection
   const toggleKeyword = (keyword: string) => {
-    if (!keyword || typeof keyword !== 'string') {
-      console.error('Invalid keyword:', keyword);
+    if (!keyword || typeof keyword !== "string") {
+      console.error("Invalid keyword:", keyword);
       return;
     }
 

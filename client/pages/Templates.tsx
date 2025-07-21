@@ -298,12 +298,15 @@ export default function Templates() {
       }
     } catch (err) {
       // Handle specific clipboard permission errors
-      if (err instanceof DOMException && (
-        err.name === 'NotAllowedError' ||
-        err.name === 'SecurityError' ||
-        err.message.includes('permissions policy')
-      )) {
-        console.warn("Clipboard API blocked by permissions policy, using fallback");
+      if (
+        err instanceof DOMException &&
+        (err.name === "NotAllowedError" ||
+          err.name === "SecurityError" ||
+          err.message.includes("permissions policy"))
+      ) {
+        console.warn(
+          "Clipboard API blocked by permissions policy, using fallback",
+        );
       } else {
         console.warn("Clipboard API failed:", err);
       }
@@ -371,7 +374,9 @@ export default function Templates() {
       document.body.appendChild(modal);
 
       // Add event listeners
-      const textarea = content.querySelector("#copyTextarea") as HTMLTextAreaElement;
+      const textarea = content.querySelector(
+        "#copyTextarea",
+      ) as HTMLTextAreaElement;
       const selectBtn = content.querySelector("#selectAllBtn");
       const closeBtn = content.querySelector("#closeModalBtn");
 
@@ -398,7 +403,6 @@ export default function Templates() {
           document.body.removeChild(modal);
         }
       });
-
     } catch (finalErr) {
       console.error("All copy methods failed:", finalErr);
       // Final fallback - simple alert

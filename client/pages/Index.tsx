@@ -311,12 +311,15 @@ export default function Index() {
         return;
       }
     } catch (err) {
-      if (err instanceof DOMException && (
-        err.name === 'NotAllowedError' ||
-        err.name === 'SecurityError' ||
-        err.message.includes('permissions policy')
-      )) {
-        console.warn("Clipboard API blocked by permissions policy, using fallback");
+      if (
+        err instanceof DOMException &&
+        (err.name === "NotAllowedError" ||
+          err.name === "SecurityError" ||
+          err.message.includes("permissions policy"))
+      ) {
+        console.warn(
+          "Clipboard API blocked by permissions policy, using fallback",
+        );
       } else {
         console.warn("Clipboard API failed, using fallback:", err);
       }

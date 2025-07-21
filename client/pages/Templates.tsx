@@ -251,72 +251,158 @@ export default function Templates() {
   });
 
   const copyPrompt = async (prompt: string, templateId: number) => {
+    // Enhanced legacy copy method with better mobile support
+    const legacyCopy = () => {
+      try {
+        const textArea = document.createElement("textarea");
+        textArea.value = prompt;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        textArea.style.top = "-999999px";
+        textArea.style.opacity = "0";
+        textArea.style.pointerEvents = "none";
+        textArea.setAttribute("readonly", "");
+
+        document.body.appendChild(textArea);
+
+        // Focus and select for different devices
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+          textArea.setSelectionRange(0, 9999);
+        } else {
+          textArea.focus();
+          textArea.select();
+        }
+
+        const successful = document.execCommand("copy");
+        document.body.removeChild(textArea);
+
+        if (successful) {
+          setCopiedTemplate(templateId);
+          setTimeout(() => setCopiedTemplate(null), 2000);
+          return true;
+        }
+        return false;
+      } catch (err) {
+        console.warn("Legacy copy failed:", err);
+        return false;
+      }
+    };
+
+    // Try modern Clipboard API first, with specific error handling
     try {
-      // Try the modern Clipboard API first
       if (navigator.clipboard && window.isSecureContext) {
         await navigator.clipboard.writeText(prompt);
         setCopiedTemplate(templateId);
         setTimeout(() => setCopiedTemplate(null), 2000);
         return;
       }
-
-      // Fallback to the older method
-      const textArea = document.createElement("textarea");
-      textArea.value = prompt;
-
-      // Make the textarea invisible
-      textArea.style.position = "fixed";
-      textArea.style.left = "-999999px";
-      textArea.style.top = "-999999px";
-
-      document.body.appendChild(textArea);
-      textArea.focus();
-      textArea.select();
-
-      const successful = document.execCommand("copy");
-      document.body.removeChild(textArea);
-
-      if (successful) {
-        setCopiedTemplate(templateId);
-        setTimeout(() => setCopiedTemplate(null), 2000);
-      } else {
-        throw new Error("Copy command was unsuccessful");
-      }
     } catch (err) {
-      console.error("Failed to copy prompt: ", err);
-
-      // Last resort: show the text in a prompt for manual copying
-      const userAgent = navigator.userAgent;
-      const isMobile =
-        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          userAgent,
-        );
-
-      if (isMobile) {
-        // On mobile, create a modal or alert
-        alert(`Copy this prompt manually:\n\n${prompt}`);
+      // Handle specific clipboard permission errors
+      if (err instanceof DOMException && (
+        err.name === 'NotAllowedError' ||
+        err.name === 'SecurityError' ||
+        err.message.includes('permissions policy')
+      )) {
+        console.warn("Clipboard API blocked by permissions policy, using fallback");
       } else {
-        // On desktop, try to select the text
-        const selection = window.getSelection();
-        const range = document.createRange();
-        const tempElement = document.createElement("div");
-        tempElement.style.position = "fixed";
-        tempElement.style.left = "-999999px";
-        tempElement.textContent = prompt;
-        document.body.appendChild(tempElement);
-
-        range.selectNodeContents(tempElement);
-        selection?.removeAllRanges();
-        selection?.addRange(range);
-
-        setTimeout(() => {
-          document.body.removeChild(tempElement);
-        }, 100);
-
-        alert(
-          "Automatic copying failed. The text has been selected for you - please press Ctrl+C (or Cmd+C) to copy.",
-        );
+        console.warn("Clipboard API failed:", err);
       }
+
+      // Try legacy method immediately
+      if (legacyCopy()) return;
+    }
+
+    // If clipboard API not available, try legacy method
+    if (legacyCopy()) return;
+
+    // Final fallback - create a user-friendly copy interface
+    try {
+      // Create modal-like interface for manual copying
+      const modal = document.createElement("div");
+      modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.8);
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      `;
+
+      const content = document.createElement("div");
+      content.style.cssText = `
+        background: white;
+        color: black;
+        padding: 30px;
+        border-radius: 8px;
+        max-width: 600px;
+        max-height: 80vh;
+        overflow: auto;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      `;
+
+      content.innerHTML = `
+        <h3 style="margin: 0 0 15px 0; font-size: 18px; color: #f93921;">Copy This Prompt</h3>
+        <textarea
+          id="copyTextarea"
+          style="width: 100%; height: 200px; font-size: 14px; padding: 10px; border: 2px solid #ddd; border-radius: 4px; font-family: monospace;"
+          readonly
+        >${prompt}</textarea>
+        <div style="margin-top: 15px; display: flex; gap: 10px; justify-content: flex-end;">
+          <button
+            id="selectAllBtn"
+            style="padding: 10px 20px; background: #f93921; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;"
+          >Select All</button>
+          <button
+            id="closeModalBtn"
+            style="padding: 10px 20px; background: #666; color: white; border: none; border-radius: 4px; cursor: pointer;"
+          >Close</button>
+        </div>
+        <p style="margin: 10px 0 0 0; font-size: 12px; color: #666;">
+          Tap "Select All" then copy with Ctrl+C (Cmd+C on Mac)
+        </p>
+      `;
+
+      modal.appendChild(content);
+      document.body.appendChild(modal);
+
+      // Add event listeners
+      const textarea = content.querySelector("#copyTextarea") as HTMLTextAreaElement;
+      const selectBtn = content.querySelector("#selectAllBtn");
+      const closeBtn = content.querySelector("#closeModalBtn");
+
+      selectBtn?.addEventListener("click", () => {
+        textarea.select();
+        textarea.setSelectionRange(0, 99999);
+      });
+
+      closeBtn?.addEventListener("click", () => {
+        document.body.removeChild(modal);
+      });
+
+      // Auto-select on mobile
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        setTimeout(() => {
+          textarea.select();
+          textarea.setSelectionRange(0, 99999);
+        }, 100);
+      }
+
+      // Click outside to close
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          document.body.removeChild(modal);
+        }
+      });
+
+    } catch (finalErr) {
+      console.error("All copy methods failed:", finalErr);
+      // Final fallback - simple alert
+      alert(`COPY THIS PROMPT:\n\n${prompt}`);
     }
   };
 

@@ -38,21 +38,6 @@ export default function Playbook() {
   const sections = [
     {
       id: 1,
-      title: "Introduction to Sora Image Generation",
-      icon: BookOpen,
-      content: {
-        overview:
-          "Sora is OpenAI's advanced platform that extends ChatGPT into a visual creator – allowing you to generate images simply by describing them. It leverages the latest GPT-4o image generation model, which is natively multimodal and built into ChatGPT.",
-        howItWorks:
-          "You simply describe the image you want in natural language, and the AI produces a picture matching your description. For example, 'A young woman in a red coat walking through a snowy forest, photorealistic style.' The AI interprets every detail and creates accordingly.",
-        whySpecial:
-          "GPT-4o is a significant leap over previous image generators. It offers much better accuracy in complex scenes and text rendering. It can correctly handle 15–20 distinct elements with the right attributes in one image – a big improvement in reliability. It also produces readable text (signs, logos, labels) far more consistently than before.",
-        whoFor:
-          "Everyone! From beginners who have never used an image generator, to intermediate users looking to fine-tune prompts, to experts wanting to automate image generation. Whether you're a marketer needing quick visuals, a designer prototyping ideas, or just exploring AI art.",
-      },
-    },
-    {
-      id: 2,
       title: "Basics of Prompting (Prompting 101)",
       icon: Lightbulb,
       content: {
@@ -77,11 +62,6 @@ export default function Playbook() {
             description:
               "Write in plain, descriptive sentences instead of disjointed keyword lists. 'A curious red fox exploring a misty autumn forest at dawn, golden sunlight filtering through the trees' works better than 'fox, forest, misty, sunlight, 8k'.",
           },
-          {
-            title: "Check Output and Refine",
-            description:
-              "After the image is generated, evaluate it critically. Does it match your mental image? Use this insight to refine your next prompt. You can also ask ChatGPT for help improving prompts between generations.",
-          },
         ],
         progression: {
           beginner: "Photo of a cat sitting on a windowsill.",
@@ -93,14 +73,12 @@ export default function Playbook() {
       },
     },
     {
-      id: 3,
+      id: 2,
       title: "Key Prompt Components & Variables",
       icon: Database,
       content: {
         formula:
           "[Subject] + [Action/Pose] + [Environment/Setting] + [Lighting] + [Camera Details] + [Style/Mood] + [Quality Parameters]",
-        description:
-          "Not every prompt needs all components, but this formula reminds you of available options.",
         components: [
           {
             name: "Subject Description",
@@ -154,7 +132,7 @@ export default function Playbook() {
       },
     },
     {
-      id: 4,
+      id: 3,
       title: "Lifestyle Photography Prompts",
       icon: Camera,
       content: {
@@ -195,7 +173,7 @@ export default function Playbook() {
       },
     },
     {
-      id: 5,
+      id: 4,
       title: "Product & Studio Photography",
       icon: Package,
       content: {
@@ -208,13 +186,6 @@ export default function Playbook() {
               "A classic product photo has the product clearly visible, often centered against a clean background. White is standard for catalogs, but you might use black or solid colors for dramatic effect.",
             example:
               "'A studio photo of a single wristwatch, centered on a white background with a slight reflection beneath it'",
-          },
-          {
-            title: "Lighting & Reflections",
-            description:
-              "Lighting is everything in studio photography. For shiny objects (electronics, jewelry, glassware), specify soft diffuse light or two-point lighting setup to avoid harsh glare.",
-            example:
-              "'Product shot of a smartphone with soft diffused lighting to minimize harsh reflections' or 'two-point studio lighting (key light and fill light)'",
           },
           {
             title: "Camera and Focus",
@@ -236,7 +207,7 @@ export default function Playbook() {
       },
     },
     {
-      id: 6,
+      id: 5,
       title: "Custom Graphics & Design",
       icon: Palette,
       content: {
@@ -259,8 +230,6 @@ export default function Playbook() {
           },
           {
             title: "Text Rendering in Images",
-            description:
-              "GPT-4o can render readable text in images much better than past models. This means you can create posters, flyers, social media graphics, or diagrams with labels.",
             tips: [
               "Be concise with text: Short phrases or titles work best",
               "Use quotes for desired text: 'A movie poster with the title \"Into the Unknown\" at the top'",
@@ -272,8 +241,6 @@ export default function Playbook() {
           },
           {
             title: "Graphic Illustrations & Icons",
-            description:
-              "For custom illustrations or icons (websites, presentations, etc.), describe them with style cues and specify the artistic approach.",
             tips: [
               "Mention art style: 'flat vector illustration,' '3D isometric icon,' 'chalk sketch,' 'pixel art'",
               "For icons: specify shape or medium: 'app icon style,' 'material design style'",
@@ -287,7 +254,7 @@ export default function Playbook() {
       },
     },
     {
-      id: 7,
+      id: 6,
       title: "Scene Regeneration & Image Editing",
       icon: RefreshCw,
       content: {
@@ -341,7 +308,7 @@ export default function Playbook() {
       },
     },
     {
-      id: 8,
+      id: 7,
       title: "Using the Prompt Vault",
       icon: Settings,
       content: {
@@ -394,7 +361,7 @@ export default function Playbook() {
       },
     },
     {
-      id: 9,
+      id: 8,
       title: "Warnings",
       icon: AlertTriangle,
       content: {
@@ -507,21 +474,6 @@ export default function Playbook() {
       {/* Navigation */}
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
 
-      {/* Header */}
-      <div
-        className="bg-brand-red px-6 text-center"
-        style={{
-          backgroundColor: "rgb(249, 56, 34)",
-          fontSize: "48px",
-          fontWeight: "400",
-          lineHeight: "60px",
-          marginTop: "12px",
-          textAlign: "center",
-          pointerEvents: "auto",
-          padding: "20px 24px 32px",
-        }}
-      />
-
       {/* Content Sections */}
       <div
         className="max-w-7xl mx-auto px-8 space-y-6"
@@ -544,56 +496,8 @@ export default function Playbook() {
               </CardTitle>
             </CardHeader>
             <CardContent className="bg-black px-6 pb-6">
-              {/* Section 1: Introduction */}
+              {/* Section 1: Basics of Prompting */}
               {section.id === 1 && (
-                <div className="space-y-6">
-                  <div className="space-y-3">
-                    <h4
-                      className="text-brand-red font-bold"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      How It Works
-                    </h4>
-                    <p
-                      className="text-white leading-relaxed text-sm"
-                      style={TYPOGRAPHY.body}
-                    >
-                      {section.content.howItWorks}
-                    </p>
-                  </div>
-                  <div className="space-y-3">
-                    <h4
-                      className="text-brand-red font-bold"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      Why Special
-                    </h4>
-                    <p
-                      className="text-white leading-relaxed text-sm"
-                      style={TYPOGRAPHY.body}
-                    >
-                      {section.content.whySpecial}
-                    </p>
-                  </div>
-                  <div className="space-y-3">
-                    <h4
-                      className="text-brand-red font-bold"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      Who This Is For
-                    </h4>
-                    <p
-                      className="text-white leading-relaxed text-sm"
-                      style={TYPOGRAPHY.body}
-                    >
-                      {section.content.whoFor}
-                    </p>
-                  </div>
-                </div>
-              )}
-
-              {/* Section 2: Basics of Prompting */}
-              {section.id === 2 && (
                 <div className="space-y-6">
                   <div className="space-y-4">
                     {section.content.principles.map((principle, idx) => (
@@ -650,8 +554,8 @@ export default function Playbook() {
                 </div>
               )}
 
-              {/* Section 3: Key Components */}
-              {section.id === 3 && (
+              {/* Section 2: Key Components */}
+              {section.id === 2 && (
                 <div className="space-y-6">
                   <div className="bg-gray-900 rounded p-4">
                     <h4
@@ -663,12 +567,6 @@ export default function Playbook() {
                     <code className="text-white block text-xs bg-black p-3 rounded font-mono">
                       {section.content.formula}
                     </code>
-                    <p
-                      className="text-white text-sm mt-2"
-                      style={TYPOGRAPHY.body}
-                    >
-                      {section.content.description}
-                    </p>
                   </div>
                   <div className="space-y-4">
                     {section.content.components.map((component, idx) => (
@@ -696,8 +594,8 @@ export default function Playbook() {
                 </div>
               )}
 
-              {/* Section 4: Lifestyle Photography */}
-              {section.id === 4 && (
+              {/* Section 3: Lifestyle Photography */}
+              {section.id === 3 && (
                 <div className="space-y-6">
                   <div className="space-y-4">
                     {section.content.characteristics.map((char, idx) => (
@@ -739,8 +637,8 @@ export default function Playbook() {
                 </div>
               )}
 
-              {/* Section 5: Product Photography */}
-              {section.id === 5 && (
+              {/* Section 4: Product Photography */}
+              {section.id === 4 && (
                 <div className="space-y-6">
                   <div className="space-y-4">
                     {section.content.techniques.map((technique, idx) => (
@@ -751,14 +649,6 @@ export default function Playbook() {
                         >
                           {technique.title}
                         </h4>
-                        {technique.title !== "Isolate the Product" && (
-                          <p
-                            className="text-white leading-relaxed text-sm"
-                            style={TYPOGRAPHY.body}
-                          >
-                            {technique.description}
-                          </p>
-                        )}
                         <div className="bg-gray-900 rounded p-3">
                           <p className="text-gray-300 text-xs italic">
                             {technique.example}
@@ -784,8 +674,8 @@ export default function Playbook() {
                 </div>
               )}
 
-              {/* Section 6: Graphics & Design */}
-              {section.id === 6 && (
+              {/* Section 5: Graphics & Design */}
+              {section.id === 5 && (
                 <div className="space-y-6">
                   <div className="space-y-5">
                     {section.content.categories.map((category, idx) => (
@@ -796,14 +686,6 @@ export default function Playbook() {
                         >
                           {category.title}
                         </h4>
-                        {category.title !== "Logo Creation" && (
-                          <p
-                            className="text-white leading-relaxed text-sm"
-                            style={TYPOGRAPHY.body}
-                          >
-                            {category.description}
-                          </p>
-                        )}
                         <div className="space-y-1">
                           {category.tips.map((tip, tipIdx) => (
                             <p
@@ -829,8 +711,8 @@ export default function Playbook() {
                 </div>
               )}
 
-              {/* Section 7: Scene Regeneration */}
-              {section.id === 7 && (
+              {/* Section 6: Scene Regeneration */}
+              {section.id === 6 && (
                 <div className="space-y-6">
                   <div className="space-y-4">
                     {section.content.techniques.map((technique, idx) => (
@@ -841,14 +723,6 @@ export default function Playbook() {
                         >
                           {technique.title}
                         </h4>
-                        {technique.title !== "Identify Elements Clearly" && (
-                          <p
-                            className="text-white leading-relaxed text-sm"
-                            style={TYPOGRAPHY.body}
-                          >
-                            {technique.description}
-                          </p>
-                        )}
                         <div className="bg-gray-900 rounded p-3">
                           <p className="text-gray-300 text-xs italic">
                             {technique.example}
@@ -879,8 +753,8 @@ export default function Playbook() {
                 </div>
               )}
 
-              {/* Section 8: Prompt Vault */}
-              {section.id === 8 && (
+              {/* Section 7: Prompt Vault */}
+              {section.id === 7 && (
                 <div className="space-y-6">
                   <p
                     className="text-white leading-relaxed"
@@ -943,8 +817,8 @@ export default function Playbook() {
                 </div>
               )}
 
-              {/* Section 9: Warnings */}
-              {section.id === 9 && (
+              {/* Section 8: Warnings */}
+              {section.id === 8 && (
                 <div className="space-y-4">
                   {section.content.warnings.map((warning, idx) => (
                     <div

@@ -483,18 +483,19 @@ export default function GraphicStudio() {
                     )}
 
                     {step.id === 2 && (
-                      <div className="space-y-4">
+                      <div className="space-y-3 sm:space-y-4">
                         <div></div>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                           {keywordCategories["Design Type"].map((keyword) => (
                             <button
                               key={keyword}
                               onClick={() => toggleKeyword(keyword)}
-                              className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                              className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                                 selectedKeywords.includes(keyword)
                                   ? "bg-brand-red text-black"
                                   : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
                               }`}
+                              style={{ minHeight: "44px" }}
                             >
                               {keyword}
                             </button>
@@ -504,18 +505,19 @@ export default function GraphicStudio() {
                     )}
 
                     {step.id === 3 && (
-                      <div className="space-y-4">
+                      <div className="space-y-3 sm:space-y-4">
                         <div></div>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                           {keywordCategories["Style & Mood"].map((keyword) => (
                             <button
                               key={keyword}
                               onClick={() => toggleKeyword(keyword)}
-                              className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                              className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                                 selectedKeywords.includes(keyword)
                                   ? "bg-brand-red text-black"
                                   : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
                               }`}
+                              style={{ minHeight: "44px" }}
                             >
                               {keyword}
                             </button>
@@ -526,17 +528,18 @@ export default function GraphicStudio() {
 
                     {step.id === 4 && (
                       <div>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-3 sm:mt-4">
                           {keywordCategories["Typography & Text"].map(
                             (keyword) => (
                               <button
                                 key={keyword}
                                 onClick={() => toggleKeyword(keyword)}
-                                className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                                className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                                   selectedKeywords.includes(keyword)
                                     ? "bg-brand-red text-black"
                                     : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
                                 }`}
+                                style={{ minHeight: "44px" }}
                               >
                                 {keyword}
                               </button>
@@ -548,17 +551,18 @@ export default function GraphicStudio() {
 
                     {step.id === 5 && (
                       <div>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-3 sm:mt-4">
                           {keywordCategories["Layout & Composition"].map(
                             (keyword) => (
                               <button
                                 key={keyword}
                                 onClick={() => toggleKeyword(keyword)}
-                                className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                                className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                                   selectedKeywords.includes(keyword)
                                     ? "bg-brand-red text-black"
                                     : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
                                 }`}
+                                style={{ minHeight: "44px" }}
                               >
                                 {keyword}
                               </button>

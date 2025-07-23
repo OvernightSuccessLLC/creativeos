@@ -73,3 +73,111 @@
 .text-brand-red {
   color: #f93822;
 }
+
+/* Mobile optimization styles */
+@layer utilities {
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+
+  /* Smooth scrolling for all elements */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Better tap targets for mobile */
+  button,
+  [role="button"],
+  input[type="submit"],
+  input[type="button"],
+  label[for] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Prevent text selection on buttons */
+  button,
+  [role="button"] {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* Smooth transitions for interactive elements */
+  button,
+  [role="button"],
+  input,
+  textarea,
+  select {
+    transition: all 0.2s ease-out;
+  }
+
+  /* Mobile-specific scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Better focus styles for keyboard navigation */
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid #f93822;
+    outline-offset: 2px;
+  }
+
+  /* Prevent zoom on input focus on iOS */
+  @media screen and (max-width: 768px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="url"],
+    select,
+    textarea {
+      font-size: 16px;
+    }
+  }
+
+  /* Safe area padding for notched devices */
+  @supports (padding: max(0px)) {
+    .safe-area-top {
+      padding-top: max(1rem, env(safe-area-inset-top));
+    }
+
+    .safe-area-bottom {
+      padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    }
+
+    .safe-area-left {
+      padding-left: max(1rem, env(safe-area-inset-left));
+    }
+
+    .safe-area-right {
+      padding-right: max(1rem, env(safe-area-inset-right));
+    }
+  }
+
+  /* Remove default button styles on iOS */
+  button,
+  input[type="button"],
+  input[type="submit"] {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+  }
+
+  /* Prevent text size adjustment on orientation change */
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Better mobile viewport handling */
+  @media (max-width: 768px) {
+    .container {
+      overflow-x: hidden;
+    }
+  }
+}

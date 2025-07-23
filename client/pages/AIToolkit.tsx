@@ -319,81 +319,39 @@ export default function AIToolkit() {
           </p>
         </div>
 
-        {/* Search and Filters */}
-        <div className="bg-black/10 backdrop-blur-sm rounded-xl p-4 md:p-6 mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {/* Search */}
-            <div className="relative md:col-span-1">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-black/60 w-4 h-4" />
-              <Input
-                type="text"
-                placeholder="Search tools..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 bg-white border-none text-black placeholder-black/60 h-12"
-              />
+        {/* Category Filter */}
+        <div className="flex justify-center mb-8">
+          <div className="bg-black rounded-lg p-6 max-w-md w-full">
+            <div className="text-center mb-4">
+              <h3 className="text-white text-lg font-bold" style={FONT_STYLE}>
+                BROWSE BY CATEGORY
+              </h3>
             </div>
-
-            {/* Category Filter */}
-            <div className="md:col-span-1">
-              <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                <SelectTrigger className="bg-white border-none text-black h-12">
-                  <div className="flex items-center gap-2">
-                    <Filter className="w-4 h-4" />
-                    <SelectValue placeholder="Category" />
-                  </div>
-                </SelectTrigger>
-                <SelectContent>
-                  {categories.map((category) => {
-                    const IconComponent = categoryIcons[category as keyof typeof categoryIcons];
-                    return (
-                      <SelectItem key={category} value={category}>
-                        <div className="flex items-center gap-2">
-                          <IconComponent className="w-4 h-4" />
-                          {category}
-                        </div>
-                      </SelectItem>
-                    );
-                  })}
-                </SelectContent>
-              </Select>
-            </div>
-
-            {/* Sort */}
-            <div className="md:col-span-1">
-              <Select value={sortBy} onValueChange={setSortBy}>
-                <SelectTrigger className="bg-white border-none text-black h-12">
-                  <SelectValue placeholder="Sort by" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="name">Name A-Z</SelectItem>
-                  <SelectItem value="category">Category</SelectItem>
-                  <SelectItem value="rating">Rating</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-
-          {/* Category Pills */}
-          <div className="flex flex-wrap gap-2 mt-4">
-            {categories.map((category) => {
-              const IconComponent = categoryIcons[category as keyof typeof categoryIcons];
-              const isActive = selectedCategory === category;
-              return (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-full text-sm font-medium transition-all ${
-                    isActive
-                      ? "bg-black text-white"
-                      : "bg-white/80 text-black hover:bg-white"
-                  }`}
-                >
-                  <IconComponent className="w-3 h-3" />
-                  {category}
-                </button>
-              );
-            })}
+            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+              <SelectTrigger className="bg-brand-red text-black font-bold h-12 border-none">
+                <div className="flex items-center gap-2">
+                  <Filter className="w-4 h-4" />
+                  <SelectValue placeholder="Select Category" />
+                </div>
+              </SelectTrigger>
+              <SelectContent className="bg-black border-gray-800">
+                {categories.map((category) => {
+                  const IconComponent = categoryIcons[category as keyof typeof categoryIcons];
+                  return (
+                    <SelectItem
+                      key={category}
+                      value={category}
+                      className="text-white hover:bg-brand-red hover:text-black focus:bg-brand-red focus:text-black"
+                    >
+                      <div className="flex items-center gap-2">
+                        <IconComponent className="w-4 h-4" />
+                        {category}
+                      </div>
+                    </SelectItem>
+                  );
+                })}
+              </SelectContent>
+            </Select>
           </div>
         </div>
 

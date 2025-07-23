@@ -520,7 +520,7 @@ export default function Playbook() {
                 style={TYPOGRAPHY.subtitle}
               >
                 <span
-                  className="bg-brand-red text-black rounded px-2 py-1 text-xs md:text-sm font-semibold flex-shrink-0"
+                  className="bg-brand-red text-black rounded px-2 py-1 text-xs md:text-xs md:text-sm font-semibold flex-shrink-0"
                   style={TYPOGRAPHY.heading}
                 >
                   {section.id}.
@@ -540,7 +540,7 @@ export default function Playbook() {
                       How It Works
                     </h4>
                     <p
-                      className="text-white leading-relaxed text-xs md:text-sm"
+                      className="text-white leading-relaxed text-xs md:text-xs md:text-sm"
                       style={TYPOGRAPHY.body}
                     >
                       {section.content.howItWorks}
@@ -554,7 +554,7 @@ export default function Playbook() {
                       Why Special
                     </h4>
                     <p
-                      className="text-white leading-relaxed text-xs md:text-sm"
+                      className="text-white leading-relaxed text-xs md:text-xs md:text-sm"
                       style={TYPOGRAPHY.body}
                     >
                       {section.content.whySpecial}
@@ -568,7 +568,7 @@ export default function Playbook() {
                       Who This Is For
                     </h4>
                     <p
-                      className="text-white leading-relaxed text-xs md:text-sm"
+                      className="text-white leading-relaxed text-xs md:text-xs md:text-sm"
                       style={TYPOGRAPHY.body}
                     >
                       {section.content.whoFor}
@@ -590,7 +590,7 @@ export default function Playbook() {
                           {principle.title}
                         </h4>
                         <p
-                          className="text-white leading-relaxed text-xs md:text-sm"
+                          className="text-white leading-relaxed text-xs md:text-xs md:text-sm"
                           style={TYPOGRAPHY.body}
                         >
                           {principle.description}
@@ -607,26 +607,26 @@ export default function Playbook() {
                     </h4>
                     <div className="space-y-1 md:space-y-2">
                       <div>
-                        <span className="text-brand-red font-semibold text-sm">
+                        <span className="text-brand-red font-semibold text-xs md:text-sm">
                           Beginner:
                         </span>
-                        <p className="text-white italic text-sm">
+                        <p className="text-white italic text-xs md:text-sm">
                           "{section.content.progression.beginner}"
                         </p>
                       </div>
                       <div>
-                        <span className="text-brand-red font-semibold text-sm">
+                        <span className="text-brand-red font-semibold text-xs md:text-sm">
                           Advanced:
                         </span>
-                        <p className="text-white italic text-sm">
+                        <p className="text-white italic text-xs md:text-sm">
                           "{section.content.progression.advanced}"
                         </p>
                       </div>
                       <div>
-                        <span className="text-brand-red font-semibold text-sm">
+                        <span className="text-brand-red font-semibold text-xs md:text-sm">
                           Expert:
                         </span>
-                        <p className="text-white italic text-sm">
+                        <p className="text-white italic text-xs md:text-sm">
                           "{section.content.progression.expert}"
                         </p>
                       </div>
@@ -649,7 +649,7 @@ export default function Playbook() {
                       {section.content.formula}
                     </code>
                     <p
-                      className="text-white text-sm mt-2"
+                      className="text-white text-xs md:text-sm mt-2"
                       style={TYPOGRAPHY.body}
                     >
                       {section.content.description}
@@ -665,7 +665,7 @@ export default function Playbook() {
                           {component.name}
                         </h4>
                         <p
-                          className="text-white leading-relaxed text-xs md:text-sm"
+                          className="text-white leading-relaxed text-xs md:text-xs md:text-sm"
                           style={TYPOGRAPHY.body}
                         >
                           {component.description}
@@ -694,7 +694,7 @@ export default function Playbook() {
                           {char.title}
                         </h4>
                         <p
-                          className="text-white leading-relaxed text-xs md:text-sm"
+                          className="text-white leading-relaxed text-xs md:text-xs md:text-sm"
                           style={TYPOGRAPHY.body}
                         >
                           {char.description}
@@ -715,7 +715,7 @@ export default function Playbook() {
                       Complete Example
                     </h4>
                     <p
-                      className="text-white italic text-sm"
+                      className="text-white italic text-xs md:text-sm"
                       style={TYPOGRAPHY.body}
                     >
                       "{section.content.fullExample}"
@@ -738,7 +738,7 @@ export default function Playbook() {
                         </h4>
                         {technique.title !== "Isolate the Product" && (
                           <p
-                            className="text-white leading-relaxed text-xs md:text-sm"
+                            className="text-white leading-relaxed text-xs md:text-xs md:text-sm"
                             style={TYPOGRAPHY.body}
                           >
                             {technique.description}
@@ -760,7 +760,7 @@ export default function Playbook() {
                       Expert Example
                     </h4>
                     <p
-                      className="text-white italic text-sm"
+                      className="text-white italic text-xs md:text-sm"
                       style={TYPOGRAPHY.body}
                     >
                       "{section.content.expertExample}"
@@ -783,7 +783,7 @@ export default function Playbook() {
                         </h4>
                         {category.title !== "Logo Creation" && (
                           <p
-                            className="text-white leading-relaxed text-xs md:text-sm"
+                            className="text-white leading-relaxed text-xs md:text-xs md:text-sm"
                             style={TYPOGRAPHY.body}
                           >
                             {category.description}
@@ -828,7 +828,7 @@ export default function Playbook() {
                         </h4>
                         {technique.title !== "Identify Elements Clearly" && (
                           <p
-                            className="text-white leading-relaxed text-xs md:text-sm"
+                            className="text-white leading-relaxed text-xs md:text-xs md:text-sm"
                             style={TYPOGRAPHY.body}
                           >
                             {technique.description}
@@ -882,7 +882,7 @@ export default function Playbook() {
                           </span>
                           <div className="space-y-1 md:space-y-2">
                             <h4
-                              className="text-brand-red font-bold text-sm"
+                              className="text-brand-red font-bold text-xs md:text-sm"
                               style={TYPOGRAPHY.heading}
                             >
                               {step.title}
@@ -937,7 +937,7 @@ export default function Playbook() {
                       className="space-y-2 bg-gray-900 rounded p-3"
                     >
                       <h5
-                        className="text-brand-red font-bold text-sm"
+                        className="text-brand-red font-bold text-xs md:text-sm"
                         style={TYPOGRAPHY.heading}
                       >
                         {warning.title}

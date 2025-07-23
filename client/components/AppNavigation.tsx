@@ -2,16 +2,8 @@ import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
-  Bell,
   BookOpen,
-  Database,
-  LayoutTemplate,
   Zap,
-  Crown,
-  Home,
-  Camera,
-  Users,
-  Palette,
   Menu,
   X,
 } from "lucide-react";
@@ -40,8 +32,6 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
     }
     setIsMobileMenuOpen(false);
   };
-
-  const isHomePage = location.pathname === "/";
 
   const isCurrentPage = (itemPath: string) => {
     return location.pathname === itemPath;
@@ -102,36 +92,38 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
           })}
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-white p-2"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Mobile Menu Button - ALWAYS VISIBLE ON MOBILE */}
+        <div className="md:hidden">
+          <button
+            className="text-white p-2 bg-gray-800 rounded-md"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+            style={{ minWidth: '44px', minHeight: '44px' }}
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-black border-t border-gray-800 z-50">
+        <div className="md:hidden mt-3 bg-black border-t border-gray-800">
           <div className="flex flex-col space-y-1 p-4">
             {navigationItems.map((item) => {
               const isActive = isCurrentPage(item.path);
               return (
                 <button
                   key={item.name}
-                  className={`${item.simple ? "" : "flex items-center space-x-3"} rounded-lg text-xs md:text-sm font-bold transition-colors w-full text-left ${
+                  className={`${item.simple ? "" : "flex items-center space-x-3"} rounded-lg text-sm font-bold transition-colors w-full text-left p-3 ${
                     isActive
-                      ? "bg-brand-red text-black border border-brand-red"
-                      : "text-white hover:bg-white/10 border border-transparent"
+                      ? "bg-brand-red text-black"
+                      : "text-white hover:bg-white/10"
                   }`}
                   style={{
                     ...FONT_STYLE,
                     fontWeight: "700",
                     textTransform: "uppercase",
                     letterSpacing: "0.75px",
-                    padding: "10px 12px",
                   }}
                   onClick={() => handleNavigation(item)}
                 >

@@ -507,21 +507,6 @@ export default function Playbook() {
       {/* Navigation */}
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
 
-      {/* Header */}
-      <div
-        className="bg-brand-red px-6 text-center"
-        style={{
-          backgroundColor: "rgb(249, 56, 34)",
-          fontSize: "48px",
-          fontWeight: "400",
-          lineHeight: "60px",
-          marginTop: "12px",
-          textAlign: "center",
-          pointerEvents: "auto",
-          padding: "20px 24px 32px",
-        }}
-      />
-
       {/* Content Sections */}
       <div
         className="max-w-7xl mx-auto px-8 space-y-6"

@@ -131,7 +131,7 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                     fontWeight: "700",
                     textTransform: "uppercase",
                     letterSpacing: "0.75px",
-                    padding: "12px 16px",
+                    padding: "10px 12px",
                   }}
                   onClick={() => handleNavigation(item)}
                 >

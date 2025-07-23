@@ -108,7 +108,7 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
 
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden mt-3 bg-black border-t border-gray-800">
+        <div data-mobile-menu="content" className="md:hidden mt-3 bg-black border-t border-gray-800">
           <div className="flex flex-col space-y-1 p-4">
             {navigationItems.map((item) => {
               const isActive = isCurrentPage(item.path);

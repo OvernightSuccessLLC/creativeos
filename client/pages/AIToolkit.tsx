@@ -356,11 +356,11 @@ export default function AIToolkit() {
         </div>
 
         {/* Results Count */}
-        <div className="mb-6">
-          <p className="text-black/80 text-sm md:text-base">
-            Showing {filteredAndSortedTools.length} tools
-            {selectedCategory !== "All" && ` in ${selectedCategory}`}
-            {searchTerm && ` matching "${searchTerm}"`}
+        <div className="mb-6 text-center">
+          <p className="text-black/80 text-lg font-semibold" style={FONT_STYLE}>
+            {selectedCategory === "All"
+              ? `Showing all ${filteredTools.length} tools`
+              : `${filteredTools.length} ${selectedCategory} tools`}
           </p>
         </div>
 

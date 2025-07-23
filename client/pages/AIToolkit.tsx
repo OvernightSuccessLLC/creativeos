@@ -424,27 +424,7 @@ export default function AIToolkit() {
           ))}
         </div>
 
-        {/* No Results */}
-        {filteredAndSortedTools.length === 0 && (
-          <div className="text-center py-12">
-            <div className="bg-black/10 rounded-xl p-8 max-w-md mx-auto">
-              <Zap className="w-12 h-12 text-black/60 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-black mb-2">No tools found</h3>
-              <p className="text-black/70 mb-4">
-                Try adjusting your search terms or category filter
-              </p>
-              <Button
-                onClick={() => {
-                  setSearchTerm("");
-                  setSelectedCategory("All");
-                }}
-                className="bg-black text-white hover:bg-gray-800"
-              >
-                Clear Filters
-              </Button>
-            </div>
-          </div>
-        )}
+
 
         {/* Call to Action */}
         <div className="text-center mt-12">

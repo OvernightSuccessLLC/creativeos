@@ -573,20 +573,21 @@ export default function GraphicStudio() {
                     )}
 
                     {step.id === 6 && (
-                      <div className="space-y-6">
+                      <div className="space-y-4 sm:space-y-6">
                         <div>
-                          <Label className="text-white"></Label>
-                          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
+                          <Label className="text-white text-sm sm:text-base"></Label>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-2">
                             {keywordCategories["Color & Style"].map(
                               (keyword) => (
                                 <button
                                   key={keyword}
                                   onClick={() => toggleKeyword(keyword)}
-                                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                                  className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                                     selectedKeywords.includes(keyword)
                                       ? "bg-brand-red text-black"
                                       : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
                                   }`}
+                                  style={{ minHeight: "44px" }}
                                 >
                                   {keyword}
                                 </button>
@@ -599,21 +600,21 @@ export default function GraphicStudio() {
 
                     {step.id === 7 && (
                       <div>
-                        <Label htmlFor="file-upload" className="text-white">
+                        <Label htmlFor="file-upload" className="text-white text-sm sm:text-base">
                           Upload Reference Image
                         </Label>
                         <label
                           htmlFor="file-upload"
-                          className="block border-2 border-dashed border-gray-300 rounded-lg p-6 text-center mt-2 cursor-pointer hover:border-brand-red transition-colors"
+                          className="block border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-6 text-center mt-2 cursor-pointer hover:border-brand-red transition-colors touch-manipulation"
                         >
-                          <Upload className="mx-auto h-12 w-12 text-gray-400" />
-                          <div className="mt-4">
-                            <span className="mt-2 block text-sm font-medium text-white">
+                          <Upload className="mx-auto h-10 w-10 sm:h-12 sm:w-12 text-gray-400" />
+                          <div className="mt-3 sm:mt-4">
+                            <span className="mt-2 block text-sm sm:text-base font-medium text-white">
                               {uploadedFile
                                 ? `Replace: ${uploadedFile.name}`
                                 : "Click to upload or drag and drop"}
                             </span>
-                            <span className="text-xs text-gray-400 mt-1 block">
+                            <span className="text-xs sm:text-sm text-gray-400 mt-1 block">
                               PNG, JPG, GIF up to 10MB
                             </span>
                           </div>
@@ -626,7 +627,7 @@ export default function GraphicStudio() {
                             accept="image/*"
                           />
                           {uploadedFile && (
-                            <div className="mt-4 text-sm text-green-400">
+                            <div className="mt-3 sm:mt-4 text-xs sm:text-sm text-green-400">
                               ✓ Uploaded: {uploadedFile.name} (
                               {(uploadedFile.size / 1024 / 1024).toFixed(2)} MB)
                             </div>
@@ -641,8 +642,8 @@ export default function GraphicStudio() {
           </div>
 
           {/* Right Column - AI Prompt Formula */}
-          <div className="space-y-6">
-            <Card className="border-black sticky top-6">
+          <div className="space-y-4 sm:space-y-6">
+            <Card className="border-black xl:sticky xl:top-6">
               <CardHeader className="bg-black py-4 px-4 sm:px-6">
                 <CardTitle className="text-lg sm:text-xl text-white mb-3">
                   AI Prompt Formula

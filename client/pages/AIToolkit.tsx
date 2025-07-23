@@ -366,7 +366,7 @@ export default function AIToolkit() {
 
         {/* Tools Grid - 2 columns on mobile, 3 on desktop */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {filteredAndSortedTools.map((tool) => (
+          {filteredTools.map((tool) => (
             <Card
               key={tool.id}
               className="bg-black border border-gray-800 hover:border-gray-600 transition-all duration-300 flex flex-col h-full group hover:scale-105"

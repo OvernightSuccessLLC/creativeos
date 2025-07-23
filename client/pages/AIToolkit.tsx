@@ -742,33 +742,33 @@ export default function AIToolkit() {
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
 
       {/* Tools Grid */}
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {toolsData.map((tool) => (
             <Card
               key={tool.id}
               className="bg-black border border-gray-800 hover:border-gray-700 transition-all duration-300 flex flex-col h-full"
             >
-              <CardHeader className="pb-4 flex-shrink-0">
-                <div className="flex items-start justify-between mb-3">
+              <CardHeader className="pb-3 sm:pb-4 flex-shrink-0 p-4 sm:p-6">
+                <div className="flex items-start justify-between mb-2 sm:mb-3 gap-2">
                   <Badge
-                    className={`${tool.categoryColor} text-white text-xs font-medium px-2 py-1 rounded`}
+                    className={`${tool.categoryColor} text-white text-xs font-medium px-2 py-1 rounded flex-shrink-0`}
                   >
                     {tool.category}
                   </Badge>
                   {tool.premiumBadge && (
                     <Badge
-                      className={`${tool.premiumBadgeColor} text-white text-xs font-medium px-2 py-1 rounded`}
+                      className={`${tool.premiumBadgeColor} text-white text-xs font-medium px-2 py-1 rounded flex-shrink-0`}
                     >
                       {tool.premiumBadge}
                     </Badge>
                   )}
                 </div>
                 <h3
-                  className="text-white text-xl font-semibold mb-2"
+                  className="text-white text-lg sm:text-xl font-semibold mb-2"
                   style={{
                     fontFamily: "Poppins, sans-serif",
-                    minHeight: "28px",
+                    minHeight: "24px",
                   }}
                 >
                   {tool.name}

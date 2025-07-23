@@ -505,33 +505,34 @@ export default function ProductStudio() {
 
                     {step.id === 2 && (
                       <div>
-                        <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center mt-2">
-                          <Upload className="mx-auto h-12 w-12 text-gray-400" />
-                          <div className="mt-4">
-                            <Label
-                              htmlFor="file-upload"
-                              className="cursor-pointer"
-                            >
-                              <span className="mt-2 block text-sm font-medium text-gray-900">
-                                Click to upload or drag and drop
-                              </span>
-                            </Label>
-                            <Input
-                              id="file-upload"
-                              name="file-upload"
-                              type="file"
-                              className="sr-only"
-                              onChange={handleFileUpload}
-                              accept="image/*"
-                            />
+                        <label
+                          htmlFor="file-upload"
+                          className="block border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-6 text-center mt-2 cursor-pointer hover:border-brand-red transition-colors touch-manipulation"
+                        >
+                          <Upload className="mx-auto h-10 w-10 sm:h-12 sm:w-12 text-gray-400" />
+                          <div className="mt-3 sm:mt-4">
+                            <span className="mt-2 block text-sm sm:text-base font-medium text-white">
+                              {uploadedFile ? `Replace: ${uploadedFile.name}` : "Click to upload or drag and drop"}
+                            </span>
+                            <span className="text-xs sm:text-sm text-gray-400 mt-1 block">
+                              PNG, JPG, GIF up to 10MB
+                            </span>
                           </div>
+                          <Input
+                            id="file-upload"
+                            name="file-upload"
+                            type="file"
+                            className="sr-only"
+                            onChange={handleFileUpload}
+                            accept="image/*"
+                          />
                           {uploadedFile && (
-                            <div className="mt-4 text-sm text-gray-600">
-                              Uploaded: {uploadedFile.name} (
+                            <div className="mt-3 sm:mt-4 text-xs sm:text-sm text-green-400">
+                              ✓ Uploaded: {uploadedFile.name} (
                               {(uploadedFile.size / 1024 / 1024).toFixed(2)} MB)
                             </div>
                           )}
-                        </div>
+                        </label>
                       </div>
                     )}
 

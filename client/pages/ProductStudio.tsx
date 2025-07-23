@@ -449,9 +449,10 @@ export default function ProductStudio() {
 
   return (
     <div className="min-h-screen bg-brand-red text-black">
-      {/* DEBUG: Test React events */}
+      {/* DEBUG: Test both React and native events */}
       <div style={{ position: 'fixed', top: '5px', right: '5px', zIndex: 10000 }}>
         <button
+          data-test="test-button"
           onClick={() => {
             console.log('React click works!');
             alert('React is working!');
@@ -462,10 +463,24 @@ export default function ProductStudio() {
             padding: '8px',
             border: 'none',
             borderRadius: '4px',
+            fontSize: '12px',
+            marginRight: '5px'
+          }}
+        >
+          REACT
+        </button>
+        <button
+          data-test="native-button"
+          style={{
+            background: 'blue',
+            color: 'white',
+            padding: '8px',
+            border: 'none',
+            borderRadius: '4px',
             fontSize: '12px'
           }}
         >
-          TEST
+          NATIVE
         </button>
       </div>
       <AppNavigation />
@@ -781,7 +796,7 @@ export default function ProductStudio() {
                   </h4>
                   <ul className="text-gray-600">
                     <li className="text-white font-semibold mt-1">
-                      �� Ensure lighting matches brand aesthetic
+                      • Ensure lighting matches brand aesthetic
                     </li>
                     <li className="text-white font-semibold mt-1">
                       • Add multiple angles for completeness

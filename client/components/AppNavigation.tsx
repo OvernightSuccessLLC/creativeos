@@ -53,8 +53,8 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
       style={{
         backgroundColor: "#000000",
         ...FONT_STYLE,
-        padding: "16px 20px",
-        marginBottom: "12px",
+        padding: "12px 16px",
+        marginBottom: "8px",
       }}
     >
       <div className="flex items-center justify-between max-w-7xl mx-auto">

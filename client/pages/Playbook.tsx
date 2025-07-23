@@ -481,7 +481,7 @@ export default function Playbook() {
       >
         {sections.map((section) => (
           <Card key={section.id} className="bg-black border-none">
-            <CardHeader className="bg-black p-4">
+            <CardHeader className="bg-black" style={{ padding: "16px 16px 12px" }}>
               <CardTitle
                 className="text-white text-lg flex items-center space-x-2"
                 style={TYPOGRAPHY.subtitle}
@@ -517,14 +517,8 @@ export default function Playbook() {
                       </div>
                     ))}
                   </div>
-                  <div className="bg-gray-900 rounded p-4 space-y-3">
-                    <h4
-                      className="text-brand-red font-bold"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      Example Progression
-                    </h4>
-                    <div className="space-y-2">
+                  <div className="bg-gray-900 rounded space-y-3" style={{ marginTop: "8px", padding: "8px 16px 16px" }}>
+                    <div className="space-y-2" style={{ marginTop: "12px" }}>
                       <div>
                         <span className="text-brand-red font-semibold text-sm">
                           Beginner:
@@ -756,13 +750,7 @@ export default function Playbook() {
               {/* Section 7: Prompt Vault */}
               {section.id === 7 && (
                 <div className="space-y-6">
-                  <p
-                    className="text-white leading-relaxed"
-                    style={TYPOGRAPHY.body}
-                  >
-                    {section.content.description}
-                  </p>
-                  <div className="space-y-4">
+                  <div className="space-y-4" style={{ marginTop: "24px" }}>
                     {section.content.steps.map((step, idx) => (
                       <div key={idx} className="bg-gray-900 rounded p-4">
                         <div className="flex items-start space-x-3">

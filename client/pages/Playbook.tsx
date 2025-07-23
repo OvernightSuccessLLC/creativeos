@@ -638,7 +638,7 @@ export default function Playbook() {
               {/* Section 3: Key Components */}
               {section.id === 3 && (
                 <div className="space-y-4 md:space-y-6">
-                  <div className="bg-gray-900 rounded p-4">
+                  <div className="bg-gray-900 rounded p-3 md:p-4">
                     <h4
                       className="text-brand-red font-bold mb-3"
                       style={TYPOGRAPHY.heading}
@@ -707,7 +707,7 @@ export default function Playbook() {
                       </div>
                     ))}
                   </div>
-                  <div className="bg-gray-900 rounded p-4">
+                  <div className="bg-gray-900 rounded p-3 md:p-4">
                     <h4
                       className="text-brand-red font-bold mb-3"
                       style={TYPOGRAPHY.heading}
@@ -752,7 +752,7 @@ export default function Playbook() {
                       </div>
                     ))}
                   </div>
-                  <div className="bg-gray-900 rounded p-4">
+                  <div className="bg-gray-900 rounded p-3 md:p-4">
                     <h4
                       className="text-brand-red font-bold mb-3"
                       style={TYPOGRAPHY.heading}
@@ -842,7 +842,7 @@ export default function Playbook() {
                       </div>
                     ))}
                   </div>
-                  <div className="bg-gray-900 rounded p-4">
+                  <div className="bg-gray-900 rounded p-3 md:p-4">
                     <h4
                       className="text-brand-red font-bold mb-3"
                       style={TYPOGRAPHY.heading}
@@ -875,7 +875,7 @@ export default function Playbook() {
                   </p>
                   <div className="space-y-3 md:space-y-4">
                     {section.content.steps.map((step, idx) => (
-                      <div key={idx} className="bg-gray-900 rounded p-4">
+                      <div key={idx} className="bg-gray-900 rounded p-3 md:p-4">
                         <div className="flex items-start space-x-3">
                           <span className="bg-brand-red text-black rounded-full w-7 h-7 flex items-center justify-center text-xs font-bold mt-1">
                             {idx + 1}
@@ -906,7 +906,7 @@ export default function Playbook() {
                       </div>
                     ))}
                   </div>
-                  <div className="bg-gray-900 rounded p-4">
+                  <div className="bg-gray-900 rounded p-3 md:p-4">
                     <h4
                       className="text-brand-red font-bold mb-3"
                       style={TYPOGRAPHY.heading}

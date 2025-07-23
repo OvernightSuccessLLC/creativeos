@@ -514,21 +514,21 @@ export default function Playbook() {
       >
         {sections.map((section) => (
           <Card key={section.id} className="bg-black border-none">
-            <CardHeader className="bg-black p-4">
+            <CardHeader className="bg-black p-3 md:p-4">
               <CardTitle
-                className="text-white text-lg flex items-center space-x-2"
+                className="text-white text-base md:text-lg flex items-center space-x-2"
                 style={TYPOGRAPHY.subtitle}
               >
                 <span
-                  className="bg-brand-red text-black rounded px-2 py-1 text-sm font-semibold"
+                  className="bg-brand-red text-black rounded px-2 py-1 text-xs md:text-sm font-semibold flex-shrink-0"
                   style={TYPOGRAPHY.heading}
                 >
                   {section.id}.
                 </span>
-                <span>{section.title}</span>
+                <span className="break-words">{section.title}</span>
               </CardTitle>
             </CardHeader>
-            <CardContent className="bg-black px-6 pb-6">
+            <CardContent className="bg-black px-3 md:px-6 pb-4 md:pb-6">
               {/* Section 1: Introduction */}
               {section.id === 1 && (
                 <div className="space-y-6">

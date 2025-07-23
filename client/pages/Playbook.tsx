@@ -582,7 +582,7 @@ export default function Playbook() {
                 <div className="space-y-4 md:space-y-6">
                   <div className="space-y-3 md:space-y-4">
                     {section.content.principles.map((principle, idx) => (
-                      <div key={idx} className="space-y-2">
+                      <div key={idx} className="space-y-1 md:space-y-2">
                         <h4
                           className="text-brand-red font-bold"
                           style={TYPOGRAPHY.heading}
@@ -605,7 +605,7 @@ export default function Playbook() {
                     >
                       Example Progression
                     </h4>
-                    <div className="space-y-2">
+                    <div className="space-y-1 md:space-y-2">
                       <div>
                         <span className="text-brand-red font-semibold text-sm">
                           Beginner:
@@ -657,7 +657,7 @@ export default function Playbook() {
                   </div>
                   <div className="space-y-3 md:space-y-4">
                     {section.content.components.map((component, idx) => (
-                      <div key={idx} className="space-y-2">
+                      <div key={idx} className="space-y-1 md:space-y-2">
                         <h4
                           className="text-brand-red font-bold"
                           style={TYPOGRAPHY.heading}
@@ -686,7 +686,7 @@ export default function Playbook() {
                 <div className="space-y-4 md:space-y-6">
                   <div className="space-y-3 md:space-y-4">
                     {section.content.characteristics.map((char, idx) => (
-                      <div key={idx} className="space-y-2">
+                      <div key={idx} className="space-y-1 md:space-y-2">
                         <h4
                           className="text-brand-red font-bold"
                           style={TYPOGRAPHY.heading}
@@ -729,7 +729,7 @@ export default function Playbook() {
                 <div className="space-y-4 md:space-y-6">
                   <div className="space-y-3 md:space-y-4">
                     {section.content.techniques.map((technique, idx) => (
-                      <div key={idx} className="space-y-2">
+                      <div key={idx} className="space-y-1 md:space-y-2">
                         <h4
                           className="text-brand-red font-bold"
                           style={TYPOGRAPHY.heading}
@@ -819,7 +819,7 @@ export default function Playbook() {
                 <div className="space-y-4 md:space-y-6">
                   <div className="space-y-3 md:space-y-4">
                     {section.content.techniques.map((technique, idx) => (
-                      <div key={idx} className="space-y-2">
+                      <div key={idx} className="space-y-1 md:space-y-2">
                         <h4
                           className="text-brand-red font-bold"
                           style={TYPOGRAPHY.heading}
@@ -849,7 +849,7 @@ export default function Playbook() {
                     >
                       Edit Sequence Example
                     </h4>
-                    <div className="space-y-2">
+                    <div className="space-y-1 md:space-y-2">
                       {section.content.exampleSequence.map((step, idx) => (
                         <p
                           key={idx}
@@ -880,7 +880,7 @@ export default function Playbook() {
                           <span className="bg-brand-red text-black rounded-full w-7 h-7 flex items-center justify-center text-xs font-bold mt-1">
                             {idx + 1}
                           </span>
-                          <div className="space-y-2">
+                          <div className="space-y-1 md:space-y-2">
                             <h4
                               className="text-brand-red font-bold text-sm"
                               style={TYPOGRAPHY.heading}
@@ -913,7 +913,7 @@ export default function Playbook() {
                     >
                       Pro Tips
                     </h4>
-                    <div className="space-y-2">
+                    <div className="space-y-1 md:space-y-2">
                       {section.content.proTips.map((tip, idx) => (
                         <p
                           key={idx}

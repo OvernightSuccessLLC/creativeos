@@ -509,8 +509,8 @@ export default function Playbook() {
 
       {/* Content Sections */}
       <div
-        className="max-w-7xl mx-auto px-8 space-y-6"
-        style={{ padding: "0 32px 32px" }}
+        className="max-w-7xl mx-auto px-4 md:px-8 space-y-4 md:space-y-6"
+        style={{ padding: "0 16px 32px" }}
       >
         {sections.map((section) => (
           <Card key={section.id} className="bg-black border-none">

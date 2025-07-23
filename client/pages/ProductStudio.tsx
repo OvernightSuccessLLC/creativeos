@@ -38,6 +38,33 @@ export default function ProductStudio() {
   const [showBriefcase, setShowBriefcase] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
+  // Force event handlers to work with native DOM events
+  useEffect(() => {
+    const testButton = document.querySelector('[data-test="test-button"]');
+    if (testButton) {
+      testButton.addEventListener('click', () => {
+        console.log('Native click works!');
+        alert('Native DOM event works!');
+      });
+    }
+
+    // Add mobile menu toggle
+    const mobileMenuButton = document.querySelector('[data-mobile-menu="toggle"]');
+    if (mobileMenuButton) {
+      mobileMenuButton.addEventListener('click', () => {
+        const menu = document.querySelector('[data-mobile-menu="content"]');
+        if (menu) {
+          menu.classList.toggle('hidden');
+        }
+      });
+    }
+
+    return () => {
+      testButton?.removeEventListener('click', () => {});
+      mobileMenuButton?.removeEventListener('click', () => {});
+    };
+  }, []);
+
   // Prompt Builder State
   const [activeStep, setActiveStep] = useState<number | null>(1);
   const [customInstructions, setCustomInstructions] = useState("");
@@ -754,7 +781,7 @@ export default function ProductStudio() {
                   </h4>
                   <ul className="text-gray-600">
                     <li className="text-white font-semibold mt-1">
-                      • Ensure lighting matches brand aesthetic
+                      �� Ensure lighting matches brand aesthetic
                     </li>
                     <li className="text-white font-semibold mt-1">
                       • Add multiple angles for completeness

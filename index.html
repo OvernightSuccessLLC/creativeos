@@ -3,11 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello world project</title>
+    <title>Creative Director OS - AI Toolkit</title>
   </head>
 
   <body>
     <div id="root"></div>
+
+    <!-- Netlify form for email capture -->
+    <form name="email-capture" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+    </form>
 
     <script type="module" src="/client/App.tsx"></script>
   </body>

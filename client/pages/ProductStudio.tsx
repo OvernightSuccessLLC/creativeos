@@ -645,8 +645,8 @@ export default function ProductStudio() {
           </div>
 
           {/* Right Column - AI Prompt Formula */}
-          <div className="space-y-6">
-            <Card className="border-black sticky top-6">
+          <div className="space-y-4 sm:space-y-6">
+            <Card className="border-black xl:sticky xl:top-6">
               <CardHeader className="bg-black py-4 px-4 sm:px-6">
                 <CardTitle className="text-lg sm:text-xl text-white mb-3">
                   AI Prompt Formula

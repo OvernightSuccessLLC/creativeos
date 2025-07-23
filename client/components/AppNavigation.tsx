@@ -49,7 +49,7 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
 
   return (
     <nav
-      className="border-0"
+      className="border-0 relative"
       style={{
         backgroundColor: "#000000",
         ...FONT_STYLE,

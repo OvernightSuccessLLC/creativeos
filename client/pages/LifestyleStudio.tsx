@@ -655,16 +655,17 @@ export default function LifestyleStudio() {
                     )}
 
                     {step.id === 7 && (
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                         {keywordCategories["Camera Angle"].map((keyword) => (
                           <button
                             key={keyword}
                             onClick={() => toggleKeyword(keyword)}
-                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                            className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                               selectedKeywords.includes(keyword)
                                 ? "bg-brand-red text-black"
                                 : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                             }`}
+                            style={{ minHeight: "44px" }}
                           >
                             {keyword}
                           </button>
@@ -673,16 +674,17 @@ export default function LifestyleStudio() {
                     )}
 
                     {step.id === 8 && (
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                         {keywordCategories["Intended Use"].map((keyword) => (
                           <button
                             key={keyword}
                             onClick={() => toggleKeyword(keyword)}
-                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                            className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                               selectedKeywords.includes(keyword)
                                 ? "bg-brand-red text-black"
                                 : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                             }`}
+                            style={{ minHeight: "44px" }}
                           >
                             {keyword}
                           </button>
@@ -692,16 +694,17 @@ export default function LifestyleStudio() {
 
                     {step.id === 9 && (
                       <div>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-2">
                           {keywordCategories["Finishing"].map((keyword) => (
                             <button
                               key={keyword}
                               onClick={() => toggleKeyword(keyword)}
-                              className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                              className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                                 selectedKeywords.includes(keyword)
                                   ? "bg-brand-red text-black"
                                   : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                               }`}
+                              style={{ minHeight: "44px" }}
                             >
                               {keyword}
                             </button>
@@ -716,8 +719,8 @@ export default function LifestyleStudio() {
           </div>
 
           {/* Right Column - AI Prompt Formula */}
-          <div className="space-y-6">
-            <Card className="border-black sticky top-6">
+          <div className="space-y-4 sm:space-y-6">
+            <Card className="border-black xl:sticky xl:top-6">
               <CardHeader className="bg-black py-4 px-4 sm:px-6">
                 <CardTitle className="text-lg sm:text-xl text-white mb-3">
                   AI Prompt Formula

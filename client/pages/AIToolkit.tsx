@@ -283,31 +283,21 @@ export default function AIToolkit() {
     "Productivity": Briefcase,
   };
 
-  const filteredAndSortedTools = useMemo(() => {
+  const filteredTools = useMemo(() => {
     let filtered = toolsData.filter(tool => {
-      const matchesSearch = tool.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           tool.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           tool.keyFeatures.some(feature => feature.toLowerCase().includes(searchTerm.toLowerCase()));
-      const matchesCategory = selectedCategory === "All" || tool.category === selectedCategory;
-      return matchesSearch && matchesCategory;
+      return selectedCategory === "All" || tool.category === selectedCategory;
     });
 
-    switch (sortBy) {
-      case "name":
-        filtered.sort((a, b) => a.name.localeCompare(b.name));
-        break;
-      case "category":
-        filtered.sort((a, b) => a.category.localeCompare(b.category));
-        break;
-      case "rating":
-        filtered.sort((a, b) => b.rating - a.rating);
-        break;
-      default:
-        break;
-    }
+    // Sort by rating (highest first), then by name
+    filtered.sort((a, b) => {
+      if (b.rating !== a.rating) {
+        return b.rating - a.rating;
+      }
+      return a.name.localeCompare(b.name);
+    });
 
     return filtered;
-  }, [toolsData, searchTerm, selectedCategory, sortBy]);
+  }, [selectedCategory]);
 
   const handleVisitTool = (url: string) => {
     window.open(url, "_blank");

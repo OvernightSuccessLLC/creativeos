@@ -497,8 +497,9 @@ export default function ProductStudio() {
                           onChange={(e) =>
                             setCustomInstructions(e.target.value)
                           }
-                          className="mt-1"
-                          rows={4}
+                          className="mt-1 text-sm sm:text-base"
+                          rows={3}
+                          style={{ minHeight: "100px" }}
                         />
                       </div>
                     )}

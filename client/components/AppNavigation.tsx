@@ -95,6 +95,7 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
         {/* Mobile Menu Button - ALWAYS VISIBLE ON MOBILE */}
         <div className="md:hidden">
           <button
+            data-mobile-menu="toggle"
             className="text-white p-2 bg-gray-800 rounded-md"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"

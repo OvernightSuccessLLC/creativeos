@@ -460,9 +460,10 @@ export default function ProductStudio() {
               <Card key={step.id} className="border-black bg-black">
                 <CardHeader
                   className="cursor-pointer bg-black"
-                  onClick={() =>
-                    setActiveStep(activeStep === step.id ? null : step.id)
-                  }
+                  onClick={() => {
+                    console.log('Card clicked:', step.id);
+                    setActiveStep(activeStep === step.id ? null : step.id);
+                  }}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">

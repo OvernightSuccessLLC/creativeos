@@ -121,7 +121,7 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
               return (
                 <button
                   key={item.name}
-                  className={`${item.simple ? "" : "flex items-center space-x-3"} rounded-lg text-sm font-bold transition-colors w-full text-left ${
+                  className={`${item.simple ? "" : "flex items-center space-x-3"} rounded-lg text-xs md:text-sm font-bold transition-colors w-full text-left ${
                     isActive
                       ? "bg-brand-red text-black border border-brand-red"
                       : "text-white hover:bg-white/10 border border-transparent"

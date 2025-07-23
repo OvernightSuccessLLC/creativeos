@@ -26,9 +26,7 @@ const FONT_STYLE = { fontFamily: "Poppins, sans-serif" };
 export default function AIToolkit() {
   const navigate = useNavigate();
   const [showBriefcase, setShowBriefcase] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [sortBy, setSortBy] = useState("name");
 
   const toolsData = [
     {

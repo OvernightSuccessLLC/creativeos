@@ -422,6 +422,25 @@ export default function ProductStudio() {
 
   return (
     <div className="min-h-screen bg-brand-red text-black">
+      {/* DEBUG: Test React events */}
+      <div style={{ position: 'fixed', top: '5px', right: '5px', zIndex: 10000 }}>
+        <button
+          onClick={() => {
+            console.log('React click works!');
+            alert('React is working!');
+          }}
+          style={{
+            background: 'green',
+            color: 'white',
+            padding: '8px',
+            border: 'none',
+            borderRadius: '4px',
+            fontSize: '12px'
+          }}
+        >
+          TEST
+        </button>
+      </div>
       <AppNavigation />
 
       {/* HOW IT WORKS Section */}

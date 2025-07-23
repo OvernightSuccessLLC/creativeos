@@ -670,7 +670,7 @@ export default function Playbook() {
                         >
                           {component.description}
                         </p>
-                        <div className="bg-gray-900 rounded p-3">
+                        <div className="bg-gray-900 rounded p-2 md:p-3">
                           <p className="text-gray-300 text-xs italic">
                             {component.example}
                           </p>
@@ -699,7 +699,7 @@ export default function Playbook() {
                         >
                           {char.description}
                         </p>
-                        <div className="bg-gray-900 rounded p-3">
+                        <div className="bg-gray-900 rounded p-2 md:p-3">
                           <p className="text-gray-300 text-xs italic">
                             {char.example}
                           </p>
@@ -744,7 +744,7 @@ export default function Playbook() {
                             {technique.description}
                           </p>
                         )}
-                        <div className="bg-gray-900 rounded p-3">
+                        <div className="bg-gray-900 rounded p-2 md:p-3">
                           <p className="text-gray-300 text-xs italic">
                             {technique.example}
                           </p>
@@ -800,7 +800,7 @@ export default function Playbook() {
                             </p>
                           ))}
                         </div>
-                        <div className="bg-gray-900 rounded p-3">
+                        <div className="bg-gray-900 rounded p-2 md:p-3">
                           <p
                             className="text-white italic text-xs"
                             style={TYPOGRAPHY.body}
@@ -834,7 +834,7 @@ export default function Playbook() {
                             {technique.description}
                           </p>
                         )}
-                        <div className="bg-gray-900 rounded p-3">
+                        <div className="bg-gray-900 rounded p-2 md:p-3">
                           <p className="text-gray-300 text-xs italic">
                             {technique.example}
                           </p>

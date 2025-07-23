@@ -491,35 +491,35 @@ export default function LifestyleStudio() {
             {steps.map((step) => (
               <Card key={step.id} className="border-black bg-black">
                 <CardHeader
-                  className="cursor-pointer bg-black"
+                  className="cursor-pointer bg-black p-4 sm:p-6"
                   onClick={() =>
                     setActiveStep(activeStep === step.id ? null : step.id)
                   }
                 >
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      <div className="bg-brand-red text-black rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">
+                    <div className="flex items-center space-x-2 sm:space-x-3 flex-1 min-w-0">
+                      <div className="bg-brand-red text-black rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center font-bold text-xs sm:text-sm flex-shrink-0">
                         {step.id}
                       </div>
-                      <div>
-                        <CardTitle className="text-lg text-white">
+                      <div className="min-w-0 flex-1">
+                        <CardTitle className="text-sm sm:text-lg text-white truncate">
                           {step.title}
                         </CardTitle>
-                        <p className="text-gray-600 text-sm">
+                        <p className="text-gray-600 text-xs sm:text-sm hidden sm:block">
                           {step.description}
                         </p>
                       </div>
                     </div>
                     {activeStep === step.id ? (
-                      <ChevronUp className="w-4 h-4 text-white" />
+                      <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-white flex-shrink-0" />
                     ) : (
-                      <ChevronDown className="w-4 h-4 text-white" />
+                      <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white flex-shrink-0" />
                     )}
                   </div>
                 </CardHeader>
 
                 {activeStep === step.id && (
-                  <CardContent className="space-y-4 bg-black">
+                  <CardContent className="space-y-3 sm:space-y-4 bg-black p-4 sm:p-6">
                     {step.id === 1 && (
                       <div>
                         <Textarea
@@ -529,8 +529,9 @@ export default function LifestyleStudio() {
                           onChange={(e) =>
                             setCustomInstructions(e.target.value)
                           }
-                          className="mt-1"
-                          rows={4}
+                          className="mt-1 text-sm sm:text-base"
+                          rows={3}
+                          style={{ minHeight: "100px" }}
                         />
                       </div>
                     )}

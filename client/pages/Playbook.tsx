@@ -580,7 +580,7 @@ export default function Playbook() {
               {/* Section 2: Basics of Prompting */}
               {section.id === 2 && (
                 <div className="space-y-4 md:space-y-6">
-                  <div className="space-y-4">
+                  <div className="space-y-3 md:space-y-4">
                     {section.content.principles.map((principle, idx) => (
                       <div key={idx} className="space-y-2">
                         <h4
@@ -655,7 +655,7 @@ export default function Playbook() {
                       {section.content.description}
                     </p>
                   </div>
-                  <div className="space-y-4">
+                  <div className="space-y-3 md:space-y-4">
                     {section.content.components.map((component, idx) => (
                       <div key={idx} className="space-y-2">
                         <h4
@@ -684,7 +684,7 @@ export default function Playbook() {
               {/* Section 4: Lifestyle Photography */}
               {section.id === 4 && (
                 <div className="space-y-4 md:space-y-6">
-                  <div className="space-y-4">
+                  <div className="space-y-3 md:space-y-4">
                     {section.content.characteristics.map((char, idx) => (
                       <div key={idx} className="space-y-2">
                         <h4
@@ -727,7 +727,7 @@ export default function Playbook() {
               {/* Section 5: Product Photography */}
               {section.id === 5 && (
                 <div className="space-y-4 md:space-y-6">
-                  <div className="space-y-4">
+                  <div className="space-y-3 md:space-y-4">
                     {section.content.techniques.map((technique, idx) => (
                       <div key={idx} className="space-y-2">
                         <h4
@@ -817,7 +817,7 @@ export default function Playbook() {
               {/* Section 7: Scene Regeneration */}
               {section.id === 7 && (
                 <div className="space-y-4 md:space-y-6">
-                  <div className="space-y-4">
+                  <div className="space-y-3 md:space-y-4">
                     {section.content.techniques.map((technique, idx) => (
                       <div key={idx} className="space-y-2">
                         <h4
@@ -873,7 +873,7 @@ export default function Playbook() {
                   >
                     {section.content.description}
                   </p>
-                  <div className="space-y-4">
+                  <div className="space-y-3 md:space-y-4">
                     {section.content.steps.map((step, idx) => (
                       <div key={idx} className="bg-gray-900 rounded p-4">
                         <div className="flex items-start space-x-3">
@@ -930,7 +930,7 @@ export default function Playbook() {
 
               {/* Section 9: Warnings */}
               {section.id === 9 && (
-                <div className="space-y-4">
+                <div className="space-y-3 md:space-y-4">
                   {section.content.warnings.map((warning, idx) => (
                     <div
                       key={idx}

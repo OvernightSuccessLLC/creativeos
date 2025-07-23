@@ -457,10 +457,10 @@ export default function LifestyleStudio() {
       <AppNavigation />
 
       {/* HOW IT WORKS Section */}
-      <div className="px-6 mb-8 pt-6">
+      <div className="px-4 sm:px-6 mb-6 sm:mb-8 pt-4 sm:pt-6">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-black rounded-lg py-5 px-6">
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div className="bg-black rounded-lg py-3 sm:py-5 px-4 sm:px-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
               {[
                 "Add Custom Instructions",
                 "Define Mood & Subject",
@@ -484,10 +484,10 @@ export default function LifestyleStudio() {
       </div>
 
       {/* Main Content Grid */}
-      <div className="px-6 pb-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="px-4 sm:px-6 pb-6 sm:pb-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {/* Left Column - Steps */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="xl:col-span-2 space-y-3 sm:space-y-4">
             {steps.map((step) => (
               <Card key={step.id} className="border-black bg-black">
                 <CardHeader

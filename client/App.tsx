@@ -29,14 +29,9 @@ function App() {
         <Sonner />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<ProductStudio />} />
-            <Route path="/lifestyle-studio" element={<LifestyleStudio />} />
-            <Route path="/graphic-studio" element={<GraphicStudio />} />
+            <Route path="/" element={<Landing />} />
             <Route path="/playbook" element={<Playbook />} />
-            <Route path="/templates" element={<Templates />} />
             <Route path="/ai-toolkit" element={<AIToolkit />} />
-            <Route path="/updates" element={<Updates />} />
-            <Route path="/join" element={<PaywallLanding />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

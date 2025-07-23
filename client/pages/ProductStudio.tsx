@@ -40,9 +40,9 @@ export default function ProductStudio() {
 
   // Force event handlers to work with native DOM events
   useEffect(() => {
-    const testButton = document.querySelector('[data-test="test-button"]');
-    if (testButton) {
-      testButton.addEventListener('click', () => {
+    const nativeButton = document.querySelector('[data-test="native-button"]');
+    if (nativeButton) {
+      nativeButton.addEventListener('click', () => {
         console.log('Native click works!');
         alert('Native DOM event works!');
       });

@@ -531,7 +531,7 @@ export default function Playbook() {
             <CardContent className="bg-black px-3 md:px-6 pb-4 md:pb-6">
               {/* Section 1: Introduction */}
               {section.id === 1 && (
-                <div className="space-y-6">
+                <div className="space-y-4 md:space-y-6">
                   <div className="space-y-3">
                     <h4
                       className="text-brand-red font-bold"
@@ -579,7 +579,7 @@ export default function Playbook() {
 
               {/* Section 2: Basics of Prompting */}
               {section.id === 2 && (
-                <div className="space-y-6">
+                <div className="space-y-4 md:space-y-6">
                   <div className="space-y-4">
                     {section.content.principles.map((principle, idx) => (
                       <div key={idx} className="space-y-2">
@@ -637,7 +637,7 @@ export default function Playbook() {
 
               {/* Section 3: Key Components */}
               {section.id === 3 && (
-                <div className="space-y-6">
+                <div className="space-y-4 md:space-y-6">
                   <div className="bg-gray-900 rounded p-4">
                     <h4
                       className="text-brand-red font-bold mb-3"
@@ -683,7 +683,7 @@ export default function Playbook() {
 
               {/* Section 4: Lifestyle Photography */}
               {section.id === 4 && (
-                <div className="space-y-6">
+                <div className="space-y-4 md:space-y-6">
                   <div className="space-y-4">
                     {section.content.characteristics.map((char, idx) => (
                       <div key={idx} className="space-y-2">
@@ -726,7 +726,7 @@ export default function Playbook() {
 
               {/* Section 5: Product Photography */}
               {section.id === 5 && (
-                <div className="space-y-6">
+                <div className="space-y-4 md:space-y-6">
                   <div className="space-y-4">
                     {section.content.techniques.map((technique, idx) => (
                       <div key={idx} className="space-y-2">
@@ -771,7 +771,7 @@ export default function Playbook() {
 
               {/* Section 6: Graphics & Design */}
               {section.id === 6 && (
-                <div className="space-y-6">
+                <div className="space-y-4 md:space-y-6">
                   <div className="space-y-5">
                     {section.content.categories.map((category, idx) => (
                       <div key={idx} className="space-y-3">
@@ -816,7 +816,7 @@ export default function Playbook() {
 
               {/* Section 7: Scene Regeneration */}
               {section.id === 7 && (
-                <div className="space-y-6">
+                <div className="space-y-4 md:space-y-6">
                   <div className="space-y-4">
                     {section.content.techniques.map((technique, idx) => (
                       <div key={idx} className="space-y-2">
@@ -866,7 +866,7 @@ export default function Playbook() {
 
               {/* Section 8: Prompt Vault */}
               {section.id === 8 && (
-                <div className="space-y-6">
+                <div className="space-y-4 md:space-y-6">
                   <p
                     className="text-white leading-relaxed"
                     style={TYPOGRAPHY.body}

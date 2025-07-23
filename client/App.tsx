@@ -7,15 +7,10 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ProductStudio from "./pages/ProductStudio";
+import Landing from "./pages/Landing";
 import Playbook from "./pages/Playbook";
-import Templates from "./pages/Templates";
 import AIToolkit from "./pages/AIToolkit";
-import Updates from "./pages/Updates";
-import PaywallLanding from "./pages/PaywallLanding";
 import NotFound from "./pages/NotFound";
-import LifestyleStudio from "./pages/LifestyleStudio";
-import GraphicStudio from "./pages/GraphicStudio";
 
 const queryClient = new QueryClient({
   defaultOptions: {

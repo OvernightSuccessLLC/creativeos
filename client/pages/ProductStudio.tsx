@@ -424,16 +424,6 @@ export default function ProductStudio() {
     <div className="min-h-screen bg-brand-red text-black">
       <AppNavigation />
 
-      {/* DEBUG TEST BUTTON */}
-      <div style={{ position: 'fixed', top: '10px', right: '10px', zIndex: 9999 }}>
-        <button
-          onClick={() => alert('React is working!')}
-          style={{ background: 'green', color: 'white', padding: '10px', border: 'none', borderRadius: '5px' }}
-        >
-          TEST CLICK
-        </button>
-      </div>
-
       {/* HOW IT WORKS Section */}
       <div className="px-6 mb-8 pt-6">
         <div className="max-w-7xl mx-auto">

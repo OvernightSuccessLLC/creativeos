@@ -60,7 +60,7 @@ export default function ProductStudio() {
     }
 
     return () => {
-      testButton?.removeEventListener('click', () => {});
+      nativeButton?.removeEventListener('click', () => {});
       mobileMenuButton?.removeEventListener('click', () => {});
     };
   }, []);

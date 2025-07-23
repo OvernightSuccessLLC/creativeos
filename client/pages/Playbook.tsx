@@ -483,19 +483,19 @@ export default function Playbook() {
           <Card key={section.id} className="bg-black border-none">
             <CardHeader className="bg-black" style={{ padding: "16px 16px 12px" }}>
               <CardTitle
-                className="text-white text-lg flex items-center space-x-2"
+                className="text-white text-base sm:text-lg flex items-center space-x-2"
                 style={TYPOGRAPHY.subtitle}
               >
                 <span
-                  className="bg-brand-red text-black rounded px-2 py-1 text-sm font-semibold"
+                  className="bg-brand-red text-black rounded px-2 py-1 text-xs sm:text-sm font-semibold flex-shrink-0"
                   style={TYPOGRAPHY.heading}
                 >
                   {section.id}.
                 </span>
-                <span>{section.title}</span>
+                <span className="truncate text-sm sm:text-base">{section.title}</span>
               </CardTitle>
             </CardHeader>
-            <CardContent className="bg-black px-6 pb-6">
+            <CardContent className="bg-black px-4 sm:px-6 pb-4 sm:pb-6">
               {/* Section 1: Basics of Prompting */}
               {section.id === 1 && (
                 <div className="space-y-6">

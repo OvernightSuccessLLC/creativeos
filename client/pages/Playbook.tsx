@@ -540,7 +540,7 @@ export default function Playbook() {
                       How It Works
                     </h4>
                     <p
-                      className="text-white leading-relaxed text-sm"
+                      className="text-white leading-relaxed text-xs md:text-sm"
                       style={TYPOGRAPHY.body}
                     >
                       {section.content.howItWorks}
@@ -554,7 +554,7 @@ export default function Playbook() {
                       Why Special
                     </h4>
                     <p
-                      className="text-white leading-relaxed text-sm"
+                      className="text-white leading-relaxed text-xs md:text-sm"
                       style={TYPOGRAPHY.body}
                     >
                       {section.content.whySpecial}
@@ -568,7 +568,7 @@ export default function Playbook() {
                       Who This Is For
                     </h4>
                     <p
-                      className="text-white leading-relaxed text-sm"
+                      className="text-white leading-relaxed text-xs md:text-sm"
                       style={TYPOGRAPHY.body}
                     >
                       {section.content.whoFor}
@@ -590,7 +590,7 @@ export default function Playbook() {
                           {principle.title}
                         </h4>
                         <p
-                          className="text-white leading-relaxed text-sm"
+                          className="text-white leading-relaxed text-xs md:text-sm"
                           style={TYPOGRAPHY.body}
                         >
                           {principle.description}
@@ -665,7 +665,7 @@ export default function Playbook() {
                           {component.name}
                         </h4>
                         <p
-                          className="text-white leading-relaxed text-sm"
+                          className="text-white leading-relaxed text-xs md:text-sm"
                           style={TYPOGRAPHY.body}
                         >
                           {component.description}
@@ -694,7 +694,7 @@ export default function Playbook() {
                           {char.title}
                         </h4>
                         <p
-                          className="text-white leading-relaxed text-sm"
+                          className="text-white leading-relaxed text-xs md:text-sm"
                           style={TYPOGRAPHY.body}
                         >
                           {char.description}
@@ -738,7 +738,7 @@ export default function Playbook() {
                         </h4>
                         {technique.title !== "Isolate the Product" && (
                           <p
-                            className="text-white leading-relaxed text-sm"
+                            className="text-white leading-relaxed text-xs md:text-sm"
                             style={TYPOGRAPHY.body}
                           >
                             {technique.description}
@@ -783,7 +783,7 @@ export default function Playbook() {
                         </h4>
                         {category.title !== "Logo Creation" && (
                           <p
-                            className="text-white leading-relaxed text-sm"
+                            className="text-white leading-relaxed text-xs md:text-sm"
                             style={TYPOGRAPHY.body}
                           >
                             {category.description}
@@ -828,7 +828,7 @@ export default function Playbook() {
                         </h4>
                         {technique.title !== "Identify Elements Clearly" && (
                           <p
-                            className="text-white leading-relaxed text-sm"
+                            className="text-white leading-relaxed text-xs md:text-sm"
                             style={TYPOGRAPHY.body}
                           >
                             {technique.description}

@@ -424,11 +424,12 @@ export default function Templates() {
         style={{ backgroundColor: "#f93921" }}
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-          {filteredTemplates.map((template) => (
-            <Card
-              key={template.id}
-              className="bg-black border border-gray-800 hover:border-brand-red transition-colors"
-            >
+          {filteredTemplates.map((template) => {
+            const TemplateCard = (
+              <Card
+                key={template.id}
+                className="bg-black border border-gray-800 hover:border-brand-red transition-colors"
+              >
               <CardHeader className="p-4 sm:p-6">
                 <div className="flex items-start justify-between">
                   <div className="flex-1 min-w-0">
@@ -472,7 +473,24 @@ export default function Templates() {
                 </div>
               </CardContent>
             </Card>
-          ))}
+            );
+
+            // Wrap premium templates with protection
+            if (template.premium) {
+              return (
+                <ProtectedFeature
+                  key={template.id}
+                  feature="exclusiveTemplates"
+                  featureName="Premium Template"
+                  requiredPlan="pro"
+                >
+                  {TemplateCard}
+                </ProtectedFeature>
+              );
+            }
+
+            return TemplateCard;
+          })}
         </div>
 
         {filteredTemplates.length === 0 && (

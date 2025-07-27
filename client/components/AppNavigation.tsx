@@ -1,6 +1,8 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { useState, useEffect } from "react";
+import { useAuth } from "@/contexts/AuthContext";
 import {
   Bell,
   BookOpen,
@@ -30,6 +32,7 @@ const FONT_STYLE = { fontFamily: "Poppins, sans-serif" };
 export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
   const navigate = useNavigate();
   const location = useLocation();
+  const { user, logout } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 

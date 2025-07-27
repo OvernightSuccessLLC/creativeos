@@ -70,34 +70,16 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
 
   const allPages = [
     {
-      name: "Product Studio",
-      icon: Camera,
+      name: "Landing",
+      icon: Home,
       path: "/",
-      description: "Professional product photography prompts",
-    },
-    {
-      name: "Lifestyle Studio",
-      icon: Users,
-      path: "/lifestyle-studio",
-      description: "Authentic lifestyle photography",
-    },
-    {
-      name: "Graphic Studio",
-      icon: Palette,
-      path: "/graphic-studio",
-      description: "Custom graphics and design",
+      description: "Get started with AI tools",
     },
     {
       name: "The Playbook",
       icon: BookOpen,
       path: "/playbook",
       description: "Complete guide to AI prompting",
-    },
-    {
-      name: "Templates",
-      icon: LayoutTemplate,
-      path: "/templates",
-      description: "Pre-built prompt templates",
     },
     {
       name: "AI Toolkit",

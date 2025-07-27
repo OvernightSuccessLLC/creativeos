@@ -31,11 +31,10 @@ const FONT_STYLE = { fontFamily: "Poppins, sans-serif" };
 
 export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const { user, logout } = useAuth();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   // Close mobile menu and dropdown when route changes
   useEffect(() => {
@@ -89,7 +88,6 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
     setIsMobileMenuOpen(false);
   };
 
-<<<<<<< HEAD
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -111,16 +109,11 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isDropdownOpen]);
 
-  const isHomePage = location.pathname === "/";
-
-=======
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
   const isCurrentPage = (itemPath: string) => {
     return location.pathname === itemPath;
   };
 
   return (
-<<<<<<< HEAD
     <>
       <nav
         className="border-0 relative z-50"
@@ -313,101 +306,14 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
 
           {/* Mobile Menu Items */}
           <div className="flex-1 py-6">
-=======
-    <nav
-      className="border-0 relative"
-      style={{
-        backgroundColor: "#000000",
-        ...FONT_STYLE,
-        padding: "12px 16px",
-        marginBottom: "8px",
-      }}
-    >
-      <div className="flex items-center justify-between max-w-7xl mx-auto">
-        {/* Logo */}
-        <div className="flex items-center">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F1964cc1516094f2c9726884f044c2ef1%2Fe52dffb7c4f54f50b3b0d0f00bb479a2?format=webp&width=800"
-            alt="Overnight Success Logo"
-            className="h-24 w-auto"
-            style={{ maxWidth: "120px" }}
-          />
-        </div>
-
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-3">
-          {navigationItems.map((item) => {
-            const isActive = isCurrentPage(item.path);
-            return (
-              <button
-                key={item.name}
-                className={`${item.simple ? "" : "flex items-center space-x-2"} rounded-lg text-sm font-bold transition-colors ${
-                  isActive
-                    ? "bg-brand-red text-black border border-brand-red"
-                    : "text-white hover:bg-white/10 border border-transparent hover:border-white/20"
-                }`}
-                style={{
-                  ...FONT_STYLE,
-                  fontWeight: "700",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.75px",
-                  padding: item.simple ? "8px 12px" : "8px 16px",
-                }}
-                onClick={() => handleNavigation(item)}
-              >
-                {item.simple ? (
-                  item.name
-                ) : (
-                  <>
-                    <item.icon className="w-4 h-4" />
-                    <span>{item.name}</span>
-                  </>
-                )}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Mobile Menu Button - ALWAYS VISIBLE ON MOBILE */}
-        <div className="md:hidden">
-          <button
-            data-mobile-menu="toggle"
-            className="text-white p-2 bg-gray-800 rounded-md"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-            style={{ minWidth: "44px", minHeight: "44px" }}
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Navigation Menu */}
-      {isMobileMenuOpen && (
-        <div
-          data-mobile-menu="content"
-          className="md:hidden mt-3 bg-black border-t border-gray-800"
-        >
-          <div className="flex flex-col space-y-1 p-4">
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
             {navigationItems.map((item) => {
               const isActive = isCurrentPage(item.path);
               return (
                 <button
                   key={item.name}
-<<<<<<< HEAD
                   className={`w-full flex items-center space-x-4 px-6 py-4 text-left font-bold transition-colors ${
                     isActive
                       ? "bg-brand-red text-black border-r-4 border-red-600"
-=======
-                  className={`${item.simple ? "" : "flex items-center space-x-3"} rounded-lg text-sm font-bold transition-colors w-full text-left p-3 ${
-                    isActive
-                      ? "bg-brand-red text-black"
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                       : "text-white hover:bg-white/10"
                   }`}
                   style={{
@@ -418,19 +324,8 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                   }}
                   onClick={() => handleNavigation(item)}
                 >
-<<<<<<< HEAD
                   <item.icon className="w-5 h-5 flex-shrink-0" />
                   <span className="text-sm">{item.name}</span>
-=======
-                  {item.simple ? (
-                    item.name
-                  ) : (
-                    <>
-                      <item.icon className="w-5 h-5" />
-                      <span>{item.name}</span>
-                    </>
-                  )}
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                 </button>
               );
             })}
@@ -470,12 +365,7 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
             </div>
           </div>
         </div>
-<<<<<<< HEAD
       </div>
     </>
-=======
-      )}
-    </nav>
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
   );
 }

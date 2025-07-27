@@ -631,6 +631,29 @@ export default function GraphicStudio() {
 
                     {step.id === 7 && (
                       <div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-3 sm:mt-4">
+                          {keywordCategories["Background Setting"].map(
+                            (keyword) => (
+                              <button
+                                key={keyword}
+                                onClick={() => toggleKeyword(keyword)}
+                                className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
+                                  selectedKeywords.includes(keyword)
+                                    ? "bg-brand-red text-black"
+                                    : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
+                                }`}
+                                style={{ minHeight: "44px" }}
+                              >
+                                {keyword}
+                              </button>
+                            ),
+                          )}
+                        </div>
+                      </div>
+                    )}
+
+                    {step.id === 8 && (
+                      <div>
                         <Label htmlFor="file-upload" className="text-white text-sm sm:text-base">
                           Upload Reference Image
                         </Label>
@@ -772,7 +795,7 @@ export default function GraphicStudio() {
                       • Specify brand guidelines for consistency
                     </li>
                     <li className="text-white font-semibold mt-1">
-                      • Add color codes for exact matching
+                      �� Add color codes for exact matching
                     </li>
                     <li className="text-white font-semibold mt-1">
                       • Include dimensions for proper scaling

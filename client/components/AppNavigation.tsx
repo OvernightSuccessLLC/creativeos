@@ -171,6 +171,61 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                   </button>
                 );
               })}
+
+              {/* Pages Dropdown */}
+              <div className="relative pages-dropdown">
+                <button
+                  className="flex items-center space-x-2 rounded-lg text-sm font-bold transition-colors text-white hover:bg-white/10 border border-transparent hover:border-white/20"
+                  style={{
+                    ...FONT_STYLE,
+                    fontWeight: "700",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.75px",
+                    padding: "8px 16px",
+                  }}
+                  onClick={toggleDropdown}
+                >
+                  <Globe className="w-4 h-4" />
+                  <span className="hidden lg:inline">ALL PAGES</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                {/* Dropdown Menu */}
+                {isDropdownOpen && (
+                  <div className="absolute top-full right-0 mt-2 w-80 bg-black border border-gray-700 rounded-lg shadow-xl z-50">
+                    <div className="p-4">
+                      <h3 className="text-white font-bold text-sm mb-3 uppercase tracking-wide">Navigate to Any Page</h3>
+                      <div className="space-y-2">
+                        {allPages.map((page) => {
+                          const isActive = isCurrentPage(page.path);
+                          return (
+                            <button
+                              key={page.path}
+                              className={`w-full flex items-center space-x-3 p-3 rounded-lg text-left transition-all hover:bg-gray-800 ${
+                                isActive ? 'bg-brand-red/10 border border-brand-red/30' : 'hover:bg-white/5'
+                              }`}
+                              onClick={() => navigate(page.path)}
+                            >
+                              <page.icon className={`w-5 h-5 flex-shrink-0 ${isActive ? 'text-brand-red' : 'text-gray-400'}`} />
+                              <div className="flex-1">
+                                <div className={`font-semibold text-sm ${isActive ? 'text-brand-red' : 'text-white'}`}>
+                                  {page.name}
+                                </div>
+                                <div className="text-xs text-gray-500 mt-1">
+                                  {page.description}
+                                </div>
+                              </div>
+                              {isActive && (
+                                <div className="w-2 h-2 bg-brand-red rounded-full flex-shrink-0"></div>
+                              )}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Mobile Menu Button */}

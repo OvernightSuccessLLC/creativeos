@@ -14,6 +14,11 @@ import {
   Palette,
   Menu,
   X,
+  ChevronDown,
+  Globe,
+  FileText,
+  Settings,
+  RotateCcw,
 } from "lucide-react";
 
 interface AppNavigationProps {
@@ -26,10 +31,12 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
   const navigate = useNavigate();
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  // Close mobile menu when route changes
+  // Close mobile menu and dropdown when route changes
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setIsDropdownOpen(false);
   }, [location.pathname]);
 
   // Close mobile menu on escape key
@@ -62,6 +69,17 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
     { name: "AI TOOLKIT", icon: Zap, path: "/ai-toolkit" },
   ];
 
+  const allPages = [
+    { name: "Product Studio", icon: Camera, path: "/", description: "Professional product photography prompts" },
+    { name: "Lifestyle Studio", icon: Users, path: "/lifestyle-studio", description: "Authentic lifestyle photography" },
+    { name: "Graphic Studio", icon: Palette, path: "/graphic-studio", description: "Custom graphics and design" },
+    { name: "The Playbook", icon: BookOpen, path: "/playbook", description: "Complete guide to AI prompting" },
+    { name: "Templates", icon: LayoutTemplate, path: "/templates", description: "Pre-built prompt templates" },
+    { name: "AI Toolkit", icon: Zap, path: "/ai-toolkit", description: "Curated AI tools collection" },
+    { name: "Updates", icon: Bell, path: "/updates", description: "Latest news and features" },
+    { name: "Join Pro", icon: Crown, path: "/join", description: "Upgrade to premium features" },
+  ];
+
   const handleNavigation = (item: (typeof navigationItems)[0]) => {
     if ("action" in item && item.action === "updates" && onUpdatesClick) {
       onUpdatesClick();
@@ -74,6 +92,23 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      if (isDropdownOpen && !target.closest('.pages-dropdown')) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isDropdownOpen]);
 
   const isHomePage = location.pathname === "/";
 

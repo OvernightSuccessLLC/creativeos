@@ -502,6 +502,15 @@ export default function Playbook() {
                       </div>
                     ))}
                   </div>
+
+                  <div className="space-y-4">
+                    <h4 className="text-white text-sm md:text-lg font-bold" style={TYPOGRAPHY.heading}>
+                      Skill Progression
+                    </h4>
+                    <div className="space-y-3">
+                      <div className="space-y-2">
+                        <span className="bg-green-600 text-white px-2 py-1 rounded text-xs font-semibold">
+                          BEGINNER
                         </span>
                         <p className="text-white italic text-xs md:text-sm bg-gray-900 p-3 rounded">
                           "{section.content.progression.beginner}"
@@ -517,6 +526,8 @@ export default function Playbook() {
                       </div>
                       <div className="space-y-2">
                         <span className="bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold">
+                          EXPERT
+                        </span>
                           EXPERT
                         </span>
                         <p className="text-white italic text-xs md:text-sm bg-gray-900 p-3 rounded">

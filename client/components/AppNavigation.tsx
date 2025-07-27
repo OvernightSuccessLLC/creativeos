@@ -292,15 +292,7 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                     Logout
                   </button>
                 </div>
-              ) : (
-                <Button
-                  onClick={() => navigate("/join")}
-                  className="bg-brand-red hover:bg-red-600 text-white font-bold text-sm"
-                >
-                  <Crown className="w-4 h-4 mr-1" />
-                  Get Access
-                </Button>
-              )}
+              ) : null}
             </div>
 
             {/* Mobile Menu Button */}
@@ -403,15 +395,7 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                     Logout
                   </button>
                 </div>
-              ) : (
-                <Button
-                  onClick={() => navigate("/join")}
-                  className="w-full bg-brand-red hover:bg-red-600 text-white font-bold"
-                >
-                  <Crown className="w-4 h-4 mr-2" />
-                  Get Access
-                </Button>
-              )}
+              ) : null}
             </div>
           </div>
         </div>

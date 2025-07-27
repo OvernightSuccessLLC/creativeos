@@ -31,7 +31,7 @@ export default function Landing() {
       });
 
       setIsSubmitted(true);
-      
+
       // Navigate to playbook after 2 seconds
       setTimeout(() => {
         navigate("/playbook");
@@ -47,7 +47,10 @@ export default function Landing() {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-brand-red flex items-center justify-center p-4" style={FONT_STYLE}>
+      <div
+        className="min-h-screen bg-brand-red flex items-center justify-center p-4"
+        style={FONT_STYLE}
+      >
         <Card className="max-w-md w-full bg-black border-none">
           <CardContent className="p-8 text-center">
             <h2 className="text-2xl font-bold text-white mb-4">Welcome!</h2>
@@ -62,7 +65,10 @@ export default function Landing() {
   }
 
   return (
-    <div className="min-h-screen bg-brand-red flex items-center justify-center p-4" style={FONT_STYLE}>
+    <div
+      className="min-h-screen bg-brand-red flex items-center justify-center p-4"
+      style={FONT_STYLE}
+    >
       <div className="max-w-lg w-full">
         {/* Logo */}
         <div className="text-center mb-8">
@@ -116,7 +122,11 @@ export default function Landing() {
                 type="submit"
                 disabled={isSubmitting}
                 className="w-full bg-brand-red hover:bg-brand-red-hover text-white font-bold py-3 text-lg"
-                style={{ ...FONT_STYLE, textTransform: "uppercase", letterSpacing: "0.5px" }}
+                style={{
+                  ...FONT_STYLE,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px",
+                }}
               >
                 {isSubmitting ? "Getting Access..." : "Get Access Now"}
               </Button>

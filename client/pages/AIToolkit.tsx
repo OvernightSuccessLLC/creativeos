@@ -3,7 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import AppNavigation from "@/components/AppNavigation";
 import BriefcaseModal from "@/components/BriefcaseModal";
 import {
@@ -19,7 +25,7 @@ import {
   Sparkles,
   Globe,
   Image,
-  FileText
+  FileText,
 } from "lucide-react";
 
 const FONT_STYLE = { fontFamily: "Poppins, sans-serif" };
@@ -38,8 +44,13 @@ export default function AIToolkit() {
       categoryColor: "bg-green-500",
       premiumBadge: "Free/Premium",
       premiumBadgeColor: "bg-purple-500",
-      description: "The industry-standard LLM chatbot known for its conversational fluency and versatility across a wide range of prompts and tasks.",
-      keyFeatures: ["Conversational AI", "Versatile prompts", "Industry standard"],
+      description:
+        "The industry-standard LLM chatbot known for its conversational fluency and versatility across a wide range of prompts and tasks.",
+      keyFeatures: [
+        "Conversational AI",
+        "Versatile prompts",
+        "Industry standard",
+      ],
       link: "https://chat.openai.com",
       rating: 5,
     },
@@ -50,7 +61,8 @@ export default function AIToolkit() {
       categoryColor: "bg-green-500",
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
-      description: "Anthropic's advanced language model focused on accuracy and reasoning.",
+      description:
+        "Anthropic's advanced language model focused on accuracy and reasoning.",
       keyFeatures: ["Advanced reasoning", "High accuracy", "Safety focused"],
       link: "https://claude.ai",
       rating: 5,
@@ -62,7 +74,8 @@ export default function AIToolkit() {
       categoryColor: "bg-green-500",
       premiumBadge: "Free/Premium",
       premiumBadgeColor: "bg-purple-500",
-      description: "An AI-infused search engine and chatbot with web citations, multimodal inputs, and Pro-tier API access. Valued at $14B as of June 2025.",
+      description:
+        "An AI-infused search engine and chatbot with web citations, multimodal inputs, and Pro-tier API access. Valued at $14B as of June 2025.",
       keyFeatures: ["Search engine", "Citations", "Multilingual"],
       link: "https://www.perplexity.ai",
       rating: 5,
@@ -86,7 +99,8 @@ export default function AIToolkit() {
       categoryColor: "bg-green-500",
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
-      description: "A fast-evolving chatbot with image understanding, PDF parsing, and the new Grok‑3 reasoning model.",
+      description:
+        "A fast-evolving chatbot with image understanding, PDF parsing, and the new Grok‑3 reasoning model.",
       keyFeatures: ["Image understanding", "PDF parsing", "Fast evolution"],
       link: "https://x.com/i/grok",
       rating: 4,
@@ -98,7 +112,8 @@ export default function AIToolkit() {
       categoryColor: "bg-green-500",
       premiumBadge: "Free",
       premiumBadgeColor: "bg-green-500",
-      description: "A rising chatbot based on DeepSeek‑R1; top‑downloaded in Jan 2025 with advanced GRM/SPCT tuning.",
+      description:
+        "A rising chatbot based on DeepSeek‑R1; top‑downloaded in Jan 2025 with advanced GRM/SPCT tuning.",
       keyFeatures: ["Advanced tuning", "Rising platform", "High performance"],
       link: "https://www.deepseek.com",
       rating: 4,
@@ -110,7 +125,8 @@ export default function AIToolkit() {
       categoryColor: "bg-green-500",
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
-      description: "Multimodal autonomous agent for complex web tasks like coding and planning.",
+      description:
+        "Multimodal autonomous agent for complex web tasks like coding and planning.",
       keyFeatures: ["Autonomous agent", "Web tasks", "Coding & planning"],
       link: "https://en.wikipedia.org/wiki/Manus_%28AI_agent%29",
       rating: 3,
@@ -124,8 +140,13 @@ export default function AIToolkit() {
       categoryColor: "bg-orange-500",
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
-      description: "Top-tier for creative image generation integrated into ChatGPT's workspace.",
-      keyFeatures: ["Creative generation", "ChatGPT integration", "Top-tier quality"],
+      description:
+        "Top-tier for creative image generation integrated into ChatGPT's workspace.",
+      keyFeatures: [
+        "Creative generation",
+        "ChatGPT integration",
+        "Top-tier quality",
+      ],
       link: "https://chat.openai.com",
       rating: 5,
     },
@@ -149,7 +170,11 @@ export default function AIToolkit() {
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
       description: "Adobe's AI image generation and editing tool.",
-      keyFeatures: ["Image generation", "Adobe integration", "Professional editing"],
+      keyFeatures: [
+        "Image generation",
+        "Adobe integration",
+        "Professional editing",
+      ],
       link: "https://firefly.adobe.com",
       rating: 4,
     },
@@ -172,7 +197,8 @@ export default function AIToolkit() {
       categoryColor: "bg-orange-500",
       premiumBadge: "Free/Premium",
       premiumBadgeColor: "bg-purple-500",
-      description: "AI platform for generating detailed visual artwork and game assets.",
+      description:
+        "AI platform for generating detailed visual artwork and game assets.",
       keyFeatures: ["Visual artwork", "Game assets", "Detailed generation"],
       link: "https://leonardo.ai",
       rating: 4,
@@ -184,7 +210,8 @@ export default function AIToolkit() {
       categoryColor: "bg-orange-500",
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
-      description: "Imagen generates visuals, Veo 3 supports coherent video with audio.",
+      description:
+        "Imagen generates visuals, Veo 3 supports coherent video with audio.",
       keyFeatures: ["Visual generation", "Video creation", "Audio support"],
       link: "https://en.wikipedia.org/wiki/Google_DeepMind",
       rating: 4,
@@ -220,7 +247,8 @@ export default function AIToolkit() {
       categoryColor: "bg-orange-500",
       premiumBadge: "Free/Premium",
       premiumBadgeColor: "bg-purple-500",
-      description: "AI art generator using various algorithms including VQGAN+CLIP.",
+      description:
+        "AI art generator using various algorithms including VQGAN+CLIP.",
       keyFeatures: ["Multiple algorithms", "VQGAN+CLIP", "Art generation"],
       link: "https://creator.nightcafe.studio",
       rating: 4,
@@ -232,7 +260,8 @@ export default function AIToolkit() {
       categoryColor: "bg-orange-500",
       premiumBadge: "Free/Premium",
       premiumBadgeColor: "bg-purple-500",
-      description: "Collaborative platform for blending and evolving art via AI.",
+      description:
+        "Collaborative platform for blending and evolving art via AI.",
       keyFeatures: ["Collaborative art", "Blending features", "Art evolution"],
       link: "https://www.artbreeder.com",
       rating: 3,
@@ -256,7 +285,8 @@ export default function AIToolkit() {
       categoryColor: "bg-orange-500",
       premiumBadge: "Free/Premium",
       premiumBadgeColor: "bg-purple-500",
-      description: "Free AI image generator and editor with collaboration tools.",
+      description:
+        "Free AI image generator and editor with collaboration tools.",
       keyFeatures: ["Image generation", "Editor tools", "Collaboration"],
       link: "https://playgroundai.com",
       rating: 3,
@@ -280,8 +310,13 @@ export default function AIToolkit() {
       categoryColor: "bg-orange-500",
       premiumBadge: "Free",
       premiumBadgeColor: "bg-green-500",
-      description: "Transforms images using deep learning for dreamlike results.",
-      keyFeatures: ["Deep learning", "Image transformation", "Dreamlike effects"],
+      description:
+        "Transforms images using deep learning for dreamlike results.",
+      keyFeatures: [
+        "Deep learning",
+        "Image transformation",
+        "Dreamlike effects",
+      ],
       link: "https://deepdreamgenerator.com",
       rating: 3,
     },
@@ -293,7 +328,11 @@ export default function AIToolkit() {
       premiumBadge: "Free/Premium",
       premiumBadgeColor: "bg-purple-500",
       description: "Turn your photos into artworks using neural networks.",
-      keyFeatures: ["Photo transformation", "Neural networks", "Artistic styles"],
+      keyFeatures: [
+        "Photo transformation",
+        "Neural networks",
+        "Artistic styles",
+      ],
       link: "https://deepart.io",
       rating: 3,
     },
@@ -304,7 +343,8 @@ export default function AIToolkit() {
       categoryColor: "bg-orange-500",
       premiumBadge: "Free/Premium",
       premiumBadgeColor: "bg-purple-500",
-      description: "AI tools for image editing, enhancement, and background removal.",
+      description:
+        "AI tools for image editing, enhancement, and background removal.",
       keyFeatures: ["Image editing", "Enhancement", "Background removal"],
       link: "https://hotpot.ai",
       rating: 3,
@@ -329,7 +369,11 @@ export default function AIToolkit() {
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
       description: "AI for generating commercial-quality artwork.",
-      keyFeatures: ["Commercial quality", "Professional artwork", "Business focus"],
+      keyFeatures: [
+        "Commercial quality",
+        "Professional artwork",
+        "Business focus",
+      ],
       link: "https://www.exactly.ai",
       rating: 3,
     },
@@ -378,7 +422,8 @@ export default function AIToolkit() {
       categoryColor: "bg-red-500",
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
-      description: "Awarded Best AI video generator for quality and affordability in recent AI awards.",
+      description:
+        "Awarded Best AI video generator for quality and affordability in recent AI awards.",
       keyFeatures: ["Video generation", "High quality", "Affordable pricing"],
       link: "https://kling.tv",
       rating: 5,
@@ -391,7 +436,11 @@ export default function AIToolkit() {
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
       description: "Creative video tools used in professional-grade content.",
-      keyFeatures: ["Professional tools", "Creative video", "Industry standard"],
+      keyFeatures: [
+        "Professional tools",
+        "Creative video",
+        "Industry standard",
+      ],
       link: "https://runwayml.com",
       rating: 5,
     },
@@ -402,7 +451,8 @@ export default function AIToolkit() {
       categoryColor: "bg-red-500",
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
-      description: "AI video avatars, voice cloning & screen-record capabilities.",
+      description:
+        "AI video avatars, voice cloning & screen-record capabilities.",
       keyFeatures: ["Video avatars", "Voice cloning", "Screen recording"],
       link: "https://www.synthesia.io",
       rating: 4,
@@ -414,7 +464,8 @@ export default function AIToolkit() {
       categoryColor: "bg-red-500",
       premiumBadge: "Free/Premium",
       premiumBadgeColor: "bg-purple-500",
-      description: "AI-enhanced video and audio editor with transcription tools.",
+      description:
+        "AI-enhanced video and audio editor with transcription tools.",
       keyFeatures: ["Video editing", "Audio editing", "Transcription"],
       link: "https://www.descript.com",
       rating: 4,
@@ -440,7 +491,8 @@ export default function AIToolkit() {
       categoryColor: "bg-pink-500",
       premiumBadge: "Free/Premium",
       premiumBadgeColor: "bg-purple-500",
-      description: "Build and instantly publish AI-generated websites with a visual editor.",
+      description:
+        "Build and instantly publish AI-generated websites with a visual editor.",
       keyFeatures: ["Website builder", "Visual editor", "AI generation"],
       link: "https://framer.com/",
       rating: 4,
@@ -452,7 +504,8 @@ export default function AIToolkit() {
       categoryColor: "bg-pink-500",
       premiumBadge: "Free",
       premiumBadgeColor: "bg-green-500",
-      description: "AI graphic design tool by Microsoft for creating social posts and marketing visuals.",
+      description:
+        "AI graphic design tool by Microsoft for creating social posts and marketing visuals.",
       keyFeatures: ["Graphic design", "Social posts", "Marketing visuals"],
       link: "https://designer.microsoft.com",
       rating: 4,
@@ -476,7 +529,8 @@ export default function AIToolkit() {
       categoryColor: "bg-pink-500",
       premiumBadge: "Free/Premium",
       premiumBadgeColor: "bg-purple-500",
-      description: "Canva's AI design assistant that creates layouts from text input.",
+      description:
+        "Canva's AI design assistant that creates layouts from text input.",
       keyFeatures: ["Layout creation", "Text input", "AI assistant"],
       link: "https://www.canva.com/magic-design",
       rating: 4,
@@ -488,7 +542,8 @@ export default function AIToolkit() {
       categoryColor: "bg-pink-500",
       premiumBadge: "Free/Premium",
       premiumBadgeColor: "bg-purple-500",
-      description: "Simplified Adobe suite with AI features for quick content creation.",
+      description:
+        "Simplified Adobe suite with AI features for quick content creation.",
       keyFeatures: ["Quick creation", "Adobe suite", "AI features"],
       link: "https://express.adobe.com",
       rating: 4,
@@ -512,7 +567,8 @@ export default function AIToolkit() {
       categoryColor: "bg-pink-500",
       premiumBadge: "Free/Premium",
       premiumBadgeColor: "bg-purple-500",
-      description: "AI-powered graphic design tool with templates and vector support.",
+      description:
+        "AI-powered graphic design tool with templates and vector support.",
       keyFeatures: ["Graphic design", "Templates", "Vector support"],
       link: "https://www.kittl.com",
       rating: 3,
@@ -524,7 +580,8 @@ export default function AIToolkit() {
       categoryColor: "bg-pink-500",
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
-      description: "AI platform for creatives to generate branded content and marketing assets.",
+      description:
+        "AI platform for creatives to generate branded content and marketing assets.",
       keyFeatures: ["Branded content", "Marketing assets", "Creative platform"],
       link: "https://lummi.ai",
       rating: 3,
@@ -536,7 +593,8 @@ export default function AIToolkit() {
       categoryColor: "bg-pink-500",
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
-      description: "Copywriting assistant powered by GPT for landing pages and ads.",
+      description:
+        "Copywriting assistant powered by GPT for landing pages and ads.",
       keyFeatures: ["Copywriting", "Landing pages", "Ad creation"],
       link: "https://headlime.com",
       rating: 3,
@@ -551,7 +609,11 @@ export default function AIToolkit() {
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
       description: "AI pair programmer that autocompletes code in real time.",
-      keyFeatures: ["Code completion", "Real-time suggestions", "Multi-language"],
+      keyFeatures: [
+        "Code completion",
+        "Real-time suggestions",
+        "Multi-language",
+      ],
       link: "https://github.com/features/copilot",
       rating: 5,
     },
@@ -563,7 +625,11 @@ export default function AIToolkit() {
       premiumBadge: "Free/Premium",
       premiumBadgeColor: "bg-purple-500",
       description: "AI-native code editor with contextual suggestions.",
-      keyFeatures: ["AI-native editor", "Contextual suggestions", "Code completion"],
+      keyFeatures: [
+        "AI-native editor",
+        "Contextual suggestions",
+        "Code completion",
+      ],
       link: "https://www.cursor.so",
       rating: 5,
     },
@@ -586,7 +652,8 @@ export default function AIToolkit() {
       categoryColor: "bg-blue-500",
       premiumBadge: "Free/Premium",
       premiumBadgeColor: "bg-purple-500",
-      description: "AI tool that helps you write and understand code on Replit.",
+      description:
+        "AI tool that helps you write and understand code on Replit.",
       keyFeatures: ["Code writing", "Code understanding", "Replit integration"],
       link: "https://replit.com/site/ghostwriter",
       rating: 4,
@@ -671,7 +738,11 @@ export default function AIToolkit() {
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
       description: "AI tool that helps maintain and improve your codebase.",
-      keyFeatures: ["Codebase maintenance", "Code improvement", "AI assistance"],
+      keyFeatures: [
+        "Codebase maintenance",
+        "Code improvement",
+        "AI assistance",
+      ],
       link: "https://sweep.dev",
       rating: 3,
     },
@@ -682,7 +753,8 @@ export default function AIToolkit() {
       categoryColor: "bg-blue-500",
       premiumBadge: "Free/Premium",
       premiumBadgeColor: "bg-purple-500",
-      description: "Copilot for engineers with auto-suggestions and doc generation.",
+      description:
+        "Copilot for engineers with auto-suggestions and doc generation.",
       keyFeatures: ["Auto-suggestions", "Doc generation", "Engineering focus"],
       link: "https://bito.ai",
       rating: 3,
@@ -694,7 +766,8 @@ export default function AIToolkit() {
       categoryColor: "bg-blue-500",
       premiumBadge: "Free/Premium",
       premiumBadgeColor: "bg-purple-500",
-      description: "Helps you write and troubleshoot code with natural language.",
+      description:
+        "Helps you write and troubleshoot code with natural language.",
       keyFeatures: ["Code writing", "Troubleshooting", "Natural language"],
       link: "https://codepal.ai",
       rating: 3,
@@ -718,7 +791,8 @@ export default function AIToolkit() {
       categoryColor: "bg-blue-500",
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
-      description: "Converts uploaded images or drawings into HTML and CSS code using AI.",
+      description:
+        "Converts uploaded images or drawings into HTML and CSS code using AI.",
       keyFeatures: ["Image to code", "HTML/CSS generation", "AI conversion"],
       link: "https://fronty.com/",
       rating: 3,
@@ -732,8 +806,13 @@ export default function AIToolkit() {
       categoryColor: "bg-indigo-500",
       premiumBadge: "Free",
       premiumBadgeColor: "bg-green-500",
-      description: "A research & note-taking assistant for analyzing data and generating summaries.",
-      keyFeatures: ["Research assistant", "Data analysis", "Summary generation"],
+      description:
+        "A research & note-taking assistant for analyzing data and generating summaries.",
+      keyFeatures: [
+        "Research assistant",
+        "Data analysis",
+        "Summary generation",
+      ],
       link: "https://notebooklm.google",
       rating: 5,
     },
@@ -745,7 +824,11 @@ export default function AIToolkit() {
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
       description: "Collections of tested AI automations for workflows.",
-      keyFeatures: ["Workflow automation", "AI integration", "Tested collections"],
+      keyFeatures: [
+        "Workflow automation",
+        "AI integration",
+        "Tested collections",
+      ],
       link: "https://zapier.com/blog/best-ai-productivity-tools",
       rating: 4,
     },
@@ -756,7 +839,8 @@ export default function AIToolkit() {
       categoryColor: "bg-indigo-500",
       premiumBadge: "Free/Premium",
       premiumBadgeColor: "bg-purple-500",
-      description: "Visualize your tasks and notes with AI-powered productivity tools.",
+      description:
+        "Visualize your tasks and notes with AI-powered productivity tools.",
       keyFeatures: ["Task visualization", "Note-taking", "AI-powered"],
       link: "https://taskade.com/",
       rating: 4,
@@ -768,7 +852,8 @@ export default function AIToolkit() {
       categoryColor: "bg-indigo-500",
       premiumBadge: "Free/Premium",
       premiumBadgeColor: "bg-purple-500",
-      description: "AI-powered storytelling and presentation creation platform.",
+      description:
+        "AI-powered storytelling and presentation creation platform.",
       keyFeatures: ["Storytelling", "Presentations", "AI-powered"],
       link: "https://tome.app/",
       rating: 4,
@@ -782,7 +867,8 @@ export default function AIToolkit() {
       categoryColor: "bg-teal-500",
       premiumBadge: "Free",
       premiumBadgeColor: "bg-green-500",
-      description: "AI-integrated browser with built-in assistants for web automation.",
+      description:
+        "AI-integrated browser with built-in assistants for web automation.",
       keyFeatures: ["AI integration", "Web automation", "Built-in assistants"],
       link: "https://www.theverge.com/web/685232/dia-browser-ai-arc",
       rating: 3,
@@ -796,7 +882,8 @@ export default function AIToolkit() {
       categoryColor: "bg-cyan-500",
       premiumBadge: "Free",
       premiumBadgeColor: "bg-green-500",
-      description: "Generate images from natural text descriptions, powered by DALL-E.",
+      description:
+        "Generate images from natural text descriptions, powered by DALL-E.",
       keyFeatures: ["Text to image", "DALL-E powered", "Free access"],
       link: "https://www.bing.com/create",
       rating: 4,
@@ -808,7 +895,8 @@ export default function AIToolkit() {
       categoryColor: "bg-cyan-500",
       premiumBadge: "Free",
       premiumBadgeColor: "bg-green-500",
-      description: "Turns freehand sketches into refined icons and illustrations.",
+      description:
+        "Turns freehand sketches into refined icons and illustrations.",
       keyFeatures: ["Sketch refinement", "Icon creation", "Illustrations"],
       link: "https://www.autodraw.com/",
       rating: 3,
@@ -820,8 +908,13 @@ export default function AIToolkit() {
       categoryColor: "bg-cyan-500",
       premiumBadge: "Free/Premium",
       premiumBadgeColor: "bg-purple-500",
-      description: "Uses AI to enhance the resolution of images and photographs.",
-      keyFeatures: ["Image enhancement", "Resolution improvement", "AI-powered"],
+      description:
+        "Uses AI to enhance the resolution of images and photographs.",
+      keyFeatures: [
+        "Image enhancement",
+        "Resolution improvement",
+        "AI-powered",
+      ],
       link: "https://letsenhance.io/",
       rating: 4,
     },
@@ -832,7 +925,8 @@ export default function AIToolkit() {
       categoryColor: "bg-cyan-500",
       premiumBadge: "Free/Premium",
       premiumBadgeColor: "bg-purple-500",
-      description: "Recognizes and removes image backgrounds effectively without requiring signup.",
+      description:
+        "Recognizes and removes image backgrounds effectively without requiring signup.",
       keyFeatures: ["Background removal", "No signup", "Effective recognition"],
       link: "http://remove.bg/",
       rating: 4,
@@ -844,7 +938,8 @@ export default function AIToolkit() {
       categoryColor: "bg-cyan-500",
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
-      description: "AI image generator for product images in various styles and settings.",
+      description:
+        "AI image generator for product images in various styles and settings.",
       keyFeatures: ["Product images", "Various styles", "Settings variety"],
       link: "https://pebblely.com/",
       rating: 3,
@@ -856,8 +951,13 @@ export default function AIToolkit() {
       categoryColor: "bg-cyan-500",
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
-      description: "Generates professional-quality product photos using AI, focused on furniture, fashion, and packaged goods.",
-      keyFeatures: ["Product photos", "Professional quality", "Furniture & fashion"],
+      description:
+        "Generates professional-quality product photos using AI, focused on furniture, fashion, and packaged goods.",
+      keyFeatures: [
+        "Product photos",
+        "Professional quality",
+        "Furniture & fashion",
+      ],
       link: "http://booth.ai/",
       rating: 3,
     },
@@ -868,8 +968,13 @@ export default function AIToolkit() {
       categoryColor: "bg-cyan-500",
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
-      description: "Generates product photos integrated into ecommerce platforms like Shopify.",
-      keyFeatures: ["Product photos", "Ecommerce integration", "Shopify support"],
+      description:
+        "Generates product photos integrated into ecommerce platforms like Shopify.",
+      keyFeatures: [
+        "Product photos",
+        "Ecommerce integration",
+        "Shopify support",
+      ],
       link: "http://stylized.ai/",
       rating: 3,
     },
@@ -882,7 +987,8 @@ export default function AIToolkit() {
       categoryColor: "bg-yellow-500",
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
-      description: "Map-based event booking tool to find promoters, events, and artist schedules by location.",
+      description:
+        "Map-based event booking tool to find promoters, events, and artist schedules by location.",
       keyFeatures: ["Event booking", "Map-based", "Location search"],
       link: "https://booking-agent.io",
       rating: 3,
@@ -894,7 +1000,8 @@ export default function AIToolkit() {
       categoryColor: "bg-yellow-500",
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
-      description: "Categorized list of 35+ best AI tools for writing, coding, image/video.",
+      description:
+        "Categorized list of 35+ best AI tools for writing, coding, image/video.",
       keyFeatures: ["Tool directory", "Categorized list", "Multiple domains"],
       link: "https://www.v7labs.com/blog/best-ai-tools-listed",
       rating: 3,
@@ -902,33 +1009,33 @@ export default function AIToolkit() {
   ];
 
   const categories = [
-    "All", 
-    "AI Assistant", 
-    "Art Generation", 
-    "Video Creation", 
-    "Design", 
-    "Development", 
-    "Productivity", 
-    "Image Tools", 
-    "Web Tools", 
-    "Business Tools"
+    "All",
+    "AI Assistant",
+    "Art Generation",
+    "Video Creation",
+    "Design",
+    "Development",
+    "Productivity",
+    "Image Tools",
+    "Web Tools",
+    "Business Tools",
   ];
 
   const categoryIcons = {
-    "All": Sparkles,
+    All: Sparkles,
     "AI Assistant": Bot,
     "Art Generation": Palette,
     "Video Creation": Video,
-    "Design": Layers,
-    "Development": Code,
-    "Productivity": Briefcase,
+    Design: Layers,
+    Development: Code,
+    Productivity: Briefcase,
     "Image Tools": Image,
     "Web Tools": Globe,
     "Business Tools": Zap,
   };
 
   const filteredTools = useMemo(() => {
-    let filtered = toolsData.filter(tool => {
+    let filtered = toolsData.filter((tool) => {
       return selectedCategory === "All" || tool.category === selectedCategory;
     });
 
@@ -959,7 +1066,8 @@ export default function AIToolkit() {
             AI Toolkit
           </h1>
           <p className="text-lg md:text-xl text-black/80 max-w-3xl mx-auto">
-            Discover 70+ best AI tools to accelerate your creative and technical workflow
+            Discover 70+ best AI tools to accelerate your creative and technical
+            workflow
           </p>
         </div>
 
@@ -971,7 +1079,10 @@ export default function AIToolkit() {
                 BROWSE BY CATEGORY
               </h3>
             </div>
-            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+            <Select
+              value={selectedCategory}
+              onValueChange={setSelectedCategory}
+            >
               <SelectTrigger className="bg-brand-red text-black font-bold h-12 border-none">
                 <div className="flex items-center gap-2">
                   <Filter className="w-4 h-4" />
@@ -980,7 +1091,8 @@ export default function AIToolkit() {
               </SelectTrigger>
               <SelectContent className="bg-black border-gray-800">
                 {categories.map((category) => {
-                  const IconComponent = categoryIcons[category as keyof typeof categoryIcons];
+                  const IconComponent =
+                    categoryIcons[category as keyof typeof categoryIcons];
                   return (
                     <SelectItem
                       key={category}
@@ -1071,11 +1183,18 @@ export default function AIToolkit() {
         {/* Call to Action */}
         <div className="text-center mt-12">
           <div className="bg-black rounded-xl p-6 md:p-8">
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-4" style={FONT_STYLE}>
+            <h3
+              className="text-xl md:text-2xl font-bold text-white mb-4"
+              style={FONT_STYLE}
+            >
               MISSING A TOOL?
             </h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto" style={FONT_STYLE}>
-              Know of an amazing AI tool that should be in our collection? Let us know and we'll add it for everyone to discover.
+            <p
+              className="text-gray-300 mb-6 max-w-2xl mx-auto"
+              style={FONT_STYLE}
+            >
+              Know of an amazing AI tool that should be in our collection? Let
+              us know and we'll add it for everyone to discover.
             </p>
             <Button
               className="bg-brand-red text-black hover:bg-brand-red-hover font-bold px-6 py-3"

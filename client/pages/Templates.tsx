@@ -475,20 +475,6 @@ export default function Templates() {
             </Card>
             );
 
-            // Wrap premium templates with protection
-            if (template.premium) {
-              return (
-                <ProtectedFeature
-                  key={template.id}
-                  feature="exclusiveTemplates"
-                  featureName="Premium Template"
-                  requiredPlan="pro"
-                >
-                  {TemplateCard}
-                </ProtectedFeature>
-              );
-            }
-
             return TemplateCard;
           })}
         </div>

@@ -141,7 +141,7 @@ export default function CharacterSpec() {
           </div>
 
           {/* Right Column - Specifications */}
-          <div className="order-1 lg:order-2 space-y-6">
+          <div className="order-2 lg:order-2 space-y-4 md:space-y-6">
             {/* Visual Design */}
             <SpecSection title="Visual Design" icon={Eye} color="bg-purple-600">
               <div className="space-y-4">

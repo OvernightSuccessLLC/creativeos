@@ -103,14 +103,19 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
         }}
       >
         <div className="flex items-center justify-between max-w-7xl mx-auto">
-          <div className="flex items-center w-full">
+          <div className="flex items-center w-full" style={{ marginLeft: "72px" }}>
             {/* Logo */}
             <div className="flex items-center flex-1 md:flex-none md:mr-8">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F1964cc1516094f2c9726884f044c2ef1%2Fe52dffb7c4f54f50b3b0d0f00bb479a2?format=webp&width=800"
                 alt="Overnight Success Logo"
-                className="h-8 md:h-10 w-auto"
-                style={{ maxWidth: "120px" }}
+                className="w-auto"
+                style={{
+                  maxWidth: "120px",
+                  height: "52px",
+                  marginRight: "24px",
+                  padding: "0 24px"
+                }}
               />
             </div>
 

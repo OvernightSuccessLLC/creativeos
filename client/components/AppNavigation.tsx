@@ -36,37 +36,10 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
   const location = useLocation();
   const { user, logout } = useAuth();
 
-  // Close mobile menu and dropdown when route changes
+  // Close mobile menu when route changes
   useEffect(() => {
     setIsMobileMenuOpen(false);
-    setIsDropdownOpen(false);
   }, [location.pathname]);
-
-  // Close mobile menu on escape key
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setIsMobileMenuOpen(false);
-      }
-    };
-
-    if (isMobileMenuOpen) {
-      document.addEventListener("keydown", handleEscape);
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-
-    return () => {
-      document.removeEventListener("keydown", handleEscape);
-      document.body.style.overflow = "unset";
-    };
-  }, [isMobileMenuOpen]);
-
-  const navigationItems = [
-    { name: "THE PLAYBOOK", icon: BookOpen, path: "/playbook", simple: true },
-    { name: "AI TOOLKIT", icon: Zap, path: "/ai-toolkit" },
-  ];
 
   const allPages = [
     {

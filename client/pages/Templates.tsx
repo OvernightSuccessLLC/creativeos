@@ -461,18 +461,25 @@ export default function Templates() {
                 </div>
               </CardHeader>
               <CardContent className="space-y-2 p-3 pt-0">
-                {/* Prompt Preview */}
+                {/* Editable Prompt */}
                 <div className="bg-gray-900 border border-gray-700 rounded p-2">
-                  <p className="text-gray-300 text-xs sm:text-sm line-clamp-3">
-                    {template.prompt}
-                  </p>
+                  <Textarea
+                    value={getCurrentPrompt(template)}
+                    onChange={(e) => handlePromptChange(template.id, e.target.value)}
+                    className="bg-transparent border-none text-gray-300 text-xs sm:text-sm resize-none p-0 focus:ring-0 focus:outline-none min-h-[60px]"
+                    placeholder="Edit your prompt here..."
+                    style={{
+                      boxShadow: 'none',
+                      fontSize: 'inherit',
+                    }}
+                  />
                 </div>
 
                 {/* Actions */}
                 <div className="flex space-x-2">
                   <Button
                     size="sm"
-                    onClick={() => copyPrompt(template.prompt, template.id)}
+                    onClick={() => copyPrompt(getCurrentPrompt(template), template.id)}
                     className="bg-brand-red hover:opacity-90 text-white font-bold flex-1 text-xs sm:text-sm py-2 touch-manipulation"
                     style={{
                       backgroundColor:

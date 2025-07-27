@@ -48,26 +48,31 @@ export default function Playbook() {
         principles: [
           {
             title: "Be Specific and Clear",
-            description: "Avoid vague language. Instead of 'a nice photo,' use 'a professional headshot with soft lighting and neutral background.'",
-            tip: "The more specific you are, the better the AI understands your vision."
+            description:
+              "Avoid vague language. Instead of 'a nice photo,' use 'a professional headshot with soft lighting and neutral background.'",
+            tip: "The more specific you are, the better the AI understands your vision.",
           },
           {
             title: "Use Descriptive Language",
-            description: "Include details about mood, style, lighting, colors, and composition to guide the AI effectively.",
-            tip: "Think like you're directing a photographer - what would you tell them?"
+            description:
+              "Include details about mood, style, lighting, colors, and composition to guide the AI effectively.",
+            tip: "Think like you're directing a photographer - what would you tell them?",
           },
           {
             title: "Structure Your Prompts",
-            description: "Organize your prompts logically: Subject + Style + Details + Technical specs.",
-            tip: "A well-structured prompt is easier for AI to interpret and execute."
-          }
+            description:
+              "Organize your prompts logically: Subject + Style + Details + Technical specs.",
+            tip: "A well-structured prompt is easier for AI to interpret and execute.",
+          },
         ],
         progression: {
           beginner: "Create a product photo of a coffee mug",
-          advanced: "Professional product photography of a ceramic coffee mug, clean minimalist style, soft natural lighting, white background, 45-degree angle, shallow depth of field",
-          expert: "Commercial product photography: handcrafted ceramic coffee mug with matte finish, Scandinavian minimalist aesthetic, soft diffused natural lighting from left side, seamless white background, shot at 45-degree angle, shallow depth of field (f/2.8), macro lens perspective, subtle drop shadow, color grading: warm whites and earth tones"
-        }
-      }
+          advanced:
+            "Professional product photography of a ceramic coffee mug, clean minimalist style, soft natural lighting, white background, 45-degree angle, shallow depth of field",
+          expert:
+            "Commercial product photography: handcrafted ceramic coffee mug with matte finish, Scandinavian minimalist aesthetic, soft diffused natural lighting from left side, seamless white background, shot at 45-degree angle, shallow depth of field (f/2.8), macro lens perspective, subtle drop shadow, color grading: warm whites and earth tones",
+        },
+      },
     },
     {
       id: 2,
@@ -77,26 +82,31 @@ export default function Playbook() {
         principles: [
           {
             title: "Focus on the Product",
-            description: "Make the product the star. Remove distractions and ensure clear visibility of key features.",
-            tip: "Every element should support showcasing the product."
+            description:
+              "Make the product the star. Remove distractions and ensure clear visibility of key features.",
+            tip: "Every element should support showcasing the product.",
           },
           {
             title: "Lighting is Everything",
-            description: "Specify lighting type, direction, and quality. This affects mood and product appeal significantly.",
-            tip: "Soft, even lighting generally works best for most products."
+            description:
+              "Specify lighting type, direction, and quality. This affects mood and product appeal significantly.",
+            tip: "Soft, even lighting generally works best for most products.",
           },
           {
             title: "Context and Scale",
-            description: "Show the product in use or provide scale references to help viewers understand size and application.",
-            tip: "Lifestyle context can increase emotional connection and purchase intent."
-          }
+            description:
+              "Show the product in use or provide scale references to help viewers understand size and application.",
+            tip: "Lifestyle context can increase emotional connection and purchase intent.",
+          },
         ],
         progression: {
           beginner: "Take a photo of a smartphone",
-          advanced: "Professional product shot of latest smartphone, clean studio lighting, reflecting surface, 3/4 angle view",
-          expert: "Premium smartphone product photography: flagship device on reflective black acrylic surface, professional studio lighting setup with key light at 45 degrees and fill light for shadow detail, shot from slightly elevated 3/4 angle, clean gradient background from dark gray to black, shallow depth of field isolating device, subtle rim lighting highlighting edges, color-accurate display showing vibrant interface"
-        }
-      }
+          advanced:
+            "Professional product shot of latest smartphone, clean studio lighting, reflecting surface, 3/4 angle view",
+          expert:
+            "Premium smartphone product photography: flagship device on reflective black acrylic surface, professional studio lighting setup with key light at 45 degrees and fill light for shadow detail, shot from slightly elevated 3/4 angle, clean gradient background from dark gray to black, shallow depth of field isolating device, subtle rim lighting highlighting edges, color-accurate display showing vibrant interface",
+        },
+      },
     },
     {
       id: 3,
@@ -106,27 +116,32 @@ export default function Playbook() {
         principles: [
           {
             title: "Tell a Story",
-            description: "Create scenes that show products in real-life situations that your audience can relate to.",
-            tip: "Think about the lifestyle your customers aspire to have."
+            description:
+              "Create scenes that show products in real-life situations that your audience can relate to.",
+            tip: "Think about the lifestyle your customers aspire to have.",
           },
           {
             title: "Natural Interactions",
-            description: "People should interact naturally with products. Avoid stiff, posed shots.",
-            tip: "Candid moments often feel more authentic and engaging."
+            description:
+              "People should interact naturally with products. Avoid stiff, posed shots.",
+            tip: "Candid moments often feel more authentic and engaging.",
           },
           {
             title: "Environment Matters",
-            description: "Choose locations and settings that complement your brand and product positioning.",
-            tip: "The environment should enhance, not compete with, your product."
-          }
+            description:
+              "Choose locations and settings that complement your brand and product positioning.",
+            tip: "The environment should enhance, not compete with, your product.",
+          },
         ],
         progression: {
           beginner: "Person using a laptop in a coffee shop",
-          advanced: "Lifestyle shot of young professional working on laptop in modern coffee shop, natural lighting, warm atmosphere",
-          expert: "Authentic lifestyle photography: millennial professional in stylish coffee shop setting, working on premium laptop, natural window lighting creating soft shadows, warm color palette with earth tones, shallow depth of field focusing on subject while maintaining environmental context, candid moment of concentration, modern minimalist interior design complementing tech product positioning"
-        }
-      }
-    }
+          advanced:
+            "Lifestyle shot of young professional working on laptop in modern coffee shop, natural lighting, warm atmosphere",
+          expert:
+            "Authentic lifestyle photography: millennial professional in stylish coffee shop setting, working on premium laptop, natural window lighting creating soft shadows, warm color palette with earth tones, shallow depth of field focusing on subject while maintaining environmental context, candid moment of concentration, modern minimalist interior design complementing tech product positioning",
+        },
+      },
+    },
   ];
 
   return (
@@ -158,7 +173,9 @@ export default function Playbook() {
             <button
               key={section.id}
               onClick={() =>
-                setActiveSection(activeSection === section.id ? null : section.id)
+                setActiveSection(
+                  activeSection === section.id ? null : section.id,
+                )
               }
               className={`p-4 rounded-lg border-2 transition-all text-left ${
                 activeSection === section.id
@@ -168,12 +185,16 @@ export default function Playbook() {
             >
               <div className="flex items-center space-x-3 mb-2">
                 <section.icon className="w-6 h-6" />
-                <h3 className="font-bold text-sm md:text-base" style={TYPOGRAPHY.heading}>
+                <h3
+                  className="font-bold text-sm md:text-base"
+                  style={TYPOGRAPHY.heading}
+                >
                   {section.title}
                 </h3>
               </div>
               <p className="text-xs md:text-sm opacity-80">
-                {section.id === 1 && "Learn the fundamentals of effective prompting"}
+                {section.id === 1 &&
+                  "Learn the fundamentals of effective prompting"}
                 {section.id === 2 && "Master product photography techniques"}
                 {section.id === 3 && "Create authentic lifestyle scenes"}
               </p>

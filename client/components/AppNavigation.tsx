@@ -45,21 +45,21 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
   // Close mobile menu on escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         setIsMobileMenuOpen(false);
       }
     };
 
     if (isMobileMenuOpen) {
-      document.addEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'hidden';
+      document.addEventListener("keydown", handleEscape);
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "unset";
     };
   }, [isMobileMenuOpen]);
 
@@ -69,14 +69,54 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
   ];
 
   const allPages = [
-    { name: "Product Studio", icon: Camera, path: "/", description: "Professional product photography prompts" },
-    { name: "Lifestyle Studio", icon: Users, path: "/lifestyle-studio", description: "Authentic lifestyle photography" },
-    { name: "Graphic Studio", icon: Palette, path: "/graphic-studio", description: "Custom graphics and design" },
-    { name: "The Playbook", icon: BookOpen, path: "/playbook", description: "Complete guide to AI prompting" },
-    { name: "Templates", icon: LayoutTemplate, path: "/templates", description: "Pre-built prompt templates" },
-    { name: "AI Toolkit", icon: Zap, path: "/ai-toolkit", description: "Curated AI tools collection" },
-    { name: "Updates", icon: Bell, path: "/updates", description: "Latest news and features" },
-    { name: "Join Pro", icon: Crown, path: "/join", description: "Upgrade to premium features" },
+    {
+      name: "Product Studio",
+      icon: Camera,
+      path: "/",
+      description: "Professional product photography prompts",
+    },
+    {
+      name: "Lifestyle Studio",
+      icon: Users,
+      path: "/lifestyle-studio",
+      description: "Authentic lifestyle photography",
+    },
+    {
+      name: "Graphic Studio",
+      icon: Palette,
+      path: "/graphic-studio",
+      description: "Custom graphics and design",
+    },
+    {
+      name: "The Playbook",
+      icon: BookOpen,
+      path: "/playbook",
+      description: "Complete guide to AI prompting",
+    },
+    {
+      name: "Templates",
+      icon: LayoutTemplate,
+      path: "/templates",
+      description: "Pre-built prompt templates",
+    },
+    {
+      name: "AI Toolkit",
+      icon: Zap,
+      path: "/ai-toolkit",
+      description: "Curated AI tools collection",
+    },
+    {
+      name: "Updates",
+      icon: Bell,
+      path: "/updates",
+      description: "Latest news and features",
+    },
+    {
+      name: "Join Pro",
+      icon: Crown,
+      path: "/join",
+      description: "Upgrade to premium features",
+    },
   ];
 
   const handleNavigation = (item: (typeof navigationItems)[0]) => {
@@ -100,13 +140,13 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Element;
-      if (isDropdownOpen && !target.closest('.pages-dropdown')) {
+      if (isDropdownOpen && !target.closest(".pages-dropdown")) {
         setIsDropdownOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isDropdownOpen]);
 
   const isCurrentPage = (itemPath: string) => {
@@ -184,14 +224,18 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                 >
                   <Globe className="w-4 h-4" />
                   <span className="hidden lg:inline">ALL PAGES</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${isDropdownOpen ? "rotate-180" : ""}`}
+                  />
                 </button>
 
                 {/* Dropdown Menu */}
                 {isDropdownOpen && (
                   <div className="absolute top-full right-0 mt-2 w-80 bg-black border border-gray-700 rounded-lg shadow-xl z-50">
                     <div className="p-4">
-                      <h3 className="text-white font-bold text-sm mb-3 uppercase tracking-wide">Navigate to Any Page</h3>
+                      <h3 className="text-white font-bold text-sm mb-3 uppercase tracking-wide">
+                        Navigate to Any Page
+                      </h3>
                       <div className="space-y-2">
                         {allPages.map((page) => {
                           const isActive = isCurrentPage(page.path);
@@ -199,13 +243,19 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                             <button
                               key={page.path}
                               className={`w-full flex items-center space-x-3 p-3 rounded-lg text-left transition-all hover:bg-gray-800 ${
-                                isActive ? 'bg-brand-red/10 border border-brand-red/30' : 'hover:bg-white/5'
+                                isActive
+                                  ? "bg-brand-red/10 border border-brand-red/30"
+                                  : "hover:bg-white/5"
                               }`}
                               onClick={() => navigate(page.path)}
                             >
-                              <page.icon className={`w-5 h-5 flex-shrink-0 ${isActive ? 'text-brand-red' : 'text-gray-400'}`} />
+                              <page.icon
+                                className={`w-5 h-5 flex-shrink-0 ${isActive ? "text-brand-red" : "text-gray-400"}`}
+                              />
                               <div className="flex-1">
-                                <div className={`font-semibold text-sm ${isActive ? 'text-brand-red' : 'text-white'}`}>
+                                <div
+                                  className={`font-semibold text-sm ${isActive ? "text-brand-red" : "text-white"}`}
+                                >
                                   {page.name}
                                 </div>
                                 <div className="text-xs text-gray-500 mt-1">
@@ -231,8 +281,11 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                 <div className="flex items-center space-x-3">
                   <Badge
                     className={`${
-                      user.plan === 'enterprise' ? 'bg-purple-600' :
-                      user.plan === 'pro' ? 'bg-brand-red' : 'bg-gray-600'
+                      user.plan === "enterprise"
+                        ? "bg-purple-600"
+                        : user.plan === "pro"
+                          ? "bg-brand-red"
+                          : "bg-gray-600"
                     } text-white font-bold`}
                   >
                     <Crown className="w-3 h-3 mr-1" />
@@ -247,7 +300,7 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                 </div>
               ) : (
                 <Button
-                  onClick={() => navigate('/join')}
+                  onClick={() => navigate("/join")}
                   className="bg-brand-red hover:bg-red-600 text-white font-bold text-sm"
                 >
                   <Crown className="w-4 h-4 mr-1" />
@@ -337,8 +390,11 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                   <div className="flex items-center space-x-3">
                     <Badge
                       className={`${
-                        user.plan === 'enterprise' ? 'bg-purple-600' :
-                        user.plan === 'pro' ? 'bg-brand-red' : 'bg-gray-600'
+                        user.plan === "enterprise"
+                          ? "bg-purple-600"
+                          : user.plan === "pro"
+                            ? "bg-brand-red"
+                            : "bg-gray-600"
                       } text-white font-bold`}
                     >
                       <Crown className="w-3 h-3 mr-1" />
@@ -355,7 +411,7 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                 </div>
               ) : (
                 <Button
-                  onClick={() => navigate('/join')}
+                  onClick={() => navigate("/join")}
                   className="w-full bg-brand-red hover:bg-red-600 text-white font-bold"
                 >
                   <Crown className="w-4 h-4 mr-2" />

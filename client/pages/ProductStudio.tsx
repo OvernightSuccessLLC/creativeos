@@ -43,26 +43,28 @@ export default function ProductStudio() {
   useEffect(() => {
     const nativeButton = document.querySelector('[data-test="native-button"]');
     if (nativeButton) {
-      nativeButton.addEventListener('click', () => {
-        console.log('Native click works!');
-        alert('Native DOM event works!');
+      nativeButton.addEventListener("click", () => {
+        console.log("Native click works!");
+        alert("Native DOM event works!");
       });
     }
 
     // Add mobile menu toggle
-    const mobileMenuButton = document.querySelector('[data-mobile-menu="toggle"]');
+    const mobileMenuButton = document.querySelector(
+      '[data-mobile-menu="toggle"]',
+    );
     if (mobileMenuButton) {
-      mobileMenuButton.addEventListener('click', () => {
+      mobileMenuButton.addEventListener("click", () => {
         const menu = document.querySelector('[data-mobile-menu="content"]');
         if (menu) {
-          menu.classList.toggle('hidden');
+          menu.classList.toggle("hidden");
         }
       });
     }
 
     return () => {
-      nativeButton?.removeEventListener('click', () => {});
-      mobileMenuButton?.removeEventListener('click', () => {});
+      nativeButton?.removeEventListener("click", () => {});
+      mobileMenuButton?.removeEventListener("click", () => {});
     };
   }, []);
 
@@ -451,21 +453,23 @@ export default function ProductStudio() {
   return (
     <div className="min-h-screen bg-brand-red text-black">
       {/* DEBUG: Test both React and native events */}
-      <div style={{ position: 'fixed', top: '5px', right: '5px', zIndex: 10000 }}>
+      <div
+        style={{ position: "fixed", top: "5px", right: "5px", zIndex: 10000 }}
+      >
         <button
           data-test="test-button"
           onClick={() => {
-            console.log('React click works!');
-            alert('React is working!');
+            console.log("React click works!");
+            alert("React is working!");
           }}
           style={{
-            background: 'green',
-            color: 'white',
-            padding: '8px',
-            border: 'none',
-            borderRadius: '4px',
-            fontSize: '12px',
-            marginRight: '5px'
+            background: "green",
+            color: "white",
+            padding: "8px",
+            border: "none",
+            borderRadius: "4px",
+            fontSize: "12px",
+            marginRight: "5px",
           }}
         >
           REACT
@@ -473,12 +477,12 @@ export default function ProductStudio() {
         <button
           data-test="native-button"
           style={{
-            background: 'blue',
-            color: 'white',
-            padding: '8px',
-            border: 'none',
-            borderRadius: '4px',
-            fontSize: '12px'
+            background: "blue",
+            color: "white",
+            padding: "8px",
+            border: "none",
+            borderRadius: "4px",
+            fontSize: "12px",
           }}
         >
           NATIVE
@@ -575,7 +579,9 @@ export default function ProductStudio() {
                           <Upload className="mx-auto h-10 w-10 sm:h-12 sm:w-12 text-gray-400" />
                           <div className="mt-3 sm:mt-4">
                             <span className="mt-2 block text-sm sm:text-base font-medium text-white">
-                              {uploadedFile ? `Replace: ${uploadedFile.name}` : "Click to upload or drag and drop"}
+                              {uploadedFile
+                                ? `Replace: ${uploadedFile.name}`
+                                : "Click to upload or drag and drop"}
                             </span>
                             <span className="text-xs sm:text-sm text-gray-400 mt-1 block">
                               PNG, JPG, GIF up to 10MB
@@ -679,7 +685,9 @@ export default function ProductStudio() {
 
                     {step.id === 7 && (
                       <div>
-                        <Label className="text-white text-sm sm:text-base">Product Categories</Label>
+                        <Label className="text-white text-sm sm:text-base">
+                          Product Categories
+                        </Label>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-2">
                           {keywordCategories["Product Categories"].map(
                             (keyword) => (

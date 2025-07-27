@@ -79,6 +79,7 @@ export default function Templates() {
       rating: 4.7,
       uses: 756,
       featured: true,
+      premium: true,
     },
     {
       id: 4,
@@ -97,6 +98,7 @@ export default function Templates() {
       title: "Architectural Interior",
       category: "architecture",
       description: "Modern interior space with natural lighting",
+      premium: true,
       prompt:
         "Modern architectural interior, clean lines, natural lighting, minimalist design, high-end finishes, professional real estate photography style",
       tags: ["interior", "modern", "architecture", "clean"],

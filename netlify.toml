@@ -3,21 +3,13 @@
   command = "npm run build"
   publish = "dist/spa"
 
-<<<<<<< HEAD
 [build.environment]
   NODE_VERSION = "18"
 
-=======
-[functions]
-  external_node_modules = ["express"]
-  node_bundler = "esbuild"
-  
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-<<<<<<< HEAD
 
 [context.production.environment]
   NODE_ENV = "production"
@@ -54,18 +46,3 @@
   for = "*.css"
   [headers.values]
     Cache-Control = "max-age=31536000, immutable"
-=======
-  to = "/.netlify/functions/api/:splat"
-
-# Form processing configuration
-[forms]
-  # Enable form spam protection
-  spam_protection = true
-  
-# Optional: Email notifications for new submissions
-# [[notifications]]
-#   type = "email"
-#   event = "submission-created"
-#   to = "your-email@domain.com"
-#   subject = "New AI Toolkit Signup"
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8

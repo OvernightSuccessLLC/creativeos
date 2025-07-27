@@ -15,6 +15,7 @@ import {
   MessageCircle,
   Share2,
   ArrowLeft,
+  Star,
 } from "lucide-react";
 
 const Updates: React.FC = () => {

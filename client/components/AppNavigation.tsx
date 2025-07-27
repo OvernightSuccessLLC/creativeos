@@ -1,12 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import {
-  BookOpen,
-  Zap,
-  Menu,
-  X,
-} from "lucide-react";
+import { BookOpen, Zap, Menu, X } from "lucide-react";
 
 interface AppNavigationProps {
   onUpdatesClick?: () => void;
@@ -99,16 +94,23 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
             className="text-white p-2 bg-gray-800 rounded-md"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
-            style={{ minWidth: '44px', minHeight: '44px' }}
+            style={{ minWidth: "44px", minHeight: "44px" }}
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
       </div>
 
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
-        <div data-mobile-menu="content" className="md:hidden mt-3 bg-black border-t border-gray-800">
+        <div
+          data-mobile-menu="content"
+          className="md:hidden mt-3 bg-black border-t border-gray-800"
+        >
           <div className="flex flex-col space-y-1 p-4">
             {navigationItems.map((item) => {
               const isActive = isCurrentPage(item.path);

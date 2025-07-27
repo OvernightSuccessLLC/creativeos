@@ -470,60 +470,42 @@ export default function GraphicStudio() {
     },
     {
       id: 2,
-      title: "Design Type & Purpose",
+      title: "Design Purpose",
       description: "Select the type of graphic design project",
       icon: <LayoutTemplate className="w-5 h-5" />,
     },
     {
       id: 3,
-      title: "Brand & Tone",
-      description: "Define the brand personality and mood",
-      icon: <Palette className="w-5 h-5" />,
-    },
-    {
-      id: 4,
-      title: "Typography & Text",
+      title: "Typography",
       description: "Choose font styles and text treatment",
       icon: <Type className="w-5 h-5" />,
     },
     {
-      id: 5,
+      id: 4,
       title: "Layout & Composition",
       description: "Structure and arrange visual elements",
       icon: <Layout className="w-5 h-5" />,
     },
     {
-      id: 6,
+      id: 5,
       title: "Color & Style",
       description: "Add colors, shapes, and graphic elements",
       icon: <Layers className="w-5 h-5" />,
     },
     {
-      id: 7,
+      id: 6,
       title: "Background Setting",
       description: "Choose background style and texture",
       icon: <Settings className="w-5 h-5" />,
     },
     {
-      id: 8,
+      id: 7,
       title: "Theme",
       description: "Select visual style and aesthetic theme",
       icon: <Palette className="w-5 h-5" />,
     },
     {
-      id: 9,
-      title: "Primary Color Pantone",
-      description: "Specify primary brand colors using Pantone codes",
-      icon: <Palette className="w-5 h-5" />,
-    },
-    {
-      id: 10,
-      title: "Typography Integration",
-      description: "Select brand typography and font specifications",
-      icon: <Type className="w-5 h-5" />,
-    },
-    {
-      id: 11,
+      id: 8,
       title: "File Upload",
       description: "Upload reference images for your design",
       icon: <Upload className="w-5 h-5" />,
@@ -635,28 +617,6 @@ export default function GraphicStudio() {
                     )}
 
                     {step.id === 3 && (
-                      <div className="space-y-3 sm:space-y-4">
-                        <div></div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
-                          {keywordCategories["Style & Mood"].map((keyword) => (
-                            <button
-                              key={keyword}
-                              onClick={() => toggleKeyword(keyword)}
-                              className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
-                                selectedKeywords.includes(keyword)
-                                  ? "bg-brand-red text-black"
-                                  : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
-                              }`}
-                              style={{ minHeight: "44px" }}
-                            >
-                              {keyword}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {step.id === 4 && (
                       <div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-3 sm:mt-4">
                           {keywordCategories["Typography & Text"].map(
@@ -679,7 +639,7 @@ export default function GraphicStudio() {
                       </div>
                     )}
 
-                    {step.id === 5 && (
+                    {step.id === 4 && (
                       <div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-3 sm:mt-4">
                           {keywordCategories["Layout & Composition"].map(
@@ -702,7 +662,7 @@ export default function GraphicStudio() {
                       </div>
                     )}
 
-                    {step.id === 6 && (
+                    {step.id === 5 && (
                       <div className="space-y-4 sm:space-y-6">
                         <div>
                           <Label className="text-white text-sm sm:text-base"></Label>
@@ -728,7 +688,7 @@ export default function GraphicStudio() {
                       </div>
                     )}
 
-                    {step.id === 7 && (
+                    {step.id === 6 && (
                       <div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-3 sm:mt-4">
                           {keywordCategories["Background Setting"].map(
@@ -751,7 +711,7 @@ export default function GraphicStudio() {
                       </div>
                     )}
 
-                    {step.id === 8 && (
+                    {step.id === 7 && (
                       <div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-3 sm:mt-4">
                           {keywordCategories["Theme"].map((keyword) => (
@@ -772,48 +732,7 @@ export default function GraphicStudio() {
                       </div>
                     )}
 
-                    {step.id === 9 && (
-                      <div>
-                        <Label htmlFor="pantone-color" className="text-white text-sm sm:text-base">
-                          Primary Color Pantone Code
-                        </Label>
-                        <Input
-                          id="pantone-color"
-                          placeholder="e.g., Pantone 18-3838 TPX (Ultra Violet)"
-                          value={primaryColorPantone}
-                          onChange={(e) => setPrimaryColorPantone(e.target.value)}
-                          className="mt-2 text-sm sm:text-base"
-                        />
-                        <p className="text-gray-400 text-xs mt-1">
-                          Specify exact Pantone color codes for brand consistency
-                        </p>
-                      </div>
-                    )}
-
-                    {step.id === 10 && (
-                      <div>
-                        <Label htmlFor="typography" className="text-white text-sm sm:text-base">
-                          Typography Integration
-                        </Label>
-                        <Select value={typographyIntegration} onValueChange={setTypographyIntegration}>
-                          <SelectTrigger className="mt-2">
-                            <SelectValue placeholder="Select typography style" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {keywordCategories["Typography Integration"].map((font) => (
-                              <SelectItem key={font} value={font}>
-                                {font}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                        <p className="text-gray-400 text-xs mt-1">
-                          Choose primary typography for brand consistency
-                        </p>
-                      </div>
-                    )}
-
-                    {step.id === 11 && (
+                    {step.id === 8 && (
                       <div>
                         <Label htmlFor="file-upload" className="text-white text-sm sm:text-base">
                           Upload Reference Image

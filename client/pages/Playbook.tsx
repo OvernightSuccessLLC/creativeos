@@ -151,20 +151,8 @@ export default function Playbook() {
 
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-8">
-        <div className="text-center mb-8">
-          <h1
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4"
-            style={TYPOGRAPHY.title}
-          >
-            THE PLAYBOOK
-          </h1>
-          <p
-            className="text-lg md:text-xl text-black/80 max-w-3xl mx-auto"
-            style={TYPOGRAPHY.body}
-          >
-            Master the art of AI prompting with our comprehensive guide to
-            creating professional photography prompts
-          </p>
+        <div className="text-center mb-8 pb-4" style={{ font: "400 48px/48px Poppins, sans-serif" }}>
+          THE PLAYBOOK
         </div>
 
         {/* Section Navigation */}

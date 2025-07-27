@@ -50,6 +50,8 @@ export default function ProductStudio() {
   const [backgroundStyle, setBackgroundStyle] = useState("");
   const [lightingSetup, setLightingSetup] = useState("");
   const [cameraAngle, setCameraAngle] = useState("");
+  const [primaryColorPantone, setPrimaryColorPantone] = useState("");
+  const [typographyIntegration, setTypographyIntegration] = useState("");
 
   const keywordCategories = {
     "Intended Use": [
@@ -267,6 +269,38 @@ export default function ProductStudio() {
       "Automotive",
       "Garden tools",
       "Health products",
+    ],
+    "Typography Integration": [
+      "Helvetica",
+      "Arial",
+      "Times New Roman",
+      "Georgia",
+      "Futura",
+      "Proxima Nova",
+      "Montserrat",
+      "Open Sans",
+      "Roboto",
+      "Lato",
+      "Source Sans Pro",
+      "Poppins",
+      "Playfair Display",
+      "Merriweather",
+      "Oswald",
+      "Raleway",
+      "Ubuntu",
+      "Nunito",
+      "Inter",
+      "Work Sans",
+      "Cabin",
+      "Crimson Text",
+      "Libre Baskerville",
+      "PT Sans",
+      "Droid Sans",
+      "Titillium Web",
+      "Lora",
+      "Fira Sans",
+      "Source Serif Pro",
+      "Rubik",
     ],
   };
 
@@ -490,6 +524,18 @@ export default function ProductStudio() {
     },
     {
       id: 8,
+      title: "Primary Color Pantone",
+      description: "Specify primary brand colors using Pantone codes",
+      icon: <Palette className="w-5 h-5" />,
+    },
+    {
+      id: 9,
+      title: "Typography Integration",
+      description: "Select brand typography and font specifications",
+      icon: <Type className="w-5 h-5" />,
+    },
+    {
+      id: 10,
       title: "Enhancers",
       description: "Fine-tune visual style and product categories",
       icon: <Eye className="w-5 h-5" />,

@@ -337,6 +337,8 @@ export default function LifestyleStudio() {
     if (subjectAge && subjectAge.trim()) score += 10;
     if (activityType && activityType.trim()) score += 10;
     if (locationSetting && locationSetting.trim()) score += 10;
+    if (primaryColorPantone && primaryColorPantone.trim()) score += 5;
+    if (typographyIntegration && typographyIntegration.trim()) score += 5;
     return Math.min(100, score);
   };
 
@@ -362,6 +364,14 @@ export default function LifestyleStudio() {
 
     if (locationSetting && locationSetting.trim()) {
       prompt += `In ${locationSetting.trim()}. `;
+    }
+
+    if (primaryColorPantone && primaryColorPantone.trim()) {
+      prompt += `Primary color: ${primaryColorPantone.trim()}. `;
+    }
+
+    if (typographyIntegration && typographyIntegration.trim()) {
+      prompt += `Typography: ${typographyIntegration.trim()}. `;
     }
 
     if (selectedKeywords && selectedKeywords.length > 0) {
@@ -504,6 +514,8 @@ export default function LifestyleStudio() {
     subjectAge,
     activityType,
     locationSetting,
+    primaryColorPantone,
+    typographyIntegration,
   ]);
 
   const steps = [
@@ -842,6 +854,47 @@ export default function LifestyleStudio() {
                     )}
 
                     {step.id === 10 && (
+                      <div>
+                        <Label htmlFor="pantone-color" className="text-white text-sm sm:text-base">
+                          Primary Color Pantone Code
+                        </Label>
+                        <Input
+                          id="pantone-color"
+                          placeholder="e.g., Pantone 18-3838 TPX (Ultra Violet)"
+                          value={primaryColorPantone}
+                          onChange={(e) => setPrimaryColorPantone(e.target.value)}
+                          className="mt-2 text-sm sm:text-base"
+                        />
+                        <p className="text-gray-400 text-xs mt-1">
+                          Specify exact Pantone color codes for brand consistency
+                        </p>
+                      </div>
+                    )}
+
+                    {step.id === 11 && (
+                      <div>
+                        <Label htmlFor="typography" className="text-white text-sm sm:text-base">
+                          Typography Integration
+                        </Label>
+                        <Select value={typographyIntegration} onValueChange={setTypographyIntegration}>
+                          <SelectTrigger className="mt-2">
+                            <SelectValue placeholder="Select typography style" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {keywordCategories["Typography Integration"].map((font) => (
+                              <SelectItem key={font} value={font}>
+                                {font}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                        <p className="text-gray-400 text-xs mt-1">
+                          Choose primary typography for brand consistency
+                        </p>
+                      </div>
+                    )}
+
+                    {step.id === 12 && (
                       <div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-2">
                           {keywordCategories["Finishing"].map((keyword) => (

@@ -419,6 +419,12 @@ export default function GraphicStudio() {
     },
     {
       id: 7,
+      title: "Background Setting",
+      description: "Choose background style and texture",
+      icon: <Settings className="w-5 h-5" />,
+    },
+    {
+      id: 8,
       title: "File Upload",
       description: "Upload reference images for your design",
       icon: <Upload className="w-5 h-5" />,

@@ -91,7 +91,7 @@ export default function Landing() {
           </CardHeader>
           <CardContent className="px-6 pb-5 pt-0">
             {/* Hidden form for Netlify */}
-            <form name="email-capture" netlify hidden>
+            <form name="email-capture" data-netlify="true" hidden>
               <input type="text" name="name" />
               <input type="email" name="email" />
             </form>

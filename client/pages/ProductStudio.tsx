@@ -78,6 +78,43 @@ export default function ProductStudio() {
       "Typography Art",
       "Logo Design",
     ],
+    "Theme": [
+      "80's Vintage",
+      "80s VHS grain",
+      "90's Photography",
+      "Acrylic Inspired",
+      "Black & White",
+      "Black Magic Camera",
+      "Disposable Film",
+      "Editorial",
+      "Expert Level Quality",
+      "Film Shoot",
+      "Futuristic",
+      "Geometric Fragments",
+      "Halftone Pattern",
+      "Illustrated Scene",
+      "Lifestyle Centric",
+      "Light Gradient Theme",
+      "Luxury",
+      "Macro Detail",
+      "Magazine Quality",
+      "Metallic",
+      "Minimalist",
+      "Neon",
+      "Pastel Gradients",
+      "Polaroid Photography",
+      "Premium",
+      "Product-Centric",
+      "Red Cam",
+      "Reflective Mirro",
+      "Remix Reference Image",
+      "Social Media Ad",
+      "Subtle Neon",
+      "Tie Dye",
+      "Trippy",
+      "Upscale Reference Image",
+      "Y2K",
+    ],
     "Background Setting": [
       "White background",
       "Black background",
@@ -426,18 +463,24 @@ export default function ProductStudio() {
     },
     {
       id: 5,
+      title: "Theme",
+      description: "Select visual style and aesthetic theme",
+      icon: <Palette className="w-5 h-5" />,
+    },
+    {
+      id: 6,
       title: "Lighting Setup",
       description: "Configure professional lighting approach",
       icon: <Lightbulb className="w-5 h-5" />,
     },
     {
-      id: 6,
+      id: 7,
       title: "Camera Angle",
       description: "Set the camera perspective and composition",
       icon: <Camera className="w-5 h-5" />,
     },
     {
-      id: 7,
+      id: 8,
       title: "Enhancers",
       description: "Fine-tune visual style and product categories",
       icon: <Eye className="w-5 h-5" />,
@@ -605,7 +648,7 @@ export default function ProductStudio() {
 
                     {step.id === 5 && (
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
-                        {keywordCategories["Lighting Setup"].map((keyword) => (
+                        {keywordCategories["Theme"].map((keyword) => (
                           <button
                             key={keyword}
                             onClick={() => toggleKeyword(keyword)}
@@ -624,7 +667,7 @@ export default function ProductStudio() {
 
                     {step.id === 6 && (
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
-                        {keywordCategories["Camera Angle"].map((keyword) => (
+                        {keywordCategories["Lighting Setup"].map((keyword) => (
                           <button
                             key={keyword}
                             onClick={() => toggleKeyword(keyword)}
@@ -642,6 +685,25 @@ export default function ProductStudio() {
                     )}
 
                     {step.id === 7 && (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
+                        {keywordCategories["Camera Angle"].map((keyword) => (
+                          <button
+                            key={keyword}
+                            onClick={() => toggleKeyword(keyword)}
+                            className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
+                              selectedKeywords.includes(keyword)
+                                ? "bg-brand-red text-black"
+                                : "bg-white text-black border border-gray-300 hover:bg-gray-100"
+                            }`}
+                            style={{ minHeight: "44px" }}
+                          >
+                            {keyword}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+
+                    {step.id === 8 && (
                       <div>
                         <Label className="text-white text-sm sm:text-base">
                           Product Categories

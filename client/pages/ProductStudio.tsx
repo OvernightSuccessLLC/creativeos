@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import BriefcaseModal from "@/components/BriefcaseModal";
 import AppNavigation from "@/components/AppNavigation";
+import ProtectedFeature from "@/components/ProtectedFeature";
 import {
   Camera,
   Palette,

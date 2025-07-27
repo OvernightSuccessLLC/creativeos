@@ -44,6 +44,11 @@ function App() {
 
 const container = document.getElementById("root");
 if (container) {
-  const root = ReactDOM.createRoot(container);
+  // Check if root already exists to prevent duplicate createRoot calls
+  let root = (container as any)._reactRoot;
+  if (!root) {
+    root = ReactDOM.createRoot(container);
+    (container as any)._reactRoot = root;
+  }
   root.render(<App />);
 }

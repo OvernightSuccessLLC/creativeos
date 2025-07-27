@@ -37,7 +37,6 @@ import {
 export default function ProductStudio() {
   const navigate = useNavigate();
   const [showBriefcase, setShowBriefcase] = useState(false);
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
 
 

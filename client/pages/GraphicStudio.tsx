@@ -217,7 +217,6 @@ export default function GraphicStudio() {
       "Professional",
       "Creative",
       "Playful",
-      "Sophisticated",
       "Modern",
       "Vintage",
       "Retro",
@@ -234,7 +233,6 @@ export default function GraphicStudio() {
       "Energetic",
       "Calm",
       "Luxurious",
-      "Casual",
       "Corporate",
     ],
     "Background Setting": [

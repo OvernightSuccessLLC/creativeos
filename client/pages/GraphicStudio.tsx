@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import AppNavigation from "@/components/AppNavigation";
 
 import {
@@ -53,6 +54,8 @@ export default function GraphicStudio() {
   const [layoutStyle, setLayoutStyle] = useState("");
   const [typographyStyle, setTypographyStyle] = useState("");
   const [brandTone, setBrandTone] = useState("");
+  const [primaryColorPantone, setPrimaryColorPantone] = useState("");
+  const [typographyIntegration, setTypographyIntegration] = useState("");
 
   const keywordCategories = {
     "Design Type": [
@@ -259,6 +262,38 @@ export default function GraphicStudio() {
       "Vintage WallPaper",
       "Wood Grain",
     ],
+    "Typography Integration": [
+      "Helvetica",
+      "Arial",
+      "Times New Roman",
+      "Georgia",
+      "Futura",
+      "Proxima Nova",
+      "Montserrat",
+      "Open Sans",
+      "Roboto",
+      "Lato",
+      "Source Sans Pro",
+      "Poppins",
+      "Playfair Display",
+      "Merriweather",
+      "Oswald",
+      "Raleway",
+      "Ubuntu",
+      "Nunito",
+      "Inter",
+      "Work Sans",
+      "Cabin",
+      "Crimson Text",
+      "Libre Baskerville",
+      "PT Sans",
+      "Droid Sans",
+      "Titillium Web",
+      "Lora",
+      "Fira Sans",
+      "Source Serif Pro",
+      "Rubik",
+    ],
   };
 
   // Calculate quality score based on inputs
@@ -272,6 +307,8 @@ export default function GraphicStudio() {
     if (layoutStyle) score += 10;
     if (typographyStyle) score += 10;
     if (brandTone) score += 10;
+    if (primaryColorPantone && primaryColorPantone.trim()) score += 5;
+    if (typographyIntegration && typographyIntegration.trim()) score += 5;
     return Math.min(100, score);
   };
 
@@ -286,6 +323,12 @@ export default function GraphicStudio() {
     if (colorScheme) prompt += `${colorScheme} color scheme. `;
     if (layoutStyle) prompt += `${layoutStyle} layout. `;
     if (typographyStyle) prompt += `${typographyStyle} typography. `;
+    if (primaryColorPantone && primaryColorPantone.trim()) {
+      prompt += `Primary color: ${primaryColorPantone.trim()}. `;
+    }
+    if (typographyIntegration && typographyIntegration.trim()) {
+      prompt += `Typography: ${typographyIntegration.trim()}. `;
+    }
     if (selectedKeywords.length > 0) {
       prompt += selectedKeywords.join(", ") + ". ";
     }
@@ -416,6 +459,8 @@ export default function GraphicStudio() {
     layoutStyle,
     typographyStyle,
     brandTone,
+    primaryColorPantone,
+    typographyIntegration,
   ]);
 
   const steps = [
@@ -469,6 +514,18 @@ export default function GraphicStudio() {
     },
     {
       id: 9,
+      title: "Primary Color Pantone",
+      description: "Specify primary brand colors using Pantone codes",
+      icon: <Palette className="w-5 h-5" />,
+    },
+    {
+      id: 10,
+      title: "Typography Integration",
+      description: "Select brand typography and font specifications",
+      icon: <Type className="w-5 h-5" />,
+    },
+    {
+      id: 11,
       title: "File Upload",
       description: "Upload reference images for your design",
       icon: <Upload className="w-5 h-5" />,
@@ -718,6 +775,47 @@ export default function GraphicStudio() {
                     )}
 
                     {step.id === 9 && (
+                      <div>
+                        <Label htmlFor="pantone-color" className="text-white text-sm sm:text-base">
+                          Primary Color Pantone Code
+                        </Label>
+                        <Input
+                          id="pantone-color"
+                          placeholder="e.g., Pantone 18-3838 TPX (Ultra Violet)"
+                          value={primaryColorPantone}
+                          onChange={(e) => setPrimaryColorPantone(e.target.value)}
+                          className="mt-2 text-sm sm:text-base"
+                        />
+                        <p className="text-gray-400 text-xs mt-1">
+                          Specify exact Pantone color codes for brand consistency
+                        </p>
+                      </div>
+                    )}
+
+                    {step.id === 10 && (
+                      <div>
+                        <Label htmlFor="typography" className="text-white text-sm sm:text-base">
+                          Typography Integration
+                        </Label>
+                        <Select value={typographyIntegration} onValueChange={setTypographyIntegration}>
+                          <SelectTrigger className="mt-2">
+                            <SelectValue placeholder="Select typography style" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {keywordCategories["Typography Integration"].map((font) => (
+                              <SelectItem key={font} value={font}>
+                                {font}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                        <p className="text-gray-400 text-xs mt-1">
+                          Choose primary typography for brand consistency
+                        </p>
+                      </div>
+                    )}
+
+                    {step.id === 11 && (
                       <div>
                         <Label htmlFor="file-upload" className="text-white text-sm sm:text-base">
                           Upload Reference Image

@@ -47,20 +47,11 @@ const ProtectedFeature: React.FC<ProtectedFeatureProps> = ({
               <Crown className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-white font-bold text-lg mb-2">
-              {requiredPlan === 'enterprise' ? 'Enterprise' : 'Pro'} Feature
+              Premium Feature
             </h3>
             <p className="text-gray-300 text-sm mb-4">
-              {featureName || 'This feature'} requires a {requiredPlan} plan
+              This feature is currently unavailable
             </p>
-            {showUpgradeButton && (
-              <Button
-                onClick={() => setShowPaywall(true)}
-                className="bg-brand-red hover:bg-red-600 text-white font-bold"
-              >
-                <Crown className="w-4 h-4 mr-2" />
-                Upgrade Now
-              </Button>
-            )}
           </div>
         </div>
       </div>

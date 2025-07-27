@@ -523,12 +523,6 @@ export default function ProductStudio() {
       description: "Select brand typography and font specifications",
       icon: <Type className="w-5 h-5" />,
     },
-    {
-      id: 10,
-      title: "Enhancers",
-      description: "Fine-tune visual style and product categories",
-      icon: <Eye className="w-5 h-5" />,
-    },
   ];
 
   return (
@@ -788,31 +782,7 @@ export default function ProductStudio() {
                       </div>
                     )}
 
-                    {step.id === 10 && (
-                      <div>
-                        <Label className="text-white text-sm sm:text-base">
-                          Product Categories
-                        </Label>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-2">
-                          {keywordCategories["Product Categories"].map(
-                            (keyword) => (
-                              <button
-                                key={keyword}
-                                onClick={() => toggleKeyword(keyword)}
-                                className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
-                                  selectedKeywords.includes(keyword)
-                                    ? "bg-brand-red text-black"
-                                    : "bg-white text-black border border-gray-300 hover:bg-gray-100"
-                                }`}
-                                style={{ minHeight: "44px" }}
-                              >
-                                {keyword}
-                              </button>
-                            ),
-                          )}
-                        </div>
-                      </div>
-                    )}
+
                   </CardContent>
                 )}
               </Card>

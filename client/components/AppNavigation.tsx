@@ -16,8 +16,6 @@ import {
   Palette,
   Menu,
   X,
-  ChevronDown,
-  Globe,
   FileText,
   Settings,
   RotateCcw,

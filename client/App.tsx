@@ -33,6 +33,7 @@ function App() {
             <Route path="/" element={<Landing />} />
             <Route path="/playbook" element={<Playbook />} />
             <Route path="/ai-toolkit" element={<AIToolkit />} />
+            <Route path="/character-spec" element={<CharacterSpec />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

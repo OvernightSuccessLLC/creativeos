@@ -422,17 +422,17 @@ export default function Templates() {
         className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8"
         style={{ backgroundColor: "#f93921" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
           {filteredTemplates.map((template) => {
             const TemplateCard = (
               <Card
                 key={template.id}
                 className="bg-black border border-gray-800 hover:border-brand-red transition-colors"
               >
-              <CardHeader className="p-4 sm:p-6">
+              <CardHeader className="p-3">
                 <div className="flex items-start justify-between">
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center space-x-2 mb-2 flex-wrap">
+                    <div className="flex items-center space-x-2 mb-1 flex-wrap">
                       <CardTitle className="text-white text-base sm:text-lg truncate">
                         {template.title}
                       </CardTitle>
@@ -445,9 +445,9 @@ export default function Templates() {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6">
+              <CardContent className="space-y-2 p-3 pt-0">
                 {/* Prompt Preview */}
-                <div className="bg-gray-900 border border-gray-700 rounded p-3">
+                <div className="bg-gray-900 border border-gray-700 rounded p-2">
                   <p className="text-gray-300 text-xs sm:text-sm line-clamp-3">
                     {template.prompt}
                   </p>

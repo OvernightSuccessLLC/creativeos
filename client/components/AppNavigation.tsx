@@ -4,23 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useAuth } from "@/contexts/AuthContext";
 import {
-  Bell,
   BookOpen,
-  Database,
-  LayoutTemplate,
   Zap,
-  Crown,
   Home,
-  Camera,
-  Users,
-  Palette,
   Menu,
   X,
-  ChevronDown,
-  Globe,
-  FileText,
-  Settings,
-  RotateCcw,
 } from "lucide-react";
 
 interface AppNavigationProps {

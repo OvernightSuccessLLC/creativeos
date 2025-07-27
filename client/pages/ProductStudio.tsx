@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import BriefcaseModal from "@/components/BriefcaseModal";
 import AppNavigation from "@/components/AppNavigation";
 import {
@@ -31,6 +32,7 @@ import {
   Lightbulb,
   Eye,
   Settings,
+  Type,
 } from "lucide-react";
 
 export default function ProductStudio() {
@@ -315,6 +317,8 @@ export default function ProductStudio() {
     if (backgroundStyle && backgroundStyle.trim()) score += 10;
     if (lightingSetup && lightingSetup.trim()) score += 10;
     if (cameraAngle && cameraAngle.trim()) score += 10;
+    if (primaryColorPantone && primaryColorPantone.trim()) score += 5;
+    if (typographyIntegration && typographyIntegration.trim()) score += 5;
     return Math.min(100, score);
   };
 
@@ -340,6 +344,14 @@ export default function ProductStudio() {
 
     if (cameraAngle && cameraAngle.trim()) {
       prompt += `${cameraAngle.trim()}. `;
+    }
+
+    if (primaryColorPantone && primaryColorPantone.trim()) {
+      prompt += `Primary color: ${primaryColorPantone.trim()}. `;
+    }
+
+    if (typographyIntegration && typographyIntegration.trim()) {
+      prompt += `Typography: ${typographyIntegration.trim()}. `;
     }
 
     if (selectedKeywords && selectedKeywords.length > 0) {
@@ -477,6 +489,8 @@ export default function ProductStudio() {
     backgroundStyle,
     lightingSetup,
     cameraAngle,
+    primaryColorPantone,
+    typographyIntegration,
   ]);
 
   const steps = [

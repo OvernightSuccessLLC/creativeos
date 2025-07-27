@@ -521,18 +521,10 @@ export default function ProductStudio() {
             {steps.map((step) => (
               <Card key={step.id} className="border-black bg-black">
                 <CardHeader
-<<<<<<< HEAD
                   className="cursor-pointer bg-black p-4 sm:p-6"
                   onClick={() =>
                     setActiveStep(activeStep === step.id ? null : step.id)
                   }
-=======
-                  className="cursor-pointer bg-black"
-                  onClick={() => {
-                    console.log('Card clicked:', step.id);
-                    setActiveStep(activeStep === step.id ? null : step.id);
-                  }}
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2 sm:space-x-3 flex-1 min-w-0">

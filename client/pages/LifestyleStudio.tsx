@@ -65,6 +65,43 @@ export default function LifestyleStudio() {
       "Festival",
       "Concert",
     ],
+    "Theme": [
+      "80's Vintage",
+      "80s VHS grain",
+      "90's Photography",
+      "Acrylic Inspired",
+      "Black & White",
+      "Black Magic Camera",
+      "Disposable Film",
+      "Editorial",
+      "Expert Level Quality",
+      "Film Shoot",
+      "Futuristic",
+      "Geometric Fragments",
+      "Halftone Pattern",
+      "Illustrated Scene",
+      "Lifestyle Centric",
+      "Light Gradient Theme",
+      "Luxury",
+      "Macro Detail",
+      "Magazine Quality",
+      "Metallic",
+      "Minimalist",
+      "Neon",
+      "Pastel Gradients",
+      "Polaroid Photography",
+      "Premium",
+      "Product-Centric",
+      "Red Cam",
+      "Reflective Mirro",
+      "Remix Reference Image",
+      "Social Media Ad",
+      "Subtle Neon",
+      "Tie Dye",
+      "Trippy",
+      "Upscale Reference Image",
+      "Y2K",
+    ],
     "Product/Subject Style": [
       "Streetwear",
       "Athleisure",
@@ -446,24 +483,30 @@ export default function LifestyleStudio() {
     },
     {
       id: 6,
+      title: "Theme",
+      description: "Select visual style and aesthetic theme",
+      icon: <Palette className="w-5 h-5" />,
+    },
+    {
+      id: 7,
       title: "Lighting Setup",
       description: "Select lighting style and mood",
       icon: <Coffee className="w-5 h-5" />,
     },
     {
-      id: 7,
+      id: 8,
       title: "Camera Angle",
       description: "Set camera perspective and composition",
       icon: <Camera className="w-5 h-5" />,
     },
     {
-      id: 8,
+      id: 9,
       title: "Intended Use",
       description: "Define the intended use and application type",
       icon: <Camera className="w-5 h-5" />,
     },
     {
-      id: 9,
+      id: 10,
       title: "Finishing",
       description: "Final post-processing and aesthetic treatment",
       icon: <Camera className="w-5 h-5" />,
@@ -655,7 +698,7 @@ export default function LifestyleStudio() {
 
                     {step.id === 6 && (
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
-                        {keywordCategories["Lighting Setup"].map((keyword) => (
+                        {keywordCategories["Theme"].map((keyword) => (
                           <button
                             key={keyword}
                             onClick={() => toggleKeyword(keyword)}
@@ -674,7 +717,7 @@ export default function LifestyleStudio() {
 
                     {step.id === 7 && (
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
-                        {keywordCategories["Camera Angle"].map((keyword) => (
+                        {keywordCategories["Lighting Setup"].map((keyword) => (
                           <button
                             key={keyword}
                             onClick={() => toggleKeyword(keyword)}
@@ -693,7 +736,7 @@ export default function LifestyleStudio() {
 
                     {step.id === 8 && (
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
-                        {keywordCategories["Intended Use"].map((keyword) => (
+                        {keywordCategories["Camera Angle"].map((keyword) => (
                           <button
                             key={keyword}
                             onClick={() => toggleKeyword(keyword)}
@@ -711,6 +754,25 @@ export default function LifestyleStudio() {
                     )}
 
                     {step.id === 9 && (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
+                        {keywordCategories["Intended Use"].map((keyword) => (
+                          <button
+                            key={keyword}
+                            onClick={() => toggleKeyword(keyword)}
+                            className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
+                              selectedKeywords.includes(keyword)
+                                ? "bg-brand-red text-black"
+                                : "bg-white text-black border border-gray-300 hover:bg-gray-100"
+                            }`}
+                            style={{ minHeight: "44px" }}
+                          >
+                            {keyword}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+
+                    {step.id === 10 && (
                       <div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-2">
                           {keywordCategories["Finishing"].map((keyword) => (

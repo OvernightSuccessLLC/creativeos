@@ -14,18 +14,13 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-// Global Creative Director OS Context
-const CreativeDirectorOSContext = {
+// Simplified Playbook Version Context
+const PlaybookContext = {
   version: "1.0.0",
   features: {
+    landing: true,
     playbook: true,
-    templates: true,
     aiToolkit: true,
-    studios: {
-      product: true,
-      lifestyle: true,
-      graphic: true,
-    },
   },
 };
 

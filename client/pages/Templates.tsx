@@ -462,12 +462,12 @@ export default function Templates() {
               </CardHeader>
               <CardContent className="space-y-2 p-3 pt-0">
                 {/* Editable Prompt */}
-                <div className="bg-gray-900 border border-gray-700 rounded p-2">
+                <div className="bg-gray-900 border border-gray-700 rounded p-2 hover:border-gray-600 transition-colors">
                   <Textarea
                     value={getCurrentPrompt(template)}
                     onChange={(e) => handlePromptChange(template.id, e.target.value)}
-                    className="bg-transparent border-none text-gray-300 text-xs sm:text-sm resize-none p-0 focus:ring-0 focus:outline-none min-h-[60px]"
-                    placeholder="Edit your prompt here..."
+                    className="bg-transparent border-none text-gray-300 text-xs sm:text-sm resize-none p-0 focus:ring-0 focus:outline-none min-h-[60px] hover:text-white focus:text-white transition-colors"
+                    placeholder="Click to edit your prompt here..."
                     style={{
                       boxShadow: 'none',
                       fontSize: 'inherit',

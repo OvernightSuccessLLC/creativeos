@@ -1127,13 +1127,8 @@ export default function AIToolkit() {
               key={tool.id}
               className="bg-black border border-gray-800 hover:border-gray-600 transition-all duration-300 flex flex-col h-full group hover:scale-105"
             >
-<<<<<<< HEAD
-              <CardHeader className="pb-3 sm:pb-4 flex-shrink-0 p-4 sm:p-6">
-                <div className="flex items-start justify-between mb-2 sm:mb-3 gap-2">
-=======
               <CardHeader className="p-3 md:p-4 pb-2 md:pb-3 flex-shrink-0">
                 <div className="flex items-start justify-between mb-2">
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                   <Badge
                     className={`${tool.categoryColor} text-white text-xs font-medium px-2 py-1 rounded flex-shrink-0`}
                   >
@@ -1147,17 +1142,7 @@ export default function AIToolkit() {
                     </Badge>
                   )}
                 </div>
-<<<<<<< HEAD
-                <h3
-                  className="text-white text-lg sm:text-xl font-semibold mb-2"
-                  style={{
-                    fontFamily: "Poppins, sans-serif",
-                    minHeight: "24px",
-                  }}
-                >
-=======
                 <h3 className="text-white text-sm md:text-lg font-semibold mb-1 md:mb-2 line-clamp-2">
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                   {tool.name}
                 </h3>
                 <p className="text-gray-300 text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-3">

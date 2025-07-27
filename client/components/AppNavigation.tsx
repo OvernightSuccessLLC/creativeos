@@ -53,7 +53,7 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F1964cc1516094f2c9726884f044c2ef1%2Fe52dffb7c4f54f50b3b0d0f00bb479a2?format=webp&width=800"
             alt="Overnight Success Logo"
-            className="h-8 md:h-10 w-auto"
+            className="h-24 w-auto"
             style={{ maxWidth: "120px" }}
           />
         </div>

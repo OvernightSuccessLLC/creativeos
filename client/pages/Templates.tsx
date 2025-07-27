@@ -30,6 +30,7 @@ export default function Templates() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [showBriefcase, setShowBriefcase] = useState(false);
   const [copiedTemplate, setCopiedTemplate] = useState<number | null>(null);
+  const [editedPrompts, setEditedPrompts] = useState<Record<number, string>>({});
 
   const categories = [
     { id: "all", name: "All Templates", icon: LayoutTemplate },

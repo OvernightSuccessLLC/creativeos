@@ -1060,15 +1060,9 @@ export default function AIToolkit() {
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
 
       {/* Header */}
-      <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-8">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4">
-            AI Toolkit
-          </h1>
-          <p className="text-lg md:text-xl text-black/80 max-w-3xl mx-auto">
-            Discover 70+ best AI tools to accelerate your creative and technical
-            workflow
-          </p>
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-3">
+        <div className="text-center mb-8 pb-4" style={{ fontSize: "48px", lineHeight: "48px" }}>
+          AI Toolkit
         </div>
 
         {/* Category Filter */}
@@ -1113,11 +1107,6 @@ export default function AIToolkit() {
 
         {/* Results Count */}
         <div className="mb-6 text-center">
-          <p className="text-black/80 text-lg font-semibold" style={FONT_STYLE}>
-            {selectedCategory === "All"
-              ? `Showing all ${filteredTools.length} tools`
-              : `${filteredTools.length} ${selectedCategory} tools`}
-          </p>
         </div>
 
         {/* Tools Grid - 2 columns on mobile, 3 on desktop */}

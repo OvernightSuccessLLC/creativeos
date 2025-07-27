@@ -774,6 +774,47 @@ export default function ProductStudio() {
 
                     {step.id === 8 && (
                       <div>
+                        <Label htmlFor="pantone-color" className="text-white text-sm sm:text-base">
+                          Primary Color Pantone Code
+                        </Label>
+                        <Input
+                          id="pantone-color"
+                          placeholder="e.g., Pantone 18-3838 TPX (Ultra Violet)"
+                          value={primaryColorPantone}
+                          onChange={(e) => setPrimaryColorPantone(e.target.value)}
+                          className="mt-2 text-sm sm:text-base"
+                        />
+                        <p className="text-gray-400 text-xs mt-1">
+                          Specify exact Pantone color codes for brand consistency
+                        </p>
+                      </div>
+                    )}
+
+                    {step.id === 9 && (
+                      <div>
+                        <Label htmlFor="typography" className="text-white text-sm sm:text-base">
+                          Typography Integration
+                        </Label>
+                        <Select value={typographyIntegration} onValueChange={setTypographyIntegration}>
+                          <SelectTrigger className="mt-2">
+                            <SelectValue placeholder="Select typography style" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {keywordCategories["Typography Integration"].map((font) => (
+                              <SelectItem key={font} value={font}>
+                                {font}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                        <p className="text-gray-400 text-xs mt-1">
+                          Choose primary typography for brand consistency
+                        </p>
+                      </div>
+                    )}
+
+                    {step.id === 10 && (
+                      <div>
                         <Label className="text-white text-sm sm:text-base">
                           Product Categories
                         </Label>

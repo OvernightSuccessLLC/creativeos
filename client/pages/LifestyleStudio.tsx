@@ -810,22 +810,28 @@ export default function LifestyleStudio() {
                   {copiedPrompt ? "COPIED!" : "COPY"}
                 </Button>
 
-                <div className="text-sm mt-4">
-                  <h4 className="font-semibold text-white my-1 py-1">
-                    <span className="text-brand-red">AI RECOMMENDATIONS</span>
-                  </h4>
-                  <ul className="text-gray-600">
-                    <li className="text-white font-semibold mt-1">
-                      • Add more emotional descriptors for depth
-                    </li>
-                    <li className="text-white font-semibold mt-1">
-                      • Include lighting details for mood
-                    </li>
-                    <li className="text-white font-semibold mt-1">
-                      • Specify camera angle for composition
-                    </li>
-                  </ul>
-                </div>
+                <ProtectedFeature
+                  feature="advancedAnalytics"
+                  featureName="AI Recommendations"
+                  requiredPlan="pro"
+                >
+                  <div className="text-sm mt-4">
+                    <h4 className="font-semibold text-white my-1 py-1">
+                      <span className="text-brand-red">AI RECOMMENDATIONS</span>
+                    </h4>
+                    <ul className="text-gray-600">
+                      <li className="text-white font-semibold mt-1">
+                        • Add more emotional descriptors for depth
+                      </li>
+                      <li className="text-white font-semibold mt-1">
+                        • Include lighting details for mood
+                      </li>
+                      <li className="text-white font-semibold mt-1">
+                        • Specify camera angle for composition
+                      </li>
+                    </ul>
+                  </div>
+                </ProtectedFeature>
               </CardContent>
             </Card>
           </div>

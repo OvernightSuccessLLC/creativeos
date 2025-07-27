@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import BriefcaseModal from "@/components/BriefcaseModal";
 import AppNavigation from "@/components/AppNavigation";
 import {
@@ -31,6 +32,7 @@ import {
   Coffee,
   Home,
   MapPin,
+  Type,
 } from "lucide-react";
 
 export default function LifestyleStudio() {
@@ -49,6 +51,8 @@ export default function LifestyleStudio() {
   const [subjectAge, setSubjectAge] = useState("");
   const [activityType, setActivityType] = useState("");
   const [locationSetting, setLocationSetting] = useState("");
+  const [primaryColorPantone, setPrimaryColorPantone] = useState("");
+  const [typographyIntegration, setTypographyIntegration] = useState("");
 
   const keywordCategories = {
     "Scene Objective": [
@@ -287,6 +291,38 @@ export default function LifestyleStudio() {
       "Disposable film",
       "Lo-fi",
       "Brand",
+    ],
+    "Typography Integration": [
+      "Helvetica",
+      "Arial",
+      "Times New Roman",
+      "Georgia",
+      "Futura",
+      "Proxima Nova",
+      "Montserrat",
+      "Open Sans",
+      "Roboto",
+      "Lato",
+      "Source Sans Pro",
+      "Poppins",
+      "Playfair Display",
+      "Merriweather",
+      "Oswald",
+      "Raleway",
+      "Ubuntu",
+      "Nunito",
+      "Inter",
+      "Work Sans",
+      "Cabin",
+      "Crimson Text",
+      "Libre Baskerville",
+      "PT Sans",
+      "Droid Sans",
+      "Titillium Web",
+      "Lora",
+      "Fira Sans",
+      "Source Serif Pro",
+      "Rubik",
     ],
   };
 
@@ -528,6 +564,18 @@ export default function LifestyleStudio() {
     },
     {
       id: 10,
+      title: "Primary Color Pantone",
+      description: "Specify primary brand colors using Pantone codes",
+      icon: <Palette className="w-5 h-5" />,
+    },
+    {
+      id: 11,
+      title: "Typography Integration",
+      description: "Select brand typography and font specifications",
+      icon: <Type className="w-5 h-5" />,
+    },
+    {
+      id: 12,
       title: "Finishing",
       description: "Final post-processing and aesthetic treatment",
       icon: <Camera className="w-5 h-5" />,

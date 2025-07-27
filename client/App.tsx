@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
 import Playbook from "./pages/Playbook";
 import AIToolkit from "./pages/AIToolkit";
+import CharacterSpec from "./pages/CharacterSpec";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient({

@@ -100,7 +100,7 @@ export default function CharacterSpec() {
             <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4">
               Character Specification
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto px-4">
               Ultra-realistic animorph design with comedic swagger and
               professional-grade rigging
             </p>

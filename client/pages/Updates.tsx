@@ -61,12 +61,12 @@ const Updates: React.FC = () => {
     },
     {
       id: 4,
-      type: "premium",
-      title: "Creative Director Pro Features",
+      type: "feature",
+      title: "New AI Toolkit Features",
       description:
-        "Unlock unlimited prompts, advanced analytics, priority support, and exclusive studio templates with Pro membership.",
+        "Discover 70+ new AI tools added to our toolkit, including advanced image generation and creative design tools.",
       timestamp: "2 days ago",
-      icon: Crown,
+      icon: Zap,
       color: "text-purple-500",
       bgColor: "bg-purple-500/10",
       reactions: { likes: 78, comments: 19, shares: 6 },

@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import AppNavigation from "@/components/AppNavigation";
 import BriefcaseModal from "@/components/BriefcaseModal";
+import ProtectedFeature from "@/components/ProtectedFeature";
 import {
   LayoutTemplate,
   Search,

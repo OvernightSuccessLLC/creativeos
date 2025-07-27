@@ -3,14 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useAuth } from "@/contexts/AuthContext";
-import {
-  BookOpen,
-  Zap,
-  Home,
-  Menu,
-  X,
-  Crown,
-} from "lucide-react";
+import { BookOpen, Zap, Home, Menu, X, Crown } from "lucide-react";
 
 interface AppNavigationProps {
   onUpdatesClick?: () => void;

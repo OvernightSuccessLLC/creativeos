@@ -810,11 +810,6 @@ export default function LifestyleStudio() {
                   {copiedPrompt ? "COPIED!" : "COPY"}
                 </Button>
 
-                <ProtectedFeature
-                  feature="advancedAnalytics"
-                  featureName="AI Recommendations"
-                  requiredPlan="pro"
-                >
                   <div className="text-sm mt-4">
                     <h4 className="font-semibold text-white my-1 py-1">
                       <span className="text-brand-red">AI RECOMMENDATIONS</span>
@@ -831,7 +826,6 @@ export default function LifestyleStudio() {
                       </li>
                     </ul>
                   </div>
-                </ProtectedFeature>
               </CardContent>
             </Card>
           </div>

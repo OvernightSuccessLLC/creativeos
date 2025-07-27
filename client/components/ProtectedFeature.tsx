@@ -1,4 +1,4 @@
-import React, { useState, ReactNode } from 'react';
+import { useState, ReactNode } from 'react';
 import { useAuth, User } from '@/contexts/AuthContext';
 import PaywallModal from './PaywallModal';
 import { Button } from '@/components/ui/button';

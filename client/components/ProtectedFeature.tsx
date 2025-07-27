@@ -2,7 +2,7 @@ import React, { useState, ReactNode } from 'react';
 import { useAuth, User } from '@/contexts/AuthContext';
 import PaywallModal from './PaywallModal';
 import { Button } from '@/components/ui/button';
-import { Crown, Lock } from 'lucide-react';
+import { Crown } from 'lucide-react';
 
 interface ProtectedFeatureProps {
   children: ReactNode;

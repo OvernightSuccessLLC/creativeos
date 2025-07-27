@@ -110,7 +110,7 @@ export default function CharacterSpec() {
         {/* Main Content - 2 Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
           {/* Left Column - Character Image */}
-          <div className="order-2 lg:order-1">
+          <div className="order-1 lg:order-1">
             <Card className="bg-black/90 border border-gray-800 overflow-hidden">
               <CardContent className="p-0">
                 <div className="relative">

@@ -254,6 +254,19 @@ export default function Templates() {
     return matchesSearch && matchesCategory;
   });
 
+  // Get the current prompt (edited or original)
+  const getCurrentPrompt = (template: any) => {
+    return editedPrompts[template.id] || template.prompt;
+  };
+
+  // Handle prompt text changes
+  const handlePromptChange = (templateId: number, newText: string) => {
+    setEditedPrompts(prev => ({
+      ...prev,
+      [templateId]: newText
+    }));
+  };
+
   const copyPrompt = async (prompt: string, templateId: number) => {
     // Enhanced legacy copy method with better mobile support
     const legacyCopy = () => {

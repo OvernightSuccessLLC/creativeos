@@ -105,7 +105,7 @@ const Updates: React.FC = () => {
       description:
         "Congratulations to @creativepro_sarah for winning this week's prompt challenge with her innovative lifestyle series!",
       timestamp: "1 week ago",
-      icon: Crown,
+      icon: Star,
       color: "text-gold-500",
       bgColor: "bg-yellow-500/10",
       reactions: { likes: 312, comments: 87, shares: 24 },

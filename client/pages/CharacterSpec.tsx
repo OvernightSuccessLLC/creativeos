@@ -145,7 +145,7 @@ export default function CharacterSpec() {
             {/* Visual Design */}
             <SpecSection title="Visual Design" icon={Eye} color="bg-purple-600">
               <div className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                   <div>
                     <h4 className="text-orange-400 font-semibold mb-2">
                       Animation Style

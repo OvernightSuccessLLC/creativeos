@@ -76,6 +76,43 @@ export default function GraphicStudio() {
       "Event poster",
       "Magazine layout",
     ],
+    "Theme": [
+      "80's Vintage",
+      "80s VHS grain",
+      "90's Photography",
+      "Acrylic Inspired",
+      "Black & White",
+      "Black Magic Camera",
+      "Disposable Film",
+      "Editorial",
+      "Expert Level Quality",
+      "Film Shoot",
+      "Futuristic",
+      "Geometric Fragments",
+      "Halftone Pattern",
+      "Illustrated Scene",
+      "Lifestyle Centric",
+      "Light Gradient Theme",
+      "Luxury",
+      "Macro Detail",
+      "Magazine Quality",
+      "Metallic",
+      "Minimalist",
+      "Neon",
+      "Pastel Gradients",
+      "Polaroid Photography",
+      "Premium",
+      "Product-Centric",
+      "Red Cam",
+      "Reflective Mirro",
+      "Remix Reference Image",
+      "Social Media Ad",
+      "Subtle Neon",
+      "Tie Dye",
+      "Trippy",
+      "Upscale Reference Image",
+      "Y2K",
+    ],
     "Typography & Text": [
       "Bold typography",
       "Script font",
@@ -425,6 +462,12 @@ export default function GraphicStudio() {
     },
     {
       id: 8,
+      title: "Theme",
+      description: "Select visual style and aesthetic theme",
+      icon: <Palette className="w-5 h-5" />,
+    },
+    {
+      id: 9,
       title: "File Upload",
       description: "Upload reference images for your design",
       icon: <Upload className="w-5 h-5" />,
@@ -653,6 +696,27 @@ export default function GraphicStudio() {
                     )}
 
                     {step.id === 8 && (
+                      <div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-3 sm:mt-4">
+                          {keywordCategories["Theme"].map((keyword) => (
+                            <button
+                              key={keyword}
+                              onClick={() => toggleKeyword(keyword)}
+                              className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
+                                selectedKeywords.includes(keyword)
+                                  ? "bg-brand-red text-black"
+                                  : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
+                              }`}
+                              style={{ minHeight: "44px" }}
+                            >
+                              {keyword}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {step.id === 9 && (
                       <div>
                         <Label htmlFor="file-upload" className="text-white text-sm sm:text-base">
                           Upload Reference Image

@@ -111,12 +111,6 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
       path: "/updates",
       description: "Latest news and features",
     },
-    {
-      name: "Join Pro",
-      icon: Crown,
-      path: "/join",
-      description: "Upgrade to premium features",
-    },
   ];
 
   const handleNavigation = (item: (typeof navigationItems)[0]) => {

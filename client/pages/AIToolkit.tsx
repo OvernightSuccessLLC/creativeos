@@ -1059,12 +1059,6 @@ export default function AIToolkit() {
       {/* Navigation */}
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
 
-<<<<<<< HEAD
-      {/* Tools Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {toolsData.map((tool) => (
-=======
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-8">
         <div className="text-center mb-8">
@@ -1129,7 +1123,6 @@ export default function AIToolkit() {
         {/* Tools Grid - 2 columns on mobile, 3 on desktop */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {filteredTools.map((tool) => (
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
             <Card
               key={tool.id}
               className="bg-black border border-gray-800 hover:border-gray-600 transition-all duration-300 flex flex-col h-full group hover:scale-105"

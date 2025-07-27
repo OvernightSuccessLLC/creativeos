@@ -69,21 +69,21 @@ export default function Landing() {
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F1964cc1516094f2c9726884f044c2ef1%2Fe52dffb7c4f54f50b3b0d0f00bb479a2?format=webp&width=800"
             alt="Overnight Success Logo"
-            className="h-16 w-auto mx-auto mb-4"
+            className="h-36 w-auto mx-auto"
           />
         </div>
 
         {/* Email Capture Card */}
         <Card className="bg-black border-none shadow-2xl">
-          <CardHeader className="text-center pb-4">
+          <CardHeader className="text-center pb-3 pt-5">
             <CardTitle className="text-3xl font-bold text-white mb-2">
               Get Access
             </CardTitle>
-            <p className="text-gray-300 text-lg">
+            <p className="text-white font-semibold leading-7 mt-1.5">
               Enter your details to access the AI Playbook and Toolkit
             </p>
           </CardHeader>
-          <CardContent className="p-6">
+          <CardContent className="px-6 pb-5 pt-0">
             {/* Hidden form for Netlify */}
             <form name="email-capture" netlify hidden>
               <input type="text" name="name" />
@@ -123,7 +123,7 @@ export default function Landing() {
             </form>
 
             <div className="mt-6 text-center">
-              <p className="text-gray-400 text-sm">
+              <p className="text-white text-sm">
                 Join thousands of creators using AI to accelerate their success
               </p>
             </div>

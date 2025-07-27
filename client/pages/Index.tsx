@@ -498,7 +498,7 @@ export default function Index() {
                 <button
                   key={item.name}
                   className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors ${
-                    item.highlight
+                    item.active
                       ? "bg-brand-red text-white"
                       : "text-white hover:bg-white/10"
                   }`}

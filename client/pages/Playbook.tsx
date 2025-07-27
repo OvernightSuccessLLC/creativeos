@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -17,6 +17,9 @@ import {
   Settings,
   Eye,
   Zap,
+  CheckCircle,
+  Info,
+  ArrowRight,
 } from "lucide-react";
 
 const FONT_STYLE = {
@@ -45,23 +48,36 @@ export default function Playbook() {
           {
             title: "Be Specific and Clear",
             description:
-              "Provide concrete details about what you want. The more specific the prompt, the better the image quality. 'A young man in a blue suit waiting at a New York City bus stop on a rainy night' vs 'a person in a city'. Include key attributes like colors, setting, and distinctive features.",
+              "Provide concrete details about what you want. The more specific the prompt, the better the image quality.",
+            tip: "'A young man in a blue suit waiting at a New York City bus stop on a rainy night' vs 'a person in a city'",
           },
           {
             title: "Mention the Style or Mood",
             description:
-              "The same scene can look very different as a realistic photo versus a cartoon. Include style descriptors to guide the AI's artistic approach. For example: 'photorealistic style with 4K detail' or 'vintage comic book style' or 'with a serene, warm mood.'",
+              "The same scene can look very different as a realistic photo versus a cartoon. Include style descriptors to guide the AI's artistic approach.",
+            tip: "'photorealistic style with 4K detail' or 'vintage comic book style' or 'with a serene, warm mood'",
           },
           {
             title: "Start Simple (Then Iterate)",
             description:
-              "Begin with a fairly simple prompt focusing on one subject or scene. Using one sentence with basic structure is a good start. Once you see the first result, you can add more details or clarify anything that wasn't right. Treat the first image as a draft.",
+              "Begin with a fairly simple prompt focusing on one subject or scene. Using one sentence with basic structure is a good start.",
+            tip: "Once you see the first result, you can add more details or clarify anything that wasn't right. Treat the first image as a draft.",
           },
           {
             title: "Use Natural Language",
             description:
-              "Write in plain, descriptive sentences instead of disjointed keyword lists. 'A curious red fox exploring a misty autumn forest at dawn, golden sunlight filtering through the trees' works better than 'fox, forest, misty, sunlight, 8k'.",
+              "Write in plain, descriptive sentences instead of disjointed keyword lists.",
+            tip: "'A curious red fox exploring a misty autumn forest at dawn, golden sunlight filtering through the trees' works better than 'fox, forest, misty, sunlight, 8k'",
           },
+<<<<<<< HEAD
+=======
+          {
+            title: "Check Output and Refine",
+            description:
+              "After the image is generated, evaluate it critically. Does it match your mental image?",
+            tip: "Use this insight to refine your next prompt. You can also ask ChatGPT for help improving prompts between generations.",
+          },
+>>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
         ],
         progression: {
           beginner: "Photo of a cat sitting on a windowsill.",
@@ -83,48 +99,48 @@ export default function Playbook() {
           {
             name: "Subject Description",
             description:
-              "The main focus of your image. Be specific about physical attributes, clothing, species, size, color, material, etc. If it's a person, mention age, gender, clothing, distinctive features. For objects, describe color, texture, size.",
+              "The main focus of your image. Be specific about physical attributes, clothing, species, size, color, material, etc.",
             example: "'a small fluffy brown dog' vs 'a dog'",
           },
           {
             name: "Action/Pose",
             description:
-              "What is the subject doing? This gives the image dynamism and context. For people: running, smiling, reading, dancing. For static subjects, describe pose or expression like 'standing triumphantly' or 'sitting cross-legged while meditating'.",
+              "What is the subject doing? This gives the image dynamism and context.",
             example:
               "'a woman reading a book' vs 'a woman dancing in the rain'",
           },
           {
             name: "Environment/Setting",
             description:
-              "Where is the image taking place? Include details like weather, time of day, era if relevant. The setting often dictates the overall color palette and atmosphere.",
+              "Where is the image taking place? Include details like weather, time of day, era if relevant.",
             example:
               "'in a busy market street in Tokyo' vs 'on the surface of the moon'",
           },
           {
             name: "Lighting",
             description:
-              "One of the most powerful tools to set mood. Describe quality, source, and direction of light. Is it day or night? Sunny or cloudy? Soft and diffused or harsh and direct?",
+              "One of the most powerful tools to set mood. Describe quality, source, and direction of light.",
             example:
               "'soft morning sunlight' vs 'dramatic studio spotlight' vs 'neon purple lighting'",
           },
           {
             name: "Camera Details/Composition",
             description:
-              "Camera angle, lens choice, depth of field. This is useful for photography-like results. Include angle (high, low, eye-level), lens type (85mm portrait, fisheye), and composition (rule of thirds, centered).",
+              "Camera angle, lens choice, depth of field. This is useful for photography-like results.",
             example:
               "'close-up shot (85mm lens)' vs 'wide-angle shot' vs 'bird's-eye view'",
           },
           {
             name: "Style/Mood",
             description:
-              "The artistic style, genre, or emotional tone. Art movements (impressionist, pop art), time periods (Victorian-era, 1980s film), or emotional atmosphere (peaceful, eerie, luxurious).",
+              "The artistic style, genre, or emotional tone. Art movements, time periods, or emotional atmosphere.",
             example:
               "'in the style of Studio Ghibli' vs 'photorealistic' vs 'oil painting'",
           },
           {
             name: "Quality Parameters",
             description:
-              "Additional terms to push for higher fidelity. While GPT-4o is high-quality by default, you can still mention resolution emphasis or specific detail requirements.",
+              "Additional terms to push for higher fidelity. While GPT-4o is high-quality by default, you can still mention resolution emphasis.",
             example:
               "'high resolution, 4K detail, ultra-realistic, sharp focus'",
           },
@@ -142,28 +158,28 @@ export default function Playbook() {
           {
             title: "Everyday Scenarios",
             description:
-              "Focus on common activities or moments that people can relate to. Think activities like reading on a sofa, playing with kids, walking a dog, shopping at a farmer's market. The scenario should feel unscripted and real.",
+              "Focus on common activities or moments that people can relate to. Think activities like reading on a sofa, playing with kids, walking a dog, shopping at a farmer's market.",
             example:
               "'friends laughing at a café' or 'a family cooking together in a home kitchen'",
           },
           {
             title: "Natural, Candid Vibe",
             description:
-              "Use descriptors like 'candid,' 'unposed,' 'in the moment,' 'photojournalistic style' to get that spontaneous look. Include authentic expressions or interactions.",
+              "Use descriptors like 'candid,' 'unposed,' 'in the moment,' 'photojournalistic style' to get that spontaneous look.",
             example:
               "'a candid shot of a couple dancing in the living room' or 'a mother and daughter sharing a genuine laugh over ice cream'",
           },
           {
             title: "Environmental Context",
             description:
-              "Don't neglect the background – include props and context that create a sense of realism and story. These elements make the scene heartwarming and believable.",
+              "Don't neglect the background – include props and context that create a sense of realism and story.",
             example:
               "'sunlight coming through the window over the sink' or 'surrounded by open books and a sleeping cat'",
           },
           {
             title: "Natural Lighting",
             description:
-              "Typically use available light rather than dramatic studio lighting. Specify 'soft morning light,' 'warm late-afternoon sun,' or 'cozy lamp light.' Keep lighting realistic for the scenario.",
+              "Typically use available light rather than dramatic studio lighting. Specify 'soft morning light,' 'warm late-afternoon sun,' or 'cozy lamp light.'",
             example:
               "'soft warm lamp light with shadows on the wall' for an indoor evening scene",
           },
@@ -361,8 +377,13 @@ export default function Playbook() {
       },
     },
     {
+<<<<<<< HEAD
       id: 8,
       title: "Warnings",
+=======
+      id: 9,
+      title: "Best Practices & Warnings",
+>>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
       icon: AlertTriangle,
       content: {
         bestPractices: [
@@ -474,6 +495,7 @@ export default function Playbook() {
       {/* Navigation */}
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
 
+<<<<<<< HEAD
       {/* Content Sections */}
       <div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-6"
@@ -500,46 +522,199 @@ export default function Playbook() {
               {section.id === 1 && (
                 <div className="space-y-6">
                   <div className="space-y-4">
+=======
+      {/* Header */}
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-6 md:py-8">
+        <div className="text-center mb-5">
+          <h1
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4"
+            style={TYPOGRAPHY.title}
+          >
+            AI Image Generation Playbook
+          </h1>
+          <p
+            className="text-xs text-black/80 max-w-3xl mx-auto"
+            style={TYPOGRAPHY.body}
+          >
+            Master the art of AI image creation with Sora and GPT-4o. From basic
+            prompts to advanced techniques.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-2">
+            <Badge className="bg-black text-white px-3 py-1">
+              9 Comprehensive Sections
+            </Badge>
+            <Badge className="bg-black text-white px-3 py-1">
+              Beginner to Expert
+            </Badge>
+            <Badge className="bg-black text-white px-3 py-1">
+              Real Examples
+            </Badge>
+          </div>
+        </div>
+      </div>
+
+      {/* Content Sections */}
+      <div
+        className="max-w-7xl mx-auto px-4 md:px-8 space-y-4 md:space-y-6"
+        style={{ padding: "0 16px 32px" }}
+      >
+        {sections.map((section) => (
+          <Card key={section.id} className="bg-black border-none shadow-lg">
+            <CardHeader className="bg-black p-3 md:p-6">
+              <CardTitle
+                className="text-white text-base md:text-lg flex items-center space-x-3"
+                style={TYPOGRAPHY.subtitle}
+              >
+                <div className="flex items-center space-x-3">
+                  <span
+                    className="bg-brand-red text-black rounded-full w-10 h-10 flex items-center justify-center text-sm md:text-base font-bold flex-shrink-0"
+                    style={TYPOGRAPHY.heading}
+                  >
+                    {section.id}
+                  </span>
+                  <section.icon className="w-5 h-5 md:w-6 md:h-6 text-brand-red flex-shrink-0" />
+                  <span className="break-words">{section.title}</span>
+                </div>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="bg-black px-3 md:px-6 pb-4 md:pb-6">
+              {/* Section 1: Introduction */}
+              {section.id === 1 && (
+                <div className="space-y-6">
+                  <div className="bg-gray-900 rounded-lg p-4">
+                    <h4
+                      className="text-brand-red font-bold mb-3 flex items-center gap-2"
+                      style={TYPOGRAPHY.heading}
+                    >
+                      <Info className="w-4 h-4" />
+                      Overview
+                    </h4>
+                    <p
+                      className="text-white leading-relaxed text-xs md:text-sm"
+                      style={TYPOGRAPHY.body}
+                    >
+                      {section.content.overview}
+                    </p>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="space-y-2 md:space-y-3">
+                      <h4
+                        className="text-brand-red font-bold flex items-center gap-2"
+                        style={TYPOGRAPHY.heading}
+                      >
+                        <Eye className="w-4 h-4" />
+                        How It Works
+                      </h4>
+                      <p
+                        className="text-white leading-relaxed text-xs md:text-sm"
+                        style={TYPOGRAPHY.body}
+                      >
+                        {section.content.howItWorks}
+                      </p>
+                    </div>
+
+                    <div className="space-y-2 md:space-y-3">
+                      <h4
+                        className="text-brand-red font-bold flex items-center gap-2"
+                        style={TYPOGRAPHY.heading}
+                      >
+                        <Zap className="w-4 h-4" />
+                        Why Special
+                      </h4>
+                      <p
+                        className="text-white leading-relaxed text-xs md:text-sm"
+                        style={TYPOGRAPHY.body}
+                      >
+                        {section.content.whySpecial}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="bg-brand-red/20 rounded-lg p-4 border-l-4 border-brand-red">
+                    <h4
+                      className="text-brand-red font-bold mb-2"
+                      style={TYPOGRAPHY.heading}
+                    >
+                      Who This Is For
+                    </h4>
+                    <p
+                      className="text-white leading-relaxed text-xs md:text-sm"
+                      style={TYPOGRAPHY.body}
+                    >
+                      {section.content.whoFor}
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* Section 2: Basics of Prompting */}
+              {section.id === 2 && (
+                <div className="space-y-6">
+                  <div className="grid gap-4">
+>>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                     {section.content.principles.map((principle, idx) => (
-                      <div key={idx} className="space-y-2">
+                      <div key={idx} className="bg-gray-900 rounded-lg p-4">
                         <h4
-                          className="text-brand-red font-bold"
+                          className="text-brand-red font-bold mb-2 flex items-center gap-2"
                           style={TYPOGRAPHY.heading}
                         >
+                          <CheckCircle className="w-4 h-4" />
                           {principle.title}
                         </h4>
                         <p
-                          className="text-white leading-relaxed text-sm"
+                          className="text-white leading-relaxed text-xs md:text-sm mb-3"
                           style={TYPOGRAPHY.body}
                         >
                           {principle.description}
                         </p>
+                        <div className="bg-black rounded p-3 border-l-2 border-brand-red">
+                          <p className="text-gray-300 text-xs italic">
+                            💡 {principle.tip}
+                          </p>
+                        </div>
                       </div>
                     ))}
                   </div>
+<<<<<<< HEAD
                   <div className="bg-gray-900 rounded space-y-3" style={{ marginTop: "8px", padding: "8px 16px 16px" }}>
                     <div className="space-y-2" style={{ marginTop: "12px" }}>
                       <div>
                         <span className="text-brand-red font-semibold text-sm">
                           Beginner:
+=======
+
+                  <div className="bg-brand-red/10 rounded-lg p-4">
+                    <h4
+                      className="text-brand-red font-bold mb-4 flex items-center gap-2"
+                      style={TYPOGRAPHY.heading}
+                    >
+                      <ArrowRight className="w-4 h-4" />
+                      Progression Examples
+                    </h4>
+                    <div className="space-y-4">
+                      <div className="space-y-2">
+                        <span className="bg-green-600 text-white px-2 py-1 rounded text-xs font-semibold">
+                          BEGINNER
+>>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                         </span>
-                        <p className="text-white italic text-sm">
+                        <p className="text-white italic text-xs md:text-sm bg-gray-900 p-3 rounded">
                           "{section.content.progression.beginner}"
                         </p>
                       </div>
-                      <div>
-                        <span className="text-brand-red font-semibold text-sm">
-                          Advanced:
+                      <div className="space-y-2">
+                        <span className="bg-orange-600 text-white px-2 py-1 rounded text-xs font-semibold">
+                          ADVANCED
                         </span>
-                        <p className="text-white italic text-sm">
+                        <p className="text-white italic text-xs md:text-sm bg-gray-900 p-3 rounded">
                           "{section.content.progression.advanced}"
                         </p>
                       </div>
-                      <div>
-                        <span className="text-brand-red font-semibold text-sm">
-                          Expert:
+                      <div className="space-y-2">
+                        <span className="bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold">
+                          EXPERT
                         </span>
-                        <p className="text-white italic text-sm">
+                        <p className="text-white italic text-xs md:text-sm bg-gray-900 p-3 rounded">
                           "{section.content.progression.expert}"
                         </p>
                       </div>
@@ -551,35 +726,46 @@ export default function Playbook() {
               {/* Section 2: Key Components */}
               {section.id === 2 && (
                 <div className="space-y-6">
-                  <div className="bg-gray-900 rounded p-4">
+                  <div className="bg-brand-red/20 rounded-lg p-4 border border-brand-red">
                     <h4
-                      className="text-brand-red font-bold mb-3"
+                      className="text-brand-red font-bold mb-3 flex items-center gap-2"
                       style={TYPOGRAPHY.heading}
                     >
-                      Formula
+                      <Database className="w-4 h-4" />
+                      The Formula
                     </h4>
-                    <code className="text-white block text-xs bg-black p-3 rounded font-mono">
+                    <code className="text-white block text-xs bg-black p-4 rounded font-mono leading-relaxed">
                       {section.content.formula}
                     </code>
+<<<<<<< HEAD
+=======
+                    <p
+                      className="text-white text-xs md:text-sm mt-3"
+                      style={TYPOGRAPHY.body}
+                    >
+                      {section.content.description}
+                    </p>
+>>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                   </div>
-                  <div className="space-y-4">
+
+                  <div className="grid md:grid-cols-2 gap-4">
                     {section.content.components.map((component, idx) => (
-                      <div key={idx} className="space-y-2">
+                      <div key={idx} className="bg-gray-900 rounded-lg p-4">
                         <h4
-                          className="text-brand-red font-bold"
+                          className="text-brand-red font-bold mb-2"
                           style={TYPOGRAPHY.heading}
                         >
                           {component.name}
                         </h4>
                         <p
-                          className="text-white leading-relaxed text-sm"
+                          className="text-white leading-relaxed text-xs md:text-sm mb-3"
                           style={TYPOGRAPHY.body}
                         >
                           {component.description}
                         </p>
-                        <div className="bg-gray-900 rounded p-3">
+                        <div className="bg-black rounded p-3 border-l-2 border-orange-500">
                           <p className="text-gray-300 text-xs italic">
-                            {component.example}
+                            Example: {component.example}
                           </p>
                         </div>
                       </div>
@@ -591,22 +777,31 @@ export default function Playbook() {
               {/* Section 3: Lifestyle Photography */}
               {section.id === 3 && (
                 <div className="space-y-6">
-                  <div className="space-y-4">
+                  <div className="bg-gray-900 rounded-lg p-4">
+                    <p
+                      className="text-white leading-relaxed text-xs md:text-sm"
+                      style={TYPOGRAPHY.body}
+                    >
+                      {section.content.description}
+                    </p>
+                  </div>
+
+                  <div className="grid gap-4">
                     {section.content.characteristics.map((char, idx) => (
-                      <div key={idx} className="space-y-2">
+                      <div key={idx} className="bg-gray-900 rounded-lg p-4">
                         <h4
-                          className="text-brand-red font-bold"
+                          className="text-brand-red font-bold mb-2"
                           style={TYPOGRAPHY.heading}
                         >
                           {char.title}
                         </h4>
                         <p
-                          className="text-white leading-relaxed text-sm"
+                          className="text-white leading-relaxed text-xs md:text-sm mb-3"
                           style={TYPOGRAPHY.body}
                         >
                           {char.description}
                         </p>
-                        <div className="bg-gray-900 rounded p-3">
+                        <div className="bg-black rounded p-3 border-l-2 border-blue-500">
                           <p className="text-gray-300 text-xs italic">
                             {char.example}
                           </p>
@@ -614,7 +809,8 @@ export default function Playbook() {
                       </div>
                     ))}
                   </div>
-                  <div className="bg-gray-900 rounded p-4">
+
+                  <div className="bg-brand-red/10 rounded-lg p-4">
                     <h4
                       className="text-brand-red font-bold mb-3"
                       style={TYPOGRAPHY.heading}
@@ -622,7 +818,7 @@ export default function Playbook() {
                       Complete Example
                     </h4>
                     <p
-                      className="text-white italic text-sm"
+                      className="text-white italic text-xs md:text-sm bg-gray-900 p-4 rounded"
                       style={TYPOGRAPHY.body}
                     >
                       "{section.content.fullExample}"
@@ -634,16 +830,35 @@ export default function Playbook() {
               {/* Section 4: Product Photography */}
               {section.id === 4 && (
                 <div className="space-y-6">
-                  <div className="space-y-4">
+                  <div className="bg-gray-900 rounded-lg p-4">
+                    <p
+                      className="text-white leading-relaxed text-xs md:text-sm"
+                      style={TYPOGRAPHY.body}
+                    >
+                      {section.content.description}
+                    </p>
+                  </div>
+
+                  <div className="grid gap-4">
                     {section.content.techniques.map((technique, idx) => (
-                      <div key={idx} className="space-y-2">
+                      <div key={idx} className="bg-gray-900 rounded-lg p-4">
                         <h4
-                          className="text-brand-red font-bold"
+                          className="text-brand-red font-bold mb-2"
                           style={TYPOGRAPHY.heading}
                         >
                           {technique.title}
                         </h4>
+<<<<<<< HEAD
                         <div className="bg-gray-900 rounded p-3">
+=======
+                        <p
+                          className="text-white leading-relaxed text-xs md:text-sm mb-3"
+                          style={TYPOGRAPHY.body}
+                        >
+                          {technique.description}
+                        </p>
+                        <div className="bg-black rounded p-3 border-l-2 border-purple-500">
+>>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                           <p className="text-gray-300 text-xs italic">
                             {technique.example}
                           </p>
@@ -651,7 +866,8 @@ export default function Playbook() {
                       </div>
                     ))}
                   </div>
-                  <div className="bg-gray-900 rounded p-4">
+
+                  <div className="bg-brand-red/10 rounded-lg p-4">
                     <h4
                       className="text-brand-red font-bold mb-3"
                       style={TYPOGRAPHY.heading}
@@ -659,7 +875,7 @@ export default function Playbook() {
                       Expert Example
                     </h4>
                     <p
-                      className="text-white italic text-sm"
+                      className="text-white italic text-xs md:text-sm bg-gray-900 p-4 rounded"
                       style={TYPOGRAPHY.body}
                     >
                       "{section.content.expertExample}"
@@ -671,15 +887,25 @@ export default function Playbook() {
               {/* Section 5: Graphics & Design */}
               {section.id === 5 && (
                 <div className="space-y-6">
-                  <div className="space-y-5">
+                  <div className="bg-gray-900 rounded-lg p-4">
+                    <p
+                      className="text-white leading-relaxed text-xs md:text-sm"
+                      style={TYPOGRAPHY.body}
+                    >
+                      {section.content.description}
+                    </p>
+                  </div>
+
+                  <div className="space-y-6">
                     {section.content.categories.map((category, idx) => (
-                      <div key={idx} className="space-y-3">
+                      <div key={idx} className="bg-gray-900 rounded-lg p-4">
                         <h4
-                          className="text-brand-red font-bold"
+                          className="text-brand-red font-bold mb-3"
                           style={TYPOGRAPHY.heading}
                         >
                           {category.title}
                         </h4>
+<<<<<<< HEAD
                         <div className="space-y-1">
                           {category.tips.map((tip, tipIdx) => (
                             <p
@@ -690,8 +916,33 @@ export default function Playbook() {
                               • {tip}
                             </p>
                           ))}
+=======
+                        <p
+                          className="text-white leading-relaxed text-xs md:text-sm mb-4"
+                          style={TYPOGRAPHY.body}
+                        >
+                          {category.description}
+                        </p>
+
+                        <div className="space-y-2 mb-4">
+                          <h5 className="text-orange-400 font-semibold text-xs">
+                            Quick Tips:
+                          </h5>
+                          <div className="grid gap-1">
+                            {category.tips.map((tip, tipIdx) => (
+                              <p
+                                key={tipIdx}
+                                className="text-white text-xs"
+                                style={TYPOGRAPHY.body}
+                              >
+                                • {tip}
+                              </p>
+                            ))}
+                          </div>
+>>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                         </div>
-                        <div className="bg-gray-900 rounded p-3">
+
+                        <div className="bg-black rounded p-3 border-l-2 border-green-500">
                           <p
                             className="text-white italic text-xs"
                             style={TYPOGRAPHY.body}
@@ -708,16 +959,40 @@ export default function Playbook() {
               {/* Section 6: Scene Regeneration */}
               {section.id === 6 && (
                 <div className="space-y-6">
-                  <div className="space-y-4">
+                  <div className="bg-gray-900 rounded-lg p-4">
+                    <p
+                      className="text-white leading-relaxed text-xs md:text-sm mb-3"
+                      style={TYPOGRAPHY.body}
+                    >
+                      {section.content.description}
+                    </p>
+                    <div className="bg-brand-red/20 rounded p-3 border-l-2 border-brand-red">
+                      <p className="text-white text-xs" style={TYPOGRAPHY.body}>
+                        💡 {section.content.howItWorks}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="grid gap-4">
                     {section.content.techniques.map((technique, idx) => (
-                      <div key={idx} className="space-y-2">
+                      <div key={idx} className="bg-gray-900 rounded-lg p-4">
                         <h4
-                          className="text-brand-red font-bold"
+                          className="text-brand-red font-bold mb-2"
                           style={TYPOGRAPHY.heading}
                         >
                           {technique.title}
                         </h4>
+<<<<<<< HEAD
                         <div className="bg-gray-900 rounded p-3">
+=======
+                        <p
+                          className="text-white leading-relaxed text-xs md:text-sm mb-3"
+                          style={TYPOGRAPHY.body}
+                        >
+                          {technique.description}
+                        </p>
+                        <div className="bg-black rounded p-3 border-l-2 border-yellow-500">
+>>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                           <p className="text-gray-300 text-xs italic">
                             {technique.example}
                           </p>
@@ -725,22 +1000,27 @@ export default function Playbook() {
                       </div>
                     ))}
                   </div>
-                  <div className="bg-gray-900 rounded p-4">
+
+                  <div className="bg-brand-red/10 rounded-lg p-4">
                     <h4
                       className="text-brand-red font-bold mb-3"
                       style={TYPOGRAPHY.heading}
                     >
-                      Edit Sequence Example
+                      Step-by-Step Edit Sequence
                     </h4>
-                    <div className="space-y-2">
+                    <div className="space-y-3">
                       {section.content.exampleSequence.map((step, idx) => (
-                        <p
-                          key={idx}
-                          className="text-white text-xs"
-                          style={TYPOGRAPHY.body}
-                        >
-                          {step}
-                        </p>
+                        <div key={idx} className="flex items-start gap-3">
+                          <span className="bg-brand-red text-black rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-1">
+                            {idx + 1}
+                          </span>
+                          <p
+                            className="text-white text-xs md:text-sm bg-gray-900 p-3 rounded flex-1"
+                            style={TYPOGRAPHY.body}
+                          >
+                            {step}
+                          </p>
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -750,16 +1030,29 @@ export default function Playbook() {
               {/* Section 7: Prompt Vault */}
               {section.id === 7 && (
                 <div className="space-y-6">
+<<<<<<< HEAD
                   <div className="space-y-4" style={{ marginTop: "24px" }}>
+=======
+                  <div className="bg-gray-900 rounded-lg p-4">
+                    <p
+                      className="text-white leading-relaxed text-xs md:text-sm"
+                      style={TYPOGRAPHY.body}
+                    >
+                      {section.content.description}
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+>>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                     {section.content.steps.map((step, idx) => (
-                      <div key={idx} className="bg-gray-900 rounded p-4">
+                      <div key={idx} className="bg-gray-900 rounded-lg p-4">
                         <div className="flex items-start space-x-3">
-                          <span className="bg-brand-red text-black rounded-full w-7 h-7 flex items-center justify-center text-xs font-bold mt-1">
+                          <span className="bg-brand-red text-black rounded-full w-8 h-8 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-1">
                             {idx + 1}
                           </span>
-                          <div className="space-y-2">
+                          <div className="space-y-2 flex-1">
                             <h4
-                              className="text-brand-red font-bold text-sm"
+                              className="text-brand-red font-bold text-xs md:text-sm"
                               style={TYPOGRAPHY.heading}
                             >
                               {step.title}
@@ -771,19 +1064,22 @@ export default function Playbook() {
                               {step.description}
                             </p>
                             {step.example && (
-                              <p
-                                className="text-gray-300 text-xs italic"
-                                style={TYPOGRAPHY.body}
-                              >
-                                {step.example}
-                              </p>
+                              <div className="bg-black rounded p-3 border-l-2 border-cyan-500">
+                                <p
+                                  className="text-gray-300 text-xs italic"
+                                  style={TYPOGRAPHY.body}
+                                >
+                                  {step.example}
+                                </p>
+                              </div>
                             )}
                           </div>
                         </div>
                       </div>
                     ))}
                   </div>
-                  <div className="bg-gray-900 rounded p-4">
+
+                  <div className="bg-brand-red/10 rounded-lg p-4">
                     <h4
                       className="text-brand-red font-bold mb-3"
                       style={TYPOGRAPHY.heading}
@@ -805,6 +1101,7 @@ export default function Playbook() {
                 </div>
               )}
 
+<<<<<<< HEAD
               {/* Section 8: Warnings */}
               {section.id === 8 && (
                 <div className="space-y-4">
@@ -812,34 +1109,155 @@ export default function Playbook() {
                     <div
                       key={idx}
                       className="space-y-2 bg-gray-900 rounded p-3"
+=======
+              {/* Section 9: Best Practices & Warnings */}
+              {section.id === 9 && (
+                <div className="space-y-6">
+                  <div className="space-y-4">
+                    <h3
+                      className="text-brand-red font-bold text-lg flex items-center gap-2"
+                      style={TYPOGRAPHY.heading}
+>>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                     >
-                      <h5
-                        className="text-brand-red font-bold text-sm"
-                        style={TYPOGRAPHY.heading}
+                      <CheckCircle className="w-5 h-5" />
+                      Best Practices
+                    </h3>
+                    {section.content.bestPractices.map((practice, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-green-900/30 rounded-lg p-4 border border-green-700"
                       >
-                        {warning.title}
-                      </h5>
-                      <p
-                        className="text-white text-xs leading-relaxed"
-                        style={TYPOGRAPHY.body}
-                      >
-                        {warning.description}
-                      </p>
-                      {warning.example && (
+                        <h5
+                          className="text-green-400 font-bold text-xs md:text-sm mb-2"
+                          style={TYPOGRAPHY.heading}
+                        >
+                          {practice.title}
+                        </h5>
                         <p
-                          className="text-gray-300 text-xs italic"
+                          className="text-white text-xs leading-relaxed mb-2"
                           style={TYPOGRAPHY.body}
                         >
-                          {warning.example}
+                          {practice.description}
                         </p>
-                      )}
-                    </div>
-                  ))}
+                        {practice.example && (
+                          <div className="bg-black rounded p-3 border-l-2 border-green-500">
+                            <p className="text-gray-300 text-xs italic">
+                              {practice.example}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3
+                      className="text-brand-red font-bold text-lg flex items-center gap-2"
+                      style={TYPOGRAPHY.heading}
+                    >
+                      <AlertTriangle className="w-5 h-5" />
+                      Important Warnings
+                    </h3>
+                    {section.content.warnings.map((warning, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-red-900/30 rounded-lg p-4 border border-red-700"
+                      >
+                        <h5
+                          className="text-red-400 font-bold text-xs md:text-sm mb-2"
+                          style={TYPOGRAPHY.heading}
+                        >
+                          {warning.title}
+                        </h5>
+                        <p
+                          className="text-white text-xs leading-relaxed mb-2"
+                          style={TYPOGRAPHY.body}
+                        >
+                          {warning.description}
+                        </p>
+                        {warning.example && (
+                          <div className="bg-black rounded p-3 border-l-2 border-red-500 mb-2">
+                            <p className="text-gray-300 text-xs italic">
+                              {warning.example}
+                            </p>
+                          </div>
+                        )}
+                        {warning.consequence && (
+                          <div className="bg-red-800/20 rounded p-2 border-l-2 border-red-600">
+                            <p className="text-red-300 text-xs">
+                              ⚠️ {warning.consequence}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3
+                      className="text-brand-red font-bold text-lg flex items-center gap-2"
+                      style={TYPOGRAPHY.heading}
+                    >
+                      <Settings className="w-5 h-5" />
+                      Troubleshooting
+                    </h3>
+                    {section.content.troubleshooting.map((trouble, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-blue-900/30 rounded-lg p-4 border border-blue-700"
+                      >
+                        <h5
+                          className="text-blue-400 font-bold text-xs md:text-sm mb-2"
+                          style={TYPOGRAPHY.heading}
+                        >
+                          {trouble.title}
+                        </h5>
+                        <p
+                          className="text-white text-xs leading-relaxed mb-2"
+                          style={TYPOGRAPHY.body}
+                        >
+                          {trouble.description}
+                        </p>
+                        <div className="bg-black rounded p-3 border-l-2 border-blue-500">
+                          <p className="text-blue-300 text-xs">
+                            💡 Solution: {trouble.solution}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
             </CardContent>
           </Card>
         ))}
+      </div>
+
+      {/* Call to Action */}
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">
+        <div className="bg-black rounded-xl p-6 md:p-8 text-center">
+          <h3
+            className="text-xl md:text-2xl font-bold text-white mb-4"
+            style={TYPOGRAPHY.title}
+          >
+            Ready to Create Amazing AI Images?
+          </h3>
+          <p
+            className="text-gray-300 mb-6 max-w-2xl mx-auto"
+            style={TYPOGRAPHY.body}
+          >
+            Apply what you've learned and start generating professional-quality
+            images with Sora today.
+          </p>
+          <Button
+            onClick={() => navigate("/ai-toolkit")}
+            className="bg-brand-red text-black hover:bg-brand-red-hover font-bold px-6 py-3"
+            style={TYPOGRAPHY.button}
+          >
+            <Zap className="w-4 h-4 mr-2" />
+            EXPLORE AI TOOLKIT
+          </Button>
+        </div>
       </div>
 
       {/* Briefcase Modal */}

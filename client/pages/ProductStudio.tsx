@@ -39,6 +39,33 @@ export default function ProductStudio() {
   const [showBriefcase, setShowBriefcase] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
+  // Force event handlers to work with native DOM events
+  useEffect(() => {
+    const nativeButton = document.querySelector('[data-test="native-button"]');
+    if (nativeButton) {
+      nativeButton.addEventListener('click', () => {
+        console.log('Native click works!');
+        alert('Native DOM event works!');
+      });
+    }
+
+    // Add mobile menu toggle
+    const mobileMenuButton = document.querySelector('[data-mobile-menu="toggle"]');
+    if (mobileMenuButton) {
+      mobileMenuButton.addEventListener('click', () => {
+        const menu = document.querySelector('[data-mobile-menu="content"]');
+        if (menu) {
+          menu.classList.toggle('hidden');
+        }
+      });
+    }
+
+    return () => {
+      nativeButton?.removeEventListener('click', () => {});
+      mobileMenuButton?.removeEventListener('click', () => {});
+    };
+  }, []);
+
   // Prompt Builder State
   const [activeStep, setActiveStep] = useState<number | null>(1);
   const [customInstructions, setCustomInstructions] = useState("");
@@ -423,6 +450,40 @@ export default function ProductStudio() {
 
   return (
     <div className="min-h-screen bg-brand-red text-black">
+      {/* DEBUG: Test both React and native events */}
+      <div style={{ position: 'fixed', top: '5px', right: '5px', zIndex: 10000 }}>
+        <button
+          data-test="test-button"
+          onClick={() => {
+            console.log('React click works!');
+            alert('React is working!');
+          }}
+          style={{
+            background: 'green',
+            color: 'white',
+            padding: '8px',
+            border: 'none',
+            borderRadius: '4px',
+            fontSize: '12px',
+            marginRight: '5px'
+          }}
+        >
+          REACT
+        </button>
+        <button
+          data-test="native-button"
+          style={{
+            background: 'blue',
+            color: 'white',
+            padding: '8px',
+            border: 'none',
+            borderRadius: '4px',
+            fontSize: '12px'
+          }}
+        >
+          NATIVE
+        </button>
+      </div>
       <AppNavigation />
 
       {/* HOW IT WORKS Section */}
@@ -460,10 +521,18 @@ export default function ProductStudio() {
             {steps.map((step) => (
               <Card key={step.id} className="border-black bg-black">
                 <CardHeader
+<<<<<<< HEAD
                   className="cursor-pointer bg-black p-4 sm:p-6"
                   onClick={() =>
                     setActiveStep(activeStep === step.id ? null : step.id)
                   }
+=======
+                  className="cursor-pointer bg-black"
+                  onClick={() => {
+                    console.log('Card clicked:', step.id);
+                    setActiveStep(activeStep === step.id ? null : step.id);
+                  }}
+>>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2 sm:space-x-3 flex-1 min-w-0">

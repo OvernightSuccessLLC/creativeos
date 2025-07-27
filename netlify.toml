@@ -1,12 +1,12 @@
 [build]
   base = "."
-  command = "npm ci && npm run build:client"
+  command = "npm install && npm run build:client"
   publish = "dist/spa"
 
 [build.environment]
   NODE_VERSION = "20"
-  NPM_FLAGS = "--no-optional"
-  CI = "true"
+  DISABLE_ESLINT_PLUGIN = "true"
+  CI = "false"
 
 [[redirects]]
   from = "/*"

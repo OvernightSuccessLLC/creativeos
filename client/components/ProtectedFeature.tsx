@@ -1,12 +1,12 @@
 import React, { useState, ReactNode } from 'react';
-import { useAuth } from '@/contexts/AuthContext';
+import { useAuth, User } from '@/contexts/AuthContext';
 import PaywallModal from './PaywallModal';
 import { Button } from '@/components/ui/button';
 import { Crown, Lock } from 'lucide-react';
 
 interface ProtectedFeatureProps {
   children: ReactNode;
-  feature: keyof import('@/contexts/AuthContext').User['features'];
+  feature: keyof User['features'];
   requiredPlan?: 'pro' | 'enterprise';
   fallback?: ReactNode;
   showUpgradeButton?: boolean;

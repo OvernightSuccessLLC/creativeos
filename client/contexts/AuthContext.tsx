@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-interface User {
+export interface User {
   id: string;
   email: string;
   plan: 'free' | 'pro' | 'enterprise';
@@ -82,10 +82,10 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const login = async (accessKey: string): Promise<boolean> => {
     setIsLoading(true);
-    
+
     // Simulate API call delay
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     const keyData = ACCESS_KEYS[accessKey as keyof typeof ACCESS_KEYS];
     if (keyData) {
       const newUser: User = {
@@ -95,13 +95,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         accessKey,
         features: keyData.features,
       };
-      
+
       setUser(newUser);
       localStorage.setItem('creative_director_access_key', accessKey);
       setIsLoading(false);
       return true;
     }
-    
+
     setIsLoading(false);
     return false;
   };

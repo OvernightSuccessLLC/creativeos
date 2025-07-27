@@ -9,6 +9,7 @@ import {
   Home,
   Menu,
   X,
+  Crown,
 } from "lucide-react";
 
 interface AppNavigationProps {

@@ -87,18 +87,6 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
       path: "/ai-toolkit",
       description: "Curated AI tools collection",
     },
-    {
-      name: "Updates",
-      icon: Bell,
-      path: "/updates",
-      description: "Latest news and features",
-    },
-    {
-      name: "Join Pro",
-      icon: Crown,
-      path: "/join",
-      description: "Upgrade to premium features",
-    },
   ];
 
   const handleNavigation = (item: (typeof navigationItems)[0]) => {

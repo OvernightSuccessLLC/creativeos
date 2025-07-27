@@ -69,15 +69,6 @@ export default function Playbook() {
               "Write in plain, descriptive sentences instead of disjointed keyword lists.",
             tip: "'A curious red fox exploring a misty autumn forest at dawn, golden sunlight filtering through the trees' works better than 'fox, forest, misty, sunlight, 8k'",
           },
-<<<<<<< HEAD
-=======
-          {
-            title: "Check Output and Refine",
-            description:
-              "After the image is generated, evaluate it critically. Does it match your mental image?",
-            tip: "Use this insight to refine your next prompt. You can also ask ChatGPT for help improving prompts between generations.",
-          },
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
         ],
         progression: {
           beginner: "Photo of a cat sitting on a windowsill.",
@@ -377,13 +368,6 @@ export default function Playbook() {
       },
     },
     {
-<<<<<<< HEAD
-      id: 8,
-      title: "Warnings",
-=======
-      id: 9,
-      title: "Best Practices & Warnings",
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
       icon: AlertTriangle,
       content: {
         bestPractices: [
@@ -495,164 +479,6 @@ export default function Playbook() {
       {/* Navigation */}
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
 
-<<<<<<< HEAD
-      {/* Content Sections */}
-      <div
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-6"
-        style={{ padding: "0 16px 16px", paddingTop: "0" }}
-      >
-        {sections.map((section) => (
-          <Card key={section.id} className="bg-black border-none">
-            <CardHeader className="bg-black" style={{ padding: "16px 16px 12px" }}>
-              <CardTitle
-                className="text-white text-base sm:text-lg flex items-center space-x-2"
-                style={TYPOGRAPHY.subtitle}
-              >
-                <span
-                  className="bg-brand-red text-black rounded px-2 py-1 text-xs sm:text-sm font-semibold flex-shrink-0"
-                  style={TYPOGRAPHY.heading}
-                >
-                  {section.id}.
-                </span>
-                <span className="truncate text-sm sm:text-base">{section.title}</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="bg-black px-4 sm:px-6 pb-4 sm:pb-6">
-              {/* Section 1: Basics of Prompting */}
-              {section.id === 1 && (
-                <div className="space-y-6">
-                  <div className="space-y-4">
-=======
-      {/* Header */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-6 md:py-8">
-        <div className="text-center mb-5">
-          <h1
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4"
-            style={TYPOGRAPHY.title}
-          >
-            AI Image Generation Playbook
-          </h1>
-          <p
-            className="text-xs text-black/80 max-w-3xl mx-auto"
-            style={TYPOGRAPHY.body}
-          >
-            Master the art of AI image creation with Sora and GPT-4o. From basic
-            prompts to advanced techniques.
-          </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-2">
-            <Badge className="bg-black text-white px-3 py-1">
-              9 Comprehensive Sections
-            </Badge>
-            <Badge className="bg-black text-white px-3 py-1">
-              Beginner to Expert
-            </Badge>
-            <Badge className="bg-black text-white px-3 py-1">
-              Real Examples
-            </Badge>
-          </div>
-        </div>
-      </div>
-
-      {/* Content Sections */}
-      <div
-        className="max-w-7xl mx-auto px-4 md:px-8 space-y-4 md:space-y-6"
-        style={{ padding: "0 16px 32px" }}
-      >
-        {sections.map((section) => (
-          <Card key={section.id} className="bg-black border-none shadow-lg">
-            <CardHeader className="bg-black p-3 md:p-6">
-              <CardTitle
-                className="text-white text-base md:text-lg flex items-center space-x-3"
-                style={TYPOGRAPHY.subtitle}
-              >
-                <div className="flex items-center space-x-3">
-                  <span
-                    className="bg-brand-red text-black rounded-full w-10 h-10 flex items-center justify-center text-sm md:text-base font-bold flex-shrink-0"
-                    style={TYPOGRAPHY.heading}
-                  >
-                    {section.id}
-                  </span>
-                  <section.icon className="w-5 h-5 md:w-6 md:h-6 text-brand-red flex-shrink-0" />
-                  <span className="break-words">{section.title}</span>
-                </div>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="bg-black px-3 md:px-6 pb-4 md:pb-6">
-              {/* Section 1: Introduction */}
-              {section.id === 1 && (
-                <div className="space-y-6">
-                  <div className="bg-gray-900 rounded-lg p-4">
-                    <h4
-                      className="text-brand-red font-bold mb-3 flex items-center gap-2"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      <Info className="w-4 h-4" />
-                      Overview
-                    </h4>
-                    <p
-                      className="text-white leading-relaxed text-xs md:text-sm"
-                      style={TYPOGRAPHY.body}
-                    >
-                      {section.content.overview}
-                    </p>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2 md:space-y-3">
-                      <h4
-                        className="text-brand-red font-bold flex items-center gap-2"
-                        style={TYPOGRAPHY.heading}
-                      >
-                        <Eye className="w-4 h-4" />
-                        How It Works
-                      </h4>
-                      <p
-                        className="text-white leading-relaxed text-xs md:text-sm"
-                        style={TYPOGRAPHY.body}
-                      >
-                        {section.content.howItWorks}
-                      </p>
-                    </div>
-
-                    <div className="space-y-2 md:space-y-3">
-                      <h4
-                        className="text-brand-red font-bold flex items-center gap-2"
-                        style={TYPOGRAPHY.heading}
-                      >
-                        <Zap className="w-4 h-4" />
-                        Why Special
-                      </h4>
-                      <p
-                        className="text-white leading-relaxed text-xs md:text-sm"
-                        style={TYPOGRAPHY.body}
-                      >
-                        {section.content.whySpecial}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="bg-brand-red/20 rounded-lg p-4 border-l-4 border-brand-red">
-                    <h4
-                      className="text-brand-red font-bold mb-2"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      Who This Is For
-                    </h4>
-                    <p
-                      className="text-white leading-relaxed text-xs md:text-sm"
-                      style={TYPOGRAPHY.body}
-                    >
-                      {section.content.whoFor}
-                    </p>
-                  </div>
-                </div>
-              )}
-
-              {/* Section 2: Basics of Prompting */}
-              {section.id === 2 && (
-                <div className="space-y-6">
-                  <div className="grid gap-4">
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                     {section.content.principles.map((principle, idx) => (
                       <div key={idx} className="bg-gray-900 rounded-lg p-4">
                         <h4
@@ -676,27 +502,6 @@ export default function Playbook() {
                       </div>
                     ))}
                   </div>
-<<<<<<< HEAD
-                  <div className="bg-gray-900 rounded space-y-3" style={{ marginTop: "8px", padding: "8px 16px 16px" }}>
-                    <div className="space-y-2" style={{ marginTop: "12px" }}>
-                      <div>
-                        <span className="text-brand-red font-semibold text-sm">
-                          Beginner:
-=======
-
-                  <div className="bg-brand-red/10 rounded-lg p-4">
-                    <h4
-                      className="text-brand-red font-bold mb-4 flex items-center gap-2"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      <ArrowRight className="w-4 h-4" />
-                      Progression Examples
-                    </h4>
-                    <div className="space-y-4">
-                      <div className="space-y-2">
-                        <span className="bg-green-600 text-white px-2 py-1 rounded text-xs font-semibold">
-                          BEGINNER
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                         </span>
                         <p className="text-white italic text-xs md:text-sm bg-gray-900 p-3 rounded">
                           "{section.content.progression.beginner}"
@@ -737,15 +542,6 @@ export default function Playbook() {
                     <code className="text-white block text-xs bg-black p-4 rounded font-mono leading-relaxed">
                       {section.content.formula}
                     </code>
-<<<<<<< HEAD
-=======
-                    <p
-                      className="text-white text-xs md:text-sm mt-3"
-                      style={TYPOGRAPHY.body}
-                    >
-                      {section.content.description}
-                    </p>
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-4">
@@ -848,17 +644,6 @@ export default function Playbook() {
                         >
                           {technique.title}
                         </h4>
-<<<<<<< HEAD
-                        <div className="bg-gray-900 rounded p-3">
-=======
-                        <p
-                          className="text-white leading-relaxed text-xs md:text-sm mb-3"
-                          style={TYPOGRAPHY.body}
-                        >
-                          {technique.description}
-                        </p>
-                        <div className="bg-black rounded p-3 border-l-2 border-purple-500">
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                           <p className="text-gray-300 text-xs italic">
                             {technique.example}
                           </p>
@@ -905,41 +690,6 @@ export default function Playbook() {
                         >
                           {category.title}
                         </h4>
-<<<<<<< HEAD
-                        <div className="space-y-1">
-                          {category.tips.map((tip, tipIdx) => (
-                            <p
-                              key={tipIdx}
-                              className="text-white text-xs"
-                              style={TYPOGRAPHY.body}
-                            >
-                              • {tip}
-                            </p>
-                          ))}
-=======
-                        <p
-                          className="text-white leading-relaxed text-xs md:text-sm mb-4"
-                          style={TYPOGRAPHY.body}
-                        >
-                          {category.description}
-                        </p>
-
-                        <div className="space-y-2 mb-4">
-                          <h5 className="text-orange-400 font-semibold text-xs">
-                            Quick Tips:
-                          </h5>
-                          <div className="grid gap-1">
-                            {category.tips.map((tip, tipIdx) => (
-                              <p
-                                key={tipIdx}
-                                className="text-white text-xs"
-                                style={TYPOGRAPHY.body}
-                              >
-                                • {tip}
-                              </p>
-                            ))}
-                          </div>
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                         </div>
 
                         <div className="bg-black rounded p-3 border-l-2 border-green-500">
@@ -982,17 +732,6 @@ export default function Playbook() {
                         >
                           {technique.title}
                         </h4>
-<<<<<<< HEAD
-                        <div className="bg-gray-900 rounded p-3">
-=======
-                        <p
-                          className="text-white leading-relaxed text-xs md:text-sm mb-3"
-                          style={TYPOGRAPHY.body}
-                        >
-                          {technique.description}
-                        </p>
-                        <div className="bg-black rounded p-3 border-l-2 border-yellow-500">
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                           <p className="text-gray-300 text-xs italic">
                             {technique.example}
                           </p>
@@ -1030,20 +769,6 @@ export default function Playbook() {
               {/* Section 7: Prompt Vault */}
               {section.id === 7 && (
                 <div className="space-y-6">
-<<<<<<< HEAD
-                  <div className="space-y-4" style={{ marginTop: "24px" }}>
-=======
-                  <div className="bg-gray-900 rounded-lg p-4">
-                    <p
-                      className="text-white leading-relaxed text-xs md:text-sm"
-                      style={TYPOGRAPHY.body}
-                    >
-                      {section.content.description}
-                    </p>
-                  </div>
-
-                  <div className="space-y-4">
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                     {section.content.steps.map((step, idx) => (
                       <div key={idx} className="bg-gray-900 rounded-lg p-4">
                         <div className="flex items-start space-x-3">
@@ -1101,23 +826,6 @@ export default function Playbook() {
                 </div>
               )}
 
-<<<<<<< HEAD
-              {/* Section 8: Warnings */}
-              {section.id === 8 && (
-                <div className="space-y-4">
-                  {section.content.warnings.map((warning, idx) => (
-                    <div
-                      key={idx}
-                      className="space-y-2 bg-gray-900 rounded p-3"
-=======
-              {/* Section 9: Best Practices & Warnings */}
-              {section.id === 9 && (
-                <div className="space-y-6">
-                  <div className="space-y-4">
-                    <h3
-                      className="text-brand-red font-bold text-lg flex items-center gap-2"
-                      style={TYPOGRAPHY.heading}
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
                     >
                       <CheckCircle className="w-5 h-5" />
                       Best Practices

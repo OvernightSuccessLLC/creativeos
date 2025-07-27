@@ -525,7 +525,7 @@ export default function Playbook() {
             AI Image Generation Playbook
           </h1>
           <p
-            className="text-lg md:text-xl text-black/80 max-w-3xl mx-auto"
+            className="text-xs text-black/80 max-w-3xl mx-auto"
             style={TYPOGRAPHY.body}
           >
             Master the art of AI image creation with Sora and GPT-4o. From basic

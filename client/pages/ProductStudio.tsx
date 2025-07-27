@@ -741,11 +741,6 @@ export default function ProductStudio() {
                   {copiedPrompt ? "COPIED!" : "COPY"}
                 </Button>
 
-                <ProtectedFeature
-                  feature="advancedAnalytics"
-                  featureName="AI Recommendations"
-                  requiredPlan="pro"
-                >
                   <div className="text-sm mt-4">
                     <h4 className="font-semibold text-white my-1 py-1">
                       <span className="text-brand-red">AI RECOMMENDATIONS</span>
@@ -762,7 +757,6 @@ export default function ProductStudio() {
                       </li>
                     </ul>
                   </div>
-                </ProtectedFeature>
               </CardContent>
             </Card>
           </div>

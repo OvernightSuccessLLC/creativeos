@@ -335,6 +335,40 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                 </button>
               );
             })}
+
+            {/* User Status - Mobile */}
+            <div className="px-6 py-4 border-t border-gray-800 mt-4">
+              {user ? (
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <Badge
+                      className={`${
+                        user.plan === 'enterprise' ? 'bg-purple-600' :
+                        user.plan === 'pro' ? 'bg-brand-red' : 'bg-gray-600'
+                      } text-white font-bold`}
+                    >
+                      <Crown className="w-3 h-3 mr-1" />
+                      {user.plan.toUpperCase()}
+                    </Badge>
+                    <span className="text-gray-400 text-sm">Plan</span>
+                  </div>
+                  <button
+                    onClick={logout}
+                    className="w-full text-left text-gray-400 hover:text-white text-sm transition-colors"
+                  >
+                    Logout
+                  </button>
+                </div>
+              ) : (
+                <Button
+                  onClick={() => navigate('/join')}
+                  className="w-full bg-brand-red hover:bg-red-600 text-white font-bold"
+                >
+                  <Crown className="w-4 h-4 mr-2" />
+                  Get Access
+                </Button>
+              )}
+            </div>
           </div>
         </div>
       </div>

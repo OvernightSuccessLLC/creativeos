@@ -33,6 +33,7 @@ import {
   Brush,
   Grid,
   Image,
+  Settings,
 } from "lucide-react";
 
 export default function GraphicStudio() {

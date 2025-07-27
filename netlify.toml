@@ -3,7 +3,7 @@
   publish = "dist/spa"
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "20.18.0"
   DISABLE_ESLINT_PLUGIN = "true"
   CI = "false"
 

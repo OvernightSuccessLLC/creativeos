@@ -1065,7 +1065,7 @@ export default function AIToolkit() {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4">
             AI Toolkit
           </h1>
-          <p className="text-lg md:text-xl text-black/80 max-w-3xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-black/80 max-w-3xl mx-auto px-4">
             Discover 70+ best AI tools to accelerate your creative and technical
             workflow
           </p>

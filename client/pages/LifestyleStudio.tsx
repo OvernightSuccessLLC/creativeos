@@ -125,12 +125,8 @@ export default function LifestyleStudio() {
       "Luxury Casual",
     ],
     "Background Setting": [
-      "Mountains",
-      "City Skyline",
       "Urban Street",
       "Garden",
-      "Desert",
-      "Art Gallery",
       "Pure White",
       "Black Void",
       "Gradient Colors",
@@ -169,8 +165,6 @@ export default function LifestyleStudio() {
       "Silver Shine",
       "Static",
       "Studio Backdrop",
-      "Tie Dye",
-      "Vintage WallPaper",
     ],
     "Lighting Setup": [
       "Golden Hour",
@@ -533,61 +527,54 @@ export default function LifestyleStudio() {
     },
     {
       id: 3,
-      title: "Scene Objective",
-      description:
-        "Influencer setting, branded product placement, lifestyle scenario",
-      icon: <Heart className="w-5 h-5" />,
-    },
-    {
-      id: 4,
-      title: "Product/Subject Style",
+      title: "Style",
       description: "Define the style and aesthetic of products or subjects",
       icon: <Users className="w-5 h-5" />,
     },
     {
-      id: 5,
-      title: "Background Setting",
+      id: 4,
+      title: "Background/Setting",
       description: "Choose the perfect environment and location",
       icon: <MapPin className="w-5 h-5" />,
     },
     {
-      id: 6,
+      id: 5,
       title: "Theme",
       description: "Select visual style and aesthetic theme",
       icon: <Palette className="w-5 h-5" />,
     },
     {
-      id: 7,
-      title: "Lighting Setup",
+      id: 6,
+      title: "Lighting",
       description: "Select lighting style and mood",
       icon: <Coffee className="w-5 h-5" />,
     },
     {
-      id: 8,
+      id: 7,
       title: "Camera Angle",
       description: "Set camera perspective and composition",
       icon: <Camera className="w-5 h-5" />,
     },
     {
-      id: 9,
+      id: 8,
       title: "Intended Use",
       description: "Define the intended use and application type",
       icon: <Camera className="w-5 h-5" />,
     },
     {
-      id: 10,
+      id: 9,
       title: "Primary Color Pantone",
       description: "Specify primary brand colors using Pantone codes",
       icon: <Palette className="w-5 h-5" />,
     },
     {
-      id: 11,
+      id: 10,
       title: "Typography Integration",
       description: "Select brand typography and font specifications",
       icon: <Type className="w-5 h-5" />,
     },
     {
-      id: 12,
+      id: 11,
       title: "Finishing",
       description: "Final post-processing and aesthetic treatment",
       icon: <Camera className="w-5 h-5" />,
@@ -718,25 +705,6 @@ export default function LifestyleStudio() {
 
                     {step.id === 3 && (
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
-                        {keywordCategories["Scene Objective"].map((keyword) => (
-                          <button
-                            key={keyword}
-                            onClick={() => toggleKeyword(keyword)}
-                            className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
-                              selectedKeywords.includes(keyword)
-                                ? "bg-brand-red text-black"
-                                : "bg-white text-black border border-gray-300 hover:bg-gray-100"
-                            }`}
-                            style={{ minHeight: "44px" }}
-                          >
-                            {keyword}
-                          </button>
-                        ))}
-                      </div>
-                    )}
-
-                    {step.id === 4 && (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                         {keywordCategories["Product/Subject Style"].map(
                           (keyword) => (
                             <button
@@ -756,7 +724,7 @@ export default function LifestyleStudio() {
                       </div>
                     )}
 
-                    {step.id === 5 && (
+                    {step.id === 4 && (
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                         {keywordCategories["Background Setting"].map(
                           (keyword) => (
@@ -777,7 +745,7 @@ export default function LifestyleStudio() {
                       </div>
                     )}
 
-                    {step.id === 6 && (
+                    {step.id === 5 && (
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                         {keywordCategories["Theme"].map((keyword) => (
                           <button
@@ -796,7 +764,7 @@ export default function LifestyleStudio() {
                       </div>
                     )}
 
-                    {step.id === 7 && (
+                    {step.id === 6 && (
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                         {keywordCategories["Lighting Setup"].map((keyword) => (
                           <button
@@ -815,7 +783,7 @@ export default function LifestyleStudio() {
                       </div>
                     )}
 
-                    {step.id === 8 && (
+                    {step.id === 7 && (
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                         {keywordCategories["Camera Angle"].map((keyword) => (
                           <button
@@ -834,7 +802,7 @@ export default function LifestyleStudio() {
                       </div>
                     )}
 
-                    {step.id === 9 && (
+                    {step.id === 8 && (
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                         {keywordCategories["Intended Use"].map((keyword) => (
                           <button
@@ -853,7 +821,7 @@ export default function LifestyleStudio() {
                       </div>
                     )}
 
-                    {step.id === 10 && (
+                    {step.id === 9 && (
                       <div>
                         <Label htmlFor="pantone-color" className="text-white text-sm sm:text-base">
                           Primary Color Pantone Code
@@ -871,7 +839,7 @@ export default function LifestyleStudio() {
                       </div>
                     )}
 
-                    {step.id === 11 && (
+                    {step.id === 10 && (
                       <div>
                         <Label htmlFor="typography" className="text-white text-sm sm:text-base">
                           Typography Integration
@@ -894,7 +862,7 @@ export default function LifestyleStudio() {
                       </div>
                     )}
 
-                    {step.id === 12 && (
+                    {step.id === 11 && (
                       <div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-2">
                           {keywordCategories["Finishing"].map((keyword) => (

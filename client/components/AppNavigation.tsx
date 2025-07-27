@@ -1,9 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-<<<<<<< HEAD
 import { Badge } from "@/components/ui/badge";
-import { useState, useEffect } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import {
   Bell,
@@ -24,9 +22,6 @@ import {
   Settings,
   RotateCcw,
 } from "lucide-react";
-=======
-import { BookOpen, Zap, Menu, X } from "lucide-react";
->>>>>>> e2e9c72a36e51a0b681d98fbfd99bde2493d0fb8
 
 interface AppNavigationProps {
   onUpdatesClick?: () => void;

@@ -31,7 +31,6 @@ const FONT_STYLE = { fontFamily: "Poppins, sans-serif" };
 
 export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const { user, logout } = useAuth();
@@ -86,35 +85,9 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
     },
   ];
 
-  const handleNavigation = (item: (typeof navigationItems)[0]) => {
-    if ("action" in item && item.action === "updates" && onUpdatesClick) {
-      onUpdatesClick();
-    } else if ("path" in item && item.path) {
-      navigate(item.path);
-    }
-    setIsMobileMenuOpen(false);
-  };
-
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
-  // Close dropdown on outside click
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as Element;
-      if (isDropdownOpen && !target.closest(".pages-dropdown")) {
-        setIsDropdownOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [isDropdownOpen]);
 
   const isCurrentPage = (itemPath: string) => {
     return location.pathname === itemPath;

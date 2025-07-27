@@ -6,7 +6,7 @@ import { Crown, Lock } from 'lucide-react';
 
 interface ProtectedFeatureProps {
   children: ReactNode;
-  feature: keyof import('@/contexts/AuthContext').User['features'];
+  feature: 'unlimitedPrompts' | 'advancedAnalytics' | 'prioritySupport' | 'exclusiveTemplates' | 'apiAccess';
   requiredPlan?: 'pro' | 'enterprise';
   fallback?: ReactNode;
   showUpgradeButton?: boolean;

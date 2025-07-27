@@ -37,25 +37,11 @@ const TYPOGRAPHY = {
 export default function Playbook() {
   const navigate = useNavigate();
   const [showBriefcase, setShowBriefcase] = useState(false);
+  const [activeSection, setActiveSection] = useState<number | null>(1);
 
   const sections = [
     {
       id: 1,
-      title: "Introduction to Sora Image Generation",
-      icon: BookOpen,
-      content: {
-        overview:
-          "Sora is OpenAI's advanced platform that extends ChatGPT into a visual creator – allowing you to generate images simply by describing them. It leverages the latest GPT-4o image generation model, which is natively multimodal and built into ChatGPT.",
-        howItWorks:
-          "You simply describe the image you want in natural language, and the AI produces a picture matching your description. For example, 'A young woman in a red coat walking through a snowy forest, photorealistic style.' The AI interprets every detail and creates accordingly.",
-        whySpecial:
-          "GPT-4o is a significant leap over previous image generators. It offers much better accuracy in complex scenes and text rendering. It can correctly handle 15–20 distinct elements with the right attributes in one image – a big improvement in reliability. It also produces readable text (signs, logos, labels) far more consistently than before.",
-        whoFor:
-          "Everyone! From beginners who have never used an image generator, to intermediate users looking to fine-tune prompts, to experts wanting to automate image generation. Whether you're a marketer needing quick visuals, a designer prototyping ideas, or just exploring AI art.",
-      },
-    },
-    {
-      id: 2,
       title: "Basics of Prompting (Prompting 101)",
       icon: Lightbulb,
       content: {
@@ -63,620 +49,221 @@ export default function Playbook() {
           {
             title: "Be Specific and Clear",
             description:
-              "Provide concrete details about what you want. The more specific the prompt, the better the image quality.",
-            tip: "'A young man in a blue suit waiting at a New York City bus stop on a rainy night' vs 'a person in a city'",
+              "Avoid vague language. Instead of 'a nice photo,' use 'a professional headshot with soft lighting and neutral background.'",
+            tip: "The more specific you are, the better the AI understands your vision.",
           },
           {
-            title: "Mention the Style or Mood",
+            title: "Use Descriptive Language",
             description:
-              "The same scene can look very different as a realistic photo versus a cartoon. Include style descriptors to guide the AI's artistic approach.",
-            tip: "'photorealistic style with 4K detail' or 'vintage comic book style' or 'with a serene, warm mood'",
+              "Include details about mood, style, lighting, colors, and composition to guide the AI effectively.",
+            tip: "Think like you're directing a photographer - what would you tell them?",
           },
           {
-            title: "Start Simple (Then Iterate)",
+            title: "Structure Your Prompts",
             description:
-              "Begin with a fairly simple prompt focusing on one subject or scene. Using one sentence with basic structure is a good start.",
-            tip: "Once you see the first result, you can add more details or clarify anything that wasn't right. Treat the first image as a draft.",
-          },
-          {
-            title: "Use Natural Language",
-            description:
-              "Write in plain, descriptive sentences instead of disjointed keyword lists.",
-            tip: "'A curious red fox exploring a misty autumn forest at dawn, golden sunlight filtering through the trees' works better than 'fox, forest, misty, sunlight, 8k'",
-          },
-          {
-            title: "Check Output and Refine",
-            description:
-              "After the image is generated, evaluate it critically. Does it match your mental image?",
-            tip: "Use this insight to refine your next prompt. You can also ask ChatGPT for help improving prompts between generations.",
+              "Organize your prompts logically: Subject + Style + Details + Technical specs.",
+            tip: "A well-structured prompt is easier for AI to interpret and execute.",
           },
         ],
         progression: {
-          beginner: "Photo of a cat sitting on a windowsill.",
+          beginner: "Create a product photo of a coffee mug",
           advanced:
-            "A tabby cat lounging on a sunny windowsill with soft morning light filtering through lace curtains, looking outside at birds.",
+            "Professional product photography of a ceramic coffee mug, clean minimalist style, soft natural lighting, white background, 45-degree angle, shallow depth of field",
           expert:
-            "Candid pet photography, close-up shot of a green-eyed tabby cat lounging on a sunlit Victorian bay window, rays of golden morning light patterning its fur through ornate lace curtains. Shot with shallow depth of field (85mm f/1.8).",
+            "Commercial product photography: handcrafted ceramic coffee mug with matte finish, Scandinavian minimalist aesthetic, soft diffused natural lighting from left side, seamless white background, shot at 45-degree angle, shallow depth of field (f/2.8), macro lens perspective, subtle drop shadow, color grading: warm whites and earth tones",
+        },
+      },
+    },
+    {
+      id: 2,
+      title: "Product Photography Prompts",
+      icon: Camera,
+      content: {
+        principles: [
+          {
+            title: "Focus on the Product",
+            description:
+              "Make the product the star. Remove distractions and ensure clear visibility of key features.",
+            tip: "Every element should support showcasing the product.",
+          },
+          {
+            title: "Lighting is Everything",
+            description:
+              "Specify lighting type, direction, and quality. This affects mood and product appeal significantly.",
+            tip: "Soft, even lighting generally works best for most products.",
+          },
+          {
+            title: "Context and Scale",
+            description:
+              "Show the product in use or provide scale references to help viewers understand size and application.",
+            tip: "Lifestyle context can increase emotional connection and purchase intent.",
+          },
+        ],
+        progression: {
+          beginner: "Take a photo of a smartphone",
+          advanced:
+            "Professional product shot of latest smartphone, clean studio lighting, reflecting surface, 3/4 angle view",
+          expert:
+            "Premium smartphone product photography: flagship device on reflective black acrylic surface, professional studio lighting setup with key light at 45 degrees and fill light for shadow detail, shot from slightly elevated 3/4 angle, clean gradient background from dark gray to black, shallow depth of field isolating device, subtle rim lighting highlighting edges, color-accurate display showing vibrant interface",
         },
       },
     },
     {
       id: 3,
-      title: "Key Prompt Components & Variables",
-      icon: Database,
-      content: {
-        formula:
-          "[Subject] + [Action/Pose] + [Environment/Setting] + [Lighting] + [Camera Details] + [Style/Mood] + [Quality Parameters]",
-        description:
-          "Not every prompt needs all components, but this formula reminds you of available options.",
-        components: [
-          {
-            name: "Subject Description",
-            description:
-              "The main focus of your image. Be specific about physical attributes, clothing, species, size, color, material, etc.",
-            example: "'a small fluffy brown dog' vs 'a dog'",
-          },
-          {
-            name: "Action/Pose",
-            description:
-              "What is the subject doing? This gives the image dynamism and context.",
-            example:
-              "'a woman reading a book' vs 'a woman dancing in the rain'",
-          },
-          {
-            name: "Environment/Setting",
-            description:
-              "Where is the image taking place? Include details like weather, time of day, era if relevant.",
-            example:
-              "'in a busy market street in Tokyo' vs 'on the surface of the moon'",
-          },
-          {
-            name: "Lighting",
-            description:
-              "One of the most powerful tools to set mood. Describe quality, source, and direction of light.",
-            example:
-              "'soft morning sunlight' vs 'dramatic studio spotlight' vs 'neon purple lighting'",
-          },
-          {
-            name: "Camera Details/Composition",
-            description:
-              "Camera angle, lens choice, depth of field. This is useful for photography-like results.",
-            example:
-              "'close-up shot (85mm lens)' vs 'wide-angle shot' vs 'bird's-eye view'",
-          },
-          {
-            name: "Style/Mood",
-            description:
-              "The artistic style, genre, or emotional tone. Art movements, time periods, or emotional atmosphere.",
-            example:
-              "'in the style of Studio Ghibli' vs 'photorealistic' vs 'oil painting'",
-          },
-          {
-            name: "Quality Parameters",
-            description:
-              "Additional terms to push for higher fidelity. While GPT-4o is high-quality by default, you can still mention resolution emphasis.",
-            example:
-              "'high resolution, 4K detail, ultra-realistic, sharp focus'",
-          },
-        ],
-      },
-    },
-    {
-      id: 4,
-      title: "Lifestyle Photography Prompts",
-      icon: Camera,
-      content: {
-        description:
-          "Lifestyle images depict people in everyday situations in a candid, relatable way. The goal is to tell a story or convey authenticity – as if the photo is a slice of life, not a posed studio shot.",
-        characteristics: [
-          {
-            title: "Everyday Scenarios",
-            description:
-              "Focus on common activities or moments that people can relate to. Think activities like reading on a sofa, playing with kids, walking a dog, shopping at a farmer's market.",
-            example:
-              "'friends laughing at a café' or 'a family cooking together in a home kitchen'",
-          },
-          {
-            title: "Natural, Candid Vibe",
-            description:
-              "Use descriptors like 'candid,' 'unposed,' 'in the moment,' 'photojournalistic style' to get that spontaneous look.",
-            example:
-              "'a candid shot of a couple dancing in the living room' or 'a mother and daughter sharing a genuine laugh over ice cream'",
-          },
-          {
-            title: "Environmental Context",
-            description:
-              "Don't neglect the background – include props and context that create a sense of realism and story.",
-            example:
-              "'sunlight coming through the window over the sink' or 'surrounded by open books and a sleeping cat'",
-          },
-          {
-            title: "Natural Lighting",
-            description:
-              "Typically use available light rather than dramatic studio lighting. Specify 'soft morning light,' 'warm late-afternoon sun,' or 'cozy lamp light.'",
-            example:
-              "'soft warm lamp light with shadows on the wall' for an indoor evening scene",
-          },
-        ],
-        fullExample:
-          "Candid street photography of a bustling Bangkok night market, with a young couple smiling while trying street food at a vendor stall. Warm overhead lantern light and neon signs illuminate the crowded alley. The atmosphere is lively and authentic, with people and food carts in the background.",
-      },
-    },
-    {
-      id: 5,
-      title: "Product & Studio Photography",
+      title: "Lifestyle Photography",
       icon: Package,
       content: {
-        description:
-          "Product photography focuses on showcasing an item in the best possible light – usually literally! These images highlight features, design, and appeal of a product.",
-        techniques: [
+        principles: [
           {
-            title: "Isolate the Product",
+            title: "Tell a Story",
             description:
-              "A classic product photo has the product clearly visible, often centered against a clean background. White is standard for catalogs, but you might use black or solid colors for dramatic effect.",
-            example:
-              "'A studio photo of a single wristwatch, centered on a white background with a slight reflection beneath it'",
+              "Create scenes that show products in real-life situations that your audience can relate to.",
+            tip: "Think about the lifestyle your customers aspire to have.",
           },
           {
-            title: "Lighting & Reflections",
+            title: "Natural Interactions",
             description:
-              "Lighting is everything in studio photography. For shiny objects (electronics, jewelry, glassware), specify soft diffuse light or two-point lighting setup to avoid harsh glare.",
-            example:
-              "'Product shot of a smartphone with soft diffused lighting to minimize harsh reflections' or 'two-point studio lighting (key light and fill light)'",
+              "People should interact naturally with products. Avoid stiff, posed shots.",
+            tip: "Candid moments often feel more authentic and engaging.",
           },
           {
-            title: "Camera and Focus",
+            title: "Environment Matters",
             description:
-              "Generally want sharp focus on the product. Specify 'ultra-sharp focus on the product' and consider angles: 'front angle,' 'top-down view,' '45-degree angle,' depending on what best presents the item.",
-            example:
-              "'close-up shot of the smartphone from a 45-degree angle, showing its screen and side buttons in detail'",
-          },
-          {
-            title: "Contextual vs. Isolated",
-            description:
-              "Decide if you want props or context. A purely isolated shot is common for catalogs. Sometimes context can make the image more appealing while still highlighting the product.",
-            example:
-              "'a luxury watch on a marble surface with soft reflection' vs '{Product} against plain background'",
+              "Choose locations and settings that complement your brand and product positioning.",
+            tip: "The environment should enhance, not compete with, your product.",
           },
         ],
-        expertExample:
-          "Hero shot of new smartphone levitating above a matte black pedestal, against a dimly lit studio with two-point lighting (cool blue fill from left, soft white key from right). Minimal reflections on the screen display a faint home screen glow. Detailed highlights on the phone's metallic edges. Background in deep shadow with a subtle bokeh of city lights. Ultra-sharp, 4K detail.",
-      },
-    },
-    {
-      id: 6,
-      title: "Custom Graphics & Design",
-      icon: Palette,
-      content: {
-        description:
-          "Sora can create graphic designs, illustrations, logos, icons, posters, and images that include text elements. Here's how to harness it for design-oriented outputs.",
-        categories: [
-          {
-            title: "Logo Creation",
-            description:
-              "Logos need to be simple, distinct, and scalable. Emphasize simplicity and style. Because GPT-4o can render text better than previous models, you can include words in logos.",
-            tips: [
-              "Specify simplicity: 'minimalist,' 'flat design,' 'simple icon,' 'emblem-style'",
-              "Mention style: 'modern,' 'vintage,' 'playful,' 'corporate'",
-              "Include colors: 'Uses teal and gold colors' or 'black and white only'",
-              "For text: Keep short and use quotes. 'logo with the word \"SIP\" below the cup illustration'",
-              "Background: 'on transparent background' or 'on solid white background'",
-            ],
-            example:
-              "A modern minimalist logo for a coffee shop: features a simple line art of a coffee cup and a bean, with warm brown and cream colors, on a plain white background.",
-          },
-          {
-            title: "Text Rendering in Images",
-            description:
-              "GPT-4o can render readable text in images much better than past models. This means you can create posters, flyers, social media graphics, or diagrams with labels.",
-            tips: [
-              "Be concise with text: Short phrases or titles work best",
-              "Use quotes for desired text: 'A movie poster with the title \"Into the Unknown\" at the top'",
-              "Describe typography: 'handwritten-style text,' '3D metallic letters,' 'large gold font centered'",
-              "Combine with imagery: Describe the graphic part along with where text goes",
-            ],
-            example:
-              "A concert poster for a rock band. At the top, bold graffiti-style text says 'Live Tonight'. In the center, an electric guitar with wings illustration. At the bottom, the band name 'The Ravens' in big silver letters, and below that in smaller text the date 'July 4, 2025'. Dark background, grunge art style.",
-          },
-          {
-            title: "Graphic Illustrations & Icons",
-            description:
-              "For custom illustrations or icons (websites, presentations, etc.), describe them with style cues and specify the artistic approach.",
-            tips: [
-              "Mention art style: 'flat vector illustration,' '3D isometric icon,' 'chalk sketch,' 'pixel art'",
-              "For icons: specify shape or medium: 'app icon style,' 'material design style'",
-              "For complex graphics: ask for infographics or diagrams with labels",
-              "Use terms like 'vector,' 'flat design,' 'cartoon,' 'symbol' for graphic style",
-            ],
-            example:
-              "An illustration of a business growth chart: a simple graphic of an upward arrow on a bar chart, in flat design style, vector-like, blue and white colors.",
-          },
-        ],
-      },
-    },
-    {
-      id: 7,
-      title: "Scene Regeneration & Image Editing",
-      icon: RefreshCw,
-      content: {
-        description:
-          "One of Sora's most powerful features is iteratively editing or building on images through conversation. This is like having an intelligent Photoshop that responds to simple language commands.",
-        howItWorks:
-          "Because Sora's image generation is part of GPT-4o, it maintains context of previous images in the chat. You can say 'Now make it nighttime in the image' or 'Please add a tree to the left side' and it will attempt to comply in the next image.",
-        techniques: [
-          {
-            title: "Identify Elements Clearly",
-            description:
-              "When referring to parts of the image, use descriptors that make sense from the image's perspective. The more clearly you can point out what you want changed, the less confusion.",
-            example:
-              "'the red car in the background,' 'the text on the sign,' 'the woman on the left'",
-          },
-          {
-            title: "Spatial and Positional Language",
-            description:
-              "Use words like left, right, center, top, bottom, foreground, background. This helps the model know where to make the change.",
-            example:
-              "'Add a full moon in the top-right corner of the sky' or 'Place a vase of flowers on the table in the foreground'",
-          },
-          {
-            title: "One Change at a Time",
-            description:
-              "It's usually best to make one significant edit per turn. If you ask for too many alterations at once, some might be missed or done incorrectly.",
-            example:
-              "Instead of changing lighting AND adding objects AND removing elements all at once, do step-by-step: 1) 'Make it evening with lamps on' 2) 'Add a cat on the sofa' 3) 'Remove the painting on the wall'",
-          },
-          {
-            title: "Maintain Consistency",
-            description:
-              "When adding new elements, try to match the style of the existing image. Mention 'in the same art style' or 'with the same lighting' for seamless additions.",
-            example:
-              "'Add a realistic oak tree in the same photorealistic style and lighting as the rest of the image'",
-          },
-          {
-            title: "Object Removal",
-            description:
-              "You can instruct Sora to remove or erase something by telling it so. The AI will attempt to fill in the area naturally.",
-            example:
-              "'Remove the second plate from the table,' 'erase the text on the sign,' 'completely erase any trace of the person in the background'",
-          },
-        ],
-        exampleSequence: [
-          "Initial: 'A group of friends having a picnic on a sunny day in the park'",
-          "Edit 1: 'Make it look like early evening, with a vibrant sunset sky'",
-          "Edit 2: 'Add string lights hanging between the trees to create a cozy atmosphere'",
-          "Edit 3: 'Everyone's clothing should be a bit warmer (light jackets), since it's evening now'",
-        ],
-      },
-    },
-    {
-      id: 8,
-      title: "Using the Prompt Vault",
-      icon: Settings,
-      content: {
-        description:
-          "The Prompt Vault is an advanced feature designed to help you construct high-quality prompts using a guided formula. Think of it as a prompt builder that combines your creative vision with curated professional keywords and reference images.",
-        steps: [
-          {
-            title: "Start with Your Vision",
-            description:
-              "In the Prompt Vault interface, write your creative vision in natural language. Don't worry about formatting or keywords yet, just express your idea.",
-            example:
-              "'a portrait of an astronaut in a surreal neon city' or 'an illustration of a panda eating noodles, in 3D cartoon style'",
-          },
-          {
-            title: "Upload a Reference Image (Optional)",
-            description:
-              "If you have an image for inspiration or context, upload it. This image will be incorporated as a reference for Sora, ensuring it uses it as guidance for style transfer or maintaining character looks.",
-            example:
-              "Upload a color palette image, style reference, or sketch you drew",
-          },
-          {
-            title: "Select Keywords from Categories",
-            description:
-              "Browse curated keywords organized by categories (lighting, camera, style, mood, etc.) and click ones that fit your vision. These are professionally chosen terms that Sora understands well.",
-            example:
-              "Under 'Lighting': 'golden hour', 'dramatic shadows'. Under 'Style': 'Baroque painting', 'Studio Ghibli style'",
-          },
-          {
-            title: "Review the Complete Formula",
-            description:
-              "The vault compiles everything into a structured prompt, automatically sorted for optimal understanding by Sora. Review this output and tweak if needed.",
-            example:
-              "The vault might produce: 'Digital painting concept art of a female pirate captain... dramatic lightning, moonlit... portrait framing... --reference (image)'",
-          },
-          {
-            title: "Copy and Paste into Sora",
-            description:
-              "Once happy with the prompt formula, copy it and paste into the ChatGPT/Sora chat to execute.",
-            example:
-              "The polished prompt is ready to use as you would any prompt in ChatGPT's image mode",
-          },
-        ],
-        proTips: [
-          "Structured approach: The vault ensures you don't forget a variable, especially useful if you're not comfortable juggling all prompt components",
-          "Reference images are powerful: Upload sketches, color palettes, or style references for guidance",
-          "Quality meter guidance: Shows how comprehensive your prompt is - try to fill in major components",
-          "Pre-vetted keywords: Uses terms known to work well like '4K', 'bokeh', 'dramatic lighting', 'concept art'",
-          "Continue iterating: After generating with vault prompt, you can still edit further or try variations",
-        ],
-      },
-    },
-    {
-      id: 9,
-      title: "Best Practices & Warnings",
-      icon: AlertTriangle,
-      content: {
-        bestPractices: [
-          {
-            title: "Avoid Ambiguity",
-            description:
-              "If a word could mean multiple things, clarify it. 'Jaguar' could be animal or car. 'Bank' could be river bank or financial bank. Add context to resolve ambiguity.",
-            example:
-              "'a jaguar cat resting on a tree branch' vs 'a Jaguar sports car on a racetrack'",
-          },
-          {
-            title: "Be Specific, Avoid Redundancy",
-            description:
-              "While details are good, don't pile on adjectives that repeat the same idea. Each word should add new information. One or two strong adjectives are better than a chain of similar ones.",
-            example:
-              "'a stunning sunset with vibrant orange and pink hues' vs 'a nice beautiful pretty sunset with lovely gorgeous colors'",
-          },
-          {
-            title: "Test Complex Ideas in Chunks",
-            description:
-              "If you have a very elaborate scene, build it piece by piece. Test simple concepts first, then gradually add complexity through iterations or edits.",
-            example:
-              "Start with 'steampunk city with flying cars', then add 'distant medieval castle', then 'vintage robots on streets'",
-          },
-          {
-            title: "Leverage ChatGPT's Help",
-            description:
-              "Since Sora is within ChatGPT, you can have a dialogue about the prompt itself. Ask ChatGPT to help improve prompts or generate variations before making images.",
-            example:
-              "'I want to create an image of X, how should I phrase the prompt?' or 'Give me three variations of a prompt for a fantasy landscape'",
-          },
-          {
-            title: "Use Remix (Variations)",
-            description:
-              "If you generate an image that's close but not perfect, try re-running the same prompt. There's randomness in generation, so often the second or third try gives better results.",
-            example:
-              "Copy the prompt and send again, or make tiny tweaks for variations",
-          },
-        ],
-        warnings: [
-          {
-            title: "Disallowed Content",
-            description:
-              "Sora will refuse to generate images that violate OpenAI's content guidelines: violent gore, sexual explicit content, hate symbols, etc. Keep prompts PG-13 at worst.",
-            consequence:
-              "System detects and blocks, often giving you a warning",
-          },
-          {
-            title: "No Real Person Likeness",
-            description:
-              "Don't create images of real individuals, especially private figures or without consent. Instead, describe generic types or roles.",
-            example:
-              "'an elderly man' or 'a businesswoman in her 30s' vs 'Tom Cruise' or 'my neighbor'",
-          },
-          {
-            title: "No Trademark or Infringement",
-            description:
-              "Don't prompt for specific trademarked logos or characters. The model might refuse or create distorted versions. Use generic descriptions instead.",
-            example:
-              "'a cartoon mouse in red shorts' vs 'Mickey Mouse', or 'a soda can with red and white label' vs 'Coca-Cola logo'",
-          },
-          {
-            title: "Realism and Sensitive Subjects",
-            description:
-              "Be careful with photo-real images of public figures or scenarios that could be misinformation. Use AI images responsibly and ethically.",
-            consequence:
-              "Could be misinformation or defamatory, even though OpenAI includes metadata marking images as AI-generated",
-          },
-        ],
-        troubleshooting: [
-          {
-            title: "Conflicting Instructions",
-            description:
-              "Check if your prompt has contradictions like 'bright night scene' or 'empty crowded room'. Make sure everything aligns logically.",
-            solution:
-              "Clarify: 'a night scene illuminated by bright neon signs' if you meant bright lighting at night",
-          },
-          {
-            title: "Too Complex or Long",
-            description:
-              "If your prompt is extremely long, the model might lose focus on some parts. There's a point where more text can confuse rather than help.",
-            solution:
-              "Simplify to core elements. You can always add more in edits. Sometimes 30 words works better than 100 words",
-          },
-          {
-            title: "Obscure Terms or Styles",
-            description:
-              "If you use very niche references, the AI might not get it accurate. Very specific regional slang or made-up terms might be ignored.",
-            solution:
-              "Use commonly understood synonyms or explain the term in simpler language",
-          },
-          {
-            title: "When to Start Fresh",
-            description:
-              "If after many edits or tries the image still isn't right, it might be faster to start a new prompt with lessons learned.",
-            solution:
-              "Re-write a cleaner prompt with your now clearer vision, then edit that if needed",
-          },
-        ],
+        progression: {
+          beginner: "Person using a laptop in a coffee shop",
+          advanced:
+            "Lifestyle shot of young professional working on laptop in modern coffee shop, natural lighting, warm atmosphere",
+          expert:
+            "Authentic lifestyle photography: millennial professional in stylish coffee shop setting, working on premium laptop, natural window lighting creating soft shadows, warm color palette with earth tones, shallow depth of field focusing on subject while maintaining environmental context, candid moment of concentration, modern minimalist interior design complementing tech product positioning",
+        },
       },
     },
   ];
 
   return (
-    <div
-      className="min-h-screen bg-brand-red text-black"
-      style={{ ...FONT_STYLE, width: "100%" }}
-    >
+    <div className="min-h-screen bg-brand-red text-black">
       {/* Navigation */}
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
 
       {/* Header */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-6 md:py-8">
-        <div className="text-center mb-5">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-8">
+        <div className="text-center mb-8">
           <h1
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4"
             style={TYPOGRAPHY.title}
           >
-            AI Image Generation Playbook
+            THE PLAYBOOK
           </h1>
           <p
-            className="text-xs text-black/80 max-w-3xl mx-auto"
+            className="text-lg md:text-xl text-black/80 max-w-3xl mx-auto"
             style={TYPOGRAPHY.body}
           >
-            Master the art of AI image creation with Sora and GPT-4o. From basic
-            prompts to advanced techniques.
+            Master the art of AI prompting with our comprehensive guide to
+            creating professional photography prompts
           </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-2">
-            <Badge className="bg-black text-white px-3 py-1">
-              9 Comprehensive Sections
-            </Badge>
-            <Badge className="bg-black text-white px-3 py-1">
-              Beginner to Expert
-            </Badge>
-            <Badge className="bg-black text-white px-3 py-1">
-              Real Examples
-            </Badge>
-          </div>
         </div>
-      </div>
 
-      {/* Content Sections */}
-      <div
-        className="max-w-7xl mx-auto px-4 md:px-8 space-y-4 md:space-y-6"
-        style={{ padding: "0 16px 32px" }}
-      >
-        {sections.map((section) => (
-          <Card key={section.id} className="bg-black border-none shadow-lg">
-            <CardHeader className="bg-black p-3 md:p-6">
-              <CardTitle
-                className="text-white text-base md:text-lg flex items-center space-x-3"
-                style={TYPOGRAPHY.subtitle}
-              >
-                <div className="flex items-center space-x-3">
-                  <span
-                    className="bg-brand-red text-black rounded-full w-10 h-10 flex items-center justify-center text-sm md:text-base font-bold flex-shrink-0"
-                    style={TYPOGRAPHY.heading}
-                  >
-                    {section.id}
-                  </span>
-                  <section.icon className="w-5 h-5 md:w-6 md:h-6 text-brand-red flex-shrink-0" />
-                  <span className="break-words">{section.title}</span>
-                </div>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="bg-black px-3 md:px-6 pb-4 md:pb-6">
-              {/* Section 1: Introduction */}
-              {section.id === 1 && (
-                <div className="space-y-6">
-                  <div className="bg-gray-900 rounded-lg p-4">
-                    <h4
-                      className="text-brand-red font-bold mb-3 flex items-center gap-2"
+        {/* Section Navigation */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          {sections.map((section) => (
+            <button
+              key={section.id}
+              onClick={() =>
+                setActiveSection(
+                  activeSection === section.id ? null : section.id,
+                )
+              }
+              className={`p-4 rounded-lg border-2 transition-all text-left ${
+                activeSection === section.id
+                  ? "border-black bg-black text-white"
+                  : "border-black/20 bg-white/10 text-black hover:border-black/40"
+              }`}
+            >
+              <div className="flex items-center space-x-3 mb-2">
+                <section.icon className="w-6 h-6" />
+                <h3
+                  className="font-bold text-sm md:text-base"
+                  style={TYPOGRAPHY.heading}
+                >
+                  {section.title}
+                </h3>
+              </div>
+              <p className="text-xs md:text-sm opacity-80">
+                {section.id === 1 &&
+                  "Learn the fundamentals of effective prompting"}
+                {section.id === 2 && "Master product photography techniques"}
+                {section.id === 3 && "Create authentic lifestyle scenes"}
+              </p>
+            </button>
+          ))}
+        </div>
+
+        {/* Content Sections */}
+        {activeSection && (
+          <div className="bg-black rounded-xl p-6 md:p-8">
+            {sections
+              .filter((section) => section.id === activeSection)
+              .map((section) => (
+                <div key={section.id} className="space-y-6">
+                  <div className="flex items-center space-x-3 mb-6">
+                    <section.icon className="w-8 h-8 text-brand-red" />
+                    <h2
+                      className="text-xl md:text-2xl font-bold text-white"
+                      style={TYPOGRAPHY.title}
+                    >
+                      {section.title}
+                    </h2>
+                  </div>
+
+                  {/* Principles */}
+                  <div className="space-y-6">
+                    <h3
+                      className="text-lg md:text-xl font-bold text-white"
                       style={TYPOGRAPHY.heading}
                     >
-                      <Info className="w-4 h-4" />
-                      Overview
-                    </h4>
-                    <p
-                      className="text-white leading-relaxed text-xs md:text-sm"
-                      style={TYPOGRAPHY.body}
-                    >
-                      {section.content.overview}
-                    </p>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2 md:space-y-3">
-                      <h4
-                        className="text-brand-red font-bold flex items-center gap-2"
-                        style={TYPOGRAPHY.heading}
-                      >
-                        <Eye className="w-4 h-4" />
-                        How It Works
-                      </h4>
-                      <p
-                        className="text-white leading-relaxed text-xs md:text-sm"
-                        style={TYPOGRAPHY.body}
-                      >
-                        {section.content.howItWorks}
-                      </p>
-                    </div>
-
-                    <div className="space-y-2 md:space-y-3">
-                      <h4
-                        className="text-brand-red font-bold flex items-center gap-2"
-                        style={TYPOGRAPHY.heading}
-                      >
-                        <Zap className="w-4 h-4" />
-                        Why Special
-                      </h4>
-                      <p
-                        className="text-white leading-relaxed text-xs md:text-sm"
-                        style={TYPOGRAPHY.body}
-                      >
-                        {section.content.whySpecial}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="bg-brand-red/20 rounded-lg p-4 border-l-4 border-brand-red">
-                    <h4
-                      className="text-brand-red font-bold mb-2"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      Who This Is For
-                    </h4>
-                    <p
-                      className="text-white leading-relaxed text-xs md:text-sm"
-                      style={TYPOGRAPHY.body}
-                    >
-                      {section.content.whoFor}
-                    </p>
-                  </div>
-                </div>
-              )}
-
-              {/* Section 2: Basics of Prompting */}
-              {section.id === 2 && (
-                <div className="space-y-6">
-                  <div className="grid gap-4">
-                    {section.content.principles.map((principle, idx) => (
-                      <div key={idx} className="bg-gray-900 rounded-lg p-4">
-                        <h4
-                          className="text-brand-red font-bold mb-2 flex items-center gap-2"
-                          style={TYPOGRAPHY.heading}
-                        >
-                          <CheckCircle className="w-4 h-4" />
-                          {principle.title}
-                        </h4>
-                        <p
-                          className="text-white leading-relaxed text-xs md:text-sm mb-3"
-                          style={TYPOGRAPHY.body}
-                        >
-                          {principle.description}
-                        </p>
-                        <div className="bg-black rounded p-3 border-l-2 border-brand-red">
-                          <p className="text-gray-300 text-xs italic">
-                            💡 {principle.tip}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="bg-brand-red/10 rounded-lg p-4">
-                    <h4
-                      className="text-brand-red font-bold mb-4 flex items-center gap-2"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      <ArrowRight className="w-4 h-4" />
-                      Progression Examples
-                    </h4>
+                      Core Principles
+                    </h3>
                     <div className="space-y-4">
+                      {section.content.principles.map((principle, index) => (
+                        <div
+                          key={index}
+                          className="bg-gray-900 rounded-lg p-4 md:p-6"
+                        >
+                          <h4
+                            className="text-brand-red text-sm md:text-lg font-bold mb-3"
+                            style={TYPOGRAPHY.heading}
+                          >
+                            {principle.title}
+                          </h4>
+                          <p
+                            className="text-white leading-relaxed text-xs md:text-sm mb-3"
+                            style={TYPOGRAPHY.body}
+                          >
+                            {principle.description}
+                          </p>
+                          <div className="bg-black rounded p-3 border-l-2 border-brand-red">
+                            <p className="text-gray-300 text-xs italic">
+                              💡 {principle.tip}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Skill Progression */}
+                  <div className="space-y-4">
+                    <h3
+                      className="text-lg md:text-xl font-bold text-white"
+                      style={TYPOGRAPHY.heading}
+                    >
+                      Skill Progression Examples
+                    </h3>
+                    <div className="space-y-3">
                       <div className="space-y-2">
                         <span className="bg-green-600 text-white px-2 py-1 rounded text-xs font-semibold">
                           BEGINNER
@@ -704,504 +291,45 @@ export default function Playbook() {
                     </div>
                   </div>
                 </div>
-              )}
+              ))}
+          </div>
+        )}
 
-              {/* Section 3: Key Components */}
-              {section.id === 3 && (
-                <div className="space-y-6">
-                  <div className="bg-brand-red/20 rounded-lg p-4 border border-brand-red">
-                    <h4
-                      className="text-brand-red font-bold mb-3 flex items-center gap-2"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      <Database className="w-4 h-4" />
-                      The Formula
-                    </h4>
-                    <code className="text-white block text-xs bg-black p-4 rounded font-mono leading-relaxed">
-                      {section.content.formula}
-                    </code>
-                    <p
-                      className="text-white text-xs md:text-sm mt-3"
-                      style={TYPOGRAPHY.body}
-                    >
-                      {section.content.description}
-                    </p>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-4">
-                    {section.content.components.map((component, idx) => (
-                      <div key={idx} className="bg-gray-900 rounded-lg p-4">
-                        <h4
-                          className="text-brand-red font-bold mb-2"
-                          style={TYPOGRAPHY.heading}
-                        >
-                          {component.name}
-                        </h4>
-                        <p
-                          className="text-white leading-relaxed text-xs md:text-sm mb-3"
-                          style={TYPOGRAPHY.body}
-                        >
-                          {component.description}
-                        </p>
-                        <div className="bg-black rounded p-3 border-l-2 border-orange-500">
-                          <p className="text-gray-300 text-xs italic">
-                            Example: {component.example}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Section 4: Lifestyle Photography */}
-              {section.id === 4 && (
-                <div className="space-y-6">
-                  <div className="bg-gray-900 rounded-lg p-4">
-                    <p
-                      className="text-white leading-relaxed text-xs md:text-sm"
-                      style={TYPOGRAPHY.body}
-                    >
-                      {section.content.description}
-                    </p>
-                  </div>
-
-                  <div className="grid gap-4">
-                    {section.content.characteristics.map((char, idx) => (
-                      <div key={idx} className="bg-gray-900 rounded-lg p-4">
-                        <h4
-                          className="text-brand-red font-bold mb-2"
-                          style={TYPOGRAPHY.heading}
-                        >
-                          {char.title}
-                        </h4>
-                        <p
-                          className="text-white leading-relaxed text-xs md:text-sm mb-3"
-                          style={TYPOGRAPHY.body}
-                        >
-                          {char.description}
-                        </p>
-                        <div className="bg-black rounded p-3 border-l-2 border-blue-500">
-                          <p className="text-gray-300 text-xs italic">
-                            {char.example}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="bg-brand-red/10 rounded-lg p-4">
-                    <h4
-                      className="text-brand-red font-bold mb-3"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      Complete Example
-                    </h4>
-                    <p
-                      className="text-white italic text-xs md:text-sm bg-gray-900 p-4 rounded"
-                      style={TYPOGRAPHY.body}
-                    >
-                      "{section.content.fullExample}"
-                    </p>
-                  </div>
-                </div>
-              )}
-
-              {/* Section 5: Product Photography */}
-              {section.id === 5 && (
-                <div className="space-y-6">
-                  <div className="bg-gray-900 rounded-lg p-4">
-                    <p
-                      className="text-white leading-relaxed text-xs md:text-sm"
-                      style={TYPOGRAPHY.body}
-                    >
-                      {section.content.description}
-                    </p>
-                  </div>
-
-                  <div className="grid gap-4">
-                    {section.content.techniques.map((technique, idx) => (
-                      <div key={idx} className="bg-gray-900 rounded-lg p-4">
-                        <h4
-                          className="text-brand-red font-bold mb-2"
-                          style={TYPOGRAPHY.heading}
-                        >
-                          {technique.title}
-                        </h4>
-                        <p
-                          className="text-white leading-relaxed text-xs md:text-sm mb-3"
-                          style={TYPOGRAPHY.body}
-                        >
-                          {technique.description}
-                        </p>
-                        <div className="bg-black rounded p-3 border-l-2 border-purple-500">
-                          <p className="text-gray-300 text-xs italic">
-                            {technique.example}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="bg-brand-red/10 rounded-lg p-4">
-                    <h4
-                      className="text-brand-red font-bold mb-3"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      Expert Example
-                    </h4>
-                    <p
-                      className="text-white italic text-xs md:text-sm bg-gray-900 p-4 rounded"
-                      style={TYPOGRAPHY.body}
-                    >
-                      "{section.content.expertExample}"
-                    </p>
-                  </div>
-                </div>
-              )}
-
-              {/* Section 6: Graphics & Design */}
-              {section.id === 6 && (
-                <div className="space-y-6">
-                  <div className="bg-gray-900 rounded-lg p-4">
-                    <p
-                      className="text-white leading-relaxed text-xs md:text-sm"
-                      style={TYPOGRAPHY.body}
-                    >
-                      {section.content.description}
-                    </p>
-                  </div>
-
-                  <div className="space-y-6">
-                    {section.content.categories.map((category, idx) => (
-                      <div key={idx} className="bg-gray-900 rounded-lg p-4">
-                        <h4
-                          className="text-brand-red font-bold mb-3"
-                          style={TYPOGRAPHY.heading}
-                        >
-                          {category.title}
-                        </h4>
-                        <p
-                          className="text-white leading-relaxed text-xs md:text-sm mb-4"
-                          style={TYPOGRAPHY.body}
-                        >
-                          {category.description}
-                        </p>
-
-                        <div className="space-y-2 mb-4">
-                          <h5 className="text-orange-400 font-semibold text-xs">
-                            Quick Tips:
-                          </h5>
-                          <div className="grid gap-1">
-                            {category.tips.map((tip, tipIdx) => (
-                              <p
-                                key={tipIdx}
-                                className="text-white text-xs"
-                                style={TYPOGRAPHY.body}
-                              >
-                                • {tip}
-                              </p>
-                            ))}
-                          </div>
-                        </div>
-
-                        <div className="bg-black rounded p-3 border-l-2 border-green-500">
-                          <p
-                            className="text-white italic text-xs"
-                            style={TYPOGRAPHY.body}
-                          >
-                            "{category.example}"
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Section 7: Scene Regeneration */}
-              {section.id === 7 && (
-                <div className="space-y-6">
-                  <div className="bg-gray-900 rounded-lg p-4">
-                    <p
-                      className="text-white leading-relaxed text-xs md:text-sm mb-3"
-                      style={TYPOGRAPHY.body}
-                    >
-                      {section.content.description}
-                    </p>
-                    <div className="bg-brand-red/20 rounded p-3 border-l-2 border-brand-red">
-                      <p className="text-white text-xs" style={TYPOGRAPHY.body}>
-                        💡 {section.content.howItWorks}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="grid gap-4">
-                    {section.content.techniques.map((technique, idx) => (
-                      <div key={idx} className="bg-gray-900 rounded-lg p-4">
-                        <h4
-                          className="text-brand-red font-bold mb-2"
-                          style={TYPOGRAPHY.heading}
-                        >
-                          {technique.title}
-                        </h4>
-                        <p
-                          className="text-white leading-relaxed text-xs md:text-sm mb-3"
-                          style={TYPOGRAPHY.body}
-                        >
-                          {technique.description}
-                        </p>
-                        <div className="bg-black rounded p-3 border-l-2 border-yellow-500">
-                          <p className="text-gray-300 text-xs italic">
-                            {technique.example}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="bg-brand-red/10 rounded-lg p-4">
-                    <h4
-                      className="text-brand-red font-bold mb-3"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      Step-by-Step Edit Sequence
-                    </h4>
-                    <div className="space-y-3">
-                      {section.content.exampleSequence.map((step, idx) => (
-                        <div key={idx} className="flex items-start gap-3">
-                          <span className="bg-brand-red text-black rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-1">
-                            {idx + 1}
-                          </span>
-                          <p
-                            className="text-white text-xs md:text-sm bg-gray-900 p-3 rounded flex-1"
-                            style={TYPOGRAPHY.body}
-                          >
-                            {step}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Section 8: Prompt Vault */}
-              {section.id === 8 && (
-                <div className="space-y-6">
-                  <div className="bg-gray-900 rounded-lg p-4">
-                    <p
-                      className="text-white leading-relaxed text-xs md:text-sm"
-                      style={TYPOGRAPHY.body}
-                    >
-                      {section.content.description}
-                    </p>
-                  </div>
-
-                  <div className="space-y-4">
-                    {section.content.steps.map((step, idx) => (
-                      <div key={idx} className="bg-gray-900 rounded-lg p-4">
-                        <div className="flex items-start space-x-3">
-                          <span className="bg-brand-red text-black rounded-full w-8 h-8 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-1">
-                            {idx + 1}
-                          </span>
-                          <div className="space-y-2 flex-1">
-                            <h4
-                              className="text-brand-red font-bold text-xs md:text-sm"
-                              style={TYPOGRAPHY.heading}
-                            >
-                              {step.title}
-                            </h4>
-                            <p
-                              className="text-white text-xs leading-relaxed"
-                              style={TYPOGRAPHY.body}
-                            >
-                              {step.description}
-                            </p>
-                            {step.example && (
-                              <div className="bg-black rounded p-3 border-l-2 border-cyan-500">
-                                <p
-                                  className="text-gray-300 text-xs italic"
-                                  style={TYPOGRAPHY.body}
-                                >
-                                  {step.example}
-                                </p>
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="bg-brand-red/10 rounded-lg p-4">
-                    <h4
-                      className="text-brand-red font-bold mb-3"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      Pro Tips
-                    </h4>
-                    <div className="space-y-2">
-                      {section.content.proTips.map((tip, idx) => (
-                        <p
-                          key={idx}
-                          className="text-white text-xs"
-                          style={TYPOGRAPHY.body}
-                        >
-                          • {tip}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Section 9: Best Practices & Warnings */}
-              {section.id === 9 && (
-                <div className="space-y-6">
-                  <div className="space-y-4">
-                    <h3
-                      className="text-brand-red font-bold text-lg flex items-center gap-2"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      <CheckCircle className="w-5 h-5" />
-                      Best Practices
-                    </h3>
-                    {section.content.bestPractices.map((practice, idx) => (
-                      <div
-                        key={idx}
-                        className="bg-green-900/30 rounded-lg p-4 border border-green-700"
-                      >
-                        <h5
-                          className="text-green-400 font-bold text-xs md:text-sm mb-2"
-                          style={TYPOGRAPHY.heading}
-                        >
-                          {practice.title}
-                        </h5>
-                        <p
-                          className="text-white text-xs leading-relaxed mb-2"
-                          style={TYPOGRAPHY.body}
-                        >
-                          {practice.description}
-                        </p>
-                        {practice.example && (
-                          <div className="bg-black rounded p-3 border-l-2 border-green-500">
-                            <p className="text-gray-300 text-xs italic">
-                              {practice.example}
-                            </p>
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="space-y-4">
-                    <h3
-                      className="text-brand-red font-bold text-lg flex items-center gap-2"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      <AlertTriangle className="w-5 h-5" />
-                      Important Warnings
-                    </h3>
-                    {section.content.warnings.map((warning, idx) => (
-                      <div
-                        key={idx}
-                        className="bg-red-900/30 rounded-lg p-4 border border-red-700"
-                      >
-                        <h5
-                          className="text-red-400 font-bold text-xs md:text-sm mb-2"
-                          style={TYPOGRAPHY.heading}
-                        >
-                          {warning.title}
-                        </h5>
-                        <p
-                          className="text-white text-xs leading-relaxed mb-2"
-                          style={TYPOGRAPHY.body}
-                        >
-                          {warning.description}
-                        </p>
-                        {warning.example && (
-                          <div className="bg-black rounded p-3 border-l-2 border-red-500 mb-2">
-                            <p className="text-gray-300 text-xs italic">
-                              {warning.example}
-                            </p>
-                          </div>
-                        )}
-                        {warning.consequence && (
-                          <div className="bg-red-800/20 rounded p-2 border-l-2 border-red-600">
-                            <p className="text-red-300 text-xs">
-                              ⚠️ {warning.consequence}
-                            </p>
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="space-y-4">
-                    <h3
-                      className="text-brand-red font-bold text-lg flex items-center gap-2"
-                      style={TYPOGRAPHY.heading}
-                    >
-                      <Settings className="w-5 h-5" />
-                      Troubleshooting
-                    </h3>
-                    {section.content.troubleshooting.map((trouble, idx) => (
-                      <div
-                        key={idx}
-                        className="bg-blue-900/30 rounded-lg p-4 border border-blue-700"
-                      >
-                        <h5
-                          className="text-blue-400 font-bold text-xs md:text-sm mb-2"
-                          style={TYPOGRAPHY.heading}
-                        >
-                          {trouble.title}
-                        </h5>
-                        <p
-                          className="text-white text-xs leading-relaxed mb-2"
-                          style={TYPOGRAPHY.body}
-                        >
-                          {trouble.description}
-                        </p>
-                        <div className="bg-black rounded p-3 border-l-2 border-blue-500">
-                          <p className="text-blue-300 text-xs">
-                            💡 Solution: {trouble.solution}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-
-      {/* Call to Action */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">
-        <div className="bg-black rounded-xl p-6 md:p-8 text-center">
-          <h3
-            className="text-xl md:text-2xl font-bold text-white mb-4"
-            style={TYPOGRAPHY.title}
-          >
-            Ready to Create Amazing AI Images?
-          </h3>
-          <p
-            className="text-gray-300 mb-6 max-w-2xl mx-auto"
-            style={TYPOGRAPHY.body}
-          >
-            Apply what you've learned and start generating professional-quality
-            images with Sora today.
-          </p>
-          <Button
-            onClick={() => navigate("/ai-toolkit")}
-            className="bg-brand-red text-black hover:bg-brand-red-hover font-bold px-6 py-3"
-            style={TYPOGRAPHY.button}
-          >
-            <Zap className="w-4 h-4 mr-2" />
-            EXPLORE AI TOOLKIT
-          </Button>
+        {/* Call to Action */}
+        <div className="text-center mt-12">
+          <div className="bg-black rounded-xl p-6 md:p-8">
+            <h3
+              className="text-xl md:text-2xl font-bold text-white mb-4"
+              style={TYPOGRAPHY.title}
+            >
+              Ready to Put This into Practice?
+            </h3>
+            <p
+              className="text-gray-300 mb-6 max-w-2xl mx-auto"
+              style={TYPOGRAPHY.body}
+            >
+              Take your new prompting skills to our studio tools and start
+              creating professional-quality prompts right away.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                onClick={() => navigate("/")}
+                className="bg-brand-red text-black hover:bg-brand-red-hover font-bold px-6 py-3"
+                style={TYPOGRAPHY.button}
+              >
+                <Camera className="w-4 h-4 mr-2" />
+                Try Product Studio
+              </Button>
+              <Button
+                onClick={() => navigate("/lifestyle-studio")}
+                className="bg-white text-black hover:bg-gray-100 font-bold px-6 py-3"
+                style={TYPOGRAPHY.button}
+              >
+                <Package className="w-4 h-4 mr-2" />
+                Try Lifestyle Studio
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
 

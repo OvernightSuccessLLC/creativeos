@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import BriefcaseModal from "@/components/BriefcaseModal";
 import AppNavigation from "@/components/AppNavigation";
+import ProtectedFeature from "@/components/ProtectedFeature";
 import {
   Camera,
   Palette,
@@ -457,10 +458,10 @@ export default function LifestyleStudio() {
       <AppNavigation />
 
       {/* HOW IT WORKS Section */}
-      <div className="px-6 mb-8 pt-6">
+      <div className="px-4 sm:px-6 mb-6 sm:mb-8 pt-4 sm:pt-6">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-black rounded-lg py-5 px-6">
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div className="bg-black rounded-lg py-3 sm:py-5 px-4 sm:px-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
               {[
                 "Add Custom Instructions",
                 "Define Mood & Subject",
@@ -484,42 +485,42 @@ export default function LifestyleStudio() {
       </div>
 
       {/* Main Content Grid */}
-      <div className="px-6 pb-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="px-4 sm:px-6 pb-6 sm:pb-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {/* Left Column - Steps */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="xl:col-span-2 space-y-3 sm:space-y-4">
             {steps.map((step) => (
               <Card key={step.id} className="border-black bg-black">
                 <CardHeader
-                  className="cursor-pointer bg-black"
+                  className="cursor-pointer bg-black p-4 sm:p-6"
                   onClick={() =>
                     setActiveStep(activeStep === step.id ? null : step.id)
                   }
                 >
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      <div className="bg-brand-red text-black rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">
+                    <div className="flex items-center space-x-2 sm:space-x-3 flex-1 min-w-0">
+                      <div className="bg-brand-red text-black rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center font-bold text-xs sm:text-sm flex-shrink-0">
                         {step.id}
                       </div>
-                      <div>
-                        <CardTitle className="text-lg text-white">
+                      <div className="min-w-0 flex-1">
+                        <CardTitle className="text-sm sm:text-lg text-white truncate">
                           {step.title}
                         </CardTitle>
-                        <p className="text-gray-600 text-sm">
+                        <p className="text-gray-600 text-xs sm:text-sm hidden sm:block">
                           {step.description}
                         </p>
                       </div>
                     </div>
                     {activeStep === step.id ? (
-                      <ChevronUp className="w-4 h-4 text-white" />
+                      <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-white flex-shrink-0" />
                     ) : (
-                      <ChevronDown className="w-4 h-4 text-white" />
+                      <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white flex-shrink-0" />
                     )}
                   </div>
                 </CardHeader>
 
                 {activeStep === step.id && (
-                  <CardContent className="space-y-4 bg-black">
+                  <CardContent className="space-y-3 sm:space-y-4 bg-black p-4 sm:p-6">
                     {step.id === 1 && (
                       <div>
                         <Textarea
@@ -529,29 +530,30 @@ export default function LifestyleStudio() {
                           onChange={(e) =>
                             setCustomInstructions(e.target.value)
                           }
-                          className="mt-1"
-                          rows={4}
+                          className="mt-1 text-sm sm:text-base"
+                          rows={3}
+                          style={{ minHeight: "100px" }}
                         />
                       </div>
                     )}
 
                     {step.id === 2 && (
                       <div>
-                        <Label htmlFor="file-upload" className="text-white">
+                        <Label htmlFor="file-upload" className="text-white text-sm sm:text-base">
                           Upload Reference Image
                         </Label>
                         <label
                           htmlFor="file-upload"
-                          className="block border-2 border-dashed border-gray-300 rounded-lg p-6 text-center mt-2 cursor-pointer hover:border-brand-red transition-colors"
+                          className="block border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-6 text-center mt-2 cursor-pointer hover:border-brand-red transition-colors touch-manipulation"
                         >
-                          <Upload className="mx-auto h-12 w-12 text-gray-400" />
-                          <div className="mt-4">
-                            <span className="mt-2 block text-sm font-medium text-white">
+                          <Upload className="mx-auto h-10 w-10 sm:h-12 sm:w-12 text-gray-400" />
+                          <div className="mt-3 sm:mt-4">
+                            <span className="mt-2 block text-sm sm:text-base font-medium text-white">
                               {uploadedFile
                                 ? `Replace: ${uploadedFile.name}`
                                 : "Click to upload or drag and drop"}
                             </span>
-                            <span className="text-xs text-gray-400 mt-1 block">
+                            <span className="text-xs sm:text-sm text-gray-400 mt-1 block">
                               PNG, JPG, GIF up to 10MB
                             </span>
                           </div>
@@ -564,7 +566,7 @@ export default function LifestyleStudio() {
                             accept="image/*"
                           />
                           {uploadedFile && (
-                            <div className="mt-4 text-sm text-green-400">
+                            <div className="mt-3 sm:mt-4 text-xs sm:text-sm text-green-400">
                               ✓ Uploaded: {uploadedFile.name} (
                               {(uploadedFile.size / 1024 / 1024).toFixed(2)} MB)
                             </div>
@@ -574,16 +576,17 @@ export default function LifestyleStudio() {
                     )}
 
                     {step.id === 3 && (
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                         {keywordCategories["Scene Objective"].map((keyword) => (
                           <button
                             key={keyword}
                             onClick={() => toggleKeyword(keyword)}
-                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                            className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                               selectedKeywords.includes(keyword)
                                 ? "bg-brand-red text-black"
                                 : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                             }`}
+                            style={{ minHeight: "44px" }}
                           >
                             {keyword}
                           </button>
@@ -592,17 +595,18 @@ export default function LifestyleStudio() {
                     )}
 
                     {step.id === 4 && (
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                         {keywordCategories["Product/Subject Style"].map(
                           (keyword) => (
                             <button
                               key={keyword}
                               onClick={() => toggleKeyword(keyword)}
-                              className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                              className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                                 selectedKeywords.includes(keyword)
                                   ? "bg-brand-red text-black"
                                   : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                               }`}
+                              style={{ minHeight: "44px" }}
                             >
                               {keyword}
                             </button>
@@ -612,17 +616,18 @@ export default function LifestyleStudio() {
                     )}
 
                     {step.id === 5 && (
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                         {keywordCategories["Background Setting"].map(
                           (keyword) => (
                             <button
                               key={keyword}
                               onClick={() => toggleKeyword(keyword)}
-                              className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                              className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                                 selectedKeywords.includes(keyword)
                                   ? "bg-brand-red text-black"
                                   : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                               }`}
+                              style={{ minHeight: "44px" }}
                             >
                               {keyword}
                             </button>
@@ -632,16 +637,17 @@ export default function LifestyleStudio() {
                     )}
 
                     {step.id === 6 && (
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                         {keywordCategories["Lighting Setup"].map((keyword) => (
                           <button
                             key={keyword}
                             onClick={() => toggleKeyword(keyword)}
-                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                            className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                               selectedKeywords.includes(keyword)
                                 ? "bg-brand-red text-black"
                                 : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                             }`}
+                            style={{ minHeight: "44px" }}
                           >
                             {keyword}
                           </button>
@@ -650,16 +656,17 @@ export default function LifestyleStudio() {
                     )}
 
                     {step.id === 7 && (
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                         {keywordCategories["Camera Angle"].map((keyword) => (
                           <button
                             key={keyword}
                             onClick={() => toggleKeyword(keyword)}
-                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                            className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                               selectedKeywords.includes(keyword)
                                 ? "bg-brand-red text-black"
                                 : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                             }`}
+                            style={{ minHeight: "44px" }}
                           >
                             {keyword}
                           </button>
@@ -668,16 +675,17 @@ export default function LifestyleStudio() {
                     )}
 
                     {step.id === 8 && (
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                         {keywordCategories["Intended Use"].map((keyword) => (
                           <button
                             key={keyword}
                             onClick={() => toggleKeyword(keyword)}
-                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                            className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                               selectedKeywords.includes(keyword)
                                 ? "bg-brand-red text-black"
                                 : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                             }`}
+                            style={{ minHeight: "44px" }}
                           >
                             {keyword}
                           </button>
@@ -687,16 +695,17 @@ export default function LifestyleStudio() {
 
                     {step.id === 9 && (
                       <div>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-2">
                           {keywordCategories["Finishing"].map((keyword) => (
                             <button
                               key={keyword}
                               onClick={() => toggleKeyword(keyword)}
-                              className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                              className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                                 selectedKeywords.includes(keyword)
                                   ? "bg-brand-red text-black"
                                   : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                               }`}
+                              style={{ minHeight: "44px" }}
                             >
                               {keyword}
                             </button>
@@ -711,8 +720,8 @@ export default function LifestyleStudio() {
           </div>
 
           {/* Right Column - AI Prompt Formula */}
-          <div className="space-y-6">
-            <Card className="border-black sticky top-6">
+          <div className="space-y-4 sm:space-y-6">
+            <Card className="border-black xl:sticky xl:top-6">
               <CardHeader className="bg-black py-4 px-4 sm:px-6">
                 <CardTitle className="text-lg sm:text-xl text-white mb-3">
                   AI Prompt Formula
@@ -801,22 +810,28 @@ export default function LifestyleStudio() {
                   {copiedPrompt ? "COPIED!" : "COPY"}
                 </Button>
 
-                <div className="text-sm mt-4">
-                  <h4 className="font-semibold text-white my-1 py-1">
-                    <span className="text-brand-red">AI RECOMMENDATIONS</span>
-                  </h4>
-                  <ul className="text-gray-600">
-                    <li className="text-white font-semibold mt-1">
-                      • Add more emotional descriptors for depth
-                    </li>
-                    <li className="text-white font-semibold mt-1">
-                      • Include lighting details for mood
-                    </li>
-                    <li className="text-white font-semibold mt-1">
-                      • Specify camera angle for composition
-                    </li>
-                  </ul>
-                </div>
+                <ProtectedFeature
+                  feature="advancedAnalytics"
+                  featureName="AI Recommendations"
+                  requiredPlan="pro"
+                >
+                  <div className="text-sm mt-4">
+                    <h4 className="font-semibold text-white my-1 py-1">
+                      <span className="text-brand-red">AI RECOMMENDATIONS</span>
+                    </h4>
+                    <ul className="text-gray-600">
+                      <li className="text-white font-semibold mt-1">
+                        • Add more emotional descriptors for depth
+                      </li>
+                      <li className="text-white font-semibold mt-1">
+                        • Include lighting details for mood
+                      </li>
+                      <li className="text-white font-semibold mt-1">
+                        • Specify camera angle for composition
+                      </li>
+                    </ul>
+                  </div>
+                </ProtectedFeature>
               </CardContent>
             </Card>
           </div>

@@ -1,54 +1,70 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
 import "./global.css";
 
 import { Toaster } from "@/components/ui/toaster";
+import { createRoot } from "react-dom/client";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Landing from "./pages/Landing";
+import { AuthProvider } from "./contexts/AuthContext";
+import ProductStudio from "./pages/ProductStudio";
 import Playbook from "./pages/Playbook";
+import Templates from "./pages/Templates";
 import AIToolkit from "./pages/AIToolkit";
-import CharacterSpec from "./pages/CharacterSpec";
+import Updates from "./pages/Updates";
+import PaywallLanding from "./pages/PaywallLanding";
 import NotFound from "./pages/NotFound";
+import LifestyleStudio from "./pages/LifestyleStudio";
+import GraphicStudio from "./pages/GraphicStudio";
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 1000 * 60 * 5, // 5 minutes
-      refetchOnWindowFocus: false,
+const queryClient = new QueryClient();
+
+// Global Creative Director OS Context
+const CreativeDirectorOSContext = {
+  version: "1.0.0",
+  features: {
+    playbook: true,
+    templates: true,
+    aiToolkit: true,
+    studios: {
+      product: true,
+      lifestyle: true,
+      graphic: true,
     },
   },
-});
+};
 
-function App() {
-  return (
-    <QueryClientProvider client={queryClient}>
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <AuthProvider>
       <TooltipProvider>
         <Toaster />
         <Sonner />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Landing />} />
+            <Route path="/" element={<ProductStudio />} />
+            <Route path="/lifestyle-studio" element={<LifestyleStudio />} />
+            <Route path="/graphic-studio" element={<GraphicStudio />} />
             <Route path="/playbook" element={<Playbook />} />
+            <Route path="/templates" element={<Templates />} />
             <Route path="/ai-toolkit" element={<AIToolkit />} />
-            <Route path="/character-spec" element={<CharacterSpec />} />
+            <Route path="/updates" element={<Updates />} />
+            <Route path="/join" element={<PaywallLanding />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
-    </QueryClientProvider>
-  );
+    </AuthProvider>
+  </QueryClientProvider>
+);
+
+const container = document.getElementById("root")!;
+let root = (container as any)._reactRoot;
+
+if (!root) {
+  root = createRoot(container);
+  (container as any)._reactRoot = root;
 }
 
-const container = document.getElementById("root");
-if (container) {
-  // Check if root already exists to prevent duplicate createRoot calls
-  let root = (container as any)._reactRoot;
-  if (!root) {
-    root = ReactDOM.createRoot(container);
-    (container as any)._reactRoot = root;
-  }
-  root.render(<App />);
-}
+root.render(<App />);

@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import AppNavigation from "@/components/AppNavigation";
 import BriefcaseModal from "@/components/BriefcaseModal";
+import ProtectedFeature from "@/components/ProtectedFeature";
 import {
   LayoutTemplate,
   Search,
@@ -78,6 +79,7 @@ export default function Templates() {
       rating: 4.7,
       uses: 756,
       featured: true,
+      premium: true,
     },
     {
       id: 4,
@@ -96,6 +98,7 @@ export default function Templates() {
       title: "Architectural Interior",
       category: "architecture",
       description: "Modern interior space with natural lighting",
+      premium: true,
       prompt:
         "Modern architectural interior, clean lines, natural lighting, minimalist design, high-end finishes, professional real estate photography style",
       tags: ["interior", "modern", "architecture", "clean"],
@@ -417,24 +420,25 @@ export default function Templates() {
 
       {/* Templates Grid */}
       <div
-        className="max-w-6xl mx-auto px-6 py-8"
+        className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8"
         style={{ backgroundColor: "#f93921" }}
       >
-        <div className="grid md:grid-cols-2 gap-6">
-          {filteredTemplates.map((template) => (
-            <Card
-              key={template.id}
-              className="bg-black border border-gray-800 hover:border-brand-red transition-colors"
-            >
-              <CardHeader>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+          {filteredTemplates.map((template) => {
+            const TemplateCard = (
+              <Card
+                key={template.id}
+                className="bg-black border border-gray-800 hover:border-brand-red transition-colors"
+              >
+              <CardHeader className="p-4 sm:p-6">
                 <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center space-x-2 mb-2">
-                      <CardTitle className="text-white text-lg">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center space-x-2 mb-2 flex-wrap">
+                      <CardTitle className="text-white text-base sm:text-lg truncate">
                         {template.title}
                       </CardTitle>
                       {template.featured && (
-                        <Badge className="bg-brand-red text-black text-xs">
+                        <Badge className="bg-brand-red text-black text-xs flex-shrink-0">
                           FEATURED
                         </Badge>
                       )}
@@ -442,10 +446,10 @@ export default function Templates() {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6">
                 {/* Prompt Preview */}
                 <div className="bg-gray-900 border border-gray-700 rounded p-3">
-                  <p className="text-gray-300 text-sm line-clamp-3">
+                  <p className="text-gray-300 text-xs sm:text-sm line-clamp-3">
                     {template.prompt}
                   </p>
                 </div>
@@ -455,20 +459,38 @@ export default function Templates() {
                   <Button
                     size="sm"
                     onClick={() => copyPrompt(template.prompt, template.id)}
-                    className="bg-brand-red hover:opacity-90 text-white font-bold flex-1"
+                    className="bg-brand-red hover:opacity-90 text-white font-bold flex-1 text-xs sm:text-sm py-2.5 sm:py-3 touch-manipulation"
                     style={{
                       backgroundColor:
                         copiedTemplate === template.id ? "#22C55E" : "#F93822",
                       border: "none",
+                      minHeight: "44px",
                     }}
                   >
-                    <Copy className="w-4 h-4 mr-2" />
+                    <Copy className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                     {copiedTemplate === template.id ? "COPIED!" : "COPY PROMPT"}
                   </Button>
                 </div>
               </CardContent>
             </Card>
-          ))}
+            );
+
+            // Wrap premium templates with protection
+            if (template.premium) {
+              return (
+                <ProtectedFeature
+                  key={template.id}
+                  feature="exclusiveTemplates"
+                  featureName="Premium Template"
+                  requiredPlan="pro"
+                >
+                  {TemplateCard}
+                </ProtectedFeature>
+              );
+            }
+
+            return TemplateCard;
+          })}
         </div>
 
         {filteredTemplates.length === 0 && (

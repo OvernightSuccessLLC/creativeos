@@ -405,10 +405,10 @@ export default function GraphicStudio() {
       <AppNavigation />
 
       {/* HOW IT WORKS Section */}
-      <div className="px-6 mb-8 pt-6">
+      <div className="px-4 sm:px-6 mb-6 sm:mb-8 pt-4 sm:pt-6">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-black rounded-lg py-[18px] px-6">
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div className="bg-black rounded-lg py-3 sm:py-[18px] px-4 sm:px-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
               {[
                 "Add Custom Instructions",
                 "Choose Design Type",
@@ -432,40 +432,40 @@ export default function GraphicStudio() {
       </div>
 
       {/* Main Content Grid */}
-      <div className="px-6 pb-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="px-4 sm:px-6 pb-6 sm:pb-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {/* Left Column - Steps */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="xl:col-span-2 space-y-3 sm:space-y-4">
             {steps.map((step) => (
               <Card key={step.id} className="border-black bg-black">
                 <CardHeader
-                  className="cursor-pointer bg-black"
+                  className="cursor-pointer bg-black p-4 sm:p-6"
                   onClick={() =>
                     setActiveStep(activeStep === step.id ? null : step.id)
                   }
                 >
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      <div className="bg-brand-red text-black rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">
+                    <div className="flex items-center space-x-2 sm:space-x-3 flex-1 min-w-0">
+                      <div className="bg-brand-red text-black rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center font-bold text-xs sm:text-sm flex-shrink-0">
                         {step.id}
                       </div>
-                      <div className="ml-3 text-white text-lg leading-7 -tracking-wide">
+                      <div className="min-w-0 flex-1 text-white text-sm sm:text-lg leading-tight sm:leading-7 -tracking-wide truncate">
                         {step.title}
                       </div>
                     </div>
                     {activeStep === step.id ? (
-                      <ChevronUp className="w-4 h-4 text-white" />
+                      <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-white flex-shrink-0" />
                     ) : (
-                      <ChevronDown className="w-4 h-4 text-white" />
+                      <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white flex-shrink-0" />
                     )}
                   </div>
                 </CardHeader>
 
                 {activeStep === step.id && (
-                  <CardContent className="space-y-4 bg-black">
+                  <CardContent className="space-y-3 sm:space-y-4 bg-black p-4 sm:p-6">
                     {step.id === 1 && (
                       <div>
-                        <Label htmlFor="instructions" className="text-white">
+                        <Label htmlFor="instructions" className="text-white text-sm sm:text-base">
                           Describe your graphic design project
                         </Label>
                         <Textarea
@@ -475,25 +475,27 @@ export default function GraphicStudio() {
                           onChange={(e) =>
                             setCustomInstructions(e.target.value)
                           }
-                          className="mt-1"
-                          rows={4}
+                          className="mt-1 text-sm sm:text-base"
+                          rows={3}
+                          style={{ minHeight: "100px" }}
                         />
                       </div>
                     )}
 
                     {step.id === 2 && (
-                      <div className="space-y-4">
+                      <div className="space-y-3 sm:space-y-4">
                         <div></div>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                           {keywordCategories["Design Type"].map((keyword) => (
                             <button
                               key={keyword}
                               onClick={() => toggleKeyword(keyword)}
-                              className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                              className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                                 selectedKeywords.includes(keyword)
                                   ? "bg-brand-red text-black"
                                   : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
                               }`}
+                              style={{ minHeight: "44px" }}
                             >
                               {keyword}
                             </button>
@@ -503,18 +505,19 @@ export default function GraphicStudio() {
                     )}
 
                     {step.id === 3 && (
-                      <div className="space-y-4">
+                      <div className="space-y-3 sm:space-y-4">
                         <div></div>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                           {keywordCategories["Style & Mood"].map((keyword) => (
                             <button
                               key={keyword}
                               onClick={() => toggleKeyword(keyword)}
-                              className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                              className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                                 selectedKeywords.includes(keyword)
                                   ? "bg-brand-red text-black"
                                   : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
                               }`}
+                              style={{ minHeight: "44px" }}
                             >
                               {keyword}
                             </button>
@@ -525,17 +528,18 @@ export default function GraphicStudio() {
 
                     {step.id === 4 && (
                       <div>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-3 sm:mt-4">
                           {keywordCategories["Typography & Text"].map(
                             (keyword) => (
                               <button
                                 key={keyword}
                                 onClick={() => toggleKeyword(keyword)}
-                                className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                                className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                                   selectedKeywords.includes(keyword)
                                     ? "bg-brand-red text-black"
                                     : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
                                 }`}
+                                style={{ minHeight: "44px" }}
                               >
                                 {keyword}
                               </button>
@@ -547,17 +551,18 @@ export default function GraphicStudio() {
 
                     {step.id === 5 && (
                       <div>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-3 sm:mt-4">
                           {keywordCategories["Layout & Composition"].map(
                             (keyword) => (
                               <button
                                 key={keyword}
                                 onClick={() => toggleKeyword(keyword)}
-                                className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                                className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                                   selectedKeywords.includes(keyword)
                                     ? "bg-brand-red text-black"
                                     : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
                                 }`}
+                                style={{ minHeight: "44px" }}
                               >
                                 {keyword}
                               </button>
@@ -568,20 +573,21 @@ export default function GraphicStudio() {
                     )}
 
                     {step.id === 6 && (
-                      <div className="space-y-6">
+                      <div className="space-y-4 sm:space-y-6">
                         <div>
-                          <Label className="text-white"></Label>
-                          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
+                          <Label className="text-white text-sm sm:text-base"></Label>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-2">
                             {keywordCategories["Color & Style"].map(
                               (keyword) => (
                                 <button
                                   key={keyword}
                                   onClick={() => toggleKeyword(keyword)}
-                                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                                  className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                                     selectedKeywords.includes(keyword)
                                       ? "bg-brand-red text-black"
                                       : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
                                   }`}
+                                  style={{ minHeight: "44px" }}
                                 >
                                   {keyword}
                                 </button>
@@ -594,21 +600,21 @@ export default function GraphicStudio() {
 
                     {step.id === 7 && (
                       <div>
-                        <Label htmlFor="file-upload" className="text-white">
+                        <Label htmlFor="file-upload" className="text-white text-sm sm:text-base">
                           Upload Reference Image
                         </Label>
                         <label
                           htmlFor="file-upload"
-                          className="block border-2 border-dashed border-gray-300 rounded-lg p-6 text-center mt-2 cursor-pointer hover:border-brand-red transition-colors"
+                          className="block border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-6 text-center mt-2 cursor-pointer hover:border-brand-red transition-colors touch-manipulation"
                         >
-                          <Upload className="mx-auto h-12 w-12 text-gray-400" />
-                          <div className="mt-4">
-                            <span className="mt-2 block text-sm font-medium text-white">
+                          <Upload className="mx-auto h-10 w-10 sm:h-12 sm:w-12 text-gray-400" />
+                          <div className="mt-3 sm:mt-4">
+                            <span className="mt-2 block text-sm sm:text-base font-medium text-white">
                               {uploadedFile
                                 ? `Replace: ${uploadedFile.name}`
                                 : "Click to upload or drag and drop"}
                             </span>
-                            <span className="text-xs text-gray-400 mt-1 block">
+                            <span className="text-xs sm:text-sm text-gray-400 mt-1 block">
                               PNG, JPG, GIF up to 10MB
                             </span>
                           </div>
@@ -621,7 +627,7 @@ export default function GraphicStudio() {
                             accept="image/*"
                           />
                           {uploadedFile && (
-                            <div className="mt-4 text-sm text-green-400">
+                            <div className="mt-3 sm:mt-4 text-xs sm:text-sm text-green-400">
                               ✓ Uploaded: {uploadedFile.name} (
                               {(uploadedFile.size / 1024 / 1024).toFixed(2)} MB)
                             </div>
@@ -636,8 +642,8 @@ export default function GraphicStudio() {
           </div>
 
           {/* Right Column - AI Prompt Formula */}
-          <div className="space-y-6">
-            <Card className="border-black sticky top-6">
+          <div className="space-y-4 sm:space-y-6">
+            <Card className="border-black xl:sticky xl:top-6">
               <CardHeader className="bg-black py-4 px-4 sm:px-6">
                 <CardTitle className="text-lg sm:text-xl text-white mb-3">
                   AI Prompt Formula

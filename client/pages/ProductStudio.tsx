@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import BriefcaseModal from "@/components/BriefcaseModal";
 import AppNavigation from "@/components/AppNavigation";
+import ProtectedFeature from "@/components/ProtectedFeature";
 import {
   Camera,
   Palette,
@@ -42,26 +43,28 @@ export default function ProductStudio() {
   useEffect(() => {
     const nativeButton = document.querySelector('[data-test="native-button"]');
     if (nativeButton) {
-      nativeButton.addEventListener('click', () => {
-        console.log('Native click works!');
-        alert('Native DOM event works!');
+      nativeButton.addEventListener("click", () => {
+        console.log("Native click works!");
+        alert("Native DOM event works!");
       });
     }
 
     // Add mobile menu toggle
-    const mobileMenuButton = document.querySelector('[data-mobile-menu="toggle"]');
+    const mobileMenuButton = document.querySelector(
+      '[data-mobile-menu="toggle"]',
+    );
     if (mobileMenuButton) {
-      mobileMenuButton.addEventListener('click', () => {
+      mobileMenuButton.addEventListener("click", () => {
         const menu = document.querySelector('[data-mobile-menu="content"]');
         if (menu) {
-          menu.classList.toggle('hidden');
+          menu.classList.toggle("hidden");
         }
       });
     }
 
     return () => {
-      nativeButton?.removeEventListener('click', () => {});
-      mobileMenuButton?.removeEventListener('click', () => {});
+      nativeButton?.removeEventListener("click", () => {});
+      mobileMenuButton?.removeEventListener("click", () => {});
     };
   }, []);
 
@@ -450,21 +453,23 @@ export default function ProductStudio() {
   return (
     <div className="min-h-screen bg-brand-red text-black">
       {/* DEBUG: Test both React and native events */}
-      <div style={{ position: 'fixed', top: '5px', right: '5px', zIndex: 10000 }}>
+      <div
+        style={{ position: "fixed", top: "5px", right: "5px", zIndex: 10000 }}
+      >
         <button
           data-test="test-button"
           onClick={() => {
-            console.log('React click works!');
-            alert('React is working!');
+            console.log("React click works!");
+            alert("React is working!");
           }}
           style={{
-            background: 'green',
-            color: 'white',
-            padding: '8px',
-            border: 'none',
-            borderRadius: '4px',
-            fontSize: '12px',
-            marginRight: '5px'
+            background: "green",
+            color: "white",
+            padding: "8px",
+            border: "none",
+            borderRadius: "4px",
+            fontSize: "12px",
+            marginRight: "5px",
           }}
         >
           REACT
@@ -472,12 +477,12 @@ export default function ProductStudio() {
         <button
           data-test="native-button"
           style={{
-            background: 'blue',
-            color: 'white',
-            padding: '8px',
-            border: 'none',
-            borderRadius: '4px',
-            fontSize: '12px'
+            background: "blue",
+            color: "white",
+            padding: "8px",
+            border: "none",
+            borderRadius: "4px",
+            fontSize: "12px",
           }}
         >
           NATIVE
@@ -486,10 +491,10 @@ export default function ProductStudio() {
       <AppNavigation />
 
       {/* HOW IT WORKS Section */}
-      <div className="px-6 mb-8 pt-6">
+      <div className="px-4 sm:px-6 mb-6 sm:mb-8 pt-4 sm:pt-6">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-black rounded-lg py-3 px-6 pb-5">
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div className="bg-black rounded-lg py-3 px-4 sm:px-6 pb-5">
+            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
               {[
                 "Add Custom Instructions",
                 "Select Categories",
@@ -513,43 +518,42 @@ export default function ProductStudio() {
       </div>
 
       {/* Main Content Grid */}
-      <div className="px-6 pb-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="px-4 sm:px-6 pb-6 sm:pb-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {/* Left Column - Steps */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="xl:col-span-2 space-y-3 sm:space-y-4">
             {steps.map((step) => (
               <Card key={step.id} className="border-black bg-black">
                 <CardHeader
-                  className="cursor-pointer bg-black"
-                  onClick={() => {
-                    console.log('Card clicked:', step.id);
-                    setActiveStep(activeStep === step.id ? null : step.id);
-                  }}
+                  className="cursor-pointer bg-black p-4 sm:p-6"
+                  onClick={() =>
+                    setActiveStep(activeStep === step.id ? null : step.id)
+                  }
                 >
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      <div className="bg-brand-red text-black rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">
+                    <div className="flex items-center space-x-2 sm:space-x-3 flex-1 min-w-0">
+                      <div className="bg-brand-red text-black rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center font-bold text-xs sm:text-sm flex-shrink-0">
                         {step.id}
                       </div>
-                      <div>
-                        <CardTitle className="text-lg text-white">
+                      <div className="min-w-0 flex-1">
+                        <CardTitle className="text-sm sm:text-lg text-white truncate">
                           {step.title}
                         </CardTitle>
-                        <p className="text-gray-600 text-sm">
+                        <p className="text-gray-600 text-xs sm:text-sm hidden sm:block">
                           {step.description}
                         </p>
                       </div>
                     </div>
                     {activeStep === step.id ? (
-                      <ChevronUp className="w-4 h-4 text-white" />
+                      <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-white flex-shrink-0" />
                     ) : (
-                      <ChevronDown className="w-4 h-4 text-white" />
+                      <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white flex-shrink-0" />
                     )}
                   </div>
                 </CardHeader>
 
                 {activeStep === step.id && (
-                  <CardContent className="space-y-4 bg-black">
+                  <CardContent className="space-y-3 sm:space-y-4 bg-black p-4 sm:p-6">
                     {step.id === 1 && (
                       <div>
                         <Textarea
@@ -559,55 +563,60 @@ export default function ProductStudio() {
                           onChange={(e) =>
                             setCustomInstructions(e.target.value)
                           }
-                          className="mt-1"
-                          rows={4}
+                          className="mt-1 text-sm sm:text-base"
+                          rows={3}
+                          style={{ minHeight: "100px" }}
                         />
                       </div>
                     )}
 
                     {step.id === 2 && (
                       <div>
-                        <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center mt-2">
-                          <Upload className="mx-auto h-12 w-12 text-gray-400" />
-                          <div className="mt-4">
-                            <Label
-                              htmlFor="file-upload"
-                              className="cursor-pointer"
-                            >
-                              <span className="mt-2 block text-sm font-medium text-gray-900">
-                                Click to upload or drag and drop
-                              </span>
-                            </Label>
-                            <Input
-                              id="file-upload"
-                              name="file-upload"
-                              type="file"
-                              className="sr-only"
-                              onChange={handleFileUpload}
-                              accept="image/*"
-                            />
+                        <label
+                          htmlFor="file-upload"
+                          className="block border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-6 text-center mt-2 cursor-pointer hover:border-brand-red transition-colors touch-manipulation"
+                        >
+                          <Upload className="mx-auto h-10 w-10 sm:h-12 sm:w-12 text-gray-400" />
+                          <div className="mt-3 sm:mt-4">
+                            <span className="mt-2 block text-sm sm:text-base font-medium text-white">
+                              {uploadedFile
+                                ? `Replace: ${uploadedFile.name}`
+                                : "Click to upload or drag and drop"}
+                            </span>
+                            <span className="text-xs sm:text-sm text-gray-400 mt-1 block">
+                              PNG, JPG, GIF up to 10MB
+                            </span>
                           </div>
+                          <Input
+                            id="file-upload"
+                            name="file-upload"
+                            type="file"
+                            className="sr-only"
+                            onChange={handleFileUpload}
+                            accept="image/*"
+                          />
                           {uploadedFile && (
-                            <div className="mt-4 text-sm text-gray-600">
-                              Uploaded: {uploadedFile.name} (
+                            <div className="mt-3 sm:mt-4 text-xs sm:text-sm text-green-400">
+                              ✓ Uploaded: {uploadedFile.name} (
                               {(uploadedFile.size / 1024 / 1024).toFixed(2)} MB)
                             </div>
                           )}
-                        </div>
+                        </label>
                       </div>
                     )}
 
                     {step.id === 3 && (
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                         {keywordCategories["Intended Use"].map((keyword) => (
                           <button
                             key={keyword}
                             onClick={() => toggleKeyword(keyword)}
-                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                            className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                               selectedKeywords.includes(keyword)
                                 ? "bg-brand-red text-black"
                                 : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                             }`}
+                            style={{ minHeight: "44px" }}
                           >
                             {keyword}
                           </button>
@@ -616,17 +625,18 @@ export default function ProductStudio() {
                     )}
 
                     {step.id === 4 && (
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                         {keywordCategories["Background Setting"].map(
                           (keyword) => (
                             <button
                               key={keyword}
                               onClick={() => toggleKeyword(keyword)}
-                              className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                              className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                                 selectedKeywords.includes(keyword)
                                   ? "bg-brand-red text-black"
                                   : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                               }`}
+                              style={{ minHeight: "44px" }}
                             >
                               {keyword}
                             </button>
@@ -636,16 +646,17 @@ export default function ProductStudio() {
                     )}
 
                     {step.id === 5 && (
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                         {keywordCategories["Lighting Setup"].map((keyword) => (
                           <button
                             key={keyword}
                             onClick={() => toggleKeyword(keyword)}
-                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                            className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                               selectedKeywords.includes(keyword)
                                 ? "bg-brand-red text-black"
                                 : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                             }`}
+                            style={{ minHeight: "44px" }}
                           >
                             {keyword}
                           </button>
@@ -654,16 +665,17 @@ export default function ProductStudio() {
                     )}
 
                     {step.id === 6 && (
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                         {keywordCategories["Camera Angle"].map((keyword) => (
                           <button
                             key={keyword}
                             onClick={() => toggleKeyword(keyword)}
-                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                            className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                               selectedKeywords.includes(keyword)
                                 ? "bg-brand-red text-black"
                                 : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                             }`}
+                            style={{ minHeight: "44px" }}
                           >
                             {keyword}
                           </button>
@@ -673,18 +685,21 @@ export default function ProductStudio() {
 
                     {step.id === 7 && (
                       <div>
-                        <Label className="text-white">Product Categories</Label>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
+                        <Label className="text-white text-sm sm:text-base">
+                          Product Categories
+                        </Label>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-2">
                           {keywordCategories["Product Categories"].map(
                             (keyword) => (
                               <button
                                 key={keyword}
                                 onClick={() => toggleKeyword(keyword)}
-                                className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                                className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
                                   selectedKeywords.includes(keyword)
                                     ? "bg-brand-red text-black"
                                     : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                                 }`}
+                                style={{ minHeight: "44px" }}
                               >
                                 {keyword}
                               </button>
@@ -700,8 +715,8 @@ export default function ProductStudio() {
           </div>
 
           {/* Right Column - AI Prompt Formula */}
-          <div className="space-y-6">
-            <Card className="border-black sticky top-6">
+          <div className="space-y-4 sm:space-y-6">
+            <Card className="border-black xl:sticky xl:top-6">
               <CardHeader className="bg-black py-4 px-4 sm:px-6">
                 <CardTitle className="text-lg sm:text-xl text-white mb-3">
                   AI Prompt Formula
@@ -790,22 +805,28 @@ export default function ProductStudio() {
                   {copiedPrompt ? "COPIED!" : "COPY"}
                 </Button>
 
-                <div className="text-sm mt-4">
-                  <h4 className="font-semibold text-white my-1 py-1">
-                    <span className="text-brand-red">AI RECOMMENDATIONS</span>
-                  </h4>
-                  <ul className="text-gray-600">
-                    <li className="text-white font-semibold mt-1">
-                      • Ensure lighting matches brand aesthetic
-                    </li>
-                    <li className="text-white font-semibold mt-1">
-                      • Add multiple angles for completeness
-                    </li>
-                    <li className="text-white font-semibold mt-1">
-                      • Include brand guidelines context
-                    </li>
-                  </ul>
-                </div>
+                <ProtectedFeature
+                  feature="advancedAnalytics"
+                  featureName="AI Recommendations"
+                  requiredPlan="pro"
+                >
+                  <div className="text-sm mt-4">
+                    <h4 className="font-semibold text-white my-1 py-1">
+                      <span className="text-brand-red">AI RECOMMENDATIONS</span>
+                    </h4>
+                    <ul className="text-gray-600">
+                      <li className="text-white font-semibold mt-1">
+                        • Ensure lighting matches brand aesthetic
+                      </li>
+                      <li className="text-white font-semibold mt-1">
+                        • Add multiple angles for completeness
+                      </li>
+                      <li className="text-white font-semibold mt-1">
+                        • Include brand guidelines context
+                      </li>
+                    </ul>
+                  </div>
+                </ProtectedFeature>
               </CardContent>
             </Card>
           </div>

@@ -1130,13 +1130,13 @@ export default function AIToolkit() {
               <CardHeader className="p-3 md:p-4 pb-2 md:pb-3 flex-shrink-0">
                 <div className="flex items-start justify-between mb-2">
                   <Badge
-                    className={`${tool.categoryColor} text-white text-xs font-medium px-2 py-1 rounded`}
+                    className={`${tool.categoryColor} text-white text-xs font-medium px-2 py-1 rounded flex-shrink-0`}
                   >
                     {tool.category}
                   </Badge>
                   {tool.premiumBadge && (
                     <Badge
-                      className={`${tool.premiumBadgeColor} text-white text-xs font-medium px-2 py-1 rounded`}
+                      className={`${tool.premiumBadgeColor} text-white text-xs font-medium px-2 py-1 rounded flex-shrink-0`}
                     >
                       {tool.premiumBadge}
                     </Badge>

@@ -39,34 +39,7 @@ export default function ProductStudio() {
   const [showBriefcase, setShowBriefcase] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
-  // Force event handlers to work with native DOM events
-  useEffect(() => {
-    const nativeButton = document.querySelector('[data-test="native-button"]');
-    if (nativeButton) {
-      nativeButton.addEventListener("click", () => {
-        console.log("Native click works!");
-        alert("Native DOM event works!");
-      });
-    }
 
-    // Add mobile menu toggle
-    const mobileMenuButton = document.querySelector(
-      '[data-mobile-menu="toggle"]',
-    );
-    if (mobileMenuButton) {
-      mobileMenuButton.addEventListener("click", () => {
-        const menu = document.querySelector('[data-mobile-menu="content"]');
-        if (menu) {
-          menu.classList.toggle("hidden");
-        }
-      });
-    }
-
-    return () => {
-      nativeButton?.removeEventListener("click", () => {});
-      mobileMenuButton?.removeEventListener("click", () => {});
-    };
-  }, []);
 
   // Prompt Builder State
   const [activeStep, setActiveStep] = useState<number | null>(1);

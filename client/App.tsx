@@ -15,8 +15,6 @@ import GraphicStudio from "./pages/GraphicStudio";
 
 const queryClient = new QueryClient();
 
-const queryClient = new QueryClient();
-
 // Simplified Playbook Version Context
 const PlaybookContext = {
   version: "1.0.0",

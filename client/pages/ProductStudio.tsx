@@ -319,7 +319,7 @@ export default function ProductStudio() {
       return "Start building your prompt by filling out the steps...";
     }
     prompt +=
-      "Product photography, commercial quality, professional lighting, clean composition, high resolution, detailed, realistic, SORA video generation optimized.";
+      "Product photography, commercial quality, professional lighting, clean composition, high resolution, detailed, realistic, SORA image generation optimized.";
     return prompt.trim();
   };
   // Copy to clipboard with enhanced fallback

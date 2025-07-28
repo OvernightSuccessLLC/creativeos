@@ -251,7 +251,7 @@ export default function Index() {
       return "Add custom instructions and select lifestyle photography keywords to build your optimized prompt...";
     }
     prompt +=
-      "Product photography, commercial quality, professional lighting, clean composition, high resolution, detailed, realistic, SORA video generation optimized.";
+      "Product photography, commercial quality, professional lighting, clean composition, high resolution, detailed, realistic, SORA image generation optimized.";
     return prompt.trim();
   };
   // Copy to clipboard with enhanced fallback

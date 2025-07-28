@@ -322,7 +322,7 @@ export default function LifestyleStudio() {
       return "Start building your prompt by filling out the steps...";
     }
     prompt +=
-      "Lifestyle photography, authentic human moment, natural expression, candid composition, emotional connection, high quality, detailed, realistic, SORA video generation optimized.";
+      "Lifestyle photography, authentic human moment, natural expression, candid composition, emotional connection, high quality, detailed, realistic, SORA image generation optimized.";
     return prompt.trim();
   };
   // Copy to clipboard with enhanced fallback

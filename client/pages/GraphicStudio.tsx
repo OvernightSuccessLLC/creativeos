@@ -311,7 +311,7 @@ export default function GraphicStudio() {
       prompt += selectedKeywords.join(", ") + ". ";
     }
     prompt +=
-      "Professional graphic design, high quality, clean composition, modern aesthetics, vector graphics, scalable design, print-ready, SORA video generation optimized.";
+      "Professional graphic design, high quality, clean composition, modern aesthetics, vector graphics, scalable design, print-ready, SORA image generation optimized.";
     return prompt;
   };
   // Copy to clipboard with enhanced fallback

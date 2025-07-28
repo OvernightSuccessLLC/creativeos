@@ -1153,7 +1153,7 @@ export default function AIToolkit() {
               Know of an amazing AI tool that should be in our collection? Let
               us know and we'll add it for everyone to discover.
             </p>
-            <Button className="bg-brand-red text-black hover:bg-brand-red-hover font-button px-6 py-3">
+            <Button className="bg-brand-red text-white hover:bg-red-700 font-button px-6 py-3">
               <Sparkles className="w-4 h-4 mr-2" />
               SUGGEST A TOOL
             </Button>

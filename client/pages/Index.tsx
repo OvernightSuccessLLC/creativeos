@@ -725,7 +725,7 @@ export default function Index() {
                 <h3 className="text-brand-red text-sm font-heading tracking-wide">
                   AI PROMPT FORMULA
                 </h3>
-                <Badge className="bg-brand-red text-black hover:bg-brand-red-hover font-button">
+                <Badge className="bg-brand-red text-white hover:bg-red-700 font-button">
                   {calculateQuality()}% QUALITY
                 </Badge>
               </div>

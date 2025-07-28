@@ -454,7 +454,7 @@ export default function Templates() {
                   <Button
                     size="sm"
                     onClick={() => copyPrompt(getCurrentPrompt(template), template.id)}
-                    className="bg-brand-red text-black hover:bg-brand-red-hover font-button flex-1 text-xs sm:text-sm py-2 touch-manipulation"
+                    className="bg-brand-red text-white hover:bg-red-700 font-button flex-1 text-xs sm:text-sm py-2 touch-manipulation"
                     style={{
                       backgroundColor:
                         copiedTemplate === template.id ? "#22C55E" : "#F93822",

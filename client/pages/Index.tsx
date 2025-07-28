@@ -511,7 +511,7 @@ export default function Index() {
                   key={index}
                   className="flex flex-col items-center text-center"
                 >
-                  <div className="bg-brand-red text-black hover:bg-brand-red-hover font-button text-sm sm:text-base mb-2 sm:mb-3">
+                  <div className="bg-white text-black rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center font-heading text-base sm:text-lg mb-2 sm:mb-3 shadow-lg border-2 border-brand-red">
                     {index + 1}
                   </div>
                   <p className="text-white text-xs sm:text-sm leading-tight font-body">{step}</p>

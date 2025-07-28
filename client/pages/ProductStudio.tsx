@@ -701,17 +701,16 @@ export default function ProductStudio() {
                     )}
 
                     {step.id === 6 && (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3">
                         {keywordCategories["Lighting Setup"].map((keyword) => (
                           <button
                             key={keyword}
                             onClick={() => toggleKeyword(keyword)}
-                            className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
+                            className={`px-3 py-3 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation min-h-[48px] text-center ${
                               selectedKeywords.includes(keyword)
                                 ? "bg-brand-red text-black"
                                 : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                             }`}
-                            style={{ minHeight: "44px" }}
                           >
                             {keyword}
                           </button>
@@ -720,17 +719,16 @@ export default function ProductStudio() {
                     )}
 
                     {step.id === 7 && (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3">
                         {keywordCategories["Camera Angle"].map((keyword) => (
                           <button
                             key={keyword}
                             onClick={() => toggleKeyword(keyword)}
-                            className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation ${
+                            className={`px-3 py-3 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation min-h-[48px] text-center ${
                               selectedKeywords.includes(keyword)
                                 ? "bg-brand-red text-black"
                                 : "bg-white text-black border border-gray-300 hover:bg-gray-100"
                             }`}
-                            style={{ minHeight: "44px" }}
                           >
                             {keyword}
                           </button>

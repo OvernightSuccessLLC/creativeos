@@ -935,7 +935,7 @@ export default function AIToolkit() {
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
       description:
-        "Categorized list of 35+ best AI tools for writing, coding, image/video.",
+        "Categorized list of 35+ best AI tools for writing, coding, and images.",
       keyFeatures: ["Tool directory", "Categorized list", "Multiple domains"],
       link: "https://www.v7labs.com/blog/best-ai-tools-listed",
       rating: 3,

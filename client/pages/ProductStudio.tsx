@@ -671,9 +671,6 @@ export default function ProductStudio() {
                     )}
                     {step.id === 8 && (
                       <div>
-                        <Label htmlFor="pantone-color" className="text-white text-sm sm:text-base font-body">
-                          Primary Color Pantone Code
-                        </Label>
                         <Input
                           id="pantone-color"
                           placeholder="e.g., Pantone 18-3838 TPX (Ultra Violet)"
@@ -681,9 +678,6 @@ export default function ProductStudio() {
                           onChange={(e) => setPrimaryColorPantone(e.target.value)}
                           className="mt-2 text-sm sm:text-base"
                         />
-                        <p className="text-white text-xs mt-1">
-                          Specify exact Pantone color codes for brand consistency
-                        </p>
                       </div>
                     )}
                     {step.id === 9 && (

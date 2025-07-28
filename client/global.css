@@ -239,6 +239,12 @@
 
   p, span, div, a, button, input, textarea, select, label {
     font-family: 'Poppins', sans-serif !important;
+    font-weight: 700 !important;
+  }
+
+  /* Ensure all text elements are bold */
+  * {
+    font-weight: 700 !important;
   }
 
   /* Better mobile text rendering */

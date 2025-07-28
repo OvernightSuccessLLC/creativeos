@@ -107,11 +107,7 @@ export default function Landing() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-brand-red hover:bg-brand-red-hover text-white font-heading py-3 text-lg"
-                style={{
-                  textTransform: "uppercase",
-                  letterSpacing: "0.5px",
-                }}
+                className="w-full bg-brand-red hover:bg-brand-red-hover text-white font-button py-3 text-lg"
               >
                 {isSubmitting ? "Getting Access..." : "Get Access Now"}
               </Button>

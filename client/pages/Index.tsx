@@ -581,7 +581,7 @@ export default function Index() {
                     </p>
                     <Input
                       type="file"
-                      accept="image/*,video/*,.pdf"
+                      accept="image/*,.pdf"
                       onChange={handleFileUpload2}
                       className="bg-gray-800 border-gray-600 text-white file:bg-brand-red file:text-white file:border-0 file:rounded file:px-3 file:py-1 file:mr-3 font-body"
                     />
@@ -627,7 +627,7 @@ export default function Index() {
                     </p>
                     <Input
                       type="file"
-                      accept="image/*,video/*,.pdf"
+                      accept="image/*,.pdf"
                       onChange={handleFileUpload3}
                       className="bg-gray-800 border-gray-600 text-white file:bg-brand-red file:text-white file:border-0 file:rounded file:px-3 file:py-1 file:mr-3 font-body"
                     />

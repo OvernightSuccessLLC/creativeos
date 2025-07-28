@@ -746,7 +746,7 @@ export default function ProductStudio() {
                     {qualityScore}%
                   </div>
                   <div className="flex-1">
-                    <div className="bg-gray-200 rounded-full h-2 sm:h-3">
+                    <div className="bg-white rounded-full h-2 sm:h-3">
                       <div
                         className="bg-brand-red h-2 sm:h-3 rounded-full transition-all duration-500"
                         style={{ width: `${qualityScore}%` }}
@@ -773,7 +773,7 @@ export default function ProductStudio() {
                         {customInstructions.length > 20 ? "25%" : "0%"}
                       </span>
                     </div>
-                    <div className="bg-gray-200 rounded-full h-1.5 sm:h-2">
+                    <div className="bg-white rounded-full h-1.5 sm:h-2">
                       <div
                         className="bg-green-500 h-1.5 sm:h-2 rounded-full transition-all duration-300"
                         style={{
@@ -789,7 +789,7 @@ export default function ProductStudio() {
                         {Math.min(50, selectedKeywords.length * 2)}%
                       </span>
                     </div>
-                    <div className="bg-gray-200 rounded-full h-1.5 sm:h-2">
+                    <div className="bg-white rounded-full h-1.5 sm:h-2">
                       <div
                         className="bg-blue-500 h-1.5 sm:h-2 rounded-full transition-all duration-300"
                         style={{
@@ -805,7 +805,7 @@ export default function ProductStudio() {
                         {uploadedFile ? "15%" : "0%"}
                       </span>
                     </div>
-                    <div className="bg-gray-200 rounded-full h-1.5 sm:h-2">
+                    <div className="bg-white rounded-full h-1.5 sm:h-2">
                       <div
                         className="bg-purple-500 h-1.5 sm:h-2 rounded-full transition-all duration-300"
                         style={{ width: uploadedFile ? "100%" : "0%" }}

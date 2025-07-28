@@ -476,13 +476,13 @@ export default function Index() {
         <div className="max-w-7xl mx-auto">
           <h1
             className="text-3xl sm:text-4xl lg:text-5xl font-heading text-black mb-2"
-            style={{ fontFamily: "Poppins, sans-serif" }}
+            className=""
           >
             PRODUCT STUDIO
           </h1>
           <p
             className="text-black text-base sm:text-lg"
-            style={{ fontFamily: "Poppins, sans-serif" }}
+            className=""
           >
             Create stunning product visuals and e-commerce content
           </p>

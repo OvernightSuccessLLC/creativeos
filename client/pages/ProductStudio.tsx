@@ -545,7 +545,7 @@ export default function ProductStudio() {
                   key={index}
                   className="flex flex-col items-center text-center"
                 >
-                  <div className="bg-brand-red text-black rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center font-bold text-sm sm:text-base mb-2 sm:mb-3">
+                  <div className="bg-brand-red text-black rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center font-heading text-sm sm:text-base mb-2 sm:mb-3">
                     {index + 1}
                   </div>
                   <p className="text-white text-xs sm:text-sm font-body leading-tight">{step}</p>
@@ -571,7 +571,7 @@ export default function ProductStudio() {
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2 sm:space-x-3 flex-1 min-w-0">
-                      <div className="bg-brand-red text-black rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center font-bold text-xs sm:text-sm flex-shrink-0">
+                      <div className="bg-brand-red text-black rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center font-heading text-xs sm:text-sm flex-shrink-0">
                         {step.id}
                       </div>
                       <div className="min-w-0 flex-1">
@@ -792,7 +792,7 @@ export default function ProductStudio() {
                   AI Prompt Formula
                 </CardTitle>
                 <div className="flex items-center space-x-3">
-                  <div className="text-lg sm:text-xl font-bold text-white min-w-[3rem]">
+                  <div className="text-lg sm:text-xl font-heading text-white min-w-[3rem]">
                     {qualityScore}%
                   </div>
                   <div className="flex-1">

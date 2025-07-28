@@ -148,7 +148,7 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                         : user.plan === "pro"
                           ? "bg-brand-red"
                           : "bg-gray-600"
-                    } text-white font-bold`}
+                    } text-white font-heading`}
                   >
                     <Crown className="w-3 h-3 mr-1" />
                     {user.plan.toUpperCase()}

@@ -131,7 +131,7 @@ export default function BriefcaseModal({
               <div key={stat.label} className="text-center">
                 <div className="flex items-center justify-center mb-1">
                   <stat.icon className="w-4 h-4 text-brand-red mr-1" />
-                  <span className="text-lg font-bold text-white">
+                  <span className="text-lg font-heading text-white">
                     {stat.value}
                   </span>
                 </div>
@@ -239,7 +239,7 @@ export default function BriefcaseModal({
               <CardContent className="p-6 text-center">
                 <Crown className="w-8 h-8 text-white mx-auto mb-3" />
                 <h3
-                  className="text-xl font-bold text-white mb-2"
+                  className="text-xl font-heading text-white mb-2"
                   style={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "700",
@@ -252,7 +252,7 @@ export default function BriefcaseModal({
                   Director OS toolkit
                 </p>
                 <Button
-                  className="bg-white text-brand-red hover:bg-gray-100 font-bold"
+                  className="bg-white text-brand-red hover:bg-gray-100 font-heading"
                   onClick={() => {
                     if (onNavigate) {
                       onNavigate("/playbook");

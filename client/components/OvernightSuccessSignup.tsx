@@ -56,7 +56,7 @@ export default function OvernightSuccessSignup({
           <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mx-auto mb-3">
             <Crown className="w-6 h-6 text-brand-red" />
           </div>
-          <CardTitle className="text-2xl font-bold text-black">
+          <CardTitle className="text-2xl font-heading text-black">
             Overnight Success
           </CardTitle>
           <p className="text-black/80 text-sm">
@@ -126,7 +126,7 @@ export default function OvernightSuccessSignup({
               <Button
                 type="button"
                 onClick={handleOpenPlaybook}
-                className="w-full bg-black text-brand-red hover:bg-gray-900 font-bold py-3 flex items-center justify-center space-x-2"
+                className="w-full bg-black text-brand-red hover:bg-gray-900 font-heading py-3 flex items-center justify-center space-x-2"
               >
                 <BookOpen className="w-4 h-4" />
                 <span>OPEN THE PLAYBOOK</span>
@@ -141,7 +141,7 @@ export default function OvernightSuccessSignup({
           ) : (
             <div className="space-y-4">
               <div className="text-center">
-                <h3 className="text-xl font-bold text-black mb-2">
+                <h3 className="text-xl font-heading text-black mb-2">
                   Access Code Required
                 </h3>
                 <p className="text-black/80 text-sm mb-4">

@@ -174,7 +174,7 @@ export default function Playbook() {
               <div className="flex items-center space-x-3 mb-2">
                 <section.icon className="w-6 h-6" />
                 <h3
-                  className="font-bold text-sm md:text-base"
+                  className="font-heading text-sm md:text-base"
                   style={TYPOGRAPHY.heading}
                 >
                   {section.title}
@@ -200,7 +200,7 @@ export default function Playbook() {
                   <div className="flex items-center space-x-3 mb-6">
                     <section.icon className="w-8 h-8 text-brand-red" />
                     <h2
-                      className="text-xl md:text-2xl font-bold text-white"
+                      className="text-xl md:text-2xl font-heading text-white"
                       style={TYPOGRAPHY.title}
                     >
                       {section.title}
@@ -210,7 +210,7 @@ export default function Playbook() {
                   {/* Principles */}
                   <div className="space-y-6">
                     <h3
-                      className="text-lg md:text-xl font-bold text-white"
+                      className="text-lg md:text-xl font-heading text-white"
                       style={TYPOGRAPHY.heading}
                     >
                       Core Principles
@@ -222,7 +222,7 @@ export default function Playbook() {
                           className="bg-gray-900 rounded-lg p-4 md:p-6"
                         >
                           <h4
-                            className="text-brand-red text-sm md:text-lg font-bold mb-3"
+                            className="text-brand-red text-sm md:text-lg font-heading mb-3"
                             style={TYPOGRAPHY.heading}
                           >
                             {principle.title}
@@ -246,7 +246,7 @@ export default function Playbook() {
                   {/* Skill Progression */}
                   <div className="space-y-4">
                     <h3
-                      className="text-lg md:text-xl font-bold text-white"
+                      className="text-lg md:text-xl font-heading text-white"
                       style={TYPOGRAPHY.heading}
                     >
                       Skill Progression Examples
@@ -287,7 +287,7 @@ export default function Playbook() {
         <div className="text-center mt-12">
           <div className="bg-black rounded-xl p-6 md:p-8">
             <h3
-              className="text-xl md:text-2xl font-bold text-white mb-4"
+              className="text-xl md:text-2xl font-heading text-white mb-4"
               style={TYPOGRAPHY.title}
             >
               Ready to Put This into Practice?
@@ -302,7 +302,7 @@ export default function Playbook() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 onClick={() => navigate("/")}
-                className="bg-brand-red text-black hover:bg-brand-red-hover font-bold px-6 py-4 min-h-[48px] touch-manipulation"
+                className="bg-brand-red text-black hover:bg-brand-red-hover font-heading px-6 py-4 min-h-[48px] touch-manipulation"
                 style={TYPOGRAPHY.button}
               >
                 <Camera className="w-4 h-4 mr-2" />
@@ -310,7 +310,7 @@ export default function Playbook() {
               </Button>
               <Button
                 onClick={() => navigate("/lifestyle-studio")}
-                className="bg-white text-black hover:bg-gray-100 font-bold px-6 py-4 min-h-[48px] touch-manipulation"
+                className="bg-white text-black hover:bg-gray-100 font-heading px-6 py-4 min-h-[48px] touch-manipulation"
                 style={TYPOGRAPHY.button}
               >
                 <Package className="w-4 h-4 mr-2" />

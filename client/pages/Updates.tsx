@@ -145,7 +145,7 @@ const Updates: React.FC = () => {
                           {update.title}
                         </h3>
                         {update.isNew && (
-                          <Badge className="bg-brand-red text-black text-xs font-bold px-2 py-0.5">
+                          <Badge className="bg-brand-red text-black text-xs font-heading px-2 py-0.5">
                             NEW
                           </Badge>
                         )}
@@ -189,7 +189,7 @@ const Updates: React.FC = () => {
         {/* Load More */}
         <div className="flex justify-center mt-8">
           <Button
-            className="bg-black text-brand-red border border-white/20 hover:bg-brand-red hover:text-black font-bold px-8 py-4 min-h-[48px] touch-manipulation transition-all duration-300"
+            className="bg-black text-brand-red border border-white/20 hover:bg-brand-red hover:text-black font-heading px-8 py-4 min-h-[48px] touch-manipulation transition-all duration-300"
             style={{ fontFamily: "Poppins, sans-serif" }}
           >
             LOAD MORE UPDATES

@@ -46,7 +46,7 @@ const ProtectedFeature: React.FC<ProtectedFeatureProps> = ({
             <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
               <Crown className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-white font-bold text-lg mb-2">
+            <h3 className="text-white font-heading text-lg mb-2">
               Premium Feature
             </h3>
             <p className="text-gray-300 text-sm mb-4">

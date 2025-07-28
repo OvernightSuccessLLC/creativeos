@@ -65,7 +65,7 @@ export default function CharacterSpec() {
   }: any) => (
     <Card className="bg-black/80 border border-gray-800 hover:border-gray-600 transition-all duration-300 backdrop-blur-sm">
       <CardHeader className="pb-3">
-        <CardTitle className="flex items-center gap-3 text-white text-lg font-bold">
+        <CardTitle className="flex items-center gap-3 text-white text-lg font-heading">
           <div className={`p-2 rounded-lg ${color}`}>
             <Icon className="w-5 h-5 text-white" />
           </div>
@@ -97,7 +97,7 @@ export default function CharacterSpec() {
           </Button>
 
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading text-white mb-4">
               Character Specification
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
@@ -120,13 +120,13 @@ export default function CharacterSpec() {
                     className="w-full h-auto rounded-lg"
                   />
                   <div className="absolute top-4 right-4">
-                    <Badge className="bg-purple-600 text-white font-bold px-3 py-1">
+                    <Badge className="bg-purple-600 text-white font-heading px-3 py-1">
                       Reference Model
                     </Badge>
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">
+                  <h3 className="text-2xl font-heading text-white mb-2">
                     Visual Reference
                   </h3>
                   <p className="text-gray-300 leading-relaxed">
@@ -321,7 +321,7 @@ export default function CharacterSpec() {
         <div className="mt-12 text-center">
           <Card className="bg-black/90 border border-gray-800">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <h3 className="text-2xl font-heading text-white mb-4">
                 Ready to Implement?
               </h3>
               <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
@@ -331,7 +331,7 @@ export default function CharacterSpec() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
-                  className="bg-purple-600 hover:bg-purple-700 text-white font-bold px-8 py-3"
+                  className="bg-purple-600 hover:bg-purple-700 text-white font-heading px-8 py-3"
                   onClick={() =>
                     window.open(
                       "mailto:contact@example.com?subject=Character Implementation Request",
@@ -344,7 +344,7 @@ export default function CharacterSpec() {
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-gray-600 text-white hover:bg-white/10 font-bold px-8 py-3"
+                  className="border-gray-600 text-white hover:bg-white/10 font-heading px-8 py-3"
                   onClick={() => navigate("/ai-toolkit")}
                 >
                   <Palette className="w-4 h-4 mr-2" />

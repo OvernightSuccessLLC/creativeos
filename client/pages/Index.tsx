@@ -419,11 +419,11 @@ export default function Index() {
       <nav className="bg-black px-4 sm:px-6 py-3">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
-          <div className="text-brand-red font-bold text-base sm:text-lg">LOGO</div>
+          <div className="text-brand-red font-heading text-base sm:text-lg">LOGO</div>
 
           {/* Studio Tabs - Hidden on mobile, shown on larger screens */}
           <div className="hidden md:flex items-center space-x-1">
-            <button className="bg-white text-black px-4 py-2 rounded text-sm font-bold">
+            <button className="bg-white text-black px-4 py-2 rounded text-sm font-heading">
               PRODUCT STUDIO
             </button>
             <button
@@ -458,10 +458,10 @@ export default function Index() {
 
           {/* Right side buttons - Simplified for mobile */}
           <div className="hidden md:flex items-center space-x-2">
-            <div className="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+            <div className="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-heading">
               ?
             </div>
-            <div className="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+            <div className="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-heading">
               ♀
             </div>
             <button className="text-white text-sm font-body-medium hover:bg-white/10 px-3 py-1 rounded">
@@ -475,7 +475,7 @@ export default function Index() {
       <div className="px-4 sm:px-6 py-6 sm:py-8">
         <div className="max-w-7xl mx-auto">
           <h1
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-2"
+            className="text-3xl sm:text-4xl lg:text-5xl font-heading text-black mb-2"
             style={{ fontFamily: "Poppins, sans-serif" }}
           >
             PRODUCT STUDIO
@@ -494,7 +494,7 @@ export default function Index() {
         <div className="lg:hidden bg-black text-white p-4">
           <div className="max-w-7xl mx-auto">
             <div className="flex justify-between items-center mb-4">
-              <span className="text-lg font-bold">MENU</span>
+              <span className="text-lg font-heading">MENU</span>
               <Button
                 variant="ghost"
                 size="sm"
@@ -542,7 +542,7 @@ export default function Index() {
       <div className="px-4 sm:px-6 mb-6 sm:mb-8">
         <div className="max-w-7xl mx-auto">
           <div className="bg-black rounded-lg p-4 sm:p-6">
-            <h2 className="text-white text-lg sm:text-xl font-bold mb-4 sm:mb-6">HOW IT WORKS</h2>
+            <h2 className="text-white text-lg sm:text-xl font-heading mb-4 sm:mb-6">HOW IT WORKS</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6">
               {[
                 "Add Custom Instructions",
@@ -555,7 +555,7 @@ export default function Index() {
                   key={index}
                   className="flex flex-col items-center text-center"
                 >
-                  <div className="bg-brand-red text-black rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center font-bold text-sm sm:text-base mb-2 sm:mb-3">
+                  <div className="bg-brand-red text-black rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center font-heading text-sm sm:text-base mb-2 sm:mb-3">
                     {index + 1}
                   </div>
                   <p className="text-white text-xs sm:text-sm leading-tight">{step}</p>
@@ -578,7 +578,7 @@ export default function Index() {
                 onClick={() => setActiveStep(activeStep === 1 ? null : 1)}
               >
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
+                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-heading">
                     1
                   </div>
                   <span className="text-white font-body-medium">
@@ -609,7 +609,7 @@ export default function Index() {
                 onClick={() => setActiveStep(activeStep === 2 ? null : 2)}
               >
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
+                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-heading">
                     2
                   </div>
                   <span className="text-white font-body-medium">Product Style</span>
@@ -653,7 +653,7 @@ export default function Index() {
                 onClick={() => setActiveStep(activeStep === 3 ? null : 3)}
               >
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
+                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-heading">
                     3
                   </div>
                   <span className="text-white font-body-medium">
@@ -700,7 +700,7 @@ export default function Index() {
                 onClick={() => setActiveStep(activeStep === 4 ? null : 4)}
               >
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
+                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-heading">
                     4
                   </div>
                   <span className="text-white font-body-medium">Lighting Setup</span>
@@ -737,7 +737,7 @@ export default function Index() {
                 onClick={() => setActiveStep(activeStep === 5 ? null : 5)}
               >
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
+                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-heading">
                     5
                   </div>
                   <span className="text-white font-body-medium">Camera Angle</span>
@@ -772,10 +772,10 @@ export default function Index() {
           <div className="lg:col-span-1 order-1 lg:order-2">
             <div className="bg-gray-900 rounded-lg p-4 sm:p-6 lg:sticky lg:top-6 border border-white/10">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-brand-red text-sm font-bold tracking-wide">
+                <h3 className="text-brand-red text-sm font-heading tracking-wide">
                   AI PROMPT FORMULA
                 </h3>
-                <Badge className="bg-brand-red text-white text-xs font-bold">
+                <Badge className="bg-brand-red text-white text-xs font-heading">
                   {calculateQuality()}% QUALITY
                 </Badge>
               </div>
@@ -791,7 +791,7 @@ export default function Index() {
 
               {/* Quality Optimization Meters */}
               <div className="mb-6">
-                <h4 className="text-brand-red text-xs font-bold mb-3">
+                <h4 className="text-brand-red text-xs font-heading mb-3">
                   QUALITY OPTIMIZATION
                 </h4>
 
@@ -800,7 +800,7 @@ export default function Index() {
                   <span className="text-white text-xs font-body-medium">
                     Instructions
                   </span>
-                  <span className="text-brand-red text-xs font-bold">
+                  <span className="text-brand-red text-xs font-heading">
                     {customInstructions.length > 20
                       ? 100
                       : Math.round((customInstructions.length / 20) * 100)}
@@ -821,7 +821,7 @@ export default function Index() {
                   <span className="text-white text-xs font-body-medium">
                     Keywords
                   </span>
-                  <span className="text-brand-red text-xs font-bold">
+                  <span className="text-brand-red text-xs font-heading">
                     {Math.min((selectedKeywords.length / 10) * 100, 100)}%
                   </span>
                 </div>
@@ -839,7 +839,7 @@ export default function Index() {
                   <span className="text-white text-xs font-body-medium">
                     File Upload 1
                   </span>
-                  <span className="text-brand-red text-xs font-bold">
+                  <span className="text-brand-red text-xs font-heading">
                     {uploadedFile ? 100 : 0}%
                   </span>
                 </div>
@@ -862,7 +862,7 @@ export default function Index() {
               <div className="space-y-3">
                 <Button
                   onClick={copyPrompt}
-                  className="w-full bg-brand-red hover:bg-brand-red/90 text-white font-bold"
+                  className="w-full bg-brand-red hover:bg-brand-red/90 text-white font-heading"
                 >
                   <Copy className="w-4 h-4 mr-2" />
                   {copiedPrompt ? "COPIED!" : "COPY"}

@@ -474,16 +474,10 @@ export default function Index() {
       {/* Studio Header */}
       <div className="px-4 sm:px-6 py-6 sm:py-8">
         <div className="max-w-7xl mx-auto">
-          <h1
-            className="text-3xl sm:text-4xl lg:text-5xl font-heading text-black mb-2"
-            className=""
-          >
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display text-black mb-2">
             PRODUCT STUDIO
           </h1>
-          <p
-            className="text-black text-base sm:text-lg"
-            className=""
-          >
+          <p className="text-black text-base sm:text-lg font-body">
             Create stunning product visuals and e-commerce content
           </p>
         </div>

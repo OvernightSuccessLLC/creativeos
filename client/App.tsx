@@ -6,28 +6,28 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
-import ProductStudio from "./pages/ProductStudio";
+import Landing from "./pages/Landing";
 import Playbook from "./pages/Playbook";
-import Templates from "./pages/Templates";
 import AIToolkit from "./pages/AIToolkit";
-import Updates from "./pages/Updates";
-import PaywallLanding from "./pages/PaywallLanding";
 import NotFound from "./pages/NotFound";
+<<<<<<< HEAD
 import LifestyleStudio from "./pages/LifestyleStudio";
 import GraphicStudio from "./pages/GraphicStudio";
 const queryClient = new QueryClient();
 // Global Creative Director OS Context
 const CreativeDirectorOSContext = {
+=======
+
+const queryClient = new QueryClient();
+
+// Simplified Playbook Version Context
+const PlaybookContext = {
+>>>>>>> 31ebc44cc8678f1bd669070e8af0657ed332f209
   version: "1.0.0",
   features: {
+    landing: true,
     playbook: true,
-    templates: true,
     aiToolkit: true,
-    studios: {
-      product: true,
-      lifestyle: true,
-      graphic: true,
-    },
   },
 };
 const App = () => (
@@ -38,15 +38,9 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<ProductStudio />} />
-            <Route path="/lifestyle-studio" element={<LifestyleStudio />} />
-            <Route path="/graphic-studio" element={<GraphicStudio />} />
+            <Route path="/" element={<Landing />} />
             <Route path="/playbook" element={<Playbook />} />
-            <Route path="/templates" element={<Templates />} />
             <Route path="/ai-toolkit" element={<AIToolkit />} />
-            <Route path="/updates" element={<Updates />} />
-            <Route path="/join" element={<PaywallLanding />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

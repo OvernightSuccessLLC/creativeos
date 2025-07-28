@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useAuth } from "@/contexts/AuthContext";
+<<<<<<< HEAD
 import {
   Bell,
   BookOpen,
@@ -20,6 +21,10 @@ import {
   Settings,
   RotateCcw,
 } from "lucide-react";
+=======
+import { BookOpen, Zap, Home, Menu, X, Crown } from "lucide-react";
+
+>>>>>>> 31ebc44cc8678f1bd669070e8af0657ed332f209
 interface AppNavigationProps {
   onUpdatesClick?: () => void;
 }
@@ -34,22 +39,10 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
   }, [location.pathname]);
   const allPages = [
     {
-      name: "Product Studio",
-      icon: Camera,
+      name: "Landing",
+      icon: Home,
       path: "/",
-      description: "Professional product photography prompts",
-    },
-    {
-      name: "Lifestyle Studio",
-      icon: Users,
-      path: "/lifestyle-studio",
-      description: "Authentic lifestyle photography",
-    },
-    {
-      name: "Graphic Studio",
-      icon: Palette,
-      path: "/graphic-studio",
-      description: "Custom graphics and design",
+      description: "Get started with AI tools",
     },
     {
       name: "The Playbook",
@@ -58,23 +51,20 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
       description: "Complete guide to AI prompting",
     },
     {
-      name: "Templates",
-      icon: LayoutTemplate,
-      path: "/templates",
-      description: "Pre-built prompt templates",
-    },
-    {
       name: "AI Toolkit",
       icon: Zap,
       path: "/ai-toolkit",
       description: "Curated AI tools collection",
     },
+<<<<<<< HEAD
     {
       name: "Updates",
       icon: Bell,
       path: "/updates",
       description: "Latest news and features",
     },
+=======
+>>>>>>> 31ebc44cc8678f1bd669070e8af0657ed332f209
   ];
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -124,6 +114,11 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                   </button>
                 );
               })}
+<<<<<<< HEAD
+=======
+
+              <div className="relative pages-dropdown" />
+>>>>>>> 31ebc44cc8678f1bd669070e8af0657ed332f209
             </div>
             {/* User Status - Desktop */}
             <div className="hidden md:flex items-center space-x-3 ml-4">

@@ -72,7 +72,7 @@ export default function OvernightSuccessSignup({
                   onChange={(e) =>
                     setFormData({ ...formData, fullName: e.target.value })
                   }
-                  className="bg-black text-white border-gray-700 focus:border-brand-red"
+                  className="bg-black text-white border-gray-700 focus:border-brand-red font-body"
                   required
                 />
               </div>
@@ -88,7 +88,7 @@ export default function OvernightSuccessSignup({
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="bg-black text-white border-gray-700 focus:border-brand-red"
+                  className="bg-black text-white border-gray-700 focus:border-brand-red font-body"
                   required
                 />
               </div>
@@ -102,7 +102,7 @@ export default function OvernightSuccessSignup({
                   }
                   required
                 >
-                  <SelectTrigger className="bg-black text-white border-gray-700">
+                  <SelectTrigger className="bg-black text-white border-gray-700 font-body">
                     <SelectValue placeholder="Select an option" />
                   </SelectTrigger>
                   <SelectContent className="bg-black border-gray-700">
@@ -152,7 +152,7 @@ export default function OvernightSuccessSignup({
                   onChange={(e) =>
                     setFormData({ ...formData, accessCode: e.target.value })
                   }
-                  className="bg-black text-white border-gray-700 focus:border-brand-red"
+                  className="bg-black text-white border-gray-700 focus:border-brand-red font-body"
                   required
                 />
               </div>

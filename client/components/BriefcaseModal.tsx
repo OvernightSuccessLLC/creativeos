@@ -97,20 +97,20 @@ export default function BriefcaseModal({
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-brand-red rounded flex items-center justify-center">
-                <Package className="w-4 h-4 text-white" />
+                <Package className="w-4 h-4 text-white font-body" />
               </div>
               <CardTitle
-                className="text-xl text-white brand-heading"
+                className="text-xl text-white brand-heading font-body"
               >
                 THE BRIEFCASE
               </CardTitle>
-              <Badge className="bg-brand-red text-white text-xs">LIVE</Badge>
+              <Badge className="bg-brand-red text-white text-xs font-body">LIVE</Badge>
             </div>
             <Button
               variant="ghost"
               size="sm"
               onClick={onClose}
-              className="text-gray-400 hover:text-white"
+              className="text-gray-400 hover:text-white font-body"
             >
               <X className="w-4 h-4" />
             </Button>
@@ -121,7 +121,7 @@ export default function BriefcaseModal({
               <div key={stat.label} className="text-center">
                 <div className="flex items-center justify-center mb-1">
                   <stat.icon className="w-4 h-4 text-brand-red mr-1" />
-                  <span className="text-lg font-heading text-white">
+                  <span className="text-lg font-heading text-white font-body">
                     {stat.value}
                   </span>
                 </div>
@@ -134,7 +134,7 @@ export default function BriefcaseModal({
             {navigationItems.map((item) => (
               <button
                 key={item.name}
-                className="flex items-center space-x-2 px-3 py-2 rounded text-sm font-body-medium text-gray-300 hover:text-white hover:bg-gray-800 transition-colors"
+                className="flex items-center space-x-2 px-3 py-2 rounded text-sm font-body-medium text-gray-300 hover:text-white hover:bg-gray-800 transition-colors font-body"
                 onClick={() => {
                   if (onNavigate) {
                     onNavigate(item.path);
@@ -152,7 +152,7 @@ export default function BriefcaseModal({
           <div className="space-y-6">
             <div>
               <h2
-                className="text-2xl font-brand-black text-white mb-2 brand-heading"
+                className="text-2xl font-brand-black text-white mb-2 brand-heading font-body"
               >
                 Latest Updates & Features
               </h2>
@@ -182,7 +182,7 @@ export default function BriefcaseModal({
                           </Badge>
                         </div>
                         <h3
-                          className="text-lg font-semibold text-white mb-2"
+                          className="text-lg font-semibold text-white mb-2 font-body"
                           style={{
                             fontFamily: "Poppins, sans-serif",
                             fontWeight: "600",
@@ -196,7 +196,7 @@ export default function BriefcaseModal({
                         {update.action && (
                           <Button
                             size="sm"
-                            className="bg-brand-red hover:opacity-90 text-white"
+                            className="bg-brand-red hover:opacity-90 text-white font-body"
                             onClick={() => {
                               if (onNavigate && update.actionPath) {
                                 onNavigate(update.actionPath);
@@ -222,9 +222,9 @@ export default function BriefcaseModal({
             {/* Call to Action */}
             <Card className="bg-gradient-to-r from-brand-red to-red-600 border border-red-500">
               <CardContent className="p-6 text-center">
-                <Crown className="w-8 h-8 text-white mx-auto mb-3" />
+                <Crown className="w-8 h-8 text-white mx-auto mb-3 font-body" />
                 <h3
-                  className="text-xl font-heading text-white mb-2"
+                  className="text-xl font-heading text-white mb-2 font-body"
                   style={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "700",
@@ -232,7 +232,7 @@ export default function BriefcaseModal({
                 >
                   Ready to Create?
                 </h3>
-                <p className="text-white/90 mb-4">
+                <p className="text-white/90 mb-4 font-body">
                   Start building professional prompts with the complete Creative
                   Director OS toolkit
                 </p>

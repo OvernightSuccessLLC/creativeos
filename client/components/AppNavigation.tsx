@@ -143,7 +143,7 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                   </Badge>
                   <button
                     onClick={logout}
-                    className="text-gray-400 hover:text-white text-sm transition-colors"
+                    className="text-gray-400 hover:text-white text-sm transition-colors font-body"
                   >
                     Logout
                   </button>
@@ -153,7 +153,7 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
             {/* Mobile Menu Dropdown */}
             <div className="md:hidden relative">
               <button
-                className="text-white p-2 rounded-lg hover:bg-white/10 transition-colors"
+                className="text-white p-2 rounded-lg hover:bg-white/10 transition-colors font-body"
                 onClick={toggleMobileMenu}
                 aria-label="Toggle mobile menu"
               >

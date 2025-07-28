@@ -1070,7 +1070,7 @@ export default function AIToolkit() {
                     <SelectItem
                       key={category}
                       value={category}
-                      className="text-white hover:bg-brand-red hover:text-black focus:bg-brand-red focus:text-black"
+                      className="text-white hover:bg-brand-red hover:text-black focus:bg-brand-red focus:text-black font-body"
                     >
                       <div className="flex items-center gap-2">
                         <IconComponent className="w-4 h-4" />
@@ -1108,7 +1108,7 @@ export default function AIToolkit() {
                     </Badge>
                   )}
                 </div>
-                <h3 className="text-white text-sm md:text-lg font-semibold mb-1 md:mb-2 line-clamp-2">
+                <h3 className="text-white text-sm md:text-lg font-semibold mb-1 md:mb-2 line-clamp-2 font-body">
                   {tool.name}
                 </h3>
                 <p className="text-gray-300 text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-3">
@@ -1146,7 +1146,7 @@ export default function AIToolkit() {
         {/* Call to Action */}
         <div className="text-center mt-12">
           <div className="bg-black rounded-xl p-6 md:p-8">
-            <h3 className="text-xl md:text-2xl font-heading text-white mb-4">
+            <h3 className="text-xl md:text-2xl font-heading text-white mb-4 font-body">
               MISSING A TOOL?
             </h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto font-body">

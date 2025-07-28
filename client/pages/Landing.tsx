@@ -43,7 +43,7 @@ export default function Landing() {
       >
         <Card className="max-w-md w-full bg-black border-none">
           <CardContent className="p-8 text-center">
-            <h2 className="text-2xl font-heading text-white mb-4">Welcome!</h2>
+            <h2 className="text-2xl font-heading text-white mb-4 font-body">Welcome!</h2>
             <p className="text-gray-300 mb-4">
               Thank you for joining. Redirecting you to the Playbook...
             </p>
@@ -69,10 +69,10 @@ export default function Landing() {
         {/* Email Capture Card */}
         <Card className="bg-black border-none shadow-2xl">
           <CardHeader className="text-center pb-3 pt-5">
-            <CardTitle className="text-3xl font-heading text-white mb-2">
+            <CardTitle className="text-3xl font-heading text-white mb-2 font-body">
               Get Access
             </CardTitle>
-            <p className="text-white font-semibold leading-7 mt-1.5">
+            <p className="text-white font-semibold leading-7 mt-1.5 font-body">
               Enter your details to access the AI Playbook and Toolkit
             </p>
           </CardHeader>
@@ -91,7 +91,7 @@ export default function Landing() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
-                  className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 h-12"
+                  className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 h-12 font-body"
                 />
               </div>
               <div>
@@ -101,19 +101,19 @@ export default function Landing() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 h-12"
+                  className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 h-12 font-body"
                 />
               </div>
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-brand-red hover:bg-brand-red-hover text-white font-button py-3 text-lg"
+                className="w-full bg-brand-red hover:bg-brand-red-hover text-white font-button py-3 text-lg font-body"
               >
                 {isSubmitting ? "Getting Access..." : "Get Access Now"}
               </Button>
             </form>
             <div className="mt-6 text-center">
-              <p className="text-white text-sm">
+              <p className="text-white text-sm font-body">
                 Join thousands of creators using AI to accelerate their success
               </p>
             </div>

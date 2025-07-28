@@ -509,7 +509,7 @@ export default function GraphicStudio() {
                   <div className="bg-brand-red text-black hover:bg-brand-red-hover font-button text-sm sm:text-base mb-2 sm:mb-3">
                     {index + 1}
                   </div>
-                  <p className="text-white text-xs sm:text-sm leading-tight">{step}</p>
+                  <p className="text-white text-xs sm:text-sm leading-tight font-body">{step}</p>
                 </div>
               ))}
             </div>
@@ -534,14 +534,14 @@ export default function GraphicStudio() {
                       <div className="bg-brand-red text-black hover:bg-brand-red-hover font-button text-xs sm:text-sm flex-shrink-0">
                         {step.id}
                       </div>
-                      <div className="min-w-0 flex-1 text-white text-sm sm:text-lg leading-tight sm:leading-7 -tracking-wide truncate">
+                      <div className="min-w-0 flex-1 text-white text-sm sm:text-lg leading-tight sm:leading-7 -tracking-wide truncate font-body">
                         {step.title}
                       </div>
                     </div>
                     {activeStep === step.id ? (
-                      <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-white flex-shrink-0" />
+                      <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-white flex-shrink-0 font-body" />
                     ) : (
-                      <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white flex-shrink-0" />
+                      <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white flex-shrink-0 font-body" />
                     )}
                   </div>
                 </CardHeader>
@@ -549,7 +549,7 @@ export default function GraphicStudio() {
                   <CardContent className="space-y-3 sm:space-y-4 bg-black p-4 sm:p-6">
                     {step.id === 1 && (
                       <div>
-                        <Label htmlFor="instructions" className="text-white text-sm sm:text-base">
+                        <Label htmlFor="instructions" className="text-white text-sm sm:text-base font-body">
                           Describe your graphic design project
                         </Label>
                         <Textarea
@@ -630,7 +630,7 @@ export default function GraphicStudio() {
                     {step.id === 5 && (
                       <div className="space-y-4 sm:space-y-6">
                         <div>
-                          <Label className="text-white text-sm sm:text-base"></Label>
+                          <Label className="text-white text-sm sm:text-base font-body"></Label>
                           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 mt-2">
                             {keywordCategories["Color & Style"].map(
                               (keyword) => (
@@ -693,7 +693,7 @@ export default function GraphicStudio() {
                     )}
                     {step.id === 8 && (
                       <div>
-                        <Label htmlFor="file-upload" className="text-white text-sm sm:text-base">
+                        <Label htmlFor="file-upload" className="text-white text-sm sm:text-base font-body">
                           Upload Reference Image
                         </Label>
                         <label
@@ -702,7 +702,7 @@ export default function GraphicStudio() {
                         >
                           <Upload className="mx-auto h-10 w-10 sm:h-12 sm:w-12 text-gray-400" />
                           <div className="mt-3 sm:mt-4">
-                            <span className="mt-2 block text-sm sm:text-base font-body-medium text-white">
+                            <span className="mt-2 block text-sm sm:text-base font-body-medium text-white font-body">
                               {uploadedFile
                                 ? `Replace: ${uploadedFile.name}`
                                 : "Click to upload or drag and drop"}
@@ -737,11 +737,11 @@ export default function GraphicStudio() {
           <div className="space-y-4 sm:space-y-6 order-1 lg:order-2">
             <Card className="border-black lg:sticky lg:top-6">
               <CardHeader className="bg-black py-4 px-4 sm:px-6">
-                <CardTitle className="text-lg sm:text-xl text-white mb-3">
+                <CardTitle className="text-lg sm:text-xl text-white mb-3 font-body">
                   AI Prompt Formula
                 </CardTitle>
                 <div className="flex items-center space-x-3">
-                  <div className="text-lg sm:text-xl font-heading text-white min-w-[3rem]">
+                  <div className="text-lg sm:text-xl font-heading text-white min-w-[3rem] font-body">
                     {qualityScore}%
                   </div>
                   <div className="flex-1">
@@ -756,7 +756,7 @@ export default function GraphicStudio() {
               </CardHeader>
               <CardContent className="space-y-4 bg-black px-4 sm:px-6 pb-6">
                 <div>
-                  <Label className="text-white text-sm font-body-medium">
+                  <Label className="text-white text-sm font-body-medium font-body">
                     Generated Prompt
                   </Label>
                   <div className="bg-gray-50 p-3 rounded border text-xs sm:text-sm min-h-[80px] sm:min-h-[100px] mt-2">
@@ -766,7 +766,7 @@ export default function GraphicStudio() {
                 </div>
                 <div className="space-y-3">
                   <div className="space-y-2">
-                    <div className="flex justify-between text-xs sm:text-sm text-white">
+                    <div className="flex justify-between text-xs sm:text-sm text-white font-body">
                       <span>Instructions</span>
                       <span className="font-body-medium">
                         {customInstructions.length > 20 ? "25%" : "0%"}
@@ -782,7 +782,7 @@ export default function GraphicStudio() {
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <div className="flex justify-between text-xs sm:text-sm text-white">
+                    <div className="flex justify-between text-xs sm:text-sm text-white font-body">
                       <span>Keywords</span>
                       <span className="font-body-medium">
                         {Math.min(50, selectedKeywords.length * 2)}%
@@ -798,7 +798,7 @@ export default function GraphicStudio() {
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <div className="flex justify-between text-xs sm:text-sm text-white">
+                    <div className="flex justify-between text-xs sm:text-sm text-white font-body">
                       <span>Reference</span>
                       <span className="font-body-medium">
                         {uploadedFile ? "15%" : "0%"}
@@ -814,23 +814,23 @@ export default function GraphicStudio() {
                 </div>
                 <Button
                   onClick={copyPrompt}
-                  className="w-full bg-brand-red text-white hover:bg-red-600 font-body-medium text-sm sm:text-base py-2.5 sm:py-3 mt-4"
+                  className="w-full bg-brand-red text-white hover:bg-red-600 font-body-medium text-sm sm:text-base py-2.5 sm:py-3 mt-4 font-body"
                 >
                   <Copy className="w-4 h-4 mr-2" />
                   {copiedPrompt ? "COPIED!" : "COPY"}
                 </Button>
                 <div className="text-sm mt-4">
-                  <h4 className="font-semibold text-white my-1 py-1">
+                  <h4 className="font-semibold text-white my-1 py-1 font-body">
                     <span className="text-brand-red">AI RECOMMENDATIONS</span>
                   </h4>
                   <ul className="text-gray-600">
-                    <li className="text-white font-semibold mt-1">
+                    <li className="text-white font-semibold mt-1 font-body">
                       • Specify brand guidelines for consistency
                     </li>
-                    <li className="text-white font-semibold mt-1">
+                    <li className="text-white font-semibold mt-1 font-body">
                       �� Add color codes for exact matching
                     </li>
-                    <li className="text-white font-semibold mt-1">
+                    <li className="text-white font-semibold mt-1 font-body">
                       • Include dimensions for proper scaling
                     </li>
                   </ul>

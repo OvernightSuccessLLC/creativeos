@@ -179,7 +179,7 @@ export default function Playbook() {
                   <div className="flex items-center space-x-3 mb-6">
                     <section.icon className="w-8 h-8 text-brand-red" />
                     <h2
-                      className="text-xl md:text-2xl font-heading text-white"
+                      className="text-xl md:text-2xl font-heading text-white font-body"
                     >
                       {section.title}
                     </h2>
@@ -187,7 +187,7 @@ export default function Playbook() {
                   {/* Principles */}
                   <div className="space-y-6">
                     <h3
-                      className="text-lg md:text-xl font-heading text-white"
+                      className="text-lg md:text-xl font-heading text-white font-body"
                     >
                       Core Principles
                     </h3>
@@ -203,7 +203,7 @@ export default function Playbook() {
                             {principle.title}
                           </h4>
                           <p
-                            className="text-white leading-relaxed text-xs md:text-sm mb-3"
+                            className="text-white leading-relaxed text-xs md:text-sm mb-3 font-body"
                           >
                             {principle.description}
                           </p>
@@ -219,32 +219,32 @@ export default function Playbook() {
                   {/* Skill Progression */}
                   <div className="space-y-4">
                     <h3
-                      className="text-lg md:text-xl font-heading text-white"
+                      className="text-lg md:text-xl font-heading text-white font-body"
                     >
                       Skill Progression Examples
                     </h3>
                     <div className="space-y-3">
                       <div className="space-y-2">
-                        <span className="bg-green-600 text-white px-2 py-1 rounded text-xs font-semibold">
+                        <span className="bg-green-600 text-white px-2 py-1 rounded text-xs font-semibold font-body">
                           BEGINNER
                         </span>
-                        <p className="text-white italic text-xs md:text-sm bg-gray-900 p-3 rounded">
+                        <p className="text-white italic text-xs md:text-sm bg-gray-900 p-3 rounded font-body">
                           "{section.content.progression.beginner}"
                         </p>
                       </div>
                       <div className="space-y-2">
-                        <span className="bg-orange-600 text-white px-2 py-1 rounded text-xs font-semibold">
+                        <span className="bg-orange-600 text-white px-2 py-1 rounded text-xs font-semibold font-body">
                           ADVANCED
                         </span>
-                        <p className="text-white italic text-xs md:text-sm bg-gray-900 p-3 rounded">
+                        <p className="text-white italic text-xs md:text-sm bg-gray-900 p-3 rounded font-body">
                           "{section.content.progression.advanced}"
                         </p>
                       </div>
                       <div className="space-y-2">
-                        <span className="bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold">
+                        <span className="bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold font-body">
                           EXPERT
                         </span>
-                        <p className="text-white italic text-xs md:text-sm bg-gray-900 p-3 rounded">
+                        <p className="text-white italic text-xs md:text-sm bg-gray-900 p-3 rounded font-body">
                           "{section.content.progression.expert}"
                         </p>
                       </div>
@@ -258,7 +258,7 @@ export default function Playbook() {
         <div className="text-center mt-12">
           <div className="bg-black rounded-xl p-6 md:p-8">
             <h3
-              className="text-xl md:text-2xl font-heading text-white mb-4"
+              className="text-xl md:text-2xl font-heading text-white mb-4 font-body"
             >
               Ready to Put This into Practice?
             </h3>

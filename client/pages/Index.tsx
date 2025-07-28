@@ -395,19 +395,19 @@ export default function Index() {
             </button>
             <button
               onClick={() => navigate("/lifestyle-studio")}
-              className="text-white px-4 py-2 rounded text-sm font-body-medium hover:bg-white/10"
+              className="text-white px-4 py-2 rounded text-sm font-body-medium hover:bg-white/10 font-body"
             >
               LIFESTYLE STUDIO
             </button>
             <button
               onClick={() => navigate("/graphic-studio")}
-              className="text-white px-4 py-2 rounded text-sm font-body-medium hover:bg-white/10"
+              className="text-white px-4 py-2 rounded text-sm font-body-medium hover:bg-white/10 font-body"
             >
               GRAPHIC STUDIO
             </button>
             <button
               onClick={() => setShowBriefcase(true)}
-              className="text-white px-4 py-2 rounded text-sm font-body-medium hover:bg-white/10"
+              className="text-white px-4 py-2 rounded text-sm font-body-medium hover:bg-white/10 font-body"
             >
               THE BRIEFCASE
             </button>
@@ -416,7 +416,7 @@ export default function Index() {
           <div className="md:hidden">
             <button
               onClick={() => setShowMobileMenu(!showMobileMenu)}
-              className="text-white p-2 rounded-lg hover:bg-white/10 transition-colors"
+              className="text-white p-2 rounded-lg hover:bg-white/10 transition-colors font-body"
             >
               <Menu className="w-6 h-6" />
             </button>
@@ -429,7 +429,7 @@ export default function Index() {
             <div className="bg-white text-black hover:bg-gray-100 font-button">
               ♀
             </div>
-            <button className="text-white text-sm font-body-medium hover:bg-white/10 px-3 py-1 rounded">
+            <button className="text-white text-sm font-body-medium hover:bg-white/10 px-3 py-1 rounded font-body">
               RESET
             </button>
           </div>
@@ -448,7 +448,7 @@ export default function Index() {
       </div>
       {/* Mobile Menu */}
       {showMobileMenu && (
-        <div className="lg:hidden bg-black text-white p-4">
+        <div className="lg:hidden bg-black text-white p-4 font-body">
           <div className="max-w-7xl mx-auto">
             <div className="flex justify-between items-center mb-4">
               <span className="text-lg font-heading">MENU</span>
@@ -498,7 +498,7 @@ export default function Index() {
       <div className="px-4 sm:px-6 mb-6 sm:mb-8">
         <div className="max-w-7xl mx-auto">
           <div className="bg-black rounded-lg p-4 sm:p-6">
-            <h2 className="text-white text-lg sm:text-xl font-heading mb-4 sm:mb-6">HOW IT WORKS</h2>
+            <h2 className="text-white text-lg sm:text-xl font-heading mb-4 sm:mb-6 font-body">HOW IT WORKS</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6">
               {[
                 "Add Custom Instructions",
@@ -514,7 +514,7 @@ export default function Index() {
                   <div className="bg-brand-red text-black hover:bg-brand-red-hover font-button text-sm sm:text-base mb-2 sm:mb-3">
                     {index + 1}
                   </div>
-                  <p className="text-white text-xs sm:text-sm leading-tight">{step}</p>
+                  <p className="text-white text-xs sm:text-sm leading-tight font-body">{step}</p>
                 </div>
               ))}
             </div>
@@ -536,7 +536,7 @@ export default function Index() {
                   <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-heading">
                     1
                   </div>
-                  <span className="text-white font-body-medium">
+                  <span className="text-white font-body-medium font-body">
                     Custom Instructions
                   </span>
                 </div>
@@ -550,7 +550,7 @@ export default function Index() {
                     placeholder="Describe your lifestyle photography vision..."
                     value={customInstructions}
                     onChange={(e) => setCustomInstructions(e.target.value)}
-                    className="w-full bg-gray-900 text-white border-gray-700 rounded-lg resize-none focus:ring-2 focus:ring-brand-red"
+                    className="w-full bg-gray-900 text-white border-gray-700 rounded-lg resize-none focus:ring-2 focus:ring-brand-red font-body"
                     rows={4}
                   />
                 </div>
@@ -566,7 +566,7 @@ export default function Index() {
                   <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-heading">
                     2
                   </div>
-                  <span className="text-white font-body-medium">Product Style</span>
+                  <span className="text-white font-body-medium font-body">Product Style</span>
                 </div>
                 <ChevronRight
                   className={`w-5 h-5 text-white transition-transform ${activeStep === 2 ? "rotate-90" : ""}`}
@@ -575,22 +575,22 @@ export default function Index() {
               {activeStep === 2 && (
                 <div className="px-4 pb-4">
                   <div className="border-2 border-dashed border-white/20 rounded-lg p-6 text-center bg-gray-900">
-                    <Upload className="w-8 h-8 text-white/40 mx-auto mb-3" />
-                    <p className="text-white/60 text-sm mb-4">
+                    <Upload className="w-8 h-8 text-white/40 mx-auto mb-3 font-body" />
+                    <p className="text-white/60 text-sm mb-4 font-body">
                       Upload reference images, mood boards, or style examples
                     </p>
                     <Input
                       type="file"
                       accept="image/*,video/*,.pdf"
                       onChange={handleFileUpload2}
-                      className="bg-gray-800 border-gray-600 text-white file:bg-brand-red file:text-white file:border-0 file:rounded file:px-3 file:py-1 file:mr-3"
+                      className="bg-gray-800 border-gray-600 text-white file:bg-brand-red file:text-white file:border-0 file:rounded file:px-3 file:py-1 file:mr-3 font-body"
                     />
                     {uploadedFile2 && (
                       <div className="mt-3 p-3 bg-gray-800 rounded-lg">
                         <p className="text-brand-red text-sm font-body-medium">
                           ✓ {uploadedFile2.name} uploaded successfully
                         </p>
-                        <p className="text-white/50 text-xs mt-1">
+                        <p className="text-white/50 text-xs mt-1 font-body">
                           File size: {Math.round(uploadedFile2.size / 1024)} KB
                         </p>
                       </div>
@@ -609,7 +609,7 @@ export default function Index() {
                   <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-heading">
                     3
                   </div>
-                  <span className="text-white font-body-medium">
+                  <span className="text-white font-body-medium font-body">
                     Background Setting
                   </span>
                 </div>
@@ -620,8 +620,8 @@ export default function Index() {
               {activeStep === 3 && (
                 <div className="px-4 pb-4">
                   <div className="border-2 border-dashed border-white/20 rounded-lg p-6 text-center bg-gray-900">
-                    <Upload className="w-8 h-8 text-white/40 mx-auto mb-3" />
-                    <p className="text-white/60 text-sm mb-4">
+                    <Upload className="w-8 h-8 text-white/40 mx-auto mb-3 font-body" />
+                    <p className="text-white/60 text-sm mb-4 font-body">
                       Upload additional reference images, mood boards, or style
                       examples
                     </p>
@@ -629,14 +629,14 @@ export default function Index() {
                       type="file"
                       accept="image/*,video/*,.pdf"
                       onChange={handleFileUpload3}
-                      className="bg-gray-800 border-gray-600 text-white file:bg-brand-red file:text-white file:border-0 file:rounded file:px-3 file:py-1 file:mr-3"
+                      className="bg-gray-800 border-gray-600 text-white file:bg-brand-red file:text-white file:border-0 file:rounded file:px-3 file:py-1 file:mr-3 font-body"
                     />
                     {uploadedFile3 && (
                       <div className="mt-3 p-3 bg-gray-800 rounded-lg">
                         <p className="text-brand-red text-sm font-body-medium">
                           ✓ {uploadedFile3.name} uploaded successfully
                         </p>
-                        <p className="text-white/50 text-xs mt-1">
+                        <p className="text-white/50 text-xs mt-1 font-body">
                           File size: {Math.round(uploadedFile3.size / 1024)} KB
                         </p>
                       </div>
@@ -655,7 +655,7 @@ export default function Index() {
                   <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-heading">
                     4
                   </div>
-                  <span className="text-white font-body-medium">Lighting Setup</span>
+                  <span className="text-white font-body-medium font-body">Lighting Setup</span>
                 </div>
                 <ChevronRight
                   className={`w-5 h-5 text-white transition-transform ${activeStep === 4 ? "rotate-90" : ""}`}
@@ -691,7 +691,7 @@ export default function Index() {
                   <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-heading">
                     5
                   </div>
-                  <span className="text-white font-body-medium">Camera Angle</span>
+                  <span className="text-white font-body-medium font-body">Camera Angle</span>
                 </div>
                 <ChevronRight
                   className={`w-5 h-5 text-white transition-transform ${activeStep === 5 ? "rotate-90" : ""}`}
@@ -731,7 +731,7 @@ export default function Index() {
               </div>
               <div className="mb-6">
                 <div className="bg-black rounded p-4 min-h-[120px] border border-white/10">
-                  <p className="text-white/70 text-sm">
+                  <p className="text-white/70 text-sm font-body">
                     {generatePrompt() ||
                       "Add custom instructions and select lifestyle photography keywords to build your optimized prompt..."}
                   </p>
@@ -744,7 +744,7 @@ export default function Index() {
                 </h4>
                 {/* Instructions Quality */}
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-white text-xs font-body-medium">
+                  <span className="text-white text-xs font-body-medium font-body">
                     Instructions
                   </span>
                   <span className="text-brand-red text-xs font-heading">
@@ -764,7 +764,7 @@ export default function Index() {
                 </div>
                 {/* Keywords Quality */}
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-white text-xs font-body-medium">
+                  <span className="text-white text-xs font-body-medium font-body">
                     Keywords
                   </span>
                   <span className="text-brand-red text-xs font-heading">
@@ -781,7 +781,7 @@ export default function Index() {
                 </div>
                 {/* File Upload 1 Quality */}
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-white text-xs font-body-medium">
+                  <span className="text-white text-xs font-body-medium font-body">
                     File Upload 1
                   </span>
                   <span className="text-brand-red text-xs font-heading">
@@ -796,7 +796,7 @@ export default function Index() {
                 </div>
               </div>
               <div className="mb-6">
-                <ul className="space-y-2 text-white/60 text-sm">
+                <ul className="space-y-2 text-white/60 text-sm font-body">
                   <li>• Select mood and atmosphere keywords</li>
                   <li>• Choose specific lighting and camera angles</li>
                   <li>• Upload reference images for style matching</li>
@@ -812,7 +812,7 @@ export default function Index() {
                 </Button>
                 <Button
                   variant="outline"
-                  className="w-full border-white/20 text-white hover:bg-white/10"
+                  className="w-full border-white/20 text-white hover:bg-white/10 font-body"
                 >
                   FAVORITE
                 </Button>

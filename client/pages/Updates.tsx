@@ -138,7 +138,7 @@ const Updates: React.FC = () => {
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center space-x-2 mb-1">
-                        <h3 className="text-white font-semibold text-sm sm:text-base truncate">
+                        <h3 className="text-white font-semibold text-sm sm:text-base truncate font-body">
                           {update.title}
                         </h3>
                         {update.isNew && (
@@ -147,27 +147,27 @@ const Updates: React.FC = () => {
                           </Badge>
                         )}
                       </div>
-                      <p className="text-white/70 text-xs sm:text-sm leading-relaxed">
+                      <p className="text-white/70 text-xs sm:text-sm leading-relaxed font-body">
                         {update.description}
                       </p>
                       <div className="flex items-center justify-between mt-3">
-                        <span className="text-white/50 text-xs">
+                        <span className="text-white/50 text-xs font-body">
                           {update.timestamp}
                         </span>
                         <div className="flex items-center space-x-4">
-                          <button className="flex items-center space-x-1 text-white/60 hover:text-brand-red transition-colors group">
+                          <button className="flex items-center space-x-1 text-white/60 hover:text-brand-red transition-colors group font-body">
                             <Heart className="w-4 h-4 group-hover:fill-current" />
                             <span className="text-xs">
                               {update.reactions.likes}
                             </span>
                           </button>
-                          <button className="flex items-center space-x-1 text-white/60 hover:text-brand-red transition-colors">
+                          <button className="flex items-center space-x-1 text-white/60 hover:text-brand-red transition-colors font-body">
                             <MessageCircle className="w-4 h-4" />
                             <span className="text-xs">
                               {update.reactions.comments}
                             </span>
                           </button>
-                          <button className="flex items-center space-x-1 text-white/60 hover:text-brand-red transition-colors">
+                          <button className="flex items-center space-x-1 text-white/60 hover:text-brand-red transition-colors font-body">
                             <Share2 className="w-4 h-4" />
                             <span className="text-xs">
                               {update.reactions.shares}

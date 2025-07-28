@@ -62,7 +62,7 @@ export default function CharacterSpec() {
       <CardHeader className="pb-3">
         <CardTitle className="flex items-center gap-3 text-white text-lg font-heading">
           <div className={`p-2 rounded-lg ${color}`}>
-            <Icon className="w-5 h-5 text-white" />
+            <Icon className="w-5 h-5 text-white font-body" />
           </div>
           {title}
         </CardTitle>
@@ -71,7 +71,7 @@ export default function CharacterSpec() {
     </Card>
   );
   return (
-    <div className="min-h-screen bg-gradient-to-br from-brand-red via-red-600 to-red-800 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-brand-red via-red-600 to-red-800 text-white font-body">
       {/* Navigation */}
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-8">
@@ -80,16 +80,16 @@ export default function CharacterSpec() {
           <Button
             onClick={() => navigate("/ai-toolkit")}
             variant="ghost"
-            className="text-white hover:bg-white/10 mb-4"
+            className="text-white hover:bg-white/10 mb-4 font-body"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to AI Toolkit
           </Button>
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading text-white mb-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading text-white mb-4 font-body">
               Character Specification
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+            <p className="text-xl text-white/90 max-w-3xl mx-auto font-body">
               Ultra-realistic animorph design with comedic swagger and
               professional-grade rigging
             </p>
@@ -108,13 +108,13 @@ export default function CharacterSpec() {
                     className="w-full h-auto rounded-lg"
                   />
                   <div className="absolute top-4 right-4">
-                    <Badge className="bg-purple-600 text-white font-heading px-3 py-1">
+                    <Badge className="bg-purple-600 text-white font-heading px-3 py-1 font-body">
                       Reference Model
                     </Badge>
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-heading text-white mb-2">
+                  <h3 className="text-2xl font-heading text-white mb-2 font-body">
                     Visual Reference
                   </h3>
                   <p className="text-gray-300 leading-relaxed">
@@ -218,7 +218,7 @@ export default function CharacterSpec() {
             >
               <div className="space-y-3">
                 <div className="flex items-center gap-2 mb-3">
-                  <Badge className="bg-green-500 text-white">Enabled</Badge>
+                  <Badge className="bg-green-500 text-white font-body">Enabled</Badge>
                   <span className="text-gray-300 text-sm">
                     Real-time voice sync capabilities
                   </span>
@@ -302,7 +302,7 @@ export default function CharacterSpec() {
         <div className="mt-12 text-center">
           <Card className="bg-black/90 border border-gray-800">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-heading text-white mb-4">
+              <h3 className="text-2xl font-heading text-white mb-4 font-body">
                 Ready to Implement?
               </h3>
               <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
@@ -312,7 +312,7 @@ export default function CharacterSpec() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
-                  className="bg-purple-600 hover:bg-purple-700 text-white font-heading px-8 py-3"
+                  className="bg-purple-600 hover:bg-purple-700 text-white font-heading px-8 py-3 font-body"
                   onClick={() =>
                     window.open(
                       "mailto:contact@example.com?subject=Character Implementation Request",
@@ -325,7 +325,7 @@ export default function CharacterSpec() {
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-gray-600 text-white hover:bg-white/10 font-heading px-8 py-3"
+                  className="border-gray-600 text-white hover:bg-white/10 font-heading px-8 py-3 font-body"
                   onClick={() => navigate("/ai-toolkit")}
                 >
                   <Palette className="w-4 h-4 mr-2" />

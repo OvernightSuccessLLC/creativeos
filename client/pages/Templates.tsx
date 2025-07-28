@@ -423,7 +423,7 @@ export default function Templates() {
                 <div className="flex items-start justify-between">
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center space-x-2 mb-1 flex-wrap">
-                      <CardTitle className="text-white text-base sm:text-lg truncate">
+                      <CardTitle className="text-white text-base sm:text-lg truncate font-body">
                         {template.title}
                       </CardTitle>
                       {template.featured && (
@@ -441,7 +441,7 @@ export default function Templates() {
                   <Textarea
                     value={getCurrentPrompt(template)}
                     onChange={(e) => handlePromptChange(template.id, e.target.value)}
-                    className="bg-transparent border-none text-gray-300 text-xs sm:text-sm resize-none p-0 focus:ring-0 focus:outline-none min-h-[60px] hover:text-white focus:text-white transition-colors"
+                    className="bg-transparent border-none text-gray-300 text-xs sm:text-sm resize-none p-0 focus:ring-0 focus:outline-none min-h-[60px] hover:text-white focus:text-white transition-colors font-body"
                     placeholder="Click to edit your prompt here..."
                     style={{
                       boxShadow: 'none',

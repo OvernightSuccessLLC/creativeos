@@ -498,14 +498,14 @@ export default function ProductStudio() {
         </div>
       </div>
       {/* Main Content Grid */}
-      <div className="px-4 sm:px-6 pb-6 sm:pb-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6">
+      <div className="px-3 sm:px-4 md:px-6 pb-4 sm:pb-6 md:pb-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
           {/* Left Column - Steps */}
-          <div className="lg:col-span-3 space-y-3 sm:space-y-4 order-2 lg:order-1">
+          <div className="lg:col-span-3 space-y-2 sm:space-y-3 md:space-y-4 order-2 lg:order-1">
             {steps.map((step) => (
               <Card key={step.id} className="border-black bg-black">
                 <CardHeader
-                  className="cursor-pointer bg-black p-4 sm:p-6"
+                  className="cursor-pointer bg-black p-3 sm:p-4 md:p-6 touch-manipulation"
                   onClick={() =>
                     setActiveStep(activeStep === step.id ? null : step.id)
                   }

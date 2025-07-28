@@ -19,7 +19,6 @@ import {
   Code,
   Palette,
   Bot,
-  Video,
   Briefcase,
   Layers,
   Sparkles,

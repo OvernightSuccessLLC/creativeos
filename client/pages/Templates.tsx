@@ -446,7 +446,7 @@ export default function Templates() {
                     style={{
                       boxShadow: 'none',
                       fontSize: 'inherit',
-                      fontWeight: '400',
+                      fontWeight: '400 !important',
                       fontFamily: 'Poppins, sans-serif',
                     }}
                   />

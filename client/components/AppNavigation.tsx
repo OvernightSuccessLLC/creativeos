@@ -135,37 +135,40 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
             {/* Mobile Menu Dropdown */}
             <div className="md:hidden relative">
               <button
-                className="text-white p-2 rounded-lg hover:bg-white/10 transition-colors font-body"
+                className="text-white p-3 rounded-lg hover:bg-white/10 transition-colors font-body min-h-[44px] min-w-[44px] touch-manipulation active:bg-white/20"
                 onClick={toggleMobileMenu}
                 aria-label="Toggle mobile menu"
               >
                 {isMobileMenuOpen ? (
-                  <X className="w-6 h-6" />
+                  <X className="w-5 h-5 sm:w-6 sm:h-6" />
                 ) : (
-                  <Menu className="w-6 h-6" />
+                  <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
                 )}
               </button>
               {/* Mobile Dropdown Menu */}
               {isMobileMenuOpen && (
-                <div className="absolute top-full right-0 mt-2 w-72 bg-black border border-gray-700 rounded-lg shadow-2xl z-50 max-h-[80vh] overflow-y-auto">
-                  <div className="p-4">
-                    <div className="space-y-2">
+                <div className="absolute top-full right-0 mt-2 w-80 sm:w-72 bg-black border border-gray-700 rounded-lg shadow-2xl z-50 max-h-[calc(100vh-theme(spacing.20))] overflow-y-auto">
+                  <div className="p-3 sm:p-4">
+                    <div className="space-y-1 sm:space-y-2">
                       {allPages.map((page) => {
                         const isActive = isCurrentPage(page.path);
                         return (
                           <button
                             key={page.path}
-                            className={`w-full text-left px-4 py-3 rounded-lg text-sm font-button transition-colors min-h-[44px] ${
+                            className={`w-full text-left px-3 sm:px-4 py-3 sm:py-4 rounded-lg text-sm sm:text-base font-button transition-all duration-200 min-h-[48px] touch-manipulation ${
                               isActive
-                                ? "bg-brand-red text-black"
-                                : "text-white hover:bg-white/10"
+                                ? "bg-brand-red text-black font-heading"
+                                : "text-white hover:bg-white/10 active:bg-white/20"
                             }`}
                             onClick={() => {
                               navigate(page.path);
                               setIsMobileMenuOpen(false);
                             }}
                           >
-                            {page.name}
+                            <div className="flex items-center space-x-3">
+                              <page.icon className="h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
+                              <span className="truncate font-body">{page.name}</span>
+                            </div>
                           </button>
                         );
                       })}

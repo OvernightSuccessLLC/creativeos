@@ -25,7 +25,7 @@ interface AppNavigationProps {
   onUpdatesClick?: () => void;
 }
 
-const FONT_STYLE = { fontFamily: "Poppins, sans-serif" };
+
 
 export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

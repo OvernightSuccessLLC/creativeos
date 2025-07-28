@@ -548,7 +548,7 @@ export default function ProductStudio() {
                   <div className="bg-brand-red text-black rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center font-bold text-sm sm:text-base mb-2 sm:mb-3">
                     {index + 1}
                   </div>
-                  <p className="text-white text-xs sm:text-sm leading-tight">{step}</p>
+                  <p className="text-white text-xs sm:text-sm font-body leading-tight">{step}</p>
                 </div>
               ))}
             </div>
@@ -575,10 +575,10 @@ export default function ProductStudio() {
                         {step.id}
                       </div>
                       <div className="min-w-0 flex-1">
-                        <CardTitle className="text-sm sm:text-lg text-white truncate">
+                        <CardTitle className="text-sm sm:text-lg text-white font-heading truncate">
                           {step.title}
                         </CardTitle>
-                        <p className="text-gray-600 text-xs sm:text-sm hidden sm:block">
+                        <p className="text-gray-600 text-xs sm:text-sm font-body hidden sm:block">
                           {step.description}
                         </p>
                       </div>
@@ -788,7 +788,7 @@ export default function ProductStudio() {
           <div className="space-y-4 sm:space-y-6 order-1 lg:order-2">
             <Card className="border-black lg:sticky lg:top-6">
               <CardHeader className="bg-black py-4 px-4 sm:px-6">
-                <CardTitle className="text-lg sm:text-xl text-white mb-3">
+                <CardTitle className="text-lg sm:text-xl text-white font-heading mb-3">
                   AI Prompt Formula
                 </CardTitle>
                 <div className="flex items-center space-x-3">

@@ -1,0 +1,357 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 13 98% 54%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 13 98% 54%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 13 98% 54%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 13 98% 54%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 13 98% 54%;
+    --radius: 0.5rem;
+    --brand-red: 13 98% 54%;
+    --brand-red-hover: 14 100% 50%;
+    --brand-dark: 0 0% 0%;
+    --brand-dark-lighter: 0 0% 10%;
+  }
+
+  /* UNIVERSAL TYPOGRAPHY SYSTEM */
+  *,
+  *::before,
+  *::after {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  }
+
+  html {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  }
+
+  body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 13 98% 54%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 13 98% 54%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 13 98% 54%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 13 98% 54%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 13 98% 54%;
+    --brand-red: 13 98% 54%;
+    --brand-red-hover: 14 100% 50%;
+    --brand-dark: 0 0% 0%;
+    --brand-dark-lighter: 0 0% 10%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.bg-brand-red {
+  background-color: #f93921;
+}
+
+.text-brand-red {
+  color: #f93921;
+}
+
+/* Mobile optimization styles */
+@layer utilities {
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+
+  /* Smooth scrolling for all elements */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Better tap targets for mobile */
+  button,
+  [role="button"],
+  input[type="submit"],
+  input[type="button"],
+  label[for] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Prevent text selection on buttons */
+  button,
+  [role="button"] {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* Smooth transitions for interactive elements */
+  button,
+  [role="button"],
+  input,
+  textarea,
+  select {
+    transition: all 0.2s ease-out;
+  }
+
+  /* Mobile-specific scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Better focus styles for keyboard navigation */
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid #f93921;
+    outline-offset: 2px;
+  }
+
+  /* Prevent zoom on input focus on iOS */
+  @media screen and (max-width: 768px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="url"],
+    select,
+    textarea {
+      font-size: 16px;
+    }
+  }
+
+  /* Safe area padding for notched devices */
+  @supports (padding: max(0px)) {
+    .safe-area-top {
+      padding-top: max(1rem, env(safe-area-inset-top));
+    }
+
+    .safe-area-bottom {
+      padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    }
+
+    .safe-area-left {
+      padding-left: max(1rem, env(safe-area-inset-left));
+    }
+
+    .safe-area-right {
+      padding-right: max(1rem, env(safe-area-inset-right));
+    }
+  }
+
+  /* Enhanced mobile grid layouts */
+  .mobile-grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* UNIVERSAL TYPOGRAPHY CLASSES */
+  .font-display {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+
+  .font-heading {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+  }
+
+  .font-subheading {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+  }
+
+  .font-body {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 700 !important;
+    line-height: 1.6;
+  }
+
+  .font-body-medium {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 700 !important;
+    line-height: 1.5;
+  }
+
+  .font-button {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .font-caption {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 700 !important;
+    line-height: 1.4;
+  }
+
+  /* Override any existing font declarations */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 700 !important;
+  }
+
+  p, span, div, a, button, input, textarea, select, label {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 700 !important;
+  }
+
+  /* Ensure all text elements are bold except textareas */
+  *:not(textarea) {
+    font-weight: 700 !important;
+  }
+
+  /* Make textareas normal weight */
+  textarea {
+    font-weight: 400 !important;
+  }
+
+  /* Better mobile text rendering */
+  @media screen and (max-width: 768px) {
+    body {
+      -webkit-text-size-adjust: none;
+      text-rendering: optimizeSpeed;
+    }
+
+    /* Optimize for mobile performance */
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Better button spacing on mobile */
+    .mobile-button-grid button {
+      min-height: 48px;
+      padding: 12px 16px;
+    }
+  }
+
+  /* Improved accessibility for mobile */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  .safe-area-bottom {
+      padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    }
+
+    .safe-area-left {
+      padding-left: max(1rem, env(safe-area-inset-left));
+    }
+
+    .safe-area-right {
+      padding-right: max(1rem, env(safe-area-inset-right));
+    }
+  }
+
+  /* Remove default button styles on iOS */
+  button,
+  input[type="button"],
+  input[type="submit"] {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+  }
+
+  /* Prevent text size adjustment on orientation change */
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Better mobile viewport handling */
+  @media (max-width: 768px) {
+    .container {
+      overflow-x: hidden;
+    }
+  }
+
+  /* Accessibility improvements */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    button,
+    [role="button"] {
+      border: 2px solid currentColor;
+    }
+  }
+
+  /* Focus visible for better keyboard navigation */
+  .focus-visible:focus {
+    outline: 2px solid #f93822;
+    outline-offset: 2px;
+  }
+
+  /* Screen reader only content */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }

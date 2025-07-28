@@ -1146,20 +1146,14 @@ export default function AIToolkit() {
         {/* Call to Action */}
         <div className="text-center mt-12">
           <div className="bg-black rounded-xl p-6 md:p-8">
-            <h3
-              className="text-xl md:text-2xl font-bold text-white mb-4"
-            >
+            <h3 className="text-xl md:text-2xl font-heading text-white mb-4">
               MISSING A TOOL?
             </h3>
-            <p
-              className="text-gray-300 mb-6 max-w-2xl mx-auto"
-            >
+            <p className="text-gray-300 mb-6 max-w-2xl mx-auto font-body">
               Know of an amazing AI tool that should be in our collection? Let
               us know and we'll add it for everyone to discover.
             </p>
-            <Button
-              className="bg-brand-red text-black hover:bg-brand-red-hover font-bold px-6 py-3"
-            >
+            <Button className="bg-brand-red text-black hover:bg-brand-red-hover font-button px-6 py-3">
               <Sparkles className="w-4 h-4 mr-2" />
               SUGGEST A TOOL
             </Button>

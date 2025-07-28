@@ -141,8 +141,8 @@ export default function Playbook() {
 
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-8">
-        <div className="text-center mb-8 pb-4" >
-          THE PLAYBOOK
+        <div className="text-center mb-8 pb-4">
+          <h1 className="font-display text-4xl md:text-5xl">THE PLAYBOOK</h1>
         </div>
 
         {/* Section Navigation */}
@@ -188,7 +188,7 @@ export default function Playbook() {
                     <section.icon className="w-8 h-8 text-brand-red" />
                     <h2
                       className="text-xl md:text-2xl font-bold text-white"
-                      
+                      style={TYPOGRAPHY.title}
                     >
                       {section.title}
                     </h2>
@@ -198,7 +198,7 @@ export default function Playbook() {
                   <div className="space-y-6">
                     <h3
                       className="text-lg md:text-xl font-bold text-white"
-                      
+                      style={TYPOGRAPHY.heading}
                     >
                       Core Principles
                     </h3>
@@ -210,13 +210,13 @@ export default function Playbook() {
                         >
                           <h4
                             className="text-brand-red text-sm md:text-lg font-bold mb-3"
-                            
+                            style={TYPOGRAPHY.heading}
                           >
                             {principle.title}
                           </h4>
                           <p
                             className="text-white leading-relaxed text-xs md:text-sm mb-3"
-                            
+                            style={TYPOGRAPHY.body}
                           >
                             {principle.description}
                           </p>
@@ -234,7 +234,7 @@ export default function Playbook() {
                   <div className="space-y-4">
                     <h3
                       className="text-lg md:text-xl font-bold text-white"
-                      
+                      style={TYPOGRAPHY.heading}
                     >
                       Skill Progression Examples
                     </h3>
@@ -275,13 +275,13 @@ export default function Playbook() {
           <div className="bg-black rounded-xl p-6 md:p-8">
             <h3
               className="text-xl md:text-2xl font-bold text-white mb-4"
-              
+              style={TYPOGRAPHY.title}
             >
               Ready to Put This into Practice?
             </h3>
             <p
               className="text-gray-300 mb-6 max-w-2xl mx-auto"
-              
+              style={TYPOGRAPHY.body}
             >
               Take your new prompting skills to our studio tools and start
               creating professional-quality prompts right away.
@@ -290,7 +290,7 @@ export default function Playbook() {
               <Button
                 onClick={() => navigate("/")}
                 className="bg-brand-red text-black hover:bg-brand-red-hover font-bold px-6 py-4 min-h-[48px] touch-manipulation"
-                
+                style={TYPOGRAPHY.button}
               >
                 <Camera className="w-4 h-4 mr-2" />
                 Try Product Studio
@@ -298,7 +298,7 @@ export default function Playbook() {
               <Button
                 onClick={() => navigate("/lifestyle-studio")}
                 className="bg-white text-black hover:bg-gray-100 font-bold px-6 py-4 min-h-[48px] touch-manipulation"
-                
+                style={TYPOGRAPHY.button}
               >
                 <Package className="w-4 h-4 mr-2" />
                 Try Lifestyle Studio

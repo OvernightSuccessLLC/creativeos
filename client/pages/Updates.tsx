@@ -145,7 +145,7 @@ const Updates: React.FC = () => {
                           {update.title}
                         </h3>
                         {update.isNew && (
-                          <Badge className="bg-brand-red text-black text-xs font-heading px-2 py-0.5">
+                          <Badge className="bg-brand-red text-black hover:bg-brand-red-hover font-button px-2 py-0.5">
                             NEW
                           </Badge>
                         )}

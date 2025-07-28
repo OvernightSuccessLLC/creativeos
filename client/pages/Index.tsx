@@ -423,7 +423,7 @@ export default function Index() {
 
           {/* Studio Tabs - Hidden on mobile, shown on larger screens */}
           <div className="hidden md:flex items-center space-x-1">
-            <button className="bg-white text-black px-4 py-2 rounded text-sm font-heading">
+            <button className="bg-white text-black hover:bg-gray-100 font-button">
               PRODUCT STUDIO
             </button>
             <button
@@ -458,10 +458,10 @@ export default function Index() {
 
           {/* Right side buttons - Simplified for mobile */}
           <div className="hidden md:flex items-center space-x-2">
-            <div className="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-heading">
+            <div className="bg-white text-black hover:bg-gray-100 font-button">
               ?
             </div>
-            <div className="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-heading">
+            <div className="bg-white text-black hover:bg-gray-100 font-button">
               ♀
             </div>
             <button className="text-white text-sm font-body-medium hover:bg-white/10 px-3 py-1 rounded">
@@ -555,7 +555,7 @@ export default function Index() {
                   key={index}
                   className="flex flex-col items-center text-center"
                 >
-                  <div className="bg-brand-red text-black rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center font-heading text-sm sm:text-base mb-2 sm:mb-3">
+                  <div className="bg-brand-red text-black hover:bg-brand-red-hover font-button text-sm sm:text-base mb-2 sm:mb-3">
                     {index + 1}
                   </div>
                   <p className="text-white text-xs sm:text-sm leading-tight">{step}</p>
@@ -775,7 +775,7 @@ export default function Index() {
                 <h3 className="text-brand-red text-sm font-heading tracking-wide">
                   AI PROMPT FORMULA
                 </h3>
-                <Badge className="bg-brand-red text-white text-xs font-heading">
+                <Badge className="bg-brand-red text-black hover:bg-brand-red-hover font-button">
                   {calculateQuality()}% QUALITY
                 </Badge>
               </div>

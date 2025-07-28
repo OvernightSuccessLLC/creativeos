@@ -252,7 +252,7 @@ export default function BriefcaseModal({
                   Director OS toolkit
                 </p>
                 <Button
-                  className="bg-white text-brand-red hover:bg-gray-100 font-heading"
+                  className="bg-white text-black hover:bg-gray-100 font-button"
                   onClick={() => {
                     if (onNavigate) {
                       onNavigate("/playbook");

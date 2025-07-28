@@ -1061,15 +1061,15 @@ export default function AIToolkit() {
 
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-3">
-        <div className="text-center mb-8 pb-4" style={{ fontSize: "48px", lineHeight: "48px" }}>
-          AI Toolkit
+        <div className="text-center mb-8 pb-4">
+          <h1 className="font-display text-4xl md:text-5xl">AI Toolkit</h1>
         </div>
 
         {/* Category Filter */}
         <div className="flex justify-center mb-8">
           <div className="bg-black rounded-lg p-6 max-w-md w-full">
             <div className="text-center mb-4">
-              <h3 className="text-white text-lg font-heading" style={FONT_STYLE}>
+              <h3 className="text-white text-lg font-bold" style={FONT_STYLE}>
                 BROWSE BY CATEGORY
               </h3>
             </div>
@@ -1077,7 +1077,7 @@ export default function AIToolkit() {
               value={selectedCategory}
               onValueChange={setSelectedCategory}
             >
-              <SelectTrigger className="bg-brand-red text-black font-heading h-12 border-none">
+              <SelectTrigger className="bg-brand-red text-black font-bold h-12 border-none">
                 <div className="flex items-center gap-2">
                   <Filter className="w-4 h-4" />
                   <SelectValue placeholder="Select Category" />
@@ -1119,13 +1119,13 @@ export default function AIToolkit() {
               <CardHeader className="p-4 md:p-5 pb-3 md:pb-4 flex-shrink-0">
                 <div className="flex items-start justify-between mb-2">
                   <Badge
-                    className={`${tool.categoryColor} text-white text-xs font-body-medium px-2 py-1 rounded flex-shrink-0`}
+                    className={`${tool.categoryColor} text-white text-xs font-medium px-2 py-1 rounded flex-shrink-0`}
                   >
                     {tool.category}
                   </Badge>
                   {tool.premiumBadge && (
                     <Badge
-                      className={`${tool.premiumBadgeColor} text-white text-xs font-body-medium px-2 py-1 rounded flex-shrink-0`}
+                      className={`${tool.premiumBadgeColor} text-white text-xs font-medium px-2 py-1 rounded flex-shrink-0`}
                     >
                       {tool.premiumBadge}
                     </Badge>
@@ -1173,7 +1173,7 @@ export default function AIToolkit() {
         <div className="text-center mt-12">
           <div className="bg-black rounded-xl p-6 md:p-8">
             <h3
-              className="text-xl md:text-2xl font-heading text-white mb-4"
+              className="text-xl md:text-2xl font-bold text-white mb-4"
               style={FONT_STYLE}
             >
               MISSING A TOOL?
@@ -1186,7 +1186,7 @@ export default function AIToolkit() {
               us know and we'll add it for everyone to discover.
             </p>
             <Button
-              className="bg-brand-red text-black hover:bg-brand-red-hover font-heading px-6 py-3"
+              className="bg-brand-red text-black hover:bg-brand-red-hover font-bold px-6 py-3"
               style={FONT_STYLE}
             >
               <Sparkles className="w-4 h-4 mr-2" />

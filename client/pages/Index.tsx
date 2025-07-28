@@ -539,11 +539,11 @@ export default function Index() {
       )}
 
       {/* HOW IT WORKS Section */}
-      <div className="px-6 mb-8">
+      <div className="px-4 sm:px-6 mb-6 sm:mb-8">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-black rounded-lg p-6">
-            <h2 className="text-white text-xl font-bold mb-6">HOW IT WORKS</h2>
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div className="bg-black rounded-lg p-4 sm:p-6">
+            <h2 className="text-white text-lg sm:text-xl font-bold mb-4 sm:mb-6">HOW IT WORKS</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6">
               {[
                 "Add Custom Instructions",
                 "Select Categories",
@@ -555,10 +555,10 @@ export default function Index() {
                   key={index}
                   className="flex flex-col items-center text-center"
                 >
-                  <div className="bg-brand-red text-black rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mb-2">
+                  <div className="bg-brand-red text-black rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center font-bold text-sm sm:text-base mb-2 sm:mb-3">
                     {index + 1}
                   </div>
-                  <p className="text-white text-sm">{step}</p>
+                  <p className="text-white text-xs sm:text-sm leading-tight">{step}</p>
                 </div>
               ))}
             </div>

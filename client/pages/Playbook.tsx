@@ -156,7 +156,7 @@ export default function Playbook() {
         </div>
 
         {/* Section Navigation */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
           {sections.map((section) => (
             <button
               key={section.id}
@@ -165,7 +165,7 @@ export default function Playbook() {
                   activeSection === section.id ? null : section.id,
                 )
               }
-              className={`p-4 rounded-lg border-2 transition-all text-left ${
+              className={`p-4 sm:p-5 rounded-lg border-2 transition-all text-left min-h-[120px] touch-manipulation ${
                 activeSection === section.id
                   ? "border-black bg-black text-white"
                   : "border-black/20 bg-white/10 text-black hover:border-black/40"
@@ -302,7 +302,7 @@ export default function Playbook() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 onClick={() => navigate("/")}
-                className="bg-brand-red text-black hover:bg-brand-red-hover font-bold px-6 py-3"
+                className="bg-brand-red text-black hover:bg-brand-red-hover font-bold px-6 py-4 min-h-[48px] touch-manipulation"
                 style={TYPOGRAPHY.button}
               >
                 <Camera className="w-4 h-4 mr-2" />
@@ -310,7 +310,7 @@ export default function Playbook() {
               </Button>
               <Button
                 onClick={() => navigate("/lifestyle-studio")}
-                className="bg-white text-black hover:bg-gray-100 font-bold px-6 py-3"
+                className="bg-white text-black hover:bg-gray-100 font-bold px-6 py-4 min-h-[48px] touch-manipulation"
                 style={TYPOGRAPHY.button}
               >
                 <Package className="w-4 h-4 mr-2" />

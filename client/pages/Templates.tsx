@@ -412,7 +412,7 @@ export default function Templates() {
         className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8"
         style={{ backgroundColor: "#f93921" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {filteredTemplates.map((template) => {
             const TemplateCard = (
               <Card
@@ -441,11 +441,13 @@ export default function Templates() {
                   <Textarea
                     value={getCurrentPrompt(template)}
                     onChange={(e) => handlePromptChange(template.id, e.target.value)}
-                    className="bg-transparent border-none text-white text-xs sm:text-sm resize-none p-0 focus:ring-0 focus:outline-none min-h-[60px] hover:text-white focus:text-white transition-colors font-body"
+                    className="bg-transparent border-none text-white text-xs sm:text-sm resize-none p-0 focus:ring-0 focus:outline-none min-h-[60px] hover:text-white focus:text-white transition-colors"
                     placeholder="Click to edit your prompt here..."
                     style={{
                       boxShadow: 'none',
                       fontSize: 'inherit',
+                      fontWeight: '400',
+                      fontFamily: 'Poppins, sans-serif',
                     }}
                   />
                 </div>
@@ -459,7 +461,7 @@ export default function Templates() {
                       backgroundColor:
                         copiedTemplate === template.id ? "#22C55E" : "#F93822",
                       border: "none",
-                      minHeight: "36px",
+                      minHeight: "29px",
                     }}
                   >
                     <Copy className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />

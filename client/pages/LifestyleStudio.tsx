@@ -209,8 +209,6 @@ export default function LifestyleStudio() {
       "Mood Board",
       "Advertising",
       "Promotion",
-      "Influencer Content",
-      "User Generated Content",
       "Testimonial",
       "Case Study",
       "Portfolio",

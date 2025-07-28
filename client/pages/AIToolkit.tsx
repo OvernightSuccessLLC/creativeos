@@ -995,10 +995,10 @@ export default function AIToolkit() {
           </p>
         </div>
         {/* Category Filter */}
-        <div className="flex justify-center mb-8">
-          <div className="bg-black rounded-lg p-6 max-w-md w-full">
-            <div className="text-center mb-4">
-              <h3 className="text-white text-lg font-heading">
+        <div className="flex justify-center mb-6 sm:mb-8">
+          <div className="bg-black rounded-lg p-4 sm:p-6 max-w-md w-full mx-3 sm:mx-0">
+            <div className="text-center mb-3 sm:mb-4">
+              <h3 className="text-white text-base sm:text-lg font-heading">
                 BROWSE BY CATEGORY
               </h3>
             </div>
@@ -1006,9 +1006,9 @@ export default function AIToolkit() {
               value={selectedCategory}
               onValueChange={setSelectedCategory}
             >
-              <SelectTrigger className="bg-brand-red text-black font-bold h-12 border-none">
+              <SelectTrigger className="bg-brand-red text-black font-bold h-11 sm:h-12 border-none touch-manipulation">
                 <div className="flex items-center gap-2">
-                  <Filter className="w-4 h-4" />
+                  <Filter className="w-3 h-3 sm:w-4 sm:h-4" />
                   <SelectValue placeholder="Select Category" />
                 </div>
               </SelectTrigger>
@@ -1037,13 +1037,13 @@ export default function AIToolkit() {
         <div className="mb-6 text-center">
         </div>
         {/* Tools Grid - Enhanced mobile layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-6 px-3 sm:px-0">
           {filteredTools.map((tool) => (
             <Card
               key={tool.id}
-              className="bg-black border border-gray-800 hover:border-gray-600 transition-all duration-300 flex flex-col h-full group hover:scale-105"
+              className="bg-black border border-gray-800 hover:border-gray-600 transition-all duration-300 flex flex-col h-full group hover:scale-105 touch-manipulation"
             >
-              <CardHeader className="p-4 md:p-5 pb-3 md:pb-4 flex-shrink-0">
+              <CardHeader className="p-3 sm:p-4 md:p-5 pb-2 sm:pb-3 md:pb-4 flex-shrink-0">
                 <div className="flex items-start justify-between mb-2">
                   <Badge
                     className={`${tool.categoryColor} text-white text-xs font-medium px-2 py-1 rounded flex-shrink-0`}

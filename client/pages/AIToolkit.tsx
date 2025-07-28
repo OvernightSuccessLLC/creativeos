@@ -108,7 +108,7 @@ export default function AIToolkit() {
       premiumBadge: "Free",
       premiumBadgeColor: "bg-green-500",
       description:
-        "A rising chatbot based on DeepSeek‑R1; top‑downloaded in Jan 2025 with advanced GRM/SPCT tuning.",
+        "A rising chatbot based on DeepSeek���R1; top‑downloaded in Jan 2025 with advanced GRM/SPCT tuning.",
       keyFeatures: ["Advanced tuning", "Rising platform", "High performance"],
       link: "https://www.deepseek.com",
       rating: 4,
@@ -205,8 +205,8 @@ export default function AIToolkit() {
       premiumBadge: "Premium",
       premiumBadgeColor: "bg-blue-500",
       description:
-        "Imagen generates visuals, Veo 3 supports coherent video with audio.",
-      keyFeatures: ["Visual generation", "Video creation", "Audio support"],
+        "Imagen generates high-quality visuals and images using advanced AI.",
+      keyFeatures: ["Visual generation", "Image creation", "AI-powered"],
       link: "https://en.wikipedia.org/wiki/Google_DeepMind",
       rating: 4,
     },

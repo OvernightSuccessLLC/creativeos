@@ -718,9 +718,6 @@ export default function LifestyleStudio() {
                     )}
                     {step.id === 9 && (
                       <div>
-                        <Label htmlFor="typography" className="text-white text-sm sm:text-base font-body">
-                          Typography Integration
-                        </Label>
                         <Select value={typographyIntegration} onValueChange={setTypographyIntegration}>
                           <SelectTrigger className="mt-2">
                             <SelectValue placeholder="Select typography style" />
@@ -733,9 +730,6 @@ export default function LifestyleStudio() {
                             ))}
                           </SelectContent>
                         </Select>
-                        <p className="text-white text-xs mt-1">
-                          Choose primary typography for brand consistency
-                        </p>
                       </div>
                     )}
                     {step.id === 10 && (

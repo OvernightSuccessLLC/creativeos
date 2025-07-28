@@ -200,26 +200,26 @@
 
   .font-subheading {
     font-family: 'Poppins', sans-serif !important;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     letter-spacing: -0.01em;
     line-height: 1.4;
   }
 
   .font-body {
     font-family: 'Poppins', sans-serif !important;
-    font-weight: 400 !important;
+    font-weight: 700 !important;
     line-height: 1.6;
   }
 
   .font-body-medium {
     font-family: 'Poppins', sans-serif !important;
-    font-weight: 500 !important;
+    font-weight: 700 !important;
     line-height: 1.5;
   }
 
   .font-button {
     font-family: 'Poppins', sans-serif !important;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     letter-spacing: 0.025em;
     text-transform: uppercase;
     line-height: 1.2;
@@ -227,7 +227,7 @@
 
   .font-caption {
     font-family: 'Poppins', sans-serif !important;
-    font-weight: 400 !important;
+    font-weight: 700 !important;
     line-height: 1.4;
   }
 

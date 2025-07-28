@@ -5,11 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Crown } from 'lucide-react';
 interface ProtectedFeatureProps {
   children: ReactNode;
-<<<<<<< HEAD
   feature: keyof User['features'];
-=======
-  feature: 'unlimitedPrompts' | 'advancedAnalytics' | 'prioritySupport' | 'exclusiveTemplates' | 'apiAccess';
->>>>>>> 31ebc44cc8678f1bd669070e8af0657ed332f209
   requiredPlan?: 'pro' | 'enterprise';
   fallback?: ReactNode;
   showUpgradeButton?: boolean;

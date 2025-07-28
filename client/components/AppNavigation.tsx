@@ -124,17 +124,11 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                 return (
                   <button
                     key={page.path}
-                    className={`px-3 py-2 rounded-lg text-sm font-bold transition-colors ${
+                    className={`px-3 py-2 rounded-lg text-sm font-button transition-colors ${
                       isActive
                         ? "bg-brand-red text-black"
                         : "text-white hover:bg-white/10"
                     }`}
-                    style={{
-                      ...FONT_STYLE,
-                      fontWeight: "700",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.5px",
-                    }}
                     onClick={() => navigate(page.path)}
                   >
                     {page.name}
@@ -193,17 +187,11 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                         return (
                           <button
                             key={page.path}
-                            className={`w-full text-left px-4 py-3 rounded-lg text-sm font-bold transition-colors min-h-[44px] ${
+                            className={`w-full text-left px-4 py-3 rounded-lg text-sm font-button transition-colors min-h-[44px] ${
                               isActive
                                 ? "bg-brand-red text-black"
                                 : "text-white hover:bg-white/10"
                             }`}
-                            style={{
-                              ...FONT_STYLE,
-                              fontWeight: "700",
-                              textTransform: "uppercase",
-                              letterSpacing: "0.5px",
-                            }}
                             onClick={() => {
                               navigate(page.path);
                               setIsMobileMenuOpen(false);

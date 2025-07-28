@@ -533,7 +533,7 @@ export default function Index() {
                 onClick={() => setActiveStep(activeStep === 1 ? null : 1)}
               >
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-heading">
+                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-button">
                     1
                   </div>
                   <span className="text-white font-body-medium font-body">
@@ -563,7 +563,7 @@ export default function Index() {
                 onClick={() => setActiveStep(activeStep === 2 ? null : 2)}
               >
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-heading">
+                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-button">
                     2
                   </div>
                   <span className="text-white font-body-medium font-body">Product Style</span>
@@ -606,7 +606,7 @@ export default function Index() {
                 onClick={() => setActiveStep(activeStep === 3 ? null : 3)}
               >
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-heading">
+                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-button">
                     3
                   </div>
                   <span className="text-white font-body-medium font-body">
@@ -652,7 +652,7 @@ export default function Index() {
                 onClick={() => setActiveStep(activeStep === 4 ? null : 4)}
               >
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-heading">
+                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-button">
                     4
                   </div>
                   <span className="text-white font-body-medium font-body">Lighting Setup</span>
@@ -688,7 +688,7 @@ export default function Index() {
                 onClick={() => setActiveStep(activeStep === 5 ? null : 5)}
               >
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-heading">
+                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-button">
                     5
                   </div>
                   <span className="text-white font-body-medium font-body">Camera Angle</span>
@@ -805,7 +805,7 @@ export default function Index() {
               <div className="space-y-3">
                 <Button
                   onClick={copyPrompt}
-                  className="w-full bg-brand-red hover:bg-brand-red/90 text-white font-heading"
+                  className="w-full bg-brand-red hover:bg-brand-red/90 text-white font-button"
                 >
                   <Copy className="w-4 h-4 mr-2" />
                   {copiedPrompt ? "COPIED!" : "COPY"}

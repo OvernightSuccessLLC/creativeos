@@ -271,7 +271,7 @@ export default function Playbook() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 onClick={() => navigate("/")}
-                className="bg-brand-red text-black hover:bg-brand-red-hover font-heading px-6 py-4 min-h-[48px] touch-manipulation"
+                className="bg-brand-red text-black hover:bg-brand-red-hover font-button px-6 py-4 min-h-[48px] touch-manipulation"
               >
                 <Camera className="w-4 h-4 mr-2" />
                 Try Product Studio

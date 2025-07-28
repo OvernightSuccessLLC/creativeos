@@ -71,9 +71,7 @@ export default function CharacterSpec() {
     </Card>
   );
   return (
-    <div
-      className="min-h-screen bg-gradient-to-br from-brand-red via-red-600 to-red-800 text-white"
-    >
+    <div className="min-h-screen bg-gradient-to-br from-brand-red via-red-600 to-red-800 text-white">
       {/* Navigation */}
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-8">

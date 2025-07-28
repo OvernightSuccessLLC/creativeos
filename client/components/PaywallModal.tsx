@@ -1,12 +1,10 @@
 import React from 'react';
-
 interface PaywallModalProps {
   isOpen: boolean;
   onClose: () => void;
   feature?: string;
   requiredPlan?: 'pro' | 'enterprise';
 }
-
 const PaywallModal: React.FC<PaywallModalProps> = ({
   isOpen,
   onClose,
@@ -18,8 +16,6 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
   if (isOpen) {
     onClose();
   }
-  
   return null;
 };
-
 export default PaywallModal;

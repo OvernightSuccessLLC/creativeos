@@ -16,13 +16,9 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import { useState } from "react";
-
-
-
 export default function CharacterSpec() {
   const navigate = useNavigate();
   const [showBriefcase, setShowBriefcase] = useState(false);
-
   const characterData = {
     visual_design: {
       animation_style: "Animorph-ultra-realistic",
@@ -56,7 +52,6 @@ export default function CharacterSpec() {
       "suburban burnout",
     ],
   };
-
   const SpecSection = ({
     title,
     icon: Icon,
@@ -75,15 +70,12 @@ export default function CharacterSpec() {
       <CardContent className="pt-0">{children}</CardContent>
     </Card>
   );
-
   return (
     <div
       className="min-h-screen bg-gradient-to-br from-brand-red via-red-600 to-red-800 text-white"
-      
     >
       {/* Navigation */}
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
-
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-8">
         {/* Header */}
         <div className="mb-8">
@@ -95,7 +87,6 @@ export default function CharacterSpec() {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to AI Toolkit
           </Button>
-
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading text-white mb-4">
               Character Specification
@@ -106,7 +97,6 @@ export default function CharacterSpec() {
             </p>
           </div>
         </div>
-
         {/* Main Content - 2 Column Layout */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left Column - Character Image */}
@@ -139,7 +129,6 @@ export default function CharacterSpec() {
               </CardContent>
             </Card>
           </div>
-
           {/* Right Column - Specifications */}
           <div className="order-1 lg:order-2 space-y-6">
             {/* Visual Design */}
@@ -163,7 +152,6 @@ export default function CharacterSpec() {
                     </p>
                   </div>
                 </div>
-
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <h4 className="text-orange-400 font-semibold mb-2">
@@ -197,7 +185,6 @@ export default function CharacterSpec() {
                 </div>
               </div>
             </SpecSection>
-
             {/* Body Structure */}
             <SpecSection title="Body Structure" icon={User} color="bg-blue-600">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -225,7 +212,6 @@ export default function CharacterSpec() {
                 </div>
               </div>
             </SpecSection>
-
             {/* Voice & Audio */}
             <SpecSection
               title="Voice Synchronization"
@@ -257,7 +243,6 @@ export default function CharacterSpec() {
                 </div>
               </div>
             </SpecSection>
-
             {/* Lighting & Camera */}
             <SpecSection
               title="Technical Specs"
@@ -291,7 +276,6 @@ export default function CharacterSpec() {
                 </div>
               </div>
             </SpecSection>
-
             {/* Personality Tags */}
             <SpecSection
               title="Personality Profile"
@@ -316,7 +300,6 @@ export default function CharacterSpec() {
             </SpecSection>
           </div>
         </div>
-
         {/* Bottom CTA */}
         <div className="mt-12 text-center">
           <Card className="bg-black/90 border border-gray-800">
@@ -355,7 +338,6 @@ export default function CharacterSpec() {
           </Card>
         </div>
       </div>
-
       {/* Briefcase Modal */}
       <BriefcaseModal
         isOpen={showBriefcase}

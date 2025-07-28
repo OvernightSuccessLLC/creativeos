@@ -3,7 +3,6 @@ import { useAuth, User } from '@/contexts/AuthContext';
 import PaywallModal from './PaywallModal';
 import { Button } from '@/components/ui/button';
 import { Crown } from 'lucide-react';
-
 interface ProtectedFeatureProps {
   children: ReactNode;
   feature: keyof User['features'];
@@ -12,7 +11,6 @@ interface ProtectedFeatureProps {
   showUpgradeButton?: boolean;
   featureName?: string;
 }
-
 const ProtectedFeature: React.FC<ProtectedFeatureProps> = ({
   children,
   feature,
@@ -23,17 +21,14 @@ const ProtectedFeature: React.FC<ProtectedFeatureProps> = ({
 }) => {
   const { hasFeature, upgradeRequired, isAuthenticated } = useAuth();
   const [showPaywall, setShowPaywall] = useState(false);
-
   // If user has access to the feature, render children
   if (isAuthenticated && hasFeature(feature)) {
     return <>{children}</>;
   }
-
   // If custom fallback is provided, use it
   if (fallback) {
     return <>{fallback}</>;
   }
-
   // Default locked state UI
   return (
     <>
@@ -55,7 +50,6 @@ const ProtectedFeature: React.FC<ProtectedFeatureProps> = ({
           </div>
         </div>
       </div>
-
       <PaywallModal
         isOpen={showPaywall}
         onClose={() => setShowPaywall(false)}
@@ -65,5 +59,4 @@ const ProtectedFeature: React.FC<ProtectedFeatureProps> = ({
     </>
   );
 };
-
 export default ProtectedFeature;

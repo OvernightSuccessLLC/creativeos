@@ -3,35 +3,27 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
-
-
 export default function Landing() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     try {
       // Submit to Netlify Forms
       const formData = new FormData();
       formData.append("form-name", "email-capture");
       formData.append("email", email);
       formData.append("name", name);
-
       await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData as any).toString(),
       });
-
       setIsSubmitted(true);
-
       // Navigate to playbook after 2 seconds
       setTimeout(() => {
         navigate("/playbook");
@@ -44,12 +36,10 @@ export default function Landing() {
       setIsSubmitting(false);
     }
   };
-
   if (isSubmitted) {
     return (
       <div
         className="min-h-screen bg-brand-red flex items-center justify-center p-4"
-        
       >
         <Card className="max-w-md w-full bg-black border-none">
           <CardContent className="p-8 text-center">
@@ -63,11 +53,9 @@ export default function Landing() {
       </div>
     );
   }
-
   return (
     <div
       className="min-h-screen bg-brand-red flex items-center justify-center p-4"
-      
     >
       <div className="max-w-lg w-full">
         {/* Logo */}
@@ -78,7 +66,6 @@ export default function Landing() {
             className="h-36 w-auto mx-auto"
           />
         </div>
-
         {/* Email Capture Card */}
         <Card className="bg-black border-none shadow-2xl">
           <CardHeader className="text-center pb-3 pt-5">
@@ -95,7 +82,6 @@ export default function Landing() {
               <input type="text" name="name" />
               <input type="email" name="email" />
             </form>
-
             {/* Visible form */}
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
@@ -123,7 +109,6 @@ export default function Landing() {
                 disabled={isSubmitting}
                 className="w-full bg-brand-red hover:bg-brand-red-hover text-white font-heading py-3 text-lg"
                 style={{
-                  
                   textTransform: "uppercase",
                   letterSpacing: "0.5px",
                 }}
@@ -131,7 +116,6 @@ export default function Landing() {
                 {isSubmitting ? "Getting Access..." : "Get Access Now"}
               </Button>
             </form>
-
             <div className="mt-6 text-center">
               <p className="text-white text-sm">
                 Join thousands of creators using AI to accelerate their success

@@ -20,24 +20,18 @@ import {
   Settings,
   RotateCcw,
 } from "lucide-react";
-
 interface AppNavigationProps {
   onUpdatesClick?: () => void;
 }
-
-
-
 export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const { user, logout } = useAuth();
-
   // Close mobile menu when route changes
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
-
   const allPages = [
     {
       name: "Product Studio",
@@ -82,15 +76,12 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
       description: "Latest news and features",
     },
   ];
-
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-
   const isCurrentPage = (itemPath: string) => {
     return location.pathname === itemPath;
   };
-
   return (
     <>
       <nav
@@ -115,7 +106,6 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                 }}
               />
             </div>
-
             {/* Desktop Navigation - All Pages as Individual Buttons */}
             <div className="hidden md:flex items-center space-x-1 flex-1">
               {allPages.map((page) => {
@@ -135,7 +125,6 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                 );
               })}
             </div>
-
             {/* User Status - Desktop */}
             <div className="hidden md:flex items-center space-x-3 ml-4">
               {user ? (
@@ -161,7 +150,6 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                 </div>
               ) : null}
             </div>
-
             {/* Mobile Menu Dropdown */}
             <div className="md:hidden relative">
               <button
@@ -175,7 +163,6 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                   <Menu className="w-6 h-6" />
                 )}
               </button>
-
               {/* Mobile Dropdown Menu */}
               {isMobileMenuOpen && (
                 <div className="absolute top-full right-0 mt-2 w-72 bg-black border border-gray-700 rounded-lg shadow-2xl z-50 max-h-[80vh] overflow-y-auto">

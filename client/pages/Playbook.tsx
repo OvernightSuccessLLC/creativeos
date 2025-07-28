@@ -21,14 +21,10 @@ import {
   Info,
   ArrowRight,
 } from "lucide-react";
-
-
-
 export default function Playbook() {
   const navigate = useNavigate();
   const [showBriefcase, setShowBriefcase] = useState(false);
   const [activeSection, setActiveSection] = useState<number | null>(1);
-
   const sections = [
     {
       id: 1,
@@ -133,18 +129,15 @@ export default function Playbook() {
       },
     },
   ];
-
   return (
     <div className="min-h-screen bg-brand-red text-black">
       {/* Navigation */}
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
-
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-8">
         <div className="text-center mb-8 pb-4">
           <h1 className="font-display text-4xl md:text-5xl">THE PLAYBOOK</h1>
         </div>
-
         {/* Section Navigation */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
           {sections.map((section) => (
@@ -176,7 +169,6 @@ export default function Playbook() {
             </button>
           ))}
         </div>
-
         {/* Content Sections */}
         {activeSection && (
           <div className="bg-black rounded-xl p-6 md:p-8">
@@ -193,7 +185,6 @@ export default function Playbook() {
                       {section.title}
                     </h2>
                   </div>
-
                   {/* Principles */}
                   <div className="space-y-6">
                     <h3
@@ -229,7 +220,6 @@ export default function Playbook() {
                       ))}
                     </div>
                   </div>
-
                   {/* Skill Progression */}
                   <div className="space-y-4">
                     <h3
@@ -269,7 +259,6 @@ export default function Playbook() {
               ))}
           </div>
         )}
-
         {/* Call to Action */}
         <div className="text-center mt-12">
           <div className="bg-black rounded-xl p-6 md:p-8">
@@ -307,7 +296,6 @@ export default function Playbook() {
           </div>
         </div>
       </div>
-
       {/* Briefcase Modal */}
       <BriefcaseModal
         isOpen={showBriefcase}

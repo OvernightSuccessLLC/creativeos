@@ -24,7 +24,6 @@ import {
   Clock,
   UtensilsCrossed,
 } from "lucide-react";
-
 export default function Templates() {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
@@ -32,7 +31,6 @@ export default function Templates() {
   const [showBriefcase, setShowBriefcase] = useState(false);
   const [copiedTemplate, setCopiedTemplate] = useState<number | null>(null);
   const [editedPrompts, setEditedPrompts] = useState<Record<number, string>>({});
-
   const categories = [
     { id: "all", name: "All Templates", icon: LayoutTemplate },
     { id: "product", name: "Product", icon: Package },
@@ -43,7 +41,6 @@ export default function Templates() {
     { id: "fashion", name: "Fashion", icon: Heart },
     { id: "creative", name: "Creative", icon: Zap },
   ];
-
   const templates = [
     {
       id: 1,
@@ -241,7 +238,6 @@ export default function Templates() {
       featured: true,
     },
   ];
-
   const filteredTemplates = templates.filter((template) => {
     const matchesSearch =
       template.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -253,12 +249,10 @@ export default function Templates() {
       selectedCategory === "all" || template.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
-
   // Get the current prompt (edited or original)
   const getCurrentPrompt = (template: any) => {
     return editedPrompts[template.id] || template.prompt;
   };
-
   // Handle prompt text changes
   const handlePromptChange = (templateId: number, newText: string) => {
     setEditedPrompts(prev => ({
@@ -266,7 +260,6 @@ export default function Templates() {
       [templateId]: newText
     }));
   };
-
   const copyPrompt = async (prompt: string, templateId: number) => {
     // Enhanced legacy copy method with better mobile support
     const legacyCopy = () => {
@@ -279,9 +272,7 @@ export default function Templates() {
         textArea.style.opacity = "0";
         textArea.style.pointerEvents = "none";
         textArea.setAttribute("readonly", "");
-
         document.body.appendChild(textArea);
-
         // Focus and select for different devices
         if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
           textArea.setSelectionRange(0, 9999);
@@ -289,10 +280,8 @@ export default function Templates() {
           textArea.focus();
           textArea.select();
         }
-
         const successful = document.execCommand("copy");
         document.body.removeChild(textArea);
-
         if (successful) {
           setCopiedTemplate(templateId);
           setTimeout(() => setCopiedTemplate(null), 2000);
@@ -304,7 +293,6 @@ export default function Templates() {
         return false;
       }
     };
-
     // Try modern Clipboard API first, with specific error handling
     try {
       if (navigator.clipboard && window.isSecureContext) {
@@ -327,14 +315,11 @@ export default function Templates() {
       } else {
         console.warn("Clipboard API failed:", err);
       }
-
       // Try legacy method immediately
       if (legacyCopy()) return;
     }
-
     // If clipboard API not available, try legacy method
     if (legacyCopy()) return;
-
     // Final fallback - create a user-friendly copy interface
     try {
       // Create modal-like interface for manual copying
@@ -352,7 +337,6 @@ export default function Templates() {
         justify-content: center;
         padding: 20px;
       `;
-
       const content = document.createElement("div");
       content.style.cssText = `
         background: white;
@@ -364,7 +348,6 @@ export default function Templates() {
         overflow: auto;
         box-shadow: 0 10px 25px rgba(0,0,0,0.5);
       `;
-
       content.innerHTML = `
         <h3 style="margin: 0 0 15px 0; font-size: 18px; color: #f93921;">Copy This Prompt</h3>
         <textarea
@@ -386,26 +369,21 @@ export default function Templates() {
           Tap "Select All" then copy with Ctrl+C (Cmd+C on Mac)
         </p>
       `;
-
       modal.appendChild(content);
       document.body.appendChild(modal);
-
       // Add event listeners
       const textarea = content.querySelector(
         "#copyTextarea",
       ) as HTMLTextAreaElement;
       const selectBtn = content.querySelector("#selectAllBtn");
       const closeBtn = content.querySelector("#closeModalBtn");
-
       selectBtn?.addEventListener("click", () => {
         textarea.select();
         textarea.setSelectionRange(0, 99999);
       });
-
       closeBtn?.addEventListener("click", () => {
         document.body.removeChild(modal);
       });
-
       // Auto-select on mobile
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         setTimeout(() => {
@@ -413,7 +391,6 @@ export default function Templates() {
           textarea.setSelectionRange(0, 99999);
         }, 100);
       }
-
       // Click outside to close
       modal.addEventListener("click", (e) => {
         if (e.target === modal) {
@@ -426,12 +403,10 @@ export default function Templates() {
       alert(`COPY THIS PROMPT:\n\n${prompt}`);
     }
   };
-
   return (
     <div className="min-h-screen bg-brand-red text-black">
       {/* Navigation */}
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
-
       {/* Templates Grid */}
       <div
         className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8"
@@ -474,7 +449,6 @@ export default function Templates() {
                     }}
                   />
                 </div>
-
                 {/* Actions */}
                 <div className="flex space-x-2">
                   <Button
@@ -495,11 +469,9 @@ export default function Templates() {
               </CardContent>
             </Card>
             );
-
             return TemplateCard;
           })}
         </div>
-
         {filteredTemplates.length === 0 && (
           <div className="text-center py-12">
             <LayoutTemplate className="w-12 h-12 text-black/40 mx-auto mb-4" />
@@ -512,7 +484,6 @@ export default function Templates() {
           </div>
         )}
       </div>
-
       {/* Briefcase Modal */}
       <BriefcaseModal
         isOpen={showBriefcase}

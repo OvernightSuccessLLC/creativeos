@@ -18,20 +18,17 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
-
 interface BriefcaseModalProps {
   isOpen: boolean;
   onClose: () => void;
   onNavigate?: (path: string) => void;
 }
-
 export default function BriefcaseModal({
   isOpen,
   onClose,
   onNavigate,
 }: BriefcaseModalProps) {
   if (!isOpen) return null;
-
   const updates = [
     {
       date: "Jan 20, 2025",
@@ -44,7 +41,6 @@ export default function BriefcaseModal({
       action: "Visit Playbook",
       actionPath: "/playbook",
     },
-
     {
       date: "Jan 20, 2025",
       type: "Enhancement",
@@ -68,7 +64,6 @@ export default function BriefcaseModal({
       actionPath: "/ai-toolkit",
     },
   ];
-
   const navigationItems = [
     {
       name: "THE PLAYBOOK",
@@ -76,7 +71,6 @@ export default function BriefcaseModal({
       path: "/playbook",
       color: "bg-green-600",
     },
-
     {
       name: "TEMPLATES",
       icon: LayoutTemplate,
@@ -90,14 +84,12 @@ export default function BriefcaseModal({
       color: "bg-purple-600",
     },
   ];
-
   const stats = [
     { label: "Active Users", value: "2.4k", icon: Users },
     { label: "Templates", value: "150+", icon: LayoutTemplate },
     { label: "Keywords", value: "500+", icon: Database },
     { label: "Tools Listed", value: "25+", icon: Zap },
   ];
-
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <Card className="bg-black border border-gray-800 w-full max-w-5xl max-h-[90vh] overflow-hidden">
@@ -109,7 +101,6 @@ export default function BriefcaseModal({
               </div>
               <CardTitle
                 className="text-xl text-white brand-heading"
-                
               >
                 THE BRIEFCASE
               </CardTitle>
@@ -124,7 +115,6 @@ export default function BriefcaseModal({
               <X className="w-4 h-4" />
             </Button>
           </div>
-
           {/* Quick Stats */}
           <div className="grid grid-cols-4 gap-4 mt-4">
             {stats.map((stat) => (
@@ -139,7 +129,6 @@ export default function BriefcaseModal({
               </div>
             ))}
           </div>
-
           {/* Quick Navigation */}
           <div className="flex space-x-3 mt-4">
             {navigationItems.map((item) => (
@@ -159,13 +148,11 @@ export default function BriefcaseModal({
             ))}
           </div>
         </CardHeader>
-
         <CardContent className="p-6 overflow-y-auto max-h-[60vh]">
           <div className="space-y-6">
             <div>
               <h2
                 className="text-2xl font-brand-black text-white mb-2 brand-heading"
-                
               >
                 Latest Updates & Features
               </h2>
@@ -174,7 +161,6 @@ export default function BriefcaseModal({
                 Creative Director OS
               </p>
             </div>
-
             <div className="space-y-4">
               {updates.map((update, index) => (
                 <Card
@@ -233,7 +219,6 @@ export default function BriefcaseModal({
                 </Card>
               ))}
             </div>
-
             {/* Call to Action */}
             <Card className="bg-gradient-to-r from-brand-red to-red-600 border border-red-500">
               <CardContent className="p-6 text-center">

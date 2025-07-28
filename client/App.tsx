@@ -1,5 +1,4 @@
 import "./global.css";
-
 import { Toaster } from "@/components/ui/toaster";
 import { createRoot } from "react-dom/client";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -16,9 +15,7 @@ import PaywallLanding from "./pages/PaywallLanding";
 import NotFound from "./pages/NotFound";
 import LifestyleStudio from "./pages/LifestyleStudio";
 import GraphicStudio from "./pages/GraphicStudio";
-
 const queryClient = new QueryClient();
-
 // Global Creative Director OS Context
 const CreativeDirectorOSContext = {
   version: "1.0.0",
@@ -33,7 +30,6 @@ const CreativeDirectorOSContext = {
     },
   },
 };
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <AuthProvider>
@@ -58,13 +54,10 @@ const App = () => (
     </AuthProvider>
   </QueryClientProvider>
 );
-
 const container = document.getElementById("root")!;
 let root = (container as any)._reactRoot;
-
 if (!root) {
   root = createRoot(container);
   (container as any)._reactRoot = root;
 }
-
 root.render(<App />);

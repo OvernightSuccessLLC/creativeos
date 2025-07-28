@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-
 export interface User {
   id: string;
   email: string;
@@ -13,7 +12,6 @@ export interface User {
     apiAccess: boolean;
   };
 }
-
 interface AuthContextType {
   user: User | null;
   isAuthenticated: boolean;
@@ -23,9 +21,7 @@ interface AuthContextType {
   hasFeature: (feature: keyof User['features']) => boolean;
   upgradeRequired: (feature: keyof User['features']) => boolean;
 }
-
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
-
 // Demo access keys for testing
 const ACCESS_KEYS = {
   'DEMO-FREE-2025': {
@@ -59,11 +55,9 @@ const ACCESS_KEYS = {
     }
   }
 };
-
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     // Check for stored access key on app load
     const storedKey = localStorage.getItem('creative_director_access_key');
@@ -79,13 +73,10 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
     setIsLoading(false);
   }, []);
-
   const login = async (accessKey: string): Promise<boolean> => {
     setIsLoading(true);
-
     // Simulate API call delay
     await new Promise(resolve => setTimeout(resolve, 1000));
-
     const keyData = ACCESS_KEYS[accessKey as keyof typeof ACCESS_KEYS];
     if (keyData) {
       const newUser: User = {
@@ -95,30 +86,24 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         accessKey,
         features: keyData.features,
       };
-
       setUser(newUser);
       localStorage.setItem('creative_director_access_key', accessKey);
       setIsLoading(false);
       return true;
     }
-
     setIsLoading(false);
     return false;
   };
-
   const logout = () => {
     setUser(null);
     localStorage.removeItem('creative_director_access_key');
   };
-
   const hasFeature = (feature: keyof User['features']): boolean => {
     return user?.features[feature] ?? false;
   };
-
   const upgradeRequired = (feature: keyof User['features']): boolean => {
     return !hasFeature(feature);
   };
-
   const value: AuthContextType = {
     user,
     isAuthenticated: !!user,
@@ -128,10 +113,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     hasFeature,
     upgradeRequired,
   };
-
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
-
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (context === undefined) {
@@ -139,5 +122,4 @@ export const useAuth = () => {
   }
   return context;
 };
-
 export default AuthContext;

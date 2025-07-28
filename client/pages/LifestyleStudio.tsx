@@ -34,12 +34,10 @@ import {
   MapPin,
   Type,
 } from "lucide-react";
-
 export default function LifestyleStudio() {
   const navigate = useNavigate();
   const [showBriefcase, setShowBriefcase] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-
   // Prompt Builder State
   const [activeStep, setActiveStep] = useState<number | null>(1);
   const [customInstructions, setCustomInstructions] = useState("");
@@ -53,7 +51,6 @@ export default function LifestyleStudio() {
   const [locationSetting, setLocationSetting] = useState("");
   const [primaryColorPantone, setPrimaryColorPantone] = useState("");
   const [typographyIntegration, setTypographyIntegration] = useState("");
-
   const keywordCategories = {
     "Scene Objective": [
       "Vacation",
@@ -300,7 +297,6 @@ export default function LifestyleStudio() {
       "Rubik",
     ],
   };
-
   // Calculate quality score based on inputs
   const calculateQuality = () => {
     let score = 0;
@@ -316,62 +312,47 @@ export default function LifestyleStudio() {
     if (typographyIntegration && typographyIntegration.trim()) score += 5;
     return Math.min(100, score);
   };
-
   // Generate the final prompt
   const generatePrompt = () => {
     let prompt = "";
-
     if (customInstructions && customInstructions.trim()) {
       prompt += customInstructions.trim() + ". ";
     }
-
     if (moodTone && moodTone.trim()) {
       prompt += `${moodTone.trim()} mood. `;
     }
-
     if (subjectAge && subjectAge.trim()) {
       prompt += `${subjectAge.trim()} person. `;
     }
-
     if (activityType && activityType.trim()) {
       prompt += `${activityType.trim()}. `;
     }
-
     if (locationSetting && locationSetting.trim()) {
       prompt += `In ${locationSetting.trim()}. `;
     }
-
     if (primaryColorPantone && primaryColorPantone.trim()) {
       prompt += `Primary color: ${primaryColorPantone.trim()}. `;
     }
-
     if (typographyIntegration && typographyIntegration.trim()) {
       prompt += `Typography: ${typographyIntegration.trim()}. `;
     }
-
     if (selectedKeywords && selectedKeywords.length > 0) {
       prompt += selectedKeywords.join(", ") + ". ";
     }
-
     if (!prompt.trim()) {
       return "Start building your prompt by filling out the steps...";
     }
-
     prompt +=
       "Lifestyle photography, authentic human moment, natural expression, candid composition, emotional connection, high quality, detailed, realistic, SORA video generation optimized.";
-
     return prompt.trim();
   };
-
   // Copy to clipboard with enhanced fallback
   const copyPrompt = async () => {
     const text = generatePrompt();
-
     if (!text || text.trim() === "") {
       console.warn("No text to copy");
       return;
     }
-
     // Enhanced legacy copy method
     const legacyCopy = () => {
       try {
@@ -382,15 +363,12 @@ export default function LifestyleStudio() {
         textArea.style.top = "-999999px";
         textArea.style.opacity = "0";
         textArea.setAttribute("readonly", "");
-
         document.body.appendChild(textArea);
         textArea.focus();
         textArea.select();
         textArea.setSelectionRange(0, 99999);
-
         const successful = document.execCommand("copy");
         document.body.removeChild(textArea);
-
         if (successful) {
           setCopiedPrompt(true);
           setTimeout(() => setCopiedPrompt(false), 2000);
@@ -402,7 +380,6 @@ export default function LifestyleStudio() {
         return false;
       }
     };
-
     try {
       if (navigator.clipboard && window.isSecureContext) {
         await navigator.clipboard.writeText(text);
@@ -423,13 +400,10 @@ export default function LifestyleStudio() {
       } else {
         console.warn("Clipboard API failed, using fallback:", err);
       }
-
       if (legacyCopy()) return;
     }
-
     // If clipboard API not available, try legacy method
     if (legacyCopy()) return;
-
     // Final fallback - show prompt in alert
     try {
       alert(`COPY THIS PROMPT:\n\n${text}`);
@@ -437,18 +411,15 @@ export default function LifestyleStudio() {
       console.error("All copy methods failed:", finalErr);
     }
   };
-
   // Toggle keyword selection
   const toggleKeyword = (keyword: string) => {
     if (!keyword || typeof keyword !== "string") {
       console.error("Invalid keyword:", keyword);
       return;
     }
-
     setSelectedKeywords((prev) => {
       const currentKeywords = Array.isArray(prev) ? prev : [];
       const isSelected = currentKeywords.includes(keyword);
-
       if (isSelected) {
         return currentKeywords.filter((k) => k !== keyword);
       } else {
@@ -456,7 +427,6 @@ export default function LifestyleStudio() {
       }
     });
   };
-
   // Handle file upload
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -466,18 +436,15 @@ export default function LifestyleStudio() {
         console.error("Please select an image file");
         return;
       }
-
       // Check file size (10MB limit)
       if (file.size > 10 * 1024 * 1024) {
         console.error("File size too large. Please select a file under 10MB");
         return;
       }
-
       setUploadedFile(file);
       console.log("File uploaded successfully:", file.name);
     }
   };
-
   // Update quality score when inputs change
   useEffect(() => {
     setQualityScore(calculateQuality());
@@ -492,7 +459,6 @@ export default function LifestyleStudio() {
     primaryColorPantone,
     typographyIntegration,
   ]);
-
   const steps = [
     {
       id: 1,
@@ -555,11 +521,9 @@ export default function LifestyleStudio() {
       icon: <Camera className="w-5 h-5" />,
     },
   ];
-
   return (
     <div className="min-h-screen bg-brand-red text-black">
       <AppNavigation />
-
       {/* HOW IT WORKS Section */}
       <div className="px-4 sm:px-6 mb-6 sm:mb-8 pt-2 sm:pt-4">
         <div className="max-w-7xl mx-auto">
@@ -586,7 +550,6 @@ export default function LifestyleStudio() {
           </div>
         </div>
       </div>
-
       {/* Main Content Grid */}
       <div className="px-4 sm:px-6 pb-6 sm:pb-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -621,7 +584,6 @@ export default function LifestyleStudio() {
                     )}
                   </div>
                 </CardHeader>
-
                 {activeStep === step.id && (
                   <CardContent className="space-y-3 sm:space-y-4 bg-black p-4 sm:p-6">
                     {step.id === 1 && (
@@ -639,7 +601,6 @@ export default function LifestyleStudio() {
                         />
                       </div>
                     )}
-
                     {step.id === 2 && (
                       <div>
                         <Label htmlFor="file-upload" className="text-white text-sm sm:text-base">
@@ -677,7 +638,6 @@ export default function LifestyleStudio() {
                         </label>
                       </div>
                     )}
-
                     {step.id === 3 && (
                       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3">
                         {keywordCategories["Background Setting"].map(
@@ -697,7 +657,6 @@ export default function LifestyleStudio() {
                         )}
                       </div>
                     )}
-
                     {step.id === 4 && (
                       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3">
                         {keywordCategories["Theme"].map((keyword) => (
@@ -715,7 +674,6 @@ export default function LifestyleStudio() {
                         ))}
                       </div>
                     )}
-
                     {step.id === 5 && (
                       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3">
                         {keywordCategories["Lighting Setup"].map((keyword) => (
@@ -733,7 +691,6 @@ export default function LifestyleStudio() {
                         ))}
                       </div>
                     )}
-
                     {step.id === 6 && (
                       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3">
                         {keywordCategories["Camera Angle"].map((keyword) => (
@@ -751,7 +708,6 @@ export default function LifestyleStudio() {
                         ))}
                       </div>
                     )}
-
                     {step.id === 7 && (
                       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3">
                         {keywordCategories["Intended Use"].map((keyword) => (
@@ -769,7 +725,6 @@ export default function LifestyleStudio() {
                         ))}
                       </div>
                     )}
-
                     {step.id === 8 && (
                       <div>
                         <Label htmlFor="pantone-color" className="text-white text-sm sm:text-base">
@@ -787,7 +742,6 @@ export default function LifestyleStudio() {
                         </p>
                       </div>
                     )}
-
                     {step.id === 9 && (
                       <div>
                         <Label htmlFor="typography" className="text-white text-sm sm:text-base">
@@ -810,7 +764,6 @@ export default function LifestyleStudio() {
                         </p>
                       </div>
                     )}
-
                     {step.id === 10 && (
                       <div>
                         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 mt-2">
@@ -835,7 +788,6 @@ export default function LifestyleStudio() {
               </Card>
             ))}
           </div>
-
           {/* Right Column - AI Prompt Formula */}
           <div className="space-y-4 sm:space-y-6 order-1 lg:order-2">
             <Card className="border-black lg:sticky lg:top-6">
@@ -867,7 +819,6 @@ export default function LifestyleStudio() {
                       "Start building your prompt by filling out the steps..."}
                   </div>
                 </div>
-
                 <div className="space-y-3">
                   <div className="space-y-2">
                     <div className="flex justify-between text-xs sm:text-sm text-white">
@@ -885,7 +836,6 @@ export default function LifestyleStudio() {
                       ></div>
                     </div>
                   </div>
-
                   <div className="space-y-2">
                     <div className="flex justify-between text-xs sm:text-sm text-white">
                       <span>Keywords</span>
@@ -902,7 +852,6 @@ export default function LifestyleStudio() {
                       ></div>
                     </div>
                   </div>
-
                   <div className="space-y-2">
                     <div className="flex justify-between text-xs sm:text-sm text-white">
                       <span>Reference</span>
@@ -918,7 +867,6 @@ export default function LifestyleStudio() {
                     </div>
                   </div>
                 </div>
-
                 <Button
                   onClick={copyPrompt}
                   className="w-full bg-brand-red text-white hover:bg-red-600 font-body-medium text-sm sm:text-base py-2.5 sm:py-3 mt-4"
@@ -926,7 +874,6 @@ export default function LifestyleStudio() {
                   <Copy className="w-4 h-4 mr-2" />
                   {copiedPrompt ? "COPIED!" : "COPY"}
                 </Button>
-
                   <div className="text-sm mt-4">
                     <h4 className="font-semibold text-white my-1 py-1">
                       <span className="text-brand-red">AI RECOMMENDATIONS</span>
@@ -948,7 +895,6 @@ export default function LifestyleStudio() {
           </div>
         </div>
       </div>
-
       {showBriefcase && (
         <BriefcaseModal
           isOpen={showBriefcase}

@@ -8,7 +8,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import AppNavigation from "@/components/AppNavigation";
-
 import {
   Camera,
   Palette,
@@ -36,12 +35,9 @@ import {
   Image,
   Settings,
 } from "lucide-react";
-
 export default function GraphicStudio() {
   const navigate = useNavigate();
-
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-
   // Prompt Builder State
   const [activeStep, setActiveStep] = useState<number | null>(1);
   const [customInstructions, setCustomInstructions] = useState("");
@@ -56,7 +52,6 @@ export default function GraphicStudio() {
   const [brandTone, setBrandTone] = useState("");
   const [primaryColorPantone, setPrimaryColorPantone] = useState("");
   const [typographyIntegration, setTypographyIntegration] = useState("");
-
   const keywordCategories = {
     "Design Type": [
       "Logo design",
@@ -293,7 +288,6 @@ export default function GraphicStudio() {
       "Rubik",
     ],
   };
-
   // Calculate quality score based on inputs
   const calculateQuality = () => {
     let score = 0;
@@ -309,7 +303,6 @@ export default function GraphicStudio() {
     if (typographyIntegration && typographyIntegration.trim()) score += 5;
     return Math.min(100, score);
   };
-
   // Generate the final prompt
   const generatePrompt = () => {
     let prompt = "";
@@ -334,11 +327,9 @@ export default function GraphicStudio() {
       "Professional graphic design, high quality, clean composition, modern aesthetics, vector graphics, scalable design, print-ready, SORA video generation optimized.";
     return prompt;
   };
-
   // Copy to clipboard with enhanced fallback
   const copyPrompt = async () => {
     const text = generatePrompt();
-
     // Enhanced legacy copy method
     const legacyCopy = () => {
       try {
@@ -349,15 +340,12 @@ export default function GraphicStudio() {
         textArea.style.top = "-999999px";
         textArea.style.opacity = "0";
         textArea.setAttribute("readonly", "");
-
         document.body.appendChild(textArea);
         textArea.focus();
         textArea.select();
         textArea.setSelectionRange(0, 99999);
-
         const successful = document.execCommand("copy");
         document.body.removeChild(textArea);
-
         if (successful) {
           setCopiedPrompt(true);
           setTimeout(() => setCopiedPrompt(false), 2000);
@@ -369,7 +357,6 @@ export default function GraphicStudio() {
         return false;
       }
     };
-
     try {
       if (navigator.clipboard && window.isSecureContext) {
         await navigator.clipboard.writeText(text);
@@ -390,13 +377,10 @@ export default function GraphicStudio() {
       } else {
         console.warn("Clipboard API failed, using fallback:", err);
       }
-
       if (legacyCopy()) return;
     }
-
     // If clipboard API not available, try legacy method
     if (legacyCopy()) return;
-
     // Final fallback - show prompt in alert
     try {
       alert(`COPY THIS PROMPT:\n\n${text}`);
@@ -404,18 +388,15 @@ export default function GraphicStudio() {
       console.error("All copy methods failed:", finalErr);
     }
   };
-
   // Toggle keyword selection
   const toggleKeyword = (keyword: string) => {
     if (!keyword || typeof keyword !== "string") {
       console.error("Invalid keyword:", keyword);
       return;
     }
-
     setSelectedKeywords((prev) => {
       const currentKeywords = Array.isArray(prev) ? prev : [];
       const isSelected = currentKeywords.includes(keyword);
-
       if (isSelected) {
         return currentKeywords.filter((k) => k !== keyword);
       } else {
@@ -423,7 +404,6 @@ export default function GraphicStudio() {
       }
     });
   };
-
   // Handle file upload
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -433,18 +413,15 @@ export default function GraphicStudio() {
         console.error("Please select an image file");
         return;
       }
-
       // Check file size (10MB limit)
       if (file.size > 10 * 1024 * 1024) {
         console.error("File size too large. Please select a file under 10MB");
         return;
       }
-
       setUploadedFile(file);
       console.log("File uploaded successfully:", file.name);
     }
   };
-
   // Update quality score when inputs change
   useEffect(() => {
     setQualityScore(calculateQuality());
@@ -460,7 +437,6 @@ export default function GraphicStudio() {
     primaryColorPantone,
     typographyIntegration,
   ]);
-
   const steps = [
     {
       id: 1,
@@ -511,11 +487,9 @@ export default function GraphicStudio() {
       icon: <Upload className="w-5 h-5" />,
     },
   ];
-
   return (
     <div className="min-h-screen bg-brand-red text-black">
       <AppNavigation />
-
       {/* HOW IT WORKS Section */}
       <div className="px-4 sm:px-6 mb-6 sm:mb-8 pt-2 sm:pt-4">
         <div className="max-w-7xl mx-auto">
@@ -542,7 +516,6 @@ export default function GraphicStudio() {
           </div>
         </div>
       </div>
-
       {/* Main Content Grid */}
       <div className="px-4 sm:px-6 pb-6 sm:pb-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -572,7 +545,6 @@ export default function GraphicStudio() {
                     )}
                   </div>
                 </CardHeader>
-
                 {activeStep === step.id && (
                   <CardContent className="space-y-3 sm:space-y-4 bg-black p-4 sm:p-6">
                     {step.id === 1 && (
@@ -593,7 +565,6 @@ export default function GraphicStudio() {
                         />
                       </div>
                     )}
-
                     {step.id === 2 && (
                       <div className="space-y-3 sm:space-y-4">
                         <div></div>
@@ -614,7 +585,6 @@ export default function GraphicStudio() {
                         </div>
                       </div>
                     )}
-
                     {step.id === 3 && (
                       <div>
                         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 mt-3 sm:mt-4">
@@ -636,7 +606,6 @@ export default function GraphicStudio() {
                         </div>
                       </div>
                     )}
-
                     {step.id === 4 && (
                       <div>
                         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 mt-3 sm:mt-4">
@@ -658,7 +627,6 @@ export default function GraphicStudio() {
                         </div>
                       </div>
                     )}
-
                     {step.id === 5 && (
                       <div className="space-y-4 sm:space-y-6">
                         <div>
@@ -683,7 +651,6 @@ export default function GraphicStudio() {
                         </div>
                       </div>
                     )}
-
                     {step.id === 6 && (
                       <div>
                         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 mt-3 sm:mt-4">
@@ -705,7 +672,6 @@ export default function GraphicStudio() {
                         </div>
                       </div>
                     )}
-
                     {step.id === 7 && (
                       <div>
                         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 mt-3 sm:mt-4">
@@ -725,7 +691,6 @@ export default function GraphicStudio() {
                         </div>
                       </div>
                     )}
-
                     {step.id === 8 && (
                       <div>
                         <Label htmlFor="file-upload" className="text-white text-sm sm:text-base">
@@ -768,7 +733,6 @@ export default function GraphicStudio() {
               </Card>
             ))}
           </div>
-
           {/* Right Column - AI Prompt Formula */}
           <div className="space-y-4 sm:space-y-6 order-1 lg:order-2">
             <Card className="border-black lg:sticky lg:top-6">
@@ -800,7 +764,6 @@ export default function GraphicStudio() {
                       "Start building your prompt by filling out the steps..."}
                   </div>
                 </div>
-
                 <div className="space-y-3">
                   <div className="space-y-2">
                     <div className="flex justify-between text-xs sm:text-sm text-white">
@@ -818,7 +781,6 @@ export default function GraphicStudio() {
                       ></div>
                     </div>
                   </div>
-
                   <div className="space-y-2">
                     <div className="flex justify-between text-xs sm:text-sm text-white">
                       <span>Keywords</span>
@@ -835,7 +797,6 @@ export default function GraphicStudio() {
                       ></div>
                     </div>
                   </div>
-
                   <div className="space-y-2">
                     <div className="flex justify-between text-xs sm:text-sm text-white">
                       <span>Reference</span>
@@ -851,7 +812,6 @@ export default function GraphicStudio() {
                     </div>
                   </div>
                 </div>
-
                 <Button
                   onClick={copyPrompt}
                   className="w-full bg-brand-red text-white hover:bg-red-600 font-body-medium text-sm sm:text-base py-2.5 sm:py-3 mt-4"
@@ -859,7 +819,6 @@ export default function GraphicStudio() {
                   <Copy className="w-4 h-4 mr-2" />
                   {copiedPrompt ? "COPIED!" : "COPY"}
                 </Button>
-
                 <div className="text-sm mt-4">
                   <h4 className="font-semibold text-white my-1 py-1">
                     <span className="text-brand-red">AI RECOMMENDATIONS</span>

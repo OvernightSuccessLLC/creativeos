@@ -27,14 +27,10 @@ import {
   Image,
   FileText,
 } from "lucide-react";
-
-
-
 export default function AIToolkit() {
   const navigate = useNavigate();
   const [showBriefcase, setShowBriefcase] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("All");
-
   const toolsData = [
     // AI Assistants
     {
@@ -131,7 +127,6 @@ export default function AIToolkit() {
       link: "https://en.wikipedia.org/wiki/Manus_%28AI_agent%29",
       rating: 3,
     },
-
     // Art Generation
     {
       id: 8,
@@ -413,7 +408,6 @@ export default function AIToolkit() {
       link: "https://prompthunt.com",
       rating: 3,
     },
-
     // Video Creation
     {
       id: 29,
@@ -470,7 +464,6 @@ export default function AIToolkit() {
       link: "https://www.descript.com",
       rating: 4,
     },
-
     // Design
     {
       id: 33,
@@ -599,7 +592,6 @@ export default function AIToolkit() {
       link: "https://headlime.com",
       rating: 3,
     },
-
     // Development
     {
       id: 43,
@@ -797,7 +789,6 @@ export default function AIToolkit() {
       link: "https://fronty.com/",
       rating: 3,
     },
-
     // Productivity
     {
       id: 58,
@@ -858,7 +849,6 @@ export default function AIToolkit() {
       link: "https://tome.app/",
       rating: 4,
     },
-
     // Browser & Web Tools
     {
       id: 62,
@@ -873,7 +863,6 @@ export default function AIToolkit() {
       link: "https://www.theverge.com/web/685232/dia-browser-ai-arc",
       rating: 3,
     },
-
     // Image Tools
     {
       id: 63,
@@ -978,7 +967,6 @@ export default function AIToolkit() {
       link: "http://stylized.ai/",
       rating: 3,
     },
-
     // Special Tools
     {
       id: 70,
@@ -1007,7 +995,6 @@ export default function AIToolkit() {
       rating: 3,
     },
   ];
-
   const categories = [
     "All",
     "AI Assistant",
@@ -1020,7 +1007,6 @@ export default function AIToolkit() {
     "Web Tools",
     "Business Tools",
   ];
-
   const categoryIcons = {
     All: Sparkles,
     "AI Assistant": Bot,
@@ -1033,12 +1019,10 @@ export default function AIToolkit() {
     "Web Tools": Globe,
     "Business Tools": Zap,
   };
-
   const filteredTools = useMemo(() => {
     let filtered = toolsData.filter((tool) => {
       return selectedCategory === "All" || tool.category === selectedCategory;
     });
-
     // Sort by rating (highest first), then by name
     filtered.sort((a, b) => {
       if (b.rating !== a.rating) {
@@ -1046,25 +1030,20 @@ export default function AIToolkit() {
       }
       return a.name.localeCompare(b.name);
     });
-
     return filtered;
   }, [selectedCategory]);
-
   const handleVisitTool = (url: string) => {
     window.open(url, "_blank");
   };
-
   return (
     <div className="min-h-screen bg-brand-red text-black">
       {/* Navigation */}
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
-
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-3">
         <div className="text-center mb-8 pb-4">
           <h1 className="font-display text-4xl md:text-5xl">AI Toolkit</h1>
         </div>
-
         {/* Category Filter */}
         <div className="flex justify-center mb-8">
           <div className="bg-black rounded-lg p-6 max-w-md w-full">
@@ -1104,11 +1083,9 @@ export default function AIToolkit() {
             </Select>
           </div>
         </div>
-
         {/* Results Count */}
         <div className="mb-6 text-center">
         </div>
-
         {/* Tools Grid - Enhanced mobile layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {filteredTools.map((tool) => (
@@ -1138,7 +1115,6 @@ export default function AIToolkit() {
                   {tool.description}
                 </p>
               </CardHeader>
-
               <CardContent className="p-4 md:p-5 pt-0 flex-grow flex flex-col">
                 <div className="flex-grow">
                   <h4 className="text-orange-400 text-xs md:text-sm font-semibold mb-2">
@@ -1156,7 +1132,6 @@ export default function AIToolkit() {
                     ))}
                   </ul>
                 </div>
-
                 <Button
                   onClick={() => handleVisitTool(tool.link)}
                   className="w-full bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-4 md:px-4 rounded transition-colors duration-200 mt-auto text-sm md:text-sm min-h-[44px] touch-manipulation"
@@ -1168,26 +1143,22 @@ export default function AIToolkit() {
             </Card>
           ))}
         </div>
-
         {/* Call to Action */}
         <div className="text-center mt-12">
           <div className="bg-black rounded-xl p-6 md:p-8">
             <h3
               className="text-xl md:text-2xl font-bold text-white mb-4"
-              
             >
               MISSING A TOOL?
             </h3>
             <p
               className="text-gray-300 mb-6 max-w-2xl mx-auto"
-              
             >
               Know of an amazing AI tool that should be in our collection? Let
               us know and we'll add it for everyone to discover.
             </p>
             <Button
               className="bg-brand-red text-black hover:bg-brand-red-hover font-bold px-6 py-3"
-              
             >
               <Sparkles className="w-4 h-4 mr-2" />
               SUGGEST A TOOL
@@ -1195,7 +1166,6 @@ export default function AIToolkit() {
           </div>
         </div>
       </div>
-
       {/* Briefcase Modal */}
       <BriefcaseModal
         isOpen={showBriefcase}

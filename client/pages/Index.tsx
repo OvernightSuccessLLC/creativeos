@@ -27,13 +27,11 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
-
 export default function Index() {
   const navigate = useNavigate();
   const [selectedStudio, setSelectedStudio] = useState<string>("lifestyle");
   const [showBriefcase, setShowBriefcase] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-
   // Prompt Builder State
   const [activeStep, setActiveStep] = useState<number | null>(1);
   const [customInstructions, setCustomInstructions] = useState("");
@@ -43,7 +41,6 @@ export default function Index() {
   const [uploadedFile3, setUploadedFile3] = useState<File | null>(null);
   const [qualityScore, setQualityScore] = useState(0);
   const [copiedPrompt, setCopiedPrompt] = useState(false);
-
   const studios = [
     {
       id: "lifestyle",
@@ -64,13 +61,11 @@ export default function Index() {
       icon: Palette,
     },
   ];
-
   const navigationItems = [
     { name: "THE PLAYBOOK", icon: BookOpen, active: false },
     { name: "TEMPLATES", icon: LayoutTemplate, active: false },
     { name: "AI TOOLKIT", icon: Zap, active: false },
   ];
-
   const keywordCategories = {
     "Product Style": [
       "Professional",
@@ -232,7 +227,6 @@ export default function Index() {
       "Health products",
     ],
   };
-
   // Calculate quality score based on inputs
   const calculateQuality = () => {
     let score = 0;
@@ -244,33 +238,25 @@ export default function Index() {
     if (uploadedFile3) score += 10;
     return Math.min(100, score);
   };
-
   // Generate the final prompt
   const generatePrompt = () => {
     let prompt = "";
-
     if (customInstructions && customInstructions.trim()) {
       prompt += customInstructions.trim() + ". ";
     }
-
     if (selectedKeywords && selectedKeywords.length > 0) {
       prompt += selectedKeywords.join(", ") + ". ";
     }
-
     if (!prompt.trim()) {
       return "Add custom instructions and select lifestyle photography keywords to build your optimized prompt...";
     }
-
     prompt +=
       "Product photography, commercial quality, professional lighting, clean composition, high resolution, detailed, realistic, SORA video generation optimized.";
-
     return prompt.trim();
   };
-
   // Copy to clipboard with enhanced fallback
   const copyPrompt = async () => {
     const text = generatePrompt();
-
     // Enhanced legacy copy method
     const legacyCopy = () => {
       try {
@@ -281,15 +267,12 @@ export default function Index() {
         textArea.style.top = "-999999px";
         textArea.style.opacity = "0";
         textArea.setAttribute("readonly", "");
-
         document.body.appendChild(textArea);
         textArea.focus();
         textArea.select();
         textArea.setSelectionRange(0, 99999);
-
         const successful = document.execCommand("copy");
         document.body.removeChild(textArea);
-
         if (successful) {
           setCopiedPrompt(true);
           setTimeout(() => setCopiedPrompt(false), 2000);
@@ -301,7 +284,6 @@ export default function Index() {
         return false;
       }
     };
-
     try {
       // Try modern clipboard API first
       if (navigator.clipboard && window.isSecureContext) {
@@ -323,13 +305,10 @@ export default function Index() {
       } else {
         console.warn("Clipboard API failed, using fallback:", err);
       }
-
       if (legacyCopy()) return;
     }
-
     // If clipboard API not available, try legacy method
     if (legacyCopy()) return;
-
     // Final fallback - show prompt in alert
     try {
       alert(`COPY THIS PROMPT:\n\n${text}`);
@@ -337,18 +316,15 @@ export default function Index() {
       console.error("All copy methods failed:", finalErr);
     }
   };
-
   // Toggle keyword selection
   const toggleKeyword = (keyword: string) => {
     if (!keyword || typeof keyword !== "string") {
       console.error("Invalid keyword:", keyword);
       return;
     }
-
     setSelectedKeywords((prev) => {
       const currentKeywords = Array.isArray(prev) ? prev : [];
       const isSelected = currentKeywords.includes(keyword);
-
       if (isSelected) {
         return currentKeywords.filter((k) => k !== keyword);
       } else {
@@ -356,7 +332,6 @@ export default function Index() {
       }
     });
   };
-
   // Handle file upload
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -366,12 +341,10 @@ export default function Index() {
         console.error("File size too large. Please select a file under 10MB");
         return;
       }
-
       setUploadedFile(file);
       console.log("File uploaded successfully:", file.name);
     }
   };
-
   // Handle file upload 2
   const handleFileUpload2 = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -381,12 +354,10 @@ export default function Index() {
         console.error("File size too large. Please select a file under 10MB");
         return;
       }
-
       setUploadedFile2(file);
       console.log("File 2 uploaded successfully:", file.name);
     }
   };
-
   // Handle file upload 3
   const handleFileUpload3 = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -396,12 +367,10 @@ export default function Index() {
         console.error("File size too large. Please select a file under 10MB");
         return;
       }
-
       setUploadedFile3(file);
       console.log("File 3 uploaded successfully:", file.name);
     }
   };
-
   // Update quality score when inputs change
   useEffect(() => {
     setQualityScore(calculateQuality());
@@ -412,7 +381,6 @@ export default function Index() {
     uploadedFile2,
     uploadedFile3,
   ]);
-
   return (
     <div className="min-h-screen bg-brand-red text-black">
       {/* Top Navigation Bar */}
@@ -420,7 +388,6 @@ export default function Index() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
           <div className="text-brand-red font-heading text-base sm:text-lg">LOGO</div>
-
           {/* Studio Tabs - Hidden on mobile, shown on larger screens */}
           <div className="hidden md:flex items-center space-x-1">
             <button className="bg-white text-black hover:bg-gray-100 font-button">
@@ -445,7 +412,6 @@ export default function Index() {
               THE BRIEFCASE
             </button>
           </div>
-
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
@@ -455,7 +421,6 @@ export default function Index() {
               <Menu className="w-6 h-6" />
             </button>
           </div>
-
           {/* Right side buttons - Simplified for mobile */}
           <div className="hidden md:flex items-center space-x-2">
             <div className="bg-white text-black hover:bg-gray-100 font-button">
@@ -470,7 +435,6 @@ export default function Index() {
           </div>
         </div>
       </nav>
-
       {/* Studio Header */}
       <div className="px-4 sm:px-6 py-6 sm:py-8">
         <div className="max-w-7xl mx-auto">
@@ -482,7 +446,6 @@ export default function Index() {
           </p>
         </div>
       </div>
-
       {/* Mobile Menu */}
       {showMobileMenu && (
         <div className="lg:hidden bg-black text-white p-4">
@@ -531,7 +494,6 @@ export default function Index() {
           </div>
         </div>
       )}
-
       {/* HOW IT WORKS Section */}
       <div className="px-4 sm:px-6 mb-6 sm:mb-8">
         <div className="max-w-7xl mx-auto">
@@ -559,7 +521,6 @@ export default function Index() {
           </div>
         </div>
       </div>
-
       {/* Main Content Grid */}
       <div className="px-4 sm:px-6 pb-6 sm:pb-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -595,7 +556,6 @@ export default function Index() {
                 </div>
               )}
             </div>
-
             {/* Step 2: Product Style */}
             <div className="bg-black rounded-lg border border-white/10">
               <div
@@ -639,7 +599,6 @@ export default function Index() {
                 </div>
               )}
             </div>
-
             {/* Step 3: Background Setting */}
             <div className="bg-black rounded-lg border border-white/10">
               <div
@@ -686,7 +645,6 @@ export default function Index() {
                 </div>
               )}
             </div>
-
             {/* Step 4: Lighting Setup */}
             <div className="bg-black rounded-lg border border-white/10">
               <div
@@ -723,7 +681,6 @@ export default function Index() {
                 </div>
               )}
             </div>
-
             {/* Step 5: Camera Angle */}
             <div className="bg-black rounded-lg border border-white/10">
               <div
@@ -761,7 +718,6 @@ export default function Index() {
               )}
             </div>
           </div>
-
           {/* Right Column - AI Prompt Formula */}
           <div className="lg:col-span-1 order-1 lg:order-2">
             <div className="bg-gray-900 rounded-lg p-4 sm:p-6 lg:sticky lg:top-6 border border-white/10">
@@ -773,7 +729,6 @@ export default function Index() {
                   {calculateQuality()}% QUALITY
                 </Badge>
               </div>
-
               <div className="mb-6">
                 <div className="bg-black rounded p-4 min-h-[120px] border border-white/10">
                   <p className="text-white/70 text-sm">
@@ -782,13 +737,11 @@ export default function Index() {
                   </p>
                 </div>
               </div>
-
               {/* Quality Optimization Meters */}
               <div className="mb-6">
                 <h4 className="text-brand-red text-xs font-heading mb-3">
                   QUALITY OPTIMIZATION
                 </h4>
-
                 {/* Instructions Quality */}
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-white text-xs font-body-medium">
@@ -809,7 +762,6 @@ export default function Index() {
                     }}
                   ></div>
                 </div>
-
                 {/* Keywords Quality */}
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-white text-xs font-body-medium">
@@ -827,7 +779,6 @@ export default function Index() {
                     }}
                   ></div>
                 </div>
-
                 {/* File Upload 1 Quality */}
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-white text-xs font-body-medium">
@@ -844,7 +795,6 @@ export default function Index() {
                   ></div>
                 </div>
               </div>
-
               <div className="mb-6">
                 <ul className="space-y-2 text-white/60 text-sm">
                   <li>• Select mood and atmosphere keywords</li>
@@ -852,7 +802,6 @@ export default function Index() {
                   <li>• Upload reference images for style matching</li>
                 </ul>
               </div>
-
               <div className="space-y-3">
                 <Button
                   onClick={copyPrompt}
@@ -861,7 +810,6 @@ export default function Index() {
                   <Copy className="w-4 h-4 mr-2" />
                   {copiedPrompt ? "COPIED!" : "COPY"}
                 </Button>
-
                 <Button
                   variant="outline"
                   className="w-full border-white/20 text-white hover:bg-white/10"
@@ -873,7 +821,6 @@ export default function Index() {
           </div>
         </div>
       </div>
-
       {/* Briefcase Modal */}
       <BriefcaseModal
         isOpen={showBriefcase}

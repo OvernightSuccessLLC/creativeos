@@ -11,12 +11,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { BookOpen, Crown, X } from "lucide-react";
-
 interface OvernightSuccessSignupProps {
   isOpen: boolean;
   onClose: () => void;
 }
-
 export default function OvernightSuccessSignup({
   isOpen,
   onClose,
@@ -28,19 +26,15 @@ export default function OvernightSuccessSignup({
     accessCode: "",
   });
   const [showAccessCode, setShowAccessCode] = useState(false);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission logic here
     console.log("Form submitted:", formData);
   };
-
   const handleOpenPlaybook = () => {
     setShowAccessCode(true);
   };
-
   if (!isOpen) return null;
-
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <Card className="bg-brand-red w-full max-w-md">
@@ -82,7 +76,6 @@ export default function OvernightSuccessSignup({
                   required
                 />
               </div>
-
               <div>
                 <Label htmlFor="email" className="text-black font-semibold">
                   Email Address *
@@ -99,7 +92,6 @@ export default function OvernightSuccessSignup({
                   required
                 />
               </div>
-
               <div>
                 <Label htmlFor="option" className="text-black font-semibold">
                   How Did You Find Us? *
@@ -122,7 +114,6 @@ export default function OvernightSuccessSignup({
                   </SelectContent>
                 </Select>
               </div>
-
               <Button
                 type="button"
                 onClick={handleOpenPlaybook}
@@ -131,7 +122,6 @@ export default function OvernightSuccessSignup({
                 <BookOpen className="w-4 h-4" />
                 <span>OPEN THE PLAYBOOK</span>
               </Button>
-
               <p className="text-xs text-black/70 text-center">
                 By submitting this, you agree to receive updates about new
                 features and promotional emails (you can unsubscribe at any
@@ -148,7 +138,6 @@ export default function OvernightSuccessSignup({
                   Enter your access code to unlock The Playbook
                 </p>
               </div>
-
               <div>
                 <Label
                   htmlFor="accessCode"
@@ -167,7 +156,6 @@ export default function OvernightSuccessSignup({
                   required
                 />
               </div>
-
               <div className="flex space-x-2">
                 <Button
                   variant="outline"

@@ -103,18 +103,16 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
         }}
       >
         <div className="flex items-center justify-between max-w-7xl mx-auto">
-          <div className="flex items-center w-full" style={{ marginLeft: "72px" }}>
+          <div className="flex items-center w-full">
             {/* Logo */}
             <div className="flex items-center flex-1 md:flex-none md:mr-8">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F1964cc1516094f2c9726884f044c2ef1%2Fe52dffb7c4f54f50b3b0d0f00bb479a2?format=webp&width=800"
                 alt="Overnight Success Logo"
-                className="w-auto"
+                className="w-auto h-8 sm:h-10 md:h-12"
                 style={{
-                  maxWidth: "120px",
-                  height: "52px",
-                  marginRight: "24px",
-                  padding: "0 24px"
+                  maxWidth: "100px",
+                  marginRight: "16px",
                 }}
               />
             </div>
@@ -187,15 +185,15 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
 
               {/* Mobile Dropdown Menu */}
               {isMobileMenuOpen && (
-                <div className="absolute top-full right-0 mt-2 w-64 bg-black border border-gray-700 rounded-lg shadow-xl z-50">
-                  <div className="p-3">
-                    <div className="space-y-1">
+                <div className="absolute top-full right-0 mt-2 w-72 bg-black border border-gray-700 rounded-lg shadow-2xl z-50 max-h-[80vh] overflow-y-auto">
+                  <div className="p-4">
+                    <div className="space-y-2">
                       {allPages.map((page) => {
                         const isActive = isCurrentPage(page.path);
                         return (
                           <button
                             key={page.path}
-                            className={`w-full text-left px-3 py-2 rounded-lg text-sm font-bold transition-colors ${
+                            className={`w-full text-left px-4 py-3 rounded-lg text-sm font-bold transition-colors min-h-[44px] ${
                               isActive
                                 ? "bg-brand-red text-black"
                                 : "text-white hover:bg-white/10"

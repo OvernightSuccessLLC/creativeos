@@ -180,7 +180,6 @@ export default function Playbook() {
                     <section.icon className="w-8 h-8 text-brand-red" />
                     <h2
                       className="text-xl md:text-2xl font-heading text-white"
-                      
                     >
                       {section.title}
                     </h2>
@@ -189,7 +188,6 @@ export default function Playbook() {
                   <div className="space-y-6">
                     <h3
                       className="text-lg md:text-xl font-heading text-white"
-                      
                     >
                       Core Principles
                     </h3>
@@ -201,13 +199,11 @@ export default function Playbook() {
                         >
                           <h4
                             className="text-brand-red text-sm md:text-lg font-heading mb-3"
-                            
                           >
                             {principle.title}
                           </h4>
                           <p
                             className="text-white leading-relaxed text-xs md:text-sm mb-3"
-                            
                           >
                             {principle.description}
                           </p>
@@ -224,7 +220,6 @@ export default function Playbook() {
                   <div className="space-y-4">
                     <h3
                       className="text-lg md:text-xl font-heading text-white"
-                      
                     >
                       Skill Progression Examples
                     </h3>
@@ -264,13 +259,11 @@ export default function Playbook() {
           <div className="bg-black rounded-xl p-6 md:p-8">
             <h3
               className="text-xl md:text-2xl font-heading text-white mb-4"
-              
             >
               Ready to Put This into Practice?
             </h3>
             <p
               className="text-gray-300 mb-6 max-w-2xl mx-auto"
-              
             >
               Take your new prompting skills to our studio tools and start
               creating professional-quality prompts right away.
@@ -279,7 +272,6 @@ export default function Playbook() {
               <Button
                 onClick={() => navigate("/")}
                 className="bg-brand-red text-black hover:bg-brand-red-hover font-heading px-6 py-4 min-h-[48px] touch-manipulation"
-                
               >
                 <Camera className="w-4 h-4 mr-2" />
                 Try Product Studio
@@ -287,7 +279,6 @@ export default function Playbook() {
               <Button
                 onClick={() => navigate("/lifestyle-studio")}
                 className="bg-white text-black hover:bg-gray-100 font-heading px-6 py-4 min-h-[48px] touch-manipulation"
-                
               >
                 <Package className="w-4 h-4 mr-2" />
                 Try Lifestyle Studio

@@ -407,62 +407,9 @@ export default function AIToolkit() {
       link: "https://prompthunt.com",
       rating: 3,
     },
-    // Video Creation
-    {
-      id: 29,
-      name: "Kling 2",
-      category: "Video Creation",
-      categoryColor: "bg-red-500",
-      premiumBadge: "Premium",
-      premiumBadgeColor: "bg-blue-500",
-      description:
-        "Awarded Best AI video generator for quality and affordability in recent AI awards.",
-      keyFeatures: ["Video generation", "High quality", "Affordable pricing"],
-      link: "https://kling.tv",
-      rating: 5,
-    },
-    {
-      id: 30,
-      name: "Runway",
-      category: "Video Creation",
-      categoryColor: "bg-red-500",
-      premiumBadge: "Premium",
-      premiumBadgeColor: "bg-blue-500",
-      description: "Creative video tools used in professional-grade content.",
-      keyFeatures: [
-        "Professional tools",
-        "Creative video",
-        "Industry standard",
-      ],
-      link: "https://runwayml.com",
-      rating: 5,
-    },
-    {
-      id: 31,
-      name: "Synthesia",
-      category: "Video Creation",
-      categoryColor: "bg-red-500",
-      premiumBadge: "Premium",
-      premiumBadgeColor: "bg-blue-500",
-      description:
-        "AI video avatars, voice cloning & screen-record capabilities.",
-      keyFeatures: ["Video avatars", "Voice cloning", "Screen recording"],
-      link: "https://www.synthesia.io",
-      rating: 4,
-    },
-    {
-      id: 32,
-      name: "Descript",
-      category: "Video Creation",
-      categoryColor: "bg-red-500",
-      premiumBadge: "Free/Premium",
-      premiumBadgeColor: "bg-purple-500",
-      description:
-        "AI-enhanced video and audio editor with transcription tools.",
-      keyFeatures: ["Video editing", "Audio editing", "Transcription"],
-      link: "https://www.descript.com",
-      rating: 4,
-    },
+
+
+
     // Design
     {
       id: 33,

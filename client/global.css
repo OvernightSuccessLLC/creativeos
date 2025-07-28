@@ -242,9 +242,14 @@
     font-weight: 700 !important;
   }
 
-  /* Ensure all text elements are bold */
-  * {
+  /* Ensure all text elements are bold except textareas */
+  *:not(textarea) {
     font-weight: 700 !important;
+  }
+
+  /* Make textareas normal weight */
+  textarea {
+    font-weight: 400 !important;
   }
 
   /* Better mobile text rendering */

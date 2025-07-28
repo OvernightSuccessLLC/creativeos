@@ -28,7 +28,7 @@ import {
   FileText,
 } from "lucide-react";
 
-const FONT_STYLE = { fontFamily: "Poppins, sans-serif" };
+
 
 export default function AIToolkit() {
   const navigate = useNavigate();
@@ -1055,7 +1055,7 @@ export default function AIToolkit() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-red text-black" style={FONT_STYLE}>
+    <div className="min-h-screen bg-brand-red text-black">
       {/* Navigation */}
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
 
@@ -1069,7 +1069,7 @@ export default function AIToolkit() {
         <div className="flex justify-center mb-8">
           <div className="bg-black rounded-lg p-6 max-w-md w-full">
             <div className="text-center mb-4">
-              <h3 className="text-white text-lg font-bold" style={FONT_STYLE}>
+              <h3 className="text-white text-lg font-heading">
                 BROWSE BY CATEGORY
               </h3>
             </div>

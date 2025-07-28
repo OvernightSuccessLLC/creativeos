@@ -700,14 +700,14 @@ export default function GraphicStudio() {
                           htmlFor="file-upload"
                           className="block border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-6 text-center mt-2 cursor-pointer hover:border-brand-red transition-colors touch-manipulation"
                         >
-                          <Upload className="mx-auto h-10 w-10 sm:h-12 sm:w-12 text-gray-400" />
+                          <Upload className="mx-auto h-10 w-10 sm:h-12 sm:w-12 text-white" />
                           <div className="mt-3 sm:mt-4">
                             <span className="mt-2 block text-sm sm:text-base font-body-medium text-white font-body">
                               {uploadedFile
                                 ? `Replace: ${uploadedFile.name}`
                                 : "Click to upload or drag and drop"}
                             </span>
-                            <span className="text-xs sm:text-sm text-gray-400 mt-1 block">
+                            <span className="text-xs sm:text-sm text-white mt-1 block">
                               PNG, JPG, GIF up to 10MB
                             </span>
                           </div>
@@ -823,7 +823,7 @@ export default function GraphicStudio() {
                   <h4 className="font-semibold text-white my-1 py-1 font-body">
                     <span className="text-brand-red">AI RECOMMENDATIONS</span>
                   </h4>
-                  <ul className="text-gray-600">
+                  <ul className="text-white">
                     <li className="text-white font-semibold mt-1 font-body">
                       • Specify brand guidelines for consistency
                     </li>

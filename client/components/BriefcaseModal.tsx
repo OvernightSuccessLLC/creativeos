@@ -110,7 +110,7 @@ export default function BriefcaseModal({
               variant="ghost"
               size="sm"
               onClick={onClose}
-              className="text-gray-400 hover:text-white font-body"
+              className="text-white hover:text-white font-body"
             >
               <X className="w-4 h-4" />
             </Button>
@@ -125,7 +125,7 @@ export default function BriefcaseModal({
                     {stat.value}
                   </span>
                 </div>
-                <span className="text-xs text-gray-400">{stat.label}</span>
+                <span className="text-xs text-white">{stat.label}</span>
               </div>
             ))}
           </div>
@@ -134,7 +134,7 @@ export default function BriefcaseModal({
             {navigationItems.map((item) => (
               <button
                 key={item.name}
-                className="flex items-center space-x-2 px-3 py-2 rounded text-sm font-body-medium text-gray-300 hover:text-white hover:bg-gray-800 transition-colors font-body"
+                className="flex items-center space-x-2 px-3 py-2 rounded text-sm font-body-medium text-white hover:text-white hover:bg-gray-800 transition-colors font-body"
                 onClick={() => {
                   if (onNavigate) {
                     onNavigate(item.path);
@@ -156,7 +156,7 @@ export default function BriefcaseModal({
               >
                 Latest Updates & Features
               </h2>
-              <p className="text-gray-400">
+              <p className="text-white">
                 Stay up to date with new features, content, and improvements to
                 Creative Director OS
               </p>
@@ -171,7 +171,7 @@ export default function BriefcaseModal({
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <div className="flex items-center space-x-3 mb-2">
-                          <span className="text-sm text-gray-400 flex items-center">
+                          <span className="text-sm text-white flex items-center">
                             <Calendar className="w-4 h-4 mr-1" />
                             {update.date}
                           </span>
@@ -190,7 +190,7 @@ export default function BriefcaseModal({
                         >
                           {update.title}
                         </h3>
-                        <p className="text-gray-400 text-sm mb-3">
+                        <p className="text-white text-sm mb-3">
                           {update.description}
                         </p>
                         {update.action && (
@@ -232,7 +232,7 @@ export default function BriefcaseModal({
                 >
                   Ready to Create?
                 </h3>
-                <p className="text-white/90 mb-4 font-body">
+                <p className="text-white mb-4 font-body">
                   Start building professional prompts with the complete Creative
                   Director OS toolkit
                 </p>

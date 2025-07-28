@@ -1111,7 +1111,7 @@ export default function AIToolkit() {
                 <h3 className="text-white text-sm md:text-lg font-semibold mb-1 md:mb-2 line-clamp-2 font-body">
                   {tool.name}
                 </h3>
-                <p className="text-gray-300 text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-3">
+                <p className="text-white text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-3">
                   {tool.description}
                 </p>
               </CardHeader>
@@ -1124,7 +1124,7 @@ export default function AIToolkit() {
                     {tool.keyFeatures.slice(0, 2).map((feature, index) => (
                       <li
                         key={index}
-                        className="text-gray-300 text-xs md:text-sm flex items-start"
+                        className="text-white text-xs md:text-sm flex items-start"
                       >
                         <span className="text-orange-400 mr-1 md:mr-2">•</span>
                         <span className="line-clamp-1">{feature}</span>
@@ -1149,7 +1149,7 @@ export default function AIToolkit() {
             <h3 className="text-xl md:text-2xl font-heading text-white mb-4 font-body">
               MISSING A TOOL?
             </h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto font-body">
+            <p className="text-white mb-6 max-w-2xl mx-auto font-body">
               Know of an amazing AI tool that should be in our collection? Let
               us know and we'll add it for everyone to discover.
             </p>

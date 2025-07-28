@@ -89,7 +89,7 @@ export default function CharacterSpec() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading text-white mb-4 font-body">
               Character Specification
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto font-body">
+            <p className="text-xl text-white max-w-3xl mx-auto font-body">
               Ultra-realistic animorph design with comedic swagger and
               professional-grade rigging
             </p>
@@ -117,7 +117,7 @@ export default function CharacterSpec() {
                   <h3 className="text-2xl font-heading text-white mb-2 font-body">
                     Visual Reference
                   </h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-white leading-relaxed">
                     High-fidelity character model showcasing the target
                     aesthetic and personality. Note the expressive features,
                     body proportions, and overall comedic swagger that defines
@@ -137,7 +137,7 @@ export default function CharacterSpec() {
                     <h4 className="text-orange-400 font-semibold mb-2">
                       Animation Style
                     </h4>
-                    <p className="text-gray-300 text-sm">
+                    <p className="text-white text-sm">
                       {characterData.visual_design.animation_style}
                     </p>
                   </div>
@@ -145,7 +145,7 @@ export default function CharacterSpec() {
                     <h4 className="text-orange-400 font-semibold mb-2">
                       Skin Texture
                     </h4>
-                    <p className="text-gray-300 text-sm">
+                    <p className="text-white text-sm">
                       {characterData.visual_design.skin_texture}
                     </p>
                   </div>
@@ -158,13 +158,13 @@ export default function CharacterSpec() {
                     <div className="space-y-1">
                       <div className="flex items-center gap-2">
                         <div className="w-4 h-4 rounded-full bg-purple-600"></div>
-                        <span className="text-gray-300 text-sm">
+                        <span className="text-white text-sm">
                           Base: {characterData.visual_design.base_color}
                         </span>
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="w-4 h-4 rounded-full bg-green-400"></div>
-                        <span className="text-gray-300 text-sm">
+                        <span className="text-white text-sm">
                           Belly: {characterData.visual_design.belly_color}
                         </span>
                       </div>
@@ -174,7 +174,7 @@ export default function CharacterSpec() {
                     <h4 className="text-orange-400 font-semibold mb-2">
                       Facial Features
                     </h4>
-                    <div className="space-y-1 text-gray-300 text-sm">
+                    <div className="space-y-1 text-white text-sm">
                       <p>• {characterData.visual_design.eyebrows}</p>
                       <p>• {characterData.visual_design.mouth}</p>
                       <p>• {characterData.visual_design.eyes}</p>
@@ -190,10 +190,10 @@ export default function CharacterSpec() {
                   <h4 className="text-orange-400 font-semibold mb-2">
                     Build & Proportions
                   </h4>
-                  <p className="text-gray-300 text-sm mb-2">
+                  <p className="text-white text-sm mb-2">
                     {characterData.body_structure.build}
                   </p>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-white text-sm">
                     {characterData.body_structure.arms}
                   </p>
                 </div>
@@ -201,10 +201,10 @@ export default function CharacterSpec() {
                   <h4 className="text-orange-400 font-semibold mb-2">
                     Movement Style
                   </h4>
-                  <p className="text-gray-300 text-sm mb-2">
+                  <p className="text-white text-sm mb-2">
                     {characterData.body_structure.movement_style}
                   </p>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-white text-sm">
                     {characterData.body_structure.fingers}
                   </p>
                 </div>
@@ -219,7 +219,7 @@ export default function CharacterSpec() {
               <div className="space-y-3">
                 <div className="flex items-center gap-2 mb-3">
                   <Badge className="bg-green-500 text-white font-body">Enabled</Badge>
-                  <span className="text-gray-300 text-sm">
+                  <span className="text-white text-sm">
                     Real-time voice sync capabilities
                   </span>
                 </div>
@@ -227,7 +227,7 @@ export default function CharacterSpec() {
                   <h4 className="text-orange-400 font-semibold mb-2">
                     Voice Style
                   </h4>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-white text-sm">
                     {characterData.voice_sync.style}
                   </p>
                 </div>
@@ -235,7 +235,7 @@ export default function CharacterSpec() {
                   <h4 className="text-orange-400 font-semibold mb-2">
                     Mouth Rigging
                   </h4>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-white text-sm">
                     {characterData.voice_sync.mouth_rig}
                   </p>
                 </div>
@@ -252,7 +252,7 @@ export default function CharacterSpec() {
                   <h4 className="text-orange-400 font-semibold mb-2">
                     Lighting Adaptability
                   </h4>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-white text-sm">
                     {characterData.lighting_adaptability}
                   </p>
                 </div>
@@ -260,7 +260,7 @@ export default function CharacterSpec() {
                   <h4 className="text-orange-400 font-semibold mb-2">
                     Camera Behavior
                   </h4>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-white text-sm">
                     {characterData.camera_behavior}
                   </p>
                 </div>
@@ -268,7 +268,7 @@ export default function CharacterSpec() {
                   <h4 className="text-orange-400 font-semibold mb-2">
                     Clothing
                   </h4>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-white text-sm">
                     {characterData.clothing}
                   </p>
                 </div>
@@ -290,7 +290,7 @@ export default function CharacterSpec() {
                   </Badge>
                 ))}
               </div>
-              <p className="text-gray-300 text-sm mt-4">
+              <p className="text-white text-sm mt-4">
                 A complex character archetype blending nostalgic appeal with
                 modern humor. Perfect for content that requires relatable,
                 slightly irreverent personality traits.
@@ -305,7 +305,7 @@ export default function CharacterSpec() {
               <h3 className="text-2xl font-heading text-white mb-4 font-body">
                 Ready to Implement?
               </h3>
-              <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+              <p className="text-white mb-6 max-w-2xl mx-auto">
                 This specification provides complete guidelines for 3D character
                 creation, rigging, and animation. Perfect for game development,
                 content creation, or interactive experiences.

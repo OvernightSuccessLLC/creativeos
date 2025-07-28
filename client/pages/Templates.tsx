@@ -441,7 +441,7 @@ export default function Templates() {
                   <Textarea
                     value={getCurrentPrompt(template)}
                     onChange={(e) => handlePromptChange(template.id, e.target.value)}
-                    className="bg-transparent border-none text-gray-300 text-xs sm:text-sm resize-none p-0 focus:ring-0 focus:outline-none min-h-[60px] hover:text-white focus:text-white transition-colors font-body"
+                    className="bg-transparent border-none text-white text-xs sm:text-sm resize-none p-0 focus:ring-0 focus:outline-none min-h-[60px] hover:text-white focus:text-white transition-colors font-body"
                     placeholder="Click to edit your prompt here..."
                     style={{
                       boxShadow: 'none',

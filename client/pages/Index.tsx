@@ -575,8 +575,8 @@ export default function Index() {
               {activeStep === 2 && (
                 <div className="px-4 pb-4">
                   <div className="border-2 border-dashed border-white/20 rounded-lg p-6 text-center bg-gray-900">
-                    <Upload className="w-8 h-8 text-white/40 mx-auto mb-3 font-body" />
-                    <p className="text-white/60 text-sm mb-4 font-body">
+                    <Upload className="w-8 h-8 text-white mx-auto mb-3 font-body" />
+                    <p className="text-white text-sm mb-4 font-body">
                       Upload reference images, mood boards, or style examples
                     </p>
                     <Input
@@ -590,7 +590,7 @@ export default function Index() {
                         <p className="text-brand-red text-sm font-body-medium">
                           ✓ {uploadedFile2.name} uploaded successfully
                         </p>
-                        <p className="text-white/50 text-xs mt-1 font-body">
+                        <p className="text-white text-xs mt-1 font-body">
                           File size: {Math.round(uploadedFile2.size / 1024)} KB
                         </p>
                       </div>
@@ -620,8 +620,8 @@ export default function Index() {
               {activeStep === 3 && (
                 <div className="px-4 pb-4">
                   <div className="border-2 border-dashed border-white/20 rounded-lg p-6 text-center bg-gray-900">
-                    <Upload className="w-8 h-8 text-white/40 mx-auto mb-3 font-body" />
-                    <p className="text-white/60 text-sm mb-4 font-body">
+                    <Upload className="w-8 h-8 text-white mx-auto mb-3 font-body" />
+                    <p className="text-white text-sm mb-4 font-body">
                       Upload additional reference images, mood boards, or style
                       examples
                     </p>
@@ -636,7 +636,7 @@ export default function Index() {
                         <p className="text-brand-red text-sm font-body-medium">
                           ✓ {uploadedFile3.name} uploaded successfully
                         </p>
-                        <p className="text-white/50 text-xs mt-1 font-body">
+                        <p className="text-white text-xs mt-1 font-body">
                           File size: {Math.round(uploadedFile3.size / 1024)} KB
                         </p>
                       </div>
@@ -731,7 +731,7 @@ export default function Index() {
               </div>
               <div className="mb-6">
                 <div className="bg-black rounded p-4 min-h-[120px] border border-white/10">
-                  <p className="text-white/70 text-sm font-body">
+                  <p className="text-white text-sm font-body">
                     {generatePrompt() ||
                       "Add custom instructions and select lifestyle photography keywords to build your optimized prompt..."}
                   </p>
@@ -796,7 +796,7 @@ export default function Index() {
                 </div>
               </div>
               <div className="mb-6">
-                <ul className="space-y-2 text-white/60 text-sm font-body">
+                <ul className="space-y-2 text-white text-sm font-body">
                   <li>• Select mood and atmosphere keywords</li>
                   <li>• Choose specific lighting and camera angles</li>
                   <li>• Upload reference images for style matching</li>

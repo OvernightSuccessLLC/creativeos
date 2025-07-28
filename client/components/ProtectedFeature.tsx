@@ -44,7 +44,7 @@ const ProtectedFeature: React.FC<ProtectedFeatureProps> = ({
             <h3 className="text-white font-heading text-lg mb-2 font-body">
               Premium Feature
             </h3>
-            <p className="text-gray-300 text-sm mb-4">
+            <p className="text-white text-sm mb-4">
               This feature is currently unavailable
             </p>
           </div>

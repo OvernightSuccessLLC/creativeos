@@ -540,7 +540,7 @@ export default function ProductStudio() {
                         <CardTitle className="text-sm sm:text-lg text-white font-heading truncate font-body">
                           {step.title}
                         </CardTitle>
-                        <p className="text-gray-600 text-xs sm:text-sm font-body hidden sm:block">
+                        <p className="text-white text-xs sm:text-sm font-body hidden sm:block">
                           {step.description}
                         </p>
                       </div>
@@ -575,14 +575,14 @@ export default function ProductStudio() {
                           htmlFor="file-upload"
                           className="block border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-6 text-center mt-2 cursor-pointer hover:border-brand-red transition-colors touch-manipulation"
                         >
-                          <Upload className="mx-auto h-10 w-10 sm:h-12 sm:w-12 text-gray-400" />
+                          <Upload className="mx-auto h-10 w-10 sm:h-12 sm:w-12 text-white" />
                           <div className="mt-3 sm:mt-4">
                             <span className="mt-2 block text-sm sm:text-base font-body-medium text-white font-body">
                               {uploadedFile
                                 ? `Replace: ${uploadedFile.name}`
                                 : "Click to upload or drag and drop"}
                             </span>
-                            <span className="text-xs sm:text-sm text-gray-400 mt-1 block">
+                            <span className="text-xs sm:text-sm text-white mt-1 block">
                               PNG, JPG, GIF up to 10MB
                             </span>
                           </div>
@@ -702,7 +702,7 @@ export default function ProductStudio() {
                           onChange={(e) => setPrimaryColorPantone(e.target.value)}
                           className="mt-2 text-sm sm:text-base"
                         />
-                        <p className="text-gray-400 text-xs mt-1">
+                        <p className="text-white text-xs mt-1">
                           Specify exact Pantone color codes for brand consistency
                         </p>
                       </div>
@@ -724,7 +724,7 @@ export default function ProductStudio() {
                             ))}
                           </SelectContent>
                         </Select>
-                        <p className="text-gray-400 text-xs mt-1">
+                        <p className="text-white text-xs mt-1">
                           Choose primary typography for brand consistency
                         </p>
                       </div>
@@ -824,7 +824,7 @@ export default function ProductStudio() {
                     <h4 className="font-semibold text-white my-1 py-1 font-body">
                       <span className="text-brand-red">AI RECOMMENDATIONS</span>
                     </h4>
-                    <ul className="text-gray-600">
+                    <ul className="text-white">
                       <li className="text-white font-semibold mt-1 font-body">
                         • Ensure lighting matches brand aesthetic
                       </li>

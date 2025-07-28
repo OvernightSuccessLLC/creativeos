@@ -143,7 +143,7 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                   </Badge>
                   <button
                     onClick={logout}
-                    className="text-gray-400 hover:text-white text-sm transition-colors font-body"
+                    className="text-white hover:text-white text-sm transition-colors font-body"
                   >
                     Logout
                   </button>

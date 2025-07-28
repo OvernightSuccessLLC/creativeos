@@ -208,7 +208,7 @@ export default function Playbook() {
                             {principle.description}
                           </p>
                           <div className="bg-black rounded p-3 border-l-2 border-brand-red">
-                            <p className="text-gray-300 text-xs italic">
+                            <p className="text-white text-xs italic">
                               💡 {principle.tip}
                             </p>
                           </div>
@@ -263,7 +263,7 @@ export default function Playbook() {
               Ready to Put This into Practice?
             </h3>
             <p
-              className="text-gray-300 mb-6 max-w-2xl mx-auto"
+              className="text-white mb-6 max-w-2xl mx-auto"
             >
               Take your new prompting skills to our studio tools and start
               creating professional-quality prompts right away.

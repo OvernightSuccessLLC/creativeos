@@ -1,12 +1,12 @@
-import { useState, ReactNode } from 'react';
-import { useAuth, User } from '@/contexts/AuthContext';
-import PaywallModal from './PaywallModal';
-import { Button } from '@/components/ui/button';
-import { Crown } from 'lucide-react';
+import { useState, ReactNode } from "react";
+import { useAuth, User } from "@/contexts/AuthContext";
+import PaywallModal from "./PaywallModal";
+import { Button } from "@/components/ui/button";
+import { Crown } from "lucide-react";
 interface ProtectedFeatureProps {
   children: ReactNode;
-  feature: keyof User['features'];
-  requiredPlan?: 'pro' | 'enterprise';
+  feature: keyof User["features"];
+  requiredPlan?: "pro" | "enterprise";
   fallback?: ReactNode;
   showUpgradeButton?: boolean;
   featureName?: string;
@@ -14,7 +14,7 @@ interface ProtectedFeatureProps {
 const ProtectedFeature: React.FC<ProtectedFeatureProps> = ({
   children,
   feature,
-  requiredPlan = 'pro',
+  requiredPlan = "pro",
   fallback,
   showUpgradeButton = true,
   featureName,

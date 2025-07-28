@@ -6,7 +6,13 @@ import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import AppNavigation from "@/components/AppNavigation";
 import {
   Camera,
@@ -78,7 +84,7 @@ export default function GraphicStudio() {
       "Certificate",
       "Pattern design",
     ],
-    "Theme": [
+    Theme: [
       "80's Vintage",
       "90's Retro",
       "Art Deco",
@@ -496,7 +502,9 @@ export default function GraphicStudio() {
                   <div className="bg-white text-black rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center font-heading text-base sm:text-lg mb-2 sm:mb-3 shadow-lg border-2 border-brand-red">
                     {index + 1}
                   </div>
-                  <p className="text-white text-xs sm:text-sm leading-tight font-body">{step}</p>
+                  <p className="text-white text-xs sm:text-sm leading-tight font-body">
+                    {step}
+                  </p>
                 </div>
               ))}
             </div>
@@ -536,7 +544,10 @@ export default function GraphicStudio() {
                   <CardContent className="space-y-3 sm:space-y-4 bg-black p-4 sm:p-6">
                     {step.id === 1 && (
                       <div>
-                        <Label htmlFor="instructions" className="text-white text-sm sm:text-base font-body">
+                        <Label
+                          htmlFor="instructions"
+                          className="text-white text-sm sm:text-base font-body"
+                        >
                           Describe your graphic design project
                         </Label>
                         <Textarea
@@ -680,7 +691,10 @@ export default function GraphicStudio() {
                     )}
                     {step.id === 8 && (
                       <div>
-                        <Label htmlFor="file-upload" className="text-white text-sm sm:text-base font-body">
+                        <Label
+                          htmlFor="file-upload"
+                          className="text-white text-sm sm:text-base font-body"
+                        >
                           Upload Reference Image
                         </Label>
                         <label

@@ -387,7 +387,9 @@ export default function Index() {
       <nav className="bg-black px-4 sm:px-6 py-3">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
-          <div className="text-brand-red font-heading text-base sm:text-lg">LOGO</div>
+          <div className="text-brand-red font-heading text-base sm:text-lg">
+            LOGO
+          </div>
           {/* Studio Tabs - Hidden on mobile, shown on larger screens */}
           <div className="hidden md:flex items-center space-x-1">
             <button className="bg-white text-black hover:bg-gray-100 font-button">
@@ -498,7 +500,9 @@ export default function Index() {
       <div className="px-4 sm:px-6 mb-6 sm:mb-8">
         <div className="max-w-7xl mx-auto">
           <div className="bg-black rounded-lg p-4 sm:p-6">
-            <h2 className="text-white text-lg sm:text-xl font-heading mb-4 sm:mb-6 font-body">HOW IT WORKS</h2>
+            <h2 className="text-white text-lg sm:text-xl font-heading mb-4 sm:mb-6 font-body">
+              HOW IT WORKS
+            </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6">
               {[
                 "Add Custom Instructions",
@@ -514,7 +518,9 @@ export default function Index() {
                   <div className="bg-white text-black rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center font-heading text-base sm:text-lg mb-2 sm:mb-3 shadow-lg border-2 border-brand-red">
                     {index + 1}
                   </div>
-                  <p className="text-white text-xs sm:text-sm leading-tight font-body">{step}</p>
+                  <p className="text-white text-xs sm:text-sm leading-tight font-body">
+                    {step}
+                  </p>
                 </div>
               ))}
             </div>
@@ -566,7 +572,9 @@ export default function Index() {
                   <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-button">
                     2
                   </div>
-                  <span className="text-white font-body-medium font-body">Product Style</span>
+                  <span className="text-white font-body-medium font-body">
+                    Product Style
+                  </span>
                 </div>
                 <ChevronRight
                   className={`w-5 h-5 text-white transition-transform ${activeStep === 2 ? "rotate-90" : ""}`}
@@ -655,7 +663,9 @@ export default function Index() {
                   <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-button">
                     4
                   </div>
-                  <span className="text-white font-body-medium font-body">Lighting Setup</span>
+                  <span className="text-white font-body-medium font-body">
+                    Lighting Setup
+                  </span>
                 </div>
                 <ChevronRight
                   className={`w-5 h-5 text-white transition-transform ${activeStep === 4 ? "rotate-90" : ""}`}
@@ -691,7 +701,9 @@ export default function Index() {
                   <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-button">
                     5
                   </div>
-                  <span className="text-white font-body-medium font-body">Camera Angle</span>
+                  <span className="text-white font-body-medium font-body">
+                    Camera Angle
+                  </span>
                 </div>
                 <ChevronRight
                   className={`w-5 h-5 text-white transition-transform ${activeStep === 5 ? "rotate-90" : ""}`}

@@ -34,15 +34,33 @@
   *,
   *::before,
   *::after {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-family:
+      "Poppins",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif !important;
   }
 
   html {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-family:
+      "Poppins",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif !important;
   }
 
   body {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-family:
+      "Poppins",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif !important;
     font-weight: 400;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -213,40 +231,40 @@
 
   /* UNIVERSAL TYPOGRAPHY CLASSES */
   .font-display {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: "Poppins", sans-serif !important;
     font-weight: 900 !important;
     letter-spacing: -0.025em;
     line-height: 1.2;
   }
 
   .font-heading {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: "Poppins", sans-serif !important;
     font-weight: 700 !important;
     letter-spacing: -0.015em;
     line-height: 1.3;
   }
 
   .font-subheading {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: "Poppins", sans-serif !important;
     font-weight: 700 !important;
     letter-spacing: -0.01em;
     line-height: 1.4;
   }
 
   .font-body {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: "Poppins", sans-serif !important;
     font-weight: 700 !important;
     line-height: 1.6;
   }
 
   .font-body-medium {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: "Poppins", sans-serif !important;
     font-weight: 700 !important;
     line-height: 1.5;
   }
 
   .font-button {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: "Poppins", sans-serif !important;
     font-weight: 700 !important;
     letter-spacing: 0.025em;
     text-transform: uppercase;
@@ -254,19 +272,32 @@
   }
 
   .font-caption {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: "Poppins", sans-serif !important;
     font-weight: 700 !important;
     line-height: 1.4;
   }
 
   /* Override any existing font declarations */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif !important;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Poppins", sans-serif !important;
     font-weight: 700 !important;
   }
 
-  p, span, div, a, button, input, textarea, select, label {
-    font-family: 'Poppins', sans-serif !important;
+  p,
+  span,
+  div,
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  label {
+    font-family: "Poppins", sans-serif !important;
     font-weight: 700 !important;
   }
 
@@ -311,7 +342,9 @@
     }
 
     /* Better mobile form inputs */
-    input, textarea, select {
+    input,
+    textarea,
+    select {
       font-size: 16px !important; /* Prevent zoom on iOS */
       min-height: 44px;
     }
@@ -324,21 +357,38 @@
     }
 
     /* Improved mobile touch targets */
-    button, [role="button"], .clickable {
+    button,
+    [role="button"],
+    .clickable {
       min-height: 44px;
       min-width: 44px;
       touch-action: manipulation;
     }
 
     /* Mobile-specific typography adjustments */
-    h1 { font-size: 1.875rem !important; line-height: 2.25rem !important; }
-    h2 { font-size: 1.5rem !important; line-height: 2rem !important; }
-    h3 { font-size: 1.25rem !important; line-height: 1.75rem !important; }
+    h1 {
+      font-size: 1.875rem !important;
+      line-height: 2.25rem !important;
+    }
+    h2 {
+      font-size: 1.5rem !important;
+      line-height: 2rem !important;
+    }
+    h3 {
+      font-size: 1.25rem !important;
+      line-height: 1.75rem !important;
+    }
 
     /* Better mobile spacing */
-    .mobile-spacing-tight { gap: 0.5rem; }
-    .mobile-spacing-normal { gap: 0.75rem; }
-    .mobile-spacing-loose { gap: 1rem; }
+    .mobile-spacing-tight {
+      gap: 0.5rem;
+    }
+    .mobile-spacing-normal {
+      gap: 0.75rem;
+    }
+    .mobile-spacing-loose {
+      gap: 1rem;
+    }
   }
 
   /* Improved accessibility for mobile */
@@ -353,75 +403,75 @@
   }
 
   .safe-area-bottom {
-      padding-bottom: max(1rem, env(safe-area-inset-bottom));
-    }
-
-    .safe-area-left {
-      padding-left: max(1rem, env(safe-area-inset-left));
-    }
-
-    .safe-area-right {
-      padding-right: max(1rem, env(safe-area-inset-right));
-    }
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
   }
 
-  /* Remove default button styles on iOS */
+  .safe-area-left {
+    padding-left: max(1rem, env(safe-area-inset-left));
+  }
+
+  .safe-area-right {
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+}
+
+/* Remove default button styles on iOS */
+button,
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+/* Prevent text size adjustment on orientation change */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Better mobile viewport handling */
+@media (max-width: 768px) {
+  .container {
+    overflow-x: hidden;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
   button,
-  input[type="button"],
-  input[type="submit"] {
-    -webkit-appearance: none;
-    appearance: none;
-    border-radius: 0;
+  [role="button"] {
+    border: 2px solid currentColor;
   }
+}
 
-  /* Prevent text size adjustment on orientation change */
-  html {
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-  }
+/* Focus visible for better keyboard navigation */
+.focus-visible:focus {
+  outline: 2px solid #f93822;
+  outline-offset: 2px;
+}
 
-  /* Better mobile viewport handling */
-  @media (max-width: 768px) {
-    .container {
-      overflow-x: hidden;
-    }
-  }
-
-  /* Accessibility improvements */
-  @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
-
-  /* High contrast mode support */
-  @media (prefers-contrast: high) {
-    button,
-    [role="button"] {
-      border: 2px solid currentColor;
-    }
-  }
-
-  /* Focus visible for better keyboard navigation */
-  .focus-visible:focus {
-    outline: 2px solid #f93822;
-    outline-offset: 2px;
-  }
-
-  /* Screen reader only content */
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -30,7 +30,9 @@ export default function Templates() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [showBriefcase, setShowBriefcase] = useState(false);
   const [copiedTemplate, setCopiedTemplate] = useState<number | null>(null);
-  const [editedPrompts, setEditedPrompts] = useState<Record<number, string>>({});
+  const [editedPrompts, setEditedPrompts] = useState<Record<number, string>>(
+    {},
+  );
   const categories = [
     { id: "all", name: "All Templates", icon: LayoutTemplate },
     { id: "product", name: "Product", icon: Package },
@@ -255,9 +257,9 @@ export default function Templates() {
   };
   // Handle prompt text changes
   const handlePromptChange = (templateId: number, newText: string) => {
-    setEditedPrompts(prev => ({
+    setEditedPrompts((prev) => ({
       ...prev,
-      [templateId]: newText
+      [templateId]: newText,
     }));
   };
   const copyPrompt = async (prompt: string, templateId: number) => {
@@ -419,59 +421,67 @@ export default function Templates() {
                 key={template.id}
                 className="bg-black border border-gray-800 hover:border-brand-red transition-colors"
               >
-              <CardHeader className="p-2 sm:p-3">
-                <div className="flex items-start justify-between">
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center space-x-2 mb-1 flex-wrap">
-                      <CardTitle className="text-white text-sm sm:text-base md:text-lg truncate font-body">
-                        {template.title}
-                      </CardTitle>
-                      {template.featured && (
-                        <Badge className="bg-brand-red text-black text-xs flex-shrink-0">
-                          FEATURED
-                        </Badge>
-                      )}
+                <CardHeader className="p-2 sm:p-3">
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center space-x-2 mb-1 flex-wrap">
+                        <CardTitle className="text-white text-sm sm:text-base md:text-lg truncate font-body">
+                          {template.title}
+                        </CardTitle>
+                        {template.featured && (
+                          <Badge className="bg-brand-red text-black text-xs flex-shrink-0">
+                            FEATURED
+                          </Badge>
+                        )}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-2 p-2 sm:p-3 pt-0">
-                {/* Editable Prompt */}
-                <div className="bg-gray-900 border border-gray-700 rounded p-2 sm:p-3 hover:border-gray-600 transition-colors">
-                  <Textarea
-                    value={getCurrentPrompt(template)}
-                    onChange={(e) => handlePromptChange(template.id, e.target.value)}
-                    className="bg-transparent border-none text-white text-xs sm:text-sm resize-none p-0 focus:ring-0 focus:outline-none min-h-[50px] sm:min-h-[60px] hover:text-white focus:text-white transition-colors touch-manipulation"
-                    placeholder="Click to edit your prompt here..."
-                    style={{
-                      boxShadow: 'none',
-                      fontSize: 'inherit',
-                      fontWeight: '400 !important',
-                      fontFamily: 'Poppins, sans-serif',
-                    }}
-                  />
-                </div>
-                {/* Actions */}
-                <div className="flex space-x-2">
-                  <Button
-                    size="sm"
-                    onClick={() => copyPrompt(getCurrentPrompt(template), template.id)}
-                    className="bg-brand-red text-white hover:bg-red-700 font-button flex-1 text-xs sm:text-sm py-2 sm:py-3 touch-manipulation active:scale-95 transition-transform"
-                    style={{
-                      backgroundColor:
-                        copiedTemplate === template.id ? "#22C55E" : "#F93822",
-                      border: "none",
-                      minHeight: "40px",
-                    }}
-                  >
-                    <Copy className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-                    <span className="truncate">
-                      {copiedTemplate === template.id ? "COPIED!" : "COPY PROMPT"}
-                    </span>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+                </CardHeader>
+                <CardContent className="space-y-2 p-2 sm:p-3 pt-0">
+                  {/* Editable Prompt */}
+                  <div className="bg-gray-900 border border-gray-700 rounded p-2 sm:p-3 hover:border-gray-600 transition-colors">
+                    <Textarea
+                      value={getCurrentPrompt(template)}
+                      onChange={(e) =>
+                        handlePromptChange(template.id, e.target.value)
+                      }
+                      className="bg-transparent border-none text-white text-xs sm:text-sm resize-none p-0 focus:ring-0 focus:outline-none min-h-[50px] sm:min-h-[60px] hover:text-white focus:text-white transition-colors touch-manipulation"
+                      placeholder="Click to edit your prompt here..."
+                      style={{
+                        boxShadow: "none",
+                        fontSize: "inherit",
+                        fontWeight: "400 !important",
+                        fontFamily: "Poppins, sans-serif",
+                      }}
+                    />
+                  </div>
+                  {/* Actions */}
+                  <div className="flex space-x-2">
+                    <Button
+                      size="sm"
+                      onClick={() =>
+                        copyPrompt(getCurrentPrompt(template), template.id)
+                      }
+                      className="bg-brand-red text-white hover:bg-red-700 font-button flex-1 text-xs sm:text-sm py-2 sm:py-3 touch-manipulation active:scale-95 transition-transform"
+                      style={{
+                        backgroundColor:
+                          copiedTemplate === template.id
+                            ? "#22C55E"
+                            : "#F93822",
+                        border: "none",
+                        minHeight: "40px",
+                      }}
+                    >
+                      <Copy className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                      <span className="truncate">
+                        {copiedTemplate === template.id
+                          ? "COPIED!"
+                          : "COPY PROMPT"}
+                      </span>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
             );
             return TemplateCard;
           })}

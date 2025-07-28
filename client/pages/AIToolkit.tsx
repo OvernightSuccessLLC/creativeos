@@ -408,8 +408,6 @@ export default function AIToolkit() {
       rating: 3,
     },
 
-
-
     // Design
     {
       id: 33,
@@ -1034,8 +1032,7 @@ export default function AIToolkit() {
           </div>
         </div>
         {/* Results Count */}
-        <div className="mb-6 text-center">
-        </div>
+        <div className="mb-6 text-center"></div>
         {/* Tools Grid - Enhanced mobile layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-6 px-3 sm:px-0">
           {filteredTools.map((tool) => (

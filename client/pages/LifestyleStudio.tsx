@@ -6,7 +6,13 @@ import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import BriefcaseModal from "@/components/BriefcaseModal";
 import AppNavigation from "@/components/AppNavigation";
 import {
@@ -78,7 +84,7 @@ export default function LifestyleStudio() {
       "Morning Routine",
       "Evening Wind-down",
     ],
-    "Theme": [
+    Theme: [
       "80's Vintage",
       "80s VHS grain",
       "90's Photography",
@@ -522,7 +528,9 @@ export default function LifestyleStudio() {
                   <div className="bg-white text-black rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center font-heading text-base sm:text-lg mb-2 sm:mb-3 shadow-lg border-2 border-brand-red">
                     {index + 1}
                   </div>
-                  <p className="text-white text-xs sm:text-sm leading-tight font-body">{step}</p>
+                  <p className="text-white text-xs sm:text-sm leading-tight font-body">
+                    {step}
+                  </p>
                 </div>
               ))}
             </div>
@@ -582,7 +590,10 @@ export default function LifestyleStudio() {
                     )}
                     {step.id === 2 && (
                       <div>
-                        <Label htmlFor="file-upload" className="text-white text-sm sm:text-base font-body">
+                        <Label
+                          htmlFor="file-upload"
+                          className="text-white text-sm sm:text-base font-body"
+                        >
                           Upload Reference Image
                         </Label>
                         <label
@@ -710,23 +721,30 @@ export default function LifestyleStudio() {
                           id="pantone-color"
                           placeholder="e.g., Pantone 18-3838 TPX (Ultra Violet)"
                           value={primaryColorPantone}
-                          onChange={(e) => setPrimaryColorPantone(e.target.value)}
+                          onChange={(e) =>
+                            setPrimaryColorPantone(e.target.value)
+                          }
                           className="mt-2 text-sm sm:text-base"
                         />
                       </div>
                     )}
                     {step.id === 9 && (
                       <div>
-                        <Select value={typographyIntegration} onValueChange={setTypographyIntegration}>
+                        <Select
+                          value={typographyIntegration}
+                          onValueChange={setTypographyIntegration}
+                        >
                           <SelectTrigger className="mt-2">
                             <SelectValue placeholder="Select typography style" />
                           </SelectTrigger>
                           <SelectContent>
-                            {keywordCategories["Typography Integration"].map((font) => (
-                              <SelectItem key={font} value={font}>
-                                {font}
-                              </SelectItem>
-                            ))}
+                            {keywordCategories["Typography Integration"].map(
+                              (font) => (
+                                <SelectItem key={font} value={font}>
+                                  {font}
+                                </SelectItem>
+                              ),
+                            )}
                           </SelectContent>
                         </Select>
                       </div>
@@ -841,22 +859,22 @@ export default function LifestyleStudio() {
                   <Copy className="w-4 h-4 mr-2" />
                   {copiedPrompt ? "COPIED!" : "COPY"}
                 </Button>
-                  <div className="text-sm mt-4">
-                    <h4 className="font-semibold text-white my-1 py-1 font-body">
-                      <span className="text-brand-red">AI RECOMMENDATIONS</span>
-                    </h4>
-                    <ul className="text-white">
-                      <li className="text-white font-semibold mt-1 font-body">
-                        • Add more emotional descriptors for depth
-                      </li>
-                      <li className="text-white font-semibold mt-1 font-body">
-                        • Include lighting details for mood
-                      </li>
-                      <li className="text-white font-semibold mt-1 font-body">
-                        • Specify camera angle for composition
-                      </li>
-                    </ul>
-                  </div>
+                <div className="text-sm mt-4">
+                  <h4 className="font-semibold text-white my-1 py-1 font-body">
+                    <span className="text-brand-red">AI RECOMMENDATIONS</span>
+                  </h4>
+                  <ul className="text-white">
+                    <li className="text-white font-semibold mt-1 font-body">
+                      • Add more emotional descriptors for depth
+                    </li>
+                    <li className="text-white font-semibold mt-1 font-body">
+                      • Include lighting details for mood
+                    </li>
+                    <li className="text-white font-semibold mt-1 font-body">
+                      • Specify camera angle for composition
+                    </li>
+                  </ul>
+                </div>
               </CardContent>
             </Card>
           </div>

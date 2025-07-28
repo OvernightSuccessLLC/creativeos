@@ -508,7 +508,7 @@ export default function ProductStudio() {
                   key={index}
                   className="flex flex-col items-center text-center"
                 >
-                  <div className="bg-brand-red text-black hover:bg-brand-red-hover font-button text-sm sm:text-base mb-2 sm:mb-3">
+                  <div className="bg-white text-black rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center font-heading text-base sm:text-lg mb-2 sm:mb-3 shadow-lg border-2 border-brand-red">
                     {index + 1}
                   </div>
                   <p className="text-white text-xs sm:text-sm font-body leading-tight font-body">{step}</p>
@@ -533,7 +533,7 @@ export default function ProductStudio() {
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2 sm:space-x-3 flex-1 min-w-0">
-                      <div className="bg-brand-red text-black hover:bg-brand-red-hover font-button text-xs sm:text-sm flex-shrink-0">
+                      <div className="bg-white text-black rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center font-heading text-sm sm:text-base flex-shrink-0 shadow-lg border-2 border-brand-red">
                         {step.id}
                       </div>
                       <div className="min-w-0 flex-1">

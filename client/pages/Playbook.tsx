@@ -163,10 +163,7 @@ export default function Playbook() {
             >
               <div className="flex items-center space-x-3 mb-2">
                 <section.icon className="w-6 h-6" />
-                <h3
-                  className="font-bold text-sm md:text-base"
-                  style={TYPOGRAPHY.heading}
-                >
+                <h3 className="font-heading text-sm md:text-base">
                   {section.title}
                 </h3>
               </div>

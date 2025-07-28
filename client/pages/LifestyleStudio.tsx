@@ -239,7 +239,6 @@ export default function LifestyleStudio() {
       "Expert Level",
       "Polished",
       "Minimalist",
-      "Cinematic",
       "Professional Grade",
       "Flash Finish",
       "Premium Finish",

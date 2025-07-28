@@ -522,26 +522,26 @@ export default function Index() {
         </div>
       </div>
       {/* Main Content Grid */}
-      <div className="px-4 sm:px-6 pb-6 sm:pb-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6">
+      <div className="px-3 sm:px-4 md:px-6 pb-4 sm:pb-6 md:pb-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
           {/* Left Column - Steps */}
-          <div className="lg:col-span-3 space-y-3 sm:space-y-4 order-2 lg:order-1">
+          <div className="lg:col-span-3 space-y-2 sm:space-y-3 md:space-y-4 order-2 lg:order-1">
             {/* Step 1: Custom Instructions */}
             <div className="bg-black rounded-lg border border-white/10">
               <div
-                className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-900 transition-colors"
+                className="flex items-center justify-between p-3 sm:p-4 cursor-pointer hover:bg-gray-900 transition-colors touch-manipulation min-h-[56px]"
                 onClick={() => setActiveStep(activeStep === 1 ? null : 1)}
               >
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-button">
+                <div className="flex items-center space-x-2 sm:space-x-3">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-xs sm:text-sm font-button flex-shrink-0">
                     1
                   </div>
-                  <span className="text-white font-body-medium font-body">
+                  <span className="text-white font-body-medium font-body text-sm sm:text-base truncate">
                     Custom Instructions
                   </span>
                 </div>
                 <ChevronRight
-                  className={`w-5 h-5 text-white transition-transform ${activeStep === 1 ? "rotate-90" : ""}`}
+                  className={`w-4 h-4 sm:w-5 sm:h-5 text-white transition-transform flex-shrink-0 ${activeStep === 1 ? "rotate-90" : ""}`}
                 />
               </div>
               {activeStep === 1 && (

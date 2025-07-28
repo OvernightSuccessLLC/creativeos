@@ -583,7 +583,7 @@ export default function ProductStudio() {
                       </div>
                     )}
                     {step.id === 3 && (
-                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-3">
                         {keywordCategories["Intended Use"].map((keyword) => (
                           <button
                             key={keyword}
@@ -600,7 +600,7 @@ export default function ProductStudio() {
                       </div>
                     )}
                     {step.id === 4 && (
-                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-3">
                         {keywordCategories["Background Setting"].map(
                           (keyword) => (
                             <button
@@ -619,7 +619,7 @@ export default function ProductStudio() {
                       </div>
                     )}
                     {step.id === 5 && (
-                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-3">
                         {keywordCategories["Theme"].map((keyword) => (
                           <button
                             key={keyword}
@@ -636,7 +636,7 @@ export default function ProductStudio() {
                       </div>
                     )}
                     {step.id === 6 && (
-                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-3">
                         {keywordCategories["Lighting Setup"].map((keyword) => (
                           <button
                             key={keyword}
@@ -653,7 +653,7 @@ export default function ProductStudio() {
                       </div>
                     )}
                     {step.id === 7 && (
-                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-3">
                         {keywordCategories["Camera Angle"].map((keyword) => (
                           <button
                             key={keyword}

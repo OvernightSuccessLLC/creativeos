@@ -109,7 +109,7 @@ export default function BriefcaseModal({
               </div>
               <CardTitle
                 className="text-xl text-white brand-heading"
-                className=""
+                
               >
                 THE BRIEFCASE
               </CardTitle>
@@ -165,7 +165,7 @@ export default function BriefcaseModal({
             <div>
               <h2
                 className="text-2xl font-brand-black text-white mb-2 brand-heading"
-                className=""
+                
               >
                 Latest Updates & Features
               </h2>

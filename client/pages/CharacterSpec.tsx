@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
-const FONT_STYLE = { fontFamily: "Poppins, sans-serif" };
+
 
 export default function CharacterSpec() {
   const navigate = useNavigate();
@@ -79,7 +79,7 @@ export default function CharacterSpec() {
   return (
     <div
       className="min-h-screen bg-gradient-to-br from-brand-red via-red-600 to-red-800 text-white"
-      style={FONT_STYLE}
+      
     >
       {/* Navigation */}
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-const FONT_STYLE = { fontFamily: "Poppins, sans-serif" };
+
 
 export default function Landing() {
   const navigate = useNavigate();
@@ -49,7 +49,7 @@ export default function Landing() {
     return (
       <div
         className="min-h-screen bg-brand-red flex items-center justify-center p-4"
-        style={FONT_STYLE}
+        
       >
         <Card className="max-w-md w-full bg-black border-none">
           <CardContent className="p-8 text-center">
@@ -67,7 +67,7 @@ export default function Landing() {
   return (
     <div
       className="min-h-screen bg-brand-red flex items-center justify-center p-4"
-      style={FONT_STYLE}
+      
     >
       <div className="max-w-lg w-full">
         {/* Logo */}
@@ -123,7 +123,7 @@ export default function Landing() {
                 disabled={isSubmitting}
                 className="w-full bg-brand-red hover:bg-brand-red-hover text-white font-heading py-3 text-lg"
                 style={{
-                  ...FONT_STYLE,
+                  
                   textTransform: "uppercase",
                   letterSpacing: "0.5px",
                 }}

@@ -302,7 +302,7 @@ export default function CharacterSpec() {
                 {characterData.personality_tags.map((tag, index) => (
                   <Badge
                     key={index}
-                    className="bg-red-500/20 text-red-300 border border-red-500/30 font-medium"
+                    className="bg-red-500/20 text-red-300 border border-red-500/30 font-body-medium"
                   >
                     {tag}
                   </Badge>

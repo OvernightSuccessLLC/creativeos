@@ -602,7 +602,7 @@ export default function GraphicStudio() {
                             <button
                               key={keyword}
                               onClick={() => toggleKeyword(keyword)}
-                              className={`px-3 py-3 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation min-h-[48px] text-center ${
+                              className={`px-3 py-3 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm font-body-medium transition-all hover:scale-105 active:scale-95 touch-manipulation min-h-[48px] text-center ${
                                 selectedKeywords.includes(keyword)
                                   ? "bg-brand-red text-black"
                                   : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
@@ -623,7 +623,7 @@ export default function GraphicStudio() {
                               <button
                                 key={keyword}
                                 onClick={() => toggleKeyword(keyword)}
-                                className={`px-3 py-3 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation min-h-[48px] text-center ${
+                                className={`px-3 py-3 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm font-body-medium transition-all hover:scale-105 active:scale-95 touch-manipulation min-h-[48px] text-center ${
                                   selectedKeywords.includes(keyword)
                                     ? "bg-brand-red text-black"
                                     : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
@@ -645,7 +645,7 @@ export default function GraphicStudio() {
                               <button
                                 key={keyword}
                                 onClick={() => toggleKeyword(keyword)}
-                                className={`px-3 py-3 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation min-h-[48px] text-center ${
+                                className={`px-3 py-3 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm font-body-medium transition-all hover:scale-105 active:scale-95 touch-manipulation min-h-[48px] text-center ${
                                   selectedKeywords.includes(keyword)
                                     ? "bg-brand-red text-black"
                                     : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
@@ -669,7 +669,7 @@ export default function GraphicStudio() {
                                 <button
                                   key={keyword}
                                   onClick={() => toggleKeyword(keyword)}
-                                  className={`px-3 py-3 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation min-h-[48px] text-center ${
+                                  className={`px-3 py-3 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm font-body-medium transition-all hover:scale-105 active:scale-95 touch-manipulation min-h-[48px] text-center ${
                                     selectedKeywords.includes(keyword)
                                       ? "bg-brand-red text-black"
                                       : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
@@ -692,7 +692,7 @@ export default function GraphicStudio() {
                               <button
                                 key={keyword}
                                 onClick={() => toggleKeyword(keyword)}
-                                className={`px-3 py-3 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation min-h-[48px] text-center ${
+                                className={`px-3 py-3 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm font-body-medium transition-all hover:scale-105 active:scale-95 touch-manipulation min-h-[48px] text-center ${
                                   selectedKeywords.includes(keyword)
                                     ? "bg-brand-red text-black"
                                     : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
@@ -713,7 +713,7 @@ export default function GraphicStudio() {
                             <button
                               key={keyword}
                               onClick={() => toggleKeyword(keyword)}
-                              className={`px-3 py-3 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation min-h-[48px] text-center ${
+                              className={`px-3 py-3 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm font-body-medium transition-all hover:scale-105 active:scale-95 touch-manipulation min-h-[48px] text-center ${
                                 selectedKeywords.includes(keyword)
                                   ? "bg-brand-red text-black"
                                   : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
@@ -737,7 +737,7 @@ export default function GraphicStudio() {
                         >
                           <Upload className="mx-auto h-10 w-10 sm:h-12 sm:w-12 text-gray-400" />
                           <div className="mt-3 sm:mt-4">
-                            <span className="mt-2 block text-sm sm:text-base font-medium text-white">
+                            <span className="mt-2 block text-sm sm:text-base font-body-medium text-white">
                               {uploadedFile
                                 ? `Replace: ${uploadedFile.name}`
                                 : "Click to upload or drag and drop"}
@@ -792,7 +792,7 @@ export default function GraphicStudio() {
               </CardHeader>
               <CardContent className="space-y-4 bg-black px-4 sm:px-6 pb-6">
                 <div>
-                  <Label className="text-white text-sm font-medium">
+                  <Label className="text-white text-sm font-body-medium">
                     Generated Prompt
                   </Label>
                   <div className="bg-gray-50 p-3 rounded border text-xs sm:text-sm min-h-[80px] sm:min-h-[100px] mt-2">
@@ -805,7 +805,7 @@ export default function GraphicStudio() {
                   <div className="space-y-2">
                     <div className="flex justify-between text-xs sm:text-sm text-white">
                       <span>Instructions</span>
-                      <span className="font-medium">
+                      <span className="font-body-medium">
                         {customInstructions.length > 20 ? "25%" : "0%"}
                       </span>
                     </div>
@@ -822,7 +822,7 @@ export default function GraphicStudio() {
                   <div className="space-y-2">
                     <div className="flex justify-between text-xs sm:text-sm text-white">
                       <span>Keywords</span>
-                      <span className="font-medium">
+                      <span className="font-body-medium">
                         {Math.min(50, selectedKeywords.length * 2)}%
                       </span>
                     </div>
@@ -839,7 +839,7 @@ export default function GraphicStudio() {
                   <div className="space-y-2">
                     <div className="flex justify-between text-xs sm:text-sm text-white">
                       <span>Reference</span>
-                      <span className="font-medium">
+                      <span className="font-body-medium">
                         {uploadedFile ? "15%" : "0%"}
                       </span>
                     </div>
@@ -854,7 +854,7 @@ export default function GraphicStudio() {
 
                 <Button
                   onClick={copyPrompt}
-                  className="w-full bg-brand-red text-white hover:bg-red-600 font-medium text-sm sm:text-base py-2.5 sm:py-3 mt-4"
+                  className="w-full bg-brand-red text-white hover:bg-red-600 font-body-medium text-sm sm:text-base py-2.5 sm:py-3 mt-4"
                 >
                   <Copy className="w-4 h-4 mr-2" />
                   {copiedPrompt ? "COPIED!" : "COPY"}

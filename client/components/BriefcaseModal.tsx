@@ -145,7 +145,7 @@ export default function BriefcaseModal({
             {navigationItems.map((item) => (
               <button
                 key={item.name}
-                className="flex items-center space-x-2 px-3 py-2 rounded text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 transition-colors"
+                className="flex items-center space-x-2 px-3 py-2 rounded text-sm font-body-medium text-gray-300 hover:text-white hover:bg-gray-800 transition-colors"
                 onClick={() => {
                   if (onNavigate) {
                     onNavigate(item.path);
@@ -224,7 +224,7 @@ export default function BriefcaseModal({
                         )}
                       </div>
                       <div className="text-right">
-                        <span className="text-brand-red text-sm font-medium">
+                        <span className="text-brand-red text-sm font-body-medium">
                           {update.type}
                         </span>
                       </div>

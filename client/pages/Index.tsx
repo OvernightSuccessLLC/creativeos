@@ -428,19 +428,19 @@ export default function Index() {
             </button>
             <button
               onClick={() => navigate("/lifestyle-studio")}
-              className="text-white px-4 py-2 rounded text-sm font-medium hover:bg-white/10"
+              className="text-white px-4 py-2 rounded text-sm font-body-medium hover:bg-white/10"
             >
               LIFESTYLE STUDIO
             </button>
             <button
               onClick={() => navigate("/graphic-studio")}
-              className="text-white px-4 py-2 rounded text-sm font-medium hover:bg-white/10"
+              className="text-white px-4 py-2 rounded text-sm font-body-medium hover:bg-white/10"
             >
               GRAPHIC STUDIO
             </button>
             <button
               onClick={() => setShowBriefcase(true)}
-              className="text-white px-4 py-2 rounded text-sm font-medium hover:bg-white/10"
+              className="text-white px-4 py-2 rounded text-sm font-body-medium hover:bg-white/10"
             >
               THE BRIEFCASE
             </button>
@@ -464,7 +464,7 @@ export default function Index() {
             <div className="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
               ♀
             </div>
-            <button className="text-white text-sm font-medium hover:bg-white/10 px-3 py-1 rounded">
+            <button className="text-white text-sm font-body-medium hover:bg-white/10 px-3 py-1 rounded">
               RESET
             </button>
           </div>
@@ -581,7 +581,7 @@ export default function Index() {
                   <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
                     1
                   </div>
-                  <span className="text-white font-medium">
+                  <span className="text-white font-body-medium">
                     Custom Instructions
                   </span>
                 </div>
@@ -612,7 +612,7 @@ export default function Index() {
                   <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
                     2
                   </div>
-                  <span className="text-white font-medium">Product Style</span>
+                  <span className="text-white font-body-medium">Product Style</span>
                 </div>
                 <ChevronRight
                   className={`w-5 h-5 text-white transition-transform ${activeStep === 2 ? "rotate-90" : ""}`}
@@ -633,7 +633,7 @@ export default function Index() {
                     />
                     {uploadedFile2 && (
                       <div className="mt-3 p-3 bg-gray-800 rounded-lg">
-                        <p className="text-brand-red text-sm font-medium">
+                        <p className="text-brand-red text-sm font-body-medium">
                           ✓ {uploadedFile2.name} uploaded successfully
                         </p>
                         <p className="text-white/50 text-xs mt-1">
@@ -656,7 +656,7 @@ export default function Index() {
                   <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
                     3
                   </div>
-                  <span className="text-white font-medium">
+                  <span className="text-white font-body-medium">
                     Background Setting
                   </span>
                 </div>
@@ -680,7 +680,7 @@ export default function Index() {
                     />
                     {uploadedFile3 && (
                       <div className="mt-3 p-3 bg-gray-800 rounded-lg">
-                        <p className="text-brand-red text-sm font-medium">
+                        <p className="text-brand-red text-sm font-body-medium">
                           ✓ {uploadedFile3.name} uploaded successfully
                         </p>
                         <p className="text-white/50 text-xs mt-1">
@@ -703,7 +703,7 @@ export default function Index() {
                   <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
                     4
                   </div>
-                  <span className="text-white font-medium">Lighting Setup</span>
+                  <span className="text-white font-body-medium">Lighting Setup</span>
                 </div>
                 <ChevronRight
                   className={`w-5 h-5 text-white transition-transform ${activeStep === 4 ? "rotate-90" : ""}`}
@@ -716,7 +716,7 @@ export default function Index() {
                       <button
                         key={keyword}
                         onClick={() => toggleKeyword(keyword)}
-                        className={`text-sm px-4 py-2 rounded-full font-medium transition-all duration-200 ${
+                        className={`text-sm px-4 py-2 rounded-full font-body-medium transition-all duration-200 ${
                           selectedKeywords.includes(keyword)
                             ? "bg-brand-red text-white"
                             : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
@@ -740,7 +740,7 @@ export default function Index() {
                   <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm font-bold">
                     5
                   </div>
-                  <span className="text-white font-medium">Camera Angle</span>
+                  <span className="text-white font-body-medium">Camera Angle</span>
                 </div>
                 <ChevronRight
                   className={`w-5 h-5 text-white transition-transform ${activeStep === 5 ? "rotate-90" : ""}`}
@@ -753,7 +753,7 @@ export default function Index() {
                       <button
                         key={keyword}
                         onClick={() => toggleKeyword(keyword)}
-                        className={`text-sm px-4 py-2 rounded-full font-medium transition-all duration-200 ${
+                        className={`text-sm px-4 py-2 rounded-full font-body-medium transition-all duration-200 ${
                           selectedKeywords.includes(keyword)
                             ? "bg-brand-red text-white"
                             : "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
@@ -797,7 +797,7 @@ export default function Index() {
 
                 {/* Instructions Quality */}
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-white text-xs font-medium">
+                  <span className="text-white text-xs font-body-medium">
                     Instructions
                   </span>
                   <span className="text-brand-red text-xs font-bold">
@@ -818,7 +818,7 @@ export default function Index() {
 
                 {/* Keywords Quality */}
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-white text-xs font-medium">
+                  <span className="text-white text-xs font-body-medium">
                     Keywords
                   </span>
                   <span className="text-brand-red text-xs font-bold">
@@ -836,7 +836,7 @@ export default function Index() {
 
                 {/* File Upload 1 Quality */}
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-white text-xs font-medium">
+                  <span className="text-white text-xs font-body-medium">
                     File Upload 1
                   </span>
                   <span className="text-brand-red text-xs font-bold">

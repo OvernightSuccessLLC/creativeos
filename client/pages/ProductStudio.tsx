@@ -650,7 +650,7 @@ export default function ProductStudio() {
                           <button
                             key={keyword}
                             onClick={() => toggleKeyword(keyword)}
-                            className={`px-3 py-3 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 touch-manipulation min-h-[48px] text-center ${
+                            className={`px-3 py-3 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm font-body-medium transition-all hover:scale-105 active:scale-95 touch-manipulation min-h-[48px] text-center ${
                               selectedKeywords.includes(keyword)
                                 ? "bg-brand-red text-black"
                                 : "bg-white text-black border border-gray-300 hover:bg-gray-100"

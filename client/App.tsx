@@ -19,7 +19,6 @@ const queryClient = new QueryClient();
 
 // Simplified Playbook Version Context
 const PlaybookContext = {
->>>>>>> 31ebc44cc8678f1bd669070e8af0657ed332f209
   version: "1.0.0",
   features: {
     landing: true,

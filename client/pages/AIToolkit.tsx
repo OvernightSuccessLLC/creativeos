@@ -984,11 +984,6 @@ export default function AIToolkit() {
       {/* Navigation */}
       <AppNavigation onUpdatesClick={() => setShowBriefcase(true)} />
       {/* Header */}
-<<<<<<< HEAD
-      <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-3">
-        <div className="text-center mb-8 pb-4">
-          <h1 className="font-display text-4xl md:text-5xl">AI Toolkit</h1>
-=======
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-8">
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4">
@@ -998,7 +993,6 @@ export default function AIToolkit() {
             Discover 70+ best AI tools to accelerate your creative and technical
             workflow
           </p>
->>>>>>> 31ebc44cc8678f1bd669070e8af0657ed332f209
         </div>
         {/* Category Filter */}
         <div className="flex justify-center mb-8">

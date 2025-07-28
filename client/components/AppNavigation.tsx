@@ -51,15 +51,12 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
       path: "/ai-toolkit",
       description: "Curated AI tools collection",
     },
-<<<<<<< HEAD
     {
       name: "Updates",
       icon: Bell,
       path: "/updates",
       description: "Latest news and features",
     },
-=======
->>>>>>> 31ebc44cc8678f1bd669070e8af0657ed332f209
   ];
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -109,11 +106,6 @@ export default function AppNavigation({ onUpdatesClick }: AppNavigationProps) {
                   </button>
                 );
               })}
-<<<<<<< HEAD
-=======
-
-              <div className="relative pages-dropdown" />
->>>>>>> 31ebc44cc8678f1bd669070e8af0657ed332f209
             </div>
             {/* User Status - Desktop */}
             <div className="hidden md:flex items-center space-x-3 ml-4">

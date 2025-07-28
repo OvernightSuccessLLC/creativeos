@@ -530,10 +530,10 @@ export default function ProductStudio() {
       <AppNavigation />
 
       {/* HOW IT WORKS Section */}
-      <div className="px-4 sm:px-6 mb-6 sm:mb-8 pt-4 sm:pt-6">
+      <div className="px-4 sm:px-6 mb-6 sm:mb-8 pt-2 sm:pt-4">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-black rounded-lg py-3 px-4 sm:px-6 pb-5">
-            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
+          <div className="bg-black rounded-lg py-4 px-4 sm:px-6 pb-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6">
               {[
                 "Add Custom Instructions",
                 "Select Categories",
@@ -545,10 +545,10 @@ export default function ProductStudio() {
                   key={index}
                   className="flex flex-col items-center text-center"
                 >
-                  <div className="bg-brand-red text-black rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mb-2">
+                  <div className="bg-brand-red text-black rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center font-bold text-sm sm:text-base mb-2 sm:mb-3">
                     {index + 1}
                   </div>
-                  <p className="text-white text-sm">{step}</p>
+                  <p className="text-white text-xs sm:text-sm leading-tight">{step}</p>
                 </div>
               ))}
             </div>
@@ -558,9 +558,9 @@ export default function ProductStudio() {
 
       {/* Main Content Grid */}
       <div className="px-4 sm:px-6 pb-6 sm:pb-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6">
           {/* Left Column - Steps */}
-          <div className="xl:col-span-2 space-y-3 sm:space-y-4">
+          <div className="lg:col-span-3 space-y-3 sm:space-y-4 order-2 lg:order-1">
             {steps.map((step) => (
               <Card key={step.id} className="border-black bg-black">
                 <CardHeader
@@ -790,8 +790,8 @@ export default function ProductStudio() {
           </div>
 
           {/* Right Column - AI Prompt Formula */}
-          <div className="space-y-4 sm:space-y-6">
-            <Card className="border-black xl:sticky xl:top-6">
+          <div className="space-y-4 sm:space-y-6 order-1 lg:order-2">
+            <Card className="border-black lg:sticky lg:top-6">
               <CardHeader className="bg-black py-4 px-4 sm:px-6">
                 <CardTitle className="text-lg sm:text-xl text-white mb-3">
                   AI Prompt Formula

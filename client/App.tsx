@@ -10,13 +10,10 @@ import Landing from "./pages/Landing";
 import Playbook from "./pages/Playbook";
 import AIToolkit from "./pages/AIToolkit";
 import NotFound from "./pages/NotFound";
-<<<<<<< HEAD
 import LifestyleStudio from "./pages/LifestyleStudio";
 import GraphicStudio from "./pages/GraphicStudio";
+
 const queryClient = new QueryClient();
-// Global Creative Director OS Context
-const CreativeDirectorOSContext = {
-=======
 
 const queryClient = new QueryClient();
 

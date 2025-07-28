@@ -3,7 +3,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useAuth } from "@/contexts/AuthContext";
-<<<<<<< HEAD
 import {
   Bell,
   BookOpen,
@@ -21,10 +20,6 @@ import {
   Settings,
   RotateCcw,
 } from "lucide-react";
-=======
-import { BookOpen, Zap, Home, Menu, X, Crown } from "lucide-react";
-
->>>>>>> 31ebc44cc8678f1bd669070e8af0657ed332f209
 interface AppNavigationProps {
   onUpdatesClick?: () => void;
 }
